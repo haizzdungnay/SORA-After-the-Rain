@@ -21,6 +21,8 @@ namespace Sora.AfterTheRain.Demo
             SetupCustomers();
             SetupCamera();
             SetupRain();
+            // Connected blockout, kept separate from the existing interactive core.
+            SoraNeighborhoodDistrict.Build(world);
         }
 
         private static Material Mat(Color c, float smoothness = 0.5f, bool emissive = false)
@@ -578,6 +580,8 @@ namespace Sora.AfterTheRain.Demo
             Shader shader = Shader.Find("Universal Render Pipeline/Particles/Unlit");
             if (shader == null) shader = Shader.Find("Particles/Standard Unlit");
             ps.Play();
+            // Move rain with the active twin so the larger district stays rainy.
+            go.AddComponent<SoraDistrictRainFollower>();
             if (shader != null)
             {
                 Material rainMaterial = new Material(shader);
