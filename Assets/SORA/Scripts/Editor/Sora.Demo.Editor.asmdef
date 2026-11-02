@@ -1,0 +1,11 @@
+{
+  "name": "Sora.Demo.Editor",
+  "rootNamespace": "Sora.AfterTheRain.Demo.Editor",
+  "references": [
+    "Sora.Demo",
+    "Unity.RenderPipelines.Universal.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

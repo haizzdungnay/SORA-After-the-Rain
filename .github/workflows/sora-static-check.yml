@@ -1,0 +1,18 @@
+name: SORA static integrity check (no Unity license)
+on:
+  push:
+    branches: [main, develop, 'feature/**', 'fix/**']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate Unity source, GUIDs and repository hygiene
+        run: python3 Tools/validate_project.py

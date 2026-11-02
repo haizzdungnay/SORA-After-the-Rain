@@ -1,0 +1,13 @@
+{
+  "name": "Sora.Demo.EditModeTests",
+  "references": [
+    "Sora.Demo"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "autoReferenced": false
+}

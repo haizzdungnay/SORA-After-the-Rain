@@ -1,0 +1,55 @@
+# Manual only. Never run untrusted PR code on a personal self-hosted runner.
+name: SORA Unity tests and Windows build (opt-in licensed runner)
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Task on trusted main source
+        type: choice
+        options: [editmode, windows-build]
+        default: editmode
+      confirm_runner:
+        description: I configured an isolated runner and activated a valid Unity license
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: sora-licensed-unity
+  cancel-in-progress: false
+jobs:
+  unity:
+    if: ${{ vars.SORA_ENABLE_UNITY_CI == 'true' && inputs.confirm_runner && github.ref == 'refs/heads/main' }}
+    timeout-minutes: 45
+    runs-on: [self-hosted, windows, x64, unity]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          lfs: true
+      - name: Run EditMode integrity tests
+        shell: pwsh
+        run: ./Tools/Test-SORA.ps1
+      - name: Generate scene and verify Editor import
+        shell: pwsh
+        run: ./Tools/Build-SORA.ps1 -SmokeOnly
+      - name: Build Windows x64
+        if: ${{ inputs.mode == 'windows-build' }}
+        shell: pwsh
+        run: ./Tools/Build-SORA.ps1
+      - name: Upload test results and diagnostic logs
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: SORA-Unity-validation
+          path: |
+            TestResults/
+            Logs/
+          if-no-files-found: warn
+      - name: Upload standalone build
+        if: ${{ success() && inputs.mode == 'windows-build' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: SORA-Windows-x64
+          path: Builds/Windows/
+          if-no-files-found: error
