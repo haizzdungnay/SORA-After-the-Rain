@@ -39,6 +39,12 @@ for path in (ROOT / "Assets").rglob("*.cs"):
     require("namespace Sora.AfterTheRain.Demo" in path.read_text(), "unexpected namespace: " + str(path.relative_to(ROOT)))
 for path in (ROOT / "Assets").rglob("*.asmdef"):
     json.loads(path.read_text())
+# Regression guard: Unity ProjectSettings are not regular AssetDatabase assets.
+setup_source = (ROOT / "Assets/SORA/Scripts/Editor/SoraProjectSetup.cs").read_text()
+require("GraphicsSettings.GetGraphicsSettings()" in setup_source,
+        "Unity GraphicsSettings accessor missing from Editor bootstrap")
+require('AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/GraphicsSettings.asset")' not in setup_source,
+        "do not load GraphicsSettings.asset through AssetDatabase")
 guids = {}
 for path in (ROOT / "Assets").rglob("*"):
     if path.suffix != ".meta":
