@@ -239,13 +239,13 @@ namespace Sora.AfterTheRain.Demo
             cc.center = new Vector3(0, .96f, 0);
             cc.stepOffset = .23f;
             cc.skinWidth = .05f;
-            Sphere("Torso", pos + Vector3.up * 1.09f, new Vector3(.55f, .75f, .3f), clothing, root);
-            Sphere("Head", pos + Vector3.up * 1.66f, new Vector3(.38f, .43f, .34f), skin, root);
-            Sphere("Hair", pos + Vector3.up * 1.89f, new Vector3(.43f, longHair ? .31f : .22f, .38f), hair, root);
+            Sphere("Torso", pos + Vector3.up * 1.09f, new Vector3(.55f, .75f, .3f), clothing, root.transform);
+            Sphere("Head", pos + Vector3.up * 1.66f, new Vector3(.38f, .43f, .34f), skin, root.transform);
+            Sphere("Hair", pos + Vector3.up * 1.89f, new Vector3(.43f, longHair ? .31f : .22f, .38f), hair, root.transform);
             for (int s = -1; s <= 1; s += 2)
             {
-                Sphere("Arm", pos + new Vector3(s * .38f, 1.10f, 0), new Vector3(.18f, .64f, .19f), clothing, root);
-                Sphere("Leg", pos + new Vector3(s * .15f, .42f, 0), new Vector3(.21f, .85f, .23f), metal, root);
+                Sphere("Arm", pos + new Vector3(s * .38f, 1.10f, 0), new Vector3(.18f, .64f, .19f), clothing, root.transform);
+                Sphere("Leg", pos + new Vector3(s * .15f, .42f, 0), new Vector3(.21f, .85f, .23f), metal, root.transform);
             }
             var character = root.AddComponent<SoraDemoCharacter>();
             character.DisplayName = name;
@@ -265,10 +265,10 @@ namespace Sora.AfterTheRain.Demo
             GameObject root = new GameObject("NPC Customer " + name);
             root.transform.SetParent(world, false);
             root.transform.position = pos;
-            Sphere(name + " body", pos + Vector3.up * 1.02f, new Vector3(.65f, 1.05f, .42f), clothes, root);
-            Sphere(name + " face", pos + Vector3.up * 1.73f, new Vector3(.38f, .4f, .36f), skin, root);
-            Sphere(name + " hair", pos + Vector3.up * 1.91f, new Vector3(.42f, .22f, .41f), hair, root);
-            GameObject prompt = Cube("NPC Interaction marker", pos + Vector3.up * 2.28f, new Vector3(.32f, .32f, .32f), gold, root, false);
+            Sphere(name + " body", pos + Vector3.up * 1.02f, new Vector3(.65f, 1.05f, .42f), clothes, root.transform);
+            Sphere(name + " face", pos + Vector3.up * 1.73f, new Vector3(.38f, .4f, .36f), skin, root.transform);
+            Sphere(name + " hair", pos + Vector3.up * 1.91f, new Vector3(.42f, .22f, .41f), hair, root.transform);
+            GameObject prompt = Cube("NPC Interaction marker", pos + Vector3.up * 2.28f, new Vector3(.32f, .32f, .32f), gold, root.transform, false);
             TagInteract(prompt, InteractKind.Customer, "Noi chuyen voi " + name, ix);
         }
 
@@ -300,6 +300,7 @@ namespace Sora.AfterTheRain.Demo
             go.transform.SetParent(world, false);
             go.transform.position = new Vector3(0f, 8f, -15f);
             ParticleSystem ps = go.AddComponent<ParticleSystem>();
+            ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             var main = ps.main;
             main.loop = true;
             main.duration = 8f;
@@ -319,6 +320,7 @@ namespace Sora.AfterTheRain.Demo
             var renderer = go.GetComponent<ParticleSystemRenderer>();
             Shader shader = Shader.Find("Universal Render Pipeline/Particles/Unlit");
             if (shader == null) shader = Shader.Find("Particles/Standard Unlit");
+            ps.Play();
             if (shader != null)
             {
                 Material rainMaterial = new Material(shader);

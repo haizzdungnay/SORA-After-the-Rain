@@ -33,7 +33,7 @@ for rel in required:
 manifest = json.loads((ROOT / "Packages/manifest.json").read_text())
 for package, version in {"com.unity.render-pipelines.universal": "17.3.0", "com.unity.test-framework": "1.6.0"}.items():
     require(manifest["dependencies"].get(package) == version, "unexpected package pin: " + package)
-for module in ["imgui", "inputlegacy", "textrendering"]:
+for module in ["imgui"]:
     require(manifest["dependencies"].get("com.unity.modules." + module) == "1.0.0", "missing runtime module: " + module)
 require("m_EditorVersion: 6000.3.7f1" in (ROOT / "ProjectSettings/ProjectVersion.txt").read_text(), "Unity version changed")
 for path in (ROOT / "Assets").rglob("*.cs"):

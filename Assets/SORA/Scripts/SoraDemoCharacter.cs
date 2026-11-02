@@ -64,36 +64,61 @@ namespace Sora.AfterTheRain.Demo
     public sealed class SoraThirdPersonCamera : MonoBehaviour
     {
         public Transform target;
-        public float distance = 6.5f;
+        public float distance = 3.6f;
+        public float defaultPitch = 15f;
+        public float recenterSpeed = 5.0f;
         private float yaw = 0f;
-        private float pitch = 20f;
+        private float pitch = 15f;
         private Vector3 velocity;
 
         public void SetTarget(Transform focus)
         {
             target = focus;
+            if (focus != null)
+            {
+                yaw = focus.eulerAngles.y;
+                pitch = defaultPitch;
+            }
             velocity = Vector3.zero;
         }
 
         private void LateUpdate()
         {
             if (target == null) return;
+
+            // Instant snap camera behind character with Middle Click or C key
+            if (Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.C))
+            {
+                yaw = target.eulerAngles.y;
+                pitch = defaultPitch;
+            }
+
             if (Input.GetMouseButton(1))
             {
+                // Free look while holding Right Mouse Button
                 yaw += Input.GetAxis("Mouse X") * 3.1f;
                 pitch = Mathf.Clamp(pitch - Input.GetAxis("Mouse Y") * 2.3f, 5f, 65f);
             }
-            distance = Mathf.Clamp(distance - Input.mouseScrollDelta.y * 0.6f, 3.5f, 9f);
+            else
+            {
+                // Smoothly return behind character when Right Mouse Button is released
+                float targetYaw = target.eulerAngles.y;
+                yaw = Mathf.LerpAngle(yaw, targetYaw, Time.deltaTime * recenterSpeed);
+                pitch = Mathf.Lerp(pitch, defaultPitch, Time.deltaTime * recenterSpeed);
+            }
+
+            distance = Mathf.Clamp(distance - Input.mouseScrollDelta.y * 0.5f, 2.0f, 6.5f);
             Quaternion rotation = Quaternion.Euler(pitch, yaw, 0);
             Vector3 focus = target.position + Vector3.up * 1.45f;
             Vector3 wanted = focus + rotation * new Vector3(0f, 0f, -distance);
-            // Prevent the camera from clipping through storefront walls and shelving.
+
+            // Prevent camera from clipping through storefront walls and shelving
             Vector3 towards = wanted - focus;
             if (Physics.SphereCast(focus, 0.18f, towards.normalized, out RaycastHit hit, towards.magnitude, ~0, QueryTriggerInteraction.Ignore))
             {
                 if (!hit.transform.IsChildOf(target)) wanted = focus + towards.normalized * Mathf.Max(0.7f, hit.distance - 0.20f);
             }
-            transform.position = Vector3.SmoothDamp(transform.position, wanted, ref velocity, 0.09f);
+            transform.position = Vector3.SmoothDamp(transform.position, wanted, ref velocity, 0.08f);
             transform.rotation = Quaternion.LookRotation(focus - transform.position, Vector3.up);
         }
     }
