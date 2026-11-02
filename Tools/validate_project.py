@@ -19,6 +19,8 @@ required = [
     "Tools/Build-SORA.ps1", "Tools/Test-SORA.ps1",
     "Assets/SORA/Scripts/SoraDemoCore.cs", "Assets/SORA/Scripts/SoraDemoWorld.cs",
     "Assets/SORA/Scripts/SoraDemoCharacter.cs",
+    "Assets/SORA/Scripts/SoraNeighborhoodDistrict.cs",
+    "Docs/NEIGHBORHOOD_V05_DESIGN.md",
     "Assets/SORA/Scripts/Editor/SoraDemoSceneGenerator.cs",
     "Assets/SORA/Scripts/Editor/SoraDevAutomation.cs",
     "Assets/SORA/Scripts/Editor/SoraProjectSetup.cs",
@@ -46,6 +48,16 @@ require("GraphicsSettings.GetGraphicsSettings()" in setup_source,
         "Unity GraphicsSettings accessor missing from Editor bootstrap")
 require('AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/GraphicsSettings.asset")' not in setup_source,
         "do not load GraphicsSettings.asset through AssetDatabase")
+# Offline wiring checks only; full City Block Unity acceptance still needs Editor.
+district_source = (ROOT / "Assets/SORA/Scripts/SoraNeighborhoodDistrict.cs").read_text(encoding="utf-8")
+world_source = (ROOT / "Assets/SORA/Scripts/SoraDemoWorld.cs").read_text(encoding="utf-8")
+require("SoraNeighborhoodDistrict.Build(world);" in world_source, "district generator not attached to current scene")
+require("go.AddComponent<SoraDistrictRainFollower>()" in world_source, "rain does not follow the active twin")
+for district_marker in ["North residential cross street", "South market cross street",
+                        "North south connector road", "Backstreet courtyard",
+                        "CreateStoreMerchandising", "DetailExistingCentralFacades"]:
+    require(district_marker in district_source, "district layout marker missing: " + district_marker)
+require('Cube("Wet road reflection"' not in world_source, "obsolete neon bar reflection still present")
 guids = {}
 for path in (ROOT / "Assets").rglob("*"):
     if path.suffix != ".meta":
