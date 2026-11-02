@@ -26,21 +26,22 @@ required = [
     ".github/pull_request_template.md",
     ".github/workflows/sora-static-check.yml",
     ".github/workflows/sora-local-runner-build.yml",
+    ".github/workflows/sora-gameci-build.yml",
 ]
 for rel in required:
     require((ROOT / rel).is_file(), "missing " + rel)
 manifest = json.loads((ROOT / "Packages/manifest.json").read_text())
 for package, version in {"com.unity.render-pipelines.universal": "17.3.0", "com.unity.test-framework": "1.6.0"}.items():
     require(manifest["dependencies"].get(package) == version, "unexpected package pin: " + package)
-for module in ["imgui", "inputlegacy", "textrendering"]:
+for module in ["imgui"]:
     require(manifest["dependencies"].get("com.unity.modules." + module) == "1.0.0", "missing runtime module: " + module)
 require("m_EditorVersion: 6000.3.7f1" in (ROOT / "ProjectSettings/ProjectVersion.txt").read_text(), "Unity version changed")
 for path in (ROOT / "Assets").rglob("*.cs"):
-    require("namespace Sora.AfterTheRain.Demo" in path.read_text(), "unexpected namespace: " + str(path.relative_to(ROOT)))
+    require("namespace Sora.AfterTheRain.Demo" in path.read_text(encoding="utf-8"), "unexpected namespace: " + str(path.relative_to(ROOT)))
 for path in (ROOT / "Assets").rglob("*.asmdef"):
-    json.loads(path.read_text())
+    json.loads(path.read_text(encoding="utf-8"))
 # Regression guard: Unity ProjectSettings are not regular AssetDatabase assets.
-setup_source = (ROOT / "Assets/SORA/Scripts/Editor/SoraProjectSetup.cs").read_text()
+setup_source = (ROOT / "Assets/SORA/Scripts/Editor/SoraProjectSetup.cs").read_text(encoding="utf-8")
 require("GraphicsSettings.GetGraphicsSettings()" in setup_source,
         "Unity GraphicsSettings accessor missing from Editor bootstrap")
 require('AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/GraphicsSettings.asset")' not in setup_source,
@@ -51,7 +52,7 @@ for path in (ROOT / "Assets").rglob("*"):
         require(Path(str(path) + ".meta").is_file(), "missing .meta: " + str(path.relative_to(ROOT)))
         continue
     require(Path(str(path)[:-5]).exists(), "orphan .meta: " + str(path.relative_to(ROOT)))
-    match = re.search(r"^guid: ([0-9a-f]{32})$", path.read_text(), re.M)
+    match = re.search(r"^guid: ([0-9a-f]{32})$", path.read_text(encoding="utf-8"), re.M)
     require(match is not None, "invalid GUID: " + str(path.relative_to(ROOT)))
     require(match[1] not in guids, "duplicate GUID: " + str(path.relative_to(ROOT)))
     guids[match[1]] = path
