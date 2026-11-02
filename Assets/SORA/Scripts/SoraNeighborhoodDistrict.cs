@@ -34,6 +34,7 @@ namespace Sora.AfterTheRain.Demo
             CreatePalette();
             CreateStreetGrid();
             CreateBuildingBlocks();
+            DetailExistingCentralFacades();
             CreateStreetFurniture();
             CreateWetDetails();
             CreateStoreMerchandising();
@@ -169,11 +170,11 @@ namespace Sora.AfterTheRain.Demo
                 }
                 // Original avenue pavement only reaches x=40. Extend its edges.
                 Box("Outer main street pavement front " + side,
-                    new Vector3(side * 63f, -.08f, -7f),
-                    new Vector3(42f, .24f, 3.7f), sidewalk);
+                    new Vector3(side * 62f, -.08f, -7f),
+                    new Vector3(44f, .24f, 3.7f), sidewalk);
                 Box("Outer main street pavement rear " + side,
-                    new Vector3(side * 63f, -.08f, -24f),
-                    new Vector3(42f, .24f, 3.7f), sidewalk);
+                    new Vector3(side * 62f, -.08f, -24f),
+                    new Vector3(44f, .24f, 3.7f), sidewalk);
             }
 
             foreach (float z in new[] { 17.6f, 34.4f, -48.6f, -65.4f })
@@ -348,6 +349,44 @@ namespace Sora.AfterTheRain.Demo
             Facade("East edge - Noodle Shop", new Vector3(72f, 0f, -41f), 16f, 12f, 3, 90f, 4, 2, "NOODLES");
             Facade("East edge - Karaoke", new Vector3(72f, 0f, -13f), 16f, 12f, 5, 90f, 2, 0, "KARAOKE");
             Facade("East edge - Music Store", new Vector3(72f, 0f, 8f), 16f, 12f, 3, 90f, 3, 1, "MUSIC");
+        }
+
+        private static void DetailExistingCentralFacades()
+        {
+            // The original five opposite-side buildings are the first sightline
+            // after exiting SORA MART: layer their fronts before adding distant bulk.
+            float[] xs = { -28f, -14f, 0f, 14f, 28f };
+            float[] heights = { 13f, 19f, 15f, 22f, 14f };
+            for (int i = 0; i < xs.Length; i++)
+            {
+                float x = xs[i];
+                Material accent = signs[i % signs.Length];
+                Box("Existing frontage projecting awning " + i,
+                    new Vector3(x, 3.12f, -24.75f),
+                    new Vector3(8.2f, .15f, 1.10f), roof, false);
+                Box("Existing frontage illuminated vertical blade " + i,
+                    new Vector3(x + 5.1f, 5.35f, -24.65f),
+                    new Vector3(.45f, 2.3f, .32f), accent, false);
+                Box("Existing frontage side pilaster left " + i,
+                    new Vector3(x - 5.8f, 2.4f, -24.25f),
+                    new Vector3(.25f, 4.7f, .33f), kerb, false);
+                Box("Existing frontage side pilaster right " + i,
+                    new Vector3(x + 5.8f, 2.4f, -24.25f),
+                    new Vector3(.25f, 4.7f, .33f), kerb, false);
+                for (float yy = 7.0f; yy < heights[i] - .4f; yy += 3.2f)
+                {
+                    Box("Existing facade balcony slab " + i + " " + yy,
+                        new Vector3(x, yy, -24.53f),
+                        new Vector3(9.0f, .11f, .70f), kerb, false);
+                    for (int rail = -3; rail <= 3; rail++)
+                        Box("Existing facade rail " + i + " " + yy + " " + rail,
+                            new Vector3(x + rail * 1.2f, yy + .54f, -24.83f),
+                            new Vector3(.055f, 1.04f, .055f), darkMetal, false);
+                    Box("Existing facade balcony upper bar " + i + " " + yy,
+                        new Vector3(x, yy + 1.06f, -24.83f),
+                        new Vector3(8.8f, .06f, .07f), darkMetal, false);
+                }
+            }
         }
 
         private static void CreateStreetFurniture()
