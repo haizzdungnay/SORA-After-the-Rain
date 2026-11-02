@@ -32,6 +32,7 @@ namespace Sora.AfterTheRain.Demo
             root.SetParent(parent, false);
 
             CreatePalette();
+            MatchOriginalStreetMaterials(parent);
             CreateStreetGrid();
             CreateBuildingBlocks();
             DetailExistingCentralFacades();
@@ -133,6 +134,20 @@ namespace Sora.AfterTheRain.Demo
             light.intensity = intensity;
             light.range = range;
             light.shadows = LightShadows.None;
+        }
+
+        private static void MatchOriginalStreetMaterials(Transform parent)
+        {
+            // The central road/sidewalk must not visibly change texture at x=+/-40.
+            // Preserve the source geometry and colliders; only unify blockout surfaces.
+            foreach (string surface in new[] { "Rainy asphalt road", "Front sidewalk", "Across sidewalk" })
+            {
+                Transform existing = parent.Find(surface);
+                if (existing == null) continue;
+                Renderer renderer = existing.GetComponent<Renderer>();
+                if (renderer != null) renderer.sharedMaterial =
+                    surface == "Rainy asphalt road" ? asphalt : sidewalk;
+            }
         }
 
         private static void CreateStreetGrid()
