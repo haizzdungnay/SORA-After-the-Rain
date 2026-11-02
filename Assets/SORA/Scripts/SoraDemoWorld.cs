@@ -21,6 +21,8 @@ namespace Sora.AfterTheRain.Demo
             SetupCustomers();
             SetupCamera();
             SetupRain();
+            // Connected blockout, kept separate from the existing interactive core.
+            SoraNeighborhoodDistrict.Build(world);
         }
 
         private static Material Mat(Color c, float smoothness = 0.5f, bool emissive = false)
@@ -226,7 +228,7 @@ namespace Sora.AfterTheRain.Demo
             for (int i = -10; i <= 10; i++)
             {
                 Cube("Center road divider", new Vector3(i * 3.8f, -.043f, -15.5f), new Vector3(2.0f, .02f, .16f), yellowBlind, null, false);
-                Cube("Wet road reflection", new Vector3(i * 3.6f, -.040f, -12.5f), new Vector3(.18f, .008f, 3.2f), i % 2 == 0 ? neonCyan : neonRed, null, false);
+                // Neon reflection strips removed: district uses restrained puddle blockout.
             }
 
             // Pedestrian Zebra Crosswalk in front of Sora Mart
@@ -578,6 +580,8 @@ namespace Sora.AfterTheRain.Demo
             Shader shader = Shader.Find("Universal Render Pipeline/Particles/Unlit");
             if (shader == null) shader = Shader.Find("Particles/Standard Unlit");
             ps.Play();
+            // Move rain with the active twin so the larger district stays rainy.
+            go.AddComponent<SoraDistrictRainFollower>();
             if (shader != null)
             {
                 Material rainMaterial = new Material(shader);
