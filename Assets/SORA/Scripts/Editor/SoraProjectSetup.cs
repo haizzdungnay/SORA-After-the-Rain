@@ -38,9 +38,13 @@ namespace Sora.AfterTheRain.Demo.Editor
             EditorSettings.serializationMode = SerializationMode.ForceText;
             PlayerSettings.productName = "SORA: After the Rain";
             // Runtime materials use Shader.Find: retain these shaders in standalone builds.
-            var graphicsAssets = AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/GraphicsSettings.asset");
-            if (graphicsAssets.Length == 0) throw new InvalidOperationException("GraphicsSettings asset is unavailable.");
-            var settings = new SerializedObject(graphicsAssets[0]);
+            // ProjectSettings are not regular AssetDatabase assets. The supported
+            // GraphicsSettings accessor returns the Editor's live settings object.
+            var graphicsSettingsObject = GraphicsSettings.GetGraphicsSettings();
+            if (graphicsSettingsObject == null)
+                throw new InvalidOperationException("Unity GraphicsSettings object is unavailable.");
+            var settings = new SerializedObject(graphicsSettingsObject);
+            settings.Update();
             var shaders = settings.FindProperty("m_AlwaysIncludedShaders");
             if (shaders == null || !shaders.isArray) throw new InvalidOperationException("Cannot locate Always Included Shaders; review Graphics settings.");
             foreach (string name in new[] { "Universal Render Pipeline/Lit", "Universal Render Pipeline/Particles/Unlit" })
