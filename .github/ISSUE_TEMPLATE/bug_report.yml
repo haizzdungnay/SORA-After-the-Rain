@@ -1,0 +1,38 @@
+name: Bug report
+description: Report a reproducible source or Unity prototype issue
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: Include actual evidence and sanitized logs. Never attach credentials, license files or private saves.
+  - type: input
+    id: version
+    attributes:
+      label: Commit or tag
+      placeholder: v0.4.0-pre.1 or commit SHA
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Unity version, OS and GPU
+      placeholder: 6000.3.7f1 / Windows / GPU; or static-only
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Actual logs and screenshots
+      description: State NOT RUN when the report is based on source inspection only.

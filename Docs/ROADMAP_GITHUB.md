@@ -1,8 +1,8 @@
 # SORA short roadmap and acceptance gates (2026-11-02)
 
 ## Gate 0 — Repository bootstrap
-- [ ] Create PUBLIC repo under the owner's account.
-- [ ] Push the prepared source and GDD; run static-check CI.
+- [x] Create PUBLIC repo under the owner's account.
+- [x] Push the prepared source and GDD; run static-check CI.
 - [ ] Ensure Unity Editor 6000.3.7f1 & required modules are installed and licensed on a Windows PC.
 - [ ] Confirm Unity LFS policy and asset rights before adding binary models.
 
@@ -28,3 +28,9 @@
 - [ ] Record in-Editor FPS at chosen PC target and scene screenshot comparisons.
 
 No gate is declared complete by source existence alone.
+
+## Portfolio source milestone — v0.4.0-pre.1
+
+- English, Vietnamese and Japanese READMEs, original identity artwork, architecture and contribution/issue templates prepared.
+- Release notes and LinkedIn copy describe a source prototype with explicit Unity acceptance limits.
+- Next engineering milestone remains the first real Editor acceptance; repository presentation does not complete gameplay gates.

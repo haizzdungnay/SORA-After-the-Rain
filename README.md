@@ -1,58 +1,155 @@
-# SORA: After the Rain
+<p align="center"><img src="Docs/Media/sora-banner.png" alt="SORA: After the Rain — project identity artwork, not a gameplay screenshot" width="100%"></p>
 
-**Status:** pre-production / Unity interaction prototype, **not yet Editor-compiled**.  
-**Platform:** Windows PC first. **Unity:** `6000.3.7f1` (Unity 6.3 LTS), URP package `17.3.0`.  
-**Working language:** Vietnamese (design) / English (code identifiers).
+<h1 align="center">SORA: After the Rain</h1>
 
-## Concept
+<p align="center"><strong>Two lives. One convenience store. A new beginning in Tokyo.</strong></p>
 
-Tokyo slice-of-life / convenience-store management / narrative social simulation. Twin first-year university students **Tei Toshiharu (丁俊陽)** and **Tei Akiko (明子)** (both 18 at game start) have recently moved from the countryside to Tokyo. Both work part-time at a convenience store, hoping to pay bills and meet someone who could change their financial future. Romance/drama grows naturally out of customer interactions and workplace chores.
+<p align="center"><a href="README.md">English</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.ja.md">日本語</a></p>
 
-## What exists
+<p align="center"><a href="https://github.com/haizzdungnay/SORA-After-the-Rain/actions/workflows/sora-static-check.yml"><img src="https://github.com/haizzdungnay/SORA-After-the-Rain/actions/workflows/sora-static-check.yml/badge.svg?branch=main" alt="Offline source integrity CI"></a> <img src="https://img.shields.io/badge/Unity-6000.3.7f1-191c27?logo=unity&amp;logoColor=white" alt="Unity 6000.3.7f1"> <img src="https://img.shields.io/badge/C%23-URP%2017.3-526e9b" alt="C# and URP 17.3"> <img src="https://img.shields.io/badge/Stage-source%20prototype-cf9a68" alt="Source prototype"></p>
 
-- Two controllable placeholder characters and camera; swap with `Tab`.
-- Primitive convenience store/night street scene generator.
-- Early NPC/work logic, POS, inventory, dialogue, quicksave.
-- Smoke/build scripts and static structure validation.
+## Overview
 
-**Important:** This is a SOURCE prototype, not a tested playable `.exe`. It has NOT been compiled or visually reviewed in Unity Editor. It currently has primitive avatars (not production-quality anime models).
+**SORA: After the Rain** is an independent third-person convenience-store and life-simulation project set in a rainy Tokyo neighborhood. **Tei Toshiharu (丁俊陽)** and **Tei Akiko (明子)** are 18-year-old twins, newly arrived from the countryside for their first year of university. A shared part-time job becomes the setting for everyday work, customer relationships and gradually unfolding drama.
 
-## Quick start (Windows)
+The design centers on a simple tension: **keep the store running while making room for a life outside the shift.** The player can alternate between the twins while they share one store economy and develop separate customer relationships.
 
-1. Install Unity Hub and Unity Editor version **6000.3.7f1**; activate your personal Unity license using Hub.
-2. Clone: `git clone https://github.com/haizzdungnay/SORA-After-the-Rain.git`. Install Git LFS before adding art binaries.
-3. Add the cloned folder as a project in Unity Hub; open with the pinned version.
-4. In Unity, run **SORA > 0. Configure Prototype Project** to create URP assets/settings, then run **SORA > 1. Generate Demo Scene**, open `Assets/SORA/Scenes/SORA_Prototype.unity` and press Play.
-5. If Input issues arise, set **Active Input Handling** to **Both** or **Input Manager (Old)** as instructed in `README_START_HERE.md`.
-6. Run offline check `python Tools/validate_project.py`. This does not compile C#.
+**Project owner:** [Đinh Tuấn Dương / haizzdungnay](https://github.com/haizzdungnay) · AI-assisted development · Windows PC first, mobile later.
 
-See `README_START_HERE.md` for import troubleshooting, smoke test and Windows build scripts.
+> **Current milestone: `v0.4.0-pre.1` — source prototype.** Source structure CI passes. Unity compilation, EditMode execution, Play Mode and a Windows build have not yet been verified. This milestone ships source and documentation; there is no validated playable download. The banner is project identity artwork, not an in-game capture.
 
-## Repo layout
+[Design document](Docs/GAME_DESIGN_DOCUMENT_v0.4.md) · [Engineering overview](Docs/ARCHITECTURE.md) · [Roadmap](Docs/ROADMAP_GITHUB.md) · [Changelog](CHANGELOG.md) · [Portfolio notes](Docs/PORTFOLIO.md)
 
-```text
-Assets/SORA/Scripts/         Gameplay and Editor scene generator
-Packages/                   Unity package manifest
-ProjectSettings/            Unity version lock
-Docs/GAME_DESIGN_DOCUMENT_v0.4.md  Canonical narrative/design baseline
-Docs/CONTRIBUTING_AND_AI.md AI collaboration and branch conventions
-Docs/ROADMAP_GITHUB.md      Next tasks and acceptance gates
-Tools/                      Unity setup, smoke/build, structural checks
-.github/workflows/          Offline check + optional self-hosted Unity build
+## Gameplay direction
+
+1. Enter the shift and split attention between the two twins.
+2. Receive deliveries, restock shelves, count inventory and serve at the POS.
+3. Meet customers and make choices that shape each character's relationships.
+4. Reconcile the shift and carry progress into the wider life-simulation story.
+
+Steps 1–3 have limited prototype code; the complete shift loop, quests and branching story remain planned.
+
+## What is in the source
+
+| System | Current implementation | Acceptance |
+|---|---|---|
+| Dual protagonists | Two controllers; Tab swaps control without respawning; inactive twin wanders between work points | Editor verification pending |
+| Camera and interactions | Third-person orbit/zoom, obstacle cast and nearest-object prompts | Editor verification pending |
+| Store operations | Draft/confirm POS, one delivery, shelf transfers, stock count and shift summary | Integrity tests authored; not executed |
+| Social state | Three adult placeholder customers; separate familiarity/trust per twin | Integrity tests authored; not executed |
+| Save / load | Schema-1 JSON, store state, twin positions and relationship arrays | Prototype; atomic writes/migration pending |
+| Environment | Runtime-generated primitive store, street, lights and rain | Visual verification pending |
+| Engineering workflow | Asset GUIDs, three assemblies, static CI, manual Unity test/build scripts and agent guidance | Static checks verified |
+
+The inactive twin does not yet perform actual store tasks. Customer queues, a quest graph, production anime models, animation and a complete narrative are future work.
+
+## Engineering focus
+
+- **State continuity:** switch the controlled character while keeping shared cash and inventory coherent.
+- **POS draft boundaries:** a draft does not charge the customer; switching cancels the pending draft. A persistent invoice ledger is planned.
+- **Separate social progression:** relationships are indexed per character rather than shared between the twins.
+- **Repeatable setup:** a pinned Editor, URP setup/scene-generation entry points and local Windows scripts.
+- **Evidence-based delivery:** distinguish static validation from actual Editor, gameplay and build acceptance.
+
+## Current architecture
+
+```mermaid
+flowchart TD
+    Editor["Editor scene generator"] --> Core["SoraDemoCore"]
+    Core --> World["SoraDemoWorld"]
+    Core --> State["SoraSaveData: shared store + per-character relations"]
+    World --> Twins["Two SoraDemoCharacter controllers"]
+    World --> Interactions["Store objects + customer markers"]
+    World --> Camera["SoraThirdPersonCamera"]
+    Core -->|"select active character"| Twins
+    Core -->|"retarget on switch"| Camera
+    State -->|"JSON quicksave / load"| Disk["Local save file"]
 ```
 
-## Development policy
+This diagram describes the existing prototype. `SoraDemoCore` currently owns several responsibilities; modular service boundaries are a roadmap item, not a claim about the current code. See [architecture and tradeoffs](Docs/ARCHITECTURE.md).
 
-- `main`: stable reviewed snapshots only; prototype changes on `feature/*` branches and pull requests.
-- Do not commit Unity generated folders (`Library`, `Temp`, `Logs`, `Builds`) or credentials, licensing data or unlicensed third-party assets.
-- For binary assets (FBX/BLEND/PNG/PSD/WAV/video), use Git LFS after installing it (`git lfs install`), with the tracking setup described in `Docs/CONTRIBUTING_AND_AI.md`.
-- AI-generated code/model drafts require Unity import, visual review, license verification and acceptance tests before being treated as complete.
+## Technology
 
-## Quality gate
+| Layer | Technology |
+|---|---|
+| Engine | Unity 6.3 LTS · `6000.3.7f1` |
+| Language / rendering | C# · Universal Render Pipeline `17.3.0` |
+| Initial platform | Windows x64 |
+| Controls / prototype UI | CharacterController · legacy Input Manager · IMGUI |
+| Persistence | Versioned JSON data with Unity JsonUtility |
+| Validation | Python static checks · Unity Test Framework `1.6.0` |
+| Delivery | GitHub Actions · optional licensed Windows runner · Git LFS |
 
-Offline structure validation runs without Unity. Five EditMode tests are supplied for POS, 100 character swaps, delivery/inventory and separate relations; they have NOT been run in Unity here. Compile, EditMode, Play Mode and Windows build acceptance are pending. See [import report](Docs/IMPORT_REPORT_2026-11-02.md) and [CI setup](Docs/CI_SETUP.md).
+## Run locally
 
-The repo is PUBLIC at the owner's request. Public visibility does not grant an open-source license; no redistribution license has been selected. No third-party artwork is included.
+Install Git, Python 3, Unity Hub and **Unity Editor `6000.3.7f1`**, with a valid license and Windows build support where applicable. Install Git LFS before adding art binaries.
 
+```powershell
+git clone https://github.com/haizzdungnay/SORA-After-the-Rain.git
+cd SORA-After-the-Rain
+python Tools/validate_project.py
+```
 
-Project naming and decisions: [Docs/DECISIONS_2026-11-02.md](Docs/DECISIONS_2026-11-02.md).
+1. In Unity Hub, choose **Add project from disk** and select the cloned root.
+2. Open with the pinned Editor and wait for package import.
+3. Run **SORA → 0. Configure Prototype Project**, then **SORA → 1. Generate Demo Scene**.
+4. Open `Assets/SORA/Scenes/SORA_Prototype.unity` and press **Play**.
+5. If input fails, select **Input Manager (Old)** or **Both** under Active Input Handling.
+
+The scene and URP assets are generated by the Editor; they are not shipped as a previously verified scene. Commit generated assets, their `.meta` files, settings and `packages-lock.json` after the first successful Editor review. Detailed troubleshooting: [setup guide](README_START_HERE.md).
+
+## Controls
+
+| Input | Action |
+|---|---|
+| WASD / Shift | Walk / run |
+| Tab | Switch the controlled twin |
+| E | Interact; scan / confirm a POS sale |
+| Right mouse + movement / wheel | Orbit / zoom camera |
+| 1 / 2 / 3 | Dialogue choices |
+| F5 / F9 / Esc | Quicksave / load / close or cancel |
+
+## Validation and builds
+
+| Check | Status at this milestone |
+|---|---|
+| Offline structure, manifest, metadata/GUID and common hygiene checks | Passed locally and in GitHub Actions |
+| Fresh Git clone and source-tree comparison | Verified for the initial import |
+| Five EditMode tests | Authored; execution pending |
+| Unity import/compile, Play Mode, rendering and Windows x64 build | Not run |
+
+Close the Editor GUI before these local batch commands:
+
+```powershell
+./Tools/Test-SORA.ps1
+./Tools/Build-SORA.ps1 -SmokeOnly
+./Tools/Build-SORA.ps1
+```
+
+An optional `-UnityExe` parameter selects a non-default Editor path. A successful future build produces `Builds/Windows/SORA_After_the_Rain.exe` and accompanying data. The licensed CI workflow is manual, opt-in and restricted to trusted `main`; it has not been dispatched. See [CI setup](Docs/CI_SETUP.md) and the [manual QA checklist](Docs/TEST_CHECKLIST.md).
+
+## Roadmap
+
+- **Next: Editor acceptance** — resolve import/compile issues, execute tests, capture real gameplay and produce the first validated Windows build.
+- **Store reliability** — invoice IDs, transaction idempotency, validated atomic saves and modular services.
+- **A living store** — NPC work, customer queues, store/social quests and a complete shift loop.
+- **Visual production** — licensed anime characters, animation, authored environment, rain/lighting and PC profiling.
+
+## Repository guide
+
+| Path | Purpose |
+|---|---|
+| `Assets/SORA/Scripts/` | Runtime prototype and its assembly |
+| `Assets/SORA/Scripts/Editor/` | URP setup, scene generation and build automation |
+| `Assets/SORA/Tests/Editor/` | Five EditMode integrity tests |
+| `Packages/`, `ProjectSettings/` | Pinned packages, Editor and input configuration |
+| `Tools/`, `.github/` | Setup, validation, CI and contribution templates |
+| `Docs/` | Design baseline, architecture, QA, roadmap and portfolio notes |
+
+## Contributions, credits and rights
+
+Start with [CONTRIBUTING.md](CONTRIBUTING.md). Code features use feature branches and review; agents must follow [AGENTS.md](AGENTS.md). Bug reports should include the Editor version, reproduction steps and actual logs. Never upload credentials, Unity license files or assets without redistribution rights.
+
+The owner supplied the v0.4 prototype baseline; AI assists with implementation drafts, documentation and workflow preparation. Human review and real Unity acceptance remain required. No third-party game assets or reference-video footage are distributed here. Asset provenance is tracked in [ASSET_REGISTER.csv](Docs/ASSET_REGISTER.csv).
+
+**No project-wide redistribution license has been selected.** Public repository visibility is not an open-source license grant. Package dependencies keep their own licenses.

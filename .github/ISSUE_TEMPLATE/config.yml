@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Setup and QA guide
+    url: https://github.com/haizzdungnay/SORA-After-the-Rain/blob/main/README_START_HERE.md
+    about: Read the pinned Editor setup and current verification limits before filing an issue.
