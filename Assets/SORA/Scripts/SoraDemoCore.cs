@@ -80,7 +80,7 @@ namespace Sora.AfterTheRain.Demo
 
         private void Update()
         {
-            if (!initialized) return;
+            if (!initialized || ActiveCharacter == null) return;
             if (Input.GetKeyDown(KeyCode.F5)) Save();
             if (Input.GetKeyDown(KeyCode.F9)) Load();
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -271,7 +271,7 @@ namespace Sora.AfterTheRain.Demo
 
         private void OnGUI()
         {
-            if (!initialized) return;
+            if (!initialized || ActiveCharacter == null) return;
             InitializeStyles();
             GUI.Box(new Rect(12, 12, 440, 177), GUIContent.none);
             GUI.Label(new Rect(24, 17, 425, 29), "SORA: AFTER THE RAIN | PROTOTYPE 0.1", titleStyle);
