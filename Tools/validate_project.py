@@ -26,6 +26,7 @@ required = [
     ".github/pull_request_template.md",
     ".github/workflows/sora-static-check.yml",
     ".github/workflows/sora-local-runner-build.yml",
+    ".github/workflows/sora-gameci-build.yml",
 ]
 for rel in required:
     require((ROOT / rel).is_file(), "missing " + rel)

@@ -1,0 +1,155 @@
+name: SORA GameCI Automated Unity Test and Windows Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Task to run'
+        type: choice
+        options:
+          - 'all (EditMode tests + Windows x64 build)'
+          - 'editmode (EditMode tests only)'
+          - 'windows-build (Windows x64 build only)'
+        default: 'all (EditMode tests + Windows x64 build)'
+  push:
+    branches: [main, develop]
+    paths:
+      - 'Assets/**'
+      - 'Packages/**'
+      - 'ProjectSettings/**'
+      - '.github/workflows/sora-gameci-build.yml'
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - 'Assets/**'
+      - 'Packages/**'
+      - 'ProjectSettings/**'
+
+concurrency:
+  group: sora-gameci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-license:
+    name: Check Unity License Availability
+    runs-on: ubuntu-latest
+    outputs:
+      has_license: ${{ steps.check.outputs.has_license }}
+    steps:
+      - name: Verify License Secret
+        id: check
+        shell: bash
+        run: |
+          if [ -n "${{ secrets.UNITY_LICENSE }}" ] || [ -n "${{ secrets.UNITY_EMAIL }}" ]; then
+            echo "has_license=true" >> "$GITHUB_OUTPUT"
+            echo "Unity license secret is configured."
+          else
+            echo "has_license=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Unity License Required::Repository secret UNITY_LICENSE is not configured. Automated Unity build and test runner require a valid Unity Personal or Pro license. See Docs/CI_SETUP.md for 1-step setup."
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              echo "Manual dispatch requested, but UNITY_LICENSE secret is missing."
+              exit 1
+            fi
+          fi
+
+  test:
+    name: Unity EditMode Tests
+    needs: check-license
+    if: needs.check-license.outputs.has_license == 'true' && (github.event_name != 'workflow_dispatch' || inputs.mode != 'windows-build (Windows x64 build only)')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Restore / Cache Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-EditMode-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-EditMode-
+
+      - name: Run EditMode Tests
+        uses: game-ci/unity-test-runner@v4
+        id: testRunner
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: .
+          unityVersion: 6000.3.7f1
+          testMode: EditMode
+          artifactsPath: TestResults
+          checkName: Unity EditMode Test Results
+
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: SORA-TestResults
+          path: TestResults
+          if-no-files-found: warn
+
+  build-windows:
+    name: Build Windows x64 Standalone
+    needs: [check-license, test]
+    if: always() && needs.check-license.outputs.has_license == 'true' && (needs.test.result == 'success' || needs.test.result == 'skipped') && (github.event_name != 'workflow_dispatch' || inputs.mode != 'editmode (EditMode tests only)')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Restore / Cache Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-StandaloneWindows64-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-StandaloneWindows64-
+
+      - name: Build Standalone Windows x64
+        uses: game-ci/unity-builder@v4
+        id: builder
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: .
+          unityVersion: 6000.3.7f1
+          targetPlatform: StandaloneWindows64
+          buildMethod: Sora.AfterTheRain.Demo.Editor.SoraDevAutomation.BuildWindows
+          buildsPath: Builds
+          buildName: Windows
+
+      - name: Verify Build Artifacts
+        shell: bash
+        run: |
+          if [ -f "Builds/Windows/SORA_After_the_Rain.exe" ]; then
+            echo "Windows executable located in Builds/Windows/:"
+            ls -la Builds/Windows/
+          elif [ -f "build/StandaloneWindows64/SORA_After_the_Rain.exe" ]; then
+            mkdir -p Builds/Windows
+            cp -r build/StandaloneWindows64/* Builds/Windows/
+            echo "Copied build from build/StandaloneWindows64 to Builds/Windows/"
+          elif [ -f "build/StandaloneWindows64/Windows.exe" ]; then
+            mkdir -p Builds/Windows
+            cp -r build/StandaloneWindows64/* Builds/Windows/
+            echo "Copied build from build/StandaloneWindows64 to Builds/Windows/"
+          else
+            echo "Build executable not found in standard directories!"
+            find Builds/ build/ -maxdepth 3 || true
+            exit 1
+          fi
+
+      - name: Upload Windows Standalone Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SORA-Windows-x64
+          path: Builds/Windows/
+          if-no-files-found: error
