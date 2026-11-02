@@ -36,6 +36,7 @@ namespace Sora.AfterTheRain.Demo
             CreateStreetGrid();
             CreateBuildingBlocks();
             DetailExistingCentralFacades();
+            CreateGuardrails();
             CreateStreetFurniture();
             CreateWetDetails();
             CreateStoreMerchandising();
@@ -400,6 +401,30 @@ namespace Sora.AfterTheRain.Demo
                     Box("Existing facade balcony upper bar " + i + " " + yy,
                         new Vector3(x, yy + 1.06f, -24.83f),
                         new Vector3(8.8f, .06f, .07f), darkMetal, false);
+                }
+            }
+        }
+
+        private static void CreateGuardrails()
+        {
+            // Match the video's rail-protected konbini sidewalk while preserving
+            // zebra-crossing openings at the side-road intersections.
+            foreach (int side in new[] { -1, 1 })
+            {
+                foreach (float xMagnitude in new[] { 59f, 66f, 73f, 80f })
+                {
+                    float x = side * xMagnitude;
+                    foreach (float z in new[] { -8.7f, -22.3f })
+                    {
+                        Box("Tokyo footpath guardrail upper " + x + " " + z,
+                            new Vector3(x, .87f, z), new Vector3(4.6f, .075f, .08f), kerb);
+                        Box("Tokyo footpath guardrail lower " + x + " " + z,
+                            new Vector3(x, .40f, z), new Vector3(4.6f, .06f, .07f), kerb);
+                        foreach (float dx in new[] { -2.1f, 2.1f })
+                            Box("Tokyo footpath guardrail post " + x + " " + z + " " + dx,
+                                new Vector3(x + dx, .48f, z),
+                                new Vector3(.10f, .95f, .11f), kerb);
+                    }
                 }
             }
         }
