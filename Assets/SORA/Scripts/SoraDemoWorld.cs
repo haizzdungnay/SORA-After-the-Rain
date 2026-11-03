@@ -4,6 +4,9 @@ namespace Sora.AfterTheRain.Demo
 {
     public static class SoraDemoWorld
     {
+        /// <summary>Resources path of Akiko's model (Assets/SORA/Characters/Resources/TeiAkiko.prefab).</summary>
+        public const string AkikoModelResource = "TeiAkiko";
+
         private static SoraDemoCore game;
         private static Transform world;
         private static Material tiles, walls, metal, warmWhite, darkGlass, road, pavement, blue, coral, pink, green, gold, skin, hair;
@@ -399,7 +402,7 @@ namespace Sora.AfterTheRain.Demo
             // Toshiharu: 18-year-old male twin, blue shirt, dark denim jeans, sneakers, short spiky hair
             SpawnToshiharu(new Vector3(-1.0f, 0f, -2.5f));
 
-            // Akiko: 18-year-old female twin, pink cardigan, cute pleated skirt, twin-tail hair ribbons, school loafers
+            // Akiko: 18-year-old female twin; Blender model (cream sweater, navy pleated skirt, braid, bows, laced boots)
             SpawnAkiko(new Vector3(1.2f, 0f, -2.5f));
         }
 
@@ -470,6 +473,18 @@ namespace Sora.AfterTheRain.Demo
             cc.stepOffset = .25f;
             cc.skinWidth = .04f;
 
+            // Imported Blender model (static, no rig yet); primitive blockout stays as fallback.
+            GameObject model = Resources.Load<GameObject>(AkikoModelResource);
+            if (model != null) Object.Instantiate(model, root.transform, false).name = "Tei Akiko Model";
+            else BuildAkikoBlockout(pos, root);
+
+            var character = root.AddComponent<SoraDemoCharacter>();
+            character.DisplayName = "Tei Akiko";
+            game.RegisterCharacter(character);
+        }
+
+        private static void BuildAkikoBlockout(Vector3 pos, GameObject root)
+        {
             // --- Head & Face ---
             Sphere("Girl Head", pos + new Vector3(0f, 1.50f, 0f), new Vector3(.29f, .31f, .29f), skin, root.transform);
             // Cute Anime Eyes with sparkle highlights
@@ -514,10 +529,6 @@ namespace Sora.AfterTheRain.Demo
                 // School Loafers
                 Cube("Girl Loafer " + side, pos + new Vector3(x, .07f, .03f), new Vector3(.12f, .10f, .22f), wood, root.transform, false);
             }
-
-            var character = root.AddComponent<SoraDemoCharacter>();
-            character.DisplayName = "Tei Akiko";
-            game.RegisterCharacter(character);
         }
 
         private static void SetupCustomers()
