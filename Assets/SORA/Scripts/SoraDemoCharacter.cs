@@ -6,7 +6,9 @@ namespace Sora.AfterTheRain.Demo
     public sealed class SoraDemoCharacter : MonoBehaviour
     {
         public string DisplayName;
+        private static readonly int SpeedHash = Animator.StringToHash("Speed");
         private CharacterController controller;
+        private Animator animator;
         private bool isPlayer;
         private Vector3 aiTarget;
         private float aiRetargetAt;
@@ -18,7 +20,11 @@ namespace Sora.AfterTheRain.Demo
             new Vector3(1.2f, 0, -0.7f), new Vector3(-1.8f, 0, -2.2f)
         };
 
-        private void Awake() { controller = GetComponent<CharacterController>(); }
+        private void Awake()
+        {
+            controller = GetComponent<CharacterController>();
+            animator = GetComponentInChildren<Animator>(); // rigged models only; blockouts have none
+        }
         public void SetPlayerControlled(bool enabled) { isPlayer = enabled; aiRetargetAt = 0; }
 
         private void Update()
@@ -58,6 +64,12 @@ namespace Sora.AfterTheRain.Demo
             if (controller.isGrounded && fallVelocity.y < 0) fallVelocity.y = -1.2f;
             fallVelocity.y += Physics.gravity.y * Time.deltaTime;
             controller.Move((intended * speed + fallVelocity) * Time.deltaTime);
+            if (animator != null)
+            {
+                Vector3 moved = controller.velocity; // actual motion: no running on the spot against a wall
+                moved.y = 0;
+                animator.SetFloat(SpeedHash, moved.magnitude, 0.1f, Time.deltaTime);
+            }
         }
     }
 
