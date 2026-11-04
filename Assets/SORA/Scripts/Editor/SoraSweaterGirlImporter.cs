@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -12,13 +13,15 @@ namespace Sora.AfterTheRain.Demo.Editor
 {
     /// <summary>
     /// Imports Tei Akiko's procedural Blender model (Tools/Blender/build_sweater_girl.py):
-    /// builds URP Lit materials, remaps them onto the FBX and saves the Resources prefab SoraDemoWorld loads.
+    /// builds URP Lit materials, remaps them onto the FBX, sets up the Humanoid rig with looping Idle/Walk/Run and a
+    /// Speed-driven locomotion controller, then saves the Resources prefab SoraDemoWorld loads.
     /// Batch: -executeMethod Sora.AfterTheRain.Demo.Editor.SoraSweaterGirlImporter.Import
     /// </summary>
     public static class SoraSweaterGirlImporter
     {
         const string Dir = "Assets/SORA/Characters/SweaterGirl";
         const string Fbx = Dir + "/sweater_girl.fbx";
+        const string Controller = Dir + "/TeiAkiko.controller";
         const string Prefab = "Assets/SORA/Characters/Resources/" + SoraDemoWorld.AkikoModelResource + ".prefab";
 
         // Colours mirror make_materials() in the Blender script (sRGB hex); textured entries use a map.
@@ -42,7 +45,30 @@ namespace Sora.AfterTheRain.Demo.Editor
             var importer = (ModelImporter)AssetImporter.GetAtPath(Fbx)
                 ?? throw new Exception("SORA: FBX missing: " + Fbx);
             importer.materialImportMode = ModelImporterMaterialImportMode.ImportStandard;
+            importer.bakeAxisConversion = false; // true turns her 180° (FBX front axis is -Z from Blender)
+            importer.animationType = ModelImporterAnimationType.Human;
+            importer.importAnimation = true;
+            // Drop any saved description first: its skeleton rest pose would outlive FBX/axis changes and mirror the retarget.
+            importer.humanDescription = new HumanDescription();
             importer.SaveAndReimport();
+            // Bones already carry Humanoid names; map them explicitly (auto-mapping skips Chest and drops its motion).
+            var hd = importer.humanDescription;
+            if (hd.skeleton == null || hd.skeleton.Length == 0) throw new Exception("SORA: Humanoid import produced no skeleton.");
+            var bones = new HashSet<string>(hd.skeleton.Select(s => s.name));
+            hd.human = HumanTrait.BoneName.Where(bones.Contains).Select(n => new HumanBone
+                { boneName = n, humanName = n, limit = new HumanLimit { useDefaultValues = true } }).ToArray();
+            importer.humanDescription = hd;
+            // Blender takes are "Armature|Idle"; clips loop in place and keep the scripted hip bob.
+            importer.clipAnimations = importer.defaultClipAnimations.Select(c =>
+            {
+                c.name = c.takeName.Split('|').Last();
+                c.loopTime = c.loopPose = true;
+                c.lockRootRotation = c.lockRootHeightY = c.lockRootPositionXZ = true;
+                c.keepOriginalOrientation = c.keepOriginalPositionY = c.keepOriginalPositionXZ = true;
+                return c;
+            }).ToArray();
+            importer.SaveAndReimport();
+            if (importer.clipAnimations.Length != 3) throw new Exception("SORA: expected Idle/Walk/Run takes in " + Fbx);
 
             var shader = Shader.Find("Universal Render Pipeline/Lit")
                 ?? throw new Exception("SORA: URP Lit shader not found; is URP installed?");
@@ -75,11 +101,44 @@ namespace Sora.AfterTheRain.Demo.Editor
             var model = AssetDatabase.LoadAssetAtPath<GameObject>(Fbx);
             var instance = (GameObject)PrefabUtility.InstantiatePrefab(model);
             instance.name = "TeiAkiko";
+            var animator = instance.GetComponent<Animator>() ?? throw new Exception("SORA: Humanoid import added no Animator.");
+            if (animator.avatar == null || !animator.avatar.isHuman) throw new Exception("SORA: Humanoid avatar invalid; check bone names.");
+            animator.runtimeAnimatorController = BuildController();
+            animator.applyRootMotion = false;
             Directory.CreateDirectory(Path.GetDirectoryName(Prefab));
             PrefabUtility.SaveAsPrefabAsset(instance, Prefab);
             UnityEngine.Object.DestroyImmediate(instance);
             AssetDatabase.Refresh();
             Debug.Log("SORA: Tei Akiko model imported: " + names.Count + " materials, prefab " + Prefab);
+        }
+
+        /// <summary>1D blend on Speed (m/s). Time scales match foot travel to SoraDemoCharacter speeds (AI 1.25, walk 3.05,
+        /// Shift 5.0); the Blender gait covers 1.16 m/s (Walk) and 2.42 m/s (Run) at 1x, so the sprint slides a little.</summary>
+        static AnimatorController BuildController()
+        {
+            var clips = AssetDatabase.LoadAllAssetsAtPath(Fbx).OfType<AnimationClip>()
+                .Where(c => !c.name.StartsWith("__preview__")).ToDictionary(c => c.name);
+            // Rebuild in place so the controller GUID the prefab references stays stable across re-imports.
+            var ctrl = AssetDatabase.LoadAssetAtPath<AnimatorController>(Controller)
+                ?? AnimatorController.CreateAnimatorControllerAtPath(Controller);
+            var sm = ctrl.layers[0].stateMachine;
+            foreach (var st in sm.states) sm.RemoveState(st.state);
+            foreach (var bt in AssetDatabase.LoadAllAssetsAtPath(Controller).OfType<BlendTree>()) UnityEngine.Object.DestroyImmediate(bt, true);
+            foreach (var p in ctrl.parameters) ctrl.RemoveParameter(p);
+            ctrl.AddParameter("Speed", AnimatorControllerParameterType.Float);
+            ctrl.CreateBlendTreeInController("Locomotion", out BlendTree tree);
+            tree.blendParameter = "Speed";
+            tree.useAutomaticThresholds = false;
+            tree.children = new[]
+            {
+                new ChildMotion { motion = clips["Idle"], threshold = 0f, timeScale = 1f },
+                new ChildMotion { motion = clips["Walk"], threshold = 1.25f, timeScale = 1.25f / 1.16f },
+                new ChildMotion { motion = clips["Run"], threshold = 3.05f, timeScale = 3.05f / 2.42f },
+                new ChildMotion { motion = clips["Run"], threshold = 5.0f, timeScale = 1.6f },
+            };
+            EditorUtility.SetDirty(ctrl);
+            AssetDatabase.SaveAssets();
+            return ctrl;
         }
 
         /// <summary>Renders front/back previews to Artifacts/Character/unity_preview_*.png (needs a GPU; no -nographics).</summary>
@@ -160,6 +219,20 @@ namespace Sora.AfterTheRain.Demo.Editor
                         cam.transform.position = focus + view.Item2 + Vector3.up * 0.25f;
                         cam.transform.LookAt(focus);
                         Shot(cam, 900, 1100, "unity_ingame_" + view.Item1);
+                    }
+                    // Mid-stride proof: hold the controller still and pin the blend tree to AI walk / player jog speed.
+                    akiko.GetComponent<SoraDemoCharacter>().enabled = false;
+                    var animator = akiko.GetComponentInChildren<Animator>();
+                    // Skinning normally runs once per player-loop frame, not per cam.Render().
+                    foreach (var smr in akiko.GetComponentsInChildren<SkinnedMeshRenderer>()) smr.forceMatrixRecalculationPerRender = true;
+                    cam.transform.position = focus + t.right * 3.4f + Vector3.up * 0.25f;
+                    cam.transform.LookAt(focus);
+                    foreach (var gait in new[] { ("walk", 1.25f), ("run", 3.05f) })
+                    {
+                        animator.SetFloat("Speed", gait.Item2);
+                        animator.Play("Locomotion", 0, 0.25f); // left leg at full forward swing
+                        animator.Update(0f);
+                        Shot(cam, 900, 1100, "unity_ingame_" + gait.Item1);
                     }
                     Debug.Log("SORA: in-game capture done.");
                 }

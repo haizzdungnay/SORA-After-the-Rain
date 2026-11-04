@@ -4,8 +4,10 @@ Headless:
   blender -b --factory-startup --python Tools/Blender/build_sweater_girl.py -- <out_dir>
 Writes <out_dir>/sweater_girl.{fbx,glb,blend}, face/hair textures and toon preview sheets.
 Character faces -Y (Blender front view), 1 unit = 1 m, ~1.55 m tall.
+Unity Humanoid bone names; skin weights come from body regions; Idle/Walk/Run are scripted in-place loops.
 
-ponytail: static A-pose meshes only (no armature, blendshapes or LODs); add a rig before animation.
+ponytail: rigid hair/skirt (no spring bones or cloth), no IK, blendshapes or LODs; boots can poke through the
+long back hair while running. Add secondary motion when gameplay needs close-ups.
 """
 import math
 import os
@@ -15,6 +17,9 @@ import bmesh
 import bpy
 import numpy as np
 from mathutils import Vector
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sweater_girl_rig as rig  # noqa: E402  (Blender runs this file as a script)
 
 OUT = os.path.abspath(sys.argv[sys.argv.index('--') + 1] if '--' in sys.argv else 'Artifacts/Character')
 RNG = np.random.default_rng(7)
@@ -33,9 +38,11 @@ LEG = [(0.04, .066, .0, .030), (0.10, .064, .0, .028), (0.16, .062, .002, .030),
        (0.31, .057, .010, .044), (0.37, .054, .006, .042), (0.44, .052, -.004, .039), (0.51, .058, -.004, .050),
        (0.59, .064, -.002, .058), (0.67, .070, .0, .066), (0.75, .075, .0, .072)]
 BAND_Z = (0.585, 0.600)  # stocking top band
-ROOT = None
+BOOT_YAW = math.radians(8)  # boots toe out
+ROOT = ARM = None
 OUTLINED = []
 MAT_INFO = {}
+TAGS = {}  # object name -> per-vertex part tag (Sweater: 1 = sleeve)
 
 
 # ---------------------------------------------------------------- math helpers
@@ -175,16 +182,18 @@ class Parts:
     """Accumulates several primitives into one mesh object."""
 
     def __init__(self):
-        self.v, self.f, self.m, self.n = [], [], [], 0
+        self.v, self.f, self.m, self.t, self.n = [], [], [], [], 0
 
-    def add(self, v, f, mat=0):
+    def add(self, v, f, mat=0, tag=0):
         self.v.append(np.asarray(v, float))
         self.f += [tuple(i + self.n for i in face) for face in f]
         self.m += [mat] * len(f) if np.isscalar(mat) else list(mat)
+        self.t += [tag] * len(v)
         self.n += len(v)
 
     def build(self, name, mats, uv=None, **kw):
         v = np.concatenate(self.v)
+        TAGS[name] = np.array(self.t)
         return make_obj(name, v, self.f, mats, self.m, uv(v) if uv else None, **kw)
 
 
@@ -375,7 +384,7 @@ def build_head(mats):
     v = v * HR + HC
     u = (v[:, 0] - FACE_X0) / FACE_SPAN
     w = np.where(v[:, 1] > 0, 1.0, (v[:, 2] - (FACE_Z1 - FACE_SPAN)) / FACE_SPAN)  # back of head -> plain skin row
-    make_obj('Head', v, f, [mats['face']], uv=np.column_stack([u, w]), outline=0.0025)
+    make_obj('Face', v, f, [mats['face']], uv=np.column_stack([u, w]), outline=0.0025)
 
 
 def arm_frame():
@@ -443,7 +452,7 @@ def build_sweater(mats):
                   (1.256, .063), (1.24, .056))], 132))
     for s in (1, -1):
         v, f = sleeve()
-        p.add(v * (s, 1, 1), f)
+        p.add(v * (s, 1, 1), f, tag=1)
     p.build('Sweater', [mats['sweater']], outline=0.003)
 
 
@@ -475,7 +484,7 @@ def boot():
 
 def build_boots(mats):
     p = Parts()
-    yaw = math.radians(8)
+    yaw = BOOT_YAW
     rot = np.array([[math.cos(yaw), -math.sin(yaw), 0], [math.sin(yaw), math.cos(yaw), 0], [0, 0, 1]])
     for s in (1, -1):
         for v, f, m in boot():
@@ -645,7 +654,7 @@ def build_accessories(mats):
 # ---------------------------------------------------------------- export / preview
 def check_meshes():
     tris = 0
-    for ob in ROOT.children:
+    for ob in (o for o in ROOT.children_recursive if o.type == 'MESH'):
         co = np.empty(len(ob.data.vertices) * 3)
         ob.data.vertices.foreach_get('co', co)
         assert np.isfinite(co).all(), ob.name
@@ -657,9 +666,10 @@ def check_meshes():
 
 
 def export():
-    bpy.ops.export_scene.fbx(filepath=os.path.join(OUT, 'sweater_girl.fbx'), object_types={'EMPTY', 'MESH'},
-                             apply_scale_options='FBX_SCALE_UNITS', bake_space_transform=True,
-                             mesh_smooth_type='FACE', path_mode='COPY', embed_textures=True, add_leaf_bones=False)
+    bpy.ops.export_scene.fbx(filepath=os.path.join(OUT, 'sweater_girl.fbx'), object_types={'EMPTY', 'MESH', 'ARMATURE'},
+                             apply_scale_options='FBX_SCALE_UNITS', mesh_smooth_type='FACE', path_mode='COPY',
+                             embed_textures=True, add_leaf_bones=False, bake_anim=True, bake_anim_use_all_actions=True,
+                             bake_anim_use_nla_strips=False, bake_anim_force_startend_keying=True, bake_anim_simplify_factor=0)
     bpy.ops.export_scene.gltf(filepath=os.path.join(OUT, 'sweater_girl.glb'), export_format='GLB')
 
 
@@ -714,7 +724,7 @@ def add_outlines():
         for _ in range(k):
             ob.data.materials.append(m)
         mod = ob.modifiers.new('Outline', 'SOLIDIFY')
-        mod.thickness, mod.offset, mod.use_flip_normals, mod.use_even_offset, mod.material_offset = th, 1.0, True, True, k
+        mod.thickness, mod.offset, mod.use_flip_normals, mod.material_offset = th, 1.0, True, k  # even offset spikes at bent joints
 
 
 def setup_render():
@@ -757,7 +767,10 @@ def render_sheet(sc, cam_ob, name, views, ortho, cam_z, res):
     cam_ob.location = (0, -6, cam_z)
     sc.render.resolution_x, sc.render.resolution_y = res
     tiles = []
-    for view, rot in views:
+    for view, rot, *pose in views:  # optional pose: (action, frame)
+        if pose:
+            ARM.animation_data.action = bpy.data.actions[pose[0][0]]
+            bpy.context.scene.frame_set(pose[0][1])
         ROOT.rotation_euler = (0, 0, math.radians(rot))
         path = os.path.join(OUT, f'render_{view}.png')
         sc.render.filepath = path
@@ -775,7 +788,7 @@ def render_sheet(sc, cam_ob, name, views, ortho, cam_z, res):
 
 
 def main():
-    global ROOT
+    global ROOT, ARM
     os.makedirs(OUT, exist_ok=True)
     for ob in list(bpy.data.objects):
         bpy.data.objects.remove(ob)
@@ -784,6 +797,8 @@ def main():
     mats = make_materials(save_image('sg_face', paint_face()), save_image('sg_hair_gradient', paint_hair_gradient()))
     for build in (build_head, build_body, build_sweater, build_skirt, build_boots, build_hair, build_accessories):
         build(mats)
+    ARM = rig.build(ROOT, TAGS, ARM_A, ARM_B, BOOT_YAW)
+    rig.make_actions(ARM)
     check_meshes()
     export()
     toonify()
@@ -791,6 +806,10 @@ def main():
     sc, cam_ob = setup_render()
     render_sheet(sc, cam_ob, 'sheet_body', [('front', 0), ('left', -90), ('right', 90), ('back', 180)], 1.78, 0.82, (700, 1100))
     render_sheet(sc, cam_ob, 'sheet_head', [('head_front', 0), ('head_left', -90), ('head_34', -35), ('head_back', 180)], 0.46, 1.40, (700, 700))
+    render_sheet(sc, cam_ob, 'sheet_motion', [(f'{a}_{f}', -90, (a, f)) for a, f in
+                                              (('Walk', 1), ('Walk', 9), ('Run', 1), ('Run', 6))] +
+                 [('run_front', 0, ('Run', 6))], 1.78, 0.82, (700, 1100))
+    ARM.animation_data.action = None
     bpy.ops.wm.save_as_mainfile(filepath=os.path.join(OUT, 'sweater_girl.blend'))
 
 

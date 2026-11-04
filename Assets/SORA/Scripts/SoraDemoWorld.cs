@@ -473,7 +473,7 @@ namespace Sora.AfterTheRain.Demo
             cc.stepOffset = .25f;
             cc.skinWidth = .04f;
 
-            // Imported Blender model (static, no rig yet); primitive blockout stays as fallback.
+            // Imported rigged Blender model (Idle/Walk/Run driven by SoraDemoCharacter); primitive blockout stays as fallback.
             GameObject model = Resources.Load<GameObject>(AkikoModelResource);
             if (model != null) Object.Instantiate(model, root.transform, false).name = "Tei Akiko Model";
             else BuildAkikoBlockout(pos, root);
