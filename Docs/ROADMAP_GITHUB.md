@@ -1,5 +1,20 @@
 # SORA short roadmap and acceptance gates (2026-11-02)
 
+## Active environment plan — 2026-11-05
+
+The owner requested a phased **exterior-only** street rebuild using AFX/CGMotion's *Japanese street at night* as the primary visual reference. Follow [the detailed plan](STREET_EXTERIOR_REBUILD_PLAN.md), [work packages](STREET_EXTERIOR_WORK_PACKAGES.csv) and [session guide](STREET_EXTERIOR_SESSION_GUIDE.md).
+
+| Order | Milestone | Status |
+|---|---|---|
+| G0–G1 | Verify the actual reference/rights, inventory storefronts, then review the reference-based layout | Planned; full model inspection pending |
+| G2–G3 | Author a staging scene and finish a contiguous sample segment | Planned |
+| G4–G5 | Finish SORA MART exterior and every remaining storefront in small work packages | Planned |
+| G6–G8 | Join the full street, complete rain/night lighting, integrate existing gameplay, profile and review a Windows build | Planned |
+
+No new enterable shop interiors are included in this milestone. Do not expand the old block grid or declare the whole street complete after one showcase facade. The first execution session is `EXT-001`/`EXT-002`, followed by actual model inventory when access and rights are established.
+
+The gates below retain the earlier bootstrap checklist. They are not a newly executed acceptance report: `D1report.md` and committed character captures record later historical progress, while several checklist entries remain unupdated. Establish a current baseline during integration; this planning change does not independently revalidate historical Unity results.
+
 ## Gate 0 — Repository bootstrap
 - [x] Create PUBLIC repo under the owner's account.
 - [x] Push the prepared source and GDD; run static-check CI.

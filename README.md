@@ -20,6 +20,8 @@ The design centers on a simple tension: **keep the store running while making ro
 
 [Design document](Docs/GAME_DESIGN_DOCUMENT_v0.4.md) · [Engineering overview](Docs/ARCHITECTURE.md) · [Roadmap](Docs/ROADMAP_GITHUB.md) · [Changelog](CHANGELOG.md) · [Portfolio notes](Docs/PORTFOLIO.md)
 
+**Environment direction (2026-11-05):** [Phased street exterior rebuild plan — Vietnamese](Docs/STREET_EXTERIOR_REBUILD_PLAN.md). The owner selected AFX/CGMotion's *Japanese street at night* as the primary visual reference. Reference inspection comes first, followed by a finished sample segment and storefront-by-storefront production. This is a planning milestone; it does not claim new art, imported assets or a completed street.
+
 ## Gameplay direction
 
 1. Enter the shift and split attention between the two twins.
