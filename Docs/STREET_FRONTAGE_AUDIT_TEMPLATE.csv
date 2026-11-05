@@ -1,0 +1,2 @@
+frontage_id,segment_id,source_kind,source_url,source_object_path,shop_type,visible_faces,dimensions_m,dimension_confidence,reference_views,missing_reference,geometry_status,materials_status,signage_status,props_glazing_status,lighting_weather_status,collision_camera_status,rights_status,unity_evidence,review_status,notes
+TEMPLATE-ONLY,,,,,,,,UNKNOWN,,Chưa mở mô hình để kiểm kê,PLANNED,PLANNED,PLANNED,PLANNED,PLANNED,PLANNED,PENDING,,PLANNED,Hàng mẫu phải thay bằng inventory thật sau G0; không phải một căn đã tìm thấy trong AFX

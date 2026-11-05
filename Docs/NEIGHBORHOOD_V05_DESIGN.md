@@ -4,6 +4,8 @@
 **Reference:** owner-provided 39.5-second rainy convenience store street video.
 **Branch:** feature/neighborhood-v05-connected-district.
 
+> **Production direction update, 2026-11-05:** this document records the existing v0.5 blockout. The next environment milestone follows the [phased street exterior rebuild plan](STREET_EXTERIOR_REBUILD_PLAN.md): AFX/CGMotion reference audit, a finished sample segment, then each storefront. Its exterior-only scope takes precedence over the future interior/NPC/quest suggestions in section 6 below. The v0.5 envelope and street grid are not requirements for the new layout. Preserve the legacy implementation until a tested replacement exists.
+
 ## 1. What the reference actually shows
 
 The video focuses on a dense convenience-store frontage and nearby wet streets, not a large open-world metropolis. The identifiable quality bar is:
