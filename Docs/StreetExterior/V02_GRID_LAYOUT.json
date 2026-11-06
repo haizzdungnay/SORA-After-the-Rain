@@ -1,0 +1,388 @@
+{
+  "version": "V02-2026-11-06",
+  "purpose": "New SORA city grid, kitbashed from AFX components; original source alley layout not copied",
+  "metric_unit": "m nominal - Unity runtime calibration pending",
+  "road_centers_axis_x": [
+    -45,
+    0,
+    45
+  ],
+  "road_centers_axis_z": [
+    -45,
+    0,
+    45
+  ],
+  "road_width_m": 9,
+  "world_bounds_xz_m": [
+    -63,
+    63,
+    -63,
+    63
+  ],
+  "intersections": [
+    {
+      "x": -45,
+      "z": -45
+    },
+    {
+      "x": -45,
+      "z": 0
+    },
+    {
+      "x": -45,
+      "z": 45
+    },
+    {
+      "x": 0,
+      "z": -45
+    },
+    {
+      "x": 0,
+      "z": 0
+    },
+    {
+      "x": 0,
+      "z": 45
+    },
+    {
+      "x": 45,
+      "z": -45
+    },
+    {
+      "x": 45,
+      "z": 0
+    },
+    {
+      "x": 45,
+      "z": 45
+    }
+  ],
+  "blocks": {
+    "NW": [
+      -40.5,
+      -4.5,
+      4.5,
+      40.5
+    ],
+    "NE": [
+      4.5,
+      40.5,
+      4.5,
+      40.5
+    ],
+    "SW": [
+      -40.5,
+      -4.5,
+      -40.5,
+      -4.5
+    ],
+    "SE": [
+      4.5,
+      40.5,
+      -40.5,
+      -4.5
+    ]
+  },
+  "shops": [
+    {
+      "id": "NW-01",
+      "block": "NW",
+      "name": "Neko Cafe",
+      "source": "AFX-B",
+      "front_xyz": [
+        -32,
+        0,
+        6.75
+      ],
+      "yaw_degrees": 0,
+      "nominal_footprint_m": [
+        9.4,
+        8
+      ],
+      "nominal_height_m": 6.7,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "NW-02",
+      "block": "NW",
+      "name": "Kita Pharmacy",
+      "source": "AFX-C",
+      "front_xyz": [
+        -20.1,
+        0,
+        6.75
+      ],
+      "yaw_degrees": 0,
+      "nominal_footprint_m": [
+        9.2,
+        8
+      ],
+      "nominal_height_m": 7.3,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "NW-03",
+      "block": "NW",
+      "name": "Hana Florist",
+      "source": "SORA-authored",
+      "front_xyz": [
+        -6.75,
+        0,
+        27
+      ],
+      "yaw_degrees": -90,
+      "nominal_footprint_m": [
+        9.5,
+        7.8
+      ],
+      "nominal_height_m": 7.3,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "NW-04",
+      "block": "NW",
+      "name": "Sakura Studio",
+      "source": "AFX-I",
+      "front_xyz": [
+        -28,
+        0,
+        38.25
+      ],
+      "yaw_degrees": 180,
+      "nominal_footprint_m": [
+        10.4,
+        8.3
+      ],
+      "nominal_height_m": 7.8,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "NE-01",
+      "block": "NE",
+      "name": "SORA MART",
+      "source": "SORA-original",
+      "front_xyz": [
+        17,
+        0,
+        6.75
+      ],
+      "yaw_degrees": 0,
+      "nominal_footprint_m": [
+        14,
+        11
+      ],
+      "nominal_height_m": 5.6,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "NE-02",
+      "block": "NE",
+      "name": "Midori Ramen",
+      "source": "AFX-A",
+      "front_xyz": [
+        32.3,
+        0,
+        6.75
+      ],
+      "yaw_degrees": 0,
+      "nominal_footprint_m": [
+        9.7,
+        8.3
+      ],
+      "nominal_height_m": 7,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "NE-03",
+      "block": "NE",
+      "name": "Yume Bakery",
+      "source": "SORA-authored",
+      "front_xyz": [
+        6.75,
+        0,
+        27
+      ],
+      "yaw_degrees": 90,
+      "nominal_footprint_m": [
+        10.1,
+        8.2
+      ],
+      "nominal_height_m": 7.8,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "NE-04",
+      "block": "NE",
+      "name": "Kumo Design",
+      "source": "AFX-J",
+      "front_xyz": [
+        29.2,
+        0,
+        38.25
+      ],
+      "yaw_degrees": 180,
+      "nominal_footprint_m": [
+        10.3,
+        8.7
+      ],
+      "nominal_height_m": 8.4,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "SW-01",
+      "block": "SW",
+      "name": "Tsubaki Market",
+      "source": "AFX-D",
+      "front_xyz": [
+        -32,
+        0,
+        -6.75
+      ],
+      "yaw_degrees": 180,
+      "nominal_footprint_m": [
+        10.2,
+        8.2
+      ],
+      "nominal_height_m": 7.4,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "SW-02",
+      "block": "SW",
+      "name": "Aoi Laundry",
+      "source": "SORA-authored",
+      "front_xyz": [
+        -19,
+        0,
+        -6.75
+      ],
+      "yaw_degrees": 180,
+      "nominal_footprint_m": [
+        9.8,
+        7.8
+      ],
+      "nominal_height_m": 6.7,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "SW-03",
+      "block": "SW",
+      "name": "Hoshi Books",
+      "source": "AFX-F",
+      "front_xyz": [
+        -6.75,
+        0,
+        -27
+      ],
+      "yaw_degrees": -90,
+      "nominal_footprint_m": [
+        9.3,
+        8.8
+      ],
+      "nominal_height_m": 7.8,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "SW-04",
+      "block": "SW",
+      "name": "Hikari Cafe",
+      "source": "SORA-authored",
+      "front_xyz": [
+        -28.5,
+        0,
+        -38.25
+      ],
+      "yaw_degrees": 0,
+      "nominal_footprint_m": [
+        10.2,
+        8.4
+      ],
+      "nominal_height_m": 7.7,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "SE-01",
+      "block": "SE",
+      "name": "Sora Music",
+      "source": "AFX-G",
+      "front_xyz": [
+        17.4,
+        0,
+        -6.75
+      ],
+      "yaw_degrees": 180,
+      "nominal_footprint_m": [
+        9.6,
+        8
+      ],
+      "nominal_height_m": 7.5,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "SE-02",
+      "block": "SE",
+      "name": "Mizuki Izakaya",
+      "source": "AFX-H",
+      "front_xyz": [
+        31,
+        0,
+        -6.75
+      ],
+      "yaw_degrees": 180,
+      "nominal_footprint_m": [
+        10,
+        8.3
+      ],
+      "nominal_height_m": 7.8,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "SE-03",
+      "block": "SE",
+      "name": "Tsuki Tailor",
+      "source": "SORA-authored",
+      "front_xyz": [
+        6.75,
+        0,
+        -27
+      ],
+      "yaw_degrees": 90,
+      "nominal_footprint_m": [
+        9.6,
+        8.2
+      ],
+      "nominal_height_m": 7.1,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    },
+    {
+      "id": "SE-04",
+      "block": "SE",
+      "name": "Natsu Vintage",
+      "source": "AFX-E",
+      "front_xyz": [
+        29,
+        0,
+        -38.25
+      ],
+      "yaw_degrees": 0,
+      "nominal_footprint_m": [
+        10.4,
+        8.3
+      ],
+      "nominal_height_m": 7.3,
+      "status": "3D Visual Prototype Only; Unity import pending"
+    }
+  ],
+  "stats": {
+    "mesh_instances": 1161,
+    "glb_mb": 95.17,
+    "real_source_afx_derived_geometry": true,
+    "geometry_qa_pass": true,
+    "unity_compile": "NOT_RUN",
+    "unity_playmode": "NOT_RUN",
+    "windows_build": "NOT_RUN",
+    "rain_reflections": "NOT_IMPLEMENTED",
+    "facade_finish": "PARTIAL"
+  },
+  "rights": "Keep GLB/AFX raw-derived files private; public repo only documentation and original-code tooling"
+}
