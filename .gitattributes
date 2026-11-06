@@ -13,3 +13,8 @@
 *.wav filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 Assets/SORA/Characters/**/*.png filter=lfs diff=lfs merge=lfs -text
+
+# Git LFS for reusable CC0 third-party art sources (not inside Unity Assets yet)
+ArtSource/ThirdParty/CC0/**/*.glb filter=lfs diff=lfs merge=lfs -text
+ArtSource/ThirdParty/CC0/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+ArtSource/ThirdParty/CC0/**/*.png filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,82 @@
+{
+  "source_rights": "CC0 1.0 Universal; see publisher source pages",
+  "reference_uploaded_zip_sha256": "a77bbd983524e29b1e684c6c79f8da47d512debd8ff867540d708e7d1832a239",
+  "publisher_pages": {
+    "izakaya": "https://3dassets.dev/packs/izakaya-alley-and-ramen-shop",
+    "city": "https://3dassets.dev/packs/japanese-school-and-city-street",
+    "asphalt": "https://polyhaven.com/a/asphalt_01"
+  },
+  "official_downloads": {
+    "izakaya": {
+      "url": "https://cdn.3dassets.dev/assets/36462/v1/model.glb",
+      "sha256": "693cebbe5a8cf9e30710c707adfb1daf76140b28a14f289cdca9ebd879e0748f"
+    },
+    "city": {
+      "url": "https://cdn.3dassets.dev/assets/30098/v1/model.glb",
+      "sha256": "3169feade33f5df2e67080c96a4c939b427fec558f4e42f60a438386697d0f70"
+    },
+    "diff": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/asphalt_01/asphalt_01_diff_4k.jpg",
+      "sha256": "802216690827192e5418ce194622f671f08c476ea48856cadb88804f7d83e42f"
+    },
+    "normal": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/4k/asphalt_01/asphalt_01_nor_gl_4k.exr",
+      "sha256": "00b613f0b91639a78234d523cab724f662b24501177895228114d801a2321cbb"
+    },
+    "rough": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/4k/asphalt_01/asphalt_01_rough_4k.exr",
+      "sha256": "1ec5fb05470c90f9355b71d3326e0f8c8ef0b3789124ecfb3bd07d6ab3c20378"
+    }
+  },
+  "glb_structure": {
+    "izakaya": {
+      "nodes": 614,
+      "meshes": 274,
+      "materials": 11,
+      "extensions": [
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ]
+    },
+    "city": {
+      "nodes": 361,
+      "meshes": 165,
+      "materials": 12,
+      "extensions": [
+        "EXT_texture_webp",
+        "KHR_materials_transmission",
+        "KHR_mesh_quantization"
+      ]
+    }
+  },
+  "files": [
+    {
+      "path": "IzakayaAlley/izakaya_starter_scene.glb",
+      "sha256": "693cebbe5a8cf9e30710c707adfb1daf76140b28a14f289cdca9ebd879e0748f",
+      "bytes": 1727580
+    },
+    {
+      "path": "JapaneseSchoolCity/school_city_starter_scene.glb",
+      "sha256": "3169feade33f5df2e67080c96a4c939b427fec558f4e42f60a438386697d0f70",
+      "bytes": 2337352
+    },
+    {
+      "path": "Asphalt01/asphalt_diffuse_2k.jpg",
+      "sha256": "669387f1ad9a55180c319bca591b232eb34655031b57fe35d49f1f4647fde526",
+      "bytes": 1387748
+    },
+    {
+      "path": "Asphalt01/asphalt_normal_gl_2k.png",
+      "sha256": "e8ece5ac2f7fc5b16f82866550594bf74262e69d45a62e549a5fb1e5a6a0bce6",
+      "bytes": 9618722
+    },
+    {
+      "path": "Asphalt01/asphalt_roughness_2k.png",
+      "sha256": "279f1d44601e528eb8292ab3c3390fdaf794471874106524aa8cdd3c443424d9",
+      "bytes": 1654881
+    }
+  ],
+  "conversion": "Asphalt 4K diffuse resized to 2K JPG, normal_GL/roughness EXRs downsampled and quantized to 8-bit PNG",
+  "unity_status": "NOT IMPORTED; no .meta/GUID, material, FBX or Play Mode validation",
+  "import_caution": "GLB uses EXT_texture_webp and KHR_mesh_quantization. Import via verified glTFast or Blender and check URP materials."
+}

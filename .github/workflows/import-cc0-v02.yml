@@ -1,0 +1,54 @@
+name: Import CC0 Art Sources - SORA V02
+# One-time owner-requested CC0 source import. Never runs code from outside PRs.
+on:
+  push:
+    branches:
+      - feature/neighborhood-v02-grid-blockout
+    paths:
+      - .github/workflows/import-cc0-v02.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sora-cc0-intake-v02
+  cancel-in-progress: false
+
+jobs:
+  import-v02-cc0:
+    if: github.repository == 'haizzdungnay/SORA-After-the-Rain' && github.ref == 'refs/heads/feature/neighborhood-v02-grid-blockout'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          lfs: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install asset processing dependencies
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'Pillow>=10,<13' 'opencv-python-headless>=4.9,<5'
+      - name: Fetch ONLY official verified CC0 files and optimize Asphalt 01
+        run: |
+          python Tools/StreetExterior/import_cc0_v02.py --output-dir ArtSource/ThirdParty/CC0
+          python Tools/StreetExterior/verify_cc0_v02.py ArtSource/ThirdParty/CC0
+      - name: Commit 2 GLBs and 3 maps using Git LFS
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git lfs install --local
+          git add .gitattributes ArtSource/ThirdParty/CC0/
+          if git diff --cached --quiet; then
+            echo 'No source asset changes to commit'
+            exit 0
+          fi
+          git commit -m 'assets(cc0): import verified Japanese storefront kits and optimized asphalt PBR'
+          git push origin HEAD:feature/neighborhood-v02-grid-blockout
