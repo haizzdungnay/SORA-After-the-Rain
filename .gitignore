@@ -39,3 +39,6 @@ __pycache__/
 
 # Original third-party street reference models and Blender audit outputs (local only)
 /LocalReferenceAssets/
+
+# Local/private AFX-derived models and staging scenes (do not distribute through public Git)
+/Assets/SORA/Environment/StreetExterior/PrivateGenerated/
