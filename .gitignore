@@ -36,3 +36,6 @@ __pycache__/
 *.pyc
 /TestResults/
 /Artifacts/
+
+# Original third-party street reference models and Blender audit outputs (local only)
+/LocalReferenceAssets/

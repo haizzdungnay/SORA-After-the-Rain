@@ -12,13 +12,16 @@
 
 Tài liệu này điều chỉnh hướng sản xuất môi trường tiếp theo. GDD, nhân vật, nghiệp vụ cửa hàng và dữ liệu chơi hiện có tiếp tục được giữ. Bố cục khu phố v0.5 là baseline để đối chiếu/khôi phục, không phải bố cục bắt buộc cho phố mới.
 
+
+> **QUYẾT ĐỊNH MỚI 06/11/2026 — THAY THẾ CÁCH HIỂU BỐ CỤC:** Chủ dự án xác nhận **dùng các thành phần 3D bên trong AFX để xây dựng khu phố/thành phố SORA có bố cục hoàn toàn mới**. **KHÔNG copy/paste nguyên hẻm AFX; KHÔNG bắt buộc giữ A–J, kích thước hay vị trí source scene.** AFX là nguồn cấu kiện và chuẩn chất lượng tham chiếu. Xem [Quyết định AFX Kitbash → SORA city mới](StreetExterior/AFX_KITBASH_CITY_DESIGN_DECISION_2026-11-06.md). G0 phải bổ sung inventory cấp component; G1 định hình bản đồ theo gameplay, rồi gắn các module mới/tái chế phù hợp.
+
 ## 1. Các quyết định đã chốt
 
 | Nội dung | Yêu cầu |
 |---|---|
 | Không gian | Phố Nhật ngoài trời, về đêm, có mưa; mái hiên cục bộ phù hợp, không chọn phố mái che kín làm mẫu chính |
-| Tham chiếu | Bám một cảnh 3D có thật và đủ dữ liệu; không tự chia lại các ô phố đều nhau rồi lấp nhà |
-| Mẫu chính | AFX/CGMotion; được chọn về hướng hình ảnh, chưa đồng nghĩa mô hình đã được kiểm tra hoặc import |
+| Tham chiếu | AFX cung cấp các cấu kiện và phong cách 3D; bản đồ SORA thiết kế mới có tuyến chính, ngã rẽ, hẻm phụ, SORA MART và tỷ lệ theo gameplay; không sao chép layout AFX |
+| Mẫu chính | AFX/CGMotion; GLB đã được kiểm kê sơ bộ (149 mesh, 34 materials, 107 ảnh nhúng); chưa tách thành prefab, chưa import Unity |
 | Chất lượng | Mọi cửa hàng trong vùng chơi cuối cùng đều hoàn thiện ngoại thất, kể cả mặt bên/mặt sau nhìn thấy được |
 | Cửa kính | Phần nhìn qua kính có chiều sâu và bố trí hợp lý; không phát sinh yêu cầu nội thất có thể bước vào |
 | Phạm vi đầu tiên | Hoàn thiện một đoạn phố liền mạch trước, sau đó mới xét mở rộng thành khu phố |
@@ -57,7 +60,7 @@ Metadata AFX ghi CC Attribution và liên kết CC BY 4.0; mô tả đồng th�
 
 ## 3. Cách chia con phố thành phần có thể làm xong
 
-Sau khi mở được mô hình, lập bản nhìn từ trên và đánh số theo cấu trúc thực tế quan sát được:
+Phân biệt **source asset IDs** (từ model AFX; ví dụ `SRC-A`…`SRC-J`, `KIT-*` cho module thực sự được kiểm kê) với **target SORA frontage IDs** (`F-*` chỉ phát sinh từ bản đồ SORA). Không sử dụng số thứ tự source để quyết định thứ tự căn trong game. Bản vẽ map mới phải được thiết kế theo gameplay và có bản mapping KIT-ID → từng mặt tiền được ghép. Sau đó đánh số từng cửa hàng SORA trên bản đồ mới:
 
 | Đối tượng | Quy ước ID | Cách chia |
 |---|---|---|
@@ -68,7 +71,7 @@ Sau khi mở được mô hình, lập bản nhìn từ trên và đánh số th
 | Đường và hạ tầng dùng chung | `ENV-ROAD-*`, `ENV-UTIL-*` | Dùng chung asset nhưng kiểm tra liên tục qua ranh giới đoạn |
 | Điểm chụp đối chiếu | `CAM-01`… | Lưu transform/FOV/resolution để chụp lại cùng góc |
 
-**Chưa đặt trước số căn, chiều dài phố hay vị trí SORA MART.** Hoàn tất inventory rồi mới lập tổng khối lượng. `STREET_FRONTAGE_AUDIT_TEMPLATE.csv` chỉ có hàng mẫu, chưa phải kiểm kê mô hình AFX.
+**Chưa đặt trước số căn, chiều dài phố hay vị trí SORA MART.** Số căn, chiều dài phố và kích thước giao lộ phải quyết định từ thiết kế game, không phải bbox hay số nhóm mesh AFX. Hoàn tất component inventory và sơ đồ thiết kế mới rồi mới lập tổng khối lượng. `STREET_FRONTAGE_AUDIT_TEMPLATE.csv` chỉ có hàng mẫu, chưa phải kiểm kê mô hình AFX.
 
 Mỗi đoạn phải có ít nhất một góc đi bộ nhìn dọc và một góc nhìn ngược lại. Đầu/cuối phố, cửa ngõ và góc rẽ thuộc phạm vi nghiệm thu; không để camera nhìn thấy vách cắt mô hình. Phần chưa sản xuất phải được ghi rõ trong build thử và giới hạn tiếp cận; không được ghi là hoàn thành toàn phố.
 
@@ -76,9 +79,9 @@ Mỗi đoạn phải có ít nhất một góc đi bộ nhìn dọc và một g�
 
 | Giai đoạn | Công việc | Đầu ra bắt buộc | Điều kiện chuyển bước |
 |---|---|---|---|
-| **G0 — Kiểm tra mẫu** | Mở/download hợp lệ, đọc license, kiểm tra scene đa góc và từng mặt tiền | Audit nguồn/quyền dùng, inventory thực, ảnh overview và ảnh mặt khuất, danh sách thiếu | Biết rõ mẫu có gì, thiếu gì; quyền dùng phù hợp với cách áp dụng |
-| **G1 — Chốt bố cục** | Đánh ID, chia đoạn từ mẫu, đo/ước lượng có nhãn, đề xuất chỗ đặt SORA MART | Mặt bằng bám mẫu + bảng mặt tiền + góc camera + kế hoạch thích nghi | Chủ dự án xem được bố cục cụ thể; dữ kiện chưa biết không bị biến thành số đo thật |
-| **G2 — Nền làm việc** | Tạo staging scene author được trong Editor, asset/material convention, prefab boundary, colliders/camera | Scene ngoại thất riêng + một bộ module tối thiểu + baseline đo | Scene mở lại được, tỷ lệ đi bộ hợp lý, không phụ thuộc world primitive cũ để che thiếu |
+| **G0 — Kiểm kê asset** | Đọc GLB và license; phân loại từng mesh/texture thành KIT-ID ứng viên, đo pivot/UV/kích thước và tính tách được | Source audit + **component catalog** + ảnh từng loại cấu kiện + danh sách phải dựng bổ sung | Biết rõ module nào tận dụng/biến thể/thiết kế mới, không coi 10 nhóm nhà là 10 shop game |
+| **G1 — Chốt bố cục SORA mới** | Thiết kế bản đồ phố chính, giao lộ, ngõ phụ và SORA MART theo gameplay; phân bố các F-ID và mapping KIT-ID | Mặt bằng thành phố **độc lập scene AFX** + danh sách shop và mapping module + góc camera | Chủ dự án xem được map hoàn toàn mới có logic đô thị, tỷ lệ camera/chơi được và danh sách asset thiếu |
+| **G2 — Nền làm việc** | Tách/hiệu chỉnh các module hợp lệ trong Blender; tạo staging Editor/URP prefab/material, colliders/camera và adapter gameplay thử sớm | Scene ngoại thất riêng + một bộ module tái cấu trúc và bổ sung do SORA tạo + baseline tích hợp | Scene mở lại được, có thể ghép không theo thứ tự source, kiểm tra tỷ lệ nhân vật và tránh spawn world trùng |
 | **G3 — Đoạn mẫu đạt chuẩn** | Hoàn thiện 1 cửa hàng đại diện rồi 1 căn kề và phần đường, ánh sáng/mưa tối thiểu | Một đoạn liền mạch xem gần và đi qua được; ảnh debug sáng rõ + mưa đêm | Ngoại thất đạt bảng QA bên dưới; khóa chuẩn vật liệu/chi tiết trước khi nhân rộng |
 | **G4 — Ngoại thất SORA MART** | Làm cửa kính, biển, mái hiên, chân tường, trưng bày nhìn qua kính và mặt bên có thể thấy | `F-SORA-001` đạt cùng chuẩn, anchor cửa/POS được ghi rõ | Mặt tiền phù hợp phố; chưa làm thêm nội thất hay nghiệp vụ mới |
 | **G5 — Hoàn thiện từng đoạn còn lại** | Lặp G3 theo `SEG-*`, mỗi phiên 1 căn hoặc 1 phần rõ ràng của căn | Hồ sơ từng căn và bảng tiến độ có bằng chứng | Mọi mặt tiền trong từng đoạn đều pass; không dùng vài căn đẹp đại diện cho tất cả |
@@ -95,7 +98,7 @@ Mỗi đoạn phải có ít nhất một góc đi bộ nhìn dọc và một g�
 | Phiên | Gói việc | Kết quả có thể xem/kiểm tra |
 |---|---|---|
 | 01 | `EXT-001`…`EXT-003` — audit nguồn, quyền dùng, phạm vi mô hình | Báo cáo mẫu có thể/không thể dùng và coverage thực |
-| 02 | `EXT-004`…`EXT-005` — mặt bằng, ID mặt tiền, chia đoạn, vị trí SORA | Bản đồ từ mẫu và danh sách căn, không phải phối cảnh tưởng tượng |
+| 02 | `EXT-004`…`EXT-005` — thiết kế bản đồ SORA mới, ID mặt tiền, chia đoạn, vị trí SORA MART + mapping KIT-ID | Mặt bằng mới theo gameplay, không sao chép bbox/bố cục AFX |
 | 03 | `EXT-006`…`EXT-007` — staging và bộ module tối thiểu | Scene đi bộ kiểm tra tỷ lệ, collider/camera |
 | 04 | `EXT-008` — hình học/vật liệu căn đại diện | Cận mặt tiền trong ánh sáng kiểm tra rõ |
 | 05 | `EXT-009` — căn kề + đường + ánh sáng/mưa thử | Đoạn mẫu hoàn chỉnh ban đêm và video đi qua |
@@ -105,7 +108,7 @@ Mỗi đoạn phải có ít nhất một góc đi bộ nhìn dọc và một g�
 | Tích hợp | `EXT-017`…`EXT-018` | Ngoại thất mới chạy cùng gameplay cũ và kiểm thử regression |
 | Kết thúc mốc | `EXT-019`…`EXT-020` | Profiling Windows và hồ sơ nghiệm thu |
 
-Gọi `N` là số mặt tiền kiểm kê được (tính cả SORA MART sau khi thích nghi). Sau đoạn mẫu 2 căn và SORA MART, khối lượng còn lại là các gói `EXT-012/F-*` cho từng căn còn lại, cộng review `EXT-013/SEG-*`. Chỉ ước lượng tổng phiên sau G1 và sau khi đo tốc độ làm đoạn mẫu G3; không lấy số căn suy ra từ một thumbnail.
+Gọi `N` là số mặt tiền **được thiết kế cho bản đồ SORA mới sau G1** (tính cả SORA MART), không phải số cụm A–J trong file tham khảo. Sau đoạn mẫu 2 căn và SORA MART, khối lượng còn lại là các gói `EXT-012/F-*` cho từng căn còn lại, cộng review `EXT-013/SEG-*`. Chỉ ước lượng tổng phiên sau G1 và sau khi đo tốc độ làm đoạn mẫu G3; không lấy số căn suy ra từ một thumbnail.
 
 ## 6. Hồ sơ bắt buộc cho từng cửa hàng
 
