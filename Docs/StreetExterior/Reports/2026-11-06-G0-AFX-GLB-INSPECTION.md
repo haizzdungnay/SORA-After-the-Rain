@@ -17,20 +17,20 @@
 
 ## 2. Kiểm kê từng cụm mặt tiền thực tế (ứng viên)
 
-Hướng đi để đánh số: đi từ đầu `+Z` về cuối `-Z`; `L` là dãy `-X`, `R` là dãy `+X`. **Tập tin CSV bên cạnh là candidate group inventory, chưa phải shop-level sign-off.**
+Source IDs `SRC-A`…`SRC-J` tương ứng với nhóm geometry A–J trong GLB. Để kiểm kê vị trí tương đối của source scene, hướng đi quy ước từ `+Z` về `-Z` (phía `-X` và `+X`). **Các ID này KHÔNG đại diện cho cửa hàng hoặc vị trí sẽ có trong bản đồ SORA mới.**
 
 | Candidate frontage | GLB group | Mesh | Triangles | Vị trí tương đối theo Z |
 |---|---|---:|---:|---|
-| `F-L-001` | A | 16 | 6,575 | 1.909 .. -0.751 |
-| `F-L-002` | B | 21 | 4,588 | -0.749 .. -4.030 |
-| `F-L-003` | C | 13 | 4,613 | -3.926 .. -6.396 |
-| `F-L-004` | D | 13 | 4,255 | -6.401 .. -9.606 |
-| `F-L-005` | I | 9 | 3,002 | -9.605 .. -12.357 |
-| `F-R-001` | E | 5 | 1,000 | 2.382 .. -0.151 |
-| `F-R-002` | F | 19 | 4,023 | -0.091 .. -2.778 |
-| `F-R-003` | G | 14 | 7,553 | -2.771 .. -5.102 |
-| `F-R-004` | H | 15 | 4,359 | -4.977 .. -7.292 |
-| `F-R-005` | J | 12 | 6,419 | -10.029 .. -12.356 |
+| `SRC-A` | A | 16 | 6,575 | 1.909 .. -0.751 |
+| `SRC-B` | B | 21 | 4,588 | -0.749 .. -4.030 |
+| `SRC-C` | C | 13 | 4,613 | -3.926 .. -6.396 |
+| `SRC-D` | D | 13 | 4,255 | -6.401 .. -9.606 |
+| `SRC-I` | I | 9 | 3,002 | -9.605 .. -12.357 |
+| `SRC-E` | E | 5 | 1,000 | 2.382 .. -0.151 |
+| `SRC-F` | F | 19 | 4,023 | -0.091 .. -2.778 |
+| `SRC-G` | G | 14 | 7,553 | -2.771 .. -5.102 |
+| `SRC-H` | H | 15 | 4,359 | -4.977 .. -7.292 |
+| `SRC-J` | J | 12 | 6,419 | -10.029 .. -12.356 |
 
 10 cụm kiến trúc nguồn **A–J** (137 mesh objects; 46.387 triangles); không được đánh đồng mặc nhiên với 10 cửa hàng độc lập. Ngoài ra còn có 4 máy/chi tiết bán nước (762 triangles), 5 pole/utility meshes (3.500 triangles), 1 light mesh (852 triangles, không có glTF light setup), 1 ground (178 triangles), 1 backdrop (8 triangles). Kết quả kiểm kê không bao gồm hệ thống Unity runtime, và phản ánh trực tiếp file đã tải.
 
@@ -54,4 +54,4 @@ Hướng đi để đánh số: đi từ đầu `+Z` về cuối `-Z`; `L` là d
 - **G0 EXT-003:** chuyển từ `BLOCKED` sang **`REVIEW`**. Chỉ DONE sau khi xác nhận candidate groups/frontages và các mặt thiếu. G1 vẫn **chưa bắt đầu**.
 - **ĐÃ THAY THẾ bằng quyết định kitbash:** G1 thiết kế khu phố SORA mới theo gameplay, lấy module đã chuẩn hóa từ AFX và dựng thêm bộ phận còn thiếu. Không dùng nguồn A–J hoặc bố cục con hẻm làm layout đích.
 
-**Lưu ý quyền:** nguyên gói GLB/texture giữ ở máy hoặc attachments của chủ dự án, không commit vào public repo. Bản chính thức phải xem xét lại license/asset source trước release.
+**Lưu ý quyền:** nguyên gói GLB/texture và các bản module chỉnh sửa từ nguồn giữ ở máy hoặc workspace riêng phù hợp, không commit vào public repo khi chưa xác minh quyền phân phối. Thiết kế thành phố mới không làm thay đổi nghĩa vụ bản quyền của các module tái sử dụng. Bản chính thức phải xem xét lại license/asset source trước release.
