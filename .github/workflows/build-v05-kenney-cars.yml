@@ -40,7 +40,10 @@ jobs:
           out=Path('ArtSource/ThirdParty/CC0/KenneyCarKit/kenney_car-kit.zip')
           out.parent.mkdir(parents=True,exist_ok=True)
           req=urllib.request.Request(url,headers={'User-Agent':'SORA-Asset-Integrity/1.0'})
-          with urllib.request.urlopen(req,timeout=180) as r: content=r.read()
+          with urllib.request.urlopen(req,timeout=180) as r:
+              content=r.read()
+              print('Source response:',r.status,r.geturl(),r.headers.get('content-type'),flush=True)
+          print('Source length/hash/signature:',len(content),hashlib.sha256(content).hexdigest(),repr(content[:16]),flush=True)
           expected='fac7dacac5c7874348cf19729af3ef205f3d366493edaf0a827d93f4fdf3d0c4'
           assert len(content)==4814237 and hashlib.sha256(content).hexdigest()==expected, 'Source archive does not match owner upload; refuse changed content'
           out.write_bytes(content)
