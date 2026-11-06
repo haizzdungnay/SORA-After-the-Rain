@@ -1,0 +1,15 @@
+{
+  "version": "V04",
+  "geometry_nodes": 2350,
+  "new_blocks": 5,
+  "new_buildings": 60,
+  "retained_v03_buildings": 24,
+  "junctions": 16,
+  "parked_cars": 42,
+  "perimeter_segments": 4,
+  "road_end_barricades": 16,
+  "glb_sha256": "8f96ca8d4a6a62d4f18556d8cf525b10d9a5af448c8a8f6f1961bfe17c2ac096",
+  "bytes": 20254020,
+  "no_AFX_assets": true,
+  "unity_tests": "NOT RUN"
+}
