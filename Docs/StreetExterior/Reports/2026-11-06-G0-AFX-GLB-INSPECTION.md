@@ -1,3 +1,5 @@
+> **ĐÍNH CHÍNH MỤC ĐÍCH 06/11/2026:** Chủ dự án muốn **tách các thành phần của AFX để kitbash xây thành phố SORA có layout mới**, không giữ nguyên con hẻm hoặc bố cục A–J. Toàn bộ kích thước/cụm nhà bên dưới **chỉ mô tả asset nguồn**. Quyết định mới: [AFX Kitbash → SORA city](../AFX_KITBASH_CITY_DESIGN_DECISION_2026-11-06.md). Những nhận định trước về dùng AFX làm hẻm của bản đồ chỉ là phương án cũ, **không còn là design decision**. Cần inventory từng mesh thành KIT-ID trước G1.
+
 # SORA — G0 EXT-003: AFX GLB forensic geometry inventory (uploaded source)
 
 **Ngày:** 06/11/2026 (Việt Nam). **Nhánh:** `feature/street-exterior-g0-audit`. **Nguồn:** ZIP gốc do chủ dự án cung cấp trong cuộc trò chuyện; **chưa và sẽ không đưa mesh/texture bên thứ ba lên repo công khai.**
@@ -30,7 +32,7 @@ Hướng đi để đánh số: đi từ đầu `+Z` về cuối `-Z`; `L` là d
 | `F-R-004` | H | 15 | 4,359 | -4.977 .. -7.292 |
 | `F-R-005` | J | 12 | 6,419 | -10.029 .. -12.356 |
 
-10 cụm kiến trúc **A–J** (137 mesh objects; 46.387 triangles); không được đánh đồng mặc nhiên với 10 cửa hàng độc lập. Ngoài ra còn có 4 máy/chi tiết bán nước (762 triangles), 5 pole/utility meshes (3.500 triangles), 1 light mesh (852 triangles, không có glTF light setup), 1 ground (178 triangles), 1 backdrop (8 triangles). Kết quả kiểm kê không bao gồm hệ thống Unity runtime, và phản ánh trực tiếp file đã tải.
+10 cụm kiến trúc nguồn **A–J** (137 mesh objects; 46.387 triangles); không được đánh đồng mặc nhiên với 10 cửa hàng độc lập. Ngoài ra còn có 4 máy/chi tiết bán nước (762 triangles), 5 pole/utility meshes (3.500 triangles), 1 light mesh (852 triangles, không có glTF light setup), 1 ground (178 triangles), 1 backdrop (8 triangles). Kết quả kiểm kê không bao gồm hệ thống Unity runtime, và phản ánh trực tiếp file đã tải.
 
 ## 3. Bằng chứng góc nhìn và điểm yếu chất lượng
 
@@ -50,6 +52,6 @@ Hướng đi để đánh số: đi từ đầu `+Z` về cuối `-Z`; `L` là d
 - **REVIEW:** candidate frontage groups, việc phân biệt cửa hàng/cửa vào thực sự và độ hoàn thiện từng mặt cần người xem mẫu duyệt trước khi khóa `F-*`.
 - **NOT RUN:** Blender Import, Unity import/URP shader correction, Unity C# compile, EditMode/Play Mode, Windows build, visual in-game, đo VRAM/FPS (không có Editor/Blender trong môi trường audit); không tuyên bố pass những việc này.
 - **G0 EXT-003:** chuyển từ `BLOCKED` sang **`REVIEW`**. Chỉ DONE sau khi xác nhận candidate groups/frontages và các mặt thiếu. G1 vẫn **chưa bắt đầu**.
-- **Phương án thiết kế cần chủ dự án duyệt ở G1:** AFX là mẫu mỹ thuật cho đoạn hẻm, không phải mẫu toàn bộ quy mô phố chơi được; bố cục khu phố hoàn chỉnh phải có con đường chính và SORA MART ở tỷ lệ phù hợp, rồi mới nối với đoạn hẻm.
+- **ĐÃ THAY THẾ bằng quyết định kitbash:** G1 thiết kế khu phố SORA mới theo gameplay, lấy module đã chuẩn hóa từ AFX và dựng thêm bộ phận còn thiếu. Không dùng nguồn A–J hoặc bố cục con hẻm làm layout đích.
 
 **Lưu ý quyền:** nguyên gói GLB/texture giữ ở máy hoặc attachments của chủ dự án, không commit vào public repo. Bản chính thức phải xem xét lại license/asset source trước release.
