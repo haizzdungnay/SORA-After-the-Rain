@@ -1,6 +1,6 @@
 # SORA — Hướng dẫn tiếp tục một phiên xây ngoại thất
 
-Đọc [kế hoạch chính](STREET_EXTERIOR_REBUILD_PLAN.md) và [backlog](STREET_EXTERIOR_WORK_PACKAGES.csv) trước khi chọn việc. Tài liệu này là quy trình cho các phiên sau, không khẳng định có thêm scene hoặc asset đã hoàn thành.
+Đọc [kế hoạch chính](STREET_EXTERIOR_REBUILD_PLAN.md), [quyết định kitbash thành phố SORA](StreetExterior/AFX_KITBASH_CITY_DESIGN_DECISION_2026-11-06.md) và [backlog](STREET_EXTERIOR_WORK_PACKAGES.csv) trước khi chọn việc. **Tách module từ AFX để xây thành phố SORA bố cục mới; tuyệt đối không copy nguyên scene AFX thành map.** Tài liệu này là quy trình cho các phiên sau, không khẳng định có thêm scene hoặc asset đã hoàn thành.
 
 ## 1. Bắt đầu phiên
 
@@ -20,8 +20,8 @@ Một cửa hàng khó có thể có các gói con: `geometry` → `materials-si
 
 | Loại phiên | Bằng chứng |
 |---|---|
-| Audit G0 | Link nguồn và quyền dùng, cách truy cập, ảnh/ghi nhận đa góc thực tế, phần chưa xem được |
-| Bố cục G1 | Mặt bằng từ mô hình, hướng L/R, ID căn/đoạn, vị trí camera, kích thước có nhãn đo/ước lượng |
+| Audit G0 | Link nguồn/quyền dùng, mesh/node inventory, category + KIT-ID candidates, pivot/UV/tính tách được, ảnh module từ mô hình thật, phần thiếu phải dựng mới |
+| Bố cục G1 | Mặt bằng thành phố SORA mới theo gameplay (không copy hẻm AFX); SORA MART, hướng L/R, F-ID/SEG-ID, mapping KIT-ID, camera và tỷ lệ có nhãn |
 | Một mặt tiền | Front + nhìn chéo + mặt khác nhìn thấy; ảnh debug sáng và đêm; bảng EX-01…12 có pending rõ |
 | Một đoạn | Ảnh nhìn hai chiều, video đi bộ, kiểm tra seam/collider/camera và đồ vật tiếp xúc nền |
 | Tích hợp | Log compile, test/regression đã chạy và bước kiểm tra state; video/ảnh scene thực |
