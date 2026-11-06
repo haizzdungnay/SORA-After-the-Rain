@@ -30,7 +30,7 @@ Hướng đi để đánh số: đi từ đầu `+Z` về cuối `-Z`; `L` là d
 | `F-R-004` | H | 15 | 4,359 | -4.977 .. -7.292 |
 | `F-R-005` | J | 12 | 6,419 | -10.029 .. -12.356 |
 
-10 cụm kiến trúc **A–J** (138 mesh objects; 41.387 triangles); không được đánh đồng mặc nhiên với 10 cửa hàng độc lập. Ngoài ra còn có 4 máy/chi tiết bán nước (762 triangles), 5 pole/utility meshes (3.500 triangles), 1 light mesh (852 triangles, không có glTF light setup), 1 ground (178 triangles), 1 backdrop (8 triangles). Kết quả kiểm kê không bao gồm hệ thống Unity runtime, và phản ánh trực tiếp file đã tải.
+10 cụm kiến trúc **A–J** (137 mesh objects; 46.387 triangles); không được đánh đồng mặc nhiên với 10 cửa hàng độc lập. Ngoài ra còn có 4 máy/chi tiết bán nước (762 triangles), 5 pole/utility meshes (3.500 triangles), 1 light mesh (852 triangles, không có glTF light setup), 1 ground (178 triangles), 1 backdrop (8 triangles). Kết quả kiểm kê không bao gồm hệ thống Unity runtime, và phản ánh trực tiếp file đã tải.
 
 ## 3. Bằng chứng góc nhìn và điểm yếu chất lượng
 
