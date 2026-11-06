@@ -1,0 +1,37 @@
+{
+  "version": "V03",
+  "type": "CC0+authored_overlay_only",
+  "overlay_world_alignment": "same origin as private V02",
+  "license": "CC0 external meshes + original SORA geometry",
+  "files": [
+    {
+      "path": "SORA_V03_CC0_Overlay.glb",
+      "sha256": "9a753ddecfd14bd1da8796f9e36083054dddab89be888e7ef764da751e399733",
+      "bytes": 20782520
+    }
+  ],
+  "input_sha256": {
+    "izakaya_starter_scene.glb": "693cebbe5a8cf9e30710c707adfb1daf76140b28a14f289cdca9ebd879e0748f",
+    "school_city_starter_scene.glb": "3169feade33f5df2e67080c96a4c939b427fec558f4e42f60a438386697d0f70"
+  },
+  "storefronts": 23,
+  "SORA_MART_visual_in_base": true,
+  "additional_authored_shells": 8,
+  "mesh_instances": 1361,
+  "checks": {
+    "23_facades_plus_SORA_MART_original": true,
+    "24_prop_zones": true,
+    "8_complete_infill_shells": true,
+    "4_courtyard_groups": true,
+    "15_asphalt_PBR_sections": true,
+    "no_AFX_meshes": true
+  },
+  "not_tested": [
+    "Unity import",
+    "Unity URP shaders",
+    "Play Mode",
+    "collisions",
+    "rain particles",
+    "FPS and Windows build"
+  ]
+}
