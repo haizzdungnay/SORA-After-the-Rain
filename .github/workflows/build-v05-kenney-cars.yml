@@ -1,0 +1,101 @@
+name: SORA V05 Kenney Car Kit Integration
+on:
+  push:
+    branches:
+      - feature/neighborhood-v05-kenney-car-upgrade
+    paths:
+      - .github/workflows/build-v05-kenney-cars.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sora-v05-kenney-source-and-geometry
+  cancel-in-progress: false
+
+jobs:
+  import-and-build:
+    if: github.repository == 'haizzdungnay/SORA-After-the-Rain' && github.ref == 'refs/heads/feature/neighborhood-v05-kenney-car-upgrade'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out repository including V04 LFS
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          persist-credentials: true
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install geometry processing
+        run: python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'trimesh>=4.5,<5' 'Pillow>=10,<13'
+      - name: Download official owner-matching Kenney Car Kit archive
+        run: |
+          python - <<'PY'
+          import hashlib,urllib.request,zipfile
+          from pathlib import Path
+          url='https://kenney.nl/media/pages/assets/car-kit/1a312ec241-1775131960/kenney_car-kit.zip'
+          out=Path('ArtSource/ThirdParty/CC0/KenneyCarKit/kenney_car-kit.zip')
+          out.parent.mkdir(parents=True,exist_ok=True)
+          req=urllib.request.Request(url,headers={'User-Agent':'SORA-Asset-Integrity/1.0'})
+          with urllib.request.urlopen(req,timeout=180) as r:
+              content=r.read()
+              print('Source response:',r.status,r.geturl(),r.headers.get('content-type'),flush=True)
+          print('Source length/hash/signature:',len(content),hashlib.sha256(content).hexdigest(),repr(content[:16]),flush=True)
+          expected='fac7dacac5c7874348cf19729af3ef205f3d366493edaf0a827d93f4fdf3d0c4'
+          assert len(content)==4814237 and hashlib.sha256(content).hexdigest()==expected, 'Source archive does not match owner upload; refuse changed content'
+          out.write_bytes(content)
+          with zipfile.ZipFile(out) as pack:
+              assert pack.testzip() is None
+              assert b'CC0' in pack.read('License.txt')
+              assert 'Models/GLB format/sedan.glb' in pack.namelist()
+          print('Verified Kenney Car Kit 3.1 from official source: 4814237 bytes SHA256 '+expected)
+          PY
+      - name: Build V05 replacement overlay — no duplicate placeholders
+        run: |
+          python -u Tools/StreetExterior/build_v05_kenney.py \
+            --base-glb ArtSource/Generated/V04_CC0/SORA_V04_CC0_Dense_Overlay.glb \
+            --cars-json Docs/StreetExterior/V04_DENSE_GRID_LAYOUT.json \
+            --colliders ArtSource/Generated/V04_CC0/colliders.json \
+            --kenney-zip ArtSource/ThirdParty/CC0/KenneyCarKit/kenney_car-kit.zip \
+            --output ArtSource/Generated/V05_CC0
+      - name: Re-read GLB and validate 42 real vehicles plus continuous map bounds
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          from collections import Counter
+          import trimesh
+          root=Path('ArtSource/Generated/V05_CC0')
+          m=json.loads((root/'manifest.json').read_text())
+          path=root/'SORA_V05_Kenney_9Block_Overlay.glb'
+          content=path.read_bytes()
+          assert hashlib.sha256(content).hexdigest()==m['glb_sha256']
+          scene=trimesh.load(path,force='scene',process=False)
+          nodes=list(scene.graph.nodes_geometry)
+          assert m['kenney_car_count']==42 and len(nodes)==m['final_mesh_nodes']
+          assert len({n.split('/')[2] for n in nodes if n.startswith('V05/KENNEY_CAR/')})==42
+          assert not any(n.startswith(('V04/CAR/','V04/VEHICLE/')) for n in nodes)
+          c=json.loads((root/'colliders.json').read_text())['items']
+          counts=Counter(x['group'] for x in c)
+          assert counts['VEHICLE']==42 and counts['HARD_BOUNDARY']==4 and counts['ROAD_BLOCK']==16
+          print('PASS:',len(nodes),'GLB nodes, 42 Kenney vehicles; 4 perimeter+16 road-end colliders preserved')
+          print('NOT RUN: Unity import/URP/Play Mode/character collision regression')
+          PY
+      - name: Commit verified source ZIP and full replacement GLB through Git LFS
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git lfs install --local
+          git add ArtSource/ThirdParty/CC0/KenneyCarKit/kenney_car-kit.zip ArtSource/Generated/V05_CC0/
+          if git diff --cached --quiet; then
+            echo 'No new model or archive to commit'
+            exit 0
+          fi
+          git commit -m 'assets(v05): replace 42 parked cars with verified Kenney Car Kit GLB meshes'
+          git push origin HEAD:feature/neighborhood-v05-kenney-car-upgrade

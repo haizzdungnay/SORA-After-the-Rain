@@ -21,3 +21,11 @@ ArtSource/ThirdParty/CC0/**/*.png filter=lfs diff=lfs merge=lfs -text
 
 # V03 authored/CC0 overlay, safe for the PUBLIC repo (no AFX source meshes)
 ArtSource/Generated/V03_CC0/*.glb filter=lfs diff=lfs merge=lfs -text
+
+# Dense original+CC0 SORA V04 overlay; no AFX derivative geometry
+ArtSource/Generated/V04_CC0/*.glb filter=lfs diff=lfs merge=lfs -text
+
+# Owner-provided Kenney CC0 Car Kit source archive
+ArtSource/ThirdParty/CC0/KenneyCarKit/*.zip filter=lfs diff=lfs merge=lfs -text
+# V05 whole-world replacement overlay with Kenney vehicles
+ArtSource/Generated/V05_CC0/*.glb filter=lfs diff=lfs merge=lfs -text
