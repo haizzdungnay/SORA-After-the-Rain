@@ -24,6 +24,7 @@ from pathlib import Path
 
 import numpy as np
 import trimesh
+from PIL import Image
 
 EXPECTED_ARCHIVE_SHA = "fac7dacac5c7874348cf19729af3ef205f3d366493edaf0a827d93f4fdf3d0c4"
 KINDS = {
@@ -82,12 +83,19 @@ def kenney_models(path):
         if b"Creative Commons Zero" not in license_text or b"CC0" not in license_text:
             raise ValueError("Kenney CC0 license evidence not found")
         available = {model for _, names in KINDS.values() for model in names}
+        # Kenney GLBs reference an EXTERNAL palette image. Load it from ZIP
+        # and embed it in the generated GLB, or vehicles render pure white.
+        palette = Image.open(io.BytesIO(archive.read("Models/GLB format/Textures/colormap.png"))).convert("RGBA")
         models = {}
         for name in sorted(available):
             data = archive.read("Models/GLB format/" + name + ".glb")
             model = trimesh.load(io.BytesIO(data), file_type="glb", force="scene", process=False)
             if model.bounds is None or not model.geometry:
                 raise ValueError("Empty Kenney model: " + name)
+            for geom in model.geometry.values():
+                mat = getattr(geom.visual, "material", None)
+                if mat is not None and getattr(mat, "baseColorTexture", None) is None:
+                    mat.baseColorTexture = palette
             models[name] = model
     return models, license_text
 
