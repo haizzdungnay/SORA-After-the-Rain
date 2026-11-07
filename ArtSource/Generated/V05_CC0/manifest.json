@@ -1,0 +1,867 @@
+{
+  "version": "V05",
+  "type": "V04 REPLACEMENT overlay (not an additive car-only scene)",
+  "v03_alignment": "Use the same world origin and scale as the existing V03 base",
+  "original_mesh_nodes": 2350,
+  "removed_v04_car_nodes": 378,
+  "kenney_car_count": 42,
+  "kenney_mesh_nodes": 226,
+  "final_mesh_nodes": 2198,
+  "vehicle_models": {
+    "hatchback-sports": 10,
+    "sedan-sports": 12,
+    "sedan": 5,
+    "taxi": 3,
+    "suv": 4,
+    "van": 8
+  },
+  "official_source": "https://kenney.nl/assets/car-kit",
+  "license": "CC0 1.0 Universal",
+  "kenney_source_zip_sha256": "fac7dacac5c7874348cf19729af3ef205f3d366493edaf0a827d93f4fdf3d0c4",
+  "glb_sha256": "805fa2e82e5243361db1a7ab8c897462a235e0da7d3f171622eff042ef13f603",
+  "glb_size": 20653268,
+  "vehicles": [
+    {
+      "id": "B03-PARK-0",
+      "x": -32.5,
+      "z": 47.0,
+      "yaw": 90.0,
+      "kind": "kei",
+      "kenney_glb": "hatchback-sports",
+      "collider": {
+        "center": [
+          -32.5,
+          0.845,
+          47.0
+        ],
+        "size": [
+          3.62,
+          1.69,
+          1.62
+        ]
+      }
+    },
+    {
+      "id": "B03-PARK-1",
+      "x": -12.5,
+      "z": 47.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "sedan-sports",
+      "collider": {
+        "center": [
+          -12.5,
+          0.795,
+          47.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "B06-PARK-0",
+      "x": 12.5,
+      "z": 47.0,
+      "yaw": 90.0,
+      "kind": "kei",
+      "kenney_glb": "hatchback-sports",
+      "collider": {
+        "center": [
+          12.5,
+          0.845,
+          47.0
+        ],
+        "size": [
+          3.62,
+          1.69,
+          1.62
+        ]
+      }
+    },
+    {
+      "id": "B06-PARK-1",
+      "x": 32.5,
+      "z": 47.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "sedan",
+      "collider": {
+        "center": [
+          32.5,
+          0.795,
+          47.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "B07-PARK-0",
+      "x": 57.5,
+      "z": -43.0,
+      "yaw": 90.0,
+      "kind": "kei",
+      "kenney_glb": "hatchback-sports",
+      "collider": {
+        "center": [
+          57.5,
+          0.845,
+          -43.0
+        ],
+        "size": [
+          3.62,
+          1.69,
+          1.62
+        ]
+      }
+    },
+    {
+      "id": "B07-PARK-1",
+      "x": 77.5,
+      "z": -43.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "taxi",
+      "collider": {
+        "center": [
+          77.5,
+          0.795,
+          -43.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "B08-PARK-0",
+      "x": 57.5,
+      "z": 2.0,
+      "yaw": 90.0,
+      "kind": "kei",
+      "kenney_glb": "hatchback-sports",
+      "collider": {
+        "center": [
+          57.5,
+          0.845,
+          2.0
+        ],
+        "size": [
+          3.62,
+          1.69,
+          1.62
+        ]
+      }
+    },
+    {
+      "id": "B08-PARK-1",
+      "x": 77.5,
+      "z": 2.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "sedan-sports",
+      "collider": {
+        "center": [
+          77.5,
+          0.795,
+          2.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "B09-PARK-0",
+      "x": 57.5,
+      "z": 47.0,
+      "yaw": 90.0,
+      "kind": "kei",
+      "kenney_glb": "sedan-sports",
+      "collider": {
+        "center": [
+          57.5,
+          0.845,
+          47.0
+        ],
+        "size": [
+          3.62,
+          1.69,
+          1.62
+        ]
+      }
+    },
+    {
+      "id": "B09-PARK-1",
+      "x": 77.5,
+      "z": 47.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "sedan",
+      "collider": {
+        "center": [
+          77.5,
+          0.795,
+          47.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "EDGE_EAST_0",
+      "x": 101.0,
+      "z": -53.0,
+      "yaw": 0.0,
+      "kind": "van",
+      "kenney_glb": "suv",
+      "collider": {
+        "center": [
+          101.0,
+          1.095,
+          -53.0
+        ],
+        "size": [
+          1.98,
+          2.19,
+          4.77
+        ]
+      }
+    },
+    {
+      "id": "EDGE_EAST_1",
+      "x": 101.0,
+      "z": -31.0,
+      "yaw": 0.0,
+      "kind": "kei",
+      "kenney_glb": "hatchback-sports",
+      "collider": {
+        "center": [
+          101.0,
+          0.845,
+          -31.0
+        ],
+        "size": [
+          1.62,
+          1.69,
+          3.62
+        ]
+      }
+    },
+    {
+      "id": "EDGE_EAST_2",
+      "x": 101.0,
+      "z": -10.0,
+      "yaw": 0.0,
+      "kind": "kei",
+      "kenney_glb": "sedan-sports",
+      "collider": {
+        "center": [
+          101.0,
+          0.845,
+          -10.0
+        ],
+        "size": [
+          1.62,
+          1.69,
+          3.62
+        ]
+      }
+    },
+    {
+      "id": "EDGE_EAST_3",
+      "x": 101.0,
+      "z": 14.0,
+      "yaw": 0.0,
+      "kind": "van",
+      "kenney_glb": "van",
+      "collider": {
+        "center": [
+          101.0,
+          1.095,
+          14.0
+        ],
+        "size": [
+          1.98,
+          2.19,
+          4.77
+        ]
+      }
+    },
+    {
+      "id": "EDGE_EAST_4",
+      "x": 101.0,
+      "z": 33.0,
+      "yaw": 0.0,
+      "kind": "kei",
+      "kenney_glb": "hatchback-sports",
+      "collider": {
+        "center": [
+          101.0,
+          0.845,
+          33.0
+        ],
+        "size": [
+          1.62,
+          1.69,
+          3.62
+        ]
+      }
+    },
+    {
+      "id": "EDGE_EAST_5",
+      "x": 101.0,
+      "z": 56.0,
+      "yaw": 0.0,
+      "kind": "kei",
+      "kenney_glb": "hatchback-sports",
+      "collider": {
+        "center": [
+          101.0,
+          0.845,
+          56.0
+        ],
+        "size": [
+          1.62,
+          1.69,
+          3.62
+        ]
+      }
+    },
+    {
+      "id": "EDGE_EAST_6",
+      "x": 101.0,
+      "z": 79.0,
+      "yaw": 0.0,
+      "kind": "van",
+      "kenney_glb": "van",
+      "collider": {
+        "center": [
+          101.0,
+          1.095,
+          79.0
+        ],
+        "size": [
+          1.98,
+          2.19,
+          4.77
+        ]
+      }
+    },
+    {
+      "id": "EDGE_EAST_7",
+      "x": 101.0,
+      "z": 99.0,
+      "yaw": 0.0,
+      "kind": "kei",
+      "kenney_glb": "sedan-sports",
+      "collider": {
+        "center": [
+          101.0,
+          0.845,
+          99.0
+        ],
+        "size": [
+          1.62,
+          1.69,
+          3.62
+        ]
+      }
+    },
+    {
+      "id": "EDGE_NORTH_0",
+      "x": -54.0,
+      "z": 101.0,
+      "yaw": 90.0,
+      "kind": "van",
+      "kenney_glb": "van",
+      "collider": {
+        "center": [
+          -54.0,
+          1.095,
+          101.0
+        ],
+        "size": [
+          4.77,
+          2.19,
+          1.98
+        ]
+      }
+    },
+    {
+      "id": "EDGE_NORTH_1",
+      "x": -31.0,
+      "z": 101.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "sedan-sports",
+      "collider": {
+        "center": [
+          -31.0,
+          0.795,
+          101.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "EDGE_NORTH_2",
+      "x": -8.0,
+      "z": 101.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "taxi",
+      "collider": {
+        "center": [
+          -8.0,
+          0.795,
+          101.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "EDGE_NORTH_3",
+      "x": 14.0,
+      "z": 101.0,
+      "yaw": 90.0,
+      "kind": "van",
+      "kenney_glb": "suv",
+      "collider": {
+        "center": [
+          14.0,
+          1.095,
+          101.0
+        ],
+        "size": [
+          4.77,
+          2.19,
+          1.98
+        ]
+      }
+    },
+    {
+      "id": "EDGE_NORTH_4",
+      "x": 35.0,
+      "z": 101.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "sedan-sports",
+      "collider": {
+        "center": [
+          35.0,
+          0.795,
+          101.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "EDGE_NORTH_5",
+      "x": 55.0,
+      "z": 101.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "taxi",
+      "collider": {
+        "center": [
+          55.0,
+          0.795,
+          101.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "EDGE_NORTH_6",
+      "x": 78.0,
+      "z": 101.0,
+      "yaw": 90.0,
+      "kind": "van",
+      "kenney_glb": "van",
+      "collider": {
+        "center": [
+          78.0,
+          1.095,
+          101.0
+        ],
+        "size": [
+          4.77,
+          2.19,
+          1.98
+        ]
+      }
+    },
+    {
+      "id": "EDGE_NORTH_7",
+      "x": 101.0,
+      "z": 101.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "sedan-sports",
+      "collider": {
+        "center": [
+          101.0,
+          0.795,
+          101.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "EDGE_SOUTH_0",
+      "x": -54.0,
+      "z": -56.0,
+      "yaw": 90.0,
+      "kind": "van",
+      "kenney_glb": "suv",
+      "collider": {
+        "center": [
+          -54.0,
+          1.095,
+          -56.0
+        ],
+        "size": [
+          4.77,
+          2.19,
+          1.98
+        ]
+      }
+    },
+    {
+      "id": "EDGE_SOUTH_1",
+      "x": -31.0,
+      "z": -56.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "sedan",
+      "collider": {
+        "center": [
+          -31.0,
+          0.795,
+          -56.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "EDGE_SOUTH_2",
+      "x": -8.0,
+      "z": -56.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "sedan-sports",
+      "collider": {
+        "center": [
+          -8.0,
+          0.795,
+          -56.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "EDGE_SOUTH_3",
+      "x": 14.0,
+      "z": -56.0,
+      "yaw": 90.0,
+      "kind": "van",
+      "kenney_glb": "van",
+      "collider": {
+        "center": [
+          14.0,
+          1.095,
+          -56.0
+        ],
+        "size": [
+          4.77,
+          2.19,
+          1.98
+        ]
+      }
+    },
+    {
+      "id": "EDGE_SOUTH_4",
+      "x": 35.0,
+      "z": -56.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "sedan",
+      "collider": {
+        "center": [
+          35.0,
+          0.795,
+          -56.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "EDGE_SOUTH_5",
+      "x": 55.0,
+      "z": -56.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "sedan-sports",
+      "collider": {
+        "center": [
+          55.0,
+          0.795,
+          -56.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "EDGE_SOUTH_6",
+      "x": 78.0,
+      "z": -56.0,
+      "yaw": 90.0,
+      "kind": "van",
+      "kenney_glb": "van",
+      "collider": {
+        "center": [
+          78.0,
+          1.095,
+          -56.0
+        ],
+        "size": [
+          4.77,
+          2.19,
+          1.98
+        ]
+      }
+    },
+    {
+      "id": "EDGE_SOUTH_7",
+      "x": 101.0,
+      "z": -56.0,
+      "yaw": 90.0,
+      "kind": "sedan",
+      "kenney_glb": "sedan",
+      "collider": {
+        "center": [
+          101.0,
+          0.795,
+          -56.0
+        ],
+        "size": [
+          4.52,
+          1.59,
+          1.87
+        ]
+      }
+    },
+    {
+      "id": "EDGE_WEST_0",
+      "x": -56.0,
+      "z": -53.0,
+      "yaw": 0.0,
+      "kind": "van",
+      "kenney_glb": "van",
+      "collider": {
+        "center": [
+          -56.0,
+          1.095,
+          -53.0
+        ],
+        "size": [
+          1.98,
+          2.19,
+          4.77
+        ]
+      }
+    },
+    {
+      "id": "EDGE_WEST_1",
+      "x": -56.0,
+      "z": -31.0,
+      "yaw": 0.0,
+      "kind": "kei",
+      "kenney_glb": "sedan-sports",
+      "collider": {
+        "center": [
+          -56.0,
+          0.845,
+          -31.0
+        ],
+        "size": [
+          1.62,
+          1.69,
+          3.62
+        ]
+      }
+    },
+    {
+      "id": "EDGE_WEST_2",
+      "x": -56.0,
+      "z": -10.0,
+      "yaw": 0.0,
+      "kind": "kei",
+      "kenney_glb": "hatchback-sports",
+      "collider": {
+        "center": [
+          -56.0,
+          0.845,
+          -10.0
+        ],
+        "size": [
+          1.62,
+          1.69,
+          3.62
+        ]
+      }
+    },
+    {
+      "id": "EDGE_WEST_3",
+      "x": -56.0,
+      "z": 14.0,
+      "yaw": 0.0,
+      "kind": "van",
+      "kenney_glb": "suv",
+      "collider": {
+        "center": [
+          -56.0,
+          1.095,
+          14.0
+        ],
+        "size": [
+          1.98,
+          2.19,
+          4.77
+        ]
+      }
+    },
+    {
+      "id": "EDGE_WEST_4",
+      "x": -56.0,
+      "z": 33.0,
+      "yaw": 0.0,
+      "kind": "kei",
+      "kenney_glb": "hatchback-sports",
+      "collider": {
+        "center": [
+          -56.0,
+          0.845,
+          33.0
+        ],
+        "size": [
+          1.62,
+          1.69,
+          3.62
+        ]
+      }
+    },
+    {
+      "id": "EDGE_WEST_5",
+      "x": -56.0,
+      "z": 56.0,
+      "yaw": 0.0,
+      "kind": "kei",
+      "kenney_glb": "sedan-sports",
+      "collider": {
+        "center": [
+          -56.0,
+          0.845,
+          56.0
+        ],
+        "size": [
+          1.62,
+          1.69,
+          3.62
+        ]
+      }
+    },
+    {
+      "id": "EDGE_WEST_6",
+      "x": -56.0,
+      "z": 79.0,
+      "yaw": 0.0,
+      "kind": "van",
+      "kenney_glb": "van",
+      "collider": {
+        "center": [
+          -56.0,
+          1.095,
+          79.0
+        ],
+        "size": [
+          1.98,
+          2.19,
+          4.77
+        ]
+      }
+    },
+    {
+      "id": "EDGE_WEST_7",
+      "x": -56.0,
+      "z": 99.0,
+      "yaw": 0.0,
+      "kind": "kei",
+      "kenney_glb": "hatchback-sports",
+      "collider": {
+        "center": [
+          -56.0,
+          0.845,
+          99.0
+        ],
+        "size": [
+          1.62,
+          1.69,
+          3.62
+        ]
+      }
+    }
+  ],
+  "unity_playmode": "NOT TESTED",
+  "note": "Do not place both V04 and V05 overlays: the world/roads would be duplicated."
+}
