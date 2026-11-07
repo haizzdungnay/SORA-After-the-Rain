@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330" role="img" aria-label="SORA AFX to modular original city asset pipeline">
+<rect width="1000" height="330" rx="18" fill="#0e1623"/>
+<text x="32" y="44" font-family="Arial" font-size="25" font-weight="bold" fill="#f5f8fc">G0 - Original asset kitbash strategy</text>
+<text x="32" y="69" font-family="Arial" font-size="14" fill="#a9bfcb">Architecture pipeline diagram, not a screenshot of imported Unity assets</text>
+<rect x="35" y="104" width="242" height="153" rx="14" fill="#304657" stroke="#779bb2"/>
+<rect x="75" y="130" width="44" height="55" fill="#697f85" stroke="#d6e7e8"/>
+<rect x="130" y="130" width="42" height="55" fill="#788f8a" stroke="#d6e7e8"/>
+<rect x="184" y="130" width="45" height="55" fill="#877b82" stroke="#d6e7e8"/>
+<text x="156" y="211" text-anchor="middle" font-family="Arial" font-size="19" font-weight="bold" fill="#fafafa">AFX source GLB</text>
+<text x="156" y="233" text-anchor="middle" font-family="Arial" font-size="12" fill="#bed7e0">149 meshes / 34 materials</text>
+<path d="M287 178 L349 178" stroke="#7ed8c4" stroke-width="4" fill="none"/><path d="M338 168 L350 178 L338 188" stroke="#7ed8c4" stroke-width="4" fill="none"/>
+<rect x="363" y="104" width="263" height="153" rx="14" fill="#254e53" stroke="#55b8aa"/>
+<text x="493" y="138" text-anchor="middle" font-family="Arial" font-size="19" font-weight="bold" fill="#eefbf7">Isolate + review</text>
+<text x="493" y="166" text-anchor="middle" font-family="Arial" font-size="14" fill="#daeee9">Geometry / pivot / scale</text>
+<text x="493" y="189" text-anchor="middle" font-family="Arial" font-size="14" fill="#daeee9">UV / textures / missing sides</text>
+<text x="493" y="211" text-anchor="middle" font-family="Arial" font-size="14" fill="#daeee9">Catalog reusable KIT-IDs</text>
+<path d="M636 178 L694 178" stroke="#7ed8c4" stroke-width="4" fill="none"/><path d="M683 168 L695 178 L683 188" stroke="#7ed8c4" stroke-width="4" fill="none"/>
+<rect x="711" y="104" width="254" height="153" rx="14" fill="#534e66" stroke="#c2a6da"/>
+<text x="838" y="136" text-anchor="middle" font-family="Arial" font-size="19" font-weight="bold" fill="#f8f4fc">New SORA layout</text>
+<rect x="748" y="152" width="181" height="50" fill="#647786"/>
+<rect x="761" y="159" width="38" height="37" fill="#2b495a" stroke="#c9e3ec"/>
+<rect x="814" y="159" width="38" height="37" fill="#b6a075" stroke="#e6d5af"/>
+<rect x="865" y="159" width="48" height="37" fill="#5c8d92" stroke="#9acfd1"/>
+<text x="838" y="232" text-anchor="middle" font-family="Arial" font-size="13" fill="#ddd6e9">Original city / not the source alley</text>
+<text x="35" y="293" font-family="Arial" font-size="14" fill="#ecb77b">Private source/derived AFX geometry stays outside the public GitHub repository until rights are cleared.</text>
+</svg>
