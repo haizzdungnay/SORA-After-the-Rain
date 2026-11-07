@@ -2,9 +2,9 @@
 
 **Đã có:** AFX local/private, 2 GLB phố Nhật CC0 (Izakaya Alley + Japanese School City), Poly Haven Asphalt 01 2K PBR. Chúng đủ để dựng **khung V04 9 ô nhà**. Xe và tường bao hiện là geometry do SORA tự tạo.
 
-**Ưu tiên tải tiếp (01 bộ, miễn phí thật):**
+**ĐÃ NHẬN / ĐÃ TÍCH HỢP V05:** Chủ dự án tải và gửi ZIP Kenney Car Kit 3.1; bản đầy đủ được thay xe thực trong 42 điểm đỗ, GLB CC0 và source ZIP đã push Git LFS. Xem [V05 model và tài liệu](../../ArtSource/Generated/V05_CC0/README.md).
 
-- **[Kenney — Car Kit](https://kenney.nl/assets/car-kit)** — [trang tải miễn phí thay thế trên itch.io](https://kenney-assets.itch.io/car-kit). Giấy phép **CC0 1.0**. Có khoảng **45 mẫu xe và chi tiết**, gồm xe con, xe tải, van; hỗ trợ glTF, FBX và OBJ. Anh tải ZIP (miễn phí; Kenney cho phép bỏ qua khoản ủng hộ), rồi gửi lại nguyên ZIP để em thay 42 xe placeholder dọc rìa bản đồ và những xe đỗ khu dân cư. **CHƯA TẢI / CHƯA IMPORT vào V04**, không tuyên bố đã dùng.
+- **[Kenney — Car Kit](https://kenney.nl/assets/car-kit)** — [trang tải miễn phí thay thế trên itch.io](https://kenney-assets.itch.io/car-kit). Giấy phép **CC0 1.0**. Có khoảng **45 mẫu xe và chi tiết**, gồm xe con, xe tải, van; hỗ trợ glTF, FBX và OBJ. Anh tải ZIP (miễn phí; Kenney cho phép bỏ qua khoản ủng hộ), rồi gửi lại nguyên ZIP để em thay 42 xe placeholder dọc rìa bản đồ và những xe đỗ khu dân cư. **ĐÃ NHẬN, ĐÃ PUSH V05 CC0 GLB; CHƯA CHẠY UNITY EDITOR.**
 
 **Có thể tải sau, chưa phải blocker:**
 - [Kenney City Kit Roads](https://kenney.nl/assets/city-kit-roads) — CC0; giúp bổ sung dải phân cách, đèn giao thông, chắn đường, biển cảnh báo. Chỉ cần nếu muốn nâng hạ tầng từ mô hình đường PBR đang có, không bắt buộc để khóa map.
