@@ -1,6 +1,129 @@
 # Changelog
 
-This file records source and documentation milestones. A source tag is not proof of Unity compilation or a playable release.
+This log records **implemented source, asset and documentation work** for [SORA: After the Rain](https://github.com/haizzdungnay/SORA-After-the-Rain), with links to real GitHub PRs and visual evidence where available.
+
+> **Release and evidence policy:** `VS01`, `V02`, `V03`, `V04` and `V05` are **internal environment-art iteration names**, not published playable releases or new SemVer tags. A 3D GLB, a Unity Editor staging helper and a passing static CI job do **not** by themselves prove Unity Play Mode, collision, performance or Windows build acceptance. Original/modified AFX assets are kept outside this public repository under the creator's distribution conditions. All newly authored diagrams below are explicitly **schematics, not in-game screenshots**.
+
+## [Unreleased] — development history through 2026-11-07
+
+**Repository status checked 2026-11-07:** Environment V04 is merged into `main` ([#13](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/13)); the Kenney V05 upgrade exists and its artifacts are uploaded on `feature/neighborhood-v05-kenney-car-upgrade`, but **[#16](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/16) is still open**. Unity integration of the V03/V04/V05 neighborhood with the playable prototype remains to be validated.
+
+### 2026-11-06 — V05: Kenney Car Kit replaces parked-vehicle placeholders
+
+**Status:** Generated and source-verified on the V05 feature branch; **pending PR #16** (not a new playable game release).
+
+- Received and validated the owner's **Kenney Car Kit 3.1** source ZIP, including its CC0 license and SHA-256. Stored the original 4.8 MB archive in Git LFS.
+- Replaced **42 procedurally made parked cars** with actual Kenney mesh instances, keeping the same parking locations, nine-block geometry, SORA MART and road network. **V05 replaces the entire V04 overlay; do not stack V04 and V05 together.**
+- Recovered the external Kenney color-atlas texture and embedded it into exported GLB materials; fixed initial white/untextured vehicle previews.
+- Rebuilt vehicle collision proxies using model bounds, preserving **4 continuous perimeter barriers and 16 road-end blocks**. The public replacement GLB is ~20.65 MB (2,198 scene mesh instances); the owner-private assembled variant has additional detail.
+- Added a reproducible builder, Git LFS archive and output, [source/QA report](Docs/StreetExterior/Reports/2026-11-06-V05-KENNEY-CAR-KIT-IMPLEMENTATION.md) on the V05 branch, and an Editor-only staging helper. The [GitHub Actions build](https://github.com/haizzdungnay/SORA-After-the-Rain/actions/runs/42198697484) passed source-hash, GLB-export/reload and structural tests.
+- **Pending:** real Unity import, shader inspection, collision and camera traversal with both protagonists, POS/save regressions, nighttime rain and performance.
+
+![V04 to V05: dense nine-block map and Kenney vehicle replacement schematic](Docs/Media/Changelog/sora-v04-v05-dense-nine-blocks.svg)
+
+*Illustration of the layout and vehicle change. Not a photograph or Unity capture. Source: [PR #16](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/16), [V05 manifest on feature branch](https://github.com/haizzdungnay/SORA-After-the-Rain/blob/feature/neighborhood-v05-kenney-car-upgrade/ArtSource/Generated/V05_CC0/manifest.json).*
+
+### 2026-11-06 — V04: compact nine-block neighborhood and world boundaries
+
+**Status:** **Merged into `main`** in [PR #13](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/13).
+
+- Extended the existing V03 four-block layout northward/eastward to **9 city blocks**, **4 roads per axis / 16 intersections** and a nominal **171 × 171 m** playable-footprint design, while preserving the SORA MART placement.
+- Added **60 new building exteriors**, bringing the total to **84 building positions**. The five added blocks reached approximately **77.6% nominal ground-coverage** in geometry checks; older rear service areas remain but are screened.
+- Created **42 placeholder car models**, extra road marking and asphalt geometry, skyline infill, and background buildings to avoid visible empty horizon beyond the map.
+- Added **4 overlapping, continuous outer-wall collision proxies**, **16 road-end barricades**, a ground safety layer and an optional bound-recovery helper for both controlled twins.
+- Committed the real **CC0-only V04 overlay GLB** (~20.25 MB; 2,350 mesh nodes), its layout and **122 collider-proxy records** through Git LFS. The complete geometry including AFX-derived V03 remains in a separate owner-private package.
+- GitHub's [V04 3D build](https://github.com/haizzdungnay/SORA-After-the-Rain/actions/runs/42193823811) verified GLB export, SHA, layout records and border structure.
+- **Not yet accepted:** Unity physics, walking every boundary, door/side/rear façade art quality, URP nighttime lighting, wet reflections or playable Windows performance. Structural wall metadata alone cannot guarantee a character will never fall off the map.
+
+[Detailed V04 build and acceptance report](Docs/StreetExterior/Reports/2026-11-06-V04-NINE-BLOCK-IMPLEMENTATION.md) · [V04 layout JSON](Docs/StreetExterior/V04_DENSE_GRID_LAYOUT.json) · [V04 CC0 GLB](ArtSource/Generated/V04_CC0/SORA_V04_CC0_Dense_Overlay.glb).
+
+### 2026-11-06 — V03: integrated CC0 storefronts, props and PBR asphalt
+
+**Status:** Source and CC0 overlay incorporated in the mainline V04 history; initially reviewed in [PR #12](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/12), reconciled via [PR #13](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/13).
+
+- Expanded the four-block scene from **16 to 24 exterior positions**, with eight additional building shells designed for SORA.
+- Placed individually selected **Izakaya Alley / Ramen Shop** and **Japanese School / City Street** components into **23 shop façades**, retaining the custom SORA MART as the remaining major frontage.
+- Added bicycles, lanterns, vending machines, plants and sidewalk signage around all 24 parcels, plus small props and vegetation across four internal courtyards.
+- Applied **Poly Haven Asphalt 01** diffuse, normal and roughness data to **15 PBR road sections** (wet shader/URP behavior remains pending).
+- Corrected the `KHR_mesh_quantization` interpretation of supplied source GLBs so signed 16-bit normalized POSITION values import at sensible scale rather than oversized geometry.
+- Built a public **20.78 MB, 1,361-instance CC0-only overlay** in Git LFS, with a reproducible Python generator, checksum manifest and staging-scene tooling. A fuller V03 scene containing AFX-derived geometry was delivered privately.
+- **Not yet verified in Unity:** glass/transparent material fidelity, scale with character controllers, colliders, interior visibility, rain and shop-by-shop exterior QA.
+
+![V02 and V03 four-block neighborhood density comparison](Docs/Media/Changelog/sora-v02-v03-map-evolution.svg)
+
+*Documented topology/density diagram, not an in-game capture. Source: [V03 report](Docs/StreetExterior/Reports/2026-11-06-V03-CC0-INTEGRATION.md), [V03 geometry manifest](ArtSource/Generated/V03_CC0/manifest.json).*
+
+### 2026-11-06 — V02: original square-grid neighborhood and CC0 asset library
+
+**Status:** Merged into `main` in [PR #11](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/11).
+
+- Built the first larger **126 × 126 m, 3 × 3-road** neighborhood prototype with **9 intersections, 4 city blocks and 16 candidate shop/building exteriors**. This is a newly planned SORA layout, **not** a copy of the source AFX alley.
+- Preserved SORA MART, rearranged/reused AFX parts, and created roads, curbs, crossings, pavement, street furniture and temporary courtyard geometry.
+- Received and verified the two 3DAssets.dev CC0 starter scenes and the owner's **Poly Haven Asphalt 01** 4K Blender ZIP; committed the two original GLBs plus **three optimized 2K PBR texture maps** (diffuse/normal/roughness) in Git LFS under `ArtSource/ThirdParty/CC0/`.
+- Added content SHA-256 records, asset provenance, import/verification scripts and [a verified intake report](Docs/StreetExterior/Reports/2026-11-06-V02-CC0-ASSET-INTAKE.md). The full original 4K ZIP was not needlessly committed.
+- Scene mesh export and offscreen source-model previews were checked; **Unity prefab import and gameplay integration were not checked**.
+
+[See the V02–V03 map illustration above](Docs/Media/Changelog/sora-v02-v03-map-evolution.svg) · [V02 layout](Docs/StreetExterior/V02_GRID_LAYOUT.json) · [CC0 source register](ArtSource/ThirdParty/CC0/README.md).
+
+### 2026-11-06 — VS01: first authored 3D street proof of concept
+
+**Status:** Merged into `main` in [PR #10](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/10).
+
+- Built a **48 m street demonstration with 8 m carriageway**: a newly authored **SORA MART** exterior (nominal 14 m façade, 11 m depth) and two independently re-positioned AFX-source shop groups (**Midori Ramen** and **Hoshi Books**), rather than reproducing the reference alley.
+- Added storefront signs, doors/glass, sidewalks, crosswalk, road markings, utility meshes and street props; exported a real textured **271-mesh-instance GLB**, privately delivered for art review.
+- Fixed mirrored UV signs detected from real exported GLB previews.
+- Added [layout metadata](Docs/StreetExterior/VS01_LAYOUT.json), a Blender extraction utility, geometric checks, Unity staging helper and [VS01 build report](Docs/StreetExterior/Reports/2026-11-06-VS01-IMPLEMENTATION.md).
+- The private AFX-derived model is **not distributed in the public repository**. Visual model construction was checked; Unity URP/Play Mode/gameplay acceptance was not.
+
+![VS01 48-meter street design with custom SORA MART and two reference-derived storefronts](Docs/Media/Changelog/sora-vs01-street-schematic.svg)
+
+*Original layout schematic, not a Unity screenshot.*
+
+### 2026-11-06 — G0: verified 3D reference, rights and modular-kit design
+
+**Status:** Documentation/tools merged via [PR #9](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/9).
+
+- Inspected the owner-supplied **AFX/CGMotion Japanese street at night** GLB: **149 meshes, 51,687 triangles, 34 materials and 107 embedded textures**. Identified ten **source geometry groups A–J**; these are **not** ten finished SORA storefronts.
+- Documented source hashes, actual geometry bounds, candidate groups, gaps in façades/backs, and reusable-asset provenance.
+- Recorded the owner's direction: **use AFX components as a kitbash library to create a new SORA city**, not copy AFX's narrow alley or original A–J layout. Updated the phased plan, work packages and multi-session development guide accordingly.
+- Added local-only Blender inspection/extraction tools. Kept original and modified AFX source meshes/textures **outside the public repo**, following the source creator's additional conditions.
+- **Remaining:** semantic per-module separation/pivots, import/review in Blender and Unity, and exterior quality approval.
+
+![G0 asset workflow: inspect and reuse source pieces in an original city layout](Docs/Media/Changelog/sora-g0-asset-kitbash-workflow.svg)
+
+*Source-to-kit design diagram; not a screenshot. [G0 inspection report](Docs/StreetExterior/Reports/2026-11-06-G0-AFX-GLB-INSPECTION.md) · [kitbash design decision](Docs/StreetExterior/AFX_KITBASH_CITY_DESIGN_DECISION_2026-11-06.md).*
+
+### 2026-11-05 — Exterior-art roadmap and individual-store quality gates
+
+**Status:** Documentation merged in [PR #8](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/8).
+
+- Published the phased exterior reconstruction plan, work-package backlog, frontage audit template and session handoff guide.
+- Introduced explicit **G0–G8 gates** for source inspection, city layout, staging, representative shopfront quality, SORA MART, all other exteriors, weather/streets, gameplay connection and optimization.
+- Established storefront-level QA across front, side, rear and visible roof surfaces, without claiming that planning was equivalent to finished buildings.
+
+[Street rebuild plan](Docs/STREET_EXTERIOR_REBUILD_PLAN.md) · [work packages](Docs/STREET_EXTERIOR_WORK_PACKAGES.csv).
+
+### 2026-11-03 to 2026-11-04 — Tei Akiko 3D model, rig and animations
+
+**Status:** Merged in [PR #6](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/6) and [PR #7](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/7).
+
+- Replaced Tei Akiko's character placeholder with an original **Blender-generated 3D model**, authored textures, materials, Humanoid rig and Unity import pipeline.
+- Added **Idle / Walk / Run** animations and a controller for game movement. Model and animation data were checked in with their Unity metadata and importer/source scripts.
+- Collected genuine **Unity Play Mode character captures**, which are distinct from the later 3D neighborhood prototype previews. Character model/animation verification should not be interpreted as validation of V03–V05 gameplay integration.
+
+| Akiko — in-game capture | Walk animation | Run animation |
+|:---:|:---:|:---:|
+| <img src="Docs/Media/tei-akiko-ingame.png" width="240" alt="Genuine Unity Play Mode capture of Tei Akiko"> | <img src="Docs/Media/tei-akiko-walk.png" width="240" alt="Tei Akiko Unity Walk preview"> | <img src="Docs/Media/tei-akiko-run.png" width="240" alt="Tei Akiko Unity Run preview"> |
+
+### 2026-11-02 — Tokyo neighborhood v0.5 connected prototype
+
+**Status:** Merged in [PR #5](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/5).
+
+- Expanded the original primitive-only world into a connected first-pass Tokyo neighborhood with procedural street-facing buildings and shopfronts.
+- Retained the store, two protagonists, camera and gameplay setup as the baseline to protect during later art replacements.
+- **Quality note:** This was a functional/procedural blockout, **not** the detailed exterior-art standard now pursued with VS01–V05.
+
+---
 
 ## [0.4.0-pre.1] — 2026-11-02
 
