@@ -6,22 +6,22 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 ## [Unreleased] — development history through 2026-11-07
 
-**Repository status checked 2026-11-07:** Environment V04 is merged into `main` ([#13](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/13)); the Kenney V05 upgrade exists and its artifacts are uploaded on `feature/neighborhood-v05-kenney-car-upgrade`, but **[#16](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/16) is still open**. Unity integration of the V03/V04/V05 neighborhood with the playable prototype remains to be validated.
+**Repository status checked 2026-11-07:** The V04 nine-block map and the V05 Kenney assets/model **are both present on `main`** ([#13](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/13), [#15](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/15)); the detailed V05 implementation PR [#16](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/16) has also been merged into its V04 integration branch. **Unity integration with the playable prototype remains unverified.**
 
 ### 2026-11-06 — V05: Kenney Car Kit replaces parked-vehicle placeholders
 
-**Status:** Generated and source-verified on the V05 feature branch; **pending PR #16** (not a new playable game release).
+**Status:** Source, model and QA metadata **available in `main`** through [PR #15](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/15); detailed review in [PR #16](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/16). This is an art/geometry milestone, **not** a new playable game release.
 
 - Received and validated the owner's **Kenney Car Kit 3.1** source ZIP, including its CC0 license and SHA-256. Stored the original 4.8 MB archive in Git LFS.
 - Replaced **42 procedurally made parked cars** with actual Kenney mesh instances, keeping the same parking locations, nine-block geometry, SORA MART and road network. **V05 replaces the entire V04 overlay; do not stack V04 and V05 together.**
 - Recovered the external Kenney color-atlas texture and embedded it into exported GLB materials; fixed initial white/untextured vehicle previews.
 - Rebuilt vehicle collision proxies using model bounds, preserving **4 continuous perimeter barriers and 16 road-end blocks**. The public replacement GLB is ~20.65 MB (2,198 scene mesh instances); the owner-private assembled variant has additional detail.
-- Added a reproducible builder, Git LFS archive and output, [source/QA report](Docs/StreetExterior/Reports/2026-11-06-V05-KENNEY-CAR-KIT-IMPLEMENTATION.md) on the V05 branch, and an Editor-only staging helper. The [GitHub Actions build](https://github.com/haizzdungnay/SORA-After-the-Rain/actions/runs/42198697484) passed source-hash, GLB-export/reload and structural tests.
+- Added a reproducible builder, Git LFS archive and output, [source/QA report](Docs/StreetExterior/Reports/2026-11-06-V05-KENNEY-CAR-KIT-IMPLEMENTATION.md) and an Editor-only staging helper. The [GitHub Actions build](https://github.com/haizzdungnay/SORA-After-the-Rain/actions/runs/42198697484) passed source-hash, GLB-export/reload and structural tests.
 - **Pending:** real Unity import, shader inspection, collision and camera traversal with both protagonists, POS/save regressions, nighttime rain and performance.
 
 ![V04 to V05: dense nine-block map and Kenney vehicle replacement schematic](Docs/Media/Changelog/sora-v04-v05-dense-nine-blocks.svg)
 
-*Illustration of the layout and vehicle change. Not a photograph or Unity capture. Source: [PR #16](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/16), [V05 manifest on feature branch](https://github.com/haizzdungnay/SORA-After-the-Rain/blob/feature/neighborhood-v05-kenney-car-upgrade/ArtSource/Generated/V05_CC0/manifest.json).*
+*Illustration of the layout and vehicle change. Not a photograph or Unity capture. Source: [PR #15](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/15), [PR #16](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/16), [V05 manifest](ArtSource/Generated/V05_CC0/manifest.json).*
 
 ### 2026-11-06 — V04: compact nine-block neighborhood and world boundaries
 
