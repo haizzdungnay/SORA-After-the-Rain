@@ -4,9 +4,21 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 > **Release and evidence policy:** `VS01`, `V02`, `V03`, `V04` and `V05` are **internal environment-art iteration names**, not published playable releases or new SemVer tags. A 3D GLB, a Unity Editor staging helper and a passing static CI job do **not** by themselves prove Unity Play Mode, collision, performance or Windows build acceptance. Original/modified AFX assets are kept outside this public repository under the creator's distribution conditions. All newly authored diagrams below are explicitly **schematics, not in-game screenshots**.
 
-## [Unreleased] — development history through 2026-11-07
+## [Unreleased] — development history through 2026-11-09
 
 **Repository status checked 2026-11-07:** The V04 nine-block map and the V05 Kenney assets/model **are both present on `main`** ([#13](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/13), [#15](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/15)); the detailed V05 implementation PR [#16](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/16) has also been merged into its V04 integration branch. **Unity integration with the playable prototype remains unverified.**
+
+### 2026-11-09 — local character model library: six owner-supplied packages
+
+**Status:** Imported and checked locally in **Unity 6000.3.7f1 / URP 17.3.0**. Public Git contains the importer, guide and provenance records; **model/texture binaries stay local** pending redistribution-rights review.
+
+- Prepared **Chisa, Citlali, Denia, Lynae, Male Rover and Zhongli** under `Assets/SORA/Characters/LocalImported/`, with **6 drag-and-drop prefabs and 69 URP materials**. Converted USDZ/glTF sources through Blender; retained original binary FBX and imported Rover's ASCII FBX natively with repaired local texture paths.
+- Preserved five source rigs and **Denia's 187 expression blendshapes**. **None of the six packages contains animation clips. Male Rover is a static mesh export without skin/bones**; rigging and locomotion remain separate work.
+- Normalized prefab visuals to **1.7 m**, feet at Y = 0 and root Scale = 1; kept colliders and gameplay logic out of the model library. Existing protagonists, prototype scene and store state systems are preserved.
+- Verified actual Unity C# compilation/import and the library self-check; **6/6 existing EditMode tests passed**, including Akiko and store-state regressions. Captured a genuine local **Unity Editor preview**, checked **238 stable asset GUIDs** across reimport and passed offline validation. Play Mode and Windows-build acceptance remain pending.
+- Recorded source ZIP SHA-256, package contents, credits and limitations. Two packages contain CC BY notices; four have no license document. Underlying commercial-game IP rights remain unverified, so original packages, converted assets and model previews are excluded from public Git.
+
+[Vietnamese usage guide](Docs/CHARACTER_MODEL_LIBRARY.md) · [Import evidence and limits](Docs/CHARACTER_MODEL_IMPORT_REPORT_2026-11-09.md) · [Asset register](Docs/ASSET_REGISTER.csv).
 
 ### 2026-11-06 — V05: Kenney Car Kit replaces parked-vehicle placeholders
 

@@ -42,3 +42,8 @@ __pycache__/
 
 # Local/private AFX-derived models and staging scenes (do not distribute through public Git)
 /Assets/SORA/Environment/StreetExterior/PrivateGenerated/
+
+# Owner-supplied character packages and local imports; redistribution rights pending
+/3d model/
+/Assets/SORA/Characters/LocalImported/
+/Assets/SORA/Characters/LocalImported.meta
