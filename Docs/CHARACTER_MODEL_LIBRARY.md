@@ -2,7 +2,7 @@
 
 Ngày nhập: **09/11/2026**. Unity **6000.3.7f1**, URP **17.3.0**.
 
-Sáu gói do chủ dự án cung cấp trong `3d model/` và toàn bộ thư viện Unity tại
+Sáu gói do chủ dự án cung cấp trong `3d model charater/` và toàn bộ thư viện Unity tại
 `Assets/SORA/Characters/LocalImported/` được đưa lên GitHub theo yêu cầu trực tiếp
 của chủ dự án ngày 09/11/2026. ZIP, FBX và texture dùng **Git LFS**; prefab, Avatar,
 material, mesh rig Rover, controller và `.meta` cũng đi kèm. Không cần chạy Blender
@@ -183,7 +183,7 @@ Sổ nguồn chung: [ASSET_REGISTER.csv](ASSET_REGISTER.csv).
 
 ## Tạo lại thư viện từ ZIP gốc trong repo
 
-1. Giải nén mỗi ZIP từ `3d model/` vào `LocalReferenceAssets/Characters/<ID>/`, với ID đúng như
+1. Giải nén mỗi ZIP từ `3d model charater/` vào `LocalReferenceAssets/Characters/<ID>/`, với ID đúng như
    bảng prefab. Giải nén tiếp ZIP/RAR trong thư mục `source/`; giữ texture và
    license. Mỗi `<ID>` cần đúng một FBX, glTF hoặc USDZ nguồn. Không giải nén USDZ
    thành các bản model thứ hai trong cùng cây thư mục.

@@ -1,0 +1,205 @@
+{
+  "checked_date": "2026-11-09",
+  "scope": "Owner-supplied environment source files; not Unity import or gameplay acceptance",
+  "files": [
+    {
+      "name": "asphalt_01_4k.blend.zip",
+      "bytes": 84494529,
+      "sha256": "a77bbd983524e29b1e684c6c79f8da47d512debd8ff867540d708e7d1832a239",
+      "file_count": 5,
+      "expanded_bytes": 84493755,
+      "formats": {
+        ".blend": 1,
+        ".exr": 2,
+        ".jpg": 1,
+        ".png": 1
+      },
+      "crc_verified": true,
+      "safe_entry_paths": true,
+      "license_entries": []
+    },
+    {
+      "name": "japanese_street_at_night.glb",
+      "bytes": 112172164,
+      "sha256": "975e7a7ab192d7315bf4c46e6aa7e0899d1ecfadd20d2550ef71e034c763c5af",
+      "glb": {
+        "version": 2,
+        "declared_bytes": 112172164,
+        "asset": {
+          "extras": {
+            "author": "AFX/CGMotion 3DModel Maker (https://sketchfab.com/afx_cgmotion)",
+            "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+            "source": "https://sketchfab.com/3d-models/japanese-street-at-night-fb1bdcd71a5544d699379d2d13dd1171",
+            "title": "Japanese street at night"
+          },
+          "generator": "Sketchfab-14.80.0",
+          "version": "2.0"
+        },
+        "nodes": 301,
+        "meshes": 149,
+        "materials": 34,
+        "images": 107,
+        "animations": 0,
+        "scene_names": [
+          "Sketchfab_Scene"
+        ],
+        "extensions": [
+          "KHR_materials_emissive_strength"
+        ],
+        "sample_nodes": [
+          "Sketchfab_model",
+          "root",
+          "GLTF_SceneRootNode",
+          "ven_01_0",
+          "Object_4",
+          "ven_03_1",
+          "Object_6",
+          "ven_02_2",
+          "Object_8",
+          "ven_04_3",
+          "Object_10",
+          "Built_A15_4",
+          "Object_12",
+          "Built_A14_5",
+          "Object_14",
+          "Built_A16_6",
+          "Object_16",
+          "Built_A12_7",
+          "Object_18",
+          "Built_A10_8"
+        ],
+        "unique_mesh_triangles": 51687,
+        "external_resources": []
+      },
+      "matches_zip_payload": "japanese_street_at_night.zip/japanese_street_at_night.glb"
+    },
+    {
+      "name": "japanese_street_at_night.zip",
+      "bytes": 108193583,
+      "sha256": "82bf84a520cac297759329264507cfff7f3e8d64916ef0e86beaebfe2aa422c4",
+      "file_count": 1,
+      "expanded_bytes": 112172164,
+      "formats": {
+        ".glb": 1
+      },
+      "crc_verified": true,
+      "safe_entry_paths": true,
+      "license_entries": []
+    },
+    {
+      "name": "kenney_city-kit-commercial_2.1.zip",
+      "bytes": 4096974,
+      "sha256": "f8b09b081c2bb88bcc126e2dec1cb40fd0dad7e7e591b6c26aaefe96fb35276b",
+      "file_count": 219,
+      "expanded_bytes": 11190670,
+      "formats": {
+        ".txt": 1,
+        ".fbx": 41,
+        ".png": 50,
+        ".glb": 41,
+        ".mtl": 41,
+        ".obj": 41,
+        ".html": 1,
+        ".url": 3
+      },
+      "crc_verified": true,
+      "safe_entry_paths": true,
+      "license_entries": [
+        "License.txt"
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "kenney_city-kit-industrial_2.0.zip",
+      "bytes": 5045077,
+      "sha256": "5b381164e5760f3830a2dbee43b972deee38b2a695d091b56e238ab2910c96d2",
+      "file_count": 201,
+      "expanded_bytes": 11056827,
+      "formats": {
+        ".txt": 1,
+        ".fbx": 37,
+        ".png": 48,
+        ".glb": 37,
+        ".mtl": 37,
+        ".obj": 37,
+        ".html": 1,
+        ".url": 3
+      },
+      "crc_verified": true,
+      "safe_entry_paths": true,
+      "license_entries": [
+        "License.txt"
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "kenney_city-kit-roads.zip",
+      "bytes": 2852289,
+      "sha256": "374a4552115cbd11b4ec5c930ee31a533562dc78a09af249a655d03f7ea3b959",
+      "file_count": 487,
+      "expanded_bytes": 7014570,
+      "formats": {
+        ".txt": 1,
+        ".fbx": 95,
+        ".png": 102,
+        ".glb": 95,
+        ".mtl": 95,
+        ".obj": 95,
+        ".html": 1,
+        ".url": 3
+      },
+      "crc_verified": true,
+      "safe_entry_paths": true,
+      "license_entries": [
+        "License.txt"
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "kenney_city-kit-suburban_20.zip",
+      "bytes": 3038740,
+      "sha256": "5869c35cf30b1c87bdb2d197b6d325eebadd2ef08ea27f04797e8e08d77a9a39",
+      "file_count": 216,
+      "expanded_bytes": 8069616,
+      "formats": {
+        ".txt": 1,
+        ".fbx": 40,
+        ".png": 51,
+        ".glb": 40,
+        ".mtl": 40,
+        ".obj": 40,
+        ".html": 1,
+        ".url": 3
+      },
+      "crc_verified": true,
+      "safe_entry_paths": true,
+      "license_entries": [
+        "License.txt"
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "kenney_modular-buildings.zip",
+      "bytes": 1825490,
+      "sha256": "47e1614686b4c0fe55190e88b22ff2b8b10935edf61f37f478a9b6a99477edc6",
+      "file_count": 554,
+      "expanded_bytes": 4924582,
+      "formats": {
+        ".txt": 1,
+        ".fbx": 108,
+        ".png": 117,
+        ".glb": 108,
+        ".mtl": 108,
+        ".obj": 108,
+        ".html": 1,
+        ".url": 3
+      },
+      "crc_verified": true,
+      "safe_entry_paths": true,
+      "license_entries": [
+        "License.txt"
+      ],
+      "license": "CC0-1.0"
+    }
+  ]
+}

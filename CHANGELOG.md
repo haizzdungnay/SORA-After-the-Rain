@@ -6,6 +6,14 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 ## [Unreleased] — development history through 2026-11-09
 
+### 2026-11-09 — complete environment source archives and character-folder sync
+
+- Store all **7 environment ZIPs plus the original AFX GLB** from `3d model enviroment/` in Git LFS at the owner's explicit request: **321,718,846 bytes**. Retain complete archives, license notices and the duplicate loose GLB as supplied.
+- Inspect all seven ZIPs: CRC and entry-path checks passed. Record file sizes, SHA-256, contents and source terms in the folder's `SOURCE_MANIFEST.json` and [Vietnamese intake guide](3d%20model%20enviroment/README.md); update `Docs/ASSET_REGISTER.csv`.
+- Identify **149 meshes / 34 materials / 107 embedded images** in the AFX street; its loose GLB matches the ZIP payload. The five Kenney packs contain **321 model variants** in FBX/GLB/OBJ and include CC0 notices. Asphalt 4K matches the previously registered source hash.
+- Follow the owner's folder move from `3d model/` to `3d model charater/`; all **6 character ZIPs** retain their original SHA-256. Update LFS patterns and current character documentation paths.
+- These are source backups and inspection results. The original AFX street is not the assembled private SORA V03 layer; the authored V05/V06 map still needs Unity integration. Current playable-demo validation remains recorded below.
+
 ### 2026-11-09 — direct playable-demo launch and blank-scene diagnosis
 
 - Add **SORA > 6. Play Demo / F6**: open `SORA_Prototype.unity` before entering Play Mode, prompt to save modified scenes, and respect cancellation. Ignore scene-open/play requests while already playing or transitioning.
@@ -32,7 +40,7 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 ### 2026-11-09 — six-model assets, source archives and Unity screenshots on GitHub
 
-- Include all six original ZIP packages in `3d model/` and the complete Unity library in `Assets/SORA/Characters/LocalImported/`: six FBX models, textures, 69 URP materials, six source prefabs, six playable prefabs, Humanoid Avatars, Rover's skinned meshes and the Idle/Walk/Run controller. Preserve every existing `.meta` and GUID.
+- Include all six original ZIP packages in `3d model charater/` and the complete Unity library in `Assets/SORA/Characters/LocalImported/`: six FBX models, textures, 69 URP materials, six source prefabs, six playable prefabs, Humanoid Avatars, Rover's skinned meshes and the Idle/Walk/Run controller. Preserve every existing `.meta` and GUID.
 - Store ZIP/FBX/texture binaries in **Git LFS**. A clone with `git lfs pull` can use the playable prefabs without extracting packages or running Blender. See [the updated setup guide](Docs/CHARACTER_MODEL_LIBRARY.md); assets are on the feature branch until review/merge.
 - Let offline validation accept hydrated assets above 50 MiB only when Git stores a valid LFS pointer; retain the large-raw-blob guard. Add a standalone regression check with Git and the Python standard library.
 - Publish at the owner's explicit request, superseding the initial local-only delivery below. Keep supplied license notices and credits; **publication does not establish redistribution or commercial rights**, which remain unverified in the [asset register](Docs/ASSET_REGISTER.csv).
