@@ -10,17 +10,21 @@ namespace Sora.AfterTheRain.Demo.Tests
     public sealed class SoraCityRealAssetTests
     {
         [Test]
-        public void PublicV03AndV05ExistAsImportedUnityGameObjects()
+        public void PublicV03V05AndV06ExistAsImportedUnityGameObjects()
         {
             GameObject v03 = Resources.Load<GameObject>(SoraCityRuntimeWorld.PublicV03Path);
             GameObject v05 = Resources.Load<GameObject>(SoraCityRuntimeWorld.PublicV05Path);
+            GameObject v06 = Resources.Load<GameObject>(SoraCityRuntimeWorld.PublicV06Path);
             Assert.That(v03, Is.Not.Null, "glTFast must import the V03 CC0 GLB as a Unity GameObject.");
             Assert.That(v05, Is.Not.Null, "glTFast must import the Kenney V05 GLB as a Unity GameObject.");
+            Assert.That(v06, Is.Not.Null, "glTFast must import the V06 60-storefront-detail GLB.");
 
             Assert.That(v03.GetComponentsInChildren<MeshRenderer>(true).Length, Is.GreaterThan(100),
                 "V03 GLB should contain hundreds of actual building/prop render meshes.");
             Assert.That(v05.GetComponentsInChildren<MeshRenderer>(true).Length, Is.GreaterThan(100),
                 "V05 GLB should contain real buildings, roads and Kenney cars.");
+            Assert.That(v06.GetComponentsInChildren<MeshRenderer>(true).Length, Is.GreaterThan(100),
+                "V06 GLB must import thousands of authored shopfront detail meshes.");
         }
 
         [Test]
