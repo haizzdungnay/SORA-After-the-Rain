@@ -42,3 +42,6 @@ __pycache__/
 
 # Local/private AFX-derived models and staging scenes (do not distribute through public Git)
 /Assets/SORA/Environment/StreetExterior/PrivateGenerated/
+
+# Owner-private AFX-derived GLB installed locally for real Unity import; never publicly push
+/Assets/Resources/SoraCity/Private/

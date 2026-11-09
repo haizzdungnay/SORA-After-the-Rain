@@ -32,3 +32,6 @@ ArtSource/Generated/V05_CC0/*.glb filter=lfs diff=lfs merge=lfs -text
 Assets/SORA/Characters/LocalImported/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
 Assets/SORA/Characters/LocalImported/**/*.bmp filter=lfs diff=lfs merge=lfs -text
 ArtSource/Generated/V06_CC0/*.glb filter=lfs diff=lfs merge=lfs -text
+
+# Runtime Unity-imported GLBs: these are ACTUAL Assets, not ArtSource-only stage files
+Assets/Resources/SoraCity/Models/*.glb filter=lfs diff=lfs merge=lfs -text
