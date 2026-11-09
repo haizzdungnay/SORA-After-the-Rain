@@ -23,9 +23,11 @@ def check(root):
     target = root / "Assets/Resources/SoraCity"
     v03 = json.loads((sources / "V03_CC0/manifest.json").read_text(encoding="utf-8"))
     v05 = json.loads((sources / "V05_CC0/manifest.json").read_text(encoding="utf-8"))
+    v06 = json.loads((sources / "V06_CC0/manifest.json").read_text(encoding="utf-8"))
     files = [
         ("Models/V03_CC0_Overlay.glb", v03["files"][0]["sha256"], 20782520),
         ("Models/V05_Kenney_9Block_Overlay.glb", v05["glb_sha256"], 20653268),
+        ("Models/V06_Facade_Details.glb", v06["glb_sha256"], v06["bytes"]),
     ]
     for relative, expected_hash, expected_len in files:
         path = target / relative
@@ -52,12 +54,13 @@ def check(root):
     loader = (root / "Assets/SORA/Scripts/SoraCityRuntimeWorld.cs").read_text(encoding="utf-8")
     for signal in ["Resources.Load<GameObject>(PublicV05Path)",
                    "Resources.Load<GameObject>(PrivateV03Path)",
+                   "Resources.Load<GameObject>(PublicV06Path)",
                    "UnityEngine.Object.Instantiate(v05Asset, city, false)",
                    "BuildCollisionProxies(city, proxyData)"]:
         assert signal in loader, "Missing actual GameObject runtime integration: " + signal
     assert not (target / "Private/V03_Integrated_NoMart.glb").exists(), (
         "Private AFX derivative accidentally present; never include it in a public CI upload")
-    print("PASS: 2 real GLBs in Assets/; 122 collider proxies; Build() live gameplay hook; no private AFX")
+    print("PASS: 3 real GLBs in Assets/; 122 collider proxies; Build() live gameplay hook; no private AFX")
     print("NOT RUN: Unity Editor compilation/import/Play Mode/POS/twin/camera/Windows build")
 
 
