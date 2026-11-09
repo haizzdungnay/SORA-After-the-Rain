@@ -13,6 +13,12 @@ namespace Sora.AfterTheRain.Demo
         private Vector3 aiTarget;
         private float aiRetargetAt;
         private Vector3 fallVelocity;
+        private int twinIndex;
+        private GameObject[] defaultVisuals;
+        private GameObject selectedVisual;
+        private float defaultHeight;
+        public string ModelId { get; private set; }
+        public float Height => controller != null ? controller.height : 1.72f;
 
         private static readonly Vector3[] WorkPoints =
         {
@@ -27,12 +33,66 @@ namespace Sora.AfterTheRain.Demo
         }
         public void SetPlayerControlled(bool enabled) { isPlayer = enabled; aiRetargetAt = 0; }
 
+        public void InitializeAppearance(int index)
+        {
+            controller = GetComponent<CharacterController>();
+            twinIndex = index;
+            defaultHeight = controller.height;
+            defaultVisuals = new GameObject[transform.childCount];
+            for (int i = 0; i < defaultVisuals.Length; i++) defaultVisuals[i] = transform.GetChild(i).gameObject;
+        }
+
+        public bool TrySetModel(string id)
+        {
+            if (defaultVisuals == null || !SoraCharacterModels.IsAllowed(twinIndex, id)) return false;
+            if (ModelId == id) return true;
+            var definition = SoraCharacterModels.Find(id);
+            var prefab = definition.Prefab;
+            if (prefab == null) return false;
+            var visual = Instantiate(prefab, transform, false);
+            var nextAnimator = visual.GetComponentInChildren<Animator>();
+            if (nextAnimator == null || nextAnimator.avatar == null || !nextAnimator.avatar.isHuman || nextAnimator.runtimeAnimatorController == null)
+            {
+                ReleaseVisual(visual);
+                return false;
+            }
+            ReleaseVisual(selectedVisual);
+            foreach (var child in defaultVisuals) child.SetActive(false);
+            selectedVisual = visual;
+            animator = nextAnimator;
+            animator.applyRootMotion = false;
+            controller.height = definition.Height;
+            controller.center = Vector3.up * (definition.Height * 0.5f);
+            ModelId = id;
+            return true;
+        }
+
+        public void RestoreDefaultAppearance()
+        {
+            if (defaultVisuals == null) return;
+            ReleaseVisual(selectedVisual);
+            selectedVisual = null;
+            foreach (var child in defaultVisuals) child.SetActive(true);
+            animator = GetComponentInChildren<Animator>();
+            controller.height = defaultHeight;
+            controller.center = Vector3.up * (defaultHeight * 0.5f);
+            ModelId = null;
+        }
+
+        private static void ReleaseVisual(GameObject visual)
+        {
+            if (visual == null) return;
+            visual.SetActive(false);
+            if (Application.isPlaying) Destroy(visual); else DestroyImmediate(visual);
+        }
+
         private void Update()
         {
             if (controller == null || SoraDemoCore.Instance == null) return;
             Vector3 intended = Vector3.zero;
             float speed = 0f;
-            if (isPlayer)
+            if (SoraDemoCore.Instance.IsChoosingModels) { aiRetargetAt = 0; }
+            else if (isPlayer)
             {
                 float x = Input.GetAxisRaw("Horizontal");
                 float z = Input.GetAxisRaw("Vertical");
@@ -99,13 +159,14 @@ namespace Sora.AfterTheRain.Demo
             if (target == null) return;
 
             // Instant snap camera behind character with Middle Click or C key
-            if (Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.C))
+            bool choosingModels = SoraDemoCore.Instance != null && SoraDemoCore.Instance.IsChoosingModels;
+            if (!choosingModels && (Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.C)))
             {
                 yaw = target.eulerAngles.y;
                 pitch = defaultPitch;
             }
 
-            if (Input.GetMouseButton(1))
+            if (!choosingModels && Input.GetMouseButton(1))
             {
                 // Free look while holding Right Mouse Button
                 yaw += Input.GetAxis("Mouse X") * 3.1f;
@@ -119,9 +180,10 @@ namespace Sora.AfterTheRain.Demo
                 pitch = Mathf.Lerp(pitch, defaultPitch, Time.deltaTime * recenterSpeed);
             }
 
-            distance = Mathf.Clamp(distance - Input.mouseScrollDelta.y * 0.5f, 2.0f, 6.5f);
+            if (!choosingModels) distance = Mathf.Clamp(distance - Input.mouseScrollDelta.y * 0.5f, 2.0f, 6.5f);
             Quaternion rotation = Quaternion.Euler(pitch, yaw, 0);
-            Vector3 focus = target.position + Vector3.up * 1.45f;
+            var character = target.GetComponent<SoraDemoCharacter>();
+            Vector3 focus = target.position + Vector3.up * (character != null ? character.Height * 0.82f : 1.45f);
             Vector3 wanted = focus + rotation * new Vector3(0f, 0f, -distance);
 
             // Prevent camera from clipping through storefront walls and shelving

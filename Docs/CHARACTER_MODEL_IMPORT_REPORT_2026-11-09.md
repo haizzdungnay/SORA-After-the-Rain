@@ -1,5 +1,11 @@
 # Báo cáo nhập model nhân vật - 09/11/2026
 
+Đây là mốc nhập nguồn ban đầu. Cập nhật tiếp theo đã thêm lựa chọn hai nhân vật,
+chiều cao riêng và Humanoid Idle/Walk/Run, gồm rig mới cho Rover. Xem
+[báo cáo lựa chọn nhân vật](CHARACTER_SELECTION_REPORT_2026-11-09.md) và
+[hướng dẫn hiện tại](CHARACTER_MODEL_LIBRARY.md). Số clip/rig/chiều cao dưới đây
+ghi lại trạng thái trước cập nhật đó.
+
 ## Phạm vi
 
 Nhập sáu ZIP do chủ dự án giữ vào thư viện local `Assets/SORA/Characters/LocalImported/`.

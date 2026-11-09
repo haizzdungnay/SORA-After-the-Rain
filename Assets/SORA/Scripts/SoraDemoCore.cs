@@ -19,6 +19,8 @@ namespace Sora.AfterTheRain.Demo
     {
         public int schema = 1;
         public int activeIndex;
+        public string toshiharuModel;
+        public string akikoModel;
         public float[] characterPositions = new float[6];
         public int storeCash = 0;
         public int sales = 0;
@@ -44,6 +46,7 @@ namespace Sora.AfterTheRain.Demo
         public int DialogueCustomer { get; private set; }
         public bool ShiftSummary { get; private set; }
         public bool HasPendingSale { get; private set; }
+        public bool IsChoosingModels { get; private set; }
         public string Notice { get; private set; } = "Chao mung den SORA: After the Rain - prototype 0.1";
         private float noticeUntil;
         private SoraThirdPersonCamera followCam;
@@ -51,6 +54,7 @@ namespace Sora.AfterTheRain.Demo
         private bool initialized;
         private float begunAt;
         private const int SalePrice = 380;
+        private Vector2 modelMenuScroll;
 
         public SoraDemoCharacter ActiveCharacter { get { return Characters.Count == 2 ? Characters[State.activeIndex] : null; } }
         public string SavePath { get { return Path.Combine(Application.persistentDataPath, "sora_demo_v01.json"); } }
@@ -70,25 +74,39 @@ namespace Sora.AfterTheRain.Demo
                 return;
             }
             State.activeIndex = 0;
+            SelectCharacterModel(0, "Zhongli");
+            SelectCharacterModel(1, "Chisa");
             ConfigureActive();
             followCam = FindFirstObjectByType<SoraThirdPersonCamera>();
             if (followCam != null) followCam.SetTarget(ActiveCharacter.transform);
             begunAt = Time.time;
             initialized = true;
+            SetModelSelectionOpen(true);
             ShowNotice("Ca dau tien tai Tokyo! WASD di chuyen / E tuong tac / TAB doi anh em", 8f);
         }
 
         private void Update()
         {
             if (!initialized || ActiveCharacter == null) return;
+            if (Input.GetKeyDown(KeyCode.M)) SetModelSelectionOpen(!IsChoosingModels);
             if (Input.GetKeyDown(KeyCode.F5)) Save();
             if (Input.GetKeyDown(KeyCode.F9)) Load();
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                IsChoosingModels = false;
                 IsDialogue = false;
                 ShiftSummary = false;
                 HasPendingSale = false;
                 ShowNotice("Da dong menu / huy hoa don dang cho.");
+                return;
+            }
+            if (IsChoosingModels)
+            {
+                if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) SetModelSelectionOpen(false);
+                int key = 0;
+                for (int twin = 0; twin < 2; twin++)
+                    foreach (var model in SoraCharacterModels.All)
+                        if (model.TwinIndex == twin && Input.GetKeyDown(KeyCode.Alpha1 + key++)) SelectCharacterModel(twin, model.Id);
                 return;
             }
             if (ShiftSummary) return;
@@ -135,6 +153,25 @@ namespace Sora.AfterTheRain.Demo
         private void ConfigureActive()
         {
             for (int i = 0; i < Characters.Count; i++) Characters[i].SetPlayerControlled(i == State.activeIndex);
+        }
+
+        public bool SelectCharacterModel(int twinIndex, string id)
+        {
+            if (Characters.Count != 2 || !SoraCharacterModels.IsAllowed(twinIndex, id) || !Characters[twinIndex].TrySetModel(id)) return false;
+            if (twinIndex == 0) State.toshiharuModel = id; else State.akikoModel = id;
+            HasPendingSale = false;
+            ShowNotice(Characters[twinIndex].DisplayName + ": " + SoraCharacterModels.Find(id).Label);
+            return true;
+        }
+
+        public void SetModelSelectionOpen(bool open)
+        {
+            IsChoosingModels = open;
+            if (!open) return;
+            HasPendingSale = false;
+            IsDialogue = false;
+            ShiftSummary = false;
+            CurrentTarget = null;
         }
 
         private void Interact(SoraInteractable t)
@@ -237,23 +274,41 @@ namespace Sora.AfterTheRain.Demo
             {
                 if (!File.Exists(SavePath)) { ShowNotice("Chua co save. Nhan F5 de luu truoc."); return; }
                 var loaded = JsonUtility.FromJson<SoraSaveData>(File.ReadAllText(SavePath));
-                if (loaded == null || loaded.schema != 1 || loaded.characterPositions == null || loaded.characterPositions.Length != 6 || loaded.familiarity == null || loaded.familiarity.Length != 6 || loaded.trust == null || loaded.trust.Length != 6)
-                { ShowNotice("Save schema khong hop le."); return; }
-                State = loaded;
-                State.activeIndex = Mathf.Clamp(State.activeIndex, 0, 1);
-                for (int i = 0; i < 2; i++)
-                {
-                    CharacterController cc = Characters[i].GetComponent<CharacterController>();
-                    if (cc != null) cc.enabled = false;
-                    Characters[i].transform.position = new Vector3(State.characterPositions[i * 3], State.characterPositions[i * 3 + 1], State.characterPositions[i * 3 + 2]);
-                    if (cc != null) cc.enabled = true;
-                }
-                IsDialogue = false; ShiftSummary = false; HasPendingSale = false;
-                ConfigureActive();
-                if (followCam != null) followCam.SetTarget(ActiveCharacter.transform);
-                ShowNotice("Da load progress tu JSON.");
+                if (!RestoreSave(loaded)) ShowNotice("Save schema / model khong hop le.");
             }
             catch (Exception ex) { Debug.LogException(ex); ShowNotice("Khong the load - xem Console."); }
+        }
+
+        private bool RestoreSave(SoraSaveData loaded)
+        {
+            if (loaded == null || loaded.schema != 1 || Characters.Count != 2 ||
+                loaded.characterPositions == null || loaded.characterPositions.Length != 6 ||
+                loaded.familiarity == null || loaded.familiarity.Length != 6 || loaded.trust == null || loaded.trust.Length != 6 ||
+                (!string.IsNullOrEmpty(loaded.toshiharuModel) && !SoraCharacterModels.IsAllowed(0, loaded.toshiharuModel)) ||
+                (!string.IsNullOrEmpty(loaded.akikoModel) && !SoraCharacterModels.IsAllowed(1, loaded.akikoModel))) return false;
+            foreach (float coordinate in loaded.characterPositions) if (float.IsNaN(coordinate) || float.IsInfinity(coordinate)) return false;
+            State = loaded;
+            State.activeIndex = Mathf.Clamp(State.activeIndex, 0, 1);
+            bool missingModel = false;
+            for (int i = 0; i < 2; i++)
+            {
+                string id = i == 0 ? State.toshiharuModel : State.akikoModel;
+                if (string.IsNullOrEmpty(id) || !Characters[i].TrySetModel(id))
+                {
+                    Characters[i].RestoreDefaultAppearance();
+                    missingModel |= !string.IsNullOrEmpty(id);
+                }
+                CharacterController cc = Characters[i].GetComponent<CharacterController>();
+                bool wasEnabled = cc != null && cc.enabled;
+                if (cc != null) cc.enabled = false;
+                Characters[i].transform.position = new Vector3(State.characterPositions[i * 3], State.characterPositions[i * 3 + 1], State.characterPositions[i * 3 + 2]);
+                if (cc != null) cc.enabled = wasEnabled;
+            }
+            IsDialogue = false; ShiftSummary = false; HasPendingSale = false; IsChoosingModels = false;
+            ConfigureActive();
+            if (followCam != null) followCam.SetTarget(ActiveCharacter.transform);
+            ShowNotice(missingModel ? "Da load; thieu model local, dang dung ngoai hinh prototype." : "Da load progress va ngoai hinh tu JSON.");
+            return true;
         }
 
         private void InitializeStyles()
@@ -273,12 +328,13 @@ namespace Sora.AfterTheRain.Demo
         {
             if (!initialized || ActiveCharacter == null) return;
             InitializeStyles();
+            if (IsChoosingModels) { DrawModelSelection(); return; }
             GUI.Box(new Rect(12, 12, 440, 177), GUIContent.none);
             GUI.Label(new Rect(24, 17, 425, 29), "SORA: AFTER THE RAIN | PROTOTYPE 0.1", titleStyle);
             GUI.Label(new Rect(24, 54, 425, 24), "Dieu khien: " + ActiveCharacter.DisplayName + " | Tokyo / 20:" + Mathf.FloorToInt((Time.time - begunAt) / 12f).ToString("00"), hudStyle);
             GUI.Label(new Rect(24, 80, 415, 24), "Quy cua hang: " + State.storeCash + " yen  |  Don POS: " + State.sales, hudStyle);
             GUI.Label(new Rect(24, 106, 415, 24), "Ton ke: " + State.shelfStock + "  |  Ton kho: " + State.backStock + "  |  Hang nhan: " + (State.deliveryReceived ? "Co" : "Chua"), hudStyle);
-            GUI.Label(new Rect(24, 136, 415, 45), "WASD: di chuyen | Shift: chay | TAB: doi nguoi | E: tuong tac\nRMB+chuot: xoay camera | F5/F9: save/load | ESC: dong", infoStyle);
+            GUI.Label(new Rect(24, 136, 415, 45), "WASD: di chuyen | Shift: chay | TAB: doi nguoi | E: tuong tac\nM: chon model | RMB: camera | F5/F9: save/load | ESC: dong", infoStyle);
             if (CurrentTarget != null && !IsDialogue && !ShiftSummary)
             {
                 GUI.Box(new Rect(Screen.width / 2f - 170f, Screen.height - 106, 340, 46), "[E] " + CurrentTarget.title, buttonStyle);
@@ -301,6 +357,41 @@ namespace Sora.AfterTheRain.Demo
                 GUI.Label(new Rect(Screen.width / 2f - 235, Screen.height / 2f - 115, 485, 34), "BAO CAO CUOI CA", titleStyle);
                 GUI.Label(new Rect(Screen.width / 2f - 235, Screen.height / 2f - 65, 485, 170), "Tong hoa don: " + State.sales + "\nDoanh thu: " + State.storeCash + " yen\nHang da nhan: " + State.deliveries + " lo\nSo lan xep ke: " + State.restockCount + "\nTon cuoi ca: " + (State.shelfStock + State.backStock) + " mon\n\nNhan F5 de luu / ESC de quay lai", hudStyle);
             }
+        }
+
+        private void DrawModelSelection()
+        {
+            float width = Mathf.Min(680, Screen.width - 24), height = Mathf.Min(440, Screen.height - 24);
+            GUILayout.BeginArea(new Rect((Screen.width - width) / 2, (Screen.height - height) / 2, width, height), GUI.skin.box);
+            modelMenuScroll = GUILayout.BeginScrollView(modelMenuScroll);
+            GUILayout.Label("CHON NGOAI HINH HAI NHAN VAT", titleStyle);
+            GUILayout.Label("Chon bang chuot hoac phim 1-6. F5 luu ca ngoai hinh va progress.", infoStyle);
+            GUILayout.Space(12);
+            GUILayout.BeginHorizontal();
+            int key = 0;
+            for (int twin = 0; twin < 2; twin++)
+            {
+                GUILayout.BeginVertical(GUILayout.Width((width - 40) / 2));
+                GUILayout.Label(twin == 0 ? "Tei Toshiharu - Nam" : "Tei Akiko - Nu", hudStyle);
+                foreach (var model in SoraCharacterModels.All)
+                {
+                    if (model.TwinIndex != twin) continue;
+                    bool available = model.Prefab != null;
+                    GUI.enabled = available;
+                    string selected = Characters[twin].ModelId == model.Id ? "[x] " : "[ ] ";
+                    if (GUILayout.Button("[" + (++key) + "] " + selected + model.Label + (available ? "" : " (chua nap)"), GUILayout.Height(44)))
+                        SelectCharacterModel(twin, model.Id);
+                    GUI.enabled = true;
+                }
+                GUILayout.EndVertical();
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.Space(12);
+            GUILayout.Label("M: mo lai | Enter / Esc: tiep tuc | Tab trong game: doi nguoi dieu khien", infoStyle);
+            if (GUILayout.Button("Tiep tuc [Enter]", GUILayout.Height(38))) SetModelSelectionOpen(false);
+            GUILayout.Label(Notice, infoStyle);
+            GUILayout.EndScrollView();
+            GUILayout.EndArea();
         }
     }
 }
