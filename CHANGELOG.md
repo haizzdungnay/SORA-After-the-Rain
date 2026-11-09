@@ -6,6 +6,16 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 ## [Unreleased] — development history through 2026-11-09
 
+### 2026-11-09 — Real Unity gameplay-world GLB integration (source + assets; Editor QA pending)
+
+- **Corrected earlier misleading integration claims:** Previous V03/V05/V06 GLB outputs were in `ArtSource/`, private ZIPs or art-only staging tooling, while `SoraDemoWorld.Build()` still created the old primitive street. Their existence alone did **not** mean the playable game was using those assets.
+- **Actually committed imported art inputs under `Assets/Resources/SoraCity/Models/`:** V03 CC0 Japanese shopfront GLB (20,782,520 B), V05 Kenney nine-block GLB (20,653,268 B) and V06 additive storefront detail GLB (567,224 B). SHA-verified binary Git LFS files with persistent Unity `.meta` GUIDs, not just `ArtSource` references.
+- Added `com.unity.cloud.gltfast@6.20.0` as a Unity package, and changed the **real `SoraDemoWorld.Build()` execution path** to instantiate these imported Unity GameObjects in the active prototype world. Removed duplicate procedural `SetupStreet()` and `SoraNeighborhoodDistrict.Build()` execution **when assets load successfully**, retaining a missing-asset fallback.
+- Attached V05's 122 real BoxCollider proxies (60 new buildings, 42 cars, 4 perimeter walls, 16 terminal blocks), a continuous under-map collider, and a two-character out-of-bounds recovery guard. All existing store/POS/twins/camera/dialogue/save systems remain owned by `SoraDemoCore`.
+- Prepared a **real owner-private AFX-derived V03 GLB local installer** (2,463 displayable mesh nodes, 129 duplicate SORA MART geometry nodes hidden). Runtime loader prefers the private GLB when present; public GitHub never receives restricted source/derived geometry.
+- Added Unity EditMode source tests for V03/V05/V06 imports and collider counts; GitHub Actions copied and SHA-verified the three actual GLB files under `Assets/`. [Integration instructions and QA](Docs/StreetExterior/REAL_UNITY_V05_INTEGRATION.md).
+- **Still unverified:** Actual Unity glTFast import, C# compile in Editor, EditMode execution, Play Mode, actor collisions, URP materials, frame rate, POS/Tab/F5/F9 regressions and Windows build. This is a source/runtime wiring and asset-delivery milestone, **not** yet a certified playable release.
+
 ### 2026-11-09 — V06: additive detail pass for 60 expansion-block storefronts (DRAFT; Unity acceptance pending)
 
 - Build **3,301 3D detail instances** across all **60 existing V04/V05 expansion facades** from their real 9-block layout. Add projected signs, awnings, door frames, shop-display silhouettes, upper-floor framing/balconies, rear windows, side services and roof utilities; deliberately preserve 24 older V03 facades for their own QA pass.
