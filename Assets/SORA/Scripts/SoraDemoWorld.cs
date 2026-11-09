@@ -15,17 +15,26 @@ namespace Sora.AfterTheRain.Demo
         public static void Build(SoraDemoCore owner)
         {
             game = owner;
-            world = new GameObject("SORA - Generated Tokyo Night Blockout").transform;
+            world = new GameObject("SORA - Playable World (real city assets when available)").transform;
             SetupMaterials();
             SetupEnvironment();
             SetupShop();
-            SetupStreet();
+
+            // REAL 3D CITY, NOT A STAGING-ONLY MODEL:
+            // GLB files in Assets/Resources are imported by glTFast into Unity
+            // GameObjects. Instantiate those meshes in this exact gameplay world.
+            // Preserve POS, interior, twins, dialogue, camera and schema-1 saves.
+            bool cityLoaded = SoraCityRuntimeWorld.TryBuild(world, game);
+            if (!cityLoaded) SetupStreet();
+
             SetupTwins();
             SetupCustomers();
             SetupCamera();
             SetupRain();
-            // Connected blockout, kept separate from the existing interactive core.
-            SoraNeighborhoodDistrict.Build(world);
+
+            // Do NOT render the old fake street over the imported city; only
+            // create the legacy district when genuine models are unavailable.
+            if (!cityLoaded) SoraNeighborhoodDistrict.Build(world);
         }
 
         private static Material Mat(Color c, float smoothness = 0.5f, bool emissive = false)
