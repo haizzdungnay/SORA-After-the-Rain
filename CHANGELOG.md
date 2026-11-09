@@ -6,6 +6,16 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 ## [Unreleased] — development history through 2026-11-09
 
+### 2026-11-09 — Corrected: ACTUAL Unity asset import path and runtime world (source merged, Editor QA pending)
+
+- **Corrected an earlier inaccurate status:** V03/V05/V06 models previously existed as offline GLBs, `ArtSource` assets or separate staging scripts while `SoraDemoWorld.Build()` still rendered its old procedural road and blockout. Those models were **not actually used by gameplay** before this change.
+- [PR #24](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/24) changed the actual `SoraDemoWorld.Build()` code to instantiate imported GLB **GameObject** assets in the playable world; the old `SetupStreet()` and `SoraNeighborhoodDistrict.Build()` only run if the true models are unavailable or fail to import.
+- **Three real binary GLB assets are now committed inside `Assets/Resources/SoraCity/Models/`:** V03 CC0 Japanese shopfront (20,782,520 B), V05 Kenney nine-block replacement environment (20,653,268 B) and V06 added detail layer for 60 façades (567,224 B). All have stable `.meta` GUIDs, Git LFS, official source SHA checks and `com.unity.cloud.gltfast@6.20.0` as importer.
+- Added 122 actual runtime BoxCollider proxies (60 buildings, 42 Kenney vehicles, 4 continuous perimeter walls and 16 road-end barriers), continuous under-map floor and optional recovery for both twins. Existing POS, inventory, social systems, camera and schema-1 save remain controlled by `SoraDemoCore`.
+- Created a **private local AFX installer ZIP** containing the real owner-supplied city GLB with only the duplicate 129 SORA MART source-mesh nodes disabled; 2,463 other mesh nodes preserved. This private file is loaded by the same game code if installed under `Assets/Resources/SoraCity/Private/`; it is **not** uploaded to public GitHub due third-party source redistribution restrictions.
+- **PASS:** GitHub Actions GLB copies and SHA verification directly in `Assets/`, source-code hook checks, repository metadata/static integrity. [Real Unity import instructions](Docs/StreetExterior/REAL_UNITY_V05_INTEGRATION.md).
+- **NOT YET VERIFIED:** Unity glTFast import results, C# compile, EditMode execution, actual Play Mode rendering, both characters' collisions/Tab switching, POS, F5/F9, URP shaders, Windows build and frame rates. A successful CI file check is **not** a tested playable release.
+
 ### 2026-11-09 — complete environment source archives and character-folder sync
 
 - Store all **7 environment ZIPs plus the original AFX GLB** from `3d model enviroment/` in Git LFS at the owner's explicit request: **321,718,846 bytes**. Retain complete archives, license notices and the duplicate loose GLB as supplied.
