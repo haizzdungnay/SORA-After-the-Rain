@@ -108,6 +108,11 @@ Hướng dẫn chạy/tạo lại: [CHARACTER_MODEL_LIBRARY.md](CHARACTER_MODEL_
 - `python Tools/test_validate_project.py`: đạt. Test tạo repo tạm, xác nhận blob
   50 MiB chưa dùng LFS bị chặn, rồi xác nhận cùng file đã qua LFS được chấp nhận.
   Validator dùng `git lfs pointer --check`, không bỏ giới hạn file thường.
+- Đã clone mới từ GitHub và chạy `git lfs pull`: tải đủ 140 object LFS duy nhất,
+  gồm asset đã có từ trước và toàn bộ sáu model mới. Sáu ZIP và sáu FBX tải lại
+  khớp SHA-256 trên máy nguồn; đủ sáu prefab playable. `git lfs fsck --dry-run`
+  và validator trên bản clone đều đạt, 334 GUID và 786 file. Static CI của commit
+  đóng gói `51e2a2c` trên GitHub cũng đạt.
 - Ảnh changelog trùng byte với năm ảnh Unity đã xem trong lần kiểm tra Play Mode.
   Lần đóng gói không sửa runtime C#, rig, animation hoặc dữ liệu model; các kết
   quả Unity nêu trên là lần chạy trước khi đóng gói, không phải lần chạy Editor mới.

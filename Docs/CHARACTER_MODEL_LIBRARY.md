@@ -10,7 +10,7 @@ hoặc giải nén ZIP để sử dụng prefab đã chuẩn bị.
 
 ## Nạp thư viện từ GitHub
 
-Trong khi PR #19/#20 chưa merge, chọn nhánh có đủ model:
+Trước khi asset được tích hợp vào `main`, chọn nhánh có đủ model:
 
 ```powershell
 git lfs install
