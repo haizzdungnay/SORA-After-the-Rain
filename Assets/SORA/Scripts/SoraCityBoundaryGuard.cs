@@ -26,7 +26,7 @@ namespace Sora.AfterTheRain.Demo
         private bool IsSafe(Vector3 p)
         {
             return p.x >= minimum.x && p.x <= maximum.x &&
-                   p.z >= minimum.z && p.z <= maximum.z && p.y >= FloorRecoveryY;
+                   p.z >= minimum.z && p.z <= maximum.z && p.y >= FloorRecoveryY && p.y <= maximum.y;
         }
 
         private void LateUpdate()
@@ -37,9 +37,11 @@ namespace Sora.AfterTheRain.Demo
                 if (twin == null) continue;
                 Transform actor = twin.transform;
                 Vector3 location = actor.position;
+                CharacterController controller = twin.GetComponent<CharacterController>();
                 if (IsSafe(location))
                 {
-                    lastSafe[actor] = location;
+                    // Falling points are inside the bounds but cannot be recovery anchors.
+                    if (controller != null && controller.enabled && controller.isGrounded) lastSafe[actor] = location;
                     continue;
                 }
 
@@ -47,7 +49,6 @@ namespace Sora.AfterTheRain.Demo
                 if (!lastSafe.TryGetValue(actor, out recovery) || !IsSafe(recovery))
                     recovery = new Vector3(0f, 0f, -2.5f); // Old SORA MART interior.
 
-                CharacterController controller = twin.GetComponent<CharacterController>();
                 bool wasEnabled = controller != null && controller.enabled;
                 if (wasEnabled) controller.enabled = false;
                 actor.position = recovery;

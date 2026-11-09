@@ -45,3 +45,8 @@ __pycache__/
 
 # Owner-private AFX-derived GLB installed locally for real Unity import; never publicly push
 /Assets/Resources/SoraCity/Private/
+/Assets/Resources/SoraCity/Private.meta
+
+# Owner-held source packages contain AFX-derived geometry; keep local.
+/3d model enviroment/SORA_Neighborhood_V05_Kenney_Private_2026-11-06.zip
+/3d model enviroment/SORA_Unity_Private_AFX_Install_2026-11-09.zip

@@ -1,6 +1,6 @@
 # Thư viện model môi trường gốc
 
-Kiểm tra ngày 09/11/2026. Chủ dự án yêu cầu lưu toàn bộ nguồn môi trường/ZIP lên GitHub bằng Git LFS. Thư mục này chứa **nguồn art**, chưa phải scene Unity đã import hay bản game đã build.
+Kiểm tra ngày 09/11/2026. Thư mục chứa nguồn art; các bản đã lắp V03/V05 được nạp vào gameplay Unity theo [báo cáo tích hợp](../Docs/StreetExterior/Reports/2026-11-09-LOCAL-ENVIRONMENT-INTEGRATION.md). ZIP nằm ngoài `Assets/` vẫn không tự xuất hiện trong game.
 
 ## Nội dung đã đọc
 
@@ -28,6 +28,23 @@ Các định dạng Kenney là nhiều bản xuất của cùng bộ mẫu: tổ
 
 - Cả **7/7 ZIP** đọc được, CRC không lỗi, không có đường dẫn thoát thư mục trong danh sách entry. Không thực thi script trong archive.
 - `SOURCE_MANIFEST.json` ghi dung lượng, SHA-256, số file và định dạng cho cả 8 file nguồn. ZIP/GLB lưu qua Git LFS; sau clone chạy `git lfs pull`.
-- Các file ngoài `Assets/` không được Unity tự import. Kenney đã có FBX; AFX cần chuyển GLB sang FBX và kiểm tra URP trước khi tạo prefab/scene. Asphalt là vật liệu, không phải một khu phố.
-- GLB AFX gốc **không phải** `SORA_Neighborhood_V03_Integrated.glb`. Lớp V03 đã lắp ráp vẫn chưa có trong project. V05 thay V04; V06 chỉ bổ sung chi tiết cho **V03 + V05**. Không chồng cả V04 và V05 hoặc coi V06 là bản đồ hoàn chỉnh.
-- Demo hiện chạy phố blockout thủ tục v0.5. Dừng Play Mode rồi nhấn **F6**, chọn model và **Enter** để test game. Việc lưu nguồn không chứng minh import, collision, FPS hay Windows build của map mới.
+- Unity dùng glTFast **6.20.0** để import GLB trực tiếp; không cần chuyển sang FBX. Bộ Kenney/asphalt gốc giữ làm thư viện; những phần đã lắp trong V03/V05 mới được nạp vào map.
+- GLB AFX gốc **không phải** `SORA_Neighborhood_V03_Integrated.glb`. V05 thay V04. V06 hiện chỉ dành cho **V05 public** đúng SHA trong manifest; không ghép lên V05 trong ZIP riêng vì chiều cao và chi tiết mặt tiền khác nhau.
+
+## Hai ZIP riêng mới và cài map local
+
+| ZIP local | Nội dung dùng trong game | Lưu trữ |
+|---|---|---|
+| `SORA_Neighborhood_V05_Kenney_Private_2026-11-06.zip` | V03 đã lắp; V05 gồm 60 nhà và 42 xe Kenney; collider đúng phiên bản | Giữ local vì gói chứa AFX-derived V03 |
+| `SORA_Unity_Private_AFX_Install_2026-11-09.zip` | V03 đã bỏ 129 mesh SORA MART trùng với cửa hàng tương tác | Giữ local; không đưa lên GitHub public |
+
+Cả hai ZIP đã qua CRC và kiểm tra đường dẫn. Installer kiểm SHA-256 của ZIP/model, chuẩn hóa collider và từ chối ghi đè asset local khác phiên bản; không chạy script trong ZIP.
+
+```powershell
+python Tools/StreetExterior/install_private_city.py
+python Tools/StreetExterior/install_private_city.py --verify
+```
+
+Mở Unity **6000.3.7f1**, chờ import, nhấn **F6**, chọn model rồi **Enter**. Runtime ưu tiên cặp **V03 private + V05 private** và collider tương ứng. Nếu chưa cài gói riêng, runtime dùng **V03 public + V05 public + V06**. Phố thủ tục chỉ là fallback khi asset không dùng được.
+
+Thư mục `Assets/Resources/SoraCity/Private/` và hai ZIP riêng được `.gitignore` bảo vệ. Xem báo cáo để phân biệt kiểm thử tự động, ảnh camera Unity và các phần QA còn lại.

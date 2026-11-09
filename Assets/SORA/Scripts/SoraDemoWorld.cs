@@ -143,7 +143,6 @@ namespace Sora.AfterTheRain.Demo
             mesh.anchor = TextAnchor.MiddleCenter;
             mesh.alignment = TextAlignment.Center;
             mesh.color = tint;
-            if (text.StartsWith("SORA MART")) go.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
 
         private static void SetupEnvironment()
@@ -572,6 +571,7 @@ namespace Sora.AfterTheRain.Demo
             cam.nearClipPlane = .15f;
             cam.farClipPlane = 250f;
             cam.clearFlags = CameraClearFlags.Skybox;
+            cam.backgroundColor = RenderSettings.fogColor;
             cameraGo.AddComponent<AudioListener>();
             cameraGo.AddComponent<SoraThirdPersonCamera>();
         }

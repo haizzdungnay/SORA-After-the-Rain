@@ -5,8 +5,8 @@
 - Trong Unity, chọn **SORA > 6. Play Demo** hoặc nhấn **F6** khi đã dừng Play Mode. Lệnh mở đúng `Assets/SORA/Scenes/SORA_Prototype.unity` rồi chạy; nếu scene hiện tại chưa lưu, Unity hỏi lưu trước.
 - Nếu bấm Play trong scene `Untitled` chỉ có Main Camera/Directional Light, game không được khởi tạo. Dừng Play, dùng lệnh trên. Có thể dùng **SORA > 2. Open Demo Scene** rồi bấm Play.
 - Menu chọn model: **1–6**, **Enter** để vào game, **M** để mở lại. **WASD / Shift** di chuyển/chạy, **Tab** đổi nhân vật, **E** tương tác, giữ **chuột phải** để xoay camera, **F5/F9** lưu/tải.
-- Phố trong demo hiện là blockout thủ tục v0.5. Các GLB V03/V05/V06 trong `ArtSource/Generated` chưa tự xuất hiện trong Unity; V06 chỉ thêm chi tiết, V05 thay V04. Khu phố mới cần **nền V03 riêng + V05 + V06**, chuyển sang FBX và kiểm tra Unity trước khi ghép gameplay. Menu V06 hiện tạo scene kiểm tra art, chưa có điều khiển nhân vật/POS.
-- Đã kiểm tra trên Windows với Unity **6000.3.7f1 / URP 17.3.0**: **16/16 EditMode tests**, mở demo và chạy Play Mode, di chuyển và đổi nhân vật bằng Tab. Báo cáo local: `TestResults/editmode.xml`, `Logs/editmode.log`, `Logs/playtest-editor.log`. Đây chưa phải nghiệm thu toàn bộ gameplay, map V06 hay Windows build.
+- Map đã import trực tiếp bằng glTFast. Nếu có hai ZIP riêng trong `3d model enviroment/`, chạy `python Tools/StreetExterior/install_private_city.py` trước khi mở Unity để dùng **AFX V03 + V05 ZIP + collider đúng cặp**. Không cần chuyển FBX. Máy không có ZIP riêng dùng **V03 public + V05 public + V06**; không nạp V04 cùng V05.
+- [Báo cáo tích hợp và ảnh Unity mới](Docs/StreetExterior/Reports/2026-11-09-LOCAL-ENVIRONMENT-INTEGRATION.md): Play Mode đã nạp **5.704 renderer**, kiểm tra switch/POS/save-load và hai controller ở 16 đầu đường + 4 cạnh map bằng script. Xem báo cáo để biết kết quả test/build cuối cùng và giới hạn QA; không coi kiểm tra tự động là walkthrough thủ công.
 
 **Ngày chuẩn bị:** 02/11/2026  
 **Mục tiêu:** chuẩn hóa môi trường Unity 6.3 để import source, tạo scene, Play Test, kiểm tra compile và xuất Windows x64.  

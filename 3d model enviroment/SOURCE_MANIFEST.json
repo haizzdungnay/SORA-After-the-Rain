@@ -1,6 +1,6 @@
 {
   "checked_date": "2026-11-09",
-  "scope": "Owner-supplied environment source files; not Unity import or gameplay acceptance",
+  "scope": "Environment source inventory; private ZIPs remain local; Unity acceptance recorded in Docs/StreetExterior/Reports/2026-11-09-LOCAL-ENVIRONMENT-INTEGRATION.md",
   "files": [
     {
       "name": "asphalt_01_4k.blend.zip",
@@ -200,6 +200,42 @@
         "License.txt"
       ],
       "license": "CC0-1.0"
+    },
+    {
+      "name": "SORA_Neighborhood_V05_Kenney_Private_2026-11-06.zip",
+      "bytes": 137946723,
+      "sha256": "8ee959e08ad65b589c183f4e2b6aade483e0916c0b1d49546859b375607f6e7a",
+      "file_count": 11,
+      "expanded_bytes": 143419053,
+      "formats": {
+        ".glb": 2,
+        ".json": 2,
+        ".md": 1,
+        ".png": 2,
+        ".py": 2,
+        ".txt": 1,
+        ".zip": 1
+      },
+      "crc_verified": true,
+      "safe_entry_paths": true,
+      "publication": "LOCAL ONLY; gitignored; contains AFX-derived geometry",
+      "unity_install": "python Tools/StreetExterior/install_private_city.py"
+    },
+    {
+      "name": "SORA_Unity_Private_AFX_Install_2026-11-09.zip",
+      "bytes": 112406780,
+      "sha256": "1007fc97502f2efe10a758b51a507b969b83141b2b24160e08c88deaf0a4f649",
+      "file_count": 3,
+      "expanded_bytes": 116091348,
+      "formats": {
+        ".glb": 1,
+        ".json": 1,
+        ".md": 1
+      },
+      "crc_verified": true,
+      "safe_entry_paths": true,
+      "publication": "LOCAL ONLY; gitignored; contains AFX-derived geometry",
+      "unity_install": "python Tools/StreetExterior/install_private_city.py"
     }
   ]
 }
