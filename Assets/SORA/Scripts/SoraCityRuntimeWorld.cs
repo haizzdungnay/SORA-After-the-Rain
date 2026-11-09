@@ -18,6 +18,7 @@ namespace Sora.AfterTheRain.Demo
     {
         public const string PublicV03Path = "SoraCity/Models/V03_CC0_Overlay";
         public const string PublicV05Path = "SoraCity/Models/V05_Kenney_9Block_Overlay";
+        public const string PublicV06Path = "SoraCity/Models/V06_Facade_Details";
         public const string PrivateV03Path = "SoraCity/Private/V03_Integrated_NoMart";
 
         // Mapping from the approved V03 GLB's SORA MART storefront front (17, 0, 6.75)
@@ -54,6 +55,7 @@ namespace Sora.AfterTheRain.Demo
 
             // A hard missing-asset fallback keeps the old playable game functional.
             GameObject v05Asset = Resources.Load<GameObject>(PublicV05Path);
+            GameObject v06Asset = Resources.Load<GameObject>(PublicV06Path);
             GameObject privateV03 = Resources.Load<GameObject>(PrivateV03Path);
             GameObject v03Asset = privateV03 != null ? privateV03 :
                 Resources.Load<GameObject>(PublicV03Path);
@@ -106,6 +108,20 @@ namespace Sora.AfterTheRain.Demo
                 v05.transform.localRotation = Quaternion.identity;
                 v05.transform.localScale = Vector3.one;
 
+                // V06 is additive ART DETAIL ONLY: 60 storefronts / 3,301 nodes.
+                // It must load once, at the same transform as V05, without collider duplication.
+                int v06Renderers = 0;
+                if (v06Asset != null)
+                {
+                    GameObject detail = UnityEngine.Object.Instantiate(v06Asset, city, false);
+                    detail.name = "V06 REAL facade details / signage / awnings [GIT LFS GLB]";
+                    detail.transform.localPosition = Vector3.zero;
+                    detail.transform.localRotation = Quaternion.identity;
+                    detail.transform.localScale = Vector3.one;
+                    v06Renderers = detail.GetComponentsInChildren<MeshRenderer>(true).Length;
+                }
+                else Debug.LogWarning("SORA CITY: V06 addon model missing; check GLB import.");
+
                 // Without the rights-restricted source we still need the 15 original
                 // building bodies; the public V03 GLB provides their TRUE CC0 facades.
                 if (privateV03 == null) BuildMissingV02Shells(city, layout);
@@ -113,7 +129,7 @@ namespace Sora.AfterTheRain.Demo
                 // Imported GLBs are render meshes, NOT collision geometry.
                 BuildCollisionProxies(city, proxyData);
                 int importedRenderers = v03.GetComponentsInChildren<MeshRenderer>(true).Length +
-                                        v05.GetComponentsInChildren<MeshRenderer>(true).Length;
+                                        v05.GetComponentsInChildren<MeshRenderer>(true).Length + v06Renderers;
                 if (importedRenderers < 50)
                     throw new InvalidOperationException("glTF files did not instantiate usable MeshRenderers (" +
                                                         importedRenderers + "). Check glTFast import.");
@@ -124,7 +140,7 @@ namespace Sora.AfterTheRain.Demo
                 guard.Initialize(owner, CityToGameOffset + new Vector3(-62f, -5f, -62f),
                                         CityToGameOffset + new Vector3(107f, 40f, 107f));
 
-                Debug.Log("SORA CITY: REAL V03 + V05 GLB meshes instantiated in the playable world. " +
+                Debug.Log("SORA CITY: REAL V03 + V05 + V06 GLB meshes instantiated in the playable world. " +
                     "Imported renderer count=" + importedRenderers +
                     ", collision proxies=" + proxyData.items.Length +
                     ", private AFX=" + (privateV03 != null) +
