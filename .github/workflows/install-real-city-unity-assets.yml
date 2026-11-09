@@ -81,6 +81,10 @@ jobs:
           print("PASS: runtime Build() references imported GameObjects and scene collision manifest")
           print("NOT TESTED: Unity importer compiler, Play Mode, shader materials and character collisions")
           PY
+      - name: Verify source and REAL asset hookup in gameplay code
+        run: |
+          python Tools/StreetExterior/verify_unity_city_install.py .
+          python Tools/validate_project.py
       - name: Commit actual Unity GLB assets through Git LFS
         env:
           GIT_AUTHOR_NAME: github-actions[bot]
