@@ -29,3 +29,8 @@ ArtSource/Generated/V04_CC0/*.glb filter=lfs diff=lfs merge=lfs -text
 ArtSource/ThirdParty/CC0/KenneyCarKit/*.zip filter=lfs diff=lfs merge=lfs -text
 # V05 whole-world replacement overlay with Kenney vehicles
 ArtSource/Generated/V05_CC0/*.glb filter=lfs diff=lfs merge=lfs -text
+
+# Original character ZIP packages and remaining source texture formats
+3d[[:space:]]model/*.zip filter=lfs diff=lfs merge=lfs -text
+Assets/SORA/Characters/LocalImported/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+Assets/SORA/Characters/LocalImported/**/*.bmp filter=lfs diff=lfs merge=lfs -text

@@ -1,12 +1,31 @@
-# Thư viện model nhân vật local
+# Thư viện model nhân vật
 
 Ngày nhập: **09/11/2026**. Unity **6000.3.7f1**, URP **17.3.0**.
 
-Sáu gói do chủ dự án cung cấp trong `3d model/` được chuẩn bị tại
-`Assets/SORA/Characters/LocalImported/`. Đây là thư viện để kéo thả và thử nghiệm
-trên máy đang giữ model. ZIP gốc, nguồn đã giải nén và model nhập **không nằm trong
-Git công khai** vì quyền phân phối chưa được xác minh đầy đủ. Clone repo trên máy
-khác không tự có sáu model này.
+Sáu gói do chủ dự án cung cấp trong `3d model/` và toàn bộ thư viện Unity tại
+`Assets/SORA/Characters/LocalImported/` được đưa lên GitHub theo yêu cầu trực tiếp
+của chủ dự án ngày 09/11/2026. ZIP, FBX và texture dùng **Git LFS**; prefab, Avatar,
+material, mesh rig Rover, controller và `.meta` cũng đi kèm. Không cần chạy Blender
+hoặc giải nén ZIP để sử dụng prefab đã chuẩn bị.
+
+## Nạp thư viện từ GitHub
+
+Trước khi asset được tích hợp vào `main`, chọn nhánh có đủ model:
+
+```powershell
+git lfs install
+git clone --branch feature/protagonist-model-selection https://github.com/haizzdungnay/SORA-After-the-Rain.git
+cd SORA-After-the-Rain
+git lfs pull
+```
+
+Nếu đã có checkout trên nhánh này, chạy `git pull` rồi `git lfs pull`. Kiểm tra
+`git lfs fsck` trước khi mở Unity. ZIP gốc khoảng 185 MB, thư viện Unity khoảng
+258 MB trước khi Git LFS loại nội dung trùng. Download ZIP của GitHub có thể chỉ
+chứa pointer LFS; dùng Git và `git lfs pull` để chắc chắn nhận đủ binary.
+
+Mở project bằng Unity **6000.3.7f1**, đợi import rồi Play scene prototype.
+Nguồn đã giải nén, cache, log và bản phục hồi Unity vẫn là dữ liệu local.
 
 ## Chọn model cho hai nhân vật chính
 
@@ -49,10 +68,11 @@ Kéo prefab này vào scene để dùng làm visual; nếu tự tạo NPC, đi�
 `Animator.SetFloat("Speed", speed)`. **Apply Root Motion = false**; controller
 gameplay chịu trách nhiệm di chuyển. Prefab model không có collider hoặc AI.
 
-Nếu các nút ghi **chưa nạp**, dừng Play và chạy
-**SORA > Characters > 4. Build Playable Model Library**. Menu này cập nhật thư
-viện gốc đúng chiều cao, rồi tạo Avatar/prefab playable. Clone Git trên máy khác
-cần có nguồn local và thực hiện pipeline tạo lại ở cuối tài liệu.
+Nếu các nút ghi **chưa nạp**, dừng Play, chạy `git lfs pull` rồi đợi Unity import.
+Các prefab playable đã nằm trong Git. Khi cần tạo lại từ FBX đã chuẩn bị, chạy
+**SORA > Characters > 4. Build Playable Model Library**; menu cập nhật thư viện gốc
+đúng chiều cao, rồi tạo Avatar/prefab playable. Chỉ cần pipeline Blender cuối tài
+liệu khi muốn chuẩn bị lại FBX từ ZIP gốc.
 
 ## Thư viện nguồn để nghiên cứu trong Unity
 
@@ -142,10 +162,12 @@ các model nhiều bone/tam giác cần đánh giá trước khi dùng nhiều N
 | Male Rover | RAR chứa FBX và texture; không có license.txt | Chưa xác minh quyền phân phối |
 | Zhongli | `license.txt` của SLDDL, ghi CC BY 4.0 | Giữ attribution; cần xác minh quyền đối với IP Genshin Impact |
 
+Chủ dự án yêu cầu đưa cả nguồn, asset Unity và ảnh minh họa lên GitHub sau khi
+được thông báo trạng thái quyền chưa xác minh. Yêu cầu này thay đổi phạm vi bản
+đẩy, không xác nhận quyền của tác giả hoặc cấp giấy phép thương mại cho model.
 CC BY do người tải model ghi không tự chứng minh người đó nắm quyền cấp phép IP
-của game nguồn. Chưa dùng thư viện này làm tài sản phát hành thương mại hoặc đẩy
-binary/screenshot model lên repo công khai trước khi làm rõ quyền. Git LFS đã
-cấu hình cho FBX/texture nhân vật nhưng **không thay thế giấy phép**.
+của game nguồn. Bảng trên vẫn ghi đúng bằng chứng hiện có; Git LFS **không thay
+thế giấy phép**.
 
 Credit nguyên văn do gói Citlali cung cấp:
 
@@ -155,13 +177,13 @@ Credit nguyên văn do gói Zhongli cung cấp:
 
 > This work is based on "zhongli from genshin impact" (https://sketchfab.com/3d-models/zhongli-from-genshin-impact-aac0ffcadd6948b1800aa5b26360dcc2) by SLDDL (https://sketchfab.com/simon.masse200) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 
-License gốc cũng được giữ tại `source-license.txt` trong thư mục local tương ứng.
+License gốc cũng được giữ tại `source-license.txt` trong thư mục nhân vật tương ứng.
 Nguồn và SHA-256: [báo cáo nhập](CHARACTER_MODEL_IMPORT_REPORT_2026-11-09.md).
 Sổ nguồn chung: [ASSET_REGISTER.csv](ASSET_REGISTER.csv).
 
-## Tạo lại thư viện trên máy có ZIP gốc
+## Tạo lại thư viện từ ZIP gốc trong repo
 
-1. Giải nén mỗi ZIP vào `LocalReferenceAssets/Characters/<ID>/`, với ID đúng như
+1. Giải nén mỗi ZIP từ `3d model/` vào `LocalReferenceAssets/Characters/<ID>/`, với ID đúng như
    bảng prefab. Giải nén tiếp ZIP/RAR trong thư mục `source/`; giữ texture và
    license. Mỗi `<ID>` cần đúng một FBX, glTF hoặc USDZ nguồn. Không giải nén USDZ
    thành các bản model thứ hai trong cùng cây thư mục.
@@ -178,13 +200,13 @@ Sổ nguồn chung: [ASSET_REGISTER.csv](ASSET_REGISTER.csv).
    tạo metadata, material, Avatar và prefab. Không xóa `.meta` khi nhập lại hoặc chuyển
    máy; sao lưu/chuyển asset cùng `.meta` để giữ GUID.
 5. Chạy menu Validate; kiểm tra báo cáo tại
-   `Artifacts/CharacterIntake/unity-import-report.json`. Hình ảnh, log và báo cáo
-   local được Git bỏ qua; mã importer và hướng dẫn nằm trong repo.
+   `Artifacts/CharacterIntake/unity-import-report.json`. Log, báo cáo và ảnh mới
+   trong Artifacts được Git bỏ qua; ảnh minh họa đã chọn nằm tại
+   `Docs/Media/Changelog/sora-character-*.png` và được hiển thị trong changelog.
 
 Không cài thêm Unity package hoặc Python package. Script chuyển định dạng dùng
-Python và các importer/exporter có sẵn trong Blender. Nếu sau này quyền phân
-phối đã được duyệt, cập nhật asset register và chính sách ignore trước khi đưa
-model vào Git LFS.
+Python và các importer/exporter có sẵn trong Blender. Giữ `.meta` và file nguồn
+cùng nhau khi chuyển máy để Unity nhận đúng GUID.
 
 Chi tiết thay đổi lựa chọn/rig và kết quả kiểm thử:
 [CHARACTER_SELECTION_REPORT_2026-11-09.md](CHARACTER_SELECTION_REPORT_2026-11-09.md).
