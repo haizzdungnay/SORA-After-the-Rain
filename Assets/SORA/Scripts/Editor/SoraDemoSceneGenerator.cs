@@ -36,9 +36,26 @@ namespace Sora.AfterTheRain.Demo.Editor
         [MenuItem("SORA/2. Open Demo Scene")]
         public static void Open()
         {
-            if (!File.Exists(PathToScene)) { Generate(); return; }
-            if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
+            TryOpen();
+        }
+
+        [MenuItem("SORA/6. Play Demo _F6")]
+        public static void Play()
+        {
+            if (TryOpen()) EditorApplication.EnterPlaymode();
+        }
+
+        private static bool TryOpen()
+        {
+            if (EditorApplication.isPlayingOrWillChangePlaymode) return false;
+            if (!File.Exists(PathToScene))
+            {
+                Generate();
+                return File.Exists(PathToScene) && SceneManager.GetActiveScene().path == PathToScene;
+            }
+            if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return false;
             EditorSceneManager.OpenScene(PathToScene);
+            return true;
         }
     }
 }

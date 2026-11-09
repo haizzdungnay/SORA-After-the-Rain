@@ -6,6 +6,19 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 ## [Unreleased] — development history through 2026-11-09
 
+### 2026-11-09 — direct playable-demo launch and blank-scene diagnosis
+
+- Add **SORA > 6. Play Demo / F6**: open `SORA_Prototype.unity` before entering Play Mode, prompt to save modified scenes, and respect cancellation. Ignore scene-open/play requests while already playing or transitioning.
+- Reproduce the empty sky in `Untitled`: only a camera/light were loaded, without `SoraDemoCore`. Preserve a local recovery copy before opening the playable scene. Add an EditMode regression for one enabled bootstrap and its enabled build-scene entry.
+- Verify **16/16 EditMode tests** using Unity **6000.3.7f1**, offline validation, and real Play Mode startup, movement and Tab switching. Local logs: `Logs/editmode.log`, `TestResults/editmode.xml`, `Logs/playtest-editor.log`; captures: `Artifacts/Playtest/`. The F6 shortcut was exercised in the Editor.
+- Verify the V03/V05/V06 public GLB signatures and SHA-256 against their manifests. The complete private V03 base is absent on this workstation; V05/V06 have not been imported or integrated. Current gameplay uses the existing procedural v0.5 district. Full traversal, art/collision acceptance and a Windows build remain pending.
+
+| Actual Unity Play Mode startup | Actual procedural street in the playable demo |
+|---|---|
+| ![Unity demo model selection](Docs/Media/Changelog/sora-playtest-startup.png) | ![Unity procedural street and playable character](Docs/Media/Changelog/sora-playtest-street.png) |
+
+*Game View crops of genuine Unity Editor captures; these show the current prototype, not the V05/V06 authored map.*
+
 ### 2026-11-09 — V06: additive detail pass for 60 expansion-block storefronts (DRAFT; Unity acceptance pending)
 
 - Build **3,301 3D detail instances** across all **60 existing V04/V05 expansion facades** from their real 9-block layout. Add projected signs, awnings, door frames, shop-display silhouettes, upper-floor framing/balconies, rear windows, side services and roof utilities; deliberately preserve 24 older V03 facades for their own QA pass.
