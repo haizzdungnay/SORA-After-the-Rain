@@ -1,4 +1,4 @@
-name: Install REAL SORA V03-V05 GLB into Unity Assets
+name: Install REAL SORA V03-V05-V06 GLB into Unity Assets
 on:
   push:
     branches:
@@ -102,5 +102,9 @@ jobs:
             echo "No model changes"
             exit 0
           fi
-          git commit -m 'assets(unity): install genuine V03 and V05 GLB models into Resources'
+          git commit -m 'assets(unity): install genuine V03 V05 V06 GLB models into Resources'
+          # Feature branch may have received a docs/test commit while this job built.
+          # Rebase the isolated binary import commit before pushing; never force-push.
+          git fetch origin feature/unity-actual-city-asset-integration
+          git rebase origin/feature/unity-actual-city-asset-integration
           git push origin HEAD:feature/unity-actual-city-asset-integration
