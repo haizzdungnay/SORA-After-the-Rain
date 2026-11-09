@@ -1,0 +1,98 @@
+name: Install REAL SORA V03-V05 GLB into Unity Assets
+on:
+  push:
+    branches:
+      - feature/unity-actual-city-asset-integration
+    paths:
+      - .github/workflows/install-real-city-unity-assets.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sora-real-city-unity-import
+  cancel-in-progress: false
+
+jobs:
+  copy-verified-models-into-assets:
+    if: github.repository == 'haizzdungnay/SORA-After-the-Rain' && github.ref == 'refs/heads/feature/unity-actual-city-asset-integration'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify originals and copy actual GLB bytes into Unity Resources
+        run: |
+          python - <<'PY'
+          import hashlib,json,shutil,struct
+          from pathlib import Path
+          root=Path("ArtSource/Generated")
+          dst=Path("Assets/Resources/SoraCity/Models")
+          dst.mkdir(parents=True,exist_ok=True)
+          v03=json.loads((root/"V03_CC0/manifest.json").read_text())
+          v05=json.loads((root/"V05_CC0/manifest.json").read_text())
+          items=[
+              (root/"V03_CC0/SORA_V03_CC0_Overlay.glb",dst/"V03_CC0_Overlay.glb",v03["files"][0]["sha256"]),
+              (root/"V05_CC0/SORA_V05_Kenney_9Block_Overlay.glb",dst/"V05_Kenney_9Block_Overlay.glb",v05["glb_sha256"])
+          ]
+          guids={"V03_CC0_Overlay.glb":"13f178afea0c44dbad1ccb3fbb17a32a",
+                 "V05_Kenney_9Block_Overlay.glb":"d1f0f4b407d24e74a590c566e29d8cb1"}
+          for src,out,expected in items:
+              content=src.read_bytes()
+              assert content[:4]==b"glTF" and struct.unpack_from("<I",content,8)[0]==len(content),"not actual GLB"
+              assert hashlib.sha256(content).hexdigest()==expected,"Source model SHA mismatch"
+              shutil.copyfile(src,out)
+              assert hashlib.sha256(out.read_bytes()).hexdigest()==expected,"Unity Assets copy failed"
+              meta=out.with_name(out.name+".meta")
+              if not meta.exists():
+                  meta.write_text("fileFormatVersion: 2\nguid: "+guids[out.name]+"\n",encoding="utf-8")
+              print("INSTALLED REAL UNITY GLB",out,"BYTES",len(content),"SHA256",expected)
+          # Check there is no accidental collision of Unity GUIDs.
+          ids=[]
+          for p in Path("Assets").rglob("*.meta"):
+              for line in p.read_text(errors="replace").splitlines():
+                  if line.startswith("guid: "):
+                      ids.append((line[6:].strip(),str(p)))
+                      break
+          assert len({x[0] for x in ids})==len(ids),"duplicate .meta GUID"
+          PY
+      - name: Check live SoraDemoWorld uses imported models, not procedural district
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          build=Path("Assets/SORA/Scripts/SoraDemoWorld.cs").read_text()
+          city=Path("Assets/SORA/Scripts/SoraCityRuntimeWorld.cs").read_text()
+          import json
+          p=json.loads(Path("Packages/manifest.json").read_text())
+          assert p["dependencies"]["com.unity.cloud.gltfast"]=="6.20.0"
+          assert "SoraCityRuntimeWorld.TryBuild(world, game)" in build
+          assert "if (!cityLoaded) SetupStreet()" in build
+          assert "if (!cityLoaded) SoraNeighborhoodDistrict.Build(world)" in build
+          assert 'Resources.Load<GameObject>(PublicV05Path)' in city
+          assert 'Resources.Load<GameObject>(PrivateV03Path)' in city
+          for p in ("V02_GRID_LAYOUT.json","V05_COLLIDERS.json"):
+              assert (Path("Assets/Resources/SoraCity")/p).is_file()
+          print("PASS: runtime Build() references imported GameObjects and scene collision manifest")
+          print("NOT TESTED: Unity importer compiler, Play Mode, shader materials and character collisions")
+          PY
+      - name: Commit actual Unity GLB assets through Git LFS
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git lfs install --local
+          git add Assets/Resources/SoraCity/Models/
+          if git diff --cached --quiet; then
+            echo "No model changes"
+            exit 0
+          fi
+          git commit -m 'assets(unity): install genuine V03 and V05 GLB models into Resources'
+          git push origin HEAD:feature/unity-actual-city-asset-integration
