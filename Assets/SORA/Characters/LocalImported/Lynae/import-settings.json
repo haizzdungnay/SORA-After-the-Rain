@@ -1,0 +1,105 @@
+{
+  "id": "Lynae",
+  "sourceFormat": ".fbx",
+  "materials": [
+    {
+      "name": "MI_R2T1LinnaeaMd10011Alpha",
+      "texture": "Textures/T_R2T1LinnaeaMd10011Alpha_D.png",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1LinnaeaMd10011Bangs",
+      "texture": "Textures/T_R2T1LinnaeaMd10011Bangs_D.png",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1LinnaeaMd10011Cloth",
+      "texture": "Textures/T_R2T1LinnaeaMd10011Cloth_D.png",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1LinnaeaMd10011Down",
+      "texture": "Textures/T_R2T1LinnaeaMd10011Down_D.png",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1LinnaeaMd10011Eye",
+      "texture": "Textures/T_R2T1LinnaeaMd10011Eye_D.png",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1LinnaeaMd10011Face",
+      "texture": "Textures/T_R2T1LinnaeaMd10011Face_D.png",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1LinnaeaMd10011Hair",
+      "texture": "Textures/T_R2T1LinnaeaMd10011Hair_D.png",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1LinnaeaMd10011Up",
+      "texture": "Textures/T_R2T1LinnaeaMd10011Up_D.png",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    }
+  ],
+  "sourceBones": 405,
+  "sourceBlendShapes": 0,
+  "sourceActions": []
+}

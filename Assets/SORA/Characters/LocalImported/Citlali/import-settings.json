@@ -1,0 +1,273 @@
+{
+  "id": "Citlali",
+  "sourceFormat": ".gltf",
+  "materials": [
+    {
+      "name": "material",
+      "texture": "Textures/Base_00.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        0.0
+      ],
+      "alphaMode": "BLEND",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_0",
+      "texture": "Textures/Base_01.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_1",
+      "texture": "Textures/Base_02.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_10",
+      "texture": "Textures/Base_03.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_11",
+      "texture": "Textures/Base_04.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_12",
+      "texture": "Textures/Base_05.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_13",
+      "texture": "Textures/Base_06.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_14",
+      "texture": "Textures/Base_07.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_15",
+      "texture": "Textures/Base_08.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_16",
+      "texture": "Textures/Base_09.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_17",
+      "texture": "Textures/Base_10.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_18",
+      "texture": "Textures/Base_11.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_19",
+      "texture": "Textures/Base_12.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_2",
+      "texture": "Textures/Base_13.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_20",
+      "texture": "Textures/Base_14.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_3",
+      "texture": "",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_4",
+      "texture": "Textures/Base_16.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_5",
+      "texture": "Textures/Base_17.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_6",
+      "texture": "",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_7",
+      "texture": "Textures/Base_19.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_8",
+      "texture": "Textures/Base_20.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_9",
+      "texture": "Textures/Base_21.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    }
+  ],
+  "sourceBones": 330,
+  "sourceBlendShapes": 0,
+  "sourceActions": []
+}
