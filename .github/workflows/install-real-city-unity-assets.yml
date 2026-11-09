@@ -37,12 +37,15 @@ jobs:
           dst.mkdir(parents=True,exist_ok=True)
           v03=json.loads((root/"V03_CC0/manifest.json").read_text())
           v05=json.loads((root/"V05_CC0/manifest.json").read_text())
+          v06=json.loads((root/"V06_CC0/manifest.json").read_text())
           items=[
               (root/"V03_CC0/SORA_V03_CC0_Overlay.glb",dst/"V03_CC0_Overlay.glb",v03["files"][0]["sha256"]),
-              (root/"V05_CC0/SORA_V05_Kenney_9Block_Overlay.glb",dst/"V05_Kenney_9Block_Overlay.glb",v05["glb_sha256"])
+              (root/"V05_CC0/SORA_V05_Kenney_9Block_Overlay.glb",dst/"V05_Kenney_9Block_Overlay.glb",v05["glb_sha256"]),
+              (root/"V06_CC0/SORA_V06_9Block_Facade_Details.glb",dst/"V06_Facade_Details.glb",v06["glb_sha256"])
           ]
           guids={"V03_CC0_Overlay.glb":"13f178afea0c44dbad1ccb3fbb17a32a",
-                 "V05_Kenney_9Block_Overlay.glb":"d1f0f4b407d24e74a590c566e29d8cb1"}
+                 "V05_Kenney_9Block_Overlay.glb":"d1f0f4b407d24e74a590c566e29d8cb1",
+                 "V06_Facade_Details.glb":"e8197b12e1ac4fb58c1276bddc70f31a"}
           for src,out,expected in items:
               content=src.read_bytes()
               assert content[:4]==b"glTF" and struct.unpack_from("<I",content,8)[0]==len(content),"not actual GLB"
@@ -76,6 +79,7 @@ jobs:
           assert "if (!cityLoaded) SoraNeighborhoodDistrict.Build(world)" in build
           assert 'Resources.Load<GameObject>(PublicV05Path)' in city
           assert 'Resources.Load<GameObject>(PrivateV03Path)' in city
+          assert 'Resources.Load<GameObject>(PublicV06Path)' in city
           for p in ("V02_GRID_LAYOUT.json","V05_COLLIDERS.json"):
               assert (Path("Assets/Resources/SoraCity")/p).is_file()
           print("PASS: runtime Build() references imported GameObjects and scene collision manifest")
