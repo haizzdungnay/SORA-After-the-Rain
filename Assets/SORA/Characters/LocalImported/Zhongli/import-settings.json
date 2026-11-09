@@ -1,0 +1,57 @@
+{
+  "id": "Zhongli",
+  "sourceFormat": ".gltf",
+  "materials": [
+    {
+      "name": "material",
+      "texture": "Textures/Base_00.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_1",
+      "texture": "Textures/Base_01.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_2",
+      "texture": "Textures/Base_02.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "material_3",
+      "texture": "Textures/Base_03.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    }
+  ],
+  "sourceBones": 185,
+  "sourceBlendShapes": 0,
+  "sourceActions": []
+}

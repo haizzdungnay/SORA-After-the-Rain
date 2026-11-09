@@ -35,8 +35,10 @@ khi chọn; mở menu hủy POS draft trước khi thay ngoại hình.
   Model Library**, tạo native Avatar/mesh/controller/prefab bằng Unity.
 
 Asset playable ở `Assets/SORA/Characters/LocalImported/Resources/SoraCharacters/`.
-Asset nguồn, Avatar, mesh rig mới, controller và preview đều nằm trong vùng local
-bị Git bỏ qua. Không sửa ZIP/FBX gốc, không thêm package và không tải animation.
+Theo yêu cầu tiếp theo của chủ dự án ngày 09/11/2026, toàn bộ asset nguồn, Avatar,
+mesh rig mới, controller và `.meta` được đưa lên Git; ZIP/FBX/texture dùng Git LFS.
+ZIP gốc nằm trong `3d model/`. Không sửa nội dung ZIP/FBX, không thêm package hoặc
+tải animation. Giấy phép vẫn giữ trạng thái chưa xác minh trong asset register.
 
 Save cũ không có trường model dùng visual prototype và giữ tiền/kho/quan hệ.
 Save chỉ nhận ID đúng slot; model sai hoặc vị trí không hữu hạn bị từ chối trước
@@ -65,7 +67,8 @@ Animator Humanoid, mesh có skin và controller được lưu trong prefab ready
 ## Bằng chứng local
 
 Các log/report/PNG/XML dưới `Artifacts/CharacterSelection`, `Logs` và
-`TestResults` là kết quả local; không đưa artwork chưa rõ quyền lên Git công khai.
+`TestResults` là kết quả local. Năm PNG được chọn đã sao chép nguyên byte sang
+`Docs/Media/Changelog/sora-character-*.png` để minh họa changelog theo yêu cầu chủ dự án.
 Hướng dẫn chạy/tạo lại: [CHARACTER_MODEL_LIBRARY.md](CHARACTER_MODEL_LIBRARY.md).
 
 - Unity **6000.3.7f1 / URP 17.3.0**: import/build Avatar, mesh và prefab đã chạy
@@ -90,6 +93,24 @@ Hướng dẫn chạy/tạo lại: [CHARACTER_MODEL_LIBRARY.md](CHARACTER_MODEL_
 - `python Tools/validate_project.py`: **PASS**, 336 GUID duy nhất tại checkout
   có model local, 231 file tracked. `git diff --check`: đạt. Validator offline
   không thay thế các kết quả Unity ghi riêng ở trên.
+
+## Kiểm tra bản đóng gói GitHub
+
+- Đưa đủ sáu ZIP, 542 file trong thư viện Unity cùng `.meta` thư mục gốc và năm
+  ảnh Play Mode vào bản Git. Không đưa cache, log, bản phục hồi Unity hoặc dữ
+  liệu phiên làm việc vào repo. Các nguồn đã giải nén vẫn tái tạo được từ ZIP.
+- Sáu SHA-256 nguồn khớp bảng trong báo cáo nhập; 336/336 `.meta` trên máy giữ
+  nguyên nội dung. Mọi GUID asset trong prefab/material/controller đều có trong
+  bản Git hoặc package URP đã pin.
+- `python Tools/validate_project.py`: đạt trên checkout có binary LFS đã tải.
+  Bản export từ Git chứa pointer, tương đương static CI, cũng đạt. Bản Git có
+  786 file và 334 GUID asset; hai GUID còn lại trên máy thuộc `_Recovery` local.
+- `python Tools/test_validate_project.py`: đạt. Test tạo repo tạm, xác nhận blob
+  50 MiB chưa dùng LFS bị chặn, rồi xác nhận cùng file đã qua LFS được chấp nhận.
+  Validator dùng `git lfs pointer --check`, không bỏ giới hạn file thường.
+- Ảnh changelog trùng byte với năm ảnh Unity đã xem trong lần kiểm tra Play Mode.
+  Lần đóng gói không sửa runtime C#, rig, animation hoặc dữ liệu model; các kết
+  quả Unity nêu trên là lần chạy trước khi đóng gói, không phải lần chạy Editor mới.
 
 ### Tiếp đất: số đo và phạm vi
 
@@ -120,7 +141,8 @@ coi đó là nghiệm thu tiếp đất chính xác. Chưa nghiệm thu foot loc
   nền dốc/bậc, cloth/tóc, rig ngón tay Rover, hoạt ảnh POS hoặc nhảy.
 - Hai nhân vật dùng lại cùng phong cách gait; chưa chỉnh diễn hoạt riêng cho từng
   ngoại hình. Rover cần artist tinh chỉnh weight trước khi quay cận cảnh.
-- Quyền phân phối model game nguồn vẫn chưa xác minh; fresh clone chỉ có code,
-  tài liệu và fallback prototype. Không phát hành binary local như asset được cấp phép.
+- Quyền phân phối model game nguồn vẫn chưa xác minh. Chủ dự án yêu cầu đưa cả
+  model lên GitHub; fresh clone trên nhánh feature nhận đủ thư viện bằng
+  `git lfs pull`. Việc đưa lên Git không xác nhận model là asset được cấp phép.
 - Nhánh feature nối tiếp `feature/character-model-library` (PR #19), vì dependency
   importer đang chờ review và `develop` còn là baseline cũ. Không merge vào main.

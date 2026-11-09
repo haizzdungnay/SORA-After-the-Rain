@@ -1,0 +1,189 @@
+{
+  "id": "Denia",
+  "sourceFormat": ".fbx",
+  "materials": [
+    {
+      "name": "Cheek",
+      "texture": "Textures/Base_00.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "Eye2-bai",
+      "texture": "Textures/Base_01.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_Eye2+hi2",
+      "texture": "Textures/Base_02.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_Eye2+hi2+",
+      "texture": "Textures/Base_03.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "blue形态",
+      "texture": "Textures/Base_04.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "emo1",
+      "texture": "Textures/Base_05.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "emo3",
+      "texture": "Textures/Base_06.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "face2",
+      "texture": "Textures/Base_07.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "前发",
+      "texture": "Textures/Base_08.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "前发+",
+      "texture": "Textures/Base_09.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "前链子",
+      "texture": "Textures/Base_10.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "后发",
+      "texture": "Textures/Base_11.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "后发+",
+      "texture": "Textures/Base_12.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "圈",
+      "texture": "Textures/Base_13.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "声痕",
+      "texture": "Textures/Base_14.png",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.35
+    }
+  ],
+  "sourceBones": 483,
+  "sourceBlendShapes": 187,
+  "sourceActions": []
+}

@@ -79,8 +79,17 @@ for path in paths:
     require(rel.parts[0].lower() not in {"library", "temp", "obj", "logs", "build", "builds", "usersettings", "testresults"}, "generated directory tracked: " + str(rel))
     require(not path.name.startswith(".env") or path.name == ".env.example", "environment file tracked: " + str(rel))
     require(path.suffix.lower() not in {".ulf", ".alf", ".pem", ".key", ".pfx", ".p12", ".keystore"}, "credential/license file tracked: " + str(rel))
-    require(path.stat().st_size < 50 * 1024 * 1024, "large file needs asset/LFS review: " + str(rel))
-    body = path.read_bytes().decode("utf-8", errors="ignore")
+    if path.stat().st_size >= 50 * 1024 * 1024:
+        message = "large file needs asset/LFS review: " + str(rel)
+        require((ROOT / ".git").exists(), message)
+        indexed_path = ":" + rel.as_posix()
+        require(int(subprocess.check_output(["git", "cat-file", "-s", indexed_path], cwd=ROOT)) < 1024, message)
+        data = subprocess.check_output(["git", "show", indexed_path], cwd=ROOT)
+        require(subprocess.run(["git", "lfs", "pointer", "--check", "--stdin"], input=data,
+                               cwd=ROOT, capture_output=True).returncode == 0, message)
+    else:
+        data = path.read_bytes()
+    body = data.decode("utf-8", errors="ignore")
     require(not re.search(r"(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|AKIA[A-Z0-9]{16}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----)", body), "possible secret in " + str(rel))
 print(f"PASS: offline structure, JSON, {len(guids)} unique asset GUIDs, and {len(paths)} tracked files checked.")
 print("NOT RUN: Unity package resolution, C# compile, EditMode/Play Mode tests, rendering, Windows build.")

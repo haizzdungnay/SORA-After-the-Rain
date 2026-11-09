@@ -1,0 +1,93 @@
+{
+  "id": "Chisa",
+  "sourceFormat": ".usdz",
+  "materials": [
+    {
+      "name": "MI_R2T1QianXiaMd10011Alpha",
+      "texture": "Textures/Base_00.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1QianXiaMd10011Bangs",
+      "texture": "Textures/Base_01.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1QianXiaMd10011Down",
+      "texture": "Textures/Base_02.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1QianXiaMd10011Eye",
+      "texture": "Textures/Base_03.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1QianXiaMd10011Face",
+      "texture": "Textures/Base_04.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1QianXiaMd10011Hair",
+      "texture": "Textures/Base_05.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    },
+    {
+      "name": "MI_R2T1QianXiaMd10011Up",
+      "texture": "Textures/Base_06.png",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.35
+    }
+  ],
+  "sourceBones": 373,
+  "sourceBlendShapes": 0,
+  "sourceActions": []
+}

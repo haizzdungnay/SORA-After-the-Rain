@@ -8,26 +8,44 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 **Repository status checked 2026-11-07:** The V04 nine-block map and the V05 Kenney assets/model **are both present on `main`** ([#13](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/13), [#15](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/15)); the detailed V05 implementation PR [#16](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/16) has also been merged into its V04 integration branch. **Unity integration with the playable prototype remains unverified.**
 
+### 2026-11-09 — six-model assets, source archives and Unity screenshots on GitHub
+
+- Include all six original ZIP packages in `3d model/` and the complete Unity library in `Assets/SORA/Characters/LocalImported/`: six FBX models, textures, 69 URP materials, six source prefabs, six playable prefabs, Humanoid Avatars, Rover's skinned meshes and the Idle/Walk/Run controller. Preserve every existing `.meta` and GUID.
+- Store ZIP/FBX/texture binaries in **Git LFS**. A clone with `git lfs pull` can use the playable prefabs without extracting packages or running Blender. See [the updated setup guide](Docs/CHARACTER_MODEL_LIBRARY.md); assets are on the feature branch until review/merge.
+- Let offline validation accept hydrated assets above 50 MiB only when Git stores a valid LFS pointer; retain the large-raw-blob guard. Add a standalone regression check with Git and the Python standard library.
+- Publish at the owner's explicit request, superseding the initial local-only delivery below. Keep supplied license notices and credits; **publication does not establish redistribution or commercial rights**, which remain unverified in the [asset register](Docs/ASSET_REGISTER.csv).
+- Add the genuine Unity Play Mode captures below. The menu is a Game View capture with its readback Y orientation corrected; the Run images show staged animation poses after the automated movement check. These images do not establish manual traversal, performance or Windows-build acceptance.
+
+![Unity Game View: choose between two male and four female protagonist models](Docs/Media/Changelog/sora-character-selection.png)
+
+| Chisa (165 cm) and Zhongli (180 cm), Run | Denia (158 cm) and Zhongli (180 cm), Run |
+|---|---|
+| ![Chisa and Zhongli in Unity Play Mode, Run pose](Docs/Media/Changelog/sora-character-run-Zhongli-Chisa.png) | ![Denia and Zhongli in Unity Play Mode, Run pose](Docs/Media/Changelog/sora-character-run-Zhongli-Denia.png) |
+| **Citlali (152 cm) and Male Rover (180 cm), Run** | **Lynae (165 cm) and Male Rover (180 cm), Run** |
+| ![Citlali and Male Rover in Unity Play Mode, Run pose](Docs/Media/Changelog/sora-character-run-MaleRover-Citlali.png) | ![Lynae and Male Rover in Unity Play Mode, Run pose](Docs/Media/Changelog/sora-character-run-MaleRover-Lynae.png) |
+
+*Original captures: `Artifacts/CharacterSelection/playmode-*.png`, Unity 6000.3.7f1 / URP 17.3.0. Models use project-authored locomotion; source toon shaders, cloth/hair physics and exact foot locking remain unfinished. [Verification report and limits](Docs/CHARACTER_SELECTION_REPORT_2026-11-09.md).*
+
 ### 2026-11-09 — protagonist model selection and local Humanoid locomotion
 
 - Add a startup model chooser, reopened with **M**: Toshiharu chooses Male Rover/Zhongli; Akiko chooses Chisa/Citlali/Denia/Lynae. Keyboard **1–6** selects, **Enter/Esc** continues, **Tab** still changes control between the two protagonists.
 - Set **Chisa/Lynae to 1.65 m, Denia to 1.58 m, Citlali to 1.52 m, and both male models to 1.80 m**. Fit CharacterController and camera height to the chosen appearance while preserving the same gameplay objects and shared progress.
 - Persist independent model IDs in the existing schema-1 save with **F5/F9**. Older saves keep their progress; missing local assets fall back to prototype appearances. Reject unknown models and cross-gender slot choices. Opening the menu cancels a draft POS sale without charging and pauses both twins' movement.
 - Build six local Humanoid avatars/playable prefabs with the project's authored **Idle/Walk/Run**, driven by actual CharacterController velocity. Map five source rigs, preserve Denia's 187 blendshapes, and add a basic 21-bone region-skinned rig to Rover's static mesh export. No new package or downloaded animation.
-- Model, generated rig/mesh/avatar and preview assets remain local under the existing ignore rules; source binaries and metadata are preserved. Source-game toon rendering, finger rigging for Rover, cloth physics and new interaction animations remain outside this change.
+- Model, generated rig/mesh/avatar and preview assets initially remained local; the publication update above now includes them. Source binaries and metadata are preserved. Source-game toon rendering, finger rigging for Rover, cloth physics and new interaction animations remain outside this change.
 - Verified actual Unity compilation, **15/15 EditMode tests** and an automated **Play Mode** check covering all six choices, AI-driven Speed, stable controller IDs and unchanged shared store state. Inspected genuine local Game View/pose captures and preserved **291/291 pre-existing asset GUIDs**. Windows build and manual gameplay acceptance remain pending; see the report for measured foot-contact limits.
 
 [Updated Vietnamese usage guide](Docs/CHARACTER_MODEL_LIBRARY.md) · [Implementation and verification report](Docs/CHARACTER_SELECTION_REPORT_2026-11-09.md).
 
 ### 2026-11-09 — local character model library: six owner-supplied packages
 
-**Status:** Imported and checked locally in **Unity 6000.3.7f1 / URP 17.3.0**. Public Git contains the importer, guide and provenance records; **model/texture binaries stay local** pending redistribution-rights review.
+**Status at initial intake:** Imported and checked locally in **Unity 6000.3.7f1 / URP 17.3.0**. The importer, guide and provenance were delivered first; the publication update above now includes the model/texture binaries. Rights review remains pending.
 
 - Prepared **Chisa, Citlali, Denia, Lynae, Male Rover and Zhongli** under `Assets/SORA/Characters/LocalImported/`, with **6 drag-and-drop prefabs and 69 URP materials**. Converted USDZ/glTF sources through Blender; retained original binary FBX and imported Rover's ASCII FBX natively with repaired local texture paths.
 - Preserved five source rigs and **Denia's 187 expression blendshapes**. **None of the six packages contains animation clips. Male Rover is a static mesh export without skin/bones**; rigging and locomotion remain separate work.
 - Normalized prefab visuals to **1.7 m**, feet at Y = 0 and root Scale = 1; kept colliders and gameplay logic out of the model library. Existing protagonists, prototype scene and store state systems are preserved.
 - Verified actual Unity C# compilation/import and the library self-check; **6/6 existing EditMode tests passed**, including Akiko and store-state regressions. Captured a genuine local **Unity Editor preview**, checked **238 stable asset GUIDs** across reimport and passed offline validation. Play Mode and Windows-build acceptance remain pending.
-- Recorded source ZIP SHA-256, package contents, credits and limitations. Two packages contain CC BY notices; four have no license document. Underlying commercial-game IP rights remain unverified, so original packages, converted assets and model previews are excluded from public Git.
+- Recorded source ZIP SHA-256, package contents, credits and limitations. Two packages contain CC BY notices; four have no license document. Underlying commercial-game IP rights remain unverified. Original packages, converted assets and model previews were initially excluded, then included at the owner's explicit request in the publication update above.
 
 [Vietnamese usage guide](Docs/CHARACTER_MODEL_LIBRARY.md) · [Import evidence and limits](Docs/CHARACTER_MODEL_IMPORT_REPORT_2026-11-09.md) · [Asset register](Docs/ASSET_REGISTER.csv).
 

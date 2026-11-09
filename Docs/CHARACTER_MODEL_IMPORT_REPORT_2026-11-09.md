@@ -4,7 +4,10 @@
 chiều cao riêng và Humanoid Idle/Walk/Run, gồm rig mới cho Rover. Xem
 [báo cáo lựa chọn nhân vật](CHARACTER_SELECTION_REPORT_2026-11-09.md) và
 [hướng dẫn hiện tại](CHARACTER_MODEL_LIBRARY.md). Số clip/rig/chiều cao dưới đây
-ghi lại trạng thái trước cập nhật đó.
+ghi lại trạng thái trước cập nhật đó. Ở bản đẩy tiếp theo cùng ngày, chủ dự án
+yêu cầu đưa cả sáu ZIP, thư viện Unity và ảnh minh họa lên GitHub; xem hướng dẫn
+hiện tại để tải bằng Git LFS. Các ghi chú local-only dưới đây mô tả mốc nhập ban
+đầu, không còn là phạm vi bản đẩy hiện tại. Trạng thái giấy phép chưa thay đổi.
 
 ## Phạm vi
 
