@@ -6,6 +6,15 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 ## [Unreleased] — development history through 2026-11-09
 
+### 2026-11-09 — V06: additive detail pass for 60 expansion-block storefronts (DRAFT; Unity acceptance pending)
+
+- Build **3,301 3D detail instances** across all **60 existing V04/V05 expansion facades** from their real 9-block layout. Add projected signs, awnings, door frames, shop-display silhouettes, upper-floor framing/balconies, rear windows, side services and roof utilities; deliberately preserve 24 older V03 facades for their own QA pass.
+- Preserve the V05 map and **42 Kenney vehicles**; V06 is an **additive, non-colliding GLB overlay**, not a replacement. Use **V03 base + V05 full replacement + V06 details**, all at identity transform. Never stack V04 and V05.
+- Exported model: `ArtSource/Generated/V06_CC0/SORA_V06_9Block_Facade_Details.glb`, **567,224 bytes**, SHA-256 `07fd3aaf559863f5259a6a12eed88163accdbcee69ed3d934b29e8d2ea0cb11b`. The generator and GitHub Actions source/regression/GLB-export checks passed. This is an authored geometry improvement, **not** a completed storefront QA or a Unity render.
+- Add `SoraV06FacadeStaging.cs` (Editor-only art QA scene), generator, test file, GitHub LFS workflow and [technical report](Docs/StreetExterior/Reports/2026-11-09-V06-FACADE-DETAIL-PASS.md). No changes to `SORA_Prototype.unity`, POS or save system. **Unity URP material QA, camera/collision walkthrough, rain/night finish and Windows build on the new map are not yet accepted.**
+- [Draft PR #22](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/22); avoid merging until Unity screenshot/real map QA confirms alignment and materials.
+
+
 **Repository status checked 2026-11-07:** The V04 nine-block map and the V05 Kenney assets/model **are both present on `main`** ([#13](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/13), [#15](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/15)); the detailed V05 implementation PR [#16](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/16) has also been merged into its V04 integration branch. **Unity integration with the playable prototype remains unverified.**
 
 ### 2026-11-09 — six-model assets, source archives and Unity screenshots on GitHub
