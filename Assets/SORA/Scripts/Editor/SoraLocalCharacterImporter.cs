@@ -107,7 +107,7 @@ namespace Sora.AfterTheRain.Demo.Editor
                     model.transform.SetParent(root.transform, false);
                     var bounds = MeshBounds(root);
                     Require(bounds.size.y > 0.001f, "Invalid model height: " + id);
-                    float scale = 1.7f / bounds.size.y;
+                    float scale = SoraCharacterModels.Find(id).Height / bounds.size.y;
                     model.transform.localPosition = (model.transform.localPosition - new Vector3(bounds.center.x, bounds.min.y, bounds.center.z)) * scale;
                     model.transform.localScale *= scale;
                     foreach (var animator in root.GetComponentsInChildren<Animator>(true)) animator.applyRootMotion = false;
@@ -138,7 +138,7 @@ namespace Sora.AfterTheRain.Demo.Editor
                     Require(materials.All(m => m != null && m.shader.name == "Universal Render Pipeline/Lit"), "Invalid URP materials: " + id);
                     Require(materials.Any(m => m.GetTexture("_BaseMap") != null), "No base-color textures: " + id);
                     var bounds = MeshBounds(instance);
-                    Require(Mathf.Abs(bounds.min.y) < 0.005f && Mathf.Abs(bounds.size.y - 1.7f) < 0.005f, "Feet/height normalization failed: " + id + ": " + bounds);
+                    Require(Mathf.Abs(bounds.min.y) < 0.005f && Mathf.Abs(bounds.size.y - SoraCharacterModels.Find(id).Height) < 0.005f, "Feet/height normalization failed: " + id + ": " + bounds);
                     Require(instance.GetComponentsInChildren<Collider>(true).Length == 0, "Unexpected model collider: " + id);
                     var skinned = instance.GetComponentsInChildren<SkinnedMeshRenderer>(true);
                     var meshes = skinned.Select(r => r.sharedMesh).Concat(instance.GetComponentsInChildren<MeshFilter>(true).Select(f => f.sharedMesh)).Distinct().ToArray();
@@ -159,10 +159,10 @@ namespace Sora.AfterTheRain.Demo.Editor
             }
             Directory.CreateDirectory("Artifacts/CharacterIntake");
             File.WriteAllText("Artifacts/CharacterIntake/unity-import-report.json", JsonUtility.ToJson(report, true));
-            Debug.Log("SORA: PASS: 6 local character prefabs, URP materials, textures, feet pivots and 1.7m height. Report: Artifacts/CharacterIntake/unity-import-report.json");
+            Debug.Log("SORA: PASS: 6 local character prefabs, URP materials, textures, feet pivots and requested heights. Report: Artifacts/CharacterIntake/unity-import-report.json");
         }
 
-        static Bounds MeshBounds(GameObject root)
+        internal static Bounds MeshBounds(GameObject root)
         {
             var points = new List<Vector3>();
             foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))

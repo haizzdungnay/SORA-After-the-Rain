@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using NUnit.Framework;
 using UnityEngine;
@@ -108,6 +109,71 @@ namespace Sora.AfterTheRain.Demo.Tests
             Assert.That(core.State.familiarity[3], Is.EqualTo(2));
             Assert.That(core.State.trust[0], Is.EqualTo(1));
             Assert.That(core.State.trust[3], Is.Zero);
+        }
+
+        [Test]
+        public void ModelMenuCancelsDraftWithoutChangingSharedProgress()
+        {
+            Interact(InteractKind.Register);
+            core.State.familiarity[3] = 4;
+            core.SetModelSelectionOpen(true);
+            Assert.That(core.IsChoosingModels, Is.True);
+            Assert.That(core.HasPendingSale, Is.False);
+            Assert.That(core.State.shelfStock, Is.EqualTo(8));
+            Assert.That(core.State.sales, Is.Zero);
+            Assert.That(core.State.familiarity[3], Is.EqualTo(4));
+            Assert.That(core.SelectCharacterModel(0, "Chisa"), Is.False);
+            Assert.That(core.SelectCharacterModel(1, "Zhongli"), Is.False);
+            Assert.That(core.SelectCharacterModel(-1, "MaleRover"), Is.False);
+            Assert.That(core.SelectCharacterModel(1, "../../unexpected"), Is.False);
+        }
+
+        [Test]
+        public void SaveRestoresSelectedModelsAndLegacySavesKeepTheirProgress()
+        {
+            if (SoraCharacterModels.All.Any(m => m.Prefab == null)) Assert.Ignore("Local owner models absent.");
+            foreach (var character in core.Characters) character.InitializeAppearance(core.Characters.IndexOf(character));
+            var controllers = core.Characters.Select(c => c.GetComponent<CharacterController>()).ToArray();
+            foreach (var model in SoraCharacterModels.All)
+            {
+                Assert.That(core.SelectCharacterModel(model.TwinIndex, model.Id), Is.True);
+                Assert.That(core.Characters[model.TwinIndex].Height, Is.EqualTo(model.Height).Within(.001f));
+                Assert.That(core.Characters[model.TwinIndex].GetComponent<CharacterController>(), Is.SameAs(controllers[model.TwinIndex]));
+            }
+            core.State.storeCash = 380;
+            core.State.sales = 1;
+            core.State.shelfStock = 7;
+            core.State.familiarity[3] = 2;
+            core.State.activeIndex = 1;
+            core.State.characterPositions = new[] { 1f, 0f, 2f, 3f, 0f, 4f };
+            var saved = JsonUtility.FromJson<SoraSaveData>(JsonUtility.ToJson(core.State));
+            Assert.That(core.SelectCharacterModel(0, "MaleRover"), Is.True);
+            Assert.That(core.SelectCharacterModel(1, "Chisa"), Is.True);
+            Call("RestoreSave", saved);
+            Assert.That(core.Characters[0].ModelId, Is.EqualTo("Zhongli"));
+            Assert.That(core.Characters[1].ModelId, Is.EqualTo("Lynae"));
+            Assert.That(core.State.storeCash, Is.EqualTo(380));
+            Assert.That(core.State.sales, Is.EqualTo(1));
+            Assert.That(core.State.shelfStock, Is.EqualTo(7));
+            Assert.That(core.State.familiarity[3], Is.EqualTo(2));
+            Assert.That(core.Characters[1].transform.position, Is.EqualTo(new Vector3(3, 0, 4)));
+            saved.toshiharuModel = saved.akikoModel = null;
+            Call("RestoreSave", saved);
+            Assert.That(core.Characters.All(c => c.ModelId == null), Is.True);
+            Assert.That(core.State.storeCash, Is.EqualTo(380));
+        }
+
+        [Test]
+        public void InvalidSavedModelCannotReplaceCurrentState()
+        {
+            var before = core.State;
+            var invalid = new SoraSaveData { toshiharuModel = "Denia", storeCash = 12345 };
+            Call("RestoreSave", invalid);
+            Assert.That(core.State, Is.SameAs(before));
+            invalid.toshiharuModel = null;
+            invalid.characterPositions[0] = float.NaN;
+            Call("RestoreSave", invalid);
+            Assert.That(core.State, Is.SameAs(before));
         }
     }
 }

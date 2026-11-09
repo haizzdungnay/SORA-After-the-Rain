@@ -457,6 +457,7 @@ namespace Sora.AfterTheRain.Demo
 
             var character = root.AddComponent<SoraDemoCharacter>();
             character.DisplayName = "Tei Toshiharu";
+            character.InitializeAppearance(0);
             game.RegisterCharacter(character);
         }
 
@@ -480,6 +481,7 @@ namespace Sora.AfterTheRain.Demo
 
             var character = root.AddComponent<SoraDemoCharacter>();
             character.DisplayName = "Tei Akiko";
+            character.InitializeAppearance(1);
             game.RegisterCharacter(character);
         }
 

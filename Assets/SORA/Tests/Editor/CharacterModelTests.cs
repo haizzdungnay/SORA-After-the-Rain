@@ -7,6 +7,83 @@ namespace Sora.AfterTheRain.Demo.Tests
 {
     public sealed class CharacterModelTests
     {
+        [TestCase("Chisa", 1.65f)]
+        [TestCase("Citlali", 1.52f)]
+        [TestCase("Denia", 1.58f)]
+        [TestCase("Lynae", 1.65f)]
+        [TestCase("MaleRover", 1.80f)]
+        [TestCase("Zhongli", 1.80f)]
+        public void LocalModelHasRequestedHeightAndDeformsWithLocomotion(string id, float height)
+        {
+            var prefab = Resources.Load<GameObject>(SoraCharacterModels.ResourceFolder + id);
+            if (prefab == null) Assert.Ignore("Local owner assets absent; run SORA/Characters/4. Build Playable Model Library.");
+            var go = Object.Instantiate(prefab);
+            try
+            {
+                Assert.That(go.transform.localScale, Is.EqualTo(Vector3.one));
+                Assert.That(go.GetComponentsInChildren<Collider>(), Is.Empty);
+                var skins = go.GetComponentsInChildren<SkinnedMeshRenderer>();
+                Assert.That(skins, Is.Not.Empty, "Every model, including Rover, needs skinned geometry.");
+                var rest = BoundsOf(go);
+                Assert.That(rest.min.y, Is.EqualTo(0).Within(.015f), id + " feet pivot.");
+                Assert.That(rest.size.y, Is.EqualTo(height).Within(.015f), id + " requested height.");
+                var animator = go.GetComponent<Animator>();
+                Assert.That(animator != null && animator.avatar != null && animator.avatar.isValid && animator.avatar.isHuman, Is.True);
+                Assert.That(animator.applyRootMotion, Is.False);
+                Assert.That(animator.GetBoneTransform(HumanBodyBones.LeftToes).position.z,
+                    Is.GreaterThan(animator.GetBoneTransform(HumanBodyBones.LeftFoot).position.z), "Forward must be +Z.");
+                var clips = animator.runtimeAnimatorController.animationClips.Distinct().ToArray();
+                Assert.That(clips.Select(c => c.name), Is.EquivalentTo(new[] { "Idle", "Walk", "Run" }));
+                Assert.That(clips.All(c => c.isLooping), Is.True);
+                var controller = (UnityEditor.Animations.AnimatorController)animator.runtimeAnimatorController;
+                Assert.That(controller.layers[0].stateMachine.defaultState.iKOnFeet, Is.True);
+                if (id == "Denia") Assert.That(skins.Sum(s => s.sharedMesh.blendShapeCount), Is.EqualTo(187));
+                AnimationMode.StartAnimationMode();
+                try
+                {
+                    foreach (var clip in clips)
+                    {
+                        Sample(clip, 0);
+                        var first = skins.SelectMany(WorldVertices).ToArray();
+                        Sample(clip, .25f);
+                        var posed = skins.SelectMany(WorldVertices).ToArray();
+                        float displacement = first.Zip(posed, Vector3.Distance).Max();
+                        Assert.That(displacement, Is.GreaterThan(clip.name == "Idle" ? .001f : .08f), id + "/" + clip.name + " must deform actual geometry.");
+                        for (int frame = 0; frame < 8; frame++)
+                        {
+                            Sample(clip, frame / 8f);
+                            var bounds = BoundsOf(go);
+                            // Raw clip sampling excludes controller foot IK; these bounds only catch gross deformation.
+                            Assert.That(bounds.min.y, Is.GreaterThan(-.04f), id + "/" + clip.name + " retarget bounds.");
+                            Assert.That(bounds.max.y, Is.LessThan(height + .15f), id + "/" + clip.name + " rig explosion.");
+                            Assert.That(bounds.size.x, Is.LessThan(height), id + "/" + clip.name + " rig width.");
+                            Vector3 hipRight = (animator.GetBoneTransform(HumanBodyBones.RightUpperLeg).position
+                                - animator.GetBoneTransform(HumanBodyBones.LeftUpperLeg).position).normalized;
+                            Vector3 footSpan = animator.GetBoneTransform(HumanBodyBones.RightFoot).position
+                                - animator.GetBoneTransform(HumanBodyBones.LeftFoot).position;
+                            Assert.That(Vector3.Dot(footSpan, hipRight), Is.GreaterThan(.04f), id + "/" + clip.name + " crossed legs at " + frame + "/8.");
+                        }
+                    }
+                    void Sample(AnimationClip clip, float normalizedTime)
+                    {
+                        AnimationMode.BeginSampling();
+                        AnimationMode.SampleAnimationClip(go, clip, clip.length * normalizedTime);
+                        AnimationMode.EndSampling();
+                    }
+                }
+                finally { AnimationMode.StopAnimationMode(); }
+            }
+            finally { Object.DestroyImmediate(go); }
+        }
+
+        static Bounds BoundsOf(GameObject go)
+        {
+            var points = go.GetComponentsInChildren<Renderer>().SelectMany(WorldVertices).ToArray();
+            var bounds = new Bounds(points[0], Vector3.zero);
+            foreach (var point in points) bounds.Encapsulate(point);
+            return bounds;
+        }
+
         [Test]
         public void AkikoModelLoadsAndFitsHerCharacterController()
         {
@@ -67,7 +144,7 @@ namespace Sora.AfterTheRain.Demo.Tests
         {
             var skinned = r as SkinnedMeshRenderer;
             var mesh = skinned != null ? new Mesh() : r.GetComponent<MeshFilter>().sharedMesh;
-            if (skinned != null) skinned.BakeMesh(mesh);
+            if (skinned != null) skinned.BakeMesh(mesh, true);
             var m = r.transform.localToWorldMatrix;
             var v = mesh.vertices.Select(m.MultiplyPoint3x4).ToArray();
             if (skinned != null) Object.DestroyImmediate(mesh);

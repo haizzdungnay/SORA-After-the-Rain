@@ -8,6 +8,17 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 **Repository status checked 2026-11-07:** The V04 nine-block map and the V05 Kenney assets/model **are both present on `main`** ([#13](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/13), [#15](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/15)); the detailed V05 implementation PR [#16](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/16) has also been merged into its V04 integration branch. **Unity integration with the playable prototype remains unverified.**
 
+### 2026-11-09 — protagonist model selection and local Humanoid locomotion
+
+- Add a startup model chooser, reopened with **M**: Toshiharu chooses Male Rover/Zhongli; Akiko chooses Chisa/Citlali/Denia/Lynae. Keyboard **1–6** selects, **Enter/Esc** continues, **Tab** still changes control between the two protagonists.
+- Set **Chisa/Lynae to 1.65 m, Denia to 1.58 m, Citlali to 1.52 m, and both male models to 1.80 m**. Fit CharacterController and camera height to the chosen appearance while preserving the same gameplay objects and shared progress.
+- Persist independent model IDs in the existing schema-1 save with **F5/F9**. Older saves keep their progress; missing local assets fall back to prototype appearances. Reject unknown models and cross-gender slot choices. Opening the menu cancels a draft POS sale without charging and pauses both twins' movement.
+- Build six local Humanoid avatars/playable prefabs with the project's authored **Idle/Walk/Run**, driven by actual CharacterController velocity. Map five source rigs, preserve Denia's 187 blendshapes, and add a basic 21-bone region-skinned rig to Rover's static mesh export. No new package or downloaded animation.
+- Model, generated rig/mesh/avatar and preview assets remain local under the existing ignore rules; source binaries and metadata are preserved. Source-game toon rendering, finger rigging for Rover, cloth physics and new interaction animations remain outside this change.
+- Verified actual Unity compilation, **15/15 EditMode tests** and an automated **Play Mode** check covering all six choices, AI-driven Speed, stable controller IDs and unchanged shared store state. Inspected genuine local Game View/pose captures and preserved **291/291 pre-existing asset GUIDs**. Windows build and manual gameplay acceptance remain pending; see the report for measured foot-contact limits.
+
+[Updated Vietnamese usage guide](Docs/CHARACTER_MODEL_LIBRARY.md) · [Implementation and verification report](Docs/CHARACTER_SELECTION_REPORT_2026-11-09.md).
+
 ### 2026-11-09 — local character model library: six owner-supplied packages
 
 **Status:** Imported and checked locally in **Unity 6000.3.7f1 / URP 17.3.0**. Public Git contains the importer, guide and provenance records; **model/texture binaries stay local** pending redistribution-rights review.

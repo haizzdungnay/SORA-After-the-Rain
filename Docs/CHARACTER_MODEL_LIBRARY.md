@@ -8,7 +8,53 @@ trên máy đang giữ model. ZIP gốc, nguồn đã giải nén và model nh�
 Git công khai** vì quyền phân phối chưa được xác minh đầy đủ. Clone repo trên máy
 khác không tự có sáu model này.
 
-## Dùng ngay trong Unity
+## Chọn model cho hai nhân vật chính
+
+1. Mở scene `Assets/SORA/Scenes/SORA_Prototype.unity`, nhấn **Play**.
+2. Menu chọn ngoại hình mở đầu phiên chơi. Toshiharu chọn **Male Rover/Zhongli**;
+   Akiko chọn **Chisa/Citlali/Denia/Lynae**. Tên, tuổi và vai trò hai nhân vật giữ nguyên.
+3. Bấm model hoặc dùng **1–2** cho nam, **3–6** cho nữ theo thứ tự trên menu.
+   **Enter/Esc** tiếp tục chơi; **M** mở lại lựa chọn; **Tab** đổi người điều khiển.
+4. **F5** lưu cả hai ngoại hình cùng tiến trình; **F9** khôi phục. Đổi ngoại hình
+   không tự ghi đè save. Save schema 1 cũ không có model vẫn đọc được, dùng ngoại
+   hình prototype. Máy thiếu model local dùng fallback và báo rõ khi load.
+
+Mặc định khi có thư viện playable: **Zhongli + Chisa**. Menu tạm dừng di chuyển
+của cả hai; mở menu hủy POS draft an toàn. Chọn model không respawn controller,
+không reset tiền, hàng, vị trí hoặc quan hệ. Camera và CharacterController đổi
+chiều cao theo model.
+
+| Model | Nhân vật sử dụng | Chiều cao |
+|---|---|---:|
+| Chisa | Tei Akiko | 165 cm |
+| Citlali | Tei Akiko | 152 cm |
+| Denia | Tei Akiko | 158 cm |
+| Lynae | Tei Akiko | 165 cm |
+| Male Rover | Tei Toshiharu | 180 cm |
+| Zhongli | Tei Toshiharu | 180 cm |
+
+Chiều cao đo trên geometry ở tư thế chuẩn, gồm tóc/phụ kiện, chân tại Y = 0;
+không kéo giãn riêng từng bộ phận. Root prefab giữ Scale = 1.
+
+## Dùng prefab có chuyển động
+
+Prefab sẵn cho gameplay nằm tại:
+`Assets/SORA/Characters/LocalImported/Resources/SoraCharacters/<ID>.prefab`.
+Mỗi prefab có Humanoid Avatar và controller **Idle/Walk/Run**, tham số **Speed**
+tính bằng m/s. Ví dụ: **0** đứng, **1.25** đi, **3.05** di chuyển nhanh,
+**5** chạy Shift. Controller dùng lại clip do dự án tạo trong
+`Tools/Blender/sweater_girl_rig.py`, không tải animation từ game nguồn.
+
+Kéo prefab này vào scene để dùng làm visual; nếu tự tạo NPC, điều khiển tham số
+`Animator.SetFloat("Speed", speed)`. **Apply Root Motion = false**; controller
+gameplay chịu trách nhiệm di chuyển. Prefab model không có collider hoặc AI.
+
+Nếu các nút ghi **chưa nạp**, dừng Play và chạy
+**SORA > Characters > 4. Build Playable Model Library**. Menu này cập nhật thư
+viện gốc đúng chiều cao, rồi tạo Avatar/prefab playable. Clone Git trên máy khác
+cần có nguồn local và thực hiện pipeline tạo lại ở cuối tài liệu.
+
+## Thư viện nguồn để nghiên cứu trong Unity
 
 1. Mở project bằng Unity **6000.3.7f1** và đợi import hoàn tất.
 2. Trong cửa sổ **Project**, mở `Assets/SORA/Characters/LocalImported`.
@@ -26,31 +72,33 @@ khác không tự có sáu model này.
 | Male Rover | `Assets/SORA/Characters/LocalImported/MaleRover/MaleRover.prefab` | FBX ASCII trong RAR lồng |
 | Zhongli | `Assets/SORA/Characters/LocalImported/Zhongli/Zhongli.prefab` | glTF trong ZIP lồng, chuyển FBX |
 
-Prefab có root riêng, chiều cao chuẩn **1,7 m**, chân tại Y = 0. Tỉ lệ và offset
-đặt trên model con; root giữ Scale = 1. Model không tự có collider, điều khiển,
-NPC AI hoặc logic cửa hàng. Thư viện không tự thay hai nhân vật Tei Toshiharu và
-Tei Akiko, không đổi canonical GDD hoặc scene prototype.
+Các prefab trong bảng là bản nghiên cứu nguồn, chiều cao theo bảng lựa chọn,
+chân tại Y = 0, chưa có controller. Dùng prefab trong thư mục **Resources** phía
+trên để có chuyển động. Không đổi canonical GDD hoặc thay logic cửa hàng.
 
 ## Rig, chuyển động và biểu cảm
 
-- **Không gói nào trong sáu gói có animation clip.** Chisa, Citlali, Denia, Lynae
-  và Zhongli có rig; **Male Rover là 28 mesh tĩnh, không có skin/bone** trong FBX
-  được cung cấp. Muốn Rover cử động tay/chân phải rig và skin thêm từ nguồn hợp lệ.
-- Năm model có rig giữ chế độ **Generic**, hierarchy bone và blendshape. Có rig
-  không có nghĩa là gói đã có chuyển động Idle/Walk/Run.
+- **Không gói nguồn nào có animation clip.** Năm model có rig Generic; FBX nguồn
+  **Male Rover là 28 mesh tĩnh, không có skin/bone**. Pipeline playable tạo thêm
+  rig 21 bone và skin theo vùng cho Rover; FBX/ZIP gốc không bị sửa.
+- Bản playable map Humanoid cho cả sáu, chỉnh tay/chân về tư thế chuẩn rồi dùng
+  clip của dự án. Chisa dùng bone `n*`; Citlali dùng chuỗi chân D/EX có skin và
+  nối lại nhánh spine/hips kiểu MMD. Giữ rig phụ và blendshape gốc.
 - Mở rộng file `.fbx` trong Project để xem các sub-asset mesh, Avatar và clip thực
   sự được Unity nhập. Danh sách chính xác được ghi trong báo cáo bên dưới.
 - Với Denia: chọn model con có **Skinned Mesh Renderer**, mở **BlendShapes** rồi
   thử từng weight từ 0 đến 100. Blendshape là biến dạng biểu cảm, không phải clip
   chuyển động toàn thân.
-- Khi cần dùng animation Humanoid: trong **bản sao FBX thử nghiệm**, đổi Rig thành
-  **Humanoid**, chọn **Create From This Model**, Apply rồi **Configure** và kiểm
-  tra từng bone/T-pose. Chỉ dùng clip Humanoid sau khi Avatar hợp lệ; controller
-  Generic không tự retarget clip của Akiko sang skeleton khác.
-- Chạy lại menu Build sẽ khôi phục cấu hình Generic và các material do importer
-  quản lý. Giữ chỉnh sửa tùy biến trong prefab variant/material riêng.
+- `PlayableAvatar.asset` nằm cạnh FBX; Avatar Humanoid tạo bằng API Unity, không
+  cần sửa Rig của FBX nguồn. Mesh có skin mới của Rover là `PlayableMesh_*.asset`.
+- Chạy lại menu Build sẽ ghi lại asset do importer quản lý nhưng giữ GUID. Giữ
+  chỉnh sửa art riêng trong prefab variant/material riêng.
+- Controller playable bật **Foot IK** có sẵn của Unity khi retarget. Chưa dò nền
+  dốc/bậc bằng raycast hoặc khóa chân hoàn chỉnh; vẫn còn trượt/chìm chân nhẹ khi
+  chạy. Skin Rover phục vụ locomotion cơ bản, chưa rig ngón tay. Chưa có cloth/tóc
+  vật lý, chuyển động tương tác POS, nhảy hoặc facial animation tự động.
 
-Số liệu Unity đã nhập:
+Số liệu nguồn ở lần nhập ban đầu (cột Clip không tính clip dùng lại ở bản playable):
 
 | Model | Mesh | Tam giác | Bone được skin tham chiếu | Blendshape | Clip |
 |---|---:|---:|---:|---:|---:|
@@ -126,8 +174,8 @@ Sổ nguồn chung: [ASSET_REGISTER.csv](ASSET_REGISTER.csv).
    & 'C:\Program Files\Blender Foundation\Blender 5.2\blender.exe' --background --python-exit-code 1 --python Tools/Blender/prepare_character_models.py -- --sources LocalReferenceAssets/Characters
    ```
 
-4. Mở Unity, chọn **SORA > Characters > 1. Build Local Model Library**. Unity tự
-   tạo metadata, material và prefab. Không xóa `.meta` khi nhập lại hoặc chuyển
+4. Mở Unity, chọn **SORA > Characters > 4. Build Playable Model Library**. Unity tự
+   tạo metadata, material, Avatar và prefab. Không xóa `.meta` khi nhập lại hoặc chuyển
    máy; sao lưu/chuyển asset cùng `.meta` để giữ GUID.
 5. Chạy menu Validate; kiểm tra báo cáo tại
    `Artifacts/CharacterIntake/unity-import-report.json`. Hình ảnh, log và báo cáo
@@ -137,3 +185,6 @@ Không cài thêm Unity package hoặc Python package. Script chuyển định d
 Python và các importer/exporter có sẵn trong Blender. Nếu sau này quyền phân
 phối đã được duyệt, cập nhật asset register và chính sách ignore trước khi đưa
 model vào Git LFS.
+
+Chi tiết thay đổi lựa chọn/rig và kết quả kiểm thử:
+[CHARACTER_SELECTION_REPORT_2026-11-09.md](CHARACTER_SELECTION_REPORT_2026-11-09.md).
