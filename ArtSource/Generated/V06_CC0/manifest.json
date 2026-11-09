@@ -1,0 +1,381 @@
+{
+  "version": "V06",
+  "layer": "ADDITIVE DETAIL ONLY",
+  "target": "V03 base + V05 replacement overlay",
+  "target_v05_sha256": "805fa2e82e5243361db1a7ab8c897462a235e0da7d3f171622eff042ef13f603",
+  "blocks_unchanged": 9,
+  "new_v04_v05_facades_detailed": 60,
+  "retained_v03_facades_not_modified": 24,
+  "vehicle_count_unchanged": 42,
+  "new_colliders": 0,
+  "geometry_nodes": 3301,
+  "bytes": 567224,
+  "glb_sha256": "07fd3aaf559863f5259a6a12eed88163accdbcee69ed3d934b29e8d2ea0cb11b",
+  "facades": {
+    "B03-S-1": {
+      "detail_nodes": 49,
+      "type": "RAMEN",
+      "block": "B03",
+      "source": "SORA-authored"
+    },
+    "B03-S-2": {
+      "detail_nodes": 59,
+      "type": "PHARMACY",
+      "block": "B03",
+      "source": "SORA-authored"
+    },
+    "B03-S-3": {
+      "detail_nodes": 61,
+      "type": "BOOKS",
+      "block": "B03",
+      "source": "SORA-authored"
+    },
+    "B03-N-1": {
+      "detail_nodes": 49,
+      "type": "BAKERY",
+      "block": "B03",
+      "source": "SORA-authored"
+    },
+    "B03-N-2": {
+      "detail_nodes": 33,
+      "type": "LAUNDRY",
+      "block": "B03",
+      "source": "SORA-authored"
+    },
+    "B03-N-3": {
+      "detail_nodes": 59,
+      "type": "IZAKAYA",
+      "block": "B03",
+      "source": "SORA-authored"
+    },
+    "B03-W-1": {
+      "detail_nodes": 44,
+      "type": "FLOWERS",
+      "block": "B03",
+      "source": "SORA-authored"
+    },
+    "B03-W-2": {
+      "detail_nodes": 52,
+      "type": "STUDIO",
+      "block": "B03",
+      "source": "SORA-authored"
+    },
+    "B03-E-1": {
+      "detail_nodes": 52,
+      "type": "RAMEN",
+      "block": "B03",
+      "source": "SORA-authored"
+    },
+    "B03-E-2": {
+      "detail_nodes": 44,
+      "type": "PHARMACY",
+      "block": "B03",
+      "source": "SORA-authored"
+    },
+    "B03-INNER-1": {
+      "detail_nodes": 86,
+      "type": "BOOKS",
+      "block": "B03",
+      "source": "SORA-authored"
+    },
+    "B03-INNER-2": {
+      "detail_nodes": 65,
+      "type": "BAKERY",
+      "block": "B03",
+      "source": "SORA-authored"
+    },
+    "B06-S-1": {
+      "detail_nodes": 49,
+      "type": "LAUNDRY",
+      "block": "B06",
+      "source": "SORA-authored"
+    },
+    "B06-S-2": {
+      "detail_nodes": 61,
+      "type": "IZAKAYA",
+      "block": "B06",
+      "source": "SORA-authored"
+    },
+    "B06-S-3": {
+      "detail_nodes": 59,
+      "type": "FLOWERS",
+      "block": "B06",
+      "source": "SORA-authored"
+    },
+    "B06-N-1": {
+      "detail_nodes": 33,
+      "type": "STUDIO",
+      "block": "B06",
+      "source": "SORA-authored"
+    },
+    "B06-N-2": {
+      "detail_nodes": 59,
+      "type": "RAMEN",
+      "block": "B06",
+      "source": "SORA-authored"
+    },
+    "B06-N-3": {
+      "detail_nodes": 59,
+      "type": "PHARMACY",
+      "block": "B06",
+      "source": "SORA-authored"
+    },
+    "B06-W-1": {
+      "detail_nodes": 46,
+      "type": "BOOKS",
+      "block": "B06",
+      "source": "SORA-authored"
+    },
+    "B06-W-2": {
+      "detail_nodes": 52,
+      "type": "BAKERY",
+      "block": "B06",
+      "source": "SORA-authored"
+    },
+    "B06-E-1": {
+      "detail_nodes": 54,
+      "type": "LAUNDRY",
+      "block": "B06",
+      "source": "SORA-authored"
+    },
+    "B06-E-2": {
+      "detail_nodes": 44,
+      "type": "IZAKAYA",
+      "block": "B06",
+      "source": "SORA-authored"
+    },
+    "B06-INNER-1": {
+      "detail_nodes": 86,
+      "type": "FLOWERS",
+      "block": "B06",
+      "source": "SORA-authored"
+    },
+    "B06-INNER-2": {
+      "detail_nodes": 86,
+      "type": "STUDIO",
+      "block": "B06",
+      "source": "SORA-authored"
+    },
+    "B07-S-1": {
+      "detail_nodes": 49,
+      "type": "RAMEN",
+      "block": "B07",
+      "source": "SORA-authored"
+    },
+    "B07-S-2": {
+      "detail_nodes": 33,
+      "type": "PHARMACY",
+      "block": "B07",
+      "source": "SORA-authored"
+    },
+    "B07-S-3": {
+      "detail_nodes": 59,
+      "type": "BOOKS",
+      "block": "B07",
+      "source": "SORA-authored"
+    },
+    "B07-N-1": {
+      "detail_nodes": 49,
+      "type": "BAKERY",
+      "block": "B07",
+      "source": "SORA-authored"
+    },
+    "B07-N-2": {
+      "detail_nodes": 61,
+      "type": "LAUNDRY",
+      "block": "B07",
+      "source": "SORA-authored"
+    },
+    "B07-N-3": {
+      "detail_nodes": 59,
+      "type": "IZAKAYA",
+      "block": "B07",
+      "source": "SORA-authored"
+    },
+    "B07-W-1": {
+      "detail_nodes": 44,
+      "type": "FLOWERS",
+      "block": "B07",
+      "source": "SORA-authored"
+    },
+    "B07-W-2": {
+      "detail_nodes": 52,
+      "type": "STUDIO",
+      "block": "B07",
+      "source": "SORA-authored"
+    },
+    "B07-E-1": {
+      "detail_nodes": 52,
+      "type": "RAMEN",
+      "block": "B07",
+      "source": "SORA-authored"
+    },
+    "B07-E-2": {
+      "detail_nodes": 44,
+      "type": "PHARMACY",
+      "block": "B07",
+      "source": "SORA-authored"
+    },
+    "B07-INNER-1": {
+      "detail_nodes": 86,
+      "type": "BOOKS",
+      "block": "B07",
+      "source": "SORA-authored"
+    },
+    "B07-INNER-2": {
+      "detail_nodes": 65,
+      "type": "BAKERY",
+      "block": "B07",
+      "source": "SORA-authored"
+    },
+    "B08-S-1": {
+      "detail_nodes": 49,
+      "type": "LAUNDRY",
+      "block": "B08",
+      "source": "SORA-authored"
+    },
+    "B08-S-2": {
+      "detail_nodes": 59,
+      "type": "IZAKAYA",
+      "block": "B08",
+      "source": "SORA-authored"
+    },
+    "B08-S-3": {
+      "detail_nodes": 61,
+      "type": "FLOWERS",
+      "block": "B08",
+      "source": "SORA-authored"
+    },
+    "B08-N-1": {
+      "detail_nodes": 49,
+      "type": "STUDIO",
+      "block": "B08",
+      "source": "SORA-authored"
+    },
+    "B08-N-2": {
+      "detail_nodes": 33,
+      "type": "RAMEN",
+      "block": "B08",
+      "source": "SORA-authored"
+    },
+    "B08-N-3": {
+      "detail_nodes": 59,
+      "type": "PHARMACY",
+      "block": "B08",
+      "source": "SORA-authored"
+    },
+    "B08-W-1": {
+      "detail_nodes": 46,
+      "type": "BOOKS",
+      "block": "B08",
+      "source": "SORA-authored"
+    },
+    "B08-W-2": {
+      "detail_nodes": 52,
+      "type": "BAKERY",
+      "block": "B08",
+      "source": "SORA-authored"
+    },
+    "B08-E-1": {
+      "detail_nodes": 54,
+      "type": "LAUNDRY",
+      "block": "B08",
+      "source": "SORA-authored"
+    },
+    "B08-E-2": {
+      "detail_nodes": 44,
+      "type": "IZAKAYA",
+      "block": "B08",
+      "source": "SORA-authored"
+    },
+    "B08-INNER-1": {
+      "detail_nodes": 73,
+      "type": "FLOWERS",
+      "block": "B08",
+      "source": "SORA-authored"
+    },
+    "B08-INNER-2": {
+      "detail_nodes": 65,
+      "type": "STUDIO",
+      "block": "B08",
+      "source": "SORA-authored"
+    },
+    "B09-S-1": {
+      "detail_nodes": 51,
+      "type": "RAMEN",
+      "block": "B09",
+      "source": "SORA-authored"
+    },
+    "B09-S-2": {
+      "detail_nodes": 59,
+      "type": "PHARMACY",
+      "block": "B09",
+      "source": "SORA-authored"
+    },
+    "B09-S-3": {
+      "detail_nodes": 33,
+      "type": "BOOKS",
+      "block": "B09",
+      "source": "SORA-authored"
+    },
+    "B09-N-1": {
+      "detail_nodes": 49,
+      "type": "BAKERY",
+      "block": "B09",
+      "source": "SORA-authored"
+    },
+    "B09-N-2": {
+      "detail_nodes": 59,
+      "type": "LAUNDRY",
+      "block": "B09",
+      "source": "SORA-authored"
+    },
+    "B09-N-3": {
+      "detail_nodes": 61,
+      "type": "IZAKAYA",
+      "block": "B09",
+      "source": "SORA-authored"
+    },
+    "B09-W-1": {
+      "detail_nodes": 44,
+      "type": "FLOWERS",
+      "block": "B09",
+      "source": "SORA-authored"
+    },
+    "B09-W-2": {
+      "detail_nodes": 52,
+      "type": "STUDIO",
+      "block": "B09",
+      "source": "SORA-authored"
+    },
+    "B09-E-1": {
+      "detail_nodes": 52,
+      "type": "RAMEN",
+      "block": "B09",
+      "source": "SORA-authored"
+    },
+    "B09-E-2": {
+      "detail_nodes": 44,
+      "type": "PHARMACY",
+      "block": "B09",
+      "source": "SORA-authored"
+    },
+    "B09-INNER-1": {
+      "detail_nodes": 73,
+      "type": "BOOKS",
+      "block": "B09",
+      "source": "SORA-authored"
+    },
+    "B09-INNER-2": {
+      "detail_nodes": 86,
+      "type": "BAKERY",
+      "block": "B09",
+      "source": "SORA-authored"
+    }
+  },
+  "source_license": "SORA-authored geometry; third-party source not included",
+  "unity_editor": "NOT RUN",
+  "unity_playmode": "NOT RUN",
+  "quality_gate": "PRELIMINARY ART; EX-01..12 PENDING",
+  "important": "V06 is an additive layer at origin (0,0,0) and scale 1. Do not remove V05. Never stack V04 and V05."
+}
