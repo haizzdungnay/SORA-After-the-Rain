@@ -37,7 +37,7 @@ khi chọn; mở menu hủy POS draft trước khi thay ngoại hình.
 Asset playable ở `Assets/SORA/Characters/LocalImported/Resources/SoraCharacters/`.
 Theo yêu cầu tiếp theo của chủ dự án ngày 09/11/2026, toàn bộ asset nguồn, Avatar,
 mesh rig mới, controller và `.meta` được đưa lên Git; ZIP/FBX/texture dùng Git LFS.
-ZIP gốc nằm trong `3d model/`. Không sửa nội dung ZIP/FBX, không thêm package hoặc
+ZIP gốc nằm trong `3d model charater/`. Không sửa nội dung ZIP/FBX, không thêm package hoặc
 tải animation. Giấy phép vẫn giữ trạng thái chưa xác minh trong asset register.
 
 Save cũ không có trường model dùng visual prototype và giữ tiền/kho/quan hệ.
