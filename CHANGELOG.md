@@ -4,7 +4,13 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 > **Release and evidence policy:** `VS01`, `V02`, `V03`, `V04` and `V05` are **internal environment-art iteration names**, not published playable releases or new SemVer tags. A 3D GLB, a Unity Editor staging helper and a passing static CI job do **not** by themselves prove Unity Play Mode, collision, performance or Windows build acceptance. Assembled private AFX-derived models remain local; earlier original-source publication is recorded in the source-intake entry. All newly authored diagrams below are explicitly **schematics, not in-game screenshots**.
 
-## [Unreleased] — development history through 2026-11-09
+## [Unreleased] — development history through 2026-11-10
+
+### 2026-11-10 — Unity Editor startup and local test recovery
+
+- Remove deprecated `com.unity.ai.generators`, whose assets and GUIDs overlap `com.unity.ai.assistant`; keep the owner's Assistant and Inference packages. Unity regenerates the package lock without Generators or its Toolkit dependency. Add an offline guard against reinstalling both overlapping packages.
+- Make local Unity test/build wrappers wait for the Editor process itself, avoiding a hang after tests finish while package child processes remain. After all batch Editors exited, a single GUI Editor opened the demo scene and entered Play Mode without the reported single-instance warning.
+- **Actual local Unity 6000.3.7f1:** compile smoke passes; **20/20 EditMode tests** pass; scripted Play Mode reports **5,704 renderers**, **0** bad materials, **100** character switches, POS/save-load intact and **40** blocked boundary attempts with the private city. GUI Play Mode loads the private map with 5,704 renderers and 122 proxies. Manual keyboard walkthrough and a new Windows build were not run in this check.
 
 ### 2026-11-09 — owner ZIP map integrated and verified in local Unity
 

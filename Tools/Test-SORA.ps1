@@ -11,7 +11,8 @@ $logPath = Join-Path $logs 'editmode.log'
 if (Test-Path $xmlPath) { Remove-Item $xmlPath }
 # Do not pass -quit: the Test Runner exits after tests complete.
 $arguments = @('-batchmode', '-nographics', '-projectPath', ('"' + $root + '"'), '-runTests', '-testPlatform', 'EditMode', '-testResults', ('"' + $xmlPath + '"'), '-logFile', ('"' + $logPath + '"'))
-$p = Start-Process -FilePath $UnityExe -ArgumentList $arguments -Wait -PassThru -NoNewWindow
+$p = Start-Process -FilePath $UnityExe -ArgumentList $arguments -PassThru -NoNewWindow
+$p.WaitForExit()
 if ($p.ExitCode -ne 0) { throw "Unity tests exited with code $($p.ExitCode); inspect $logPath" }
 if (-not (Test-Path $xmlPath)) { throw 'Test Runner did not produce an XML report.' }
 [xml]$report = Get-Content -Raw $xmlPath

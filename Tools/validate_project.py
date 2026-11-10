@@ -33,6 +33,8 @@ required = [
 for rel in required:
     require((ROOT / rel).is_file(), "missing " + rel)
 manifest = json.loads((ROOT / "Packages/manifest.json").read_text())
+require(not {"com.unity.ai.assistant", "com.unity.ai.generators"} <= manifest["dependencies"].keys(),
+        "Unity AI Assistant and deprecated Generators overlap")
 for package, version in {"com.unity.render-pipelines.universal": "17.3.0", "com.unity.test-framework": "1.6.0"}.items():
     require(manifest["dependencies"].get(package) == version, "unexpected package pin: " + package)
 for module in ["imgui"]:
