@@ -147,6 +147,7 @@ namespace Sora.AfterTheRain.Demo
 
                 // Imported GLBs are render meshes, NOT collision geometry.
                 BuildCollisionProxies(city, proxyData);
+                int streetProps = SoraCityStreetProps.Build(city);
                 int importedRenderers = v03.GetComponentsInChildren<MeshRenderer>(true).Length +
                                         v05.GetComponentsInChildren<MeshRenderer>(true).Length + v06Renderers;
                 if (importedRenderers < 50)
@@ -162,7 +163,7 @@ namespace Sora.AfterTheRain.Demo
                 Debug.Log("SORA CITY: REAL V03 + V05" + (privateV05 == null ? " + V06" : " owner ZIP pair") +
                     " GLB meshes instantiated in the playable world. " +
                     "Imported renderer count=" + importedRenderers +
-                    ", collision proxies=" + proxyData.items.Length +
+                    ", street props=" + streetProps + ", collision proxies=" + proxyData.items.Length +
                     ", private AFX=" + (privateV03 != null) +
                     ". POS / twins / save remain owned by SoraDemoCore.");
                 return true;
