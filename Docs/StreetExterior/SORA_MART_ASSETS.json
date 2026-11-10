@@ -1,0 +1,34 @@
+{
+  "asset": "Assets/Resources/SoraStore/SoraMart.glb",
+  "sha256": "53820118ddad970aaee5f40df8dc2c60758568ad4372d441b05caaf912a66ee5",
+  "source": "ArtSource/ThirdParty/CC0/IzakayaAlley/izakaya_starter_scene.glb",
+  "source_sha256": "693cebbe5a8cf9e30710c707adfb1daf76140b28a14f289cdca9ebd879e0748f",
+  "source_groups": [
+    "095-drinks-vending-machine",
+    "105-potted-plant-in-can",
+    "117-air-conditioning-outdoor-unit",
+    "084-sake-bottle-set",
+    "087-beer-crate-stack",
+    "100-alley-waste-bins"
+  ],
+  "rights": "Existing CC0 props plus original SORA architecture, fixtures and package art; no AFX geometry",
+  "coordinates": "Unity metres after glTFast import; identity transform; entrance (0,0,-5.25)",
+  "interaction_anchors": {
+    "POS": [
+      -4.85,
+      1.3,
+      -2.54
+    ],
+    "restock": [
+      -2.6,
+      1.65,
+      -0.32
+    ],
+    "delivery": [
+      5,
+      0.45,
+      3.15
+    ]
+  },
+  "limits": "Decorative product displays; doors parked open; source props retain their original stylized materials"
+}

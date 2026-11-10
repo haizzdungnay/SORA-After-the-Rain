@@ -10,6 +10,7 @@ import hashlib
 import json
 from pathlib import Path
 import struct
+import subprocess
 import sys
 
 
@@ -58,9 +59,13 @@ def check(root):
                    "UnityEngine.Object.Instantiate(v05Asset, city, false)",
                    "BuildCollisionProxies(city, proxyData)"]:
         assert signal in loader, "Missing actual GameObject runtime integration: " + signal
-    assert not (target / "Private/V03_Integrated_NoMart.glb").exists(), (
-        "Private AFX derivative accidentally present; never include it in a public CI upload")
-    print("PASS: 3 real GLBs in Assets/; 122 collider proxies; Build() live gameplay hook; no private AFX")
+    tracked_private = subprocess.check_output([
+        "git", "ls-files", "--cached", "--", "Assets/Resources/SoraCity/Private/",
+        "3d model enviroment/SORA_Neighborhood_V05_Kenney_Private_2026-11-06.zip",
+        "3d model enviroment/SORA_Unity_Private_AFX_Install_2026-11-09.zip",
+    ], cwd=root)
+    assert not tracked_private, "Private AFX source must never be tracked in public Git"
+    print("PASS: 3 real GLBs in Assets/; 122 collider proxies; Build() live gameplay hook; no private source tracked")
     print("NOT RUN: Unity Editor compilation/import/Play Mode/POS/twin/camera/Windows build")
 
 

@@ -3,7 +3,7 @@
 > **This replaces the previous documentation/staging-only approach.**
 > The source code in `Assets/SORA/Scripts/SoraDemoWorld.cs` now invokes `SoraCityRuntimeWorld.TryBuild(world, game)` in the **existing playable scene bootstrap**. When the imported GLB assets are present, neither `SetupStreet()` nor `SoraNeighborhoodDistrict.Build()` runs. The existing store POS, stock/inventory, two protagonists, dialogue, camera, rain and schema-1 saves remain active.
 >
-> **Actual status:** Unity-ready source/binary asset integration **committed**, CI file integrity PASS. **Unity compilation, imported prefab results, Play Mode physics and Windows build NOT TESTED** in this working environment. Do not call this a validated playable build until an actual Unity Editor log and player capture exist.
+> **Latest local acceptance (2026-11-09):** actual Unity import/compile and scripted Play Mode checks now run on the owner-supplied ZIP pair: 5,704 MeshRenderers; 100 switches; POS/save-load; 40 controller attempts at road ends/perimeter. [Current results, screenshots, build status and limits](Reports/2026-11-09-LOCAL-ENVIRONMENT-INTEGRATION.md). Source-file CI remains separate from runtime evidence.
 
 ## 1. What is actually inside Unity `Assets/`
 
@@ -30,7 +30,7 @@ SORA_Prototype.unity (unchanged scene file)
         -> SetupEnvironment() + SetupShop() [existing POS and store interior]
         -> SoraCityRuntimeWorld.TryBuild(world, game) [NEW - actual GLB art + colliders]
            -> public V03 + public V05 + V06 details + 15 closing shells
-              OR (when installed) private AFX V03 + public V05 + V06 details
+              OR (when installed) private AFX V03 + private ZIP V05 + matching ZIP collisions
            -> BoxCollider wall, cars, new buildings, floor
            -> SoraCityBoundaryGuard for both twins
         -> SetupTwins() [original]
@@ -41,7 +41,7 @@ SORA_Prototype.unity (unchanged scene file)
 
 V06 is purely **additive** and must never replace V05 or create new colliders; the loader instantiates it once at the same world origin. The full 3D runtime world is V03 (private AFX if supplied, else public CC0) **plus V05 replacement and V06 details**.
 
-The GLB coordinate `(17,0,6.75)` is moved by **(-17,0,-12)** so the authored SORA MART storefront matches the existing gameplay entrance at approximately `(0,0,-5.25)`. There is no rewrite of character positions in the save file.
+glTFast mirrors authored X: `(17,0,6.75)` becomes `(-17,0,6.75)`. Native model instances use positive unit scale and offset **(17,0,-12)** so the storefront matches the existing gameplay entrance `(0,0,-5.25)`. JSON collider/layout X and yaw are converted to the same coordinates; the guard bounds and floor follow that conversion. Existing character/save positions are preserved.
 
 The runtime Hierarchy must contain:
 ```text
@@ -67,23 +67,21 @@ It contains the full owner-supplied AFX-derived **V03 city GLB**, renamed to
 This is an **actual GLB**, not a text reference. It retains **2,463 imported mesh nodes**, preserving the AFX architecture and CC0 city art while hiding 129 mesh nodes of the duplicated V03 SORA MART shell, to leave the original interactive POS store accessible.
 
 To install:
-1. Clone/checkout this feature branch; `git lfs pull` for all three public Unity GLBs.
-2. Extract the private ZIP **directly into the local Unity project's root**, preserving the exact `Assets/Resources/SoraCity/Private/V03_Integrated_NoMart.glb` path.
-3. Open Unity Hub using **Unity 6000.3.7f1** and allow `glTFast` / all GLBs to finish import.
-4. Open the existing `Assets/SORA/Scenes/SORA_Prototype.unity` and press **Play**.
-5. Observe the Console line `SORA CITY: REAL V03 + V05 + V06 GLB meshes instantiated...` and `private AFX=True`. Verify the hierarchy listed above.
-6. **Do not place V04 staging scenes or old V04 overlay into this scene.**
+1. Run `git lfs pull` for the public Unity GLBs.
+2. Keep both owner-held ZIPs in `3d model enviroment/` and run `python Tools/StreetExterior/install_private_city.py`, then repeat with `--verify`. The installer checks ZIP/model SHA-256 and CRC, installs only reviewed model payloads and converts the matching V05 collider JSON. It refuses different existing local assets and never executes ZIP scripts.
+3. Open **Unity 6000.3.7f1**, wait for import, then press **F6** and **Enter**. Console reports `V03 + V05 owner ZIP pair`, 5,704 renderers and `private AFX=True`.
+4. **Do not place V04 staging scenes or old V04 overlay into this scene.** V06 targets the public V05 hash; it is intentionally omitted for the different private V05 facade/height variant.
 
 Because of additional AFX distribution restrictions, `Assets/Resources/SoraCity/Private/` is **gitignored** and not part of the public repo. The released game will need a separate license review before any AFX-derived geometry can be distributed.
 
 If the private GLB is not installed, the gameplay still loads the **public CC0 V03 + V05 + V06 asset models** from Unity's `Assets/Resources/`. The first 15 exterior bodies use simple authored side/rear/roof underlays, because the restricted AFX source is missing. They are an honest quality fallback, not finished Japanese exteriors.
 
-## 4. Real Unity acceptance checklist (NOT yet run)
+## 4. Unity acceptance checklist
 
-- [ ] Open Unity project on **6000.3.7f1 / URP 17.3.0**. Package Manager resolves glTFast 6.20.0.
-- [ ] Inspect all three GLB assets in Unity Project/Inspector; check materials, mesh count and any glTF extension warnings.
-- [ ] Run **`SoraCityRealAssetTests`** in Test Runner EditMode; assert imported V03/V05/V06 mesh renderers and 122 collider entries.
-- [ ] Play `SORA_Prototype.unity`. In Hierarchy confirm `SORA_CITY_V05_REAL_ASSETS`. Check there is no `SORA Neighborhood v0.5 - Connected Blocks` object.
+- [x] Actual **6000.3.7f1 / URP 17.3.0** import/compile, glTFast 6.20.0 resolved; generated package lock retained.
+- [x] Scripted checks confirm imported render meshes, supported materials and runtime city without the legacy district; real runtime camera captures recorded.
+- [x] Run **`SoraCityRealAssetTests`**, including imported public assets, 122 collision entries and vehicle-to-proxy alignment. Current run counts are in the linked report.
+- [x] Scripted Play Mode: both twins, 100 switches, POS draft cancellation/commit, save/load and 40 attempts across 16 road ends + 4 perimeter walls.
 - [ ] Walk out of SORA MART and inspect CC0/AFX buildings and Kenney cars. Check building/road/actor scale and storefront alignment.
 - [ ] Try **both twins (Tab)** at all 16 end-of-road barriers and 4 perimeter corners. Ensure no fall into void. Verify collision proxy scale against glTF imported geometry.
 - [ ] Press E on POS and inventory, test delivery/restocking, F5 save and F9 load. Confirm old locations and interactions are stable.
@@ -101,4 +99,4 @@ python Tools/StreetExterior/verify_unity_city_install.py .
 
 Static validation tests the committed assets, hashes and gameplay source hook. It **cannot replace the Unity Editor tests**.
 
-**Source provenance:** [V03 real model](../../ArtSource/Generated/V03_CC0/README.md), [V05 real Kenney model](../../ArtSource/Generated/V05_CC0/README.md), [asset register](../ASSET_REGISTER.csv). No AFX raw or derived bytes are committed publicly.
+**Source provenance:** [V03 real model](../../ArtSource/Generated/V03_CC0/README.md), [V05 real Kenney model](../../ArtSource/Generated/V05_CC0/README.md), [asset register](../ASSET_REGISTER.csv). This integration tracks no private assembled/derived payloads; the prior original-source intake is catalogued separately in the environment source folder.

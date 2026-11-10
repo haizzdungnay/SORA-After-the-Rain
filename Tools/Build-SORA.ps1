@@ -16,7 +16,8 @@ $log = Join-Path $logs $(if ($SmokeOnly) { 'smoke-check.log' } else { 'windows-b
 Write-Host "Running $method"
 Write-Host "Unity log: $log"
 $arguments = @('-batchmode', '-nographics', '-quit', '-projectPath', ('"' + $root + '"'), '-logFile', ('"' + $log + '"'), '-executeMethod', $method)
-$p = Start-Process -FilePath $UnityExe -ArgumentList $arguments -NoNewWindow -Wait -PassThru
+$p = Start-Process -FilePath $UnityExe -ArgumentList $arguments -NoNewWindow -PassThru
+$p.WaitForExit()
 if ($p.ExitCode -ne 0) {
     if (Test-Path $log) { Get-Content $log -Tail 50 }
     throw "Unity exited with code $($p.ExitCode). See $log"

@@ -19,6 +19,7 @@ namespace Sora.AfterTheRain.Demo
             SetupMaterials();
             SetupEnvironment();
             SetupShop();
+            SoraMartVisuals.TryBuild(world);
 
             // REAL 3D CITY, NOT A STAGING-ONLY MODEL:
             // GLB files in Assets/Resources are imported by glTFast into Unity
@@ -143,7 +144,6 @@ namespace Sora.AfterTheRain.Demo
             mesh.anchor = TextAnchor.MiddleCenter;
             mesh.alignment = TextAlignment.Center;
             mesh.color = tint;
-            if (text.StartsWith("SORA MART")) go.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
 
         private static void SetupEnvironment()
@@ -572,6 +572,7 @@ namespace Sora.AfterTheRain.Demo
             cam.nearClipPlane = .15f;
             cam.farClipPlane = 250f;
             cam.clearFlags = CameraClearFlags.Skybox;
+            cam.backgroundColor = RenderSettings.fogColor;
             cameraGo.AddComponent<AudioListener>();
             cameraGo.AddComponent<SoraThirdPersonCamera>();
         }
@@ -598,6 +599,13 @@ namespace Sora.AfterTheRain.Demo
             shape.enabled = true;
             shape.shapeType = ParticleSystemShapeType.Box;
             shape.scale = new Vector3(85f, 1f, 35f);
+            var collision = ps.collision;
+            collision.enabled = true;
+            collision.type = ParticleSystemCollisionType.World;
+            collision.mode = ParticleSystemCollisionMode.Collision3D;
+            collision.quality = ParticleSystemCollisionQuality.High;
+            collision.collidesWith = 1;
+            collision.lifetimeLoss = 1f;
             var renderer = go.GetComponent<ParticleSystemRenderer>();
             Shader shader = Shader.Find("Universal Render Pipeline/Particles/Unlit");
             if (shader == null) shader = Shader.Find("Particles/Standard Unlit");

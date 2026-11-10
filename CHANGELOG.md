@@ -2,9 +2,34 @@
 
 This log records **implemented source, asset and documentation work** for [SORA: After the Rain](https://github.com/haizzdungnay/SORA-After-the-Rain), with links to real GitHub PRs and visual evidence where available.
 
-> **Release and evidence policy:** `VS01`, `V02`, `V03`, `V04` and `V05` are **internal environment-art iteration names**, not published playable releases or new SemVer tags. A 3D GLB, a Unity Editor staging helper and a passing static CI job do **not** by themselves prove Unity Play Mode, collision, performance or Windows build acceptance. Original/modified AFX assets are kept outside this public repository under the creator's distribution conditions. All newly authored diagrams below are explicitly **schematics, not in-game screenshots**.
+> **Release and evidence policy:** `VS01`, `V02`, `V03`, `V04` and `V05` are **internal environment-art iteration names**, not published playable releases or new SemVer tags. A 3D GLB, a Unity Editor staging helper and a passing static CI job do **not** by themselves prove Unity Play Mode, collision, performance or Windows build acceptance. Assembled private AFX-derived models remain local; earlier original-source publication is recorded in the source-intake entry. All newly authored diagrams below are explicitly **schematics, not in-game screenshots**.
 
-## [Unreleased] — development history through 2026-11-09
+## [Unreleased] — development history through 2026-11-10
+
+### 2026-11-10 — SORA MART exterior and existing interior
+
+- Prioritize the existing store at the owner's request: import an authored CC0/original store GLB with transparent frontage, jade/orange signage, stocked shelf islands, checkout, glass-door drink cabinets, coffee counter and reused existing street props.
+- Preserve the original POS, inventory/delivery markers, collider footprints, twins and saves; retain prototype art as missing-model fallback. Convert source WebP palettes to PNG with installed Blender instead of adding an image decoder.
+- Keep neighboring facade/courtyard geometry outside the store, use downward ceiling lights and native high-quality rain collision for the roof and canopy.
+- **Actual Unity:** **21/21 EditMode** in both public/private configurations; **8 controller routes**, **100 switches**, POS/stock/save-load and repeated roof/canopy/outdoor particle probes pass in each. Latest **Windows x64 build and standalone startup PASS**. Real Unity captures and evidence: [store acceptance report](Docs/StreetExterior/Reports/2026-11-10-SORA-MART.md).
+- Products remain decorative and doors parked open; owner art acceptance, manual keyboard/camera walkthrough and target-PC profiling remain pending. No new dependency.
+
+### 2026-11-10 — Unity Editor startup and local test recovery
+
+- Remove deprecated `com.unity.ai.generators`, whose assets and GUIDs overlap `com.unity.ai.assistant`; keep the owner's Assistant and Inference packages. Unity regenerates the package lock without Generators or its Toolkit dependency. Add an offline guard against reinstalling both overlapping packages.
+- Make local Unity test/build wrappers wait for the Editor process itself, avoiding a hang after tests finish while package child processes remain. After all batch Editors exited, a single GUI Editor opened the demo scene and entered Play Mode without the reported single-instance warning.
+- **Actual local Unity 6000.3.7f1:** compile smoke passes; **20/20 EditMode tests** pass; scripted Play Mode reports **5,704 renderers**, **0** bad materials, **100** character switches, POS/save-load intact and **40** blocked boundary attempts with the private city. GUI Play Mode loads the private map with 5,704 renderers and 122 proxies. Manual keyboard walkthrough and a new Windows build were not run in this check.
+
+### 2026-11-09 — owner ZIP map integrated and verified in local Unity
+
+- Review all **9 environment ZIPs**: full CRC, source SHA-256 and safe paths pass. Install the owner-held V03 NoMart + V05 model/collider pair with a standard-library Python installer; execute no archive scripts and refuse different existing local assets. Ignore both private ZIPs and all private Unity payloads/metadata in public Git.
+- Fix glTFast X conversion: a regression reproduced a **65 m** vehicle/proxy offset. Convert collider/layout coordinates, yaw, floor and recovery bounds to the native imported model space; preserve positive model scale and the interactive SORA MART entrance. Use the private V05 collider manifest for its different facade/vehicle variant; public V06 remains paired with public V05 only.
+- Add collision for **15** original shop lots and imported roads/sidewalks. Fix boundary recovery learning airborne positions below the floor. Add two EditMode regressions; preserve shared state, character controllers and model selection. Correct the reversed SORA MART text and add readable night fill/background.
+- **Actual local Unity 6000.3.7f1 / URP 17.3.0:** **20/20 EditMode tests** pass with public assets and with the private pair. Scripted Play Mode loads **5,704 renderers**, finds **0** unsupported/missing materials, keeps POS/save-load and shared stock/cash through **100** switches, and blocks both controllers at all **16 road ends + 4 perimeter walls** (**40** attempts).
+- **Windows x64 build succeeds locally**, and the actual standalone player starts with the same 5,704 private-pair renderers. Keep EXE and data together under `Builds/Windows/`; this is a local test build, not a public release. Standalone keyboard walkthrough remains pending.
+- Genuine runtime-camera captures below use staged review angles; they are not keyboard walkthroughs or FPS evidence. [Current integration report and Windows build status](Docs/StreetExterior/Reports/2026-11-09-LOCAL-ENVIRONMENT-INTEGRATION.md). Visual finish, manual traversal and performance acceptance remain pending.
+
+![Actual Unity runtime: owner-supplied environment ZIPs integrated](Docs/Media/Changelog/sora-city-integrated-street.png)
 
 ### 2026-11-09 — Corrected: ACTUAL Unity asset import path and runtime world (source merged, Editor QA pending)
 
