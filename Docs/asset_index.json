@@ -1,0 +1,4282 @@
+{
+ "packs": [
+  {
+   "zip": "3d model enviroment/asphalt_01_4k.blend.zip",
+   "pack": "asphalt_01_4k.blend",
+   "license": "CC0-1.0 (Poly Haven)",
+   "scope": "public",
+   "zip_bytes": 84494529,
+   "models": [
+    {
+     "name": "asphalt_01_4k",
+     "category": "asphalt",
+     "formats": {
+      "blend": "asphalt_01_4k.blend"
+     },
+     "bytes": 231817
+    },
+    {
+     "name": "asphalt_01_diff_4k",
+     "category": "asphalt",
+     "formats": {
+      "jpg": "textures/asphalt_01_diff_4k.jpg"
+     },
+     "bytes": 12674373
+    },
+    {
+     "name": "asphalt_01_disp_4k",
+     "category": "asphalt",
+     "formats": {
+      "png": "textures/asphalt_01_disp_4k.png"
+     },
+     "bytes": 25090468
+    },
+    {
+     "name": "asphalt_01_nor_gl_4k",
+     "category": "asphalt",
+     "formats": {
+      "exr": "textures/asphalt_01_nor_gl_4k.exr"
+     },
+     "bytes": 32944562
+    },
+    {
+     "name": "asphalt_01_rough_4k",
+     "category": "asphalt",
+     "formats": {
+      "exr": "textures/asphalt_01_rough_4k.exr"
+     },
+     "bytes": 13552535
+    }
+   ]
+  },
+  {
+   "zip": "3d model enviroment/japanese_street_at_night.zip",
+   "pack": "japanese_street_at_night",
+   "license": "CC-BY-4.0 + unresolved author terms (reference only)",
+   "scope": "restricted",
+   "zip_bytes": 108193583,
+   "models": [
+    {
+     "name": "japanese_street_at_night",
+     "category": "japanese",
+     "formats": {
+      "glb": "japanese_street_at_night.glb"
+     },
+     "bytes": 112172164
+    }
+   ]
+  },
+  {
+   "zip": "3d model enviroment/kenney_city-kit-commercial_2.1.zip",
+   "pack": "kenney_city-kit-commercial_2.1",
+   "license": "CC0-1.0",
+   "scope": "public",
+   "zip_bytes": 4096974,
+   "models": [
+    {
+     "name": "building-a",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-a.fbx",
+      "glb": "Models/GLB format/building-a.glb",
+      "obj": "Models/OBJ format/building-a.obj"
+     },
+     "bytes": 266712
+    },
+    {
+     "name": "building-b",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-b.fbx",
+      "glb": "Models/GLB format/building-b.glb",
+      "obj": "Models/OBJ format/building-b.obj"
+     },
+     "bytes": 266693
+    },
+    {
+     "name": "building-c",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-c.fbx",
+      "glb": "Models/GLB format/building-c.glb",
+      "obj": "Models/OBJ format/building-c.obj"
+     },
+     "bytes": 261730
+    },
+    {
+     "name": "building-d",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-d.fbx",
+      "glb": "Models/GLB format/building-d.glb",
+      "obj": "Models/OBJ format/building-d.obj"
+     },
+     "bytes": 243157
+    },
+    {
+     "name": "building-e",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-e.fbx",
+      "glb": "Models/GLB format/building-e.glb",
+      "obj": "Models/OBJ format/building-e.obj"
+     },
+     "bytes": 320976
+    },
+    {
+     "name": "building-f",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-f.fbx",
+      "glb": "Models/GLB format/building-f.glb",
+      "obj": "Models/OBJ format/building-f.obj"
+     },
+     "bytes": 366432
+    },
+    {
+     "name": "building-g",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-g.fbx",
+      "glb": "Models/GLB format/building-g.glb",
+      "obj": "Models/OBJ format/building-g.obj"
+     },
+     "bytes": 410475
+    },
+    {
+     "name": "building-h",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-h.fbx",
+      "glb": "Models/GLB format/building-h.glb",
+      "obj": "Models/OBJ format/building-h.obj"
+     },
+     "bytes": 312522
+    },
+    {
+     "name": "building-i",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-i.fbx",
+      "glb": "Models/GLB format/building-i.glb",
+      "obj": "Models/OBJ format/building-i.obj"
+     },
+     "bytes": 506297
+    },
+    {
+     "name": "building-j",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-j.fbx",
+      "glb": "Models/GLB format/building-j.glb",
+      "obj": "Models/OBJ format/building-j.obj"
+     },
+     "bytes": 1048663
+    },
+    {
+     "name": "building-k",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-k.fbx",
+      "glb": "Models/GLB format/building-k.glb",
+      "obj": "Models/OBJ format/building-k.obj"
+     },
+     "bytes": 604451
+    },
+    {
+     "name": "building-l",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-l.fbx",
+      "glb": "Models/GLB format/building-l.glb",
+      "obj": "Models/OBJ format/building-l.obj"
+     },
+     "bytes": 709192
+    },
+    {
+     "name": "building-m",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-m.fbx",
+      "glb": "Models/GLB format/building-m.glb",
+      "obj": "Models/OBJ format/building-m.obj"
+     },
+     "bytes": 728357
+    },
+    {
+     "name": "building-n",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-n.fbx",
+      "glb": "Models/GLB format/building-n.glb",
+      "obj": "Models/OBJ format/building-n.obj"
+     },
+     "bytes": 857391
+    },
+    {
+     "name": "building-skyscraper-a",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-skyscraper-a.fbx",
+      "glb": "Models/GLB format/building-skyscraper-a.glb",
+      "obj": "Models/OBJ format/building-skyscraper-a.obj"
+     },
+     "bytes": 286403
+    },
+    {
+     "name": "building-skyscraper-b",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-skyscraper-b.fbx",
+      "glb": "Models/GLB format/building-skyscraper-b.glb",
+      "obj": "Models/OBJ format/building-skyscraper-b.obj"
+     },
+     "bytes": 346347
+    },
+    {
+     "name": "building-skyscraper-c",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-skyscraper-c.fbx",
+      "glb": "Models/GLB format/building-skyscraper-c.glb",
+      "obj": "Models/OBJ format/building-skyscraper-c.obj"
+     },
+     "bytes": 377218
+    },
+    {
+     "name": "building-skyscraper-d",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-skyscraper-d.fbx",
+      "glb": "Models/GLB format/building-skyscraper-d.glb",
+      "obj": "Models/OBJ format/building-skyscraper-d.obj"
+     },
+     "bytes": 424362
+    },
+    {
+     "name": "building-skyscraper-e",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-skyscraper-e.fbx",
+      "glb": "Models/GLB format/building-skyscraper-e.glb",
+      "obj": "Models/OBJ format/building-skyscraper-e.obj"
+     },
+     "bytes": 248604
+    },
+    {
+     "name": "detail-awning",
+     "category": "detail",
+     "formats": {
+      "fbx": "Models/FBX format/detail-awning.fbx",
+      "glb": "Models/GLB format/detail-awning.glb",
+      "obj": "Models/OBJ format/detail-awning.obj"
+     },
+     "bytes": 37611
+    },
+    {
+     "name": "detail-awning-wide",
+     "category": "detail",
+     "formats": {
+      "fbx": "Models/FBX format/detail-awning-wide.fbx",
+      "glb": "Models/GLB format/detail-awning-wide.glb",
+      "obj": "Models/OBJ format/detail-awning-wide.obj"
+     },
+     "bytes": 37690
+    },
+    {
+     "name": "detail-overhang",
+     "category": "detail",
+     "formats": {
+      "fbx": "Models/FBX format/detail-overhang.fbx",
+      "glb": "Models/GLB format/detail-overhang.glb",
+      "obj": "Models/OBJ format/detail-overhang.obj"
+     },
+     "bytes": 38004
+    },
+    {
+     "name": "detail-overhang-wide",
+     "category": "detail",
+     "formats": {
+      "fbx": "Models/FBX format/detail-overhang-wide.fbx",
+      "glb": "Models/GLB format/detail-overhang-wide.glb",
+      "obj": "Models/OBJ format/detail-overhang-wide.obj"
+     },
+     "bytes": 38039
+    },
+    {
+     "name": "detail-parasol-a",
+     "category": "detail",
+     "formats": {
+      "fbx": "Models/FBX format/detail-parasol-a.fbx",
+      "glb": "Models/GLB format/detail-parasol-a.glb",
+      "obj": "Models/OBJ format/detail-parasol-a.obj"
+     },
+     "bytes": 44268
+    },
+    {
+     "name": "detail-parasol-b",
+     "category": "detail",
+     "formats": {
+      "fbx": "Models/FBX format/detail-parasol-b.fbx",
+      "glb": "Models/GLB format/detail-parasol-b.glb",
+      "obj": "Models/OBJ format/detail-parasol-b.obj"
+     },
+     "bytes": 48729
+    },
+    {
+     "name": "low-detail-building-a",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-a.fbx",
+      "glb": "Models/GLB format/low-detail-building-a.glb",
+      "obj": "Models/OBJ format/low-detail-building-a.obj"
+     },
+     "bytes": 54363
+    },
+    {
+     "name": "low-detail-building-b",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-b.fbx",
+      "glb": "Models/GLB format/low-detail-building-b.glb",
+      "obj": "Models/OBJ format/low-detail-building-b.obj"
+     },
+     "bytes": 57797
+    },
+    {
+     "name": "low-detail-building-c",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-c.fbx",
+      "glb": "Models/GLB format/low-detail-building-c.glb",
+      "obj": "Models/OBJ format/low-detail-building-c.obj"
+     },
+     "bytes": 50107
+    },
+    {
+     "name": "low-detail-building-d",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-d.fbx",
+      "glb": "Models/GLB format/low-detail-building-d.glb",
+      "obj": "Models/OBJ format/low-detail-building-d.obj"
+     },
+     "bytes": 42147
+    },
+    {
+     "name": "low-detail-building-e",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-e.fbx",
+      "glb": "Models/GLB format/low-detail-building-e.glb",
+      "obj": "Models/OBJ format/low-detail-building-e.obj"
+     },
+     "bytes": 42515
+    },
+    {
+     "name": "low-detail-building-f",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-f.fbx",
+      "glb": "Models/GLB format/low-detail-building-f.glb",
+      "obj": "Models/OBJ format/low-detail-building-f.obj"
+     },
+     "bytes": 38807
+    },
+    {
+     "name": "low-detail-building-g",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-g.fbx",
+      "glb": "Models/GLB format/low-detail-building-g.glb",
+      "obj": "Models/OBJ format/low-detail-building-g.obj"
+     },
+     "bytes": 55935
+    },
+    {
+     "name": "low-detail-building-h",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-h.fbx",
+      "glb": "Models/GLB format/low-detail-building-h.glb",
+      "obj": "Models/OBJ format/low-detail-building-h.obj"
+     },
+     "bytes": 83155
+    },
+    {
+     "name": "low-detail-building-i",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-i.fbx",
+      "glb": "Models/GLB format/low-detail-building-i.glb",
+      "obj": "Models/OBJ format/low-detail-building-i.obj"
+     },
+     "bytes": 49197
+    },
+    {
+     "name": "low-detail-building-j",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-j.fbx",
+      "glb": "Models/GLB format/low-detail-building-j.glb",
+      "obj": "Models/OBJ format/low-detail-building-j.obj"
+     },
+     "bytes": 58002
+    },
+    {
+     "name": "low-detail-building-k",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-k.fbx",
+      "glb": "Models/GLB format/low-detail-building-k.glb",
+      "obj": "Models/OBJ format/low-detail-building-k.obj"
+     },
+     "bytes": 38990
+    },
+    {
+     "name": "low-detail-building-l",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-l.fbx",
+      "glb": "Models/GLB format/low-detail-building-l.glb",
+      "obj": "Models/OBJ format/low-detail-building-l.obj"
+     },
+     "bytes": 49679
+    },
+    {
+     "name": "low-detail-building-m",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-m.fbx",
+      "glb": "Models/GLB format/low-detail-building-m.glb",
+      "obj": "Models/OBJ format/low-detail-building-m.obj"
+     },
+     "bytes": 55935
+    },
+    {
+     "name": "low-detail-building-n",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-n.fbx",
+      "glb": "Models/GLB format/low-detail-building-n.glb",
+      "obj": "Models/OBJ format/low-detail-building-n.obj"
+     },
+     "bytes": 37221
+    },
+    {
+     "name": "low-detail-building-wide-a",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-wide-a.fbx",
+      "glb": "Models/GLB format/low-detail-building-wide-a.glb",
+      "obj": "Models/OBJ format/low-detail-building-wide-a.obj"
+     },
+     "bytes": 49790
+    },
+    {
+     "name": "low-detail-building-wide-b",
+     "category": "low",
+     "formats": {
+      "fbx": "Models/FBX format/low-detail-building-wide-b.fbx",
+      "glb": "Models/GLB format/low-detail-building-wide-b.glb",
+      "obj": "Models/OBJ format/low-detail-building-wide-b.obj"
+     },
+     "bytes": 64118
+    }
+   ]
+  },
+  {
+   "zip": "3d model enviroment/kenney_city-kit-industrial_2.0.zip",
+   "pack": "kenney_city-kit-industrial_2.0",
+   "license": "CC0-1.0",
+   "scope": "public",
+   "zip_bytes": 5045077,
+   "models": [
+    {
+     "name": "building-a",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-a.fbx",
+      "glb": "Models/GLB format/building-a.glb",
+      "obj": "Models/OBJ format/building-a.obj"
+     },
+     "bytes": 432997
+    },
+    {
+     "name": "building-b",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-b.fbx",
+      "glb": "Models/GLB format/building-b.glb",
+      "obj": "Models/OBJ format/building-b.obj"
+     },
+     "bytes": 526678
+    },
+    {
+     "name": "building-c",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-c.fbx",
+      "glb": "Models/GLB format/building-c.glb",
+      "obj": "Models/OBJ format/building-c.obj"
+     },
+     "bytes": 443620
+    },
+    {
+     "name": "building-d",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-d.fbx",
+      "glb": "Models/GLB format/building-d.glb",
+      "obj": "Models/OBJ format/building-d.obj"
+     },
+     "bytes": 259870
+    },
+    {
+     "name": "building-e",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-e.fbx",
+      "glb": "Models/GLB format/building-e.glb",
+      "obj": "Models/OBJ format/building-e.obj"
+     },
+     "bytes": 329656
+    },
+    {
+     "name": "building-f",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-f.fbx",
+      "glb": "Models/GLB format/building-f.glb",
+      "obj": "Models/OBJ format/building-f.obj"
+     },
+     "bytes": 346309
+    },
+    {
+     "name": "building-g",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-g.fbx",
+      "glb": "Models/GLB format/building-g.glb",
+      "obj": "Models/OBJ format/building-g.obj"
+     },
+     "bytes": 282163
+    },
+    {
+     "name": "building-h",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-h.fbx",
+      "glb": "Models/GLB format/building-h.glb",
+      "obj": "Models/OBJ format/building-h.obj"
+     },
+     "bytes": 173582
+    },
+    {
+     "name": "building-i",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-i.fbx",
+      "glb": "Models/GLB format/building-i.glb",
+      "obj": "Models/OBJ format/building-i.obj"
+     },
+     "bytes": 203309
+    },
+    {
+     "name": "building-j",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-j.fbx",
+      "glb": "Models/GLB format/building-j.glb",
+      "obj": "Models/OBJ format/building-j.obj"
+     },
+     "bytes": 222859
+    },
+    {
+     "name": "building-k",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-k.fbx",
+      "glb": "Models/GLB format/building-k.glb",
+      "obj": "Models/OBJ format/building-k.obj"
+     },
+     "bytes": 175345
+    },
+    {
+     "name": "building-l",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-l.fbx",
+      "glb": "Models/GLB format/building-l.glb",
+      "obj": "Models/OBJ format/building-l.obj"
+     },
+     "bytes": 406320
+    },
+    {
+     "name": "building-m",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-m.fbx",
+      "glb": "Models/GLB format/building-m.glb",
+      "obj": "Models/OBJ format/building-m.obj"
+     },
+     "bytes": 363775
+    },
+    {
+     "name": "building-n",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-n.fbx",
+      "glb": "Models/GLB format/building-n.glb",
+      "obj": "Models/OBJ format/building-n.obj"
+     },
+     "bytes": 285746
+    },
+    {
+     "name": "building-o",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-o.fbx",
+      "glb": "Models/GLB format/building-o.glb",
+      "obj": "Models/OBJ format/building-o.obj"
+     },
+     "bytes": 201343
+    },
+    {
+     "name": "building-p",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-p.fbx",
+      "glb": "Models/GLB format/building-p.glb",
+      "obj": "Models/OBJ format/building-p.obj"
+     },
+     "bytes": 271902
+    },
+    {
+     "name": "building-q",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-q.fbx",
+      "glb": "Models/GLB format/building-q.glb",
+      "obj": "Models/OBJ format/building-q.obj"
+     },
+     "bytes": 456075
+    },
+    {
+     "name": "building-r",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-r.fbx",
+      "glb": "Models/GLB format/building-r.glb",
+      "obj": "Models/OBJ format/building-r.obj"
+     },
+     "bytes": 445844
+    },
+    {
+     "name": "building-s",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-s.fbx",
+      "glb": "Models/GLB format/building-s.glb",
+      "obj": "Models/OBJ format/building-s.obj"
+     },
+     "bytes": 213033
+    },
+    {
+     "name": "building-t",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-t.fbx",
+      "glb": "Models/GLB format/building-t.glb",
+      "obj": "Models/OBJ format/building-t.obj"
+     },
+     "bytes": 371042
+    },
+    {
+     "name": "chimney-basic",
+     "category": "chimney",
+     "formats": {
+      "fbx": "Models/FBX format/chimney-basic.fbx",
+      "glb": "Models/GLB format/chimney-basic.glb",
+      "obj": "Models/OBJ format/chimney-basic.obj"
+     },
+     "bytes": 42685
+    },
+    {
+     "name": "chimney-large",
+     "category": "chimney",
+     "formats": {
+      "fbx": "Models/FBX format/chimney-large.fbx",
+      "glb": "Models/GLB format/chimney-large.glb",
+      "obj": "Models/OBJ format/chimney-large.obj"
+     },
+     "bytes": 72019
+    },
+    {
+     "name": "chimney-medium",
+     "category": "chimney",
+     "formats": {
+      "fbx": "Models/FBX format/chimney-medium.fbx",
+      "glb": "Models/GLB format/chimney-medium.glb",
+      "obj": "Models/OBJ format/chimney-medium.obj"
+     },
+     "bytes": 56579
+    },
+    {
+     "name": "chimney-small",
+     "category": "chimney",
+     "formats": {
+      "fbx": "Models/FBX format/chimney-small.fbx",
+      "glb": "Models/GLB format/chimney-small.glb",
+      "obj": "Models/OBJ format/chimney-small.obj"
+     },
+     "bytes": 46193
+    },
+    {
+     "name": "detail-tank",
+     "category": "detail",
+     "formats": {
+      "fbx": "Models/FBX format/detail-tank.fbx",
+      "glb": "Models/GLB format/detail-tank.glb",
+      "obj": "Models/OBJ format/detail-tank.obj"
+     },
+     "bytes": 99610
+    },
+    {
+     "name": "detail-tank-large",
+     "category": "detail",
+     "formats": {
+      "fbx": "Models/FBX format/detail-tank-large.fbx",
+      "glb": "Models/GLB format/detail-tank-large.glb",
+      "obj": "Models/OBJ format/detail-tank-large.obj"
+     },
+     "bytes": 154883
+    },
+    {
+     "name": "shipping-container-a",
+     "category": "shipping",
+     "formats": {
+      "fbx": "Models/FBX format/shipping-container-a.fbx",
+      "glb": "Models/GLB format/shipping-container-a.glb",
+      "obj": "Models/OBJ format/shipping-container-a.obj"
+     },
+     "bytes": 112042
+    },
+    {
+     "name": "shipping-container-b",
+     "category": "shipping",
+     "formats": {
+      "fbx": "Models/FBX format/shipping-container-b.fbx",
+      "glb": "Models/GLB format/shipping-container-b.glb",
+      "obj": "Models/OBJ format/shipping-container-b.obj"
+     },
+     "bytes": 113596
+    },
+    {
+     "name": "shipping-container-c",
+     "category": "shipping",
+     "formats": {
+      "fbx": "Models/FBX format/shipping-container-c.fbx",
+      "glb": "Models/GLB format/shipping-container-c.glb",
+      "obj": "Models/OBJ format/shipping-container-c.obj"
+     },
+     "bytes": 111917
+    },
+    {
+     "name": "solar-panel-flat",
+     "category": "solar",
+     "formats": {
+      "fbx": "Models/FBX format/solar-panel-flat.fbx",
+      "glb": "Models/GLB format/solar-panel-flat.glb",
+      "obj": "Models/OBJ format/solar-panel-flat.obj"
+     },
+     "bytes": 60304
+    },
+    {
+     "name": "solar-panel-landscape",
+     "category": "solar",
+     "formats": {
+      "fbx": "Models/FBX format/solar-panel-landscape.fbx",
+      "glb": "Models/GLB format/solar-panel-landscape.glb",
+      "obj": "Models/OBJ format/solar-panel-landscape.obj"
+     },
+     "bytes": 79351
+    },
+    {
+     "name": "solar-panel-landscape-group",
+     "category": "solar",
+     "formats": {
+      "fbx": "Models/FBX format/solar-panel-landscape-group.fbx",
+      "glb": "Models/GLB format/solar-panel-landscape-group.glb",
+      "obj": "Models/OBJ format/solar-panel-landscape-group.obj"
+     },
+     "bytes": 224706
+    },
+    {
+     "name": "solar-panel-portrait",
+     "category": "solar",
+     "formats": {
+      "fbx": "Models/FBX format/solar-panel-portrait.fbx",
+      "glb": "Models/GLB format/solar-panel-portrait.glb",
+      "obj": "Models/OBJ format/solar-panel-portrait.obj"
+     },
+     "bytes": 78331
+    },
+    {
+     "name": "solar-panel-portrait-group",
+     "category": "solar",
+     "formats": {
+      "fbx": "Models/FBX format/solar-panel-portrait-group.fbx",
+      "glb": "Models/GLB format/solar-panel-portrait-group.glb",
+      "obj": "Models/OBJ format/solar-panel-portrait-group.obj"
+     },
+     "bytes": 223223
+    },
+    {
+     "name": "water-tower",
+     "category": "water",
+     "formats": {
+      "fbx": "Models/FBX format/water-tower.fbx",
+      "glb": "Models/GLB format/water-tower.glb",
+      "obj": "Models/OBJ format/water-tower.obj"
+     },
+     "bytes": 248203
+    },
+    {
+     "name": "windmill",
+     "category": "windmill",
+     "formats": {
+      "fbx": "Models/FBX format/windmill.fbx",
+      "glb": "Models/GLB format/windmill.glb",
+      "obj": "Models/OBJ format/windmill.obj"
+     },
+     "bytes": 140837
+    },
+    {
+     "name": "windmill-low",
+     "category": "windmill",
+     "formats": {
+      "fbx": "Models/FBX format/windmill-low.fbx",
+      "glb": "Models/GLB format/windmill-low.glb",
+      "obj": "Models/OBJ format/windmill-low.obj"
+     },
+     "bytes": 140923
+    }
+   ]
+  },
+  {
+   "zip": "3d model enviroment/kenney_city-kit-roads.zip",
+   "pack": "kenney_city-kit-roads",
+   "license": "CC0-1.0",
+   "scope": "public",
+   "zip_bytes": 2852289,
+   "models": [
+    {
+     "name": "bridge-pillar",
+     "category": "bridge",
+     "formats": {
+      "fbx": "Models/FBX format/bridge-pillar.fbx",
+      "glb": "Models/GLB format/bridge-pillar.glb",
+      "obj": "Models/OBJ format/bridge-pillar.obj"
+     },
+     "bytes": 36587
+    },
+    {
+     "name": "bridge-pillar-wide",
+     "category": "bridge",
+     "formats": {
+      "fbx": "Models/FBX format/bridge-pillar-wide.fbx",
+      "glb": "Models/GLB format/bridge-pillar-wide.glb",
+      "obj": "Models/OBJ format/bridge-pillar-wide.obj"
+     },
+     "bytes": 36658
+    },
+    {
+     "name": "construction-barrier",
+     "category": "construction",
+     "formats": {
+      "fbx": "Models/FBX format/construction-barrier.fbx",
+      "glb": "Models/GLB format/construction-barrier.glb",
+      "obj": "Models/OBJ format/construction-barrier.obj"
+     },
+     "bytes": 40731
+    },
+    {
+     "name": "construction-cone",
+     "category": "construction",
+     "formats": {
+      "fbx": "Models/FBX format/construction-cone.fbx",
+      "glb": "Models/GLB format/construction-cone.glb",
+      "obj": "Models/OBJ format/construction-cone.obj"
+     },
+     "bytes": 39605
+    },
+    {
+     "name": "construction-fence",
+     "category": "construction",
+     "formats": {
+      "fbx": "Models/FBX format/construction-fence.fbx",
+      "glb": "Models/GLB format/construction-fence.glb",
+      "obj": "Models/OBJ format/construction-fence.obj"
+     },
+     "bytes": 56626
+    },
+    {
+     "name": "construction-light",
+     "category": "construction",
+     "formats": {
+      "fbx": "Models/FBX format/construction-light.fbx",
+      "glb": "Models/GLB format/construction-light.glb",
+      "obj": "Models/OBJ format/construction-light.obj"
+     },
+     "bytes": 58428
+    },
+    {
+     "name": "dumpster",
+     "category": "dumpster",
+     "formats": {
+      "fbx": "Models/FBX format/dumpster.fbx",
+      "glb": "Models/GLB format/dumpster.glb",
+      "obj": "Models/OBJ format/dumpster.obj"
+     },
+     "bytes": 94386
+    },
+    {
+     "name": "electricity-pole",
+     "category": "electricity",
+     "formats": {
+      "fbx": "Models/FBX format/electricity-pole.fbx",
+      "glb": "Models/GLB format/electricity-pole.glb",
+      "obj": "Models/OBJ format/electricity-pole.obj"
+     },
+     "bytes": 121541
+    },
+    {
+     "name": "electricity-pole-single",
+     "category": "electricity",
+     "formats": {
+      "fbx": "Models/FBX format/electricity-pole-single.fbx",
+      "glb": "Models/GLB format/electricity-pole-single.glb",
+      "obj": "Models/OBJ format/electricity-pole-single.obj"
+     },
+     "bytes": 68531
+    },
+    {
+     "name": "electricity-pole-wide",
+     "category": "electricity",
+     "formats": {
+      "fbx": "Models/FBX format/electricity-pole-wide.fbx",
+      "glb": "Models/GLB format/electricity-pole-wide.glb",
+      "obj": "Models/OBJ format/electricity-pole-wide.obj"
+     },
+     "bytes": 152905
+    },
+    {
+     "name": "electricity-side",
+     "category": "electricity",
+     "formats": {
+      "fbx": "Models/FBX format/electricity-side.fbx",
+      "glb": "Models/GLB format/electricity-side.glb",
+      "obj": "Models/OBJ format/electricity-side.obj"
+     },
+     "bytes": 121309
+    },
+    {
+     "name": "electricity-side-single",
+     "category": "electricity",
+     "formats": {
+      "fbx": "Models/FBX format/electricity-side-single.fbx",
+      "glb": "Models/GLB format/electricity-side-single.glb",
+      "obj": "Models/OBJ format/electricity-side-single.obj"
+     },
+     "bytes": 68227
+    },
+    {
+     "name": "electricity-side-wide",
+     "category": "electricity",
+     "formats": {
+      "fbx": "Models/FBX format/electricity-side-wide.fbx",
+      "glb": "Models/GLB format/electricity-side-wide.glb",
+      "obj": "Models/OBJ format/electricity-side-wide.obj"
+     },
+     "bytes": 152857
+    },
+    {
+     "name": "electricity-wires",
+     "category": "electricity",
+     "formats": {
+      "fbx": "Models/FBX format/electricity-wires.fbx",
+      "glb": "Models/GLB format/electricity-wires.glb",
+      "obj": "Models/OBJ format/electricity-wires.obj"
+     },
+     "bytes": 43759
+    },
+    {
+     "name": "electricity-wires-wide",
+     "category": "electricity",
+     "formats": {
+      "fbx": "Models/FBX format/electricity-wires-wide.fbx",
+      "glb": "Models/GLB format/electricity-wires-wide.glb",
+      "obj": "Models/OBJ format/electricity-wires-wide.obj"
+     },
+     "bytes": 73419
+    },
+    {
+     "name": "light-curved",
+     "category": "light",
+     "formats": {
+      "fbx": "Models/FBX format/light-curved.fbx",
+      "glb": "Models/GLB format/light-curved.glb",
+      "obj": "Models/OBJ format/light-curved.obj"
+     },
+     "bytes": 43769
+    },
+    {
+     "name": "light-curved-cross",
+     "category": "light",
+     "formats": {
+      "fbx": "Models/FBX format/light-curved-cross.fbx",
+      "glb": "Models/GLB format/light-curved-cross.glb",
+      "obj": "Models/OBJ format/light-curved-cross.obj"
+     },
+     "bytes": 79000
+    },
+    {
+     "name": "light-curved-double",
+     "category": "light",
+     "formats": {
+      "fbx": "Models/FBX format/light-curved-double.fbx",
+      "glb": "Models/GLB format/light-curved-double.glb",
+      "obj": "Models/OBJ format/light-curved-double.obj"
+     },
+     "bytes": 54407
+    },
+    {
+     "name": "light-square",
+     "category": "light",
+     "formats": {
+      "fbx": "Models/FBX format/light-square.fbx",
+      "glb": "Models/GLB format/light-square.glb",
+      "obj": "Models/OBJ format/light-square.obj"
+     },
+     "bytes": 38524
+    },
+    {
+     "name": "light-square-cross",
+     "category": "light",
+     "formats": {
+      "fbx": "Models/FBX format/light-square-cross.fbx",
+      "glb": "Models/GLB format/light-square-cross.glb",
+      "obj": "Models/OBJ format/light-square-cross.obj"
+     },
+     "bytes": 51478
+    },
+    {
+     "name": "light-square-double",
+     "category": "light",
+     "formats": {
+      "fbx": "Models/FBX format/light-square-double.fbx",
+      "glb": "Models/GLB format/light-square-double.glb",
+      "obj": "Models/OBJ format/light-square-double.obj"
+     },
+     "bytes": 42027
+    },
+    {
+     "name": "road-bend",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-bend.fbx",
+      "glb": "Models/GLB format/road-bend.glb",
+      "obj": "Models/OBJ format/road-bend.obj"
+     },
+     "bytes": 72471
+    },
+    {
+     "name": "road-bend-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-bend-barrier.fbx",
+      "glb": "Models/GLB format/road-bend-barrier.glb",
+      "obj": "Models/OBJ format/road-bend-barrier.obj"
+     },
+     "bytes": 50291
+    },
+    {
+     "name": "road-bend-sidewalk",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-bend-sidewalk.fbx",
+      "glb": "Models/GLB format/road-bend-sidewalk.glb",
+      "obj": "Models/OBJ format/road-bend-sidewalk.obj"
+     },
+     "bytes": 65670
+    },
+    {
+     "name": "road-bend-square",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-bend-square.fbx",
+      "glb": "Models/GLB format/road-bend-square.glb",
+      "obj": "Models/OBJ format/road-bend-square.obj"
+     },
+     "bytes": 36372
+    },
+    {
+     "name": "road-bend-square-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-bend-square-barrier.fbx",
+      "glb": "Models/GLB format/road-bend-square-barrier.glb",
+      "obj": "Models/OBJ format/road-bend-square-barrier.obj"
+     },
+     "bytes": 35869
+    },
+    {
+     "name": "road-bridge",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-bridge.fbx",
+      "glb": "Models/GLB format/road-bridge.glb",
+      "obj": "Models/OBJ format/road-bridge.obj"
+     },
+     "bytes": 71771
+    },
+    {
+     "name": "road-crossing",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-crossing.fbx",
+      "glb": "Models/GLB format/road-crossing.glb",
+      "obj": "Models/OBJ format/road-crossing.obj"
+     },
+     "bytes": 40474
+    },
+    {
+     "name": "road-crossroad",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-crossroad.fbx",
+      "glb": "Models/GLB format/road-crossroad.glb",
+      "obj": "Models/OBJ format/road-crossroad.obj"
+     },
+     "bytes": 43506
+    },
+    {
+     "name": "road-crossroad-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-crossroad-barrier.fbx",
+      "glb": "Models/GLB format/road-crossroad-barrier.glb",
+      "obj": "Models/OBJ format/road-crossroad-barrier.obj"
+     },
+     "bytes": 48000
+    },
+    {
+     "name": "road-crossroad-line",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-crossroad-line.fbx",
+      "glb": "Models/GLB format/road-crossroad-line.glb",
+      "obj": "Models/OBJ format/road-crossroad-line.obj"
+     },
+     "bytes": 42455
+    },
+    {
+     "name": "road-crossroad-path",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-crossroad-path.fbx",
+      "glb": "Models/GLB format/road-crossroad-path.glb",
+      "obj": "Models/OBJ format/road-crossroad-path.obj"
+     },
+     "bytes": 65121
+    },
+    {
+     "name": "road-curve",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-curve.fbx",
+      "glb": "Models/GLB format/road-curve.glb",
+      "obj": "Models/OBJ format/road-curve.obj"
+     },
+     "bytes": 80265
+    },
+    {
+     "name": "road-curve-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-curve-barrier.fbx",
+      "glb": "Models/GLB format/road-curve-barrier.glb",
+      "obj": "Models/OBJ format/road-curve-barrier.obj"
+     },
+     "bytes": 64304
+    },
+    {
+     "name": "road-curve-intersection",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-curve-intersection.fbx",
+      "glb": "Models/GLB format/road-curve-intersection.glb",
+      "obj": "Models/OBJ format/road-curve-intersection.obj"
+     },
+     "bytes": 77444
+    },
+    {
+     "name": "road-curve-intersection-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-curve-intersection-barrier.fbx",
+      "glb": "Models/GLB format/road-curve-intersection-barrier.glb",
+      "obj": "Models/OBJ format/road-curve-intersection-barrier.obj"
+     },
+     "bytes": 57400
+    },
+    {
+     "name": "road-curve-pavement",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-curve-pavement.fbx",
+      "glb": "Models/GLB format/road-curve-pavement.glb",
+      "obj": "Models/OBJ format/road-curve-pavement.obj"
+     },
+     "bytes": 64280
+    },
+    {
+     "name": "road-driveway-double",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-driveway-double.fbx",
+      "glb": "Models/GLB format/road-driveway-double.glb",
+      "obj": "Models/OBJ format/road-driveway-double.obj"
+     },
+     "bytes": 39148
+    },
+    {
+     "name": "road-driveway-double-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-driveway-double-barrier.fbx",
+      "glb": "Models/GLB format/road-driveway-double-barrier.glb",
+      "obj": "Models/OBJ format/road-driveway-double-barrier.obj"
+     },
+     "bytes": 41795
+    },
+    {
+     "name": "road-driveway-single",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-driveway-single.fbx",
+      "glb": "Models/GLB format/road-driveway-single.glb",
+      "obj": "Models/OBJ format/road-driveway-single.obj"
+     },
+     "bytes": 36744
+    },
+    {
+     "name": "road-driveway-single-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-driveway-single-barrier.fbx",
+      "glb": "Models/GLB format/road-driveway-single-barrier.glb",
+      "obj": "Models/OBJ format/road-driveway-single-barrier.obj"
+     },
+     "bytes": 36718
+    },
+    {
+     "name": "road-end",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-end.fbx",
+      "glb": "Models/GLB format/road-end.glb",
+      "obj": "Models/OBJ format/road-end.obj"
+     },
+     "bytes": 36723
+    },
+    {
+     "name": "road-end-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-end-barrier.fbx",
+      "glb": "Models/GLB format/road-end-barrier.glb",
+      "obj": "Models/OBJ format/road-end-barrier.obj"
+     },
+     "bytes": 33319
+    },
+    {
+     "name": "road-end-round",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-end-round.fbx",
+      "glb": "Models/GLB format/road-end-round.glb",
+      "obj": "Models/OBJ format/road-end-round.obj"
+     },
+     "bytes": 64355
+    },
+    {
+     "name": "road-end-round-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-end-round-barrier.fbx",
+      "glb": "Models/GLB format/road-end-round-barrier.glb",
+      "obj": "Models/OBJ format/road-end-round-barrier.obj"
+     },
+     "bytes": 59955
+    },
+    {
+     "name": "road-intersection",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-intersection.fbx",
+      "glb": "Models/GLB format/road-intersection.glb",
+      "obj": "Models/OBJ format/road-intersection.obj"
+     },
+     "bytes": 40912
+    },
+    {
+     "name": "road-intersection-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-intersection-barrier.fbx",
+      "glb": "Models/GLB format/road-intersection-barrier.glb",
+      "obj": "Models/OBJ format/road-intersection-barrier.obj"
+     },
+     "bytes": 40698
+    },
+    {
+     "name": "road-intersection-line",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-intersection-line.fbx",
+      "glb": "Models/GLB format/road-intersection-line.glb",
+      "obj": "Models/OBJ format/road-intersection-line.obj"
+     },
+     "bytes": 38944
+    },
+    {
+     "name": "road-intersection-path",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-intersection-path.fbx",
+      "glb": "Models/GLB format/road-intersection-path.glb",
+      "obj": "Models/OBJ format/road-intersection-path.obj"
+     },
+     "bytes": 55630
+    },
+    {
+     "name": "road-roundabout",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-roundabout.fbx",
+      "glb": "Models/GLB format/road-roundabout.glb",
+      "obj": "Models/OBJ format/road-roundabout.obj"
+     },
+     "bytes": 282216
+    },
+    {
+     "name": "road-roundabout-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-roundabout-barrier.fbx",
+      "glb": "Models/GLB format/road-roundabout-barrier.glb",
+      "obj": "Models/OBJ format/road-roundabout-barrier.obj"
+     },
+     "bytes": 174202
+    },
+    {
+     "name": "road-side",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-side.fbx",
+      "glb": "Models/GLB format/road-side.glb",
+      "obj": "Models/OBJ format/road-side.obj"
+     },
+     "bytes": 33987
+    },
+    {
+     "name": "road-side-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-side-barrier.fbx",
+      "glb": "Models/GLB format/road-side-barrier.glb",
+      "obj": "Models/OBJ format/road-side-barrier.obj"
+     },
+     "bytes": 33208
+    },
+    {
+     "name": "road-side-entry",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-side-entry.fbx",
+      "glb": "Models/GLB format/road-side-entry.glb",
+      "obj": "Models/OBJ format/road-side-entry.obj"
+     },
+     "bytes": 80639
+    },
+    {
+     "name": "road-side-entry-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-side-entry-barrier.fbx",
+      "glb": "Models/GLB format/road-side-entry-barrier.glb",
+      "obj": "Models/OBJ format/road-side-entry-barrier.obj"
+     },
+     "bytes": 73514
+    },
+    {
+     "name": "road-side-exit",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-side-exit.fbx",
+      "glb": "Models/GLB format/road-side-exit.glb",
+      "obj": "Models/OBJ format/road-side-exit.obj"
+     },
+     "bytes": 80774
+    },
+    {
+     "name": "road-side-exit-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-side-exit-barrier.fbx",
+      "glb": "Models/GLB format/road-side-exit-barrier.glb",
+      "obj": "Models/OBJ format/road-side-exit-barrier.obj"
+     },
+     "bytes": 73183
+    },
+    {
+     "name": "road-sign-empty",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-sign-empty.fbx",
+      "glb": "Models/GLB format/road-sign-empty.glb",
+      "obj": "Models/OBJ format/road-sign-empty.obj"
+     },
+     "bytes": 38636
+    },
+    {
+     "name": "road-sign-empty-hanging",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-sign-empty-hanging.fbx",
+      "glb": "Models/GLB format/road-sign-empty-hanging.glb",
+      "obj": "Models/OBJ format/road-sign-empty-hanging.obj"
+     },
+     "bytes": 48022
+    },
+    {
+     "name": "road-sign-object-stop",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-sign-object-stop.fbx",
+      "glb": "Models/GLB format/road-sign-object-stop.glb",
+      "obj": "Models/OBJ format/road-sign-object-stop.obj"
+     },
+     "bytes": 40017
+    },
+    {
+     "name": "road-sign-object-street",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-sign-object-street.fbx",
+      "glb": "Models/GLB format/road-sign-object-street.glb",
+      "obj": "Models/OBJ format/road-sign-object-street.obj"
+     },
+     "bytes": 38100
+    },
+    {
+     "name": "road-sign-object-warning",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-sign-object-warning.fbx",
+      "glb": "Models/GLB format/road-sign-object-warning.glb",
+      "obj": "Models/OBJ format/road-sign-object-warning.obj"
+     },
+     "bytes": 41834
+    },
+    {
+     "name": "road-sign-stop",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-sign-stop.fbx",
+      "glb": "Models/GLB format/road-sign-stop.glb",
+      "obj": "Models/OBJ format/road-sign-stop.obj"
+     },
+     "bytes": 48087
+    },
+    {
+     "name": "road-sign-street",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-sign-street.fbx",
+      "glb": "Models/GLB format/road-sign-street.glb",
+      "obj": "Models/OBJ format/road-sign-street.obj"
+     },
+     "bytes": 57376
+    },
+    {
+     "name": "road-sign-warning",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-sign-warning.fbx",
+      "glb": "Models/GLB format/road-sign-warning.glb",
+      "obj": "Models/OBJ format/road-sign-warning.obj"
+     },
+     "bytes": 49703
+    },
+    {
+     "name": "road-slant",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-slant.fbx",
+      "glb": "Models/GLB format/road-slant.glb",
+      "obj": "Models/OBJ format/road-slant.obj"
+     },
+     "bytes": 33549
+    },
+    {
+     "name": "road-slant-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-slant-barrier.fbx",
+      "glb": "Models/GLB format/road-slant-barrier.glb",
+      "obj": "Models/OBJ format/road-slant-barrier.obj"
+     },
+     "bytes": 32916
+    },
+    {
+     "name": "road-slant-curve",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-slant-curve.fbx",
+      "glb": "Models/GLB format/road-slant-curve.glb",
+      "obj": "Models/OBJ format/road-slant-curve.obj"
+     },
+     "bytes": 129208
+    },
+    {
+     "name": "road-slant-curve-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-slant-curve-barrier.fbx",
+      "glb": "Models/GLB format/road-slant-curve-barrier.glb",
+      "obj": "Models/OBJ format/road-slant-curve-barrier.obj"
+     },
+     "bytes": 114034
+    },
+    {
+     "name": "road-slant-flat",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-slant-flat.fbx",
+      "glb": "Models/GLB format/road-slant-flat.glb",
+      "obj": "Models/OBJ format/road-slant-flat.obj"
+     },
+     "bytes": 33898
+    },
+    {
+     "name": "road-slant-flat-curve",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-slant-flat-curve.fbx",
+      "glb": "Models/GLB format/road-slant-flat-curve.glb",
+      "obj": "Models/OBJ format/road-slant-flat-curve.obj"
+     },
+     "bytes": 150969
+    },
+    {
+     "name": "road-slant-flat-high",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-slant-flat-high.fbx",
+      "glb": "Models/GLB format/road-slant-flat-high.glb",
+      "obj": "Models/OBJ format/road-slant-flat-high.obj"
+     },
+     "bytes": 33969
+    },
+    {
+     "name": "road-slant-high",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-slant-high.fbx",
+      "glb": "Models/GLB format/road-slant-high.glb",
+      "obj": "Models/OBJ format/road-slant-high.obj"
+     },
+     "bytes": 33566
+    },
+    {
+     "name": "road-slant-high-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-slant-high-barrier.fbx",
+      "glb": "Models/GLB format/road-slant-high-barrier.glb",
+      "obj": "Models/OBJ format/road-slant-high-barrier.obj"
+     },
+     "bytes": 32971
+    },
+    {
+     "name": "road-split",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-split.fbx",
+      "glb": "Models/GLB format/road-split.glb",
+      "obj": "Models/OBJ format/road-split.obj"
+     },
+     "bytes": 176836
+    },
+    {
+     "name": "road-split-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-split-barrier.fbx",
+      "glb": "Models/GLB format/road-split-barrier.glb",
+      "obj": "Models/OBJ format/road-split-barrier.obj"
+     },
+     "bytes": 129394
+    },
+    {
+     "name": "road-square",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-square.fbx",
+      "glb": "Models/GLB format/road-square.glb",
+      "obj": "Models/OBJ format/road-square.obj"
+     },
+     "bytes": 35089
+    },
+    {
+     "name": "road-square-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-square-barrier.fbx",
+      "glb": "Models/GLB format/road-square-barrier.glb",
+      "obj": "Models/OBJ format/road-square-barrier.obj"
+     },
+     "bytes": 34013
+    },
+    {
+     "name": "road-straight",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-straight.fbx",
+      "glb": "Models/GLB format/road-straight.glb",
+      "obj": "Models/OBJ format/road-straight.obj"
+     },
+     "bytes": 33519
+    },
+    {
+     "name": "road-straight-barrier",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-straight-barrier.fbx",
+      "glb": "Models/GLB format/road-straight-barrier.glb",
+      "obj": "Models/OBJ format/road-straight-barrier.obj"
+     },
+     "bytes": 33112
+    },
+    {
+     "name": "road-straight-barrier-end",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-straight-barrier-end.fbx",
+      "glb": "Models/GLB format/road-straight-barrier-end.glb",
+      "obj": "Models/OBJ format/road-straight-barrier-end.obj"
+     },
+     "bytes": 31076
+    },
+    {
+     "name": "road-straight-barrier-half",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-straight-barrier-half.fbx",
+      "glb": "Models/GLB format/road-straight-barrier-half.glb",
+      "obj": "Models/OBJ format/road-straight-barrier-half.obj"
+     },
+     "bytes": 32951
+    },
+    {
+     "name": "road-straight-half",
+     "category": "road",
+     "formats": {
+      "fbx": "Models/FBX format/road-straight-half.fbx",
+      "glb": "Models/GLB format/road-straight-half.glb",
+      "obj": "Models/OBJ format/road-straight-half.obj"
+     },
+     "bytes": 33590
+    },
+    {
+     "name": "sign-highway",
+     "category": "sign",
+     "formats": {
+      "fbx": "Models/FBX format/sign-highway.fbx",
+      "glb": "Models/GLB format/sign-highway.glb",
+      "obj": "Models/OBJ format/sign-highway.obj"
+     },
+     "bytes": 61314
+    },
+    {
+     "name": "sign-highway-detailed",
+     "category": "sign",
+     "formats": {
+      "fbx": "Models/FBX format/sign-highway-detailed.fbx",
+      "glb": "Models/GLB format/sign-highway-detailed.glb",
+      "obj": "Models/OBJ format/sign-highway-detailed.obj"
+     },
+     "bytes": 76715
+    },
+    {
+     "name": "sign-highway-wide",
+     "category": "sign",
+     "formats": {
+      "fbx": "Models/FBX format/sign-highway-wide.fbx",
+      "glb": "Models/GLB format/sign-highway-wide.glb",
+      "obj": "Models/OBJ format/sign-highway-wide.obj"
+     },
+     "bytes": 54109
+    },
+    {
+     "name": "tile-high",
+     "category": "tile",
+     "formats": {
+      "fbx": "Models/FBX format/tile-high.fbx",
+      "glb": "Models/GLB format/tile-high.glb",
+      "obj": "Models/OBJ format/tile-high.obj"
+     },
+     "bytes": 31175
+    },
+    {
+     "name": "tile-low",
+     "category": "tile",
+     "formats": {
+      "fbx": "Models/FBX format/tile-low.fbx",
+      "glb": "Models/GLB format/tile-low.glb",
+      "obj": "Models/OBJ format/tile-low.obj"
+     },
+     "bytes": 31168
+    },
+    {
+     "name": "tile-slant",
+     "category": "tile",
+     "formats": {
+      "fbx": "Models/FBX format/tile-slant.fbx",
+      "glb": "Models/GLB format/tile-slant.glb",
+      "obj": "Models/OBJ format/tile-slant.obj"
+     },
+     "bytes": 31227
+    },
+    {
+     "name": "tile-slantHigh",
+     "category": "tile",
+     "formats": {
+      "fbx": "Models/FBX format/tile-slantHigh.fbx",
+      "glb": "Models/GLB format/tile-slantHigh.glb",
+      "obj": "Models/OBJ format/tile-slantHigh.obj"
+     },
+     "bytes": 31267
+    },
+    {
+     "name": "traffic-light",
+     "category": "traffic",
+     "formats": {
+      "fbx": "Models/FBX format/traffic-light.fbx",
+      "glb": "Models/GLB format/traffic-light.glb",
+      "obj": "Models/OBJ format/traffic-light.obj"
+     },
+     "bytes": 69202
+    },
+    {
+     "name": "traffic-light-hanging",
+     "category": "traffic",
+     "formats": {
+      "fbx": "Models/FBX format/traffic-light-hanging.fbx",
+      "glb": "Models/GLB format/traffic-light-hanging.glb",
+      "obj": "Models/OBJ format/traffic-light-hanging.obj"
+     },
+     "bytes": 73734
+    },
+    {
+     "name": "traffic-light-object-hanging",
+     "category": "traffic",
+     "formats": {
+      "fbx": "Models/FBX format/traffic-light-object-hanging.fbx",
+      "glb": "Models/GLB format/traffic-light-object-hanging.glb",
+      "obj": "Models/OBJ format/traffic-light-object-hanging.obj"
+     },
+     "bytes": 49570
+    },
+    {
+     "name": "traffic-light-object-horizontal",
+     "category": "traffic",
+     "formats": {
+      "fbx": "Models/FBX format/traffic-light-object-horizontal.fbx",
+      "glb": "Models/GLB format/traffic-light-object-horizontal.glb",
+      "obj": "Models/OBJ format/traffic-light-object-horizontal.obj"
+     },
+     "bytes": 50359
+    },
+    {
+     "name": "traffic-light-object-vertical",
+     "category": "traffic",
+     "formats": {
+      "fbx": "Models/FBX format/traffic-light-object-vertical.fbx",
+      "glb": "Models/GLB format/traffic-light-object-vertical.glb",
+      "obj": "Models/OBJ format/traffic-light-object-vertical.obj"
+     },
+     "bytes": 52589
+    }
+   ]
+  },
+  {
+   "zip": "3d model enviroment/kenney_city-kit-suburban_20.zip",
+   "pack": "kenney_city-kit-suburban_20",
+   "license": "CC0-1.0",
+   "scope": "public",
+   "zip_bytes": 3038740,
+   "models": [
+    {
+     "name": "building-type-a",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-a.fbx",
+      "glb": "Models/GLB format/building-type-a.glb",
+      "obj": "Models/OBJ format/building-type-a.obj"
+     },
+     "bytes": 258477
+    },
+    {
+     "name": "building-type-b",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-b.fbx",
+      "glb": "Models/GLB format/building-type-b.glb",
+      "obj": "Models/OBJ format/building-type-b.obj"
+     },
+     "bytes": 381951
+    },
+    {
+     "name": "building-type-c",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-c.fbx",
+      "glb": "Models/GLB format/building-type-c.glb",
+      "obj": "Models/OBJ format/building-type-c.obj"
+     },
+     "bytes": 266583
+    },
+    {
+     "name": "building-type-d",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-d.fbx",
+      "glb": "Models/GLB format/building-type-d.glb",
+      "obj": "Models/OBJ format/building-type-d.obj"
+     },
+     "bytes": 385050
+    },
+    {
+     "name": "building-type-e",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-e.fbx",
+      "glb": "Models/GLB format/building-type-e.glb",
+      "obj": "Models/OBJ format/building-type-e.obj"
+     },
+     "bytes": 369115
+    },
+    {
+     "name": "building-type-f",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-f.fbx",
+      "glb": "Models/GLB format/building-type-f.glb",
+      "obj": "Models/OBJ format/building-type-f.obj"
+     },
+     "bytes": 365779
+    },
+    {
+     "name": "building-type-g",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-g.fbx",
+      "glb": "Models/GLB format/building-type-g.glb",
+      "obj": "Models/OBJ format/building-type-g.obj"
+     },
+     "bytes": 255172
+    },
+    {
+     "name": "building-type-h",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-h.fbx",
+      "glb": "Models/GLB format/building-type-h.glb",
+      "obj": "Models/OBJ format/building-type-h.obj"
+     },
+     "bytes": 173419
+    },
+    {
+     "name": "building-type-i",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-i.fbx",
+      "glb": "Models/GLB format/building-type-i.glb",
+      "obj": "Models/OBJ format/building-type-i.obj"
+     },
+     "bytes": 194048
+    },
+    {
+     "name": "building-type-j",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-j.fbx",
+      "glb": "Models/GLB format/building-type-j.glb",
+      "obj": "Models/OBJ format/building-type-j.obj"
+     },
+     "bytes": 259147
+    },
+    {
+     "name": "building-type-k",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-k.fbx",
+      "glb": "Models/GLB format/building-type-k.glb",
+      "obj": "Models/OBJ format/building-type-k.obj"
+     },
+     "bytes": 234042
+    },
+    {
+     "name": "building-type-l",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-l.fbx",
+      "glb": "Models/GLB format/building-type-l.glb",
+      "obj": "Models/OBJ format/building-type-l.obj"
+     },
+     "bytes": 293006
+    },
+    {
+     "name": "building-type-m",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-m.fbx",
+      "glb": "Models/GLB format/building-type-m.glb",
+      "obj": "Models/OBJ format/building-type-m.obj"
+     },
+     "bytes": 257837
+    },
+    {
+     "name": "building-type-n",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-n.fbx",
+      "glb": "Models/GLB format/building-type-n.glb",
+      "obj": "Models/OBJ format/building-type-n.obj"
+     },
+     "bytes": 363384
+    },
+    {
+     "name": "building-type-o",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-o.fbx",
+      "glb": "Models/GLB format/building-type-o.glb",
+      "obj": "Models/OBJ format/building-type-o.obj"
+     },
+     "bytes": 298164
+    },
+    {
+     "name": "building-type-p",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-p.fbx",
+      "glb": "Models/GLB format/building-type-p.glb",
+      "obj": "Models/OBJ format/building-type-p.obj"
+     },
+     "bytes": 279362
+    },
+    {
+     "name": "building-type-q",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-q.fbx",
+      "glb": "Models/GLB format/building-type-q.glb",
+      "obj": "Models/OBJ format/building-type-q.obj"
+     },
+     "bytes": 247521
+    },
+    {
+     "name": "building-type-r",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-r.fbx",
+      "glb": "Models/GLB format/building-type-r.glb",
+      "obj": "Models/OBJ format/building-type-r.obj"
+     },
+     "bytes": 238513
+    },
+    {
+     "name": "building-type-s",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-s.fbx",
+      "glb": "Models/GLB format/building-type-s.glb",
+      "obj": "Models/OBJ format/building-type-s.obj"
+     },
+     "bytes": 275192
+    },
+    {
+     "name": "building-type-t",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-t.fbx",
+      "glb": "Models/GLB format/building-type-t.glb",
+      "obj": "Models/OBJ format/building-type-t.obj"
+     },
+     "bytes": 438799
+    },
+    {
+     "name": "building-type-u",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-type-u.fbx",
+      "glb": "Models/GLB format/building-type-u.glb",
+      "obj": "Models/OBJ format/building-type-u.obj"
+     },
+     "bytes": 311594
+    },
+    {
+     "name": "driveway-long",
+     "category": "driveway",
+     "formats": {
+      "fbx": "Models/FBX format/driveway-long.fbx",
+      "glb": "Models/GLB format/driveway-long.glb",
+      "obj": "Models/OBJ format/driveway-long.obj"
+     },
+     "bytes": 31467
+    },
+    {
+     "name": "driveway-short",
+     "category": "driveway",
+     "formats": {
+      "fbx": "Models/FBX format/driveway-short.fbx",
+      "glb": "Models/GLB format/driveway-short.glb",
+      "obj": "Models/OBJ format/driveway-short.obj"
+     },
+     "bytes": 31490
+    },
+    {
+     "name": "fence",
+     "category": "fence",
+     "formats": {
+      "fbx": "Models/FBX format/fence.fbx",
+      "glb": "Models/GLB format/fence.glb",
+      "obj": "Models/OBJ format/fence.obj"
+     },
+     "bytes": 42407
+    },
+    {
+     "name": "fence-1x2",
+     "category": "fence",
+     "formats": {
+      "fbx": "Models/FBX format/fence-1x2.fbx",
+      "glb": "Models/GLB format/fence-1x2.glb",
+      "obj": "Models/OBJ format/fence-1x2.obj"
+     },
+     "bytes": 55704
+    },
+    {
+     "name": "fence-1x3",
+     "category": "fence",
+     "formats": {
+      "fbx": "Models/FBX format/fence-1x3.fbx",
+      "glb": "Models/GLB format/fence-1x3.glb",
+      "obj": "Models/OBJ format/fence-1x3.obj"
+     },
+     "bytes": 64954
+    },
+    {
+     "name": "fence-1x4",
+     "category": "fence",
+     "formats": {
+      "fbx": "Models/FBX format/fence-1x4.fbx",
+      "glb": "Models/GLB format/fence-1x4.glb",
+      "obj": "Models/OBJ format/fence-1x4.obj"
+     },
+     "bytes": 74268
+    },
+    {
+     "name": "fence-2x2",
+     "category": "fence",
+     "formats": {
+      "fbx": "Models/FBX format/fence-2x2.fbx",
+      "glb": "Models/GLB format/fence-2x2.glb",
+      "obj": "Models/OBJ format/fence-2x2.obj"
+     },
+     "bytes": 70812
+    },
+    {
+     "name": "fence-2x3",
+     "category": "fence",
+     "formats": {
+      "fbx": "Models/FBX format/fence-2x3.fbx",
+      "glb": "Models/GLB format/fence-2x3.glb",
+      "obj": "Models/OBJ format/fence-2x3.obj"
+     },
+     "bytes": 80070
+    },
+    {
+     "name": "fence-3x2",
+     "category": "fence",
+     "formats": {
+      "fbx": "Models/FBX format/fence-3x2.fbx",
+      "glb": "Models/GLB format/fence-3x2.glb",
+      "obj": "Models/OBJ format/fence-3x2.obj"
+     },
+     "bytes": 87034
+    },
+    {
+     "name": "fence-3x3",
+     "category": "fence",
+     "formats": {
+      "fbx": "Models/FBX format/fence-3x3.fbx",
+      "glb": "Models/GLB format/fence-3x3.glb",
+      "obj": "Models/OBJ format/fence-3x3.obj"
+     },
+     "bytes": 95278
+    },
+    {
+     "name": "fence-low",
+     "category": "fence",
+     "formats": {
+      "fbx": "Models/FBX format/fence-low.fbx",
+      "glb": "Models/GLB format/fence-low.glb",
+      "obj": "Models/OBJ format/fence-low.obj"
+     },
+     "bytes": 59832
+    },
+    {
+     "name": "path-long",
+     "category": "path",
+     "formats": {
+      "fbx": "Models/FBX format/path-long.fbx",
+      "glb": "Models/GLB format/path-long.glb",
+      "obj": "Models/OBJ format/path-long.obj"
+     },
+     "bytes": 31450
+    },
+    {
+     "name": "path-short",
+     "category": "path",
+     "formats": {
+      "fbx": "Models/FBX format/path-short.fbx",
+      "glb": "Models/GLB format/path-short.glb",
+      "obj": "Models/OBJ format/path-short.obj"
+     },
+     "bytes": 31457
+    },
+    {
+     "name": "path-stones-long",
+     "category": "path",
+     "formats": {
+      "fbx": "Models/FBX format/path-stones-long.fbx",
+      "glb": "Models/GLB format/path-stones-long.glb",
+      "obj": "Models/OBJ format/path-stones-long.obj"
+     },
+     "bytes": 36479
+    },
+    {
+     "name": "path-stones-messy",
+     "category": "path",
+     "formats": {
+      "fbx": "Models/FBX format/path-stones-messy.fbx",
+      "glb": "Models/GLB format/path-stones-messy.glb",
+      "obj": "Models/OBJ format/path-stones-messy.obj"
+     },
+     "bytes": 38064
+    },
+    {
+     "name": "path-stones-short",
+     "category": "path",
+     "formats": {
+      "fbx": "Models/FBX format/path-stones-short.fbx",
+      "glb": "Models/GLB format/path-stones-short.glb",
+      "obj": "Models/OBJ format/path-stones-short.obj"
+     },
+     "bytes": 33478
+    },
+    {
+     "name": "planter",
+     "category": "planter",
+     "formats": {
+      "fbx": "Models/FBX format/planter.fbx",
+      "glb": "Models/GLB format/planter.glb",
+      "obj": "Models/OBJ format/planter.obj"
+     },
+     "bytes": 72990
+    },
+    {
+     "name": "tree-large",
+     "category": "tree",
+     "formats": {
+      "fbx": "Models/FBX format/tree-large.fbx",
+      "glb": "Models/GLB format/tree-large.glb",
+      "obj": "Models/OBJ format/tree-large.obj"
+     },
+     "bytes": 39215
+    },
+    {
+     "name": "tree-small",
+     "category": "tree",
+     "formats": {
+      "fbx": "Models/FBX format/tree-small.fbx",
+      "glb": "Models/GLB format/tree-small.glb",
+      "obj": "Models/OBJ format/tree-small.obj"
+     },
+     "bytes": 39271
+    }
+   ]
+  },
+  {
+   "zip": "3d model enviroment/kenney_modular-buildings.zip",
+   "pack": "kenney_modular-buildings",
+   "license": "CC0-1.0",
+   "scope": "public",
+   "zip_bytes": 1825490,
+   "models": [
+    {
+     "name": "building-block",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-block.fbx",
+      "glb": "Models/GLB format/building-block.glb",
+      "obj": "Models/OBJ format/building-block.obj"
+     },
+     "bytes": 31288
+    },
+    {
+     "name": "building-corner",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-corner.fbx",
+      "glb": "Models/GLB format/building-corner.glb",
+      "obj": "Models/OBJ format/building-corner.obj"
+     },
+     "bytes": 30090
+    },
+    {
+     "name": "building-corner-bottom",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-corner-bottom.fbx",
+      "glb": "Models/GLB format/building-corner-bottom.glb",
+      "obj": "Models/OBJ format/building-corner-bottom.obj"
+     },
+     "bytes": 33680
+    },
+    {
+     "name": "building-corner-top",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-corner-top.fbx",
+      "glb": "Models/GLB format/building-corner-top.glb",
+      "obj": "Models/OBJ format/building-corner-top.obj"
+     },
+     "bytes": 32408
+    },
+    {
+     "name": "building-corner-window",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-corner-window.fbx",
+      "glb": "Models/GLB format/building-corner-window.glb",
+      "obj": "Models/OBJ format/building-corner-window.obj"
+     },
+     "bytes": 34773
+    },
+    {
+     "name": "building-corner-window-middle",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-corner-window-middle.fbx",
+      "glb": "Models/GLB format/building-corner-window-middle.glb",
+      "obj": "Models/OBJ format/building-corner-window-middle.obj"
+     },
+     "bytes": 35096
+    },
+    {
+     "name": "building-corner-window-narrow",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-corner-window-narrow.fbx",
+      "glb": "Models/GLB format/building-corner-window-narrow.glb",
+      "obj": "Models/OBJ format/building-corner-window-narrow.obj"
+     },
+     "bytes": 34852
+    },
+    {
+     "name": "building-corner-window-sill",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-corner-window-sill.fbx",
+      "glb": "Models/GLB format/building-corner-window-sill.glb",
+      "obj": "Models/OBJ format/building-corner-window-sill.obj"
+     },
+     "bytes": 40955
+    },
+    {
+     "name": "building-corner-window-top-round",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-corner-window-top-round.fbx",
+      "glb": "Models/GLB format/building-corner-window-top-round.glb",
+      "obj": "Models/OBJ format/building-corner-window-top-round.obj"
+     },
+     "bytes": 34503
+    },
+    {
+     "name": "building-corner-window-top-square",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-corner-window-top-square.fbx",
+      "glb": "Models/GLB format/building-corner-window-top-square.glb",
+      "obj": "Models/OBJ format/building-corner-window-top-square.obj"
+     },
+     "bytes": 34874
+    },
+    {
+     "name": "building-door",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-door.fbx",
+      "glb": "Models/GLB format/building-door.glb",
+      "obj": "Models/OBJ format/building-door.obj"
+     },
+     "bytes": 33273
+    },
+    {
+     "name": "building-door-window",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-door-window.fbx",
+      "glb": "Models/GLB format/building-door-window.glb",
+      "obj": "Models/OBJ format/building-door-window.obj"
+     },
+     "bytes": 33562
+    },
+    {
+     "name": "building-door-window-narrow",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-door-window-narrow.fbx",
+      "glb": "Models/GLB format/building-door-window-narrow.glb",
+      "obj": "Models/OBJ format/building-door-window-narrow.obj"
+     },
+     "bytes": 33708
+    },
+    {
+     "name": "building-edges-door",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-edges-door.fbx",
+      "glb": "Models/GLB format/building-edges-door.glb",
+      "obj": "Models/OBJ format/building-edges-door.obj"
+     },
+     "bytes": 35678
+    },
+    {
+     "name": "building-sample-house-a",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-sample-house-a.fbx",
+      "glb": "Models/GLB format/building-sample-house-a.glb",
+      "obj": "Models/OBJ format/building-sample-house-a.obj"
+     },
+     "bytes": 82682
+    },
+    {
+     "name": "building-sample-house-b",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-sample-house-b.fbx",
+      "glb": "Models/GLB format/building-sample-house-b.glb",
+      "obj": "Models/OBJ format/building-sample-house-b.obj"
+     },
+     "bytes": 94251
+    },
+    {
+     "name": "building-sample-house-c",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-sample-house-c.fbx",
+      "glb": "Models/GLB format/building-sample-house-c.glb",
+      "obj": "Models/OBJ format/building-sample-house-c.obj"
+     },
+     "bytes": 88130
+    },
+    {
+     "name": "building-sample-tower-a",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-sample-tower-a.fbx",
+      "glb": "Models/GLB format/building-sample-tower-a.glb",
+      "obj": "Models/OBJ format/building-sample-tower-a.obj"
+     },
+     "bytes": 96052
+    },
+    {
+     "name": "building-sample-tower-b",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-sample-tower-b.fbx",
+      "glb": "Models/GLB format/building-sample-tower-b.glb",
+      "obj": "Models/OBJ format/building-sample-tower-b.obj"
+     },
+     "bytes": 85248
+    },
+    {
+     "name": "building-sample-tower-c",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-sample-tower-c.fbx",
+      "glb": "Models/GLB format/building-sample-tower-c.glb",
+      "obj": "Models/OBJ format/building-sample-tower-c.obj"
+     },
+     "bytes": 96045
+    },
+    {
+     "name": "building-sample-tower-d",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-sample-tower-d.fbx",
+      "glb": "Models/GLB format/building-sample-tower-d.glb",
+      "obj": "Models/OBJ format/building-sample-tower-d.obj"
+     },
+     "bytes": 118730
+    },
+    {
+     "name": "building-steps-narrow",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-steps-narrow.fbx",
+      "glb": "Models/GLB format/building-steps-narrow.glb",
+      "obj": "Models/OBJ format/building-steps-narrow.obj"
+     },
+     "bytes": 39850
+    },
+    {
+     "name": "building-steps-narrow-windows",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-steps-narrow-windows.fbx",
+      "glb": "Models/GLB format/building-steps-narrow-windows.glb",
+      "obj": "Models/OBJ format/building-steps-narrow-windows.obj"
+     },
+     "bytes": 43275
+    },
+    {
+     "name": "building-steps-narrow-windows-round",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-steps-narrow-windows-round.fbx",
+      "glb": "Models/GLB format/building-steps-narrow-windows-round.glb",
+      "obj": "Models/OBJ format/building-steps-narrow-windows-round.obj"
+     },
+     "bytes": 47587
+    },
+    {
+     "name": "building-steps-wide",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-steps-wide.fbx",
+      "glb": "Models/GLB format/building-steps-wide.glb",
+      "obj": "Models/OBJ format/building-steps-wide.obj"
+     },
+     "bytes": 40857
+    },
+    {
+     "name": "building-window",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window.fbx",
+      "glb": "Models/GLB format/building-window.glb",
+      "obj": "Models/OBJ format/building-window.obj"
+     },
+     "bytes": 33313
+    },
+    {
+     "name": "building-window-awnings",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-awnings.fbx",
+      "glb": "Models/GLB format/building-window-awnings.glb",
+      "obj": "Models/OBJ format/building-window-awnings.obj"
+     },
+     "bytes": 45086
+    },
+    {
+     "name": "building-window-balcony",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-balcony.fbx",
+      "glb": "Models/GLB format/building-window-balcony.glb",
+      "obj": "Models/OBJ format/building-window-balcony.obj"
+     },
+     "bytes": 39397
+    },
+    {
+     "name": "building-window-door-window",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-door-window.fbx",
+      "glb": "Models/GLB format/building-window-door-window.glb",
+      "obj": "Models/OBJ format/building-window-door-window.obj"
+     },
+     "bytes": 36584
+    },
+    {
+     "name": "building-window-door-window-round",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-door-window-round.fbx",
+      "glb": "Models/GLB format/building-window-door-window-round.glb",
+      "obj": "Models/OBJ format/building-window-door-window-round.obj"
+     },
+     "bytes": 41047
+    },
+    {
+     "name": "building-window-large",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-large.fbx",
+      "glb": "Models/GLB format/building-window-large.glb",
+      "obj": "Models/OBJ format/building-window-large.obj"
+     },
+     "bytes": 33341
+    },
+    {
+     "name": "building-window-large-left",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-large-left.fbx",
+      "glb": "Models/GLB format/building-window-large-left.glb",
+      "obj": "Models/OBJ format/building-window-large-left.obj"
+     },
+     "bytes": 32250
+    },
+    {
+     "name": "building-window-large-middle",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-large-middle.fbx",
+      "glb": "Models/GLB format/building-window-large-middle.glb",
+      "obj": "Models/OBJ format/building-window-large-middle.obj"
+     },
+     "bytes": 31204
+    },
+    {
+     "name": "building-window-large-right",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-large-right.fbx",
+      "glb": "Models/GLB format/building-window-large-right.glb",
+      "obj": "Models/OBJ format/building-window-large-right.obj"
+     },
+     "bytes": 32275
+    },
+    {
+     "name": "building-window-left",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-left.fbx",
+      "glb": "Models/GLB format/building-window-left.glb",
+      "obj": "Models/OBJ format/building-window-left.obj"
+     },
+     "bytes": 33354
+    },
+    {
+     "name": "building-window-left-sill",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-left-sill.fbx",
+      "glb": "Models/GLB format/building-window-left-sill.glb",
+      "obj": "Models/OBJ format/building-window-left-sill.obj"
+     },
+     "bytes": 36215
+    },
+    {
+     "name": "building-window-right",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-right.fbx",
+      "glb": "Models/GLB format/building-window-right.glb",
+      "obj": "Models/OBJ format/building-window-right.obj"
+     },
+     "bytes": 33377
+    },
+    {
+     "name": "building-window-right-sill",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-right-sill.fbx",
+      "glb": "Models/GLB format/building-window-right-sill.glb",
+      "obj": "Models/OBJ format/building-window-right-sill.obj"
+     },
+     "bytes": 40057
+    },
+    {
+     "name": "building-window-sill",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-sill.fbx",
+      "glb": "Models/GLB format/building-window-sill.glb",
+      "obj": "Models/OBJ format/building-window-sill.obj"
+     },
+     "bytes": 36214
+    },
+    {
+     "name": "building-window-wide",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-wide.fbx",
+      "glb": "Models/GLB format/building-window-wide.glb",
+      "obj": "Models/OBJ format/building-window-wide.obj"
+     },
+     "bytes": 33370
+    },
+    {
+     "name": "building-window-wide-sill",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-window-wide-sill.fbx",
+      "glb": "Models/GLB format/building-window-wide-sill.glb",
+      "obj": "Models/OBJ format/building-window-wide-sill.obj"
+     },
+     "bytes": 36309
+    },
+    {
+     "name": "building-windows",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-windows.fbx",
+      "glb": "Models/GLB format/building-windows.glb",
+      "obj": "Models/OBJ format/building-windows.obj"
+     },
+     "bytes": 33580
+    },
+    {
+     "name": "building-windows-high-middle",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-windows-high-middle.fbx",
+      "glb": "Models/GLB format/building-windows-high-middle.glb",
+      "obj": "Models/OBJ format/building-windows-high-middle.obj"
+     },
+     "bytes": 34446
+    },
+    {
+     "name": "building-windows-high-top-round",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-windows-high-top-round.fbx",
+      "glb": "Models/GLB format/building-windows-high-top-round.glb",
+      "obj": "Models/OBJ format/building-windows-high-top-round.obj"
+     },
+     "bytes": 38731
+    },
+    {
+     "name": "building-windows-high-top-square",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-windows-high-top-square.fbx",
+      "glb": "Models/GLB format/building-windows-high-top-square.glb",
+      "obj": "Models/OBJ format/building-windows-high-top-square.obj"
+     },
+     "bytes": 33610
+    },
+    {
+     "name": "building-windows-round",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-windows-round.fbx",
+      "glb": "Models/GLB format/building-windows-round.glb",
+      "obj": "Models/OBJ format/building-windows-round.obj"
+     },
+     "bytes": 38654
+    },
+    {
+     "name": "building-windows-sills",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-windows-sills.fbx",
+      "glb": "Models/GLB format/building-windows-sills.glb",
+      "obj": "Models/OBJ format/building-windows-sills.obj"
+     },
+     "bytes": 38533
+    },
+    {
+     "name": "building-windows-sills-round",
+     "category": "building",
+     "formats": {
+      "fbx": "Models/FBX format/building-windows-sills-round.fbx",
+      "glb": "Models/GLB format/building-windows-sills-round.glb",
+      "obj": "Models/OBJ format/building-windows-sills-round.obj"
+     },
+     "bytes": 41543
+    },
+    {
+     "name": "detail-ac-a",
+     "category": "detail",
+     "formats": {
+      "fbx": "Models/FBX format/detail-ac-a.fbx",
+      "glb": "Models/GLB format/detail-ac-a.glb",
+      "obj": "Models/OBJ format/detail-ac-a.obj"
+     },
+     "bytes": 37571
+    },
+    {
+     "name": "detail-ac-b",
+     "category": "detail",
+     "formats": {
+      "fbx": "Models/FBX format/detail-ac-b.fbx",
+      "glb": "Models/GLB format/detail-ac-b.glb",
+      "obj": "Models/OBJ format/detail-ac-b.obj"
+     },
+     "bytes": 42841
+    },
+    {
+     "name": "door-brown",
+     "category": "door",
+     "formats": {
+      "fbx": "Models/FBX format/door-brown.fbx",
+      "glb": "Models/GLB format/door-brown.glb",
+      "obj": "Models/OBJ format/door-brown.obj"
+     },
+     "bytes": 33433
+    },
+    {
+     "name": "door-brown-glass",
+     "category": "door",
+     "formats": {
+      "fbx": "Models/FBX format/door-brown-glass.fbx",
+      "glb": "Models/GLB format/door-brown-glass.glb",
+      "obj": "Models/OBJ format/door-brown-glass.obj"
+     },
+     "bytes": 33455
+    },
+    {
+     "name": "door-brown-window",
+     "category": "door",
+     "formats": {
+      "fbx": "Models/FBX format/door-brown-window.fbx",
+      "glb": "Models/GLB format/door-brown-window.glb",
+      "obj": "Models/OBJ format/door-brown-window.obj"
+     },
+     "bytes": 33435
+    },
+    {
+     "name": "door-white",
+     "category": "door",
+     "formats": {
+      "fbx": "Models/FBX format/door-white.fbx",
+      "glb": "Models/GLB format/door-white.glb",
+      "obj": "Models/OBJ format/door-white.obj"
+     },
+     "bytes": 33399
+    },
+    {
+     "name": "door-white-glass",
+     "category": "door",
+     "formats": {
+      "fbx": "Models/FBX format/door-white-glass.fbx",
+      "glb": "Models/GLB format/door-white-glass.glb",
+      "obj": "Models/OBJ format/door-white-glass.obj"
+     },
+     "bytes": 33493
+    },
+    {
+     "name": "door-white-window",
+     "category": "door",
+     "formats": {
+      "fbx": "Models/FBX format/door-white-window.fbx",
+      "glb": "Models/GLB format/door-white-window.glb",
+      "obj": "Models/OBJ format/door-white-window.obj"
+     },
+     "bytes": 33463
+    },
+    {
+     "name": "roof-flat-awning-a",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-awning-a.fbx",
+      "glb": "Models/GLB format/roof-flat-awning-a.glb",
+      "obj": "Models/OBJ format/roof-flat-awning-a.obj"
+     },
+     "bytes": 34564
+    },
+    {
+     "name": "roof-flat-awning-b",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-awning-b.fbx",
+      "glb": "Models/GLB format/roof-flat-awning-b.glb",
+      "obj": "Models/OBJ format/roof-flat-awning-b.obj"
+     },
+     "bytes": 32341
+    },
+    {
+     "name": "roof-flat-awning-c",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-awning-c.fbx",
+      "glb": "Models/GLB format/roof-flat-awning-c.glb",
+      "obj": "Models/OBJ format/roof-flat-awning-c.obj"
+     },
+     "bytes": 37794
+    },
+    {
+     "name": "roof-flat-border-center",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-border-center.fbx",
+      "glb": "Models/GLB format/roof-flat-border-center.glb",
+      "obj": "Models/OBJ format/roof-flat-border-center.obj"
+     },
+     "bytes": 33405
+    },
+    {
+     "name": "roof-flat-border-center-corner",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-border-center-corner.fbx",
+      "glb": "Models/GLB format/roof-flat-border-center-corner.glb",
+      "obj": "Models/OBJ format/roof-flat-border-center-corner.obj"
+     },
+     "bytes": 35860
+    },
+    {
+     "name": "roof-flat-border-corner",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-border-corner.fbx",
+      "glb": "Models/GLB format/roof-flat-border-corner.glb",
+      "obj": "Models/OBJ format/roof-flat-border-corner.obj"
+     },
+     "bytes": 32265
+    },
+    {
+     "name": "roof-flat-border-corner-slanted",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-border-corner-slanted.fbx",
+      "glb": "Models/GLB format/roof-flat-border-corner-slanted.glb",
+      "obj": "Models/OBJ format/roof-flat-border-corner-slanted.obj"
+     },
+     "bytes": 34733
+    },
+    {
+     "name": "roof-flat-border-corner-slanted-passage",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-border-corner-slanted-passage.fbx",
+      "glb": "Models/GLB format/roof-flat-border-corner-slanted-passage.glb",
+      "obj": "Models/OBJ format/roof-flat-border-corner-slanted-passage.obj"
+     },
+     "bytes": 33989
+    },
+    {
+     "name": "roof-flat-border-end",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-border-end.fbx",
+      "glb": "Models/GLB format/roof-flat-border-end.glb",
+      "obj": "Models/OBJ format/roof-flat-border-end.obj"
+     },
+     "bytes": 33384
+    },
+    {
+     "name": "roof-flat-border-side",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-border-side.fbx",
+      "glb": "Models/GLB format/roof-flat-border-side.glb",
+      "obj": "Models/OBJ format/roof-flat-border-side.obj"
+     },
+     "bytes": 31133
+    },
+    {
+     "name": "roof-flat-border-straight",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-border-straight.fbx",
+      "glb": "Models/GLB format/roof-flat-border-straight.glb",
+      "obj": "Models/OBJ format/roof-flat-border-straight.obj"
+     },
+     "bytes": 33399
+    },
+    {
+     "name": "roof-flat-center",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-center.fbx",
+      "glb": "Models/GLB format/roof-flat-center.glb",
+      "obj": "Models/OBJ format/roof-flat-center.obj"
+     },
+     "bytes": 31340
+    },
+    {
+     "name": "roof-flat-corner",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-corner.fbx",
+      "glb": "Models/GLB format/roof-flat-corner.glb",
+      "obj": "Models/OBJ format/roof-flat-corner.obj"
+     },
+     "bytes": 30095
+    },
+    {
+     "name": "roof-flat-corner-high",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-corner-high.fbx",
+      "glb": "Models/GLB format/roof-flat-corner-high.glb",
+      "obj": "Models/OBJ format/roof-flat-corner-high.obj"
+     },
+     "bytes": 30123
+    },
+    {
+     "name": "roof-flat-detail-a",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-detail-a.fbx",
+      "glb": "Models/GLB format/roof-flat-detail-a.glb",
+      "obj": "Models/OBJ format/roof-flat-detail-a.obj"
+     },
+     "bytes": 35946
+    },
+    {
+     "name": "roof-flat-detail-b",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-detail-b.fbx",
+      "glb": "Models/GLB format/roof-flat-detail-b.glb",
+      "obj": "Models/OBJ format/roof-flat-detail-b.obj"
+     },
+     "bytes": 34424
+    },
+    {
+     "name": "roof-flat-detail-c",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-detail-c.fbx",
+      "glb": "Models/GLB format/roof-flat-detail-c.glb",
+      "obj": "Models/OBJ format/roof-flat-detail-c.obj"
+     },
+     "bytes": 34670
+    },
+    {
+     "name": "roof-flat-detail-d",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-detail-d.fbx",
+      "glb": "Models/GLB format/roof-flat-detail-d.glb",
+      "obj": "Models/OBJ format/roof-flat-detail-d.obj"
+     },
+     "bytes": 33788
+    },
+    {
+     "name": "roof-flat-top",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-flat-top.fbx",
+      "glb": "Models/GLB format/roof-flat-top.glb",
+      "obj": "Models/OBJ format/roof-flat-top.obj"
+     },
+     "bytes": 33847
+    },
+    {
+     "name": "roof-gable",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-gable.fbx",
+      "glb": "Models/GLB format/roof-gable.glb",
+      "obj": "Models/OBJ format/roof-gable.obj"
+     },
+     "bytes": 31595
+    },
+    {
+     "name": "roof-gable-corner",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-gable-corner.fbx",
+      "glb": "Models/GLB format/roof-gable-corner.glb",
+      "obj": "Models/OBJ format/roof-gable-corner.obj"
+     },
+     "bytes": 31275
+    },
+    {
+     "name": "roof-gable-end",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-gable-end.fbx",
+      "glb": "Models/GLB format/roof-gable-end.glb",
+      "obj": "Models/OBJ format/roof-gable-end.obj"
+     },
+     "bytes": 31057
+    },
+    {
+     "name": "roof-slanted",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-slanted.fbx",
+      "glb": "Models/GLB format/roof-slanted.glb",
+      "obj": "Models/OBJ format/roof-slanted.obj"
+     },
+     "bytes": 33772
+    },
+    {
+     "name": "roof-slanted-corner-a",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-slanted-corner-a.fbx",
+      "glb": "Models/GLB format/roof-slanted-corner-a.glb",
+      "obj": "Models/OBJ format/roof-slanted-corner-a.obj"
+     },
+     "bytes": 36193
+    },
+    {
+     "name": "roof-slanted-corner-b",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-slanted-corner-b.fbx",
+      "glb": "Models/GLB format/roof-slanted-corner-b.glb",
+      "obj": "Models/OBJ format/roof-slanted-corner-b.obj"
+     },
+     "bytes": 34686
+    },
+    {
+     "name": "roof-slanted-corner-c",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-slanted-corner-c.fbx",
+      "glb": "Models/GLB format/roof-slanted-corner-c.glb",
+      "obj": "Models/OBJ format/roof-slanted-corner-c.obj"
+     },
+     "bytes": 33547
+    },
+    {
+     "name": "roof-slanted-corner-inner",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-slanted-corner-inner.fbx",
+      "glb": "Models/GLB format/roof-slanted-corner-inner.glb",
+      "obj": "Models/OBJ format/roof-slanted-corner-inner.obj"
+     },
+     "bytes": 31218
+    },
+    {
+     "name": "roof-slanted-detail",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-slanted-detail.fbx",
+      "glb": "Models/GLB format/roof-slanted-detail.glb",
+      "obj": "Models/OBJ format/roof-slanted-detail.obj"
+     },
+     "bytes": 37397
+    },
+    {
+     "name": "roof-slanted-flat",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-slanted-flat.fbx",
+      "glb": "Models/GLB format/roof-slanted-flat.glb",
+      "obj": "Models/OBJ format/roof-slanted-flat.obj"
+     },
+     "bytes": 31329
+    },
+    {
+     "name": "roof-slanted-window",
+     "category": "roof",
+     "formats": {
+      "fbx": "Models/FBX format/roof-slanted-window.fbx",
+      "glb": "Models/GLB format/roof-slanted-window.glb",
+      "obj": "Models/OBJ format/roof-slanted-window.obj"
+     },
+     "bytes": 42588
+    },
+    {
+     "name": "window-brown",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-brown.fbx",
+      "glb": "Models/GLB format/window-brown.glb",
+      "obj": "Models/OBJ format/window-brown.obj"
+     },
+     "bytes": 38346
+    },
+    {
+     "name": "window-brown-detailed",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-brown-detailed.fbx",
+      "glb": "Models/GLB format/window-brown-detailed.glb",
+      "obj": "Models/OBJ format/window-brown-detailed.obj"
+     },
+     "bytes": 35001
+    },
+    {
+     "name": "window-brown-large",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-brown-large.fbx",
+      "glb": "Models/GLB format/window-brown-large.glb",
+      "obj": "Models/OBJ format/window-brown-large.obj"
+     },
+     "bytes": 36076
+    },
+    {
+     "name": "window-brown-narrow",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-brown-narrow.fbx",
+      "glb": "Models/GLB format/window-brown-narrow.glb",
+      "obj": "Models/OBJ format/window-brown-narrow.obj"
+     },
+     "bytes": 38441
+    },
+    {
+     "name": "window-brown-round-low",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-brown-round-low.fbx",
+      "glb": "Models/GLB format/window-brown-round-low.glb",
+      "obj": "Models/OBJ format/window-brown-round-low.obj"
+     },
+     "bytes": 36374
+    },
+    {
+     "name": "window-brown-round-middle",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-brown-round-middle.fbx",
+      "glb": "Models/GLB format/window-brown-round-middle.glb",
+      "obj": "Models/OBJ format/window-brown-round-middle.obj"
+     },
+     "bytes": 32969
+    },
+    {
+     "name": "window-brown-round-narrow",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-brown-round-narrow.fbx",
+      "glb": "Models/GLB format/window-brown-round-narrow.glb",
+      "obj": "Models/OBJ format/window-brown-round-narrow.obj"
+     },
+     "bytes": 36519
+    },
+    {
+     "name": "window-brown-round-top",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-brown-round-top.fbx",
+      "glb": "Models/GLB format/window-brown-round-top.glb",
+      "obj": "Models/OBJ format/window-brown-round-top.obj"
+     },
+     "bytes": 36078
+    },
+    {
+     "name": "window-brown-round-wide",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-brown-round-wide.fbx",
+      "glb": "Models/GLB format/window-brown-round-wide.glb",
+      "obj": "Models/OBJ format/window-brown-round-wide.obj"
+     },
+     "bytes": 36428
+    },
+    {
+     "name": "window-brown-tall",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-brown-tall.fbx",
+      "glb": "Models/GLB format/window-brown-tall.glb",
+      "obj": "Models/OBJ format/window-brown-tall.obj"
+     },
+     "bytes": 38355
+    },
+    {
+     "name": "window-brown-wide",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-brown-wide.fbx",
+      "glb": "Models/GLB format/window-brown-wide.glb",
+      "obj": "Models/OBJ format/window-brown-wide.obj"
+     },
+     "bytes": 36073
+    },
+    {
+     "name": "window-white",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-white.fbx",
+      "glb": "Models/GLB format/window-white.glb",
+      "obj": "Models/OBJ format/window-white.obj"
+     },
+     "bytes": 36042
+    },
+    {
+     "name": "window-white-detailed",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-white-detailed.fbx",
+      "glb": "Models/GLB format/window-white-detailed.glb",
+      "obj": "Models/OBJ format/window-white-detailed.obj"
+     },
+     "bytes": 34991
+    },
+    {
+     "name": "window-white-large",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-white-large.fbx",
+      "glb": "Models/GLB format/window-white-large.glb",
+      "obj": "Models/OBJ format/window-white-large.obj"
+     },
+     "bytes": 36078
+    },
+    {
+     "name": "window-white-narrow",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-white-narrow.fbx",
+      "glb": "Models/GLB format/window-white-narrow.glb",
+      "obj": "Models/OBJ format/window-white-narrow.obj"
+     },
+     "bytes": 36147
+    },
+    {
+     "name": "window-white-round-low",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-white-round-low.fbx",
+      "glb": "Models/GLB format/window-white-round-low.glb",
+      "obj": "Models/OBJ format/window-white-round-low.obj"
+     },
+     "bytes": 36396
+    },
+    {
+     "name": "window-white-round-middle",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-white-round-middle.fbx",
+      "glb": "Models/GLB format/window-white-round-middle.glb",
+      "obj": "Models/OBJ format/window-white-round-middle.obj"
+     },
+     "bytes": 32953
+    },
+    {
+     "name": "window-white-round-narrow",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-white-round-narrow.fbx",
+      "glb": "Models/GLB format/window-white-round-narrow.glb",
+      "obj": "Models/OBJ format/window-white-round-narrow.obj"
+     },
+     "bytes": 36497
+    },
+    {
+     "name": "window-white-round-top",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-white-round-top.fbx",
+      "glb": "Models/GLB format/window-white-round-top.glb",
+      "obj": "Models/OBJ format/window-white-round-top.obj"
+     },
+     "bytes": 36138
+    },
+    {
+     "name": "window-white-round-wide",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-white-round-wide.fbx",
+      "glb": "Models/GLB format/window-white-round-wide.glb",
+      "obj": "Models/OBJ format/window-white-round-wide.obj"
+     },
+     "bytes": 36334
+    },
+    {
+     "name": "window-white-tall",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-white-tall.fbx",
+      "glb": "Models/GLB format/window-white-tall.glb",
+      "obj": "Models/OBJ format/window-white-tall.obj"
+     },
+     "bytes": 36091
+    },
+    {
+     "name": "window-white-wide",
+     "category": "window",
+     "formats": {
+      "fbx": "Models/FBX format/window-white-wide.fbx",
+      "glb": "Models/GLB format/window-white-wide.glb",
+      "obj": "Models/OBJ format/window-white-wide.obj"
+     },
+     "bytes": 36059
+    }
+   ]
+  },
+  {
+   "zip": "3d model enviroment/SORA_Neighborhood_V05_Kenney_Private_2026-11-06.zip",
+   "pack": "SORA_Neighborhood_V05_Kenney_Private_2026-11-06",
+   "license": "PRIVATE (AFX-derived); never publish",
+   "scope": "private",
+   "zip_bytes": 137946723,
+   "models": [
+    {
+     "name": "SORA_Neighborhood_V03_Integrated",
+     "category": "sora",
+     "formats": {
+      "glb": "maps/SORA_Neighborhood_V03_Integrated.glb"
+     },
+     "bytes": 116090804
+    },
+    {
+     "name": "SORA_V05_Kenney_9Block_Overlay",
+     "category": "sora",
+     "formats": {
+      "glb": "maps/SORA_V05_Kenney_9Block_Overlay.glb"
+     },
+     "bytes": 21356436
+    },
+    {
+     "name": "kenney_street_vehicles_eye",
+     "category": "kenney",
+     "formats": {
+      "png": "previews/kenney_street_vehicles_eye.png"
+     },
+     "bytes": 518716
+    },
+    {
+     "name": "kenney_street_vehicles_oblique",
+     "category": "kenney",
+     "formats": {
+      "png": "previews/kenney_street_vehicles_oblique.png"
+     },
+     "bytes": 582875
+    }
+   ]
+  },
+  {
+   "zip": "3d model enviroment/SORA_Unity_Private_AFX_Install_2026-11-09.zip",
+   "pack": "SORA_Unity_Private_AFX_Install_2026-11-09",
+   "license": "PRIVATE (AFX-derived); never publish",
+   "scope": "private",
+   "zip_bytes": 112406780,
+   "models": [
+    {
+     "name": "V03_Integrated_NoMart",
+     "category": "v03",
+     "formats": {
+      "glb": "Assets/Resources/SoraCity/Private/V03_Integrated_NoMart.glb"
+     },
+     "bytes": 116089384
+    }
+   ]
+  },
+  {
+   "zip": "3d model charater/chisa-wuthering-waves-character-graceful-fighter.zip",
+   "pack": "chisa-wuthering-waves-character-graceful-fighter",
+   "license": "IP/license unverified; local only",
+   "scope": "restricted",
+   "zip_bytes": 8455619,
+   "models": [
+    {
+     "name": "Chisa_Wuthering_waves",
+     "category": "chisa",
+     "formats": {
+      "usdz": "source/Chisa_Wuthering_waves.usdz"
+     },
+     "bytes": 5923808
+    }
+   ]
+  },
+  {
+   "zip": "3d model charater/citlali.zip",
+   "pack": "citlali",
+   "license": "IP/license unverified; local only",
+   "scope": "restricted",
+   "zip_bytes": 11190156,
+   "models": [
+    {
+     "name": "material_0_baseColor",
+     "category": "material",
+     "formats": {
+      "png": "textures/material_0_baseColor.png"
+     },
+     "bytes": 765432
+    },
+    {
+     "name": "material_20_baseColor",
+     "category": "material",
+     "formats": {
+      "png": "textures/material_20_baseColor.png"
+     },
+     "bytes": 271885
+    },
+    {
+     "name": "material_4_baseColor",
+     "category": "material",
+     "formats": {
+      "png": "textures/material_4_baseColor.png"
+     },
+     "bytes": 2122300
+    },
+    {
+     "name": "material_8_baseColor",
+     "category": "material",
+     "formats": {
+      "png": "textures/material_8_baseColor.png"
+     },
+     "bytes": 2017894
+    }
+   ]
+  },
+  {
+   "zip": "3d model charater/denia-breakdown-form-wuthering-waves.zip",
+   "pack": "denia-breakdown-form-wuthering-waves",
+   "license": "IP/license unverified; local only",
+   "scope": "restricted",
+   "zip_bytes": 46059823,
+   "models": [
+    {
+     "name": "Denia Breakdown",
+     "category": "denia breakdown",
+     "formats": {
+      "fbx": "source/Denia Breakdown.fbx"
+     },
+     "bytes": 28010460
+    },
+    {
+     "name": "T_R2T1DaniyaMd10011Bangs01_hi",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1DaniyaMd10011Bangs01_hi.png"
+     },
+     "bytes": 201011
+    },
+    {
+     "name": "T_R2T1DaniyaMd10011Bangs02_DH",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1DaniyaMd10011Bangs02_DH.png"
+     },
+     "bytes": 1791934
+    },
+    {
+     "name": "T_R2T1DaniyaMd10011Cloth_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1DaniyaMd10011Cloth_D.png"
+     },
+     "bytes": 4540146
+    },
+    {
+     "name": "T_R2T1DaniyaMd10011Down02_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1DaniyaMd10011Down02_D.png"
+     },
+     "bytes": 3427192
+    },
+    {
+     "name": "T_R2T1DaniyaMd10011Eye2_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1DaniyaMd10011Eye2_D.png"
+     },
+     "bytes": 1590574
+    },
+    {
+     "name": "T_R2T1DaniyaMd10011Face02_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1DaniyaMd10011Face02_D.png"
+     },
+     "bytes": 1017549
+    },
+    {
+     "name": "T_R2T1DaniyaMd10011Fx_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1DaniyaMd10011Fx_D.png"
+     },
+     "bytes": 181546
+    },
+    {
+     "name": "T_R2T1DaniyaMd10011Hair01_hi",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1DaniyaMd10011Hair01_hi.png"
+     },
+     "bytes": 83234
+    },
+    {
+     "name": "T_R2T1DaniyaMd10011Hair02_DH",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1DaniyaMd10011Hair02_DH.png"
+     },
+     "bytes": 2289947
+    },
+    {
+     "name": "T_R2T1DaniyaMd10011Up02_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1DaniyaMd10011Up02_D.png"
+     },
+     "bytes": 2321490
+    },
+    {
+     "name": "cheek_00",
+     "category": "cheek",
+     "formats": {
+      "png": "textures/cheek_00.png"
+     },
+     "bytes": 28920
+    },
+    {
+     "name": "emo1010",
+     "category": "emo1010",
+     "formats": {
+      "png": "textures/emo1010.png"
+     },
+     "bytes": 129267
+    },
+    {
+     "name": "eye set emo",
+     "category": "eye set emo",
+     "formats": {
+      "png": "textures/eye set emo.png"
+     },
+     "bytes": 77410
+    },
+    {
+     "name": "hi li",
+     "category": "hi li",
+     "formats": {
+      "png": "textures/hi li.png"
+     },
+     "bytes": 357114
+    },
+    {
+     "name": "hi2",
+     "category": "hi2",
+     "formats": {
+      "png": "textures/hi2.png"
+     },
+     "bytes": 9747
+    }
+   ]
+  },
+  {
+   "zip": "3d model charater/lynae-from-wuthering-waves.zip",
+   "pack": "lynae-from-wuthering-waves",
+   "license": "IP/license unverified; local only",
+   "scope": "restricted",
+   "zip_bytes": 95525058,
+   "models": [
+    {
+     "name": "T_R2T1LinnaeaMd10011Alpha_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Alpha_D.png"
+     },
+     "bytes": 3456271
+    },
+    {
+     "name": "T_R2T1LinnaeaMd10011Alpha_FTM",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Alpha_FTM.png"
+     },
+     "bytes": 1420690
+    },
+    {
+     "name": "T_R2T1LinnaeaMd10011Bangs_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Bangs_D.png"
+     },
+     "bytes": 2713341
+    },
+    {
+     "name": "T_R2T1LinnaeaMd10011Bangs_HM",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Bangs_HM.png"
+     },
+     "bytes": 2152034
+    },
+    {
+     "name": "T_R2T1LinnaeaMd10011Cloth_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Cloth_D.png"
+     },
+     "bytes": 5618890
+    },
+    {
+     "name": "T_R2T1LinnaeaMd10011Cloth_FTM",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Cloth_FTM.png"
+     },
+     "bytes": 560128
+    },
+    {
+     "name": "T_R2T1LinnaeaMd10011Down_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Down_D.png"
+     },
+     "bytes": 3889296
+    },
+    {
+     "name": "T_R2T1LinnaeaMd10011Down_FTM",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Down_FTM.png"
+     },
+     "bytes": 847456
+    },
+    {
+     "name": "T_R2T1LinnaeaMd10011Eye_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Eye_D.png"
+     },
+     "bytes": 1737318
+    },
+    {
+     "name": "T_R2T1LinnaeaMd10011Face_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Face_D.png"
+     },
+     "bytes": 915226
+    },
+    {
+     "name": "T_R2T1LinnaeaMd10011Hair_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Hair_D.png"
+     },
+     "bytes": 3502123
+    },
+    {
+     "name": "T_R2T1LinnaeaMd10011Up_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Up_D.png"
+     },
+     "bytes": 5295343
+    },
+    {
+     "name": "T_R2T1LinnaeaMd10011Up_FTM",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1LinnaeaMd10011Up_FTM.png"
+     },
+     "bytes": 1195635
+    }
+   ]
+  },
+  {
+   "zip": "3d model charater/male-rover1-02-wuthering-waves.zip",
+   "pack": "male-rover1-02-wuthering-waves",
+   "license": "IP/license unverified; local only",
+   "scope": "restricted",
+   "zip_bytes": 15072157,
+   "models": [
+    {
+     "name": "T_R2T1PlayerMaleMd10011Down_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1PlayerMaleMd10011Down_D.png"
+     },
+     "bytes": 1651790
+    },
+    {
+     "name": "T_R2T1PlayerMaleMd10011Eyes_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1PlayerMaleMd10011Eyes_D.png"
+     },
+     "bytes": 366182
+    },
+    {
+     "name": "T_R2T1PlayerMaleMd10011Face_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1PlayerMaleMd10011Face_D.png"
+     },
+     "bytes": 352526
+    },
+    {
+     "name": "T_R2T1PlayerMaleMd10011Hair_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1PlayerMaleMd10011Hair_D.png"
+     },
+     "bytes": 1152410
+    },
+    {
+     "name": "T_R2T1PlayerMaleMd10011Up_D",
+     "category": "t",
+     "formats": {
+      "png": "textures/T_R2T1PlayerMaleMd10011Up_D.png"
+     },
+     "bytes": 1634321
+    }
+   ]
+  },
+  {
+   "zip": "3d model charater/zhongli.zip",
+   "pack": "zhongli",
+   "license": "IP/license unverified; local only",
+   "scope": "restricted",
+   "zip_bytes": 8665551,
+   "models": [
+    {
+     "name": "material_1_baseColor",
+     "category": "material",
+     "formats": {
+      "png": "textures/material_1_baseColor.png"
+     },
+     "bytes": 1195942
+    },
+    {
+     "name": "material_2_baseColor",
+     "category": "material",
+     "formats": {
+      "png": "textures/material_2_baseColor.png"
+     },
+     "bytes": 1737989
+    },
+    {
+     "name": "material_baseColor",
+     "category": "material",
+     "formats": {
+      "png": "textures/material_baseColor.png"
+     },
+     "bytes": 1303718
+    }
+   ]
+  },
+  {
+   "zip": "ArtSource/ThirdParty/CC0/KenneyCarKit/kenney_car-kit.zip",
+   "pack": "kenney_car-kit",
+   "license": "CC0-1.0",
+   "scope": "public",
+   "zip_bytes": 4814237,
+   "models": [
+    {
+     "name": "ambulance",
+     "category": "ambulance",
+     "formats": {
+      "fbx": "Models/FBX format/ambulance.fbx",
+      "glb": "Models/GLB format/ambulance.glb",
+      "obj": "Models/OBJ format/ambulance.obj"
+     },
+     "bytes": 547699
+    },
+    {
+     "name": "box",
+     "category": "box",
+     "formats": {
+      "fbx": "Models/FBX format/box.fbx",
+      "glb": "Models/GLB format/box.glb",
+      "obj": "Models/OBJ format/box.obj"
+     },
+     "bytes": 55781
+    },
+    {
+     "name": "cone",
+     "category": "cone",
+     "formats": {
+      "fbx": "Models/FBX format/cone.fbx",
+      "glb": "Models/GLB format/cone.glb",
+      "obj": "Models/OBJ format/cone.obj"
+     },
+     "bytes": 61914
+    },
+    {
+     "name": "cone-flat",
+     "category": "cone",
+     "formats": {
+      "fbx": "Models/FBX format/cone-flat.fbx",
+      "glb": "Models/GLB format/cone-flat.glb",
+      "obj": "Models/OBJ format/cone-flat.obj"
+     },
+     "bytes": 61745
+    },
+    {
+     "name": "debris-bolt",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-bolt.fbx",
+      "glb": "Models/GLB format/debris-bolt.glb",
+      "obj": "Models/OBJ format/debris-bolt.obj"
+     },
+     "bytes": 36180
+    },
+    {
+     "name": "debris-bumper",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-bumper.fbx",
+      "glb": "Models/GLB format/debris-bumper.glb",
+      "obj": "Models/OBJ format/debris-bumper.obj"
+     },
+     "bytes": 45959
+    },
+    {
+     "name": "debris-door",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-door.fbx",
+      "glb": "Models/GLB format/debris-door.glb",
+      "obj": "Models/OBJ format/debris-door.obj"
+     },
+     "bytes": 40149
+    },
+    {
+     "name": "debris-door-window",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-door-window.fbx",
+      "glb": "Models/GLB format/debris-door-window.glb",
+      "obj": "Models/OBJ format/debris-door-window.obj"
+     },
+     "bytes": 41464
+    },
+    {
+     "name": "debris-drivetrain",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-drivetrain.fbx",
+      "glb": "Models/GLB format/debris-drivetrain.glb",
+      "obj": "Models/OBJ format/debris-drivetrain.obj"
+     },
+     "bytes": 104743
+    },
+    {
+     "name": "debris-drivetrain-axle",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-drivetrain-axle.fbx",
+      "glb": "Models/GLB format/debris-drivetrain-axle.glb",
+      "obj": "Models/OBJ format/debris-drivetrain-axle.obj"
+     },
+     "bytes": 64687
+    },
+    {
+     "name": "debris-nut",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-nut.fbx",
+      "glb": "Models/GLB format/debris-nut.glb",
+      "obj": "Models/OBJ format/debris-nut.obj"
+     },
+     "bytes": 36643
+    },
+    {
+     "name": "debris-plate-a",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-plate-a.fbx",
+      "glb": "Models/GLB format/debris-plate-a.glb",
+      "obj": "Models/OBJ format/debris-plate-a.obj"
+     },
+     "bytes": 36549
+    },
+    {
+     "name": "debris-plate-b",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-plate-b.fbx",
+      "glb": "Models/GLB format/debris-plate-b.glb",
+      "obj": "Models/OBJ format/debris-plate-b.obj"
+     },
+     "bytes": 35460
+    },
+    {
+     "name": "debris-plate-small-a",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-plate-small-a.fbx",
+      "glb": "Models/GLB format/debris-plate-small-a.glb",
+      "obj": "Models/OBJ format/debris-plate-small-a.obj"
+     },
+     "bytes": 33994
+    },
+    {
+     "name": "debris-plate-small-b",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-plate-small-b.fbx",
+      "glb": "Models/GLB format/debris-plate-small-b.glb",
+      "obj": "Models/OBJ format/debris-plate-small-b.obj"
+     },
+     "bytes": 35518
+    },
+    {
+     "name": "debris-spoiler-a",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-spoiler-a.fbx",
+      "glb": "Models/GLB format/debris-spoiler-a.glb",
+      "obj": "Models/OBJ format/debris-spoiler-a.obj"
+     },
+     "bytes": 34708
+    },
+    {
+     "name": "debris-spoiler-b",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-spoiler-b.fbx",
+      "glb": "Models/GLB format/debris-spoiler-b.glb",
+      "obj": "Models/OBJ format/debris-spoiler-b.obj"
+     },
+     "bytes": 40104
+    },
+    {
+     "name": "debris-tire",
+     "category": "debris",
+     "formats": {
+      "fbx": "Models/FBX format/debris-tire.fbx",
+      "glb": "Models/GLB format/debris-tire.glb",
+      "obj": "Models/OBJ format/debris-tire.obj"
+     },
+     "bytes": 83858
+    },
+    {
+     "name": "delivery",
+     "category": "delivery",
+     "formats": {
+      "fbx": "Models/FBX format/delivery.fbx",
+      "glb": "Models/GLB format/delivery.glb",
+      "obj": "Models/OBJ format/delivery.obj"
+     },
+     "bytes": 525463
+    },
+    {
+     "name": "delivery-flat",
+     "category": "delivery",
+     "formats": {
+      "fbx": "Models/FBX format/delivery-flat.fbx",
+      "glb": "Models/GLB format/delivery-flat.glb",
+      "obj": "Models/OBJ format/delivery-flat.obj"
+     },
+     "bytes": 492279
+    },
+    {
+     "name": "firetruck",
+     "category": "firetruck",
+     "formats": {
+      "fbx": "Models/FBX format/firetruck.fbx",
+      "glb": "Models/GLB format/firetruck.glb",
+      "obj": "Models/OBJ format/firetruck.obj"
+     },
+     "bytes": 538850
+    },
+    {
+     "name": "garbage-truck",
+     "category": "garbage",
+     "formats": {
+      "fbx": "Models/FBX format/garbage-truck.fbx",
+      "glb": "Models/GLB format/garbage-truck.glb",
+      "obj": "Models/OBJ format/garbage-truck.obj"
+     },
+     "bytes": 604453
+    },
+    {
+     "name": "hatchback-sports",
+     "category": "hatchback",
+     "formats": {
+      "fbx": "Models/FBX format/hatchback-sports.fbx",
+      "glb": "Models/GLB format/hatchback-sports.glb",
+      "obj": "Models/OBJ format/hatchback-sports.obj"
+     },
+     "bytes": 438060
+    },
+    {
+     "name": "kart-oobi",
+     "category": "kart",
+     "formats": {
+      "fbx": "Models/FBX format/kart-oobi.fbx",
+      "glb": "Models/GLB format/kart-oobi.glb",
+      "obj": "Models/OBJ format/kart-oobi.obj"
+     },
+     "bytes": 663648
+    },
+    {
+     "name": "kart-oodi",
+     "category": "kart",
+     "formats": {
+      "fbx": "Models/FBX format/kart-oodi.fbx",
+      "glb": "Models/GLB format/kart-oodi.glb",
+      "obj": "Models/OBJ format/kart-oodi.obj"
+     },
+     "bytes": 615577
+    },
+    {
+     "name": "kart-ooli",
+     "category": "kart",
+     "formats": {
+      "fbx": "Models/FBX format/kart-ooli.fbx",
+      "glb": "Models/GLB format/kart-ooli.glb",
+      "obj": "Models/OBJ format/kart-ooli.obj"
+     },
+     "bytes": 619368
+    },
+    {
+     "name": "kart-oopi",
+     "category": "kart",
+     "formats": {
+      "fbx": "Models/FBX format/kart-oopi.fbx",
+      "glb": "Models/GLB format/kart-oopi.glb",
+      "obj": "Models/OBJ format/kart-oopi.obj"
+     },
+     "bytes": 623901
+    },
+    {
+     "name": "kart-oozi",
+     "category": "kart",
+     "formats": {
+      "fbx": "Models/FBX format/kart-oozi.fbx",
+      "glb": "Models/GLB format/kart-oozi.glb",
+      "obj": "Models/OBJ format/kart-oozi.obj"
+     },
+     "bytes": 630369
+    },
+    {
+     "name": "police",
+     "category": "police",
+     "formats": {
+      "fbx": "Models/FBX format/police.fbx",
+      "glb": "Models/GLB format/police.glb",
+      "obj": "Models/OBJ format/police.obj"
+     },
+     "bytes": 457730
+    },
+    {
+     "name": "race",
+     "category": "race",
+     "formats": {
+      "fbx": "Models/FBX format/race.fbx",
+      "glb": "Models/GLB format/race.glb",
+      "obj": "Models/OBJ format/race.obj"
+     },
+     "bytes": 393666
+    },
+    {
+     "name": "race-future",
+     "category": "race",
+     "formats": {
+      "fbx": "Models/FBX format/race-future.fbx",
+      "glb": "Models/GLB format/race-future.glb",
+      "obj": "Models/OBJ format/race-future.obj"
+     },
+     "bytes": 406348
+    },
+    {
+     "name": "sedan",
+     "category": "sedan",
+     "formats": {
+      "fbx": "Models/FBX format/sedan.fbx",
+      "glb": "Models/GLB format/sedan.glb",
+      "obj": "Models/OBJ format/sedan.obj"
+     },
+     "bytes": 405160
+    },
+    {
+     "name": "sedan-sports",
+     "category": "sedan",
+     "formats": {
+      "fbx": "Models/FBX format/sedan-sports.fbx",
+      "glb": "Models/GLB format/sedan-sports.glb",
+      "obj": "Models/OBJ format/sedan-sports.obj"
+     },
+     "bytes": 420092
+    },
+    {
+     "name": "suv",
+     "category": "suv",
+     "formats": {
+      "fbx": "Models/FBX format/suv.fbx",
+      "glb": "Models/GLB format/suv.glb",
+      "obj": "Models/OBJ format/suv.obj"
+     },
+     "bytes": 494098
+    },
+    {
+     "name": "suv-luxury",
+     "category": "suv",
+     "formats": {
+      "fbx": "Models/FBX format/suv-luxury.fbx",
+      "glb": "Models/GLB format/suv-luxury.glb",
+      "obj": "Models/OBJ format/suv-luxury.obj"
+     },
+     "bytes": 407636
+    },
+    {
+     "name": "taxi",
+     "category": "taxi",
+     "formats": {
+      "fbx": "Models/FBX format/taxi.fbx",
+      "glb": "Models/GLB format/taxi.glb",
+      "obj": "Models/OBJ format/taxi.obj"
+     },
+     "bytes": 410866
+    },
+    {
+     "name": "tractor",
+     "category": "tractor",
+     "formats": {
+      "fbx": "Models/FBX format/tractor.fbx",
+      "glb": "Models/GLB format/tractor.glb",
+      "obj": "Models/OBJ format/tractor.obj"
+     },
+     "bytes": 444390
+    },
+    {
+     "name": "tractor-police",
+     "category": "tractor",
+     "formats": {
+      "fbx": "Models/FBX format/tractor-police.fbx",
+      "glb": "Models/GLB format/tractor-police.glb",
+      "obj": "Models/OBJ format/tractor-police.obj"
+     },
+     "bytes": 489565
+    },
+    {
+     "name": "tractor-shovel",
+     "category": "tractor",
+     "formats": {
+      "fbx": "Models/FBX format/tractor-shovel.fbx",
+      "glb": "Models/GLB format/tractor-shovel.glb",
+      "obj": "Models/OBJ format/tractor-shovel.obj"
+     },
+     "bytes": 544722
+    },
+    {
+     "name": "truck",
+     "category": "truck",
+     "formats": {
+      "fbx": "Models/FBX format/truck.fbx",
+      "glb": "Models/GLB format/truck.glb",
+      "obj": "Models/OBJ format/truck.obj"
+     },
+     "bytes": 417497
+    },
+    {
+     "name": "truck-flat",
+     "category": "truck",
+     "formats": {
+      "fbx": "Models/FBX format/truck-flat.fbx",
+      "glb": "Models/GLB format/truck-flat.glb",
+      "obj": "Models/OBJ format/truck-flat.obj"
+     },
+     "bytes": 480392
+    },
+    {
+     "name": "van",
+     "category": "van",
+     "formats": {
+      "fbx": "Models/FBX format/van.fbx",
+      "glb": "Models/GLB format/van.glb",
+      "obj": "Models/OBJ format/van.obj"
+     },
+     "bytes": 414068
+    },
+    {
+     "name": "wheel-dark",
+     "category": "wheel",
+     "formats": {
+      "fbx": "Models/FBX format/wheel-dark.fbx",
+      "glb": "Models/GLB format/wheel-dark.glb",
+      "obj": "Models/OBJ format/wheel-dark.obj"
+     },
+     "bytes": 96147
+    },
+    {
+     "name": "wheel-default",
+     "category": "wheel",
+     "formats": {
+      "fbx": "Models/FBX format/wheel-default.fbx",
+      "glb": "Models/GLB format/wheel-default.glb",
+      "obj": "Models/OBJ format/wheel-default.obj"
+     },
+     "bytes": 91704
+    },
+    {
+     "name": "wheel-racing",
+     "category": "wheel",
+     "formats": {
+      "fbx": "Models/FBX format/wheel-racing.fbx",
+      "glb": "Models/GLB format/wheel-racing.glb",
+      "obj": "Models/OBJ format/wheel-racing.obj"
+     },
+     "bytes": 95529
+    },
+    {
+     "name": "wheel-tractor-back",
+     "category": "wheel",
+     "formats": {
+      "fbx": "Models/FBX format/wheel-tractor-back.fbx",
+      "glb": "Models/GLB format/wheel-tractor-back.glb",
+      "obj": "Models/OBJ format/wheel-tractor-back.obj"
+     },
+     "bytes": 118696
+    },
+    {
+     "name": "wheel-tractor-dark-back",
+     "category": "wheel",
+     "formats": {
+      "fbx": "Models/FBX format/wheel-tractor-dark-back.fbx",
+      "glb": "Models/GLB format/wheel-tractor-dark-back.glb",
+      "obj": "Models/OBJ format/wheel-tractor-dark-back.obj"
+     },
+     "bytes": 116609
+    },
+    {
+     "name": "wheel-tractor-dark-front",
+     "category": "wheel",
+     "formats": {
+      "fbx": "Models/FBX format/wheel-tractor-dark-front.fbx",
+      "glb": "Models/GLB format/wheel-tractor-dark-front.glb",
+      "obj": "Models/OBJ format/wheel-tractor-dark-front.obj"
+     },
+     "bytes": 96881
+    },
+    {
+     "name": "wheel-tractor-front",
+     "category": "wheel",
+     "formats": {
+      "fbx": "Models/FBX format/wheel-tractor-front.fbx",
+      "glb": "Models/GLB format/wheel-tractor-front.glb",
+      "obj": "Models/OBJ format/wheel-tractor-front.obj"
+     },
+     "bytes": 96934
+    },
+    {
+     "name": "wheel-truck",
+     "category": "wheel",
+     "formats": {
+      "fbx": "Models/FBX format/wheel-truck.fbx",
+      "glb": "Models/GLB format/wheel-truck.glb",
+      "obj": "Models/OBJ format/wheel-truck.obj"
+     },
+     "bytes": 113109
+    }
+   ]
+  }
+ ]
+}

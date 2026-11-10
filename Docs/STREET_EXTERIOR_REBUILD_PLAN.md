@@ -2,7 +2,7 @@
 
 **Ngày:** 05/11/2026 (Việt Nam)
 
-**Trạng thái:** Kế hoạch thực hiện; chưa bắt đầu dựng phố mới.
+**Trạng thái cập nhật 10/11/2026:** Map đã có tích hợp Unity; chủ dự án ưu tiên hoàn thiện ngoại thất và nội thất SORA MART hiện có trước. Xem [báo cáo SORA MART](StreetExterior/Reports/2026-11-10-SORA-MART.md). Các bảng baseline trong tài liệu này ghi lại thời điểm lập kế hoạch, không thay thế bằng chứng kiểm tra mới.
 
 **Mốc mã nguồn đã đọc:** `main` tại `083a29b0b19ac08fd408c0e7efa8e7eb988e8a2b`.
 
@@ -186,4 +186,4 @@ Không mặc định merge vào `main`. Nhánh phiên kế dựa trên base đã
 - [ ] Windows build được đo ở cấu hình ghi rõ; có ảnh/video và danh sách giới hạn còn lại.
 - [ ] Chủ dự án review chất lượng toàn phố; không suy từ một căn đẹp sang toàn khu đã đạt.
 
-**Phiên kế tiếp cụ thể:** `EXT-001` + `EXT-002`; nếu mẫu truy cập được và quyền dùng đã rõ thì thực hiện `EXT-003`. Chưa dựng thêm bất kỳ dãy nhà nào trước khi qua G0.
+**Ưu tiên hiện tại, theo yêu cầu 10/11/2026:** Hoàn thiện và review SORA MART trước (`EXT-010`/`EXT-011`), gồm ngoại thất và nội thất hiện có. Thứ tự này do chủ dự án chọn thay cho việc chờ hoàn tất đoạn mẫu toàn phố; các chuẩn QA và bảo toàn gameplay vẫn áp dụng. Tình trạng nghiệm thu thực tế ghi trong báo cáo SORA MART; các gate còn lại chưa tự động được coi là hoàn thành.

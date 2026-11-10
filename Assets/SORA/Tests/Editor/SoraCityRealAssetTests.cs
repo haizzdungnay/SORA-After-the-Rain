@@ -132,6 +132,19 @@ namespace Sora.AfterTheRain.Demo.Tests
             Assert.That(roadEnds, Is.EqualTo(16));
         }
 
+        [Test]
+        public void StreetPropSpotsStayOnMapAndAvoidRoadSurface()
+        {
+            Assert.That(SoraCityStreetProps.SignalSpots().Count, Is.EqualTo(64));
+            Assert.That(SoraCityStreetProps.SignSpots().Count, Is.EqualTo(128));
+            Assert.That(SoraCityStreetProps.ConeSpots().Count, Is.EqualTo(32));
+            foreach (var s in SoraCityStreetProps.LampSpots())
+            {
+                Assert.That(s.Xz.x, Is.InRange(-70f, 115f));
+                Assert.That(s.Xz.y, Is.InRange(-70f, 115f));
+            }
+        }
+
         [System.Serializable]
         private class CollisionManifest { public CollisionBox[] items; }
 
