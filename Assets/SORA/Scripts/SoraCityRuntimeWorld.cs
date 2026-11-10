@@ -112,6 +112,8 @@ namespace Sora.AfterTheRain.Demo
                 v05.transform.localPosition = Vector3.zero;
                 v05.transform.localRotation = Quaternion.identity;
                 v05.transform.localScale = Vector3.one;
+                if (world.Find("SORA MART - authored CC0 store") != null)
+                    SoraMartVisuals.FitCityNeighbors(v03, v05);
 
                 // V06 is additive ART DETAIL ONLY: 60 storefronts / 3,301 nodes.
                 // It must load once, at the same transform as V05, without collider duplication.

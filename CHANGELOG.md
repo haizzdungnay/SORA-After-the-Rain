@@ -6,6 +6,14 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 ## [Unreleased] — development history through 2026-11-10
 
+### 2026-11-10 — SORA MART exterior and existing interior
+
+- Prioritize the existing store at the owner's request: import an authored CC0/original store GLB with transparent frontage, jade/orange signage, stocked shelf islands, checkout, glass-door drink cabinets, coffee counter and reused existing street props.
+- Preserve the original POS, inventory/delivery markers, collider footprints, twins and saves; retain prototype art as missing-model fallback. Convert source WebP palettes to PNG with installed Blender instead of adding an image decoder.
+- Keep neighboring facade/courtyard geometry outside the store, use downward ceiling lights and native high-quality rain collision for the roof and canopy.
+- **Actual Unity:** **21/21 EditMode** in both public/private configurations; **8 controller routes**, **100 switches**, POS/stock/save-load and repeated roof/canopy/outdoor particle probes pass in each. Latest **Windows x64 build and standalone startup PASS**. Real Unity captures and evidence: [store acceptance report](Docs/StreetExterior/Reports/2026-11-10-SORA-MART.md).
+- Products remain decorative and doors parked open; owner art acceptance, manual keyboard/camera walkthrough and target-PC profiling remain pending. No new dependency.
+
 ### 2026-11-10 — Unity Editor startup and local test recovery
 
 - Remove deprecated `com.unity.ai.generators`, whose assets and GUIDs overlap `com.unity.ai.assistant`; keep the owner's Assistant and Inference packages. Unity regenerates the package lock without Generators or its Toolkit dependency. Add an offline guard against reinstalling both overlapping packages.
