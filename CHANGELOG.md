@@ -6,6 +6,13 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 ## [Unreleased] — development history through 2026-11-11
 
+### 2026-11-11 — reference-based SORA MART procurement tracking
+
+- Add 192 local model candidates, bringing intake to 403 distinct SHA-256 model files from 38 source entries. Keep original downloads, publisher pages, license evidence and previews local; no new candidate binaries enter Unity or public Git.
+- Update every row of the [151-item shopping list](Docs/SORA_MART_MODEL_SHOPPING_LIST.md): 116 have downloaded candidates, five have existing CC0 source nodes, and 30 still lack candidates. Download checkboxes never imply full packaging, variant-count or art acceptance.
+- Record each downloaded file, source, license, exact path, hash, preview state and prior Unity placement in [CSV](Docs/StreetExterior/SORA_MART_DOWNLOADS.csv) and [JSON](Docs/StreetExterior/SORA_MART_DOWNLOADS.json). Use genuine [Japanese konbini references](Docs/StreetExterior/SORA_MART_KONBINI_REFERENCE.md) for the proposed layout and model matching.
+- Verify all 403 model hashes, GLB geometry and texture dependencies; check license/attribution evidence and all 151 checklist markers with `python Tools/StreetExterior/verify_sora_mart_downloads.py`. Blender previews cover 49 distinct models. New intake art acceptance, Unity import and gameplay remain pending; no runtime layout changes accompany this entry.
+
 ### 2026-11-11 — SORA MART licensed retail models
 
 - Replace the generated counter, POS, four gondolas and repeated product blocks with selected creator-authored models. Add matching endcaps, a rear fixture and a stockroom shelf; retain the store envelope, working glass-door cabinets and original interaction anchors.

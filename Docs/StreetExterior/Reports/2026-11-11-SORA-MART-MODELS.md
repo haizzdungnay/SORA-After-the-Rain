@@ -103,3 +103,36 @@ Blender previews, generated mockups or manual keyboard walkthrough captures.
   remain unfinished. Existing doors remain parked open.
 - Scripted traversal/camera captures do not establish manual gameplay acceptance or
   target-PC FPS/frame-time performance.
+
+## Follow-up: konbini references and download coverage
+
+The owner requested real-store photo references and more model categories, with
+each successful download marked in the procurement list. The
+[reference and model matching sheet](../SORA_MART_KONBINI_REFERENCE.md) uses a real
+7-Eleven interior in Kyoto, supporting photos and Japan Guide's illustrative
+floor plan. Its proposed layout is not a new Unity capture or a measured copy.
+
+192 additional original GLBs are stored in the ignored local intake folder. The
+total is **403 files with 403 different SHA-256 hashes**, across 38 source entries.
+[CSV](../SORA_MART_DOWNLOADS.csv) and [JSON](../SORA_MART_DOWNLOADS.json) record each
+file and its source, license, path, preview state, coverage and prior integration.
+The selected 19 original source hashes still match the existing store manifest.
+
+The updated [151-item list](../../SORA_MART_MODEL_SHOPPING_LIST.md) has **116** rows
+with downloaded candidates, **5** rows with already-held CC0 source nodes and
+**30** rows without candidates. Requirements for retail packaging, Japanese
+labels, variant counts and close-up quality remain separate. No row is certified
+fully complete. Some downloaded samples fail those criteria, including bare
+onigiri, loose batteries, opened food wrappers and overly simple equipment.
+
+Actual follow-up checks: `verify_sora_mart_downloads.py` passes for 403 distinct
+GLBs, every recorded file size/hash, mesh presence, local texture dependencies,
+license evidence, CC BY creator notices, exact existing source node names and all
+151 status markers. The original local verifier also passes ZIP CRC and source
+checks. Blender 5.2.3 previews cover 49 distinct models; these are not Unity
+screenshots. Offline project validation and `git diff --check` pass.
+
+No source asset used by the running store, C# file or Unity scene changes in this
+follow-up. New candidates remain local and have **not** been imported into Unity,
+tested in Play Mode or included in a Windows build. Earlier Unity results in this
+report apply to the initial selected 19 sources only, not the expanded intake.
