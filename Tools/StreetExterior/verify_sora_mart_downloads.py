@@ -17,14 +17,20 @@ parser.add_argument("--intake", type=Path, default=ROOT / "LocalReferenceAssets/
 args = parser.parse_args()
 intake = args.intake.resolve(strict=True)
 snapshot = json.loads((ROOT / "Docs/StreetExterior/SORA_MART_DOWNLOADS.json").read_text(encoding="utf-8"))
+selected = json.loads((ROOT / "ArtSource/ThirdParty/SoraMart/manifest.json").read_text(encoding="utf-8"))
+store = json.loads((ROOT / "Docs/StreetExterior/SORA_MART_ASSETS.json").read_text(encoding="utf-8"))
+placed = store["model_placements"]
+selected_by_hash = {source["sha256"]: source["key"] for source in selected["sources"] if placed.get(source["key"], 0)}
 local = json.loads((intake / "intake_manifest.json").read_text(encoding="utf-8"))
 assert snapshot["items"] == local["items"], "Local intake differs from the published evidence"
 shopping = (ROOT / "Docs/SORA_MART_MODEL_SHOPPING_LIST.md").read_text(encoding="utf-8")
 rows = dict(re.findall(r"^\| (SM-[A-J]\d{2}) \| (.+)$", shopping, re.M))
 assert len(rows) == len(re.findall(r"^\| SM-[A-J]\d{2} \|", shopping, re.M)) == 151
 coverage = {key: [] for key in rows}
+unity_coverage = {key: set() for key in rows}
 paths, hashes = set(), set()
 existing = set()
+existing_placed = set()
 for source in snapshot["existing_sources"]:
     path = (ROOT / source["path"]).resolve()
     assert path.is_relative_to(ROOT)
@@ -35,6 +41,8 @@ for source in snapshot["existing_sources"]:
     for item_id, names in source["candidate_nodes"].items():
         assert item_id in rows and set(names) <= nodes
         existing.add(item_id)
+        if set(names) & set(store["source_groups"]):
+            existing_placed.add(item_id)
 for source in snapshot["items"]:
     assert source["license"] in {"CC0 1.0", "CC-BY 3.0"}
     evidence = (intake / source["folder"] / "SOURCE_PAGE.html").resolve()
@@ -51,6 +59,8 @@ for source in snapshot["items"]:
         assert hashlib.sha256(payload).hexdigest() == record["sha256"], record["path"]
         if path.suffix != ".glb":
             continue
+        integrated_key = selected_by_hash.get(record["sha256"])
+        assert record.get("unity_integrated_key") == integrated_key, record["path"]
         assert record["path"] not in paths and record["sha256"] not in hashes, "Duplicate model export"
         paths.add(record["path"])
         hashes.add(record["sha256"])
@@ -72,17 +82,27 @@ for source in snapshot["items"]:
         for item_id in record.get("candidate_ids", source["candidate_ids"]):
             assert item_id in coverage, item_id
             coverage[item_id].append(record["path"])
+            if integrated_key:
+                unity_coverage[item_id].add(integrated_key)
 for item_id, files in coverage.items():
     marker = (f"[x] Tải {len(files)} ứng viên" if files else
               "[x] Có nguồn sẵn" if item_id in existing else "[ ] Chưa tải")
     assert marker in rows[item_id], (item_id, marker)
+    count = len(unity_coverage[item_id])
+    unity_marker = (f"[x] Unity {count} mẫu" if count else
+                    "[x] Node CC0 sẵn" if item_id in existing_placed else "[ ] Chưa ghép")
+    assert unity_marker in rows[item_id], (item_id, unity_marker)
 with (ROOT / "Docs/StreetExterior/SORA_MART_DOWNLOADS.csv").open(encoding="utf-8-sig", newline="") as handle:
     table = list(csv.DictReader(handle))
 assert len(table) == len(paths)
 assert {row["sha256"] for row in table} == hashes
 assert {row["local_path"].removeprefix("LocalReferenceAssets/SoraMartIncoming/") for row in table} == paths
-selected = json.loads((ROOT / "ArtSource/ThirdParty/SoraMart/manifest.json").read_text(encoding="utf-8"))
-placed = json.loads((ROOT / "Docs/StreetExterior/SORA_MART_ASSETS.json").read_text(encoding="utf-8"))["model_placements"]
+assert all(row["unity_integrated"] == selected_by_hash.get(row["sha256"], "") for row in table)
+for record in selected["textures"] + selected["sources"]:
+    source_root = (ROOT / "ArtSource/ThirdParty/SoraMart").resolve()
+    source_path = (source_root / record["path"]).resolve()
+    assert source_path.is_relative_to(source_root)
+    assert hashlib.sha256(source_path.read_bytes()).hexdigest() == record["sha256"]
 integrated = sum(source["sha256"] in hashes and placed.get(source["key"], 0) > 0 for source in selected["sources"])
 assert len(paths) == snapshot["model_count"]
 assert len(snapshot["items"]) == snapshot["distinct_source_count"]
@@ -92,5 +112,5 @@ assert len(existing) == snapshot["existing_candidate_items"]
 assert 151 - len(existing | {key for key, files in coverage.items() if files}) == snapshot["missing_candidate_items"]
 assert snapshot["accepted_shopping_list_items"] == 0, "Downloads do not establish full art acceptance"
 print(f"PASS: {len(paths)} distinct GLBs, {len(coverage)} checklist rows, source/texture/license/hash checks.")
-print(f"Candidates for {snapshot['download_candidate_items']}/151 requirements; {integrated} previously placed sources.")
-print("New intake: Unity import, final art acceptance and gameplay NOT VERIFIED.")
+print(f"Candidates for {snapshot['download_candidate_items']}/151 requirements; {integrated} sources in the runtime manifest.")
+print("Actual Unity evidence: " + snapshot["unity_evidence"] + "; full retail art acceptance remains pending.")

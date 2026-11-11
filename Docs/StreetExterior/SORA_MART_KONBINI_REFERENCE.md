@@ -3,6 +3,11 @@
 Ngày đối chiếu: **11/11/2026**. Yêu cầu của chủ dự án: lấy ảnh cửa hàng tiện lợi
 Nhật làm mẫu, tìm model theo vật thể trong ảnh và ghi rõ món đã tải.
 
+**Đã ghép Unity:** 67 nguồn model được dùng trong cửa hàng, tăng từ 19;
+[báo cáo, kiểm thử và ảnh thật](Reports/2026-11-11-SORA-MART-KONBINI-UNITY.md).
+Bảng đối chiếu dưới đây giữ nhận xét lúc chọn mẫu; cột Unity trong danh sách và
+CSV ghi trạng thái mới nhất. Ghép model không xác nhận đã đủ bao bì/nhãn.
+
 ## Ảnh gốc
 
 | Mốc | Nguồn, tác giả và giấy phép | Phần dùng để đối chiếu |
@@ -45,7 +50,7 @@ nguồn và trường khai báo khi có. Nhãn CC0 không chứng minh độ ho�
 
 ## Bố trí dự kiến dựa trên tham chiếu
 
-Đây là **đề xuất sửa bố cục**, chưa phải ảnh hay kết quả bố trí mới trong Unity.
+Đây là **sơ đồ tham chiếu đã dùng để bố trí**, không phải ảnh chụp Unity.
 Giữ diện tích và các mốc gameplay của SORA MART, dùng R6 để xác định quan hệ khu,
 R1-R5 để chọn model và cách xếp hàng. Mốc POS của game ở bên trái, vì vậy bố trí
 quầy/đồ uống được phản chiếu theo chiều ngang so với R6. Không mô tả đây là bản
@@ -67,8 +72,9 @@ Thứ tự ghép tiếp: chọn một bộ kệ/tủ đạt chất lượng; th�
 giữ lối chính khoảng 1.2 m và các mốc POS/restock/delivery hoạt động.
 
 Không nhập hàng loạt cả 403 ứng viên để tăng số loại trên giấy. Nhiều mẫu xem
-thử chưa đạt yêu cầu nhìn gần; đợt này hoàn tất tải và kiểm kê, chưa thay model
-hay bố cục đang chạy. 19 nguồn tích hợp trước đó giữ trạng thái riêng.
+thử chưa đủ chi tiết nhìn gần. Đợt ghép mới dùng 67 nguồn, có 48 mẫu bổ sung và
+bố cục sáu kệ giữa, tủ thực phẩm lạnh cuối shop, khu cà phê/bánh và phụ kiện gần
+cửa. 336 ứng viên còn lại giữ local; tiêu chí mỹ thuật đầy đủ vẫn chờ duyệt.
 
 ## Mục còn thiếu cần tìm tiếp
 

@@ -6,6 +6,13 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 ## [Unreleased] — development history through 2026-11-11
 
+### 2026-11-11 — expanded konbini assortment actually integrated into Unity
+
+- Expand the running store from 19 to **67 source models**, with six gondolas, rear chilled-food bays, bakery/magazine racks, coffee brewer, microwave, hot-food cabinet, scanner/card reader/receipt printer, baskets, umbrellas and delivery props. Follow the real konbini reference layout while retaining interaction anchors.
+- Import original meshes, fit products to measured shelf heights, share identical constant materials and use native static mesh collision for fixtures. The 47 product/accessory sources provide 833 decorative placements; aggregate inventory and existing POS/save behavior remain.
+- Record actual use per file and per shopping-list row. Preserve original binaries, licenses, source hashes, store GUID and build attribution. Broader Japanese packaging/label and final art acceptance remain pending.
+- **Actual Unity:** 22/22 EditMode plus public/current-private-city Play Mode checks pass: eight routes, 100 switches, POS/stock/save-load and nine rain probes. Store counts: 127 renderers, 91 materials, 672,066 triangles. Windows build/startup status and genuine captures: [konbini Unity report](Docs/StreetExterior/Reports/2026-11-11-SORA-MART-KONBINI-UNITY.md).
+
 ### 2026-11-11 — reference-based SORA MART procurement tracking
 
 - Add 192 local model candidates, bringing intake to 403 distinct SHA-256 model files from 38 source entries. Keep original downloads, publisher pages, license evidence and previews local; no new candidate binaries enter Unity or public Git.

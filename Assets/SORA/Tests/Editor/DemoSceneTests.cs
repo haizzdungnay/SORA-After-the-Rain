@@ -39,17 +39,16 @@ namespace Sora.AfterTheRain.Demo.Tests
                 Assert.That(store.GetComponentsInChildren<BoxCollider>().Any(c =>
                     c.bounds.Contains(new Vector3(0, 1, -5.25f))), Is.False, "Doorway must remain clear.");
                 var renderers = store.GetComponentsInChildren<MeshRenderer>();
-                foreach (string source in new[] { "gondola", "endcap", "checkout", "back_fixture", "pos", "stock_shelf", "goods" })
+                foreach (string source in new[] { "gondola", "endcap", "checkout", "back_fixture", "pos", "stock_shelf", "goods",
+                    "chilled_food", "bakery_rack", "magazine_rack", "basket_stack", "hot_food", "microwave",
+                    "coffee_brewer", "card_reader", "receipt_printer", "scanner" })
                     Assert.That(renderers.Any(r => r.name.StartsWith("IMPORTED | " + source + " | ")), Is.True,
                         "Imported source missing from the actual runtime GLB: " + source);
-                foreach (var collider in store.GetComponentsInChildren<BoxCollider>())
-                {
-                    var clearance = collider.bounds;
-                    clearance.Expand(new Vector3(.56f, 0, .56f));
-                    for (int z = -4; z <= 4; z++)
-                        Assert.That(clearance.Contains(new Vector3(0, 1, z)), Is.False,
-                            "Main aisle must fit a character capsule: " + collider.name);
-                }
+                Assert.That(store.GetComponentsInChildren<MeshCollider>().Length, Is.GreaterThan(12));
+                Physics.SyncTransforms();
+                for (int z = -5; z <= 4; z++)
+                    Assert.That(Physics.OverlapCapsule(new Vector3(0, .32f, z), new Vector3(0, 1.55f, z), .28f)
+                        .Any(c => c.transform.IsChildOf(store)), Is.False, "Blocked main aisle at z=" + z);
             }
             finally
             {

@@ -151,6 +151,631 @@
       "creator": "Kenney",
       "source_url": "https://kenney.nl/assets/food-kit",
       "license": "CC0 1.0"
+    },
+    {
+      "key": "card_reader",
+      "path": "Fixtures/card_reader.glb",
+      "sha256": "3fc51d06a216c688355fc695e084f63b3fb0693d5e089d9840dc85e20750de49",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/retail-store-fixtures-and-mall-card-terminal-stand-a5c2c2d7",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_retail/retail-store-fixtures-and-mall-card-terminal-stand-a5c2c2d7.glb",
+      "candidate_ids": [
+        "SM-B05"
+      ]
+    },
+    {
+      "key": "receipt_printer",
+      "path": "Fixtures/receipt_printer.glb",
+      "sha256": "49050dd15ea0b4c29843f71c876ec90c275cf0f66a3a03426c38ec5b81ee31d9",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/retail-store-fixtures-and-mall-receipt-printer-5a85a1c8",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_retail/retail-store-fixtures-and-mall-receipt-printer-5a85a1c8.glb",
+      "candidate_ids": [
+        "SM-B07"
+      ]
+    },
+    {
+      "key": "chilled_food",
+      "path": "Fixtures/chilled_food.glb",
+      "sha256": "01ec1014efa130fc268cbb491e9b1adf4034d70a2b6f647153bd7cde2b152544",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/supermarket-operations-open-chiller-95bac66b",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_supermarket-operations/supermarket-operations-open-chiller-95bac66b.glb",
+      "candidate_ids": [
+        "SM-C05"
+      ]
+    },
+    {
+      "key": "bakery_rack",
+      "path": "Fixtures/bakery_rack.glb",
+      "sha256": "5ff53cd709f50d69e1a986b86de54fd9266076db70263d6c60db0433fa2475e8",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/supermarket-operations-bakery-wall-rack-60417ed2",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_supermarket-operations/supermarket-operations-bakery-wall-rack-60417ed2.glb",
+      "candidate_ids": [
+        "SM-C07"
+      ]
+    },
+    {
+      "key": "magazine_rack",
+      "path": "Fixtures/magazine_rack.glb",
+      "sha256": "69430083111d979bec7dbdb2bd2a9dd41e8480f0d0788bab15c52506548e4e6d",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/supermarket-operations-magazine-rack-4eabed8b",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_supermarket-operations/supermarket-operations-magazine-rack-4eabed8b.glb",
+      "candidate_ids": [
+        "SM-C09"
+      ]
+    },
+    {
+      "key": "basket_stack",
+      "path": "Fixtures/basket_stack.glb",
+      "sha256": "dfacb0e245b9f7e51c5052b0ed2628d6f89b675dadbc14d3a4b27dccc1b25198",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/supermarket-operations-basket-stack-0006c20d",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_supermarket-operations/supermarket-operations-basket-stack-0006c20d.glb",
+      "candidate_ids": [
+        "SM-C10"
+      ]
+    },
+    {
+      "key": "detergent",
+      "path": "Goods/detergent.glb",
+      "sha256": "2261f2b49ad549c3b9b684f6410336bba3406df98a78299ee66a71418b7cebb8",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/supermarket-operations-detergent-bottle-18328bff",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_supermarket-operations/supermarket-operations-detergent-bottle-18328bff.glb",
+      "candidate_ids": [
+        "SM-E11"
+      ]
+    },
+    {
+      "key": "tissue_box",
+      "path": "Goods/tissue_box.glb",
+      "sha256": "e97c815b576852291030d4ce50cbd143fd9cebd933e42c1b2e22dad5b960ba98",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/supermarket-operations-tissue-box-60c96b21",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_supermarket-operations/supermarket-operations-tissue-box-60c96b21.glb",
+      "candidate_ids": [
+        "SM-E01"
+      ]
+    },
+    {
+      "key": "toothpaste",
+      "path": "Goods/toothpaste.glb",
+      "sha256": "b3e0b57c8dd581e56cee106d85c3d0aa8fb69884c7bb37053e989bd31200b31e",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/supermarket-operations-toothpaste-tube-9654d744",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_supermarket-operations/supermarket-operations-toothpaste-tube-9654d744.glb",
+      "candidate_ids": [
+        "SM-E07"
+      ]
+    },
+    {
+      "key": "soap_bar",
+      "path": "Goods/soap_bar.glb",
+      "sha256": "2a63f9a15ddfb9e96d2bcc2aab68f996ca4951e5aec74641465b83fc09a27c8a",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/supermarket-operations-soap-bar-3d27f42e",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_supermarket-operations/supermarket-operations-soap-bar-3d27f42e.glb",
+      "candidate_ids": [
+        "SM-E04"
+      ]
+    },
+    {
+      "key": "snack_bag",
+      "path": "Goods/snack_bag.glb",
+      "sha256": "177a18b99a925b422ae28bb73eccbf2162390a46a40e80f61219b832f3526e48",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/fresh-produce-and-groceries-crisps-bag-51f3211c",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_groceries/fresh-produce-and-groceries-crisps-bag-51f3211c.glb",
+      "candidate_ids": [
+        "SM-D20"
+      ]
+    },
+    {
+      "key": "cereal_box",
+      "path": "Goods/cereal_box.glb",
+      "sha256": "f8ca9e431c0b28fb609085063b5a538ff5fd49488830125356faa66d38eb337e",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/supermarket-operations-cereal-box-7a833365",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_supermarket-operations/supermarket-operations-cereal-box-7a833365.glb",
+      "candidate_ids": [
+        "SM-D25"
+      ]
+    },
+    {
+      "key": "rice_bag",
+      "path": "Goods/rice_bag.glb",
+      "sha256": "212b3e6b3255ae8a1270000fc3f9e4bef11e2992c97e690fa2ad0ea7f5b70fbb",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/fresh-produce-and-groceries-rice-bag-48d1e5ba",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_groceries/fresh-produce-and-groceries-rice-bag-48d1e5ba.glb",
+      "candidate_ids": [
+        "SM-D29"
+      ]
+    },
+    {
+      "key": "flour_bag",
+      "path": "Goods/flour_bag.glb",
+      "sha256": "896032798253422da1217fa02f0c97bf36cf34f7d11c8067e2fc89b9186fc347",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/fresh-produce-and-groceries-flour-bag-a34f7213",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_groceries/fresh-produce-and-groceries-flour-bag-a34f7213.glb",
+      "candidate_ids": [
+        "SM-D29"
+      ]
+    },
+    {
+      "key": "sugar_bag",
+      "path": "Goods/sugar_bag.glb",
+      "sha256": "763b238ab67f4ab59983362612fa6582c77acabb2b2f8e85bdb6563857545fba",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/fresh-produce-and-groceries-sugar-bag-449a0bce",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_groceries/fresh-produce-and-groceries-sugar-bag-449a0bce.glb",
+      "candidate_ids": [
+        "SM-D29"
+      ]
+    },
+    {
+      "key": "tea_box",
+      "path": "Goods/tea_box.glb",
+      "sha256": "87382c94f8828402ad0f075900da2c083a3be3c78e36d75dd13b4afc246d3f5e",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/fresh-produce-and-groceries-tea-box-6a86b1e9",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_groceries/fresh-produce-and-groceries-tea-box-6a86b1e9.glb",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "coffee_jar",
+      "path": "Goods/coffee_jar.glb",
+      "sha256": "641122182c89c09b55cff27d0431a759259b0135c9d4913618f20a0b71a2bebe",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/fresh-produce-and-groceries-coffee-jar-c906d3fe",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_groceries/fresh-produce-and-groceries-coffee-jar-c906d3fe.glb",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "beans_tin",
+      "path": "Goods/beans_tin.glb",
+      "sha256": "5a0060a7b4149d6814cfac88bd852bdce6730f038a02a0b8a72910a706aee558",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/fresh-produce-and-groceries-baked-beans-tin-4dfdad3f",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_groceries/fresh-produce-and-groceries-baked-beans-tin-4dfdad3f.glb",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "juice_carton",
+      "path": "Goods/juice_carton.glb",
+      "sha256": "50e424635d6ec678dd89579d0547ceded793ddd43e6247fd71a871f7f96ce0d4",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/supermarket-operations-juice-carton-cbb8fa73",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_supermarket-operations/supermarket-operations-juice-carton-cbb8fa73.glb",
+      "candidate_ids": [
+        "SM-D16"
+      ]
+    },
+    {
+      "key": "milk_carton",
+      "path": "Goods/milk_carton.glb",
+      "sha256": "b66081488df2210816816ca9fe21e9e24f32032e3115397047510f5ce5dd7927",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/supermarket-operations-milk-carton-c3a32ec4",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_supermarket-operations/supermarket-operations-milk-carton-c3a32ec4.glb",
+      "candidate_ids": [
+        "SM-D17"
+      ]
+    },
+    {
+      "key": "water_bottle",
+      "path": "Goods/water_bottle.glb",
+      "sha256": "6e1c077bdb122c9a2c84b2c160fd09cd4e858297bc488bcb6603e667c02fe353",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/fresh-produce-and-groceries-water-bottle-43375605",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_groceries/fresh-produce-and-groceries-water-bottle-43375605.glb",
+      "candidate_ids": [
+        "SM-D11"
+      ]
+    },
+    {
+      "key": "yoghurt",
+      "path": "Goods/yoghurt.glb",
+      "sha256": "d161a35661ee3e44ffc3831c5a2828cbd854f04a7e4f2cd05fe7ea558ce81222",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/fresh-produce-and-groceries-yoghurt-pot-70af3ae5",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_groceries/fresh-produce-and-groceries-yoghurt-pot-70af3ae5.glb",
+      "candidate_ids": [
+        "SM-D09"
+      ]
+    },
+    {
+      "key": "butter",
+      "path": "Goods/butter.glb",
+      "sha256": "870289fb5919a850d8b24186bc2069954fde768255b085e2749680c9e614f045",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/fresh-produce-and-groceries-butter-block-0790df28",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_groceries/fresh-produce-and-groceries-butter-block-0790df28.glb",
+      "candidate_ids": [
+        "SM-D30"
+      ]
+    },
+    {
+      "key": "egg_carton",
+      "path": "Goods/egg_carton.glb",
+      "sha256": "0790ba1ece42539bef1b77ab779991a8b67b13fc3d424a2ddabec458a8ac1c41",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/fresh-produce-and-groceries-egg-box-six-c8173976",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_groceries/fresh-produce-and-groceries-egg-box-six-c8173976.glb",
+      "candidate_ids": [
+        "SM-D30"
+      ]
+    },
+    {
+      "key": "sliced_bread",
+      "path": "Goods/sliced_bread.glb",
+      "sha256": "24d90bfc096bba4b64ecf8202bcc94e666e890d20df8fc2229075086f154e971",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/fresh-produce-and-groceries-sliced-loaf-bag-0a2aa4f8",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_groceries/fresh-produce-and-groceries-sliced-loaf-bag-0a2aa4f8.glb",
+      "candidate_ids": [
+        "SM-D07"
+      ]
+    },
+    {
+      "key": "umbrella_stand",
+      "path": "Fixtures/umbrella_stand.glb",
+      "sha256": "b3225b99429a1a7ecdb8ff2434cd5ffb232a3a02c51a7597f65c31aa117ced43",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/office-lobby-and-facilities-umbrella-stand-80bd15ef",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-umbrella-stand-80bd15ef.glb",
+      "candidate_ids": [
+        "SM-I03"
+      ]
+    },
+    {
+      "key": "wall_clock",
+      "path": "Fixtures/wall_clock.glb",
+      "sha256": "bd453ec35f1ef0b260207a76043a55a39dd89d3f46fcb4258779292980f36b98",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/office-lobby-and-facilities-wall-clock-58c75f34",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-wall-clock-58c75f34.glb",
+      "candidate_ids": [
+        "SM-G12"
+      ]
+    },
+    {
+      "key": "extinguisher",
+      "path": "Fixtures/extinguisher.glb",
+      "sha256": "32c709122aea26069b460689aa4192594a1d43cc7b9f7d9e53e16a3391474d3c",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/office-lobby-and-facilities-fire-extinguisher-point-462a4c9a",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-fire-extinguisher-point-462a4c9a.glb",
+      "candidate_ids": [
+        "SM-G11"
+      ]
+    },
+    {
+      "key": "scanner",
+      "path": "Fixtures/scanner.glb",
+      "sha256": "ebdef564cb47de2a5821b71358bbbe403de553088fd660a40c161fa502753e6f",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/container-inspection-and-customs-yard-container-inspec-a2a41333",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_Specific_container-inspection-and-customs-yard-container-inspec-a2a41333/model.glb",
+      "candidate_ids": [
+        "SM-B04",
+        "SM-G07"
+      ]
+    },
+    {
+      "key": "hot_food",
+      "path": "Fixtures/hot_food.glb",
+      "sha256": "8d641a4e6a93851dcb08ce315e995658972c0bfbda2289dab8405d87e0b4fa8d",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/petrol-station-and-forecourt-shop-hot-food-cabinet-b778bb4c",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_Specific_petrol-station-and-forecourt-shop-hot-food-cabinet-b778bb4c/model.glb",
+      "candidate_ids": [
+        "SM-F03"
+      ]
+    },
+    {
+      "key": "coffee_brewer",
+      "path": "Fixtures/coffee_brewer.glb",
+      "sha256": "f4275e34cb625f6e23dd0aac1e13ffc63c1ce37496661c64d8dade24b091882d",
+      "creator": "J-Toastie",
+      "source_url": "https://poly.pizza/m/EWVe4TaOiB",
+      "license": "CC-BY 3.0",
+      "kind": "fixture",
+      "intake_path": "SM-F01_CoffeeMachine_JToastie/model.glb",
+      "candidate_ids": [
+        "SM-F01"
+      ]
+    },
+    {
+      "key": "microwave",
+      "path": "Fixtures/microwave.glb",
+      "sha256": "fe28a6a2d2e229763a80daac953fd163d1ecfdf707e007819f3e61a5274110fb",
+      "creator": "MilkAndBanana",
+      "source_url": "https://poly.pizza/m/uL1OgB3EJu",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_Poly_uL1OgB3EJu/model.glb",
+      "candidate_ids": [
+        "SM-F02"
+      ]
+    },
+    {
+      "key": "umbrella",
+      "path": "Goods/umbrella.glb",
+      "sha256": "aaa107b00ba628499d01349b93e8bccc79909fd4fa2b17dad03ce5bc8f48e91c",
+      "creator": "CreativeTrio",
+      "source_url": "https://poly.pizza/m/o0CUgpt8pm",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "Expansion_Poly_o0CUgpt8pm/model.glb",
+      "candidate_ids": [
+        "SM-E18"
+      ]
+    },
+    {
+      "key": "magazine",
+      "path": "Goods/magazine.glb",
+      "sha256": "c725aba01d22a9dcc0b179e309da38a093d2868f8686f437b96e56bcd05eebcb",
+      "creator": "J-Toastie",
+      "source_url": "https://poly.pizza/m/OMzty7kxKo",
+      "license": "CC-BY 3.0",
+      "kind": "goods",
+      "intake_path": "Expansion_Poly_OMzty7kxKo/model.glb",
+      "candidate_ids": [
+        "SM-E24"
+      ]
+    },
+    {
+      "key": "delivery_boxes",
+      "path": "Fixtures/delivery_boxes.glb",
+      "sha256": "ba42dff065e8044341527486c24150c743551abb2bfd36ca87c2079210588894",
+      "creator": "Quaternius",
+      "source_url": "https://poly.pizza/m/bs6ikOeTrR",
+      "license": "CC0 1.0",
+      "kind": "fixture",
+      "intake_path": "Expansion_Poly_bs6ikOeTrR/model.glb",
+      "candidate_ids": [
+        "SM-G02"
+      ]
+    },
+    {
+      "key": "clipboard",
+      "path": "Goods/clipboard.glb",
+      "sha256": "64999ef6acd229f666a08b354a1a11143cb255345abc301a620dd8496a912a48",
+      "creator": "William Murphy",
+      "source_url": "https://poly.pizza/m/8H5SDxwMnEA",
+      "license": "CC-BY 3.0",
+      "kind": "goods",
+      "intake_path": "Expansion_Poly_8H5SDxwMnEA/model.glb",
+      "candidate_ids": [
+        "SM-G08"
+      ]
+    },
+    {
+      "key": "shampoo",
+      "path": "Goods/shampoo.glb",
+      "sha256": "803292ee3c981149bd5d15d426e3a4d27edb1e4bb912c27793502fa301941343",
+      "creator": "codedeck",
+      "source_url": "https://poly.pizza/m/mzzCkcbM5r",
+      "license": "CC-BY 3.0",
+      "kind": "goods",
+      "intake_path": "Expansion_Poly_mzzCkcbM5r/model.glb",
+      "candidate_ids": [
+        "SM-E05"
+      ]
+    },
+    {
+      "key": "candy-bar-wrapper",
+      "path": "Food/candy-bar-wrapper.glb",
+      "sha256": "e3ab321ae95ee32f51f2997283fab26cb4d20d85bed346762d8d7bcfdb7eda4b",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "SM-D_E_F_KenneyFoodKit/Models/candy-bar-wrapper.glb",
+      "candidate_ids": [
+        "SM-D22"
+      ]
+    },
+    {
+      "key": "chocolate-wrapper",
+      "path": "Food/chocolate-wrapper.glb",
+      "sha256": "9b64d2baccce76f9567dba15780d59d4378631acc200437e074b0498592cc3c7",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "SM-D_E_F_KenneyFoodKit/Models/chocolate-wrapper.glb",
+      "candidate_ids": [
+        "SM-D22"
+      ]
+    },
+    {
+      "key": "rice-ball",
+      "path": "Food/rice-ball.glb",
+      "sha256": "1c68253d36c0705da38a63226521be1f949bd9ce4b7ff8f8529878cd0aae6e08",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "SM-D_E_F_KenneyFoodKit/Models/rice-ball.glb",
+      "candidate_ids": [
+        "SM-D01"
+      ]
+    },
+    {
+      "key": "sandwich",
+      "path": "Food/sandwich.glb",
+      "sha256": "eba221f9fc24bdaad73467e58ce9c09ec4134baeec01f178e7bb3e87ce3b941e",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "SM-D_E_F_KenneyFoodKit/Models/sandwich.glb",
+      "candidate_ids": [
+        "SM-D03"
+      ]
+    },
+    {
+      "key": "styrofoam-dinner",
+      "path": "Food/styrofoam-dinner.glb",
+      "sha256": "8aea06883ec0075b9220e35aab1d9a2faf9364f87fee3493609697371685a182",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "SM-D_E_F_KenneyFoodKit/Models/styrofoam-dinner.glb",
+      "candidate_ids": [
+        "SM-D02"
+      ]
+    },
+    {
+      "key": "pudding",
+      "path": "Food/pudding.glb",
+      "sha256": "c7a6b5f20d18d8b0540d914accd8d1cced02210d53901ad38d79d6661f71396c",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "SM-D_E_F_KenneyFoodKit/Models/pudding.glb",
+      "candidate_ids": [
+        "SM-D09"
+      ]
+    },
+    {
+      "key": "corn-dog",
+      "path": "Food/corn-dog.glb",
+      "sha256": "c7d58988b08d120385eb3a3d322e05e014aa1229729a7c3fed76b3784548df35",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "SM-D_E_F_KenneyFoodKit/Models/corn-dog.glb",
+      "candidate_ids": [
+        "SM-F12"
+      ]
+    },
+    {
+      "key": "sausage",
+      "path": "Food/sausage.glb",
+      "sha256": "a1fd85c3a6b91f52776051d1ab694130491c765cd34596229f139104cc9b9396",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "SM-D_E_F_KenneyFoodKit/Models/sausage.glb",
+      "candidate_ids": [
+        "SM-F12"
+      ]
+    },
+    {
+      "key": "croissant",
+      "path": "Food/croissant.glb",
+      "sha256": "f2f8ee64d7850b262a6af2492cd042fa8eb6506cde49d439360ad1a3df48fe9e",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "SM-D_E_F_KenneyFoodKit/Models/croissant.glb",
+      "candidate_ids": [
+        "SM-D07"
+      ]
+    },
+    {
+      "key": "muffin",
+      "path": "Food/muffin.glb",
+      "sha256": "396184e9d82e79582858569d68ba5d05640838bc514e952556b9ee044a0e7f87",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "SM-D_E_F_KenneyFoodKit/Models/muffin.glb",
+      "candidate_ids": [
+        "SM-D07"
+      ]
+    },
+    {
+      "key": "maki-salmon",
+      "path": "Food/maki-salmon.glb",
+      "sha256": "aaf9e30eada4b6daa483c29ed6db0060b9e05c891a63d8a62671b66bb16535a5",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0",
+      "kind": "goods",
+      "intake_path": "SM-D_E_F_KenneyFoodKit/Models/maki-salmon.glb",
+      "candidate_ids": [
+        "SM-D04"
+      ]
     }
   ],
   "textures": [

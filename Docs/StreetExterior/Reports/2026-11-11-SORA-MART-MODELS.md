@@ -1,5 +1,9 @@
 # SORA MART licensed model integration - 2026-11-11
 
+Historical report for the initial 19-source store and subsequent intake. Current
+67-source Unity integration, actual checks and new captures:
+[konbini Unity report](2026-11-11-SORA-MART-KONBINI-UNITY.md).
+
 ## Objective and scope
 
 Integrate the reviewed free-model shortlist into the existing playable store.

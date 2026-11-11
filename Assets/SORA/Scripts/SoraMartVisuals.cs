@@ -32,16 +32,13 @@ namespace Sora.AfterTheRain.Demo
                     renderer.GetComponent<Collider>().enabled = false;
             }
 
-            foreach (float x in new[] { -2.6f, 2.5f })
-                foreach (float z in new[] { .8f, 3.2f })
-                {
-                    Solid(store.transform, "Imported gondola", new Vector3(x, .805f, z), new Vector3(1.45f, 1.61f, .71f));
-                    float endX = x + (x < 0 ? .95f : -.95f);
-                    Solid(store.transform, "Imported endcap", new Vector3(endX, .91f, z), new Vector3(.43f, 1.82f, .66f));
-                }
-            Solid(store.transform, "Imported checkout", new Vector3(-4.85f, .68f, -2.5f), new Vector3(2.6f, 1.36f, .8f));
-            Solid(store.transform, "Imported back fixture", new Vector3(-4.85f, 1.175f, 5.05f), new Vector3(1.42f, 2.35f, .44f));
-            Solid(store.transform, "Imported stock shelf", new Vector3(5, .98f, 4.3f), new Vector3(1.435f, 1.96f, .56f));
+            // Static fixture meshes keep collision aligned when the source layout changes.
+            var solids = new[] { "gondola", "endcap", "checkout", "back_fixture", "stock_shelf",
+                "chilled_food", "bakery_rack", "magazine_rack", "basket_stack", "umbrella_stand",
+                "hot_food", "delivery_boxes" };
+            foreach (var filter in store.GetComponentsInChildren<MeshFilter>())
+                if (solids.Any(key => filter.name.StartsWith("IMPORTED | " + key + " | ")))
+                    filter.gameObject.AddComponent<MeshCollider>().sharedMesh = filter.sharedMesh;
 
             Solid(store.transform, "Store roof shelter", new Vector3(0, 4.4f, .1f), new Vector3(14.45f, .2f, 11.1f));
             Solid(store.transform, "Store canopy shelter", new Vector3(0, 3.83f, -5.95f), new Vector3(14.5f, .2f, 1.95f));

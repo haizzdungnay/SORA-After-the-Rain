@@ -1,5 +1,5 @@
 {
-  "status": "Downloads verified; selected initial sources already placed; new candidates need art/Unity review",
+  "status": "67 selected original model sources integrated in Unity 6000.3.7f1; unselected candidates remain local",
   "items": [
     {
       "folder": "SM-B01_CounterStraight_Quaternius",
@@ -61,8 +61,8 @@
             "SM-B02",
             "SM-B03"
           ],
-          "unity_integrated_key": "pos",
-          "preview_path": "Previews/SM-B02_POSMachine_JToastie.png"
+          "preview_path": "Previews/SM-B02_POSMachine_JToastie.png",
+          "unity_integrated_key": "pos"
         }
       ],
       "meshes": 2,
@@ -95,8 +95,8 @@
           "candidate_ids": [
             "SM-G01"
           ],
-          "unity_integrated_key": "stock_shelf",
-          "preview_path": "Previews/SM-G01_StorageShelf_JarlanPerez.png"
+          "preview_path": "Previews/SM-G01_StorageShelf_JarlanPerez.png",
+          "unity_integrated_key": "stock_shelf"
         }
       ],
       "meshes": 1,
@@ -195,7 +195,8 @@
           "candidate_ids": [
             "SM-F01"
           ],
-          "preview_path": "Previews/SM-F01_CoffeeMachine_JToastie.png"
+          "preview_path": "Previews/SM-F01_CoffeeMachine_JToastie.png",
+          "unity_integrated_key": "coffee_brewer"
         }
       ],
       "meshes": 3,
@@ -540,7 +541,8 @@
           "candidate_ids": [
             "SM-D22"
           ],
-          "preview_path": "Previews/Food_candy-bar-wrapper.png"
+          "preview_path": "Previews/Food_candy-bar-wrapper.png",
+          "unity_integrated_key": "candy-bar-wrapper"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/candy-bar.glb",
@@ -576,8 +578,8 @@
             "SM-D16",
             "SM-D17"
           ],
-          "unity_integrated_key": "carton",
-          "preview_path": "Previews/Food_carton.png"
+          "preview_path": "Previews/Food_carton.png",
+          "unity_integrated_key": "carton"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cauliflower.glb",
@@ -636,7 +638,8 @@
           "candidate_ids": [
             "SM-D22"
           ],
-          "preview_path": "Previews/Food_chocolate-wrapper.png"
+          "preview_path": "Previews/Food_chocolate-wrapper.png",
+          "unity_integrated_key": "chocolate-wrapper"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/chocolate.glb",
@@ -738,7 +741,8 @@
           "triangles": 64,
           "candidate_ids": [
             "SM-F12"
-          ]
+          ],
+          "unity_integrated_key": "corn-dog"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/corn.glb",
@@ -754,7 +758,8 @@
           "triangles": 162,
           "candidate_ids": [
             "SM-D07"
-          ]
+          ],
+          "unity_integrated_key": "croissant"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cup-coffee.glb",
@@ -764,8 +769,8 @@
           "candidate_ids": [
             "SM-F08"
           ],
-          "unity_integrated_key": "cup-coffee",
-          "preview_path": "Previews/Food_cup-coffee.png"
+          "preview_path": "Previews/Food_cup-coffee.png",
+          "unity_integrated_key": "cup-coffee"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cup-saucer.glb",
@@ -1127,7 +1132,8 @@
           "triangles": 56,
           "candidate_ids": [
             "SM-D04"
-          ]
+          ],
+          "unity_integrated_key": "maki-salmon"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/maki-vegetable.glb",
@@ -1208,7 +1214,8 @@
           "triangles": 84,
           "candidate_ids": [
             "SM-D07"
-          ]
+          ],
+          "unity_integrated_key": "muffin"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/mug.glb",
@@ -1482,7 +1489,8 @@
           "triangles": 56,
           "candidate_ids": [
             "SM-D09"
-          ]
+          ],
+          "unity_integrated_key": "pudding"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pumpkin-basic.glb",
@@ -1515,7 +1523,8 @@
           "candidate_ids": [
             "SM-D01"
           ],
-          "preview_path": "Previews/Food_rice-ball.png"
+          "preview_path": "Previews/Food_rice-ball.png",
+          "unity_integrated_key": "rice-ball"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/rollingPin.glb",
@@ -1541,7 +1550,8 @@
           "candidate_ids": [
             "SM-D03"
           ],
-          "preview_path": "Previews/Food_sandwich.png"
+          "preview_path": "Previews/Food_sandwich.png",
+          "unity_integrated_key": "sandwich"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/sausage-half.glb",
@@ -1557,7 +1567,8 @@
           "triangles": 92,
           "candidate_ids": [
             "SM-F12"
-          ]
+          ],
+          "unity_integrated_key": "sausage"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/shaker-pepper.glb",
@@ -1595,8 +1606,8 @@
           "candidate_ids": [
             "SM-D13"
           ],
-          "unity_integrated_key": "soda-bottle",
-          "preview_path": "Previews/Food_soda-bottle.png"
+          "preview_path": "Previews/Food_soda-bottle.png",
+          "unity_integrated_key": "soda-bottle"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/soda-can-crushed.glb",
@@ -1613,8 +1624,8 @@
           "candidate_ids": [
             "SM-D13"
           ],
-          "unity_integrated_key": "soda-can",
-          "preview_path": "Previews/Food_soda-can.png"
+          "preview_path": "Previews/Food_soda-can.png",
+          "unity_integrated_key": "soda-can"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/soda-glass.glb",
@@ -1663,7 +1674,8 @@
           "triangles": 240,
           "candidate_ids": [
             "SM-D02"
-          ]
+          ],
+          "unity_integrated_key": "styrofoam-dinner"
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/styrofoam.glb",
@@ -2078,8 +2090,8 @@
           "candidate_ids": [
             "SM-C01"
           ],
-          "unity_integrated_key": "gondola",
-          "preview_path": "Previews/SM-C01_RetailGondola_3DAssets.png"
+          "preview_path": "Previews/SM-C01_RetailGondola_3DAssets.png",
+          "unity_integrated_key": "gondola"
         }
       ],
       "meshes": 4,
@@ -2116,8 +2128,8 @@
           "candidate_ids": [
             "SM-C03"
           ],
-          "unity_integrated_key": "endcap",
-          "preview_path": "Previews/SM-C03_GondolaEndcap_3DAssets.png"
+          "preview_path": "Previews/SM-C03_GondolaEndcap_3DAssets.png",
+          "unity_integrated_key": "endcap"
         }
       ],
       "meshes": 5,
@@ -2154,8 +2166,8 @@
           "candidate_ids": [
             "SM-B01"
           ],
-          "unity_integrated_key": "checkout",
-          "preview_path": "Previews/SM-B01_CashDesk1200_3DAssets.png"
+          "preview_path": "Previews/SM-B01_CashDesk1200_3DAssets.png",
+          "unity_integrated_key": "checkout"
         }
       ],
       "meshes": 7,
@@ -2192,8 +2204,8 @@
           "candidate_ids": [
             "SM-B01"
           ],
-          "unity_integrated_key": "back_fixture",
-          "preview_path": "Previews/SM-B01_CashDeskBack_3DAssets.png"
+          "preview_path": "Previews/SM-B01_CashDeskBack_3DAssets.png",
+          "unity_integrated_key": "back_fixture"
         }
       ],
       "meshes": 5,
@@ -2387,7 +2399,8 @@
           "meshes": 4,
           "materials": 4,
           "triangles": 1340,
-          "preview_path": "Previews/Expansion/Card terminal on stand.png"
+          "preview_path": "Previews/Expansion/Card terminal on stand.png",
+          "unity_integrated_key": "card_reader"
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-receipt-printer-5a85a1c8.glb",
@@ -2402,7 +2415,8 @@
           "meshes": 5,
           "materials": 4,
           "triangles": 448,
-          "preview_path": "Previews/Expansion/Thermal receipt printer.png"
+          "preview_path": "Previews/Expansion/Thermal receipt printer.png",
+          "unity_integrated_key": "receipt_printer"
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-bag-stand-c900c543.glb",
@@ -2822,7 +2836,8 @@
           "meshes": 4,
           "materials": 4,
           "triangles": 300,
-          "preview_path": "Previews/Expansion/Bakery Wall Rack.png"
+          "preview_path": "Previews/Expansion/Bakery Wall Rack.png",
+          "unity_integrated_key": "bakery_rack"
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-magazine-rack-4eabed8b.glb",
@@ -2837,7 +2852,8 @@
           "meshes": 2,
           "materials": 2,
           "triangles": 288,
-          "preview_path": "Previews/Expansion/Magazine Rack.png"
+          "preview_path": "Previews/Expansion/Magazine Rack.png",
+          "unity_integrated_key": "magazine_rack"
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-bagging-table-91e6098b.glb",
@@ -2865,7 +2881,8 @@
           "sha256": "dfacb0e245b9f7e51c5052b0ed2628d6f89b675dadbc14d3a4b27dccc1b25198",
           "meshes": 1,
           "materials": 1,
-          "triangles": 216
+          "triangles": 216,
+          "unity_integrated_key": "basket_stack"
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-hand-basket-67a40dca.glb",
@@ -2938,7 +2955,8 @@
           "meshes": 3,
           "materials": 3,
           "triangles": 96,
-          "preview_path": "Previews/Expansion/Open Chiller.png"
+          "preview_path": "Previews/Expansion/Open Chiller.png",
+          "unity_integrated_key": "chilled_food"
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-chest-freezer-1d2b5397.glb",
@@ -3025,7 +3043,8 @@
           "meshes": 2,
           "materials": 2,
           "triangles": 48,
-          "preview_path": "Previews/Expansion/Milk Carton.png"
+          "preview_path": "Previews/Expansion/Milk Carton.png",
+          "unity_integrated_key": "milk_carton"
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-juice-carton-cbb8fa73.glb",
@@ -3039,7 +3058,8 @@
           "sha256": "50e424635d6ec678dd89579d0547ceded793ddd43e6247fd71a871f7f96ce0d4",
           "meshes": 2,
           "materials": 2,
-          "triangles": 72
+          "triangles": 72,
+          "unity_integrated_key": "juice_carton"
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-water-bottle-f671099a.glb",
@@ -3123,7 +3143,8 @@
           "sha256": "f8ca9e431c0b28fb609085063b5a538ff5fd49488830125356faa66d38eb337e",
           "meshes": 2,
           "materials": 2,
-          "triangles": 24
+          "triangles": 24,
+          "unity_integrated_key": "cereal_box"
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-rice-sack-c1e7b54e.glb",
@@ -3264,7 +3285,8 @@
           "meshes": 2,
           "materials": 2,
           "triangles": 108,
-          "preview_path": "Previews/Expansion/Detergent Bottle.png"
+          "preview_path": "Previews/Expansion/Detergent Bottle.png",
+          "unity_integrated_key": "detergent"
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-spray-bottle-a0ba9f40.glb",
@@ -3307,7 +3329,8 @@
           "meshes": 2,
           "materials": 2,
           "triangles": 24,
-          "preview_path": "Previews/Expansion/Tissue Box.png"
+          "preview_path": "Previews/Expansion/Tissue Box.png",
+          "unity_integrated_key": "tissue_box"
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-toothpaste-tube-9654d744.glb",
@@ -3323,7 +3346,8 @@
           "materials": 2,
           "triangles": 108,
           "visual_review": "Bare tube; retail box/blister, print and additional variants missing.",
-          "preview_path": "Previews/Expansion/Toothpaste Tube.png"
+          "preview_path": "Previews/Expansion/Toothpaste Tube.png",
+          "unity_integrated_key": "toothpaste"
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-soap-bar-3d27f42e.glb",
@@ -3337,7 +3361,8 @@
           "sha256": "2a63f9a15ddfb9e96d2bcc2aab68f996ca4951e5aec74641465b83fc09a27c8a",
           "meshes": 2,
           "materials": 2,
-          "triangles": 24
+          "triangles": 24,
+          "unity_integrated_key": "soap_bar"
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-pet-food-sack-59723f4e.glb",
@@ -3459,7 +3484,8 @@
           "materials": 3,
           "triangles": 492,
           "visual_review": "Pot and broad label band present; sealed lid detail and printed retail label pending.",
-          "preview_path": "Previews/Expansion/Yoghurt Pot.png"
+          "preview_path": "Previews/Expansion/Yoghurt Pot.png",
+          "unity_integrated_key": "yoghurt"
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-yoghurt-multipack-e39690dd.glb",
@@ -3487,7 +3513,8 @@
           "sha256": "870289fb5919a850d8b24186bc2069954fde768255b085e2749680c9e614f045",
           "meshes": 3,
           "materials": 3,
-          "triangles": 464
+          "triangles": 464,
+          "unity_integrated_key": "butter"
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-cheese-block-ea58d24d.glb",
@@ -3515,7 +3542,8 @@
           "sha256": "0790ba1ece42539bef1b77ab779991a8b67b13fc3d424a2ddabec458a8ac1c41",
           "meshes": 3,
           "materials": 3,
-          "triangles": 2840
+          "triangles": 2840,
+          "unity_integrated_key": "egg_carton"
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-sliced-loaf-bag-0a2aa4f8.glb",
@@ -3530,7 +3558,8 @@
           "meshes": 6,
           "materials": 6,
           "triangles": 2426,
-          "preview_path": "Previews/Expansion/Bag of Sliced Bread.png"
+          "preview_path": "Previews/Expansion/Bag of Sliced Bread.png",
+          "unity_integrated_key": "sliced_bread"
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-croissant-298b416e.glb",
@@ -3600,7 +3629,8 @@
           "sha256": "212b3e6b3255ae8a1270000fc3f9e4bef11e2992c97e690fa2ad0ea7f5b70fbb",
           "meshes": 4,
           "materials": 4,
-          "triangles": 2416
+          "triangles": 2416,
+          "unity_integrated_key": "rice_bag"
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-flour-bag-a34f7213.glb",
@@ -3614,7 +3644,8 @@
           "sha256": "896032798253422da1217fa02f0c97bf36cf34f7d11c8067e2fc89b9186fc347",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1388
+          "triangles": 1388,
+          "unity_integrated_key": "flour_bag"
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-sugar-bag-449a0bce.glb",
@@ -3628,7 +3659,8 @@
           "sha256": "763b238ab67f4ab59983362612fa6582c77acabb2b2f8e85bdb6563857545fba",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1220
+          "triangles": 1220,
+          "unity_integrated_key": "sugar_bag"
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-crisps-bag-51f3211c.glb",
@@ -3644,7 +3676,8 @@
           "materials": 4,
           "triangles": 3504,
           "visual_review": "Volume, crimp edges and bands present; actual retail print/Japanese labels and variants missing.",
-          "preview_path": "Previews/Expansion/Bag of Crisps.png"
+          "preview_path": "Previews/Expansion/Bag of Crisps.png",
+          "unity_integrated_key": "snack_bag"
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-biscuit-pack-a71cc484.glb",
@@ -3690,7 +3723,8 @@
           "sha256": "5a0060a7b4149d6814cfac88bd852bdce6730f038a02a0b8a72910a706aee558",
           "meshes": 4,
           "materials": 4,
-          "triangles": 1736
+          "triangles": 1736,
+          "unity_integrated_key": "beans_tin"
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-soup-tin-59855b67.glb",
@@ -3816,7 +3850,8 @@
           "sha256": "641122182c89c09b55cff27d0431a759259b0135c9d4913618f20a0b71a2bebe",
           "meshes": 4,
           "materials": 4,
-          "triangles": 1652
+          "triangles": 1652,
+          "unity_integrated_key": "coffee_jar"
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-tea-box-6a86b1e9.glb",
@@ -3830,7 +3865,8 @@
           "sha256": "87382c94f8828402ad0f075900da2c083a3be3c78e36d75dd13b4afc246d3f5e",
           "meshes": 4,
           "materials": 4,
-          "triangles": 436
+          "triangles": 436,
+          "unity_integrated_key": "tea_box"
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-juice-carton-898310d8.glb",
@@ -3873,7 +3909,8 @@
           "meshes": 3,
           "materials": 3,
           "triangles": 2880,
-          "preview_path": "Previews/Expansion/Bottle of Water.png"
+          "preview_path": "Previews/Expansion/Bottle of Water.png",
+          "unity_integrated_key": "water_bottle"
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-water-multipack-48e9b381.glb",
@@ -4778,7 +4815,8 @@
           "sha256": "32c709122aea26069b460689aa4192594a1d43cc7b9f7d9e53e16a3391474d3c",
           "meshes": 4,
           "materials": 4,
-          "triangles": 944
+          "triangles": 944,
+          "unity_integrated_key": "extinguisher"
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-wall-clock-58c75f34.glb",
@@ -4792,7 +4830,8 @@
           "sha256": "bd453ec35f1ef0b260207a76043a55a39dd89d3f46fcb4258779292980f36b98",
           "meshes": 4,
           "materials": 4,
-          "triangles": 1448
+          "triangles": 1448,
+          "unity_integrated_key": "wall_clock"
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-umbrella-stand-80bd15ef.glb",
@@ -4806,7 +4845,8 @@
           "sha256": "b3225b99429a1a7ecdb8ff2434cd5ffb232a3a02c51a7597f65c31aa117ced43",
           "meshes": 2,
           "materials": 2,
-          "triangles": 2096
+          "triangles": 2096,
+          "unity_integrated_key": "umbrella_stand"
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-illuminated-exit-box-f52617fa.glb",
@@ -5024,7 +5064,8 @@
             "SM-F02"
           ],
           "visual_review": "Door and controls visible; commercial type, inner cavity and opposite-angle inspection pending.",
-          "preview_path": "Previews/Expansion/Microwave.png"
+          "preview_path": "Previews/Expansion/Microwave.png",
+          "unity_integrated_key": "microwave"
         }
       ]
     },
@@ -5053,7 +5094,8 @@
             "SM-E05"
           ],
           "visual_review": "Bottle with lid and panel; finished retail text/art and conditioner variants missing.",
-          "preview_path": "Previews/Expansion/Shampoo Bottle Variant A.png"
+          "preview_path": "Previews/Expansion/Shampoo Bottle Variant A.png",
+          "unity_integrated_key": "shampoo"
         }
       ]
     },
@@ -5080,7 +5122,8 @@
           "triangles": 436,
           "candidate_ids": [
             "SM-E18"
-          ]
+          ],
+          "unity_integrated_key": "umbrella"
         }
       ]
     },
@@ -5109,7 +5152,8 @@
             "SM-E24"
           ],
           "visual_review": "Single cover and page volume; Japanese cover assortment/cover rights review pending.",
-          "preview_path": "Previews/Expansion/Magazine.png"
+          "preview_path": "Previews/Expansion/Magazine.png",
+          "unity_integrated_key": "magazine"
         }
       ]
     },
@@ -5136,7 +5180,8 @@
           "triangles": 108,
           "candidate_ids": [
             "SM-G02"
-          ]
+          ],
+          "unity_integrated_key": "delivery_boxes"
         }
       ]
     },
@@ -5190,7 +5235,8 @@
           "triangles": 92,
           "candidate_ids": [
             "SM-G08"
-          ]
+          ],
+          "unity_integrated_key": "clipboard"
         }
       ]
     },
@@ -5356,7 +5402,8 @@
             "SM-B04",
             "SM-G07"
           ],
-          "rear_preview_path": "Previews/ExpansionRear/Handheld Scanner.png"
+          "rear_preview_path": "Previews/ExpansionRear/Handheld Scanner.png",
+          "unity_integrated_key": "scanner"
         }
       ]
     },
@@ -5386,7 +5433,8 @@
             "SM-F03"
           ],
           "visual_review": "Rear hinge/door visible; food-facing glass, trays and source scale still require inspection.",
-          "rear_preview_path": "Previews/ExpansionRear/Hot food cabinet.png"
+          "rear_preview_path": "Previews/ExpansionRear/Hot food cabinet.png",
+          "unity_integrated_key": "hot_food"
         }
       ]
     },
@@ -5454,7 +5502,7 @@
   "distinct_source_count": 38,
   "accepted_shopping_list_items": 0,
   "blender_preview_samples": 49,
-  "unity_integrated_models": 19,
+  "unity_integrated_models": 67,
   "intake_date_local": "2026-11-11",
   "verification_command": "python LocalReferenceAssets/SoraMartIncoming/verify_intake.py",
   "download_candidate_items": 116,
@@ -5486,5 +5534,6 @@
     }
   ],
   "existing_candidate_items": 5,
-  "missing_candidate_items": 30
+  "missing_candidate_items": 30,
+  "unity_evidence": "Docs/StreetExterior/Reports/2026-11-11-SORA-MART-KONBINI-UNITY.md"
 }

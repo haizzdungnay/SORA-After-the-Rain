@@ -1,6 +1,6 @@
 """Build SORA MART from licensed source models and original architecture.
 
-Run Blender 5.2: blender -b --factory-startup --python Tools/Blender/build_sora_mart.py
+Run Blender 5.2: blender -b --factory-startup --python-exit-code 1 --python Tools/Blender/build_sora_mart.py
 Coordinates in helpers are Unity world metres; glTFast mirrors glTF X on import.
 """
 import hashlib
@@ -100,6 +100,20 @@ model_manifest = json.loads((model_source / "manifest.json").read_text(encoding=
 models = {}
 placements = Counter()
 food_material = None
+constant_materials = {}
+
+
+def share_material(mat):
+    nodes = list(mat.node_tree.nodes) if mat.use_nodes else []
+    if len(nodes) != 2 or {node.type for node in nodes} != {"BSDF_PRINCIPLED", "OUTPUT_MATERIAL"}:
+        return mat
+    bsdf = next(node for node in nodes if node.type == "BSDF_PRINCIPLED")
+    settings = tuple((socket.name, tuple(socket.default_value) if hasattr(socket.default_value, "__iter__")
+                      else socket.default_value) for socket in bsdf.inputs)
+    key = (settings, mat.use_backface_culling, mat.surface_render_method)
+    return constant_materials.setdefault(key, mat)
+
+
 for record in model_manifest["textures"] + model_manifest["sources"]:
     path = (model_source / record["path"]).resolve()
     assert path.is_relative_to(model_source.resolve()), "Source path escapes model folder"
@@ -112,6 +126,9 @@ for record in model_manifest["sources"]:
     meshes = []
     for obj in objects:
         if obj.type == "MESH":
+            # Replace the cabinet's stock blocks with the separately downloaded food meshes.
+            if record["key"] == "hot_food" and all(mat.name.split(".")[0] == "stock" for mat in obj.data.materials):
+                continue
             mesh = obj.data.copy()
             mesh.transform(obj.matrix_world)
             # These reviewed Kenney exports share identical material settings and palette.
@@ -120,6 +137,9 @@ for record in model_manifest["sources"]:
                 if food_material is None:
                     food_material = mesh.materials[0]
                 mesh.materials[0] = food_material
+            else:
+                for index, mat in enumerate(mesh.materials):
+                    mesh.materials[index] = share_material(mat)
             meshes.append(mesh)
     assert meshes, "Source contains no meshes: " + record["key"]
     points = [vertex.co for mesh in meshes for vertex in mesh.vertices]
@@ -142,7 +162,8 @@ def place_model(key, at, width=None, size=None, yaw=0):
         obj = bpy.data.objects.new("IMPORTED | " + key + " | " + mesh.name, mesh)
         bpy.context.collection.objects.link(obj)
         obj.matrix_world = transform
-        obj["sora_source"] = key if key in {"gondola", "endcap", "checkout", "back_fixture", "pos", "stock_shelf"} else "goods"
+        record = next(source for source in model_manifest["sources"] if source["key"] == key)
+        obj["sora_source"] = key if record["path"].startswith("Fixtures/") else "goods"
     placements[key] += 1
     return scale
 
@@ -235,16 +256,19 @@ for x in [-5.6, -3.35, -1.1, 1.15, 3.4, 5.65]:
     box("MART | ceiling light housing", (x, 4.19, 0), (.35, .08, 8.6), frame)
     box("MART | ceiling LED diffuser", (x, 4.135, 0), (.26, .035, 8.4), light)
 
-# Uniform scale preserves source proportions; runtime colliders match the narrower racks.
-categories = ["PANTRY", "SAUCES", "DAILY DRINKS", "MILK & JUICE"]
-assortments = [("can", "can-small", "peanut-butter", "honey"),
-              ("bottle-ketchup", "bottle-musterd", "bottle-oil", "soy"),
-              ("soda-bottle", "soda-can", "carton", "carton-small"),
-              ("carton", "carton-small", "soda-bottle", "soda-can")]
+# R1/R6: low central racks; essentials near the front, food toward the rear.
+categories = ["DAILY CARE", "PANTRY", "BREAKFAST", "SNACKS", "SWEETS", "BAKERY"]
+assortments = [("detergent", "tissue_box", "toothpaste", "soap_bar", "shampoo"),
+              ("can", "can-small", "beans_tin", "rice_bag", "flour_bag", "sugar_bag",
+               "bottle-ketchup", "bottle-musterd", "bottle-oil", "soy"),
+              ("cereal_box", "tea_box", "coffee_jar", "peanut-butter", "honey"),
+              ("snack_bag", "candy-bar-wrapper", "chocolate-wrapper"),
+              ("chocolate-wrapper", "candy-bar-wrapper", "snack_bag"),
+              ("sliced_bread", "croissant", "muffin")]
 for row, x in enumerate([-2.6, 2.5]):
-    for column, z in enumerate([.8, 3.2]):
-        category = categories[row * 2 + column]
-        assortment = assortments[row * 2 + column]
+    for column, z in enumerate([-1.1, 1.0, 3.1]):
+        category = categories[row * 3 + column]
+        assortment = assortments[row * 3 + column]
         scale = place_model("gondola", (x, 0, z), width=1.45)
         for side in [-1, 1]:
             for level, deck in enumerate([.164, .446, .836, 1.226]):
@@ -253,12 +277,12 @@ for row, x in enumerate([-2.6, 2.5]):
                 for item in range(6):
                     xx = x - .55 + item * .22
                     for depth in [.12, .265]:
-                        place_model(assortment[(item + level) % len(assortment)],
+                        place_model(assortment[(item + level * 3) % len(assortment)],
                                     (xx, y + .004, z + side * depth), size=(.17, .24, .135), yaw=0 if side < 0 else 180)
                     box("MART | price ticket", (xx, y, z + side * .35), (.15, .035, .006), white)
         box("MART | category header", (x, 1.7, z), (1.45, .25, .14), teal, .018)
-        text(category, (x, 1.7, z - .077), .135)
-        text(category, (x, 1.7, z + .077), .135, facing="back")
+        text(category, (x, 1.7, z - .077), .12)
+        text(category, (x, 1.7, z + .077), .12, facing="back")
         end_x = x + (.95 if row == 0 else -.95)
         place_model("endcap", (end_x, 0, z), width=.66, yaw=90 if row == 0 else -90)
         for deck in [.466, .816, 1.166]:
@@ -271,6 +295,13 @@ for row, x in enumerate([-2.6, 2.5]):
 for x in [-5.5, -4.2]:
     place_model("checkout", (x, 0, -2.5), width=1.3)
 place_model("pos", (-4.85, .995, -2.54), width=.72, yaw=180)
+place_model("card_reader", (-4.03, 1.0, -2.76), size=(.24, .28, .25))
+place_model("receipt_printer", (-4.32, 1.0, -2.4), size=(.26, .24, .24), yaw=180)
+place_model("scanner", (-5.35, 1.0, -2.58), size=(.16, .12, .30))
+hot_scale = place_model("hot_food", (-6.25, 0, -3.6), size=(.86, 1.65, .63))
+for deck, key in [(1.026, "corn-dog"), (1.286, "sausage")]:
+    for x in [-6.45, -6.25, -6.05]:
+        place_model(key, (x, deck * hot_scale + .003, -3.72), size=(.14, .15, .18))
 text("CHECKOUT", (-4.85, 2.75, -2.5), .25, sign)
 box("MART | checkout hanging board", (-4.85, 2.75, -2.44), (2.3, .45, .08), teal)
 
@@ -290,18 +321,47 @@ for z in [-3.1, -1.6, -.1, 1.4]:
         y = .28 + level * .58
         box("MART | cooler shelf", (6.28, y, z), (.7, .035, 1.28), ivory)
         for item in range(7):
-            place_model(["soda-bottle", "soda-can", "carton", "carton-small"][(item + level) % 4],
+            place_model(["soda-bottle", "soda-can", "carton", "carton-small", "water_bottle",
+                         "juice_carton", "milk_carton"][(item + level) % 7],
                         (6.12, y + .018, z - .52 + item * .17), size=(.14, .40, .14), yaw=-90)
     box("MART | cooler header", (5.88, 2.79, z), (.04, .20, 1.28), teal)
     text("COLD DRINKS", (5.84, 2.79, z), .11, sign, facing="left")
 
-# Coffee service against the left wall, away from the checkout/restock routes.
+# R2: shallow chilled-food bays along the rear wall, facing the sales floor.
+for x in [-1.5, 1.25]:
+    scale = place_model("chilled_food", (x, 0, 4.87), width=1.35)
+    for level, deck in enumerate([.20, .47, .97, 1.47]):
+        y = (deck - models["chilled_food"][1].z) * scale
+        for item in range(5):
+            key = ("rice-ball", "sandwich", "styrofoam-dinner", "yoghurt", "pudding",
+                   "butter", "egg_carton", "maki-salmon")[(item + level * 2) % 8]
+            place_model(key, (x - .48 + item * .24, y + .006, 4.57), size=(.20, .19, .24))
+    text("FRESH FOOD", (x, 2.06, 4.40), .14, sign)
+
+# R6: coffee and warming beside the staffed counter; bakery on the same side.
 box("MART | coffee counter", (-6.25, .55, 1.6), (1.05, 1.1, 2.6), oak, .025)
 box("MART | coffee counter top", (-6.25, 1.13, 1.6), (1.12, .08, 2.7), ivory, .02)
-box("MART | coffee machine", (-6.3, 1.48, 1.15), (.64, .64, .6), frame, .04)
-box("MART | coffee display", (-5.965, 1.59, 1.15), (.012, .19, .25), teal)
-for z in [2.0, 2.2, 2.4]:
+place_model("coffee_brewer", (-6.3, 1.18, .85), size=(.65, .75, .65), yaw=90)
+place_model("microwave", (-6.25, 1.18, 1.80), size=(.64, .42, .66), yaw=90)
+for z in [2.35, 2.55, 2.75]:
     place_model("cup-coffee", (-6.2, 1.18, z), size=(.16, .16, .16))
+bakery_scale = place_model("bakery_rack", (-6.43, 0, 3.94), width=1.20, yaw=90)
+for deck in [.25, .70, 1.15, 1.60]:
+    y = (deck - models["bakery_rack"][1].z) * bakery_scale + .005
+    for item in range(4):
+        place_model(("sliced_bread", "croissant", "muffin")[item % 3],
+                    (-6.34, y, 3.49 + item * .27), size=(.20, .22, .20), yaw=90)
+
+# R6: magazines, basket stack and umbrellas sit by the window, clear of the doorway.
+magazine_scale = place_model("magazine_rack", (3.35, 0, -4.52), width=.92, yaw=180)
+for deck in [.47, .77, 1.07, 1.37]:
+    y = (deck - models["magazine_rack"][1].z) * magazine_scale + .005
+    for x in [3.12, 3.55]:
+        place_model("magazine", (x, y, -4.40), size=(.30, .20, .24), yaw=180)
+place_model("basket_stack", (1.90, 0, -4.6), width=.58)
+place_model("umbrella_stand", (-1.90, 0, -4.6), width=.38)
+for x in [-1.98, -1.88]:
+    place_model("umbrella", (x, .20, -4.6), size=(.08, .78, .08))
 reuse("087-beer-crate-stack", (5, 0, 3.15), 1.05)
 place_model("stock_shelf", (5, 0, 4.3), width=1.435)
 place_model("back_fixture", (-4.85, 0, 5.05), width=1.42)
@@ -311,7 +371,10 @@ for y in [.59, 1.135, 1.415]:
 box("MART | staff partition", (4.85, 1.9, 4.85), (3.6, 3.8, .25), ivory)
 text("STAFF / STOCK", (4.85, 2.6, 4.70), .20, teal)
 box("MART | stock terminal", (6.3, 1.3, 1.6), (.24, .62, .8), frame)
-box("MART | shift clock", (-6.7, 1.6, 3.8), (.15, .7, .7), teal)
+place_model("wall_clock", (-6.73, 1.40, 3.8), width=.42, yaw=90)
+place_model("extinguisher", (-6.63, 0, -.50), width=.34, yaw=90)
+place_model("delivery_boxes", (5.0, .70, 4.23), size=(.85, .50, .46))
+place_model("clipboard", (6.15, 1.62, 1.55), size=(.20, .12, .30))
 
 # Existing imported street furniture complements the store rather than duplicating the city.
 reuse("095-drinks-vending-machine", (-6.15, 0, -6.05), 1.02)
@@ -327,17 +390,19 @@ by_material = {}
 for obj in list(bpy.context.scene.objects):
     if obj.type == "MESH" and len(obj.data.materials) == 1:
         mat = obj.data.materials[0]
-        if mat not in [glass, cooler_glass]:
+        if mat.diffuse_color[3] >= .999:
             by_material.setdefault((obj.get("sora_source", ""), mat), []).append(obj)
 for (group, mat), objects in by_material.items():
     bpy.ops.object.select_all(action="DESELECT")
     for obj in objects:
         obj.select_set(True)
     bpy.context.view_layer.objects.active = objects[0]
-    bpy.ops.object.join()
+    if len(objects) > 1:
+        bpy.ops.object.join()
     objects[0].name = ("IMPORTED | " + group + " | " if group else "SORA MART | ") + mat.name
 
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+assert set(placements) == set(models), "Unplaced sources: " + str(set(models) - set(placements))
 bpy.ops.export_scene.gltf(filepath=str(OUTPUT), export_format="GLB", export_yup=True,
                           export_cameras=False, export_lights=False, export_extras=True)
 manifest = {
@@ -350,6 +415,7 @@ manifest = {
     "model_source_manifest": "ArtSource/ThirdParty/SoraMart/manifest.json",
     "model_source_manifest_sha256": hashlib.sha256((model_source / "manifest.json").read_bytes()).hexdigest(),
     "model_placements": dict(placements),
+    "reference_layout": "Docs/StreetExterior/SORA_MART_KONBINI_REFERENCE.md (R1-R6; adapted to existing gameplay anchors)",
     "coordinates": "Unity metres after glTFast import; identity transform; entrance (0,0,-5.25)",
     "interaction_anchors": {"POS": [-4.85, 1.3, -2.54], "restock": [-2.6, 1.65, -.32], "delivery": [5, .45, 3.15]},
     "limits": "Decorative aggregate stock; doors parked open; source materials retained; Japanese packaging/labels and final art acceptance pending",
