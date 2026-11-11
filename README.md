@@ -40,7 +40,7 @@ Steps 1–3 have limited prototype code; the complete shift loop, quests and bra
 | Store operations | Draft/confirm POS, one delivery, shelf transfers, stock count and shift summary | EditMode checks pass; scripted runtime POS; full shift walkthrough pending |
 | Social state | Three adult placeholder customers; separate familiarity/trust per twin | EditMode checks pass; narrative acceptance pending |
 | Save / load | Schema-1 JSON, store state, twin positions and relationship arrays | Prototype; atomic writes/migration pending |
-| Environment | Imported V03/V05 city; matching optional V06; authored CC0 SORA MART and legacy fallback | [Store acceptance and genuine Unity captures](Docs/StreetExterior/Reports/2026-11-10-SORA-MART.md); final owner art/performance QA pending |
+| Environment | Imported V03/V05 city; matching optional V06; licensed SORA MART fixtures/products and legacy fallback | [Model integration and genuine Unity captures](Docs/StreetExterior/Reports/2026-11-11-SORA-MART-MODELS.md); final owner art/performance QA pending |
 | Engineering workflow | Asset GUIDs, three assemblies, static CI, manual Unity test/build scripts and agent guidance | Static checks verified |
 
 The inactive twin does not yet perform actual store tasks. Customer queues, a quest graph, production anime models, animation and a complete narrative are future work.

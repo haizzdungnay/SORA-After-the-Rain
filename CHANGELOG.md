@@ -4,7 +4,15 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 > **Release and evidence policy:** `VS01`, `V02`, `V03`, `V04` and `V05` are **internal environment-art iteration names**, not published playable releases or new SemVer tags. A 3D GLB, a Unity Editor staging helper and a passing static CI job do **not** by themselves prove Unity Play Mode, collision, performance or Windows build acceptance. Assembled private AFX-derived models remain local; earlier original-source publication is recorded in the source-intake entry. All newly authored diagrams below are explicitly **schematics, not in-game screenshots**.
 
-## [Unreleased] — development history through 2026-11-10
+## [Unreleased] — development history through 2026-11-11
+
+### 2026-11-11 — SORA MART licensed retail models
+
+- Replace the generated counter, POS, four gondolas and repeated product blocks with selected creator-authored models. Add matching endcaps, a rear fixture and a stockroom shelf; retain the store envelope, working glass-door cabinets and original interaction anchors.
+- Keep source GLBs, SHA-256 records, CC0/CC BY licenses and author credits under `ArtSource/ThirdParty/SoraMart/`; ship attribution in Windows builds through `Assets/StreamingAssets/SoraMart-THIRD-PARTY-NOTICES.txt`. No new package.
+- Update shelf/counter colliders to the actual model dimensions and preserve POS cancellation, shared stock, twin switching and saves. Products remain decorative; Japanese packaging and final art/performance review remain pending.
+- Validation and genuine Unity captures: [model integration report](Docs/StreetExterior/Reports/2026-11-11-SORA-MART-MODELS.md).
+- **Actual checks:** 22/22 EditMode; public and current private-city scripted Play Mode; Windows x64 build and standalone startup pass. Correct the old test's road-sign expectation to 64 (16 intersections x four approaches); street placement code is unchanged.
 
 ### 2026-11-10 — SORA MART exterior and existing interior
 

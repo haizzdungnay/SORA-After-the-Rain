@@ -1,0 +1,163 @@
+{
+  "sources": [
+    {
+      "key": "gondola",
+      "path": "Fixtures/gondola.glb",
+      "sha256": "abba57a2ce341a8f143a65e399ab0d15b1174bc33d3415521ccf83b24b8e5c91",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/retail-store-fixtures-and-mall-mid-floor-gondola-630432ab",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "endcap",
+      "path": "Fixtures/endcap.glb",
+      "sha256": "c32351c48b9b2e2dc242f0327201650a024e1b7ec8d2d9cf13894828397030dd",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/retail-store-fixtures-and-mall-gondola-endcap-unit-c13129ed",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "checkout",
+      "path": "Fixtures/checkout.glb",
+      "sha256": "400aaf8bbcaee49a56a2cc15212c11e5eed6b683ee2a2599c3283ff3b92587d1",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/retail-store-fixtures-and-mall-cash-desk-module-1200-daec0656",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "back_fixture",
+      "path": "Fixtures/back_fixture.glb",
+      "sha256": "ef3d36266fa0a101e6e3b1dff2462acff7f518a0df352f1692634c33a8af17c7",
+      "creator": "3D Assets",
+      "source_url": "https://3dassets.dev/assets/retail-store-fixtures-and-mall-cash-desk-back-fixture-b9d666d8",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "pos",
+      "path": "Fixtures/pos.glb",
+      "sha256": "3e1f2e42dca646403d6873ddcb7a6a132767f9502400cfcc49ebacba921bf6d5",
+      "creator": "J-Toastie",
+      "source_url": "https://poly.pizza/m/ju1CrAV1UY",
+      "license": "CC-BY 3.0"
+    },
+    {
+      "key": "stock_shelf",
+      "path": "Fixtures/stock_shelf.glb",
+      "sha256": "5ab0c13cc921f63c16f07c63ad4d29b5fde0e8e7f150114d406728b12da9c667",
+      "creator": "Jarlan Perez",
+      "source_url": "https://poly.pizza/m/6gKdASmfB9U",
+      "license": "CC-BY 3.0"
+    },
+    {
+      "key": "can",
+      "path": "Food/can.glb",
+      "sha256": "f3ee6aad23adb6251adbc988652dff430abc781506759a53a8cc7aca6a87db48",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "can-small",
+      "path": "Food/can-small.glb",
+      "sha256": "c11f0d9b1f4a40b9178009aefd62be64c6de1d9afd06619a1286967151629f24",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "peanut-butter",
+      "path": "Food/peanut-butter.glb",
+      "sha256": "3d1e37e7179dbd7d017ebd331270d9453b7882013fb543999f3034003c2f41d9",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "soda-bottle",
+      "path": "Food/soda-bottle.glb",
+      "sha256": "879a49cec70fed49244256c9250e72fdf27dcdc5d2dbb093c9ac9c9a08170f4d",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "soda-can",
+      "path": "Food/soda-can.glb",
+      "sha256": "4ae68cbd532e69353ae1392e95bb57afa7cb2acc98f3bb46dc5a017c765c89fe",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "carton",
+      "path": "Food/carton.glb",
+      "sha256": "b63a5081c6edbda7ba8172e6a776f222e781f886a011a887789b2fde42095d04",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "bottle-ketchup",
+      "path": "Food/bottle-ketchup.glb",
+      "sha256": "26b0cd52d36be6c432ba7862cc817f39e5ce74482013a3ac3ba6a6d4730489be",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "bottle-musterd",
+      "path": "Food/bottle-musterd.glb",
+      "sha256": "02ce8a5c40b7f08ba330f803cae395f796f38fea550962fc349e9a29227374d0",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "bottle-oil",
+      "path": "Food/bottle-oil.glb",
+      "sha256": "a87a7a6146be0996b17aca3ccd011cfe0d045593db03f89829f88b6228b49d57",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "soy",
+      "path": "Food/soy.glb",
+      "sha256": "00539c5b52b0d21888b3164bfcd6a3c60d3384fb1e3c0668708cc8334b115b98",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "honey",
+      "path": "Food/honey.glb",
+      "sha256": "7a28a642f074e22c0a570789655fda0d7bd33727159ab23831ac7d22bf258a94",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "carton-small",
+      "path": "Food/carton-small.glb",
+      "sha256": "ade4d3dd7a31147a33bacd921d1b5380d78a5b2049faaf8f926099e1dc729fd8",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    },
+    {
+      "key": "cup-coffee",
+      "path": "Food/cup-coffee.glb",
+      "sha256": "d74652ad1821bc5dedf1b2e1deb4e0ca0c498aa73880e7df5b91e5e729af6f81",
+      "creator": "Kenney",
+      "source_url": "https://kenney.nl/assets/food-kit",
+      "license": "CC0 1.0"
+    }
+  ],
+  "textures": [
+    {
+      "path": "Food/Textures/colormap.png",
+      "sha256": "75baf74d9483a0fc56ac21ceba346fbe16fc24a2a1bf0524c53e6bbe802e1153"
+    }
+  ],
+  "limits": "Imported art candidates; merchandise remains decorative, with incomplete Japanese retail labels."
+}

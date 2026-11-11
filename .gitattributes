@@ -38,3 +38,6 @@ Assets/Resources/SoraCity/Models/*.glb filter=lfs diff=lfs merge=lfs -text
 Assets/Resources/SoraStore/*.glb filter=lfs diff=lfs merge=lfs -text
 Assets/Resources/SoraCity/Props/*.glb filter=lfs diff=lfs merge=lfs -text
 Assets/Resources/SoraCity/Props/Suburban/*.glb filter=lfs diff=lfs merge=lfs -text
+ArtSource/ThirdParty/SoraMart/**/*.glb filter=lfs diff=lfs merge=lfs -text
+ArtSource/ThirdParty/SoraMart/**/*.png filter=lfs diff=lfs merge=lfs -text
+ArtSource/ThirdParty/SoraMart/manifest.json text eol=lf

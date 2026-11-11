@@ -6,6 +6,7 @@ namespace Sora.AfterTheRain.Demo
     public static class SoraMartVisuals
     {
         public const string ResourcePath = "SoraStore/SoraMart";
+        public const string RootName = "SORA MART - licensed model store";
         public static readonly Bounds Interior = new Bounds(new Vector3(0, 2, .1f), new Vector3(13.6f, 3.6f, 10.6f));
 
         public static bool TryBuild(Transform world)
@@ -17,14 +18,30 @@ namespace Sora.AfterTheRain.Demo
                 return false;
             }
 
-            // Keep existing interaction components, colliders and lights, replacing only art.
+            // Keep interaction markers and lights; match fixture colliders to the new art.
             var previous = world.GetComponentsInChildren<Renderer>();
             var store = Object.Instantiate(asset, world, false);
-            store.name = "SORA MART - authored CC0 store";
+            store.name = RootName;
             store.transform.localPosition = Vector3.zero;
             store.transform.localRotation = Quaternion.identity;
             store.transform.localScale = Vector3.one;
-            foreach (var renderer in previous) renderer.enabled = false;
+            foreach (var renderer in previous)
+            {
+                renderer.enabled = false;
+                if (renderer.name == "Grocery shelf base" || renderer.name == "POS checkout counter")
+                    renderer.GetComponent<Collider>().enabled = false;
+            }
+
+            foreach (float x in new[] { -2.6f, 2.5f })
+                foreach (float z in new[] { .8f, 3.2f })
+                {
+                    Solid(store.transform, "Imported gondola", new Vector3(x, .805f, z), new Vector3(1.45f, 1.61f, .71f));
+                    float endX = x + (x < 0 ? .95f : -.95f);
+                    Solid(store.transform, "Imported endcap", new Vector3(endX, .91f, z), new Vector3(.43f, 1.82f, .66f));
+                }
+            Solid(store.transform, "Imported checkout", new Vector3(-4.85f, .68f, -2.5f), new Vector3(2.6f, 1.36f, .8f));
+            Solid(store.transform, "Imported back fixture", new Vector3(-4.85f, 1.175f, 5.05f), new Vector3(1.42f, 2.35f, .44f));
+            Solid(store.transform, "Imported stock shelf", new Vector3(5, .98f, 4.3f), new Vector3(1.435f, 1.96f, .56f));
 
             Solid(store.transform, "Store roof shelter", new Vector3(0, 4.4f, .1f), new Vector3(14.45f, .2f, 11.1f));
             Solid(store.transform, "Store canopy shelter", new Vector3(0, 3.83f, -5.95f), new Vector3(14.5f, .2f, 1.95f));

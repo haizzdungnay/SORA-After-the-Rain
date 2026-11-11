@@ -1,17 +1,37 @@
 {
   "asset": "Assets/Resources/SoraStore/SoraMart.glb",
-  "sha256": "53820118ddad970aaee5f40df8dc2c60758568ad4372d441b05caaf912a66ee5",
+  "sha256": "88aa4e2469f9e31e8c1d284f366a20e6d6af42c8a5b2d814810b11cc77326a3e",
   "source": "ArtSource/ThirdParty/CC0/IzakayaAlley/izakaya_starter_scene.glb",
   "source_sha256": "693cebbe5a8cf9e30710c707adfb1daf76140b28a14f289cdca9ebd879e0748f",
   "source_groups": [
     "095-drinks-vending-machine",
     "105-potted-plant-in-can",
     "117-air-conditioning-outdoor-unit",
-    "084-sake-bottle-set",
     "087-beer-crate-stack",
     "100-alley-waste-bins"
   ],
-  "rights": "Existing CC0 props plus original SORA architecture, fixtures and package art; no AFX geometry",
+  "rights": "CC0 and CC-BY 3.0 source models plus original SORA architecture; no AFX geometry; retain ArtSource/ThirdParty/SoraMart/ATTRIBUTION.md",
+  "model_placements": {
+    "gondola": 4,
+    "can": 33,
+    "can-small": 27,
+    "peanut-butter": 30,
+    "honey": 30,
+    "endcap": 4,
+    "bottle-ketchup": 27,
+    "bottle-musterd": 27,
+    "bottle-oil": 27,
+    "soy": 24,
+    "soda-bottle": 82,
+    "soda-can": 79,
+    "carton": 82,
+    "carton-small": 79,
+    "checkout": 2,
+    "pos": 1,
+    "cup-coffee": 3,
+    "stock_shelf": 1,
+    "back_fixture": 1
+  },
   "coordinates": "Unity metres after glTFast import; identity transform; entrance (0,0,-5.25)",
   "interaction_anchors": {
     "POS": [
@@ -30,5 +50,7 @@
       3.15
     ]
   },
-  "limits": "Decorative product displays; doors parked open; source props retain their original stylized materials"
+  "limits": "Decorative aggregate stock; doors parked open; source materials retained; Japanese packaging/labels and final art acceptance pending",
+  "model_source_manifest": "ArtSource/ThirdParty/SoraMart/manifest.json",
+  "model_source_manifest_sha256": "a60f8badc01cc9cb1059f9acd311ed05b0a0197711dd03087d284d0dfceb2e90"
 }
