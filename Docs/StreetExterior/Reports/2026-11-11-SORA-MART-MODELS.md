@@ -71,6 +71,12 @@ not gain a public license merely by combining it with CC0/CC BY sources.
   logs the imported store and public V03/V05/V06 city without the checked runtime
   exceptions. Attribution text is present in the built player's StreamingAssets.
   The test-owned player was stopped after startup verification.
+- **Current-checkout Windows x64 build and startup also PASS:** the owner's local
+  executable was rebuilt with the existing animation work and private city.
+  `Logs/mart-models-current-player.log` confirms the store and owner ZIP pair load
+  with `private AFX=True`, without the checked runtime exceptions. Build credits
+  are present, and the original scene bytes/GUID are restored after generation.
+  This verifies startup, not full character-animation acceptance or a manual shift.
 - **Offline validator PASS:** `python Tools/validate_project.py`; no new packages,
   no licensed CI dispatch. Existing store/scene GUIDs and original scene bytes are
   preserved. Binaries use Git LFS.
@@ -78,8 +84,9 @@ not gain a public license merely by combining it with CC0/CC BY sources.
 Evidence in the feature worktree: `TestResults/editmode.xml`,
 `Logs/mart-models-playmode.log`, `Logs/windows-build.log`,
 `Logs/mart-models-player.log`, `Artifacts/SoraMart/public-models-report.json`.
-The main checkout also has `Logs/mart-models-current-playmode.log` and
-`Artifacts/SoraMart/report.json` for the private-city check.
+The main checkout also has `Logs/mart-models-current-playmode.log`,
+`Logs/mart-models-current-player.log`, `Logs/windows-build.log` and
+`Artifacts/SoraMart/report.json` for the current private-city checks.
 
 These are genuine Unity Play Mode camera renders at staged review angles, not
 Blender previews, generated mockups or manual keyboard walkthrough captures.
