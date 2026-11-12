@@ -1,0 +1,330 @@
+{
+  "asset": {
+    "extras": {
+      "author": "Melon Polygons",
+      "license": "CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "title": "Food Collection - Game Ready",
+      "SORA_resource_source": {
+        "source": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+        "author": "Melon Polygons",
+        "license": "CC-BY 4.0",
+        "license_url": "http://creativecommons.org/licenses/by/4.0/",
+        "requirements": "Author must be credited. Commercial use is allowed.",
+        "description": "Low-poly Food Collection - Game Ready Asset <br>\n\nTriangles: 31,796 <br>\nMeterials: 2 <br>\nTextures: 8 (2048x2048) <br>",
+        "original_file": "food_collection_-_game_ready.glb",
+        "original_sha256": "281e6f6b3188348c50ca8d9907fb8612bee1517a746529ab73e3561bd133b54f",
+        "inspected": "2026-11-11",
+        "changes": "Selected source groups, bottom-center pivots; shared original geometry/UV/textures. PSX OBJ converted in Blender; missing image paths repaired."
+      }
+    },
+    "generator": "Sketchfab-0.6.0",
+    "version": "2.0"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        5
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "79921df8810045c68adc59ba8ade9047.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        0.9866506736637906,
+        6.8866623573472595e-09,
+        -0.1628506338627579,
+        0.0,
+        -0.16285063386275794,
+        7.436122429789408e-08,
+        -0.9866506736637878,
+        0.0,
+        5.315043086207005e-09,
+        0.9999999999999971,
+        7.449005823279009e-08,
+        0.0,
+        2.9824204444885254,
+        7.42501163482666,
+        -5.2010722160339355,
+        1.0
+      ],
+      "name": "SM_Beer_Can_01"
+    },
+    {
+      "mesh": 0,
+      "name": "SM_Beer_Can_01_Asset_0"
+    },
+    {
+      "name": "FoodCollection_0007_SM_Beer_Can_01",
+      "children": [
+        0
+      ],
+      "translation": [
+        -0.029738394543528557,
+        -7.882513841650507e-08,
+        0.0528097718488425
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "SM_Beer_Can_01_Asset_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 2,
+      "byteOffset": 15048,
+      "componentType": 5126,
+      "count": 637,
+      "max": [
+        3.932312488555908,
+        4.008004188537598,
+        7.983191013336182
+      ],
+      "min": [
+        -3.923219680786133,
+        -3.8475325107574463,
+        -7.425003528594971
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 22692,
+      "componentType": 5126,
+      "count": 637,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 9968,
+      "componentType": 5126,
+      "count": 637,
+      "max": [
+        1.0,
+        1.0,
+        0.8984950184822083,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -0.9791759848594666,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 5016,
+      "componentType": 5126,
+      "count": 637,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.2802734375,
+        0.37841796875
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 12024,
+      "componentType": 5125,
+      "count": 2514,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 381552,
+      "name": "floatBufferViews",
+      "target": 34963,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteLength": 358128,
+      "byteOffset": 381552,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 543840,
+      "byteOffset": 739680,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 362496,
+      "byteOffset": 1283520,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "../geometry.bin",
+      "byteLength": 1646016
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "specularFactor": 0.6
+        }
+      },
+      "name": "Asset",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ],
+  "images": [
+    {
+      "mimeType": "image/png",
+      "uri": "../Textures/d0187acf3dd495b8e78e86c673f4bd5c4c081ee14c4bcfabe3745d0556571b02.png"
+    },
+    {
+      "mimeType": "image/png",
+      "uri": "../Textures/b6b2ded82cb8bdcaa57a7c87b6c64775b587bd99fc44dd076adb07ef49c1cd47.png"
+    },
+    {
+      "mimeType": "image/png",
+      "uri": "../Textures/b7ab30404b476326f62d30f0cd1f3db6800d3cd544d5aeeedcfaf27dd50660d1.png"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_specular"
+  ]
+}

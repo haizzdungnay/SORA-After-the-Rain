@@ -62,8 +62,8 @@ namespace Sora.AfterTheRain.Demo.Editor
                     CheckStore();
                     Camera.main.GetComponent<SoraThirdPersonCamera>().enabled = false;
                     Camera.main.fieldOfView = 65;
-                    Camera.main.transform.position = new Vector3(11, 3.3f, -18);
-                    Camera.main.transform.LookAt(new Vector3(0, 2.2f, -2));
+                    Camera.main.transform.position = new Vector3(.6f, 2.25f, -10.0f);
+                    Camera.main.transform.LookAt(new Vector3(0, 2.1f, -5.0f));
                     began = EditorApplication.timeSinceStartup;
                     SessionState.SetInt(Key, 3);
                 }
@@ -124,6 +124,15 @@ namespace Sora.AfterTheRain.Demo.Editor
                 else if (step == 9 && EditorApplication.timeSinceStartup - began > 2)
                 {
                     Capture("coffee-bakery");
+                    Camera.main.fieldOfView = 60;
+                    Camera.main.transform.position = new Vector3(2.5f, 1.65f, -3.05f);
+                    Camera.main.transform.LookAt(new Vector3(2.5f, .9f, -1.1f));
+                    began = EditorApplication.timeSinceStartup;
+                    SessionState.SetInt(Key, 10);
+                }
+                else if (step == 10 && EditorApplication.timeSinceStartup - began > 2)
+                {
+                    Capture("packaged-food");
                     SessionState.EraseInt(Key);
                     EditorApplication.Exit(0);
                 }
@@ -164,7 +173,7 @@ namespace Sora.AfterTheRain.Demo.Editor
             var materials = store.GetComponentsInChildren<MeshRenderer>().SelectMany(r => r.sharedMaterials).Distinct().ToArray();
             foreach (string source in new[] { "gondola", "endcap", "checkout", "back_fixture", "pos", "stock_shelf", "goods",
                 "chilled_food", "bakery_rack", "magazine_rack", "basket_stack", "hot_food", "microwave",
-                "coffee_brewer", "card_reader", "receipt_printer", "scanner" })
+                    "coffee_brewer", "card_reader", "receipt_printer", "scanner", "register_console", "cash_tray", "packaged_goods" })
                 Require(store.GetComponentsInChildren<MeshRenderer>().Any(r => r.name.StartsWith("IMPORTED | " + source + " | ")),
                     "Imported model source missing: " + source);
             Require(materials.All(m => m != null && m.shader.isSupported && m.shader.name != "Hidden/InternalErrorShader"), "Bad store material");

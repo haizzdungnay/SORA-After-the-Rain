@@ -1,0 +1,172 @@
+{
+  "animationCount": 0,
+  "categories": [
+    {
+      "uid": "b3631aefd82b4eeba37aa5fc0b73b05a",
+      "name": "Food & Drink",
+      "slug": "food-drink",
+      "uri": "https://api.sketchfab.com/v3/categories/b3631aefd82b4eeba37aa5fc0b73b05a",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/dac08ea5b8779b2cef7a4c81327df721-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/b3631aefd82b4eeba37aa5fc0b73b05a/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/b3631aefd82b4eeba37aa5fc0b73b05a/800x450.png"
+        }
+      ]
+    }
+  ],
+  "commentCount": 2,
+  "createdAt": "2026-08-16T10:12:14.965691",
+  "embedUrl": "https://sketchfab.com/models/e2e3e0de18e1415aa30dcdd8b78efd5e/embed",
+  "faceCount": 3796,
+  "isAgeRestricted": false,
+  "license": {
+    "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+    "label": "CC Attribution",
+    "fullName": "Creative Commons Attribution",
+    "requirements": "Author must be credited. Commercial use is allowed.",
+    "url": "http://creativecommons.org/licenses/by/4.0/",
+    "slug": "by"
+  },
+  "likeCount": 43,
+  "name": "(PSX/PS1) Food props | LOWPOLY",
+  "publishedAt": "2026-08-16T10:17:23.337358",
+  "soundCount": 0,
+  "staffpickedAt": null,
+  "tags": [
+    {
+      "name": "food",
+      "slug": "food",
+      "uri": "https://api.sketchfab.com/v3/tags/food"
+    },
+    {
+      "name": "ps2",
+      "slug": "ps2",
+      "uri": "https://api.sketchfab.com/v3/tags/ps2"
+    },
+    {
+      "name": "ps1",
+      "slug": "ps1",
+      "uri": "https://api.sketchfab.com/v3/tags/ps1"
+    },
+    {
+      "name": "lowpolymodel",
+      "slug": "lowpolymodel",
+      "uri": "https://api.sketchfab.com/v3/tags/lowpolymodel"
+    },
+    {
+      "name": "lowpoly",
+      "slug": "lowpoly",
+      "uri": "https://api.sketchfab.com/v3/tags/lowpoly"
+    },
+    {
+      "name": "ps2-graphics",
+      "slug": "ps2-graphics",
+      "uri": "https://api.sketchfab.com/v3/tags/ps2-graphics"
+    }
+  ],
+  "thumbnails": {
+    "images": [
+      {
+        "uid": "0c9b45c951724e3ca2ed93aaacb11ab8",
+        "width": 1920,
+        "height": 1080,
+        "size": 185596,
+        "url": "https://media.sketchfab.com/models/e2e3e0de18e1415aa30dcdd8b78efd5e/thumbnails/f98cb14a94044eb6b1aff27b19f5eeba/d5b27f342f6345668de27f76abd05a74.jpeg"
+      },
+      {
+        "uid": "2f9606bc267646489f19c6df8630026b",
+        "width": 1024,
+        "height": 576,
+        "size": 69589,
+        "url": "https://media.sketchfab.com/models/e2e3e0de18e1415aa30dcdd8b78efd5e/thumbnails/f98cb14a94044eb6b1aff27b19f5eeba/c108db9aa2054acebfe4d38474bd51d3.jpeg"
+      },
+      {
+        "uid": "d825b4c574094336a121be75a827d2ed",
+        "width": 720,
+        "height": 405,
+        "size": 41866,
+        "url": "https://media.sketchfab.com/models/e2e3e0de18e1415aa30dcdd8b78efd5e/thumbnails/f98cb14a94044eb6b1aff27b19f5eeba/b1db9e2f5733450ea449f362a340e4b4.jpeg"
+      },
+      {
+        "uid": "0135ba5bc5464f148cf4c281069cf33e",
+        "width": 256,
+        "height": 144,
+        "size": 8712,
+        "url": "https://media.sketchfab.com/models/e2e3e0de18e1415aa30dcdd8b78efd5e/thumbnails/f98cb14a94044eb6b1aff27b19f5eeba/2b38044f6522499e933b71e7034f56bf.jpeg"
+      },
+      {
+        "uid": "278f7d2850144432a118cd7d6dc944e6",
+        "width": 64,
+        "height": 36,
+        "size": 1507,
+        "url": "https://media.sketchfab.com/models/e2e3e0de18e1415aa30dcdd8b78efd5e/thumbnails/f98cb14a94044eb6b1aff27b19f5eeba/1f2359ef82cb401e951c2ee289de72cb.jpeg"
+      }
+    ]
+  },
+  "uid": "e2e3e0de18e1415aa30dcdd8b78efd5e",
+  "uri": "https://api.sketchfab.com/v3/models/e2e3e0de18e1415aa30dcdd8b78efd5e",
+  "user": {
+    "uid": "1ac1aba2936e4cc391ce095596ac6491",
+    "username": "grgssblend",
+    "displayName": "grgssblend",
+    "account": "basic",
+    "profileUrl": "https://sketchfab.com/grgssblend",
+    "avatar": {
+      "uid": "78fa317e46024a5283765aa34df5e508",
+      "uri": "https://api.sketchfab.com/v3/avatars/78fa317e46024a5283765aa34df5e508",
+      "images": [
+        {
+          "width": 100,
+          "height": 100,
+          "size": 6421,
+          "url": "https://media.sketchfab.com/avatars/78fa317e46024a5283765aa34df5e508/aec92fe9a74e499c98d759362cd7f02f.jpeg"
+        },
+        {
+          "width": 48,
+          "height": 48,
+          "size": 2518,
+          "url": "https://media.sketchfab.com/avatars/78fa317e46024a5283765aa34df5e508/17fa177ffaa344a2b2fc8e78efd40fbb.jpeg"
+        },
+        {
+          "width": 90,
+          "height": 90,
+          "size": 5653,
+          "url": "https://media.sketchfab.com/avatars/78fa317e46024a5283765aa34df5e508/02162695bdc840faa3bcb2d418309c5e.jpeg"
+        },
+        {
+          "width": 32,
+          "height": 32,
+          "size": 1350,
+          "url": "https://media.sketchfab.com/avatars/78fa317e46024a5283765aa34df5e508/6fde876cbded4cd48d36a76029e3aa02.jpeg"
+        }
+      ]
+    },
+    "uri": "https://api.sketchfab.com/v3/users/1ac1aba2936e4cc391ce095596ac6491"
+  },
+  "vertexCount": 2088,
+  "viewCount": 841,
+  "viewerUrl": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+  "isDownloadable": true,
+  "isProtected": false,
+  "description": "I`ve created a few food items specifically for you. Here are the object categories:\n* Burger`s box\n* Canned food\n* Cereals\n* Chocolate\n* Coffee (various versions)\n* Cookies (Oreo and others)\n* Milk bottles\n* Instant noodles (cups and box/bag)\n* Pasta\n* Pizza box\n* Sauce bottles\n* Tea box\n\nEverything is designed in a **low poly** style to save resources and reflect aesthetic of old-fashioned PS1/PS2 games.",
+  "price": null,
+  "downloadCount": 321,
+  "editorUrl": "https://sketchfab.com/models/e2e3e0de18e1415aa30dcdd8b78efd5e/edit",
+  "status": {
+    "warning": {},
+    "processing": "SUCCEEDED"
+  },
+  "source": "website",
+  "hasCommentsDisabled": false,
+  "updatedAt": "2026-08-16T10:24:05.413996",
+  "pbrType": null,
+  "textureCount": 12,
+  "materialCount": 15
+}

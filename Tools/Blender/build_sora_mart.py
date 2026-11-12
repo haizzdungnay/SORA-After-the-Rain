@@ -69,13 +69,16 @@ def box(name, at, size, mat, bevel=0):
     return obj
 
 
-def text(body, at, height, mat=white, facing="front"):
+def text(body, at, height, mat=white, facing="front", font=None):
     curve = bpy.data.curves.new("SORA original lettering", "FONT")
     curve.body = body
     curve.size = height
     curve.align_x = "CENTER"
     curve.align_y = "CENTER"
     curve.extrude = .0005
+    curve.resolution_u = 4
+    if font is not None:
+        curve.font = font
     obj = bpy.data.objects.new("LABEL | " + body, curve)
     bpy.context.collection.objects.link(obj)
     obj.location = point(at)
@@ -101,25 +104,36 @@ models = {}
 placements = Counter()
 food_material = None
 constant_materials = {}
+japanese_font = bpy.data.fonts.load(str(model_source / "Signage/ZenKakuGothicNew-Regular.ttf"))
 
 
 def share_material(mat):
     nodes = list(mat.node_tree.nodes) if mat.use_nodes else []
-    if len(nodes) != 2 or {node.type for node in nodes} != {"BSDF_PRINCIPLED", "OUTPUT_MATERIAL"}:
+    if not nodes:
         return mat
-    bsdf = next(node for node in nodes if node.type == "BSDF_PRINCIPLED")
-    settings = tuple((socket.name, tuple(socket.default_value) if hasattr(socket.default_value, "__iter__")
-                      else socket.default_value) for socket in bsdf.inputs)
-    key = (settings, mat.use_backface_culling, mat.surface_render_method)
+    # Compare shader graphs and actual image paths, including UV and alpha settings.
+    settings = []
+    for node in sorted(nodes, key=lambda item: item.name):
+        inputs = tuple((socket.identifier, tuple(socket.default_value) if hasattr(socket.default_value, "__iter__")
+                        and not isinstance(socket.default_value, str) else socket.default_value)
+                       for socket in node.inputs if hasattr(socket, "default_value"))
+        image = (bpy.path.abspath(node.image.filepath), node.image.colorspace_settings.name,
+                 node.interpolation, node.extension) if node.type == "TEX_IMAGE" and node.image else None
+        options = tuple((key, getattr(node, key)) for key in ("operation", "blend_type", "uv_map", "vector_type", "space")
+                        if hasattr(node, key))
+        settings.append((node.name, node.type, inputs, image, options))
+    links = tuple(sorted((link.from_node.name, link.from_socket.identifier, link.to_node.name, link.to_socket.identifier)
+                         for link in mat.node_tree.links))
+    key = (tuple(settings), links, mat.use_backface_culling, mat.surface_render_method, tuple(mat.diffuse_color))
     return constant_materials.setdefault(key, mat)
 
 
-for record in model_manifest["textures"] + model_manifest["sources"]:
+for record in model_manifest["textures"] + model_manifest["sources"] + model_manifest.get("dependencies", []):
     path = (model_source / record["path"]).resolve()
     assert path.is_relative_to(model_source.resolve()), "Source path escapes model folder"
     assert hashlib.sha256(path.read_bytes()).hexdigest() == record["sha256"], "Model source checksum changed: " + str(path)
 for record in model_manifest["sources"]:
-    assert record["license"] in {"CC0 1.0", "CC-BY 3.0"}, "Unreviewed model license"
+    assert record["license"] in {"CC0 1.0", "CC-BY 3.0", "CC-BY 4.0"}, "Unreviewed model license"
     before = set(bpy.data.objects)
     bpy.ops.import_scene.gltf(filepath=str(model_source / record["path"]))
     objects = set(bpy.data.objects) - before
@@ -163,7 +177,8 @@ def place_model(key, at, width=None, size=None, yaw=0):
         bpy.context.collection.objects.link(obj)
         obj.matrix_world = transform
         record = next(source for source in model_manifest["sources"] if source["key"] == key)
-        obj["sora_source"] = key if record["path"].startswith("Fixtures/") else "goods"
+        obj["sora_source"] = (key if record["path"].startswith("Fixtures/") else
+                              "packaged_goods" if record.get("source_pack") else "goods")
     placements[key] += 1
     return scale
 
@@ -252,19 +267,47 @@ for x in [-1.88, 1.88]:
     box("MART | door safety stripe", (x, 1.1, -5.30), (1.16, .07, .012), orange)
 box("MART | entrance mat", (0, .005, -5.25), (2.4, .025, 1.4), rubber)
 text("WELCOME", (0, 3.58, -5.43), .18, white)
+# R1: a low, bright acoustic ceiling with a visible fluorescent grid.
+interior_ceiling = material("SORA | interior acoustic panels", (.88, .89, .84), .9, .08)
+box("MART | interior ceiling", (0, 3.12, .1), (13.8, .06, 10.7), interior_ceiling)
+for x in [-6, -4, -2, 0, 2, 4, 6]:
+    box("MART | ceiling grid", (x, 3.082, .1), (.016, .014, 10.6), ivory)
+for z in [-4, -2, 0, 2, 4]:
+    box("MART | ceiling grid", (0, 3.082, z), (13.7, .014, .016), ivory)
 for x in [-5.6, -3.35, -1.1, 1.15, 3.4, 5.65]:
-    box("MART | ceiling light housing", (x, 4.19, 0), (.35, .08, 8.6), frame)
-    box("MART | ceiling LED diffuser", (x, 4.135, 0), (.26, .035, 8.4), light)
+    box("MART | ceiling light housing", (x, 3.06, 0), (.35, .06, 8.6), white)
+    box("MART | ceiling LED diffuser", (x, 3.02, 0), (.26, .025, 8.4), light)
+
+
+text("\u30bd\u30e9\u30de\u30fc\u30c8", (0, 3.98, -6.065), .15, sign, font=japanese_font)
+
+# Categorize the actual downloaded SKUs; do not recolor one box into many products.
+retail = {key: [] for key in ["care", "pantry", "breakfast", "sweets", "noodles", "bakery", "drinks"]}
+for source in model_manifest["sources"]:
+    if source.get("source_pack") not in {"FoodCollection", "PSXFood"}:
+        continue
+    key = source["key"]
+    name = source["source_node"].lower()
+    if source["category"] == "HouseholdAndCare":
+        category = "care"
+    elif any(word in name for word in ("coffee", "tea_", "cereal")):
+        category = "breakfast"
+    elif source["category"] == "Drinks":
+        category = "drinks"
+    elif "noodles" in name:
+        category = "noodles"
+    elif any(word in name for word in ("pizza", "burgerbox")):
+        category = "bakery"
+    elif any(word in name for word in ("choco", "cand", "chewing", "cookies", "snack")):
+        category = "sweets"
+    else:
+        category = "pantry"
+    retail[category].append(key)
 
 # R1/R6: low central racks; essentials near the front, food toward the rear.
-categories = ["DAILY CARE", "PANTRY", "BREAKFAST", "SNACKS", "SWEETS", "BAKERY"]
-assortments = [("detergent", "tissue_box", "toothpaste", "soap_bar", "shampoo"),
-              ("can", "can-small", "beans_tin", "rice_bag", "flour_bag", "sugar_bag",
-               "bottle-ketchup", "bottle-musterd", "bottle-oil", "soy"),
-              ("cereal_box", "tea_box", "coffee_jar", "peanut-butter", "honey"),
-              ("snack_bag", "candy-bar-wrapper", "chocolate-wrapper"),
-              ("chocolate-wrapper", "candy-bar-wrapper", "snack_bag"),
-              ("sliced_bread", "croissant", "muffin")]
+categories = ["DAILY CARE", "PANTRY", "BREAKFAST", "SWEETS", "INSTANT NOODLES", "BREAD / TO GO"]
+jp_categories = ["\u65e5\u7528\u54c1", "\u98df\u54c1\u30fb\u8abf\u5473\u6599", "\u671d\u98df\u30fb\u30b3\u30fc\u30d2\u30fc", "\u304a\u83d3\u5b50", "\u30ab\u30c3\u30d7\u9eba", "\u30d1\u30f3\u30fb\u8efd\u98df"]
+assortments = [retail[key] for key in ["care", "pantry", "breakfast", "sweets", "noodles", "bakery"]]
 for row, x in enumerate([-2.6, 2.5]):
     for column, z in enumerate([-1.1, 1.0, 3.1]):
         category = categories[row * 3 + column]
@@ -277,12 +320,16 @@ for row, x in enumerate([-2.6, 2.5]):
                 for item in range(6):
                     xx = x - .55 + item * .22
                     for depth in [.12, .265]:
-                        place_model(assortment[(item + level * 3) % len(assortment)],
+                        place_model(assortment[(item + level * 6 + (24 if side > 0 else 0)) % len(assortment)],
                                     (xx, y + .004, z + side * depth), size=(.17, .24, .135), yaw=0 if side < 0 else 180)
                     box("MART | price ticket", (xx, y, z + side * .35), (.15, .035, .006), white)
+                    text(str([198, 168, 298, 128, 178, 248][row * 3 + column]),
+                         (xx, y, z + side * .355), .023, ink, facing="back" if side > 0 else "front")
         box("MART | category header", (x, 1.7, z), (1.45, .25, .14), teal, .018)
-        text(category, (x, 1.7, z - .077), .12)
-        text(category, (x, 1.7, z + .077), .12, facing="back")
+        text(jp_categories[row * 3 + column], (x, 1.73, z - .077), .145, font=japanese_font)
+        text(jp_categories[row * 3 + column], (x, 1.73, z + .077), .145, facing="back", font=japanese_font)
+        text(category, (x, 1.62, z - .077), .065)
+        text(category, (x, 1.62, z + .077), .065, facing="back")
         end_x = x + (.95 if row == 0 else -.95)
         place_model("endcap", (end_x, 0, z), width=.66, yaw=90 if row == 0 else -90)
         for deck in [.466, .816, 1.166]:
@@ -294,7 +341,9 @@ for row, x in enumerate([-2.6, 2.5]):
 # Existing POS location; visuals never register a second checkout.
 for x in [-5.5, -4.2]:
     place_model("checkout", (x, 0, -2.5), width=1.3)
-place_model("pos", (-4.85, .995, -2.54), width=.72, yaw=180)
+place_model("register_console", (-4.85, .995, -2.54), size=(.57, .48, .47), yaw=180)
+place_model("pos", (-5.55, .995, -2.60), width=.34)
+place_model("cash_tray", (-4.83, 1.0, -2.86), size=(.27, .08, .18))
 place_model("card_reader", (-4.03, 1.0, -2.76), size=(.24, .28, .25))
 place_model("receipt_printer", (-4.32, 1.0, -2.4), size=(.26, .24, .24), yaw=180)
 place_model("scanner", (-5.35, 1.0, -2.58), size=(.16, .12, .30))
@@ -304,6 +353,7 @@ for deck, key in [(1.026, "corn-dog"), (1.286, "sausage")]:
         place_model(key, (x, deck * hot_scale + .003, -3.72), size=(.14, .15, .18))
 text("CHECKOUT", (-4.85, 2.75, -2.5), .25, sign)
 box("MART | checkout hanging board", (-4.85, 2.75, -2.44), (2.3, .45, .08), teal)
+text("\u304a\u4f1a\u8a08", (-4.85, 2.93, -2.5), .15, sign, font=japanese_font)
 
 # Right-wall chilled drinks; handles/glass have depth and actual stocked shelves.
 for z in [-3.1, -1.6, -.1, 1.4]:
@@ -321,22 +371,49 @@ for z in [-3.1, -1.6, -.1, 1.4]:
         y = .28 + level * .58
         box("MART | cooler shelf", (6.28, y, z), (.7, .035, 1.28), ivory)
         for item in range(7):
-            place_model(["soda-bottle", "soda-can", "carton", "carton-small", "water_bottle",
-                         "juice_carton", "milk_carton"][(item + level) % 7],
+            if level == 0 and item < 2:
+                if item == 0:
+                    place_model("fc_bottles_pack_01", (6.12, y + .018, z - .45), size=(.30, .35, .28), yaw=-90)
+                continue
+            drinks = [key for key in retail["drinks"] if key != "fc_bottles_pack_01"]
+            place_model(drinks[(item + level * 7) % len(drinks)],
                         (6.12, y + .018, z - .52 + item * .17), size=(.14, .40, .14), yaw=-90)
     box("MART | cooler header", (5.88, 2.79, z), (.04, .20, 1.28), teal)
     text("COLD DRINKS", (5.84, 2.79, z), .11, sign, facing="left")
 
 # R2: shallow chilled-food bays along the rear wall, facing the sales floor.
+wrapping = material("SORA | clear food packaging", (.90, .96, .98), .24, alpha=.11)
+fresh_names = {"rice-ball": "\u304a\u306b\u304e\u308a", "sandwich": "\u30b5\u30f3\u30c9", "styrofoam-dinner": "\u304a\u5f01\u5f53", "maki-salmon": "\u304a\u5bff\u53f8"}
 for x in [-1.5, 1.25]:
-    scale = place_model("chilled_food", (x, 0, 4.87), width=1.35)
+    chilled_scale = place_model("chilled_food", (x, 0, 4.87), width=1.35)
     for level, deck in enumerate([.20, .47, .97, 1.47]):
-        y = (deck - models["chilled_food"][1].z) * scale
+        y = (deck - models["chilled_food"][1].z) * chilled_scale
         for item in range(5):
             key = ("rice-ball", "sandwich", "styrofoam-dinner", "yoghurt", "pudding",
                    "butter", "egg_carton", "maki-salmon")[(item + level * 2) % 8]
-            place_model(key, (x - .48 + item * .24, y + .006, 4.57), size=(.20, .19, .24))
-    text("FRESH FOOD", (x, 2.06, 4.40), .14, sign)
+            xx = x - .48 + item * .24
+            scale = place_model(key, (xx, y + .006, 4.57), size=(.20, .19, .24))
+            if key in fresh_names:
+                extent = models[key][2] - models[key][1]
+                width, height, depth = extent.x * scale + .008, extent.z * scale + .012, extent.y * scale + .008
+                if key in {"rice-ball", "sandwich"}:
+                    # R2/R5: a clear triangular sleeve around the downloaded food.
+                    verts = [(sx * width / 2, sy * depth / 2, 0) for sy in [-1, 1] for sx in [-1, 1]]
+                    verts += [(0, -depth / 2, height), (0, depth / 2, height)]
+                    mesh = bpy.data.meshes.new("SORA original triangular food sleeve")
+                    mesh.from_pydata(verts, [], [(1, 4, 0), (5, 3, 2), (4, 5, 2, 0), (3, 5, 4, 1), (2, 3, 1, 0)])
+                    mesh.materials.append(wrapping)
+                    sleeve = bpy.data.objects.new("SORA | food wrapper", mesh)
+                    bpy.context.collection.objects.link(sleeve)
+                    sleeve.location = point((xx, y + .005, 4.57))
+                else:
+                    box("SORA | transparent meal lid", (xx, y + .006 + height / 2, 4.57), (width, height, depth), wrapping, .008)
+                label_y = y + min(.06, height * .35)
+                box("SORA | fresh food label", (xx, label_y, 4.57 - depth / 2 - .006), (min(.09, width * .65), .045, .002), white)
+                text(fresh_names[key], (xx, label_y + .008, 4.57 - depth / 2 - .008), .011, ink, font=japanese_font)
+                text("SORA  298", (xx, label_y - .011, 4.57 - depth / 2 - .008), .009, teal)
+        box("MART | chilled shelf price rail", (x, y - .018, 4.41), (1.24, .04, .015), teal)
+    text("\u304a\u306b\u304e\u308a\u30fb\u304a\u5f01\u5f53", (x, 2.06, 4.40), .14, sign, font=japanese_font)
 
 # R6: coffee and warming beside the staffed counter; bakery on the same side.
 box("MART | coffee counter", (-6.25, .55, 1.6), (1.05, 1.1, 2.6), oak, .025)
@@ -374,6 +451,7 @@ box("MART | stock terminal", (6.3, 1.3, 1.6), (.24, .62, .8), frame)
 place_model("wall_clock", (-6.73, 1.40, 3.8), width=.42, yaw=90)
 place_model("extinguisher", (-6.63, 0, -.50), width=.34, yaw=90)
 place_model("delivery_boxes", (5.0, .70, 4.23), size=(.85, .50, .46))
+place_model("stock_carton", (5.55, .70, 4.25), size=(.42, .38, .38))
 place_model("clipboard", (6.15, 1.62, 1.55), size=(.20, .12, .30))
 
 # Existing imported street furniture complements the store rather than duplicating the city.
@@ -402,7 +480,8 @@ for (group, mat), objects in by_material.items():
     objects[0].name = ("IMPORTED | " + group + " | " if group else "SORA MART | ") + mat.name
 
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-assert set(placements) == set(models), "Unplaced sources: " + str(set(models) - set(placements))
+assert set(placements) <= set(models)
+assert all(placements[source["key"]] > 0 for source in model_manifest["sources"] if source.get("source_pack")), "Selected library resource was not placed"
 bpy.ops.export_scene.gltf(filepath=str(OUTPUT), export_format="GLB", export_yup=True,
                           export_cameras=False, export_lights=False, export_extras=True)
 manifest = {
@@ -411,10 +490,13 @@ manifest = {
     "source": str(SOURCE.relative_to(ROOT)).replace("\\", "/"),
     "source_sha256": hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
     "source_groups": groups,
-    "rights": "CC0 and CC-BY 3.0 source models plus original SORA architecture; no AFX geometry; retain ArtSource/ThirdParty/SoraMart/ATTRIBUTION.md",
+    "rights": "CC0, CC-BY 3.0 and CC-BY 4.0 source models plus original SORA architecture; OFL 1.1 signage font; no AFX geometry; retain ArtSource/ThirdParty/SoraMart/ATTRIBUTION.md",
     "model_source_manifest": "ArtSource/ThirdParty/SoraMart/manifest.json",
     "model_source_manifest_sha256": hashlib.sha256((model_source / "manifest.json").read_bytes()).hexdigest(),
     "model_placements": dict(placements),
+    "available_model_sources": len(models),
+    "active_model_sources": len(placements),
+    "packaged_product_sources": sum(1 for source in model_manifest["sources"] if source.get("source_pack") in {"FoodCollection", "PSXFood"} and placements[source["key"]]),
     "reference_layout": "Docs/StreetExterior/SORA_MART_KONBINI_REFERENCE.md (R1-R6; adapted to existing gameplay anchors)",
     "coordinates": "Unity metres after glTFast import; identity transform; entrance (0,0,-5.25)",
     "interaction_anchors": {"POS": [-4.85, 1.3, -2.54], "restock": [-2.6, 1.65, -.32], "delivery": [5, .45, 3.15]},

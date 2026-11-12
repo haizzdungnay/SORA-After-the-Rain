@@ -4,25 +4,26 @@ Ngày kiểm kê: **10/11/2026**. Mốc repo: `7c4191f`, sau phần SORA MART v�
 
 Danh mục có **151 hạng mục**: **43 P0 cốt lõi**, **84 P1 hoàn thiện**, **24 P2 tùy chọn**. Đây không phải yêu cầu tải 151 pack; một pack đồng bộ có thể đáp ứng nhiều hạng mục.
 
-## Cập nhật tải model - 11/11/2026
+## Cập nhật tải và ghép Unity - 12/11/2026
 
-**Dấu `[x] Tải` chỉ xác nhận có file ứng viên thật, không xác nhận đã đủ mẫu/bao bì hoặc đạt mỹ thuật.**
+**Dấu `[x] Tải` xác nhận có ứng viên thật; dấu Unity ghi tài nguyên đang đặt. Không xác nhận đủ nhãn Nhật, số biến thể hoặc tiêu chí mỹ thuật của cả dòng.**
 
-- Đã có **403 GLB khác nhau theo SHA-256**, từ **38 nguồn/gói**: 211 mẫu đợt đầu + 192 mẫu bổ sung. Không tính FBX/OBJ của cùng model hay các bản sao đặt trong shop.
-- **116/151 mục có ít nhất một ứng viên tải về**; **5 mục có nguồn CC0 sẵn** và **30 mục chưa có ứng viên phù hợp**; từng dòng dưới đây ghi số file và liên kết bảng kiểm. Số thực tế được lệnh kiểm tra xác nhận, không dùng số pack để đánh dấu đủ danh mục.
-- **67 nguồn đã ghép vào Unity và qua kiểm tra**, tăng từ 19 nguồn đợt đầu; 336 ứng viên còn lại giữ local. Cột Unity ghi số mẫu đã dùng, không phải số yêu cầu đã hoàn tất. **Chưa mục nào được xác nhận hoàn tất toàn bộ tiêu chí mỹ thuật/số biến thể của danh sách.**
-- Có ảnh xem thử Blender cho **49 mẫu khác nhau**; ảnh Blender không phải ảnh Unity. Các mục còn thiếu chi tiết khi nhìn gần: onigiri thiếu màng bọc, pin thiếu vỉ, fries mở không phải snack đóng túi, tủ/máy quá đơn giản.
-- [Từng file đã tải, nguồn, giấy phép, SHA-256 và phần còn thiếu](StreetExterior/SORA_MART_DOWNLOADS.csv) · [Dữ liệu kiểm chứng](StreetExterior/SORA_MART_DOWNLOADS.json) · [Ảnh konbini thật và bố cục tham chiếu](StreetExterior/SORA_MART_KONBINI_REFERENCE.md).
+- Kho đợt đầu giữ **403 GLB khác nhau từ 38 nguồn/gói**. Đợt anh trai tải thêm có **10 file / 9 nguồn khác nhau**, đã tách **825 tài nguyên/cụm** trong `LocalReferenceAssets/UserModels_2026-11-11/`; có `catalog.csv`, texture và hồ sơ nguồn.
+- **119/151 mục có ứng viên tải về**, **5 mục có nguồn CC0 sẵn**, **27 mục chưa có ứng viên**. Từng dòng kết hợp bằng chứng từ kho cũ và tài nguyên mới.
+- Cửa hàng dùng **147 nguồn model đang đặt**: **40 GLB của kho cũ + 107 tài nguyên chọn từ kho mới**, gồm 40 Food Collection, 64 PSX Food và 3 Store Props. Manifest giữ 174 nguồn để tái dùng; 27 nguồn cũ không đặt ở bố cục hiện tại.
+- **104 object hàng hóa mới** có bao bì/nhãn nguồn, xếp theo nhóm chăm sóc, thực phẩm khô, ăn sáng, bánh kẹo, mì và đồ uống. Hai liên kết texture PSX đã sửa trên bản sao; 825/825 tài nguyên local từng mở lại trong Blender. File tải gốc giữ nguyên.
+- Biển kệ Nhật–Anh, bảng giá, trần/đèn và quầy được cập nhật. **Chưa mục nào được duyệt hoàn tất toàn bộ yêu cầu mỹ thuật của danh sách.** Nhãn thương hiệu và phong cách nguồn còn cần duyệt.
+- [Từng GLB kho cũ và trạng thái Unity](StreetExterior/SORA_MART_DOWNLOADS.csv) · [107 tài nguyên kho mới, nguồn, giấy phép, SHA-256 và mục đối ứng](StreetExterior/SORA_MART_USER_LIBRARY.csv) · [Ảnh konbini thật](StreetExterior/SORA_MART_KONBINI_REFERENCE.md) · [Báo cáo bản hoàn thiện](StreetExterior/Reports/2026-11-12-SORA-MART-RETAIL-FINISH.md).
 
-Kho local: `LocalReferenceAssets/SoraMartIncoming/`. Tất cả file nguồn tải nguyên bản, trang nguồn và giấy phép giữ tại kho; 48 mẫu bổ sung đã được ghép vào `Assets/Resources/SoraStore/SoraMart.glb` cùng 19 nguồn cũ; giữ bản nguồn gốc trong `ArtSource/ThirdParty/SoraMart/`.
+Giấy phép Food Collection/PSX Food/Store Props đã đối chiếu trang nguồn; nguồn chọn có CC BY 4.0, credit và bằng chứng nằm trong `ArtSource/ThirdParty/SoraMart/`. VR Store có mô tả tài sản của công ty/đồng nghiệp nên không đưa vào bản ghép. Toronto, Marlboro và hai gói mặt tiền giữ local.
 
-Kiểm tra lại trên checkout đang có kho local:
+Kiểm tra lại trên checkout có kho tải:
 
 ```powershell
 python Tools/StreetExterior/verify_sora_mart_downloads.py
 ```
 
-Các mục 1-10 giữ yêu cầu gốc; mục 2 là **kiểm kê lịch sử ngày 10/11**, trước đợt tích hợp 19 nguồn. Trạng thái tải ở từng dòng và bảng CSV mới là mốc 11/11.
+Các mục 1-10 giữ yêu cầu gốc; mục 2 là **kiểm kê lịch sử ngày 10/11**, trước các đợt ghép model. Trạng thái từng dòng và hai CSV là dữ liệu mới nhất.
 
 ## 1. Mục tiêu và cách đọc
 
@@ -121,14 +122,14 @@ Một bộ lớn có thể bao phủ nhiều hàng trên. Ưu tiên cùng tác g
 | ID | Tải ứng viên | Mức | Model/bộ cần tìm | Mẫu nên có | Số lượng đặt dự kiến | Chi tiết cần đủ và từ khóa tìm | Tích hợp Unity |
 |---|---|---|---|---|---|---|---|
 | SM-B01 | [x] Tải 5 ứng viên | P0 | Quầy thu ngân bán lẻ hoàn chỉnh | 1 bộ | 1 quầy | Mặt quầy, thân, hộc, ngăn và mặt phía nhân viên; gần 2.5-3 m ngang hoặc ghép module; `convenience store checkout counter` | [x] Unity 2 mẫu |
-| SM-B02 | [x] Tải 2 ứng viên | P0 | Máy POS và chân đế | 1 mẫu | 1 máy | Đủ màn hình, viền, chân, cổng/dây nhìn thấy; texture màn hình riêng; `retail POS terminal` | [x] Unity 1 mẫu |
-| SM-B03 | [x] Tải 4 ứng viên | P0 | Ngăn kéo tiền | 1 mẫu | 1 ngăn | Thân và khay có ô tiền; ngăn kéo tách nếu mở; có thể đi kèm B01/B02; `cash register drawer` | [x] Unity 1 mẫu |
+| SM-B02 | [x] Tải 3 ứng viên | P0 | Máy POS và chân đế | 1 mẫu | 1 máy | Đủ màn hình, viền, chân, cổng/dây nhìn thấy; texture màn hình riêng; `retail POS terminal` | [x] Unity 2 mẫu |
+| SM-B03 | [x] Tải 5 ứng viên | P0 | Ngăn kéo tiền | 1 mẫu | 1 ngăn | Thân và khay có ô tiền; ngăn kéo tách nếu mở; có thể đi kèm B01/B02; `cash register drawer` | [x] Unity 2 mẫu |
 | SM-B04 | [x] Tải 1 ứng viên | P0 | Máy quét mã vạch | 1-2 kiểu | 1-2 máy | Thân, cửa quét, đế hoặc tay cầm và dây; `barcode scanner retail` | [x] Unity 1 mẫu |
 | SM-B05 | [x] Tải 2 ứng viên | P1 | Máy thanh toán thẻ/IC/contactless | 1 mẫu | 1 máy | Màn hình, phím, khe thẻ, vị trí chạm; `payment card reader terminal` | [x] Unity 1 mẫu |
 | SM-B06 | [ ] Chưa tải | P1 | Màn hình giá hướng về khách | 1 mẫu | 1 màn hình | Chân/gá và vùng hiển thị riêng; có thể đã nằm trong bộ POS; `customer display POS` | [ ] Chưa ghép |
 | SM-B07 | [x] Tải 2 ứng viên | P1 | Máy in hóa đơn và cuộn giấy | 1 bộ | 1 máy + giấy dự trữ | Khe giấy, nút, thân và giấy có chiều dày; `thermal receipt printer` | [x] Unity 1 mẫu |
 | SM-B08 | [x] Tải 1 ứng viên | P1 | Khu/khay đặt hàng và đóng túi | 1 bộ | 1 vị trí cạnh POS | Có mặt đỡ, mép, giá túi hoặc khoang theo bộ quầy; `checkout bagging station` | [ ] Chưa ghép |
-| SM-B09 | [ ] Chưa tải | P1 | Khay tiền lẻ/khay trả đồ nhỏ | 1-2 mẫu | 1-2 khay | Mép và đáy có chiều dày, vật liệu riêng; `Japanese shop coin tray` | [ ] Chưa ghép |
+| SM-B09 | [x] Tải 1 ứng viên | P1 | Khay tiền lẻ/khay trả đồ nhỏ | 1-2 mẫu | 1-2 khay | Mép và đáy có chiều dày, vật liệu riêng; `Japanese shop coin tray` | [x] Unity 1 mẫu |
 | SM-B10 | [x] Tải 6 ứng viên | P1 | Túi mua hàng và bộ cấp túi | 3 kiểu túi + giá | 1 giá + 5-10 túi | Có túi gấp, túi mở và quai; nhãn thay được; `shopping paper plastic bag dispenser pack` | [ ] Chưa ghép |
 | SM-B11 | [x] Tải 2 ứng viên | P0 | Kệ hàng nhỏ trên quầy | 1-2 mẫu | 1-2 kệ | Kệ kẹo/gum/pin có tầng và mép giá, hàng đặt rời; `checkout impulse display rack` | [ ] Chưa ghép |
 | SM-B12 | [x] Tải 1 ứng viên | P2 | Cọc/dây hoặc bảng chỉ dẫn xếp hàng | 1 bộ | 0-1 khu | Chọn bộ gọn, không làm nghẽn cửa; `retail queue barrier sign stand` | [ ] Chưa ghép |
@@ -167,50 +168,50 @@ Mỗi mẫu bên dưới cần bao bì/nhãn hoàn chỉnh, tỷ lệ đúng và
 | SM-D08 | [x] Tải 4 ứng viên | P1 | Bánh kem/bánh tráng miệng đóng hộp | 2-3 loại | 8-12 hộp | Lớp bánh, đế, hộp và nhãn; `packaged dessert cake` | [ ] Chưa ghép |
 | SM-D09 | [x] Tải 3 ứng viên | P0 | Sữa chua/pudding/thạch cốc | 3-4 loại | 10-16 cốc | Cốc, nắp niêm phong, vành và nhãn; `yogurt pudding cup packaging` | [x] Unity 2 mẫu |
 | SM-D10 | [x] Tải 7 ứng viên | P1 | Kem que/kem ốc quế/cốc kem | 3-5 loại | 12-20 gói | Có bản bán lẻ đã bọc/hộp, không chỉ kem ăn dở; `wrapped ice cream retail pack` | [ ] Chưa ghép |
-| SM-D11 | [x] Tải 3 ứng viên | P0 | Nước suối chai PET | 2-3 mẫu | 18-24 chai | Chai, nắp, rãnh/thành và nhãn hoàn chỉnh; `water bottle retail label` | [x] Unity 1 mẫu |
+| SM-D11 | [x] Tải 5 ứng viên | P0 | Nước suối chai PET | 2-3 mẫu | 18-24 chai | Chai, nắp, rãnh/thành và nhãn hoàn chỉnh; `water bottle retail label` | [x] Unity 2 mẫu |
 | SM-D12 | [ ] Chưa tải | P0 | Trà xanh/trà đóng chai | 3-4 loại | 18-24 chai | Khác nhãn/dáng chai hợp lý, vật liệu PET; `Japanese tea bottle beverage pack` | [ ] Chưa ghép |
-| SM-D13 | [x] Tải 5 ứng viên | P0 | Nước ngọt chai/lon | 4-6 loại | 20-30 chai/lon | Đủ miệng/nắp lon hoặc chai; texture nhãn có sẵn; `soda bottle can drinks pack` | [x] Unity 2 mẫu |
+| SM-D13 | [x] Tải 5 ứng viên | P0 | Nước ngọt chai/lon | 4-6 loại | 20-30 chai/lon | Đủ miệng/nắp lon hoặc chai; texture nhãn có sẵn; `soda bottle can drinks pack` | [ ] Chưa ghép |
 | SM-D14 | [ ] Chưa tải | P0 | Cà phê lon/chai | 3-4 loại | 16-24 đơn vị | Lon nhỏ, chai và nhãn đúng tỷ lệ; `Japanese canned coffee bottle` | [ ] Chưa ghép |
 | SM-D15 | [ ] Chưa tải | P1 | Nước tăng lực/thể thao | 2-3 loại | 12-18 đơn vị | Lon/chai và nắp có chi tiết; `energy sports drink 3D pack` | [ ] Chưa ghép |
-| SM-D16 | [x] Tải 4 ứng viên | P0 | Nước ép trái cây | 3-4 loại | 12-18 đơn vị | Chai hoặc hộp giấy có vòi/nắp phù hợp; `juice carton bottle grocery` | [x] Unity 3 mẫu |
-| SM-D17 | [x] Tải 3 ứng viên | P0 | Sữa/sữa có vị trong hộp giấy | 3-4 loại | 10-16 hộp | Nếp gấp đỉnh, đáy, ống hút/nắp và nhãn; `milk carton grocery packaging` | [x] Unity 3 mẫu |
-| SM-D18 | [x] Tải 1 ứng viên | P0 | Mì ly/mì cốc | 5-8 loại | 24-36 ly | Cốc có côn, vành/nắp và nhãn đủ mặt; `instant cup noodles Japanese pack` | [ ] Chưa ghép |
-| SM-D19 | [ ] Chưa tải | P1 | Mì gói | 3-4 loại | 12-18 gói | Túi phồng, mép hàn và hình in; `instant noodle packet` | [ ] Chưa ghép |
-| SM-D20 | [x] Tải 1 ứng viên | P0 | Snack/khoai tây chiên dạng túi | 5-8 loại | 24-40 túi | Túi có thể tích, nếp gấp, mép hàn và nhãn; `chips snack bag food pack` | [x] Unity 1 mẫu |
-| SM-D21 | [x] Tải 1 ứng viên | P0 | Bánh quy/cracker | 4-6 loại | 18-30 gói/hộp | Có cả hộp và gói hoàn chỉnh, không cùng một hộp trơn; `cookie cracker retail packaging` | [ ] Chưa ghép |
-| SM-D22 | [x] Tải 3 ứng viên | P0 | Thanh chocolate/bánh phủ chocolate | 3-5 loại | 15-25 thanh | Bọc có chiều dày và mép gói; `chocolate bar wrapped pack` | [x] Unity 2 mẫu |
-| SM-D23 | [x] Tải 1 ứng viên | P1 | Kẹo/gum/thạch dẻo | 3-5 loại | 15-25 gói | Hộp/gói nhỏ phù hợp kệ đầu quầy; `candy chewing gum retail pack` | [ ] Chưa ghép |
+| SM-D16 | [x] Tải 5 ứng viên | P0 | Nước ép trái cây | 3-4 loại | 12-18 đơn vị | Chai hoặc hộp giấy có vòi/nắp phù hợp; `juice carton bottle grocery` | [x] Unity 1 mẫu |
+| SM-D17 | [x] Tải 10 ứng viên | P0 | Sữa/sữa có vị trong hộp giấy | 3-4 loại | 10-16 hộp | Nếp gấp đỉnh, đáy, ống hút/nắp và nhãn; `milk carton grocery packaging` | [x] Unity 7 mẫu |
+| SM-D18 | [x] Tải 5 ứng viên | P0 | Mì ly/mì cốc | 5-8 loại | 24-36 ly | Cốc có côn, vành/nắp và nhãn đủ mặt; `instant cup noodles Japanese pack` | [x] Unity 4 mẫu |
+| SM-D19 | [x] Tải 4 ứng viên | P1 | Mì gói | 3-4 loại | 12-18 gói | Túi phồng, mép hàn và hình in; `instant noodle packet` | [x] Unity 4 mẫu |
+| SM-D20 | [x] Tải 2 ứng viên | P0 | Snack/khoai tây chiên dạng túi | 5-8 loại | 24-40 túi | Túi có thể tích, nếp gấp, mép hàn và nhãn; `chips snack bag food pack` | [x] Unity 1 mẫu |
+| SM-D21 | [x] Tải 9 ứng viên | P0 | Bánh quy/cracker | 4-6 loại | 18-30 gói/hộp | Có cả hộp và gói hoàn chỉnh, không cùng một hộp trơn; `cookie cracker retail packaging` | [x] Unity 8 mẫu |
+| SM-D22 | [x] Tải 9 ứng viên | P0 | Thanh chocolate/bánh phủ chocolate | 3-5 loại | 15-25 thanh | Bọc có chiều dày và mép gói; `chocolate bar wrapped pack` | [x] Unity 6 mẫu |
+| SM-D23 | [x] Tải 3 ứng viên | P1 | Kẹo/gum/thạch dẻo | 3-5 loại | 15-25 gói | Hộp/gói nhỏ phù hợp kệ đầu quầy; `candy chewing gum retail pack` | [x] Unity 2 mẫu |
 | SM-D24 | [ ] Chưa tải | P1 | Hạt/khô/snack mặn | 3-4 loại | 12-20 gói | Túi zip hoặc gói hàn có nhãn; `nuts jerky snack packet` | [ ] Chưa ghép |
-| SM-D25 | [x] Tải 2 ứng viên | P1 | Ngũ cốc/hộp đồ ăn sáng | 3-4 loại | 12-20 hộp | Hộp có cạnh/nắp gấp và đủ mặt nhãn; `cereal breakfast box grocery` | [x] Unity 1 mẫu |
-| SM-D26 | [x] Tải 7 ứng viên | P1 | Thực phẩm đóng lon | 3-5 loại | 12-18 lon | Lon, nắp/khóa bật và nhãn; `canned food grocery pack` | [x] Unity 3 mẫu |
-| SM-D27 | [x] Tải 14 ứng viên | P1 | Nước tương/dầu/gia vị | 3-5 loại | 10-15 chai/lọ | Đa dạng chai/lọ, nắp và nhãn; `Japanese condiments soy sauce grocery` | [x] Unity 6 mẫu |
-| SM-D28 | [x] Tải 3 ứng viên | P1 | Hộp cà phê/trà bán lẻ | 3-4 loại | 8-12 hộp/gói | Có hộp, túi hoặc lọ hoàn chỉnh; `coffee tea retail package` | [x] Unity 2 mẫu |
-| SM-D29 | [x] Tải 5 ứng viên | P1 | Gạo/bột/đường gói nhỏ | 2-3 loại | 6-9 gói | Bao/túi có khối và đường hàn, nhãn; `rice flour sugar grocery bag` | [x] Unity 3 mẫu |
+| SM-D25 | [x] Tải 8 ứng viên | P1 | Ngũ cốc/hộp đồ ăn sáng | 3-4 loại | 12-20 hộp | Hộp có cạnh/nắp gấp và đủ mặt nhãn; `cereal breakfast box grocery` | [x] Unity 6 mẫu |
+| SM-D26 | [x] Tải 25 ứng viên | P1 | Thực phẩm đóng lon | 3-5 loại | 12-18 lon | Lon, nắp/khóa bật và nhãn; `canned food grocery pack` | [x] Unity 19 mẫu |
+| SM-D27 | [x] Tải 19 ứng viên | P1 | Nước tương/dầu/gia vị | 3-5 loại | 10-15 chai/lọ | Đa dạng chai/lọ, nắp và nhãn; `Japanese condiments soy sauce grocery` | [x] Unity 7 mẫu |
+| SM-D28 | [x] Tải 18 ứng viên | P1 | Hộp cà phê/trà bán lẻ | 3-4 loại | 8-12 hộp/gói | Có hộp, túi hoặc lọ hoàn chỉnh; `coffee tea retail package` | [x] Unity 15 mẫu |
+| SM-D29 | [x] Tải 5 ứng viên | P1 | Gạo/bột/đường gói nhỏ | 2-3 loại | 6-9 gói | Bao/túi có khối và đường hàn, nhãn; `rice flour sugar grocery bag` | [ ] Chưa ghép |
 | SM-D30 | [x] Tải 5 ứng viên | P1 | Trứng/đậu phụ/bơ/phô mai đóng gói | 4-6 mẫu trong nhóm | 8-12 đơn vị | Hộp trứng, khay/nắp hoặc hộp sữa phù hợp từng món; `eggs tofu butter cheese grocery pack` | [x] Unity 2 mẫu |
 | SM-D31 | [ ] Chưa tải | P1 | Đồ ăn đông lạnh đóng gói | 3-4 loại | 6-12 gói | Túi/hộp bán lẻ đầy đủ; `frozen food retail packaging` | [ ] Chưa ghép |
 | SM-D32 | [x] Tải 9 ứng viên | P2 | Trái cây bán lẻ nhỏ | 2-4 loại | 6-10 phần | Chuối/táo/quýt hoặc túi trái cây; chỉ chọn nếu có kệ phù hợp; `convenience store fruit pack` | [ ] Chưa ghép |
-| SM-D33 | [x] Tải 2 ứng viên | P2 | Bia/rượu đóng lon/chai | 3-6 loại | 12-24 đơn vị nếu chọn | Có bộ chai/lốc từ CC0 để đánh giá trước; chọn bổ sung theo nhóm hàng được duyệt; `Japanese beer sake retail pack` | [ ] Chưa ghép |
+| SM-D33 | [x] Tải 6 ứng viên | P2 | Bia/rượu đóng lon/chai | 3-6 loại | 12-24 đơn vị nếu chọn | Có bộ chai/lốc từ CC0 để đánh giá trước; chọn bổ sung theo nhóm hàng được duyệt; `Japanese beer sake retail pack` | [x] Unity 4 mẫu |
 
 ### E. Hàng tạp hóa, chăm sóc cá nhân và đồ dùng nhỏ
 
 | ID | Tải ứng viên | Mức | Model/bộ cần tìm | Mẫu nên có | Số lượng đặt dự kiến | Chi tiết cần đủ và từ khóa tìm | Tích hợp Unity |
 |---|---|---|---|---|---|---|---|
-| SM-E01 | [x] Tải 2 ứng viên | P0 | Khăn giấy hộp và gói bỏ túi | 2-3 mẫu | 10-18 đơn vị | Hộp/gói, khe mở và nhãn; `tissue box pocket tissue retail` | [x] Unity 1 mẫu |
+| SM-E01 | [x] Tải 2 ứng viên | P0 | Khăn giấy hộp và gói bỏ túi | 2-3 mẫu | 10-18 đơn vị | Hộp/gói, khe mở và nhãn; `tissue box pocket tissue retail` | [ ] Chưa ghép |
 | SM-E02 | [ ] Chưa tải | P1 | Khăn ướt | 2-3 mẫu | 8-12 gói | Túi phồng, nắp/tem đóng và mép gói; `wet wipes packaging` | [ ] Chưa ghép |
 | SM-E03 | [x] Tải 1 ứng viên | P1 | Giấy vệ sinh đóng lốc | 1-2 mẫu | 4-6 lốc | Thấy cuộn và lớp bọc, không phải hộp đặc thay màu; `toilet paper retail pack` | [ ] Chưa ghép |
-| SM-E04 | [x] Tải 2 ứng viên | P0 | Xà phòng rửa tay | 2 mẫu | 4-8 chai/gói | Chai, vòi bơm/nắp và nhãn; `hand soap dispenser refill pack` | [x] Unity 1 mẫu |
-| SM-E05 | [x] Tải 1 ứng viên | P1 | Dầu gội/dầu xả | 2-3 loại | 6-10 chai | Thân, vai, nắp/vòi và nhãn; `shampoo conditioner retail bottle` | [x] Unity 1 mẫu |
+| SM-E04 | [x] Tải 2 ứng viên | P0 | Xà phòng rửa tay | 2 mẫu | 4-8 chai/gói | Chai, vòi bơm/nắp và nhãn; `hand soap dispenser refill pack` | [ ] Chưa ghép |
+| SM-E05 | [x] Tải 1 ứng viên | P1 | Dầu gội/dầu xả | 2-3 loại | 6-10 chai | Thân, vai, nắp/vòi và nhãn; `shampoo conditioner retail bottle` | [ ] Chưa ghép |
 | SM-E06 | [ ] Chưa tải | P1 | Sữa tắm | 2 loại | 4-8 chai | Có hình dáng riêng, vòi/nắp và nhãn; `body wash bottle packaging` | [ ] Chưa ghép |
-| SM-E07 | [x] Tải 1 ứng viên | P1 | Bàn chải/kem đánh răng | 3 mẫu | 8-12 gói | Tuýp và vỉ/hộp bán lẻ hoàn chỉnh; `toothbrush toothpaste retail pack` | [x] Unity 1 mẫu |
+| SM-E07 | [x] Tải 1 ứng viên | P1 | Bàn chải/kem đánh răng | 3 mẫu | 8-12 gói | Tuýp và vỉ/hộp bán lẻ hoàn chỉnh; `toothbrush toothpaste retail pack` | [ ] Chưa ghép |
 | SM-E08 | [ ] Chưa tải | P1 | Mỹ phẩm/chăm sóc da cỡ nhỏ | 3-4 mẫu | 6-10 đơn vị | Chai/lọ/hộp có nắp và nhãn, không chỉ render mỹ phẩm; `travel skincare cosmetic packaging` | [ ] Chưa ghép |
 | SM-E09 | [ ] Chưa tải | P1 | Sản phẩm vệ sinh cá nhân đóng gói | 2-3 mẫu | 6-10 gói | Gói/hộp có thể tích và nhãn đủ mặt; `feminine hygiene retail pack` | [ ] Chưa ghép |
 | SM-E10 | [ ] Chưa tải | P1 | Dao cạo/đồ cạo râu | 2 mẫu | 4-6 vỉ/hộp | Có vỉ/hộp và sản phẩm bên trong nếu nhìn thấy; `razor shaving retail blister pack` | [ ] Chưa ghép |
-| SM-E11 | [x] Tải 1 ứng viên | P1 | Nước giặt/gói giặt nhỏ | 2-3 mẫu | 6-10 đơn vị | Chai hoặc túi refill có vòi/nắp/đường hàn; `laundry detergent bottle pouch` | [x] Unity 1 mẫu |
-| SM-E12 | [x] Tải 1 ứng viên | P1 | Nước rửa chén | 2 mẫu | 4-6 chai | Đủ chai, cổ/nắp, nhãn; `dishwashing liquid retail bottle` | [ ] Chưa ghép |
+| SM-E11 | [x] Tải 6 ứng viên | P1 | Nước giặt/gói giặt nhỏ | 2-3 mẫu | 6-10 đơn vị | Chai hoặc túi refill có vòi/nắp/đường hàn; `laundry detergent bottle pouch` | [x] Unity 5 mẫu |
+| SM-E12 | [x] Tải 2 ứng viên | P1 | Nước rửa chén | 2 mẫu | 4-6 chai | Đủ chai, cổ/nắp, nhãn; `dishwashing liquid retail bottle` | [x] Unity 1 mẫu |
 | SM-E13 | [ ] Chưa tải | P1 | Mút rửa chén/găng tay vệ sinh | 2-3 mẫu | 6-10 gói | Có hàng trong túi/vỉ và phần treo; `cleaning sponge gloves retail pack` | [ ] Chưa ghép |
 | SM-E14 | [x] Tải 1 ứng viên | P1 | Pin AA/AAA đóng vỉ | 2-3 mẫu | 6-10 vỉ | Pin, vỉ và bìa có nhãn; `battery blister retail packaging` | [ ] Chưa ghép |
 | SM-E15 | [ ] Chưa tải | P1 | Cáp điện thoại/củ sạc | 2-3 mẫu | 6-10 hộp/vỉ | Model bán lẻ đóng gói, không chỉ một sợi dây rời; `phone charger cable retail box` | [ ] Chưa ghép |
-| SM-E16 | [ ] Chưa tải | P1 | Bút/sổ/đồ văn phòng nhỏ | 4-6 mẫu | 8-16 đơn vị | Có hộp/vỉ khi bán theo bộ, kích thước đúng; `stationery retail pen notebook pack` | [ ] Chưa ghép |
+| SM-E16 | [x] Tải 1 ứng viên | P1 | Bút/sổ/đồ văn phòng nhỏ | 4-6 mẫu | 8-16 đơn vị | Có hộp/vỉ khi bán theo bộ, kích thước đúng; `stationery retail pen notebook pack` | [x] Unity 1 mẫu |
 | SM-E17 | [ ] Chưa tải | P1 | Khẩu trang/băng cá nhân/sơ cứu bán lẻ | 3 mẫu | 8-12 hộp/gói | Nhãn, nếp gấp và hình dạng bao bì đúng; `mask bandage first aid retail pack` | [ ] Chưa ghép |
 | SM-E18 | [x] Tải 1 ứng viên | P1 | Ô bán lẻ gấp và ô mẫu mở | 2 mẫu | 4-6 ô gấp + 1 mẫu nếu cần | Tay cầm, nan/vải và dây giữ; `transparent Japanese umbrella folded open` | [x] Unity 1 mẫu |
 | SM-E19 | [ ] Chưa tải | P2 | Tất/quần tất đóng gói | 2 mẫu | 4-6 gói | Có bao bì và phần hàng nhìn thấy; `socks stockings retail packaging` | [ ] Chưa ghép |
@@ -247,7 +248,7 @@ Mỗi mẫu bên dưới cần bao bì/nhãn hoàn chỉnh, tỷ lệ đúng và
 |---|---|---|---|---|---|---|---|
 | SM-G01 | [x] Tải 2 ứng viên | P0 | Kệ thép kho nhỏ | 1 bộ | 1-2 module | Chân, giằng, tầng có chiều dày; không cần mô hình cả nhà kho; `small retail stockroom shelving` | [x] Unity 1 mẫu |
 | SM-G02 | [x] Tải 2 ứng viên | P0 | Thùng carton giao hàng | 3-4 kiểu/trạng thái | 8-15 thùng | Bản đóng/mở, nắp, mép, băng keo và mặt trong khi mở; `cardboard delivery box pack` | [x] Unity 1 mẫu |
-| SM-G03 | [x] Tải 1 ứng viên | P0 | Sọt/thùng nhựa giao hàng | 2-3 kiểu | 4-8 thùng | Lòng, đáy, thành, tay cầm và trạng thái xếp chồng; đánh giá nguồn thùng CC0 trước; `retail stackable delivery crate` | [ ] Chưa ghép |
+| SM-G03 | [x] Tải 2 ứng viên | P0 | Sọt/thùng nhựa giao hàng | 2-3 kiểu | 4-8 thùng | Lòng, đáy, thành, tay cầm và trạng thái xếp chồng; đánh giá nguồn thùng CC0 trước; `retail stackable delivery crate` | [x] Unity 1 mẫu |
 | SM-G04 | [x] Tải 2 ứng viên | P1 | Xe lồng giao hàng | 1 mẫu | 1 xe nếu có chỗ | Bánh, khung/lưới, đáy và cửa; `retail roll cage trolley` | [ ] Chưa ghép |
 | SM-G05 | [x] Tải 1 ứng viên | P1 | Xe đẩy hàng nhỏ/xe sàn | 1 mẫu | 1 xe | Bánh, trục, sàn và tay đẩy hoàn chỉnh; `platform hand trolley retail` | [ ] Chưa ghép |
 | SM-G06 | [ ] Chưa tải | P2 | Pallet nhỏ gỗ/nhựa | 1-2 kiểu | 0-2 pallet | Có cấu tạo mặt dưới và khe càng; chỉ dùng nếu còn đủ diện tích; `small warehouse pallet` | [ ] Chưa ghép |

@@ -1,0 +1,12 @@
+{
+  "source": "https://sketchfab.com/3d-models/free-store-props-asset-pack-87a7f07bf1414543a073060388294f59",
+  "author": "SimplePolygon",
+  "license": "CC-BY 4.0",
+  "license_url": "http://creativecommons.org/licenses/by/4.0/",
+  "requirements": "Author must be credited. Commercial use is allowed.",
+  "description": "Description: Free lowpoly store props for shopping sims and supermarkets. Includes shelves, racks, fridges, pc, cash register, boxes and grocery items. roughly rectured, ready for your own colours.\n\ndiscord.gg/simplepolygon\nhttps://simplepolygon.net\n\nOriginal Models / Lowpoly Models / Game ready Props\n\n[Licence] Not to resell model, can sell commercially in end project/game\n\nsee please credit myself below you can copy and paste it.\n\nModels Created by SimplePolygon\n\nSketchfab - sketchfab.com/SimplePolygon\n\nItch.io - https://simplepolygon.itch.io/\n\nDiscord - discord.gg/simplepolygon\n\nYoutube - https://www.youtube.com/@SimplePolygon3D\n\nIf you have any further questions I will be happy to answer.",
+  "original_file": "free_store_props_asset_pack.glb",
+  "original_sha256": "bcfe7aa25e42496ea353dfadbca4541049d5bd3cb4ca2a4f05b4640d162203d0",
+  "inspected": "2026-11-11",
+  "changes": "Selected source groups, bottom-center pivots; shared original geometry/UV/textures. PSX OBJ converted in Blender; missing image paths repaired."
+}

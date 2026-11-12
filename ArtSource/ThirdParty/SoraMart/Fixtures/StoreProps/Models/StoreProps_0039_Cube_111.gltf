@@ -1,0 +1,265 @@
+{
+  "asset": {
+    "extras": {
+      "author": "SimplePolygon",
+      "license": "CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/free-store-props-asset-pack-87a7f07bf1414543a073060388294f59",
+      "title": "[FREE] Store Props [Asset pack]",
+      "SORA_resource_source": {
+        "source": "https://sketchfab.com/3d-models/free-store-props-asset-pack-87a7f07bf1414543a073060388294f59",
+        "author": "SimplePolygon",
+        "license": "CC-BY 4.0",
+        "license_url": "http://creativecommons.org/licenses/by/4.0/",
+        "requirements": "Author must be credited. Commercial use is allowed.",
+        "description": "Description: Free lowpoly store props for shopping sims and supermarkets. Includes shelves, racks, fridges, pc, cash register, boxes and grocery items. roughly rectured, ready for your own colours.\n\ndiscord.gg/simplepolygon\nhttps://simplepolygon.net\n\nOriginal Models / Lowpoly Models / Game ready Props\n\n[Licence] Not to resell model, can sell commercially in end project/game\n\nsee please credit myself below you can copy and paste it.\n\nModels Created by SimplePolygon\n\nSketchfab - sketchfab.com/SimplePolygon\n\nItch.io - https://simplepolygon.itch.io/\n\nDiscord - discord.gg/simplepolygon\n\nYoutube - https://www.youtube.com/@SimplePolygon3D\n\nIf you have any further questions I will be happy to answer.",
+        "original_file": "free_store_props_asset_pack.glb",
+        "original_sha256": "bcfe7aa25e42496ea353dfadbca4541049d5bd3cb4ca2a4f05b4640d162203d0",
+        "inspected": "2026-11-11",
+        "changes": "Selected source groups, bottom-center pivots; shared original geometry/UV/textures. PSX OBJ converted in Blender; missing image paths repaired."
+      }
+    },
+    "generator": "Sketchfab-0.13.0",
+    "version": "2.0"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        5
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "fab471643fd645b799e5cbdd28563d5c.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        4.249012055346616e-05,
+        135.35485839843085,
+        -7.140545300362752e-09,
+        0.0,
+        -135.3548449575447,
+        4.2490119516575e-05,
+        0.06032062906155822,
+        0.0,
+        0.06032062906155748,
+        -1.179509488609061e-08,
+        135.3548449575514,
+        0.0,
+        204.28311157226562,
+        0.21368563175201416,
+        143.01629638671875,
+        1.0
+      ],
+      "name": "Cube.111"
+    },
+    {
+      "mesh": 0,
+      "name": "Cube.111_SimplePolygonPalette.001_0"
+    },
+    {
+      "name": "StoreProps_0039_Cube_111",
+      "children": [
+        0
+      ],
+      "translation": [
+        -2.042831242084503,
+        0.06828154623508453,
+        -1.4301629066467285
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Cube.111_SimplePolygonPalette.001_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 2,
+      "byteOffset": 181008,
+      "componentType": 5126,
+      "count": 192,
+      "max": [
+        0.05202499032020569,
+        0.12946084141731262,
+        0.22897367179393768
+      ],
+      "min": [
+        -0.05202499032020569,
+        -0.12946084141731262,
+        -0.22897367179393768
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 183312,
+      "componentType": 5126,
+      "count": 192,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 60336,
+      "componentType": 5126,
+      "count": 192,
+      "max": [
+        0.12702544033527374,
+        0.2078779935836792
+      ],
+      "min": [
+        0.127025306224823,
+        0.20787793397903442
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 60156,
+      "componentType": 5125,
+      "count": 312,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 78348,
+      "name": "floatBufferViews",
+      "target": 34963,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteLength": 73312,
+      "byteOffset": 78348,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 219936,
+      "byteOffset": 151660,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "../geometry.bin",
+      "byteLength": 371596
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "SimplePolygonPalette.001",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0
+      }
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ],
+  "images": [
+    {
+      "mimeType": "image/png",
+      "uri": "../Textures/617aeeb291baf779f544cbdca9a1be0019ad4d3a9bdd4b448d1d0612a51729cc.png"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ]
+}

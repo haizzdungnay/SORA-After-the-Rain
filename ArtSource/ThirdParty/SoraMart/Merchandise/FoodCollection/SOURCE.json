@@ -1,0 +1,12 @@
+{
+  "source": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+  "author": "Melon Polygons",
+  "license": "CC-BY 4.0",
+  "license_url": "http://creativecommons.org/licenses/by/4.0/",
+  "requirements": "Author must be credited. Commercial use is allowed.",
+  "description": "Low-poly Food Collection - Game Ready Asset <br>\n\nTriangles: 31,796 <br>\nMeterials: 2 <br>\nTextures: 8 (2048x2048) <br>",
+  "original_file": "food_collection_-_game_ready.glb",
+  "original_sha256": "281e6f6b3188348c50ca8d9907fb8612bee1517a746529ab73e3561bd133b54f",
+  "inspected": "2026-11-11",
+  "changes": "Selected source groups, bottom-center pivots; shared original geometry/UV/textures. PSX OBJ converted in Blender; missing image paths repaired."
+}

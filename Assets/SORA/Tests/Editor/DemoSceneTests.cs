@@ -22,7 +22,11 @@ namespace Sora.AfterTheRain.Demo.Tests
                 var oldShelf = GameObject.CreatePrimitive(PrimitiveType.Cube);
                 oldShelf.name = "Grocery shelf base";
                 oldShelf.transform.SetParent(root.transform, false);
+                var lamp = new GameObject("Warm store lamp 0").AddComponent<Light>();
+                lamp.transform.SetParent(root.transform, false);
                 Assert.That(SoraMartVisuals.TryBuild(root.transform), Is.True);
+                Assert.That(lamp.type, Is.EqualTo(LightType.Spot));
+                Assert.That(lamp.transform.localPosition.y, Is.LessThan(3.0f), "Store light must be below the acoustic ceiling.");
                 Assert.That(oldShelf.GetComponent<Collider>().enabled, Is.False, "Old wide shelf collider must be disabled.");
                 Assert.That(marker.GetComponent<Renderer>().enabled, Is.False);
                 Assert.That(marker.GetComponent<Collider>().enabled, Is.True);
@@ -41,11 +45,19 @@ namespace Sora.AfterTheRain.Demo.Tests
                 var renderers = store.GetComponentsInChildren<MeshRenderer>();
                 foreach (string source in new[] { "gondola", "endcap", "checkout", "back_fixture", "pos", "stock_shelf", "goods",
                     "chilled_food", "bakery_rack", "magazine_rack", "basket_stack", "hot_food", "microwave",
-                    "coffee_brewer", "card_reader", "receipt_printer", "scanner" })
+                    "coffee_brewer", "card_reader", "receipt_printer", "scanner", "register_console", "cash_tray", "packaged_goods" })
                     Assert.That(renderers.Any(r => r.name.StartsWith("IMPORTED | " + source + " | ")), Is.True,
                         "Imported source missing from the actual runtime GLB: " + source);
+                var packaged = renderers.Where(r => r.name.StartsWith("IMPORTED | packaged_goods | "))
+                    .SelectMany(r => r.sharedMaterials).Distinct().ToArray();
+                Assert.That(packaged.Length, Is.InRange(10, 24), "Shared retail atlases must not create one material per product.");
+                Assert.That(packaged.All(m => m.GetTexturePropertyNames().Any(property =>
+                    m.GetTexture(property) != null && m.GetTexture(property).width > 4)), Is.True,
+                    "Retail packaging must retain actual source textures.");
                 Assert.That(store.GetComponentsInChildren<MeshCollider>().Length, Is.GreaterThan(12));
                 Physics.SyncTransforms();
+                Assert.That(Physics.SphereCast(new Vector3(0, 1.75f, -2), .18f, Vector3.up, out var ceilingHit, 3), Is.True);
+                Assert.That(ceilingHit.collider.name, Is.EqualTo("Interior ceiling shelter"), "Camera must stop below the visible ceiling.");
                 for (int z = -5; z <= 4; z++)
                     Assert.That(Physics.OverlapCapsule(new Vector3(0, .32f, z), new Vector3(0, 1.55f, z), .28f)
                         .Any(c => c.transform.IsChildOf(store)), Is.False, "Blocked main aisle at z=" + z);
