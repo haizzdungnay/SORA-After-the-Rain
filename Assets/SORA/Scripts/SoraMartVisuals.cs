@@ -6,6 +6,7 @@ namespace Sora.AfterTheRain.Demo
     public static class SoraMartVisuals
     {
         public const string ResourcePath = "SoraStore/SoraMart";
+        public const string RootName = "SORA MART - licensed model store";
         public static readonly Bounds Interior = new Bounds(new Vector3(0, 2, .1f), new Vector3(13.6f, 3.6f, 10.6f));
 
         public static bool TryBuild(Transform world)
@@ -17,14 +18,27 @@ namespace Sora.AfterTheRain.Demo
                 return false;
             }
 
-            // Keep existing interaction components, colliders and lights, replacing only art.
+            // Keep interaction markers and lights; match fixture colliders to the new art.
             var previous = world.GetComponentsInChildren<Renderer>();
             var store = Object.Instantiate(asset, world, false);
-            store.name = "SORA MART - authored CC0 store";
+            store.name = RootName;
             store.transform.localPosition = Vector3.zero;
             store.transform.localRotation = Quaternion.identity;
             store.transform.localScale = Vector3.one;
-            foreach (var renderer in previous) renderer.enabled = false;
+            foreach (var renderer in previous)
+            {
+                renderer.enabled = false;
+                if (renderer.name == "Grocery shelf base" || renderer.name == "POS checkout counter")
+                    renderer.GetComponent<Collider>().enabled = false;
+            }
+
+            // Static fixture meshes keep collision aligned when the source layout changes.
+            var solids = new[] { "gondola", "endcap", "checkout", "back_fixture", "stock_shelf",
+                "chilled_food", "bakery_rack", "magazine_rack", "basket_stack", "umbrella_stand",
+                "hot_food", "delivery_boxes" };
+            foreach (var filter in store.GetComponentsInChildren<MeshFilter>())
+                if (solids.Any(key => filter.name.StartsWith("IMPORTED | " + key + " | ")))
+                    filter.gameObject.AddComponent<MeshCollider>().sharedMesh = filter.sharedMesh;
 
             Solid(store.transform, "Store roof shelter", new Vector3(0, 4.4f, .1f), new Vector3(14.45f, .2f, 11.1f));
             Solid(store.transform, "Store canopy shelter", new Vector3(0, 3.83f, -5.95f), new Vector3(14.5f, .2f, 1.95f));

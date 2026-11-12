@@ -19,11 +19,15 @@ namespace Sora.AfterTheRain.Demo.Tests
                 marker.transform.SetParent(root.transform, false);
                 var register = marker.AddComponent<SoraInteractable>();
                 register.kind = InteractKind.Register;
+                var oldShelf = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                oldShelf.name = "Grocery shelf base";
+                oldShelf.transform.SetParent(root.transform, false);
                 Assert.That(SoraMartVisuals.TryBuild(root.transform), Is.True);
+                Assert.That(oldShelf.GetComponent<Collider>().enabled, Is.False, "Old wide shelf collider must be disabled.");
                 Assert.That(marker.GetComponent<Renderer>().enabled, Is.False);
                 Assert.That(marker.GetComponent<Collider>().enabled, Is.True);
                 Assert.That(root.GetComponentsInChildren<SoraInteractable>(), Has.Length.EqualTo(1));
-                var store = root.transform.Find("SORA MART - authored CC0 store");
+                var store = root.transform.Find(SoraMartVisuals.RootName);
                 Assert.That(store, Is.Not.Null);
                 Assert.That(store.localPosition, Is.EqualTo(Vector3.zero));
                 Assert.That(store.localScale, Is.EqualTo(Vector3.one));
@@ -34,6 +38,17 @@ namespace Sora.AfterTheRain.Demo.Tests
                 Assert.That(store.Find("Store canopy shelter").GetComponent<BoxCollider>().bounds.Contains(new Vector3(0, 3.83f, -6)), Is.True);
                 Assert.That(store.GetComponentsInChildren<BoxCollider>().Any(c =>
                     c.bounds.Contains(new Vector3(0, 1, -5.25f))), Is.False, "Doorway must remain clear.");
+                var renderers = store.GetComponentsInChildren<MeshRenderer>();
+                foreach (string source in new[] { "gondola", "endcap", "checkout", "back_fixture", "pos", "stock_shelf", "goods",
+                    "chilled_food", "bakery_rack", "magazine_rack", "basket_stack", "hot_food", "microwave",
+                    "coffee_brewer", "card_reader", "receipt_printer", "scanner" })
+                    Assert.That(renderers.Any(r => r.name.StartsWith("IMPORTED | " + source + " | ")), Is.True,
+                        "Imported source missing from the actual runtime GLB: " + source);
+                Assert.That(store.GetComponentsInChildren<MeshCollider>().Length, Is.GreaterThan(12));
+                Physics.SyncTransforms();
+                for (int z = -5; z <= 4; z++)
+                    Assert.That(Physics.OverlapCapsule(new Vector3(0, .32f, z), new Vector3(0, 1.55f, z), .28f)
+                        .Any(c => c.transform.IsChildOf(store)), Is.False, "Blocked main aisle at z=" + z);
             }
             finally
             {

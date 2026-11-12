@@ -13,8 +13,8 @@ namespace Sora.AfterTheRain.Demo.Editor
     [InitializeOnLoad]
     public static class SoraMartReview
     {
-        private const string Key = "SoraMartReview20261110";
-        private const string Folder = "Artifacts/SoraMart";
+        private const string Key = "SoraMartReview20261111Konbini";
+        private const string Folder = "Artifacts/SoraMartKonbini";
         private static double began;
 
         static SoraMartReview()
@@ -88,6 +88,42 @@ namespace Sora.AfterTheRain.Demo.Editor
                 else if (step == 5 && EditorApplication.timeSinceStartup - began > 2)
                 {
                     Capture("checkout");
+                    Camera.main.fieldOfView = 60;
+                    Camera.main.transform.position = new Vector3(-3.2f, 1.9f, -.5f);
+                    Camera.main.transform.LookAt(new Vector3(-4.85f, 1.2f, -2.5f));
+                    began = EditorApplication.timeSinceStartup;
+                    SessionState.SetInt(Key, 6);
+                }
+                else if (step == 6 && EditorApplication.timeSinceStartup - began > 2)
+                {
+                    Capture("pos-closeup");
+                    Camera.main.fieldOfView = 70;
+                    Camera.main.transform.position = new Vector3(0, 1.7f, 2.9f);
+                    Camera.main.transform.LookAt(new Vector3(0, 1.0f, 4.8f));
+                    began = EditorApplication.timeSinceStartup;
+                    SessionState.SetInt(Key, 7);
+                }
+                else if (step == 7 && EditorApplication.timeSinceStartup - began > 2)
+                {
+                    Capture("fresh-food");
+                    Camera.main.fieldOfView = 65;
+                    Camera.main.transform.position = new Vector3(-2.6f, 1.7f, -3.2f);
+                    Camera.main.transform.LookAt(new Vector3(-2.6f, .9f, -1.1f));
+                    began = EditorApplication.timeSinceStartup;
+                    SessionState.SetInt(Key, 8);
+                }
+                else if (step == 8 && EditorApplication.timeSinceStartup - began > 2)
+                {
+                    Capture("daily-care");
+                    Camera.main.fieldOfView = 70;
+                    Camera.main.transform.position = new Vector3(-4.1f, 2.0f, .7f);
+                    Camera.main.transform.LookAt(new Vector3(-6.2f, 1.3f, 1.8f));
+                    began = EditorApplication.timeSinceStartup;
+                    SessionState.SetInt(Key, 9);
+                }
+                else if (step == 9 && EditorApplication.timeSinceStartup - began > 2)
+                {
+                    Capture("coffee-bakery");
                     SessionState.EraseInt(Key);
                     EditorApplication.Exit(0);
                 }
@@ -114,7 +150,7 @@ namespace Sora.AfterTheRain.Demo.Editor
         private static void CheckStore()
         {
             var core = SoraDemoCore.Instance;
-            var store = GameObject.Find("SORA MART - authored CC0 store");
+            var store = GameObject.Find(SoraMartVisuals.RootName);
             Require(core != null && core.Characters.Count == 2 && store != null, "Authored store/twins absent");
             core.SetModelSelectionOpen(false);
             foreach (var twin in core.Characters) twin.enabled = false;
@@ -126,6 +162,11 @@ namespace Sora.AfterTheRain.Demo.Editor
             File.WriteAllLines(Folder + "/city-store-overlaps.txt", overlaps.Select(r => r.name + " | center=" + r.bounds.center + " size=" + r.bounds.size));
             Require(overlaps.Length == 0, "Imported city wall cuts through store; inspect city-store-overlaps.txt");
             var materials = store.GetComponentsInChildren<MeshRenderer>().SelectMany(r => r.sharedMaterials).Distinct().ToArray();
+            foreach (string source in new[] { "gondola", "endcap", "checkout", "back_fixture", "pos", "stock_shelf", "goods",
+                "chilled_food", "bakery_rack", "magazine_rack", "basket_stack", "hot_food", "microwave",
+                "coffee_brewer", "card_reader", "receipt_printer", "scanner" })
+                Require(store.GetComponentsInChildren<MeshRenderer>().Any(r => r.name.StartsWith("IMPORTED | " + source + " | ")),
+                    "Imported model source missing: " + source);
             Require(materials.All(m => m != null && m.shader.isSupported && m.shader.name != "Hidden/InternalErrorShader"), "Bad store material");
             Require(materials.Any(m => m.name.Contains("clear storefront glass") && m.renderQueue >= 3000), "Opaque storefront glass");
 
@@ -199,7 +240,9 @@ namespace Sora.AfterTheRain.Demo.Editor
             var report = new Report { unity = Application.unityVersion, materials = materials.Length,
                 storeRenderers = store.GetComponentsInChildren<MeshRenderer>().Length, walkthroughs = walks,
                 switches = 100, posStockSaveLoad = true, roofRainCollision = true,
-                privateCity = Resources.Load<GameObject>(SoraCityRuntimeWorld.PrivateV03Path) != null };
+                privateCity = Resources.Load<GameObject>(SoraCityRuntimeWorld.PrivateV03Path) != null,
+                triangles = store.GetComponentsInChildren<MeshFilter>().Sum(filter =>
+                    Enumerable.Range(0, filter.sharedMesh.subMeshCount).Sum(i => (long)filter.sharedMesh.GetIndexCount(i) / 3)) };
             File.WriteAllText(Folder + "/report.json", JsonUtility.ToJson(report, true));
             Debug.Log("SORA MART ACCEPTANCE: " + JsonUtility.ToJson(report));
         }
@@ -234,6 +277,7 @@ namespace Sora.AfterTheRain.Demo.Editor
         {
             public string unity;
             public int materials, storeRenderers, walkthroughs, switches;
+            public long triangles;
             public bool posStockSaveLoad, roofRainCollision, privateCity;
         }
     }

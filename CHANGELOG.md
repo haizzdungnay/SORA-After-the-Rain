@@ -4,7 +4,29 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 > **Release and evidence policy:** `VS01`, `V02`, `V03`, `V04` and `V05` are **internal environment-art iteration names**, not published playable releases or new SemVer tags. A 3D GLB, a Unity Editor staging helper and a passing static CI job do **not** by themselves prove Unity Play Mode, collision, performance or Windows build acceptance. Assembled private AFX-derived models remain local; earlier original-source publication is recorded in the source-intake entry. All newly authored diagrams below are explicitly **schematics, not in-game screenshots**.
 
-## [Unreleased] — development history through 2026-11-10
+## [Unreleased] — development history through 2026-11-11
+
+### 2026-11-11 — expanded konbini assortment actually integrated into Unity
+
+- Expand the running store from 19 to **67 source models**, with six gondolas, rear chilled-food bays, bakery/magazine racks, coffee brewer, microwave, hot-food cabinet, scanner/card reader/receipt printer, baskets, umbrellas and delivery props. Follow the real konbini reference layout while retaining interaction anchors.
+- Import original meshes, fit products to measured shelf heights, share identical constant materials and use native static mesh collision for fixtures. The 47 product/accessory sources provide 833 decorative placements; aggregate inventory and existing POS/save behavior remain.
+- Record actual use per file and per shopping-list row. Preserve original binaries, licenses, source hashes, store GUID and build attribution. Broader Japanese packaging/label and final art acceptance remain pending.
+- **Actual Unity:** 22/22 EditMode plus public/current-private-city Play Mode checks pass: eight routes, 100 switches, POS/stock/save-load and nine rain probes. Store counts: 127 renderers, 91 materials, 672,066 triangles. Windows build/startup status and genuine captures: [konbini Unity report](Docs/StreetExterior/Reports/2026-11-11-SORA-MART-KONBINI-UNITY.md).
+
+### 2026-11-11 — reference-based SORA MART procurement tracking
+
+- Add 192 local model candidates, bringing intake to 403 distinct SHA-256 model files from 38 source entries. Keep original downloads, publisher pages, license evidence and previews local; no new candidate binaries enter Unity or public Git.
+- Update every row of the [151-item shopping list](Docs/SORA_MART_MODEL_SHOPPING_LIST.md): 116 have downloaded candidates, five have existing CC0 source nodes, and 30 still lack candidates. Download checkboxes never imply full packaging, variant-count or art acceptance.
+- Record each downloaded file, source, license, exact path, hash, preview state and prior Unity placement in [CSV](Docs/StreetExterior/SORA_MART_DOWNLOADS.csv) and [JSON](Docs/StreetExterior/SORA_MART_DOWNLOADS.json). Use genuine [Japanese konbini references](Docs/StreetExterior/SORA_MART_KONBINI_REFERENCE.md) for the proposed layout and model matching.
+- Verify all 403 model hashes, GLB geometry and texture dependencies; check license/attribution evidence and all 151 checklist markers with `python Tools/StreetExterior/verify_sora_mart_downloads.py`. Blender previews cover 49 distinct models. New intake art acceptance, Unity import and gameplay remain pending; no runtime layout changes accompany this entry.
+
+### 2026-11-11 — SORA MART licensed retail models
+
+- Replace the generated counter, POS, four gondolas and repeated product blocks with selected creator-authored models. Add matching endcaps, a rear fixture and a stockroom shelf; retain the store envelope, working glass-door cabinets and original interaction anchors.
+- Keep source GLBs, SHA-256 records, CC0/CC BY licenses and author credits under `ArtSource/ThirdParty/SoraMart/`; ship attribution in Windows builds through `Assets/StreamingAssets/SoraMart-THIRD-PARTY-NOTICES.txt`. No new package.
+- Update shelf/counter colliders to the actual model dimensions and preserve POS cancellation, shared stock, twin switching and saves. Products remain decorative; Japanese packaging and final art/performance review remain pending.
+- Validation and genuine Unity captures: [model integration report](Docs/StreetExterior/Reports/2026-11-11-SORA-MART-MODELS.md).
+- **Actual checks:** 22/22 EditMode; public and current private-city scripted Play Mode; Windows x64 build and standalone startup pass. Correct the old test's road-sign expectation to 64 (16 intersections x four approaches); street placement code is unchanged.
 
 ### 2026-11-10 — SORA MART exterior and existing interior
 

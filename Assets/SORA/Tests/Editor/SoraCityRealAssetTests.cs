@@ -136,7 +136,7 @@ namespace Sora.AfterTheRain.Demo.Tests
         public void StreetPropSpotsStayOnMapAndAvoidRoadSurface()
         {
             Assert.That(SoraCityStreetProps.SignalSpots().Count, Is.EqualTo(64));
-            Assert.That(SoraCityStreetProps.SignSpots().Count, Is.EqualTo(128));
+            Assert.That(SoraCityStreetProps.SignSpots().Count, Is.EqualTo(64));
             Assert.That(SoraCityStreetProps.ConeSpots().Count, Is.EqualTo(32));
             foreach (var s in SoraCityStreetProps.LampSpots())
             {
