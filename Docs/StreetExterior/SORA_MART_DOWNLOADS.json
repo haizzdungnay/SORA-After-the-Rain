@@ -1,5 +1,5 @@
 {
-  "status": "67 selected original model sources integrated in Unity 6000.3.7f1; unselected candidates remain local",
+  "status": "147 active model sources; 104 textured retail goods from the owner library; remaining resources stay local",
   "items": [
     {
       "folder": "SM-B01_CounterStraight_Quaternius",
@@ -26,7 +26,8 @@
             "SM-B01",
             "SM-F07"
           ],
-          "preview_path": "Previews/SM-B01_CounterStraight_Quaternius.png"
+          "preview_path": "Previews/SM-B01_CounterStraight_Quaternius.png",
+          "unity_integrated_key": null
         }
       ],
       "meshes": 1,
@@ -129,7 +130,8 @@
           "candidate_ids": [
             "SM-C04"
           ],
-          "preview_path": "Previews/SM-C06_SupermarketFreezer_DaveEdwards.png"
+          "preview_path": "Previews/SM-C06_SupermarketFreezer_DaveEdwards.png",
+          "unity_integrated_key": null
         }
       ],
       "meshes": 6,
@@ -162,7 +164,8 @@
           "candidate_ids": [
             "SM-C04"
           ],
-          "preview_path": "Previews/SM-C04_FridgeDisplay_michu.png"
+          "preview_path": "Previews/SM-C04_FridgeDisplay_michu.png",
+          "unity_integrated_key": null
         }
       ],
       "meshes": 4,
@@ -231,7 +234,8 @@
             "SM-B02",
             "SM-B03"
           ],
-          "preview_path": "Previews/SM-B02_B03_CashRegister_GooglePoly.png"
+          "preview_path": "Previews/SM-B02_B03_CashRegister_GooglePoly.png",
+          "unity_integrated_key": null
         }
       ],
       "meshes": 1,
@@ -291,14 +295,16 @@
           "bytes": 11240,
           "sha256": "d7f405407a6592677c3d38f2e0b23334727c30902178a22e6c54f993b68b1c3b",
           "triangles": 98,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/apple-half.glb",
           "bytes": 10948,
           "sha256": "3de1f55449761d8dd80444acfe0f941a179c10a69c8727086473b569787fd120",
           "triangles": 124,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/apple.glb",
@@ -307,28 +313,32 @@
           "triangles": 136,
           "candidate_ids": [
             "SM-D32"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/avocado.glb",
           "bytes": 6076,
           "sha256": "bce429e7259d7b48ce8e6b9a5744f649392001a9241130bccee1e1baa9c6eb3f",
           "triangles": 44,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/bacon-raw.glb",
           "bytes": 5708,
           "sha256": "89b389bc0318d0243d83097dea5258828933ef9cd99323d4f618b84e9bfb521d",
           "triangles": 40,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/bacon.glb",
           "bytes": 5696,
           "sha256": "4b31e93d9bf20616edeab9bc7fe1e840fa0d8c53beaf81d303c70cd03d7d5c27",
           "triangles": 40,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/bag-flat.glb",
@@ -337,7 +347,8 @@
           "triangles": 114,
           "candidate_ids": [
             "SM-B10"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/bag.glb",
@@ -346,7 +357,8 @@
           "triangles": 46,
           "candidate_ids": [
             "SM-B10"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/banana.glb",
@@ -355,21 +367,24 @@
           "triangles": 104,
           "candidate_ids": [
             "SM-D32"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/barrel.glb",
           "bytes": 26812,
           "sha256": "da46fd63ab9d1f1a57ea0ef022c8ecea6d9651810975e1f4723b0047b1ffee4d",
           "triangles": 308,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/beet.glb",
           "bytes": 10372,
           "sha256": "72a6fa01c97fd23503f5276b4b3ac9698d7f0617abade486c026c4c1a52eccb3",
           "triangles": 100,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/bottle-ketchup.glb",
@@ -379,7 +394,7 @@
           "candidate_ids": [
             "SM-D27"
           ],
-          "unity_integrated_key": "bottle-ketchup"
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/bottle-musterd.glb",
@@ -389,7 +404,7 @@
           "candidate_ids": [
             "SM-D27"
           ],
-          "unity_integrated_key": "bottle-musterd"
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/bottle-oil.glb",
@@ -399,35 +414,39 @@
           "candidate_ids": [
             "SM-D27"
           ],
-          "unity_integrated_key": "bottle-oil"
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/bowl-broth.glb",
           "bytes": 16628,
           "sha256": "4729503b0eb8522925a81279bb58f30e13d1c2309e1a9498ef08e801c279b962",
           "triangles": 210,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/bowl-cereal.glb",
           "bytes": 12468,
           "sha256": "5b0fb4c50a4ef915f6136275714361ab7f46f4d865365d10439101f089bf693f",
           "triangles": 120,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/bowl-soup.glb",
           "bytes": 11188,
           "sha256": "0ff11d6a54ed9b0592ff24e02ca1dd4d12f47762dd7f571e985b48f3d1467e58",
           "triangles": 132,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/bowl.glb",
           "bytes": 6340,
           "sha256": "92463570dced6e0898cdc11c218c477efa9b1693d6d3c0e661b67119f294ca7b",
           "triangles": 84,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/bread.glb",
@@ -437,63 +456,72 @@
           "candidate_ids": [
             "SM-D07"
           ],
-          "preview_path": "Previews/Food_bread.png"
+          "preview_path": "Previews/Food_bread.png",
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/broccoli.glb",
           "bytes": 20452,
           "sha256": "ea4f789cf8ca924eba1f031d88e7984ff4705acdfb23977a1211cea9c77f2a41",
           "triangles": 220,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/burger-cheese-double.glb",
           "bytes": 44420,
           "sha256": "d82a5ac064d8c4afa696aea945c94ab6f74b419f589703f902b01c1cc0fdd757",
           "triangles": 392,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/burger-cheese.glb",
           "bytes": 25900,
           "sha256": "1797e8031017d9d8ebdad93103f59e8ad56482b58665dcb2c6376172f997ef5b",
           "triangles": 226,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/burger-double.glb",
           "bytes": 55692,
           "sha256": "93ef8149094cb26a46ce8d05c0550c13ed68648b1978a8c3dfdac7f0b2b5dbe2",
           "triangles": 468,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/burger.glb",
           "bytes": 34536,
           "sha256": "b982f15d980ef49f3aa295fda03b1926b0b9a29d3d000d139e111d734474c99b",
           "triangles": 294,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cabbage.glb",
           "bytes": 15360,
           "sha256": "6ec1db20d0d1900ed72ff66cb836fe0b0b6bcf63387fb0ff1c15ff80b7647a5c",
           "triangles": 140,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cake-birthday.glb",
           "bytes": 115324,
           "sha256": "3102379c244fa77cdd4818c316037f576f3fb172d28f161ae9e8deead55dac69",
           "triangles": 1146,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cake-slicer.glb",
           "bytes": 5060,
           "sha256": "c9641789e6f0dc6836a5e0788f33a7639f07076fe5c282f7d781d64d6466ed45",
           "triangles": 36,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cake.glb",
@@ -502,7 +530,8 @@
           "triangles": 750,
           "candidate_ids": [
             "SM-D08"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/can-open.glb",
@@ -511,7 +540,8 @@
           "triangles": 216,
           "candidate_ids": [
             "SM-D26"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/can-small.glb",
@@ -521,7 +551,7 @@
           "candidate_ids": [
             "SM-D26"
           ],
-          "unity_integrated_key": "can-small"
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/can.glb",
@@ -542,21 +572,23 @@
             "SM-D22"
           ],
           "preview_path": "Previews/Food_candy-bar-wrapper.png",
-          "unity_integrated_key": "candy-bar-wrapper"
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/candy-bar.glb",
           "bytes": 7504,
           "sha256": "dbccb7d60b6deda5474728110517314002423fa7bd386c3b6370448b5d199158",
           "triangles": 72,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/carrot.glb",
           "bytes": 16364,
           "sha256": "621949f7fb7947a810a3f6adca7d6166c8f7ef5a1016737cd0d245d12d60ab4e",
           "triangles": 148,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/carton-small.glb",
@@ -567,7 +599,7 @@
             "SM-D16",
             "SM-D17"
           ],
-          "unity_integrated_key": "carton-small"
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/carton.glb",
@@ -579,56 +611,63 @@
             "SM-D17"
           ],
           "preview_path": "Previews/Food_carton.png",
-          "unity_integrated_key": "carton"
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cauliflower.glb",
           "bytes": 16592,
           "sha256": "3667f655936f1ad4de753d9b4e2123beb8723fb89b87a7500b462ea31e63f20a",
           "triangles": 152,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/celery-stick.glb",
           "bytes": 5964,
           "sha256": "ddfd088ef8df52c197e2c57d34b7e2058b14402f2aa0011a720978c0d457ad71",
           "triangles": 52,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cheese-cut.glb",
           "bytes": 13456,
           "sha256": "3937390f5d3cf21434844d7aab87a9c9d1ce75a38e71177959ca5cbdc7a4db14",
           "triangles": 160,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cheese-slicer.glb",
           "bytes": 5496,
           "sha256": "e1fba08cf61d7ff9329df850b54701e17caec50ee8a45a920f0e900e4f7481bb",
           "triangles": 44,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cheese.glb",
           "bytes": 60976,
           "sha256": "092c9326a27fc51edfaa0353c411875993ac109ee5e8923b681cc39fbb6312d1",
           "triangles": 576,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cherries.glb",
           "bytes": 13516,
           "sha256": "16ddcbc58691bbd95c68a13b0f1e4e5d4059befd3c8b5b7b9b6b6b4ef81690df",
           "triangles": 134,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/chinese.glb",
           "bytes": 19384,
           "sha256": "6aa08a486ba711b7565062b691d286d16b3916cc01574a4fcb8287d7369e0396",
           "triangles": 162,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/chocolate-wrapper.glb",
@@ -639,21 +678,23 @@
             "SM-D22"
           ],
           "preview_path": "Previews/Food_chocolate-wrapper.png",
-          "unity_integrated_key": "chocolate-wrapper"
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/chocolate.glb",
           "bytes": 12652,
           "sha256": "40087c3e876830cfcc0a2fbd47f97d3727a4bef450689834f49d971406e4e80e",
           "triangles": 140,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/chopstic-decorative.glb",
           "bytes": 5416,
           "sha256": "3e1d1d03838c9616c688d413d095ad0aa9a48388bf53d15e6e14b205817ba7f8",
           "triangles": 36,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/chopstick.glb",
@@ -662,77 +703,88 @@
           "triangles": 12,
           "candidate_ids": [
             "SM-E23"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cocktail.glb",
           "bytes": 14128,
           "sha256": "8072ba57658b428f0f33f4cbce7821d91af6c5da0d2ed78956ff9fa3e349519e",
           "triangles": 144,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/coconut-half.glb",
           "bytes": 8308,
           "sha256": "d72e860192b27e3f3634b388d885a7a07afadb16b4233c783e2b68ef94702684",
           "triangles": 92,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/coconut.glb",
           "bytes": 8984,
           "sha256": "83b11a829c26c75068db48f4f89dd2e7143a076d00d181630975c73d5608c6c5",
           "triangles": 76,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cookie-chocolate.glb",
           "bytes": 12344,
           "sha256": "bf7894020a6d0d0acd120a69d96a9088b226f5d557b7d7a3441e9fc8169d2fe6",
           "triangles": 136,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cookie.glb",
           "bytes": 7532,
           "sha256": "7fa0d30c679f9abc9b884ab10509817d9f0ac813dbb1b36041f05118ca50a68a",
           "triangles": 68,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cooking-fork.glb",
           "bytes": 4872,
           "sha256": "ca4e6250c1ae655833f456e4f4288cdb9954ad19a0ce4becd3eed882676d2a04",
           "triangles": 36,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cooking-knife-chopping.glb",
           "bytes": 7796,
           "sha256": "f569999df71d6b4f6c604aae58ec9b74f3c5fc15bb51385e684fc20230d6f630",
           "triangles": 80,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cooking-knife.glb",
           "bytes": 5380,
           "sha256": "4bec734243cb3e8fa636e17a4ef27828bdaecfc8ac23bd847b9b86f6945cb4d2",
           "triangles": 39,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cooking-spatula.glb",
           "bytes": 6144,
           "sha256": "9c005637bf86f99719dfeff9fba5bcf2d436aa1143b747b167d37811c3679f59",
           "triangles": 72,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cooking-spoon.glb",
           "bytes": 6796,
           "sha256": "113270dd61d3a45929f8ed7ead0d16d6c129aab1131e108dd9304a28a51053a4",
           "triangles": 56,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/corn-dog.glb",
@@ -749,7 +801,8 @@
           "bytes": 14284,
           "sha256": "81c5b7734ec740980d792eeebb39fe06bcbe8e098c625fe2311a5cea0dff8b7a",
           "triangles": 128,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/croissant.glb",
@@ -777,21 +830,24 @@
           "bytes": 7848,
           "sha256": "0e8ff3b8e938739b0800a17a37f9a61ee5314ed74c6cb609a4defb5bd800ce59",
           "triangles": 116,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cup-tea.glb",
           "bytes": 9780,
           "sha256": "c2d60aeca48197b75ddb9f1ba145bd5e9c9e66e720b8ab67947f0b2a49ee1edd",
           "triangles": 144,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cup.glb",
           "bytes": 8008,
           "sha256": "f9d6786fe9836f16ebb10cc1cb5a8ea8d512c7ae6cfa22394af653e5a5b05f09",
           "triangles": 112,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cupcake.glb",
@@ -800,28 +856,32 @@
           "triangles": 204,
           "candidate_ids": [
             "SM-D08"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cutting-board-japanese.glb",
           "bytes": 9864,
           "sha256": "109f169c92c83869defb3e20108c26908d853927f373f39cac20dc37a1d9db5f",
           "triangles": 104,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cutting-board-round.glb",
           "bytes": 12608,
           "sha256": "43c52f55faa71123e97f51310b77140798a5fb4bffd9ad196cf5f636a3800d09",
           "triangles": 156,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/cutting-board.glb",
           "bytes": 10652,
           "sha256": "067f8a9331d16c65487a748747de2cddab2a77826f23bd7379e4f5da186c78ea",
           "triangles": 120,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/dim-sum.glb",
@@ -830,42 +890,48 @@
           "triangles": 56,
           "candidate_ids": [
             "SM-F13"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/donut-chocolate.glb",
           "bytes": 12568,
           "sha256": "857b6c73117598668db118378f6c801df9bb378af7292ff0b2ba919a4faa396c",
           "triangles": 120,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/donut-sprinkles.glb",
           "bytes": 20008,
           "sha256": "f45946b7e81221e9d45fdfab45ee89eeb095ff0d7fb6a3ad9988919cf587d3b7",
           "triangles": 180,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/donut.glb",
           "bytes": 11360,
           "sha256": "7dcd094f063efb215b2e1740c426f5b899776ce63e223ce1b1377af6c7d9ef2f",
           "triangles": 108,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/egg-cooked.glb",
           "bytes": 6752,
           "sha256": "f33c84a8126b947b06f6433bb55e508aaa6e1c9ec2ee3c401251d5acf7456bf7",
           "triangles": 92,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/egg-cup.glb",
           "bytes": 6992,
           "sha256": "bf43b9f0677c4bca2833d71b087a95dbf2e77753bc01b07c66cee7275bf0dc50",
           "triangles": 84,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/egg-half.glb",
@@ -874,49 +940,56 @@
           "triangles": 80,
           "candidate_ids": [
             "SM-F14"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/egg.glb",
           "bytes": 6044,
           "sha256": "32e20b7ed798e42e3f121bc39813cd557fe1606f6e6a943478f1fd02c8cfbec3",
           "triangles": 44,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/eggplant.glb",
           "bytes": 13416,
           "sha256": "79bcfd8f2368e6dfe5809f193d28bdef382da3b11a29a465ff364e3ef90a6f2e",
           "triangles": 124,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/fish-bones.glb",
           "bytes": 34068,
           "sha256": "4059c97a1a1b12408a94e74104de88cc7ca0b93de8b29e9904214746a519d6ba",
           "triangles": 384,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/fish.glb",
           "bytes": 31672,
           "sha256": "5bb8109f83f7ec4609427c6d6de76572c4fc4d055dfc16d47f2c397290c0e29d",
           "triangles": 233,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/frappe.glb",
           "bytes": 22548,
           "sha256": "4e5aafa4bff86fff9e4b5e5ef747cc93edfaa7d50c02f33e3b45480e68017d1b",
           "triangles": 320,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/fries-empty.glb",
           "bytes": 11376,
           "sha256": "5cdc941c5da4bdb69a3d4152d4f7bab5c47dd02bd43960c2ded0640cc46b84f3",
           "triangles": 116,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/fries.glb",
@@ -925,63 +998,72 @@
           "triangles": 564,
           "candidate_ids": [
             "SM-F12"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/frikandel-speciaal.glb",
           "bytes": 25532,
           "sha256": "fd1bcb89ddf4fafc8a105dee54130714cdf3748e8c0275b34735aa66ca88d4d3",
           "triangles": 308,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/frying-pan-lid.glb",
           "bytes": 13856,
           "sha256": "0ef3b50b783fdd86fb75f141b194c70d8d98a7f97dd7fd00c5c31b643b3d7af2",
           "triangles": 156,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/frying-pan.glb",
           "bytes": 19216,
           "sha256": "66cd36e3361d47f068cd1fc06df422b550058adde2017f306ed93dad7c3d2b9f",
           "triangles": 200,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/ginger-bread-cutter.glb",
           "bytes": 11972,
           "sha256": "50610b28d92f27099db0b41168f681190bf0827e2d49f5bb944b12371d05abb8",
           "triangles": 136,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/ginger-bread.glb",
           "bytes": 7756,
           "sha256": "6dfd0da43d778029b3d9d317bdda07fa4a9c2716ed3d54bd4cd98417f6140c7f",
           "triangles": 80,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/glass-wine.glb",
           "bytes": 23984,
           "sha256": "7021e2a701419b48fcfba5a1344f12049d84fd6e68fc9e54fbe051ae522a23bb",
           "triangles": 232,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/glass.glb",
           "bytes": 4216,
           "sha256": "acc1dcb7fa436fefd2bbb0ac6eef1e54c04ea543b051e2a3a9c26bf36c253e78",
           "triangles": 44,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/grapes.glb",
           "bytes": 58992,
           "sha256": "4ea095cc74bbea4215b4e1a35a95af0b6997b9290091a2babc480ad6840ea5b2",
           "triangles": 592,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/honey.glb",
@@ -998,7 +1080,8 @@
           "bytes": 9568,
           "sha256": "388eb584cb204053c48c27ce3f36f6d0a3b5caa8e5e31a5d001c6f32a4ccb041",
           "triangles": 92,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/hot-dog.glb",
@@ -1007,7 +1090,8 @@
           "triangles": 272,
           "candidate_ids": [
             "SM-F12"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/ice-cream-cne.glb",
@@ -1016,7 +1100,8 @@
           "triangles": 44,
           "candidate_ids": [
             "SM-D10"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/ice-cream-cup.glb",
@@ -1025,7 +1110,8 @@
           "triangles": 68,
           "candidate_ids": [
             "SM-D10"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/ice-cream-scoop-chocolate.glb",
@@ -1034,7 +1120,8 @@
           "triangles": 80,
           "candidate_ids": [
             "SM-D10"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/ice-cream-scoop-mint.glb",
@@ -1043,42 +1130,48 @@
           "triangles": 56,
           "candidate_ids": [
             "SM-D10"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/ice-cream.glb",
           "bytes": 10124,
           "sha256": "6258b20c40102ec4e86679e39a0618e1a025f302bf7bc8fdc618ebdd520cf83e",
           "triangles": 80,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/knife-block.glb",
           "bytes": 20204,
           "sha256": "cef03be799fed3befbd09f44d883ea9b1c050f9dcb00fa1e5b9cd924a4c8517e",
           "triangles": 157,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/leek.glb",
           "bytes": 16648,
           "sha256": "28aa881c1a71ebe7e480b24ccd215d7ffdfe16ba6fb2959e3132c1f761d8fe92",
           "triangles": 172,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/lemon-half.glb",
           "bytes": 10280,
           "sha256": "9d4b8dac8b7c0abd5180ef14d74361d8e77d7678e28c4c442ec68b21c35fd207",
           "triangles": 116,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/lemon.glb",
           "bytes": 11924,
           "sha256": "ed9e6234f54752c01e471ffe0167806431ed7d405983fff10804cd83c63209c0",
           "triangles": 104,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/loaf-baguette.glb",
@@ -1087,7 +1180,8 @@
           "triangles": 122,
           "candidate_ids": [
             "SM-D07"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/loaf-round.glb",
@@ -1096,7 +1190,8 @@
           "triangles": 116,
           "candidate_ids": [
             "SM-D07"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/loaf.glb",
@@ -1105,7 +1200,8 @@
           "triangles": 116,
           "candidate_ids": [
             "SM-D07"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/lollypop.glb",
@@ -1114,7 +1210,8 @@
           "triangles": 108,
           "candidate_ids": [
             "SM-D23"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/maki-roe.glb",
@@ -1123,7 +1220,8 @@
           "triangles": 56,
           "candidate_ids": [
             "SM-D04"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/maki-salmon.glb",
@@ -1142,70 +1240,80 @@
           "triangles": 56,
           "candidate_ids": [
             "SM-D04"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/meat-cooked.glb",
           "bytes": 10540,
           "sha256": "704fc34f56f3ce18c12383e3be8938c4b7da1843365b1e12b68b3529e06bf8ed",
           "triangles": 116,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/meat-patty.glb",
           "bytes": 9092,
           "sha256": "7f4e82eed617530fa0ff583f27aa68f19632124fd0160c81354680d928f662e3",
           "triangles": 104,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/meat-raw.glb",
           "bytes": 9936,
           "sha256": "4d57460c350190a59c14cb666ac462d3d46a706af59460b4ea37d02c858668eb",
           "triangles": 110,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/meat-ribs.glb",
           "bytes": 14364,
           "sha256": "64469de217d3536c879d00c4dea773c169912503de03e516e29b6a0c9ca0341e",
           "triangles": 164,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/meat-sausage.glb",
           "bytes": 47096,
           "sha256": "5476fa020781ec57c9d260e40da71383dedb63e5bca6355568f2a9388d52a7ff",
           "triangles": 320,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/meat-tenderizer.glb",
           "bytes": 31372,
           "sha256": "d1c1a517a9ad79a15adf9621d914b43893a75197c0e56b3b4fdb8faa09118c48",
           "triangles": 322,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/mincemeat-pie.glb",
           "bytes": 12700,
           "sha256": "b3685d53cdaca2d6110fe5569fdcf45a6d9e18c17e025f28c8477eada0af2a94",
           "triangles": 164,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/mortar-pestle.glb",
           "bytes": 7232,
           "sha256": "ecdbff18acbdc41d7094635e15eabfd182a73ce0397633f0290865d007b9985c",
           "triangles": 56,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/mortar.glb",
           "bytes": 10200,
           "sha256": "6dc054320c94a5dd01bb0f6b7cfb11d5352b54a6a1b7cfe00777b95a2970b067",
           "triangles": 92,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/muffin.glb",
@@ -1222,49 +1330,56 @@
           "bytes": 20236,
           "sha256": "5215ef74dbbc3a1c0ecf8d0937adde745bbcbd65d8facd228d9f3371991da435",
           "triangles": 232,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/mushroom-half.glb",
           "bytes": 7024,
           "sha256": "24d1aceddf6ce7575718401d86d5469519458982b3f3869fa787fc4aaaecb7be",
           "triangles": 68,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/mushroom.glb",
           "bytes": 8440,
           "sha256": "9ba28f47de26738f31083e590180aba99568f4399de0ec271924f0b278bac997",
           "triangles": 80,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/mussel-open.glb",
           "bytes": 10216,
           "sha256": "9b4467fc4fdc5faa4b38336278384ff7362fb2f8388c4037f9e2cf54604d68ad",
           "triangles": 90,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/mussel.glb",
           "bytes": 5328,
           "sha256": "e56a342f632bbee435a3cd09befe0ba871f865694133b1a769081b9e5c4c7c9b",
           "triangles": 38,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/onion-half.glb",
           "bytes": 9084,
           "sha256": "38fed5df667dcd6d47573dddb2f5f5f5399fd0c6c352fca92a96ccfc818f26d8",
           "triangles": 108,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/onion.glb",
           "bytes": 8356,
           "sha256": "fffc1da48e9dceaa6a3527d913d75f8e5169e75f27c944e4977be4959c247f39",
           "triangles": 68,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/orange.glb",
@@ -1273,42 +1388,48 @@
           "triangles": 120,
           "candidate_ids": [
             "SM-D32"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pan-stew.glb",
           "bytes": 28316,
           "sha256": "9846804ff7b4f39f902a365a6a898814b347b65fdf9a395695758fc308545b39",
           "triangles": 344,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pan.glb",
           "bytes": 19956,
           "sha256": "71abfe3ec45a852b51d8bced9afb997b796996a5ef6cd4beae4d489eea93895c",
           "triangles": 236,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pancakes.glb",
           "bytes": 42592,
           "sha256": "75550fb0eae1169ce4f59b054b0bbaa3de3be67765cd457a7e3e99488e93546e",
           "triangles": 512,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/paprika-slice.glb",
           "bytes": 8988,
           "sha256": "aa3f8d8e9b3a751e0e73de3c778afc0bdeaad45c62f6fd1d149ddb8472e19324",
           "triangles": 96,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/paprika.glb",
           "bytes": 15124,
           "sha256": "7f98fa7f5a55331629706f4fc6b5b476ea32f26cab6cd25b944891fd30064f13",
           "triangles": 132,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/peanut-butter.glb",
@@ -1325,98 +1446,112 @@
           "bytes": 11336,
           "sha256": "d119b3e586c664b3ed4e23dee6ce71ec24f461a9f388915ed14f9a952421cc73",
           "triangles": 126,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pear.glb",
           "bytes": 15556,
           "sha256": "436e8fdb9dc42100ab0135fc29e68f8609d5b3c5ac7d14062ed9aadfaef4d11f",
           "triangles": 136,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pepper-mill.glb",
           "bytes": 25664,
           "sha256": "7baa2a20d157cebf6a5be3a30550fb47bf2166523b824ba3c2130a1867ec3e3c",
           "triangles": 252,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pepper.glb",
           "bytes": 12928,
           "sha256": "1c603e1ba2317992c16cdcf011074d6db3dc304089f7c6d2390daf2d6d49257f",
           "triangles": 100,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pie.glb",
           "bytes": 22420,
           "sha256": "f071e07f0751727aa5e6e05bd513b57e11af1e91acaf41cd7b1cb43b05de1c79",
           "triangles": 292,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pineapple.glb",
           "bytes": 20248,
           "sha256": "dfa3b656350273eeddb92fd6a8bf6b90b3bae63b3285880eb66c8835e9c86b91",
           "triangles": 196,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pizza-box.glb",
           "bytes": 8788,
           "sha256": "6762e9233d74f720486630eb043e7f65cf0f437c6ac77f8b037b7bed2c4ddd23",
           "triangles": 84,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pizza-cutter.glb",
           "bytes": 8584,
           "sha256": "eb8501836d67ac68e51b89ecfa2df61f80e1e13bba16d619176d8d3be829f495",
           "triangles": 96,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pizza.glb",
           "bytes": 106780,
           "sha256": "e98eda0a63421bc4e86f063ebd096a21e50254b169ddbba945d2473b59390951",
           "triangles": 1208,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/plate-broken.glb",
           "bytes": 33220,
           "sha256": "e2ea6a7d9fb93c3f3a5a23aa8ead465a0503b18606facc2f0995e309c642ed03",
           "triangles": 336,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/plate-deep.glb",
           "bytes": 7944,
           "sha256": "d9ace0385057e84115be1d7da082340b4563ffd6a4bb6693489e4e193eda9bb3",
           "triangles": 140,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/plate-dinner.glb",
           "bytes": 27908,
           "sha256": "f6085c9caae201e0d2f0e6ea816ba3ed38e22df0eb08b10c0b9356b0212ad18f",
           "triangles": 354,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/plate-rectangle.glb",
           "bytes": 6756,
           "sha256": "fec4575a75106d7397c807296069034f65f7c50317c4177b5e03df84e969c8e8",
           "triangles": 68,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/plate-sauerkraut.glb",
           "bytes": 64728,
           "sha256": "b5506f2bddb0fc401929ebad1ddd21a205d018b4af3918bd2175ec2e09c2a1bc",
           "triangles": 580,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/plate.glb",
@@ -1425,7 +1560,8 @@
           "triangles": 140,
           "candidate_ids": [
             "SM-E23"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/popsicle-chocolate.glb",
@@ -1434,7 +1570,8 @@
           "triangles": 132,
           "candidate_ids": [
             "SM-D10"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/popsicle-stick.glb",
@@ -1443,7 +1580,8 @@
           "triangles": 36,
           "candidate_ids": [
             "SM-D10"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/popsicle.glb",
@@ -1452,35 +1590,40 @@
           "triangles": 78,
           "candidate_ids": [
             "SM-D10"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pot-lid.glb",
           "bytes": 10992,
           "sha256": "2112cbeda4068862391b02a22932c33ce669a1ec79522e65061f281a0dbf3cf4",
           "triangles": 132,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pot-stew-lid.glb",
           "bytes": 15824,
           "sha256": "0e9491fb90a53298eb8594e90649c81a541988654597f06cbbfd2e65f4209fbf",
           "triangles": 176,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pot-stew.glb",
           "bytes": 29560,
           "sha256": "311ba282a85bd722b5093f512579a168e3da949617600196b60d782c11afd6b8",
           "triangles": 370,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pot.glb",
           "bytes": 18900,
           "sha256": "ba84c5ebd769849b7cb0365adf1f6044680e024ba29e0bc1bec93d54100f72b3",
           "triangles": 228,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pudding.glb",
@@ -1497,14 +1640,16 @@
           "bytes": 8484,
           "sha256": "a6148a344c2dcf9e464ebb870f7107ae5b611c6ba9bb2254e363fafdfbbc2ec9",
           "triangles": 80,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/pumpkin.glb",
           "bytes": 20436,
           "sha256": "57f1667bfd266afd5eb650e81a7d207078f5d76cbd1a17351bf7503794f69592",
           "triangles": 188,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/radish.glb",
@@ -1513,7 +1658,8 @@
           "triangles": 166,
           "candidate_ids": [
             "SM-F14"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/rice-ball.glb",
@@ -1531,7 +1677,8 @@
           "bytes": 14304,
           "sha256": "5be3027c6764a3d09f18113ab5e4714d875f77dfc832a22ab7b42df90643ceed",
           "triangles": 140,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/salad.glb",
@@ -1540,7 +1687,8 @@
           "triangles": 170,
           "candidate_ids": [
             "SM-D05"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/sandwich.glb",
@@ -1558,7 +1706,8 @@
           "bytes": 8852,
           "sha256": "cf296464799fbbf1e9bb3d30c400d5df337707aa6cfa44a90a0a4a3a50cbb1c8",
           "triangles": 100,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/sausage.glb",
@@ -1575,28 +1724,32 @@
           "bytes": 9300,
           "sha256": "8be03953e4a667ecb21756ce4b58603766296efd36544ea69b50925d207a03b1",
           "triangles": 116,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/shaker-salt.glb",
           "bytes": 11792,
           "sha256": "038d06e0e64aa8f5c0cfe70456ba09e4d49069c112b6807b214a62ab77ce41c1",
           "triangles": 116,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/skewer-vegetables.glb",
           "bytes": 22604,
           "sha256": "943cddcbddca0446f202b0331626d8b46b6126444dcb26d138ef13288b0c3905",
           "triangles": 156,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/skewer.glb",
           "bytes": 16544,
           "sha256": "48427061cfbd066fa21d1dffc8a0fda0110062a1a43c816d4049adc0e17abed7",
           "triangles": 116,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/soda-bottle.glb",
@@ -1607,14 +1760,15 @@
             "SM-D13"
           ],
           "preview_path": "Previews/Food_soda-bottle.png",
-          "unity_integrated_key": "soda-bottle"
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/soda-can-crushed.glb",
           "bytes": 21304,
           "sha256": "6c052d69d4ec25083f05619bd48086d1666b0ddc9ddec5f6859fcd1f847be554",
           "triangles": 212,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/soda-can.glb",
@@ -1625,7 +1779,7 @@
             "SM-D13"
           ],
           "preview_path": "Previews/Food_soda-can.png",
-          "unity_integrated_key": "soda-can"
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/soda-glass.glb",
@@ -1634,14 +1788,16 @@
           "triangles": 124,
           "candidate_ids": [
             "SM-D13"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/soda.glb",
           "bytes": 12356,
           "sha256": "a3682c8cd208872fff480865bccc83a454bd4bd0ee7aed4e3a928d36a6283250",
           "triangles": 188,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/soy.glb",
@@ -1651,21 +1807,23 @@
           "candidate_ids": [
             "SM-D27"
           ],
-          "unity_integrated_key": "soy"
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/steamer.glb",
           "bytes": 45700,
           "sha256": "a3611b750830f39a93e4657b3e53052b6b921897b0da27af9b1346e0bb615d9b",
           "triangles": 492,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/strawberry.glb",
           "bytes": 16620,
           "sha256": "685828642a92681b474c29abbd9cabe98c7bcade62cc50da57ec6658a5b7e8f7",
           "triangles": 156,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/styrofoam-dinner.glb",
@@ -1684,7 +1842,8 @@
           "triangles": 152,
           "candidate_ids": [
             "SM-F11"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/sub.glb",
@@ -1693,14 +1852,16 @@
           "triangles": 574,
           "candidate_ids": [
             "SM-D03"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/sundae.glb",
           "bytes": 26416,
           "sha256": "3c2aee04e5a74225a4566dca7cfa80b97ef87673d3fdcd40703d06de80b68797",
           "triangles": 316,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/sushi-egg.glb",
@@ -1709,7 +1870,8 @@
           "triangles": 78,
           "candidate_ids": [
             "SM-D04"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/sushi-salmon.glb",
@@ -1718,28 +1880,32 @@
           "triangles": 96,
           "candidate_ids": [
             "SM-D04"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/taco.glb",
           "bytes": 17476,
           "sha256": "1fdbf0df44c90c04d82d9e88f3b6f4d95932e34af2cc90c34683ff8e43cfa4f9",
           "triangles": 174,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/tajine-lid.glb",
           "bytes": 13796,
           "sha256": "74d722c9aadc73e804ea63d4ccc6556a36697e2ce5393adcb7b03a273901cd67",
           "triangles": 136,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/tajine.glb",
           "bytes": 15644,
           "sha256": "9afde098ea8798a78c6d4d44c00f43739dff4de354825b78eef4a2d52fb2399f",
           "triangles": 164,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/Textures/colormap.png",
@@ -1752,84 +1918,96 @@
           "bytes": 12348,
           "sha256": "fd9329c4fb881710e2d3029b703db9ad77151faafad5f2029913252275055ab1",
           "triangles": 140,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/tomato.glb",
           "bytes": 14084,
           "sha256": "c2179712b2fd4f5832f79f09f7188c4bc92f05798229d0e58264e1ca2558f4cc",
           "triangles": 132,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/turkey.glb",
           "bytes": 37192,
           "sha256": "7d5edab26f512fdc8a5be1e31023b559b0755fcebff06ef766842e0dd356dbf5",
           "triangles": 368,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/utensil-fork.glb",
           "bytes": 4816,
           "sha256": "9b470b64539caaa7f233171a7bda4555eee7688672efab8e1522cbfbae40c7b5",
           "triangles": 44,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/utensil-knife.glb",
           "bytes": 3492,
           "sha256": "a8478aa01fa5113bba0cd39fdf9c1de3436d4b6c5a6dbc4a826e7fed958badc7",
           "triangles": 18,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/utensil-spoon.glb",
           "bytes": 6128,
           "sha256": "dbb39cce42ceaad607f80a3ee0b25a6f7d8f5feec3688f0c66fb585f4621e5f5",
           "triangles": 46,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/waffle.glb",
           "bytes": 47924,
           "sha256": "0d59883f629013b3e4c89dc4818755b4aaa968beaa8c8ec2a2e2bcbf9f52585b",
           "triangles": 588,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/watermelon.glb",
           "bytes": 93884,
           "sha256": "5992fa8ea001949b01a5e2b035693b885146c575f740e5c4505532c4e7e6f1ba",
           "triangles": 1376,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/whipped-cream.glb",
           "bytes": 4916,
           "sha256": "a15dff0a68a0d4d5780a41a14da09ef4d69976a00b092d5866e1ae5af4a3915f",
           "triangles": 80,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/whisk.glb",
           "bytes": 10264,
           "sha256": "4f165ee6affd4718255b36dc36d55282f926fe4801a9c87dbc8a7fbc1e6fe856",
           "triangles": 150,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/whole-ham.glb",
           "bytes": 11752,
           "sha256": "a96903e780992a8036b4e98353999e8a527c493ddc2e3963bc070403ab273b6a",
           "triangles": 128,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/wholer-ham.glb",
           "bytes": 12916,
           "sha256": "7372f78703994aa80bec526c89b54ec205881b1a9fa7cb4674d68e3f2589e641",
           "triangles": 116,
-          "candidate_ids": []
+          "candidate_ids": [],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/wine-red.glb",
@@ -1838,7 +2016,8 @@
           "triangles": 132,
           "candidate_ids": [
             "SM-D33"
-          ]
+          ],
+          "unity_integrated_key": null
         },
         {
           "path": "SM-D_E_F_KenneyFoodKit/Models/wine-white.glb",
@@ -1847,7 +2026,8 @@
           "triangles": 124,
           "candidate_ids": [
             "SM-D33"
-          ]
+          ],
+          "unity_integrated_key": null
         }
       ],
       "zip_extensions": {
@@ -2272,7 +2452,8 @@
           "sha256": "24d25ba8bb8f635c1ebfde1ed016512060e68f8acabdf00532bbf51fa641a194",
           "meshes": 3,
           "materials": 3,
-          "triangles": 2440
+          "triangles": 2440,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-gridwall-panel-2000-9565639f.glb",
@@ -2286,7 +2467,8 @@
           "sha256": "567f4566402b5864b158bcf9815fa84ebaa404206ecfb8ccb2b5f0228a631f1e",
           "meshes": 2,
           "materials": 2,
-          "triangles": 668
+          "triangles": 668,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-gridwall-hook-set-8d560056.glb",
@@ -2300,7 +2482,8 @@
           "sha256": "5b72f01e0699a83c4cb630fc1d7b35d9eef99095f40f7ea2b4409fa26e464fa7",
           "meshes": 2,
           "materials": 2,
-          "triangles": 544
+          "triangles": 544,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-gridwall-basket-24562f53.glb",
@@ -2314,7 +2497,8 @@
           "sha256": "a3fe3dc4e2492bd2cff7fc4f17065c44f2ea241f8afa9548485aa21fe5d32f16",
           "meshes": 1,
           "materials": 1,
-          "triangles": 368
+          "triangles": 368,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-promotional-dump-bin-6a9cf661.glb",
@@ -2328,7 +2512,8 @@
           "sha256": "88b615c9f51a172d2c91dab576d8082b6c780c17c15b37ea2a7562fc772c02c7",
           "meshes": 4,
           "materials": 4,
-          "triangles": 994
+          "triangles": 994,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-cash-desk-module-600-0054b2bd.glb",
@@ -2342,7 +2527,8 @@
           "sha256": "9f132cd6716907fa4a80cd2d9ddb451b24a249f87ae6ce3bd1750ddf73e82aa8",
           "meshes": 7,
           "materials": 5,
-          "triangles": 640
+          "triangles": 640,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-cash-desk-corner-06d0dd83.glb",
@@ -2356,7 +2542,8 @@
           "sha256": "831a5fd33c283e13cb2c1d47964deb223fee2953a77aace0d9ff7471a0a692e7",
           "meshes": 5,
           "materials": 5,
-          "triangles": 576
+          "triangles": 576,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-till-drawer-unit-77715887.glb",
@@ -2370,7 +2557,8 @@
           "sha256": "cf57103fddbc59b387f2e3a186327b65287b725d2174f9d573998268bf65a800",
           "meshes": 5,
           "materials": 3,
-          "triangles": 1248
+          "triangles": 1248,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-till-drawer-unit-open-cea35d89.glb",
@@ -2384,7 +2572,8 @@
           "sha256": "94865accd581a0d942f44ba702c90294ff2b34c7aaeeef50fd18ba382f5429ee",
           "meshes": 5,
           "materials": 3,
-          "triangles": 1248
+          "triangles": 1248,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-card-terminal-stand-a5c2c2d7.glb",
@@ -2430,7 +2619,8 @@
           "sha256": "6de4b9366db2242d696beef0f6b7c7c4fdf33d2817b3acf14f2488c0c53c7a92",
           "meshes": 3,
           "materials": 3,
-          "triangles": 440
+          "triangles": 440,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-ceiling-camera-dome-f94d641c.glb",
@@ -2444,7 +2634,8 @@
           "sha256": "9149ec8ed2d973baad87b77064e2e6286f5097559218a2478bf4d6400ec5ab8d",
           "meshes": 3,
           "materials": 3,
-          "triangles": 484
+          "triangles": 484,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-counter-queue-rail-da9f9564.glb",
@@ -2458,7 +2649,8 @@
           "sha256": "a5aa077e627e6e1d803bca7436a8178a5b8a6d0506e9a6a3d5e53682e0f43358",
           "meshes": 2,
           "materials": 2,
-          "triangles": 988
+          "triangles": 988,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-shopfront-glazed-module-e3362ff9.glb",
@@ -2472,7 +2664,8 @@
           "sha256": "d5ed99aafd5ffc6b7165b8a99130c315057c8621d6f9c251b5bc7bdaca24b702",
           "meshes": 4,
           "materials": 4,
-          "triangles": 576
+          "triangles": 576,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-shopfront-corner-post-00b020f1.glb",
@@ -2486,7 +2679,8 @@
           "sha256": "ebe79c769f6c4dc123b89770168b1b832b5b016d7543c9ef782a176e18dd6c71",
           "meshes": 2,
           "materials": 2,
-          "triangles": 320
+          "triangles": 320,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-fascia-sign-board-cd600130.glb",
@@ -2500,7 +2694,8 @@
           "sha256": "6411375a31d68c15ec88ba5f31e9e14e8b21185a00a4c38d7241a0271c1a404b",
           "meshes": 3,
           "materials": 3,
-          "triangles": 384
+          "triangles": 384,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-projecting-blade-sign-ef9f33c8.glb",
@@ -2514,7 +2709,8 @@
           "sha256": "6ace48481e2ff297b8ba754b1036ca12eb2a70610040a7798ed8d72c159165c4",
           "meshes": 3,
           "materials": 3,
-          "triangles": 320
+          "triangles": 320,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-store-threshold-mat-da02d150.glb",
@@ -2528,7 +2724,8 @@
           "sha256": "69ab136499c4390305957b438ef65157280e21956da4f7b87f242035cc3dc27b",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1536
+          "triangles": 1536,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-internal-store-partitio-8ed57ff4.glb",
@@ -2542,7 +2739,8 @@
           "sha256": "2b9337be34cc0da46ae2230f00b2180749cce46355a30fbd59ff54b59b0a534c",
           "meshes": 2,
           "materials": 2,
-          "triangles": 192
+          "triangles": 192,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-stock-room-door-module-47c0d108.glb",
@@ -2556,7 +2754,8 @@
           "sha256": "5ec2b3c7dab63e06f0e5fd8b4c7bf8e7494e3304ba3ea71e51cca5d53b00b7cc",
           "meshes": 5,
           "materials": 4,
-          "triangles": 756
+          "triangles": 756,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-service-riser-panel-401a7e92.glb",
@@ -2570,7 +2769,8 @@
           "sha256": "3c9d16855983101195e29d4f8a8116b02896d40054f7df950b7ae7256371fd05",
           "meshes": 3,
           "materials": 3,
-          "triangles": 336
+          "triangles": 336,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-ceiling-track-lighting--9cadd166.glb",
@@ -2584,7 +2784,8 @@
           "sha256": "a314799655f89f1cfc55e3fe28d4c3a18e55b3b3a0868b1ab2323941df6756b1",
           "meshes": 4,
           "materials": 4,
-          "triangles": 1568
+          "triangles": 1568,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-mall-unit-shell-module-41eecee9.glb",
@@ -2599,7 +2800,8 @@
           "sha256": "2685f24d31cadc2b9190fd9d74a999398b9c61069414714b11691c572b3dec67",
           "meshes": 4,
           "materials": 4,
-          "triangles": 384
+          "triangles": 384,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-mall-unit-shell-corner-0c665ed0.glb",
@@ -2614,7 +2816,8 @@
           "sha256": "1d1d4dd2297a530a38e073299ab85221a69811d3a2f510e3c174b51a4812f1df",
           "meshes": 4,
           "materials": 4,
-          "triangles": 768
+          "triangles": 768,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-concourse-bench-e1d49b32.glb",
@@ -2628,7 +2831,8 @@
           "sha256": "431bb3ea9ca0186826569f0b66e28bb39134face0a9efa7d17d6811dbefe1b5e",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1248
+          "triangles": 1248,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-shopping-bag-paper-49533c70.glb",
@@ -2642,7 +2846,8 @@
           "sha256": "d47a6eb5731ee6e4b1460b09a509dcb823c80cb57deac136c733db5dd44333f0",
           "meshes": 2,
           "materials": 2,
-          "triangles": 326
+          "triangles": 326,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-shelf-talker-set-7bdea94d.glb",
@@ -2656,7 +2861,8 @@
           "sha256": "a53252754581ab4527086cea8638e3b5d99015ac3e1ebc0b06384dc03944fc96",
           "meshes": 4,
           "materials": 4,
-          "triangles": 872
+          "triangles": 872,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-sale-sign-a-frame-3ace4b57.glb",
@@ -2670,7 +2876,8 @@
           "sha256": "09ee4f4aaf6957c83f932a42febe3415d28344ac36af51dd8c57e05306c49373",
           "meshes": 3,
           "materials": 3,
-          "triangles": 716
+          "triangles": 716,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-stock-roll-cage-a001e0bf.glb",
@@ -2684,7 +2891,8 @@
           "sha256": "24ed2026123bbd0bb4960d060265e21412038a92c9805540409016b21868a820",
           "meshes": 2,
           "materials": 2,
-          "triangles": 2976
+          "triangles": 2976,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-counter-display-riser-6c576687.glb",
@@ -2698,7 +2906,8 @@
           "sha256": "1051b7155d6cb788331ce4edceae56576f4d7ef120225fb7a7003584d10ced3a",
           "meshes": 2,
           "materials": 2,
-          "triangles": 558
+          "triangles": 558,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-stock-ladder-step-0ec10025.glb",
@@ -2712,7 +2921,8 @@
           "sha256": "269f775cb70db9d9647449e27fc5f60fd9d4713a66d9b8fb24d2e8f335b31865",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1984
+          "triangles": 1984,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_retail/retail-store-fixtures-and-mall-window-vinyl-frame-ed0c849f.glb",
@@ -2726,7 +2936,8 @@
           "sha256": "846438e2368be1056f5375be1b25ba50db20fa938a4e5db51b7edab4250e0f74",
           "meshes": 3,
           "materials": 3,
-          "triangles": 464
+          "triangles": 464,
+          "unity_integrated_key": null
         }
       ]
     },
@@ -2793,7 +3004,8 @@
           "sha256": "52fa4323a21d2ea5fd5e3730abe285d56406c3fedf614898a124038e726ce9c0",
           "meshes": 3,
           "materials": 3,
-          "triangles": 156
+          "triangles": 156,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-double-sided-gondola-1e4ac390.glb",
@@ -2807,7 +3019,8 @@
           "sha256": "5adcc4902344846628ff552c7590bd42e0debb530ddba1b6a18bdf83ee9e590e",
           "meshes": 3,
           "materials": 3,
-          "triangles": 216
+          "triangles": 216,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-endcap-shelving-26234c2c.glb",
@@ -2821,7 +3034,8 @@
           "sha256": "eed4ec6e4f0e5fe6ec4bea1829d17a731f0a0c528e64ab453e80404ddcc2b74d",
           "meshes": 3,
           "materials": 3,
-          "triangles": 168
+          "triangles": 168,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-bakery-wall-rack-60417ed2.glb",
@@ -2867,7 +3081,8 @@
           "sha256": "ef109480baac4d3851d768e65ed85154b867b44453241905a2d65fed892c9d02",
           "meshes": 2,
           "materials": 2,
-          "triangles": 84
+          "triangles": 84,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-basket-stack-0006c20d.glb",
@@ -2898,7 +3113,8 @@
           "materials": 2,
           "triangles": 96,
           "visual_review": "Solid-sided handle basket; vented retail basket and matching stack holder pending.",
-          "preview_path": "Previews/Expansion/Hand Basket.png"
+          "preview_path": "Previews/Expansion/Hand Basket.png",
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-receipt-printer-ea0613d4.glb",
@@ -2912,7 +3128,8 @@
           "sha256": "9fa03ea2658c425e487a99343699bd1238849555e256c083eedee8043892fa47",
           "meshes": 2,
           "materials": 2,
-          "triangles": 24
+          "triangles": 24,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-card-terminal-554d756b.glb",
@@ -2926,7 +3143,8 @@
           "sha256": "79a770d00043583302accbd35dc3e7c4aae5bb1fc97f6a174f65bb02b09521fb",
           "meshes": 3,
           "materials": 3,
-          "triangles": 132
+          "triangles": 132,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-upright-freezer-2b523e7f.glb",
@@ -2940,7 +3158,8 @@
           "sha256": "1764d607999122afa42a76b07bb0648000884bd1a41c950cf6fa9a641519b9f0",
           "meshes": 3,
           "materials": 3,
-          "triangles": 36
+          "triangles": 36,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-open-chiller-95bac66b.glb",
@@ -2972,7 +3191,8 @@
           "materials": 2,
           "triangles": 36,
           "visual_review": "One angle shows simple closed cabinet; transparent sliding lid/interior not established.",
-          "preview_path": "Previews/Expansion/Chest Freezer.png"
+          "preview_path": "Previews/Expansion/Chest Freezer.png",
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-stockroom-shelf-226919c9.glb",
@@ -2986,7 +3206,8 @@
           "sha256": "da5a86eb374e2761138f23e2b2766d9e33a8a4289b6cf269435b65c50af1c690",
           "meshes": 2,
           "materials": 2,
-          "triangles": 96
+          "triangles": 96,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-flatbed-cart-7621fff6.glb",
@@ -3000,7 +3221,8 @@
           "sha256": "89d70d5a567e99f53d9a33d194d64649f2867b7bd042eb63e6ab4592890f284f",
           "meshes": 2,
           "materials": 2,
-          "triangles": 96
+          "triangles": 96,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-roll-cage-cbd91886.glb",
@@ -3014,7 +3236,8 @@
           "sha256": "a5ca6b5df5013474f08ba808d7bd4e7f6f44495f6e8a5c556206afcef9b9626a",
           "meshes": 1,
           "materials": 1,
-          "triangles": 288
+          "triangles": 288,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-wash-station-8adb8792.glb",
@@ -3028,7 +3251,8 @@
           "sha256": "d32f66f8ff5129959535f30ac099531d0321d84cecbe9a0117015a0075b98d0e",
           "meshes": 3,
           "materials": 3,
-          "triangles": 96
+          "triangles": 96,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-milk-carton-c3a32ec4.glb",
@@ -3044,7 +3268,7 @@
           "materials": 2,
           "triangles": 48,
           "preview_path": "Previews/Expansion/Milk Carton.png",
-          "unity_integrated_key": "milk_carton"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-juice-carton-cbb8fa73.glb",
@@ -3059,7 +3283,7 @@
           "meshes": 2,
           "materials": 2,
           "triangles": 72,
-          "unity_integrated_key": "juice_carton"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-water-bottle-f671099a.glb",
@@ -3073,7 +3297,8 @@
           "sha256": "1df39ed07b2b2872f307942150fa2e89b94ca0fe20b9d116211b68adea776b3e",
           "meshes": 2,
           "materials": 2,
-          "triangles": 192
+          "triangles": 192,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-soda-can-8290a2be.glb",
@@ -3087,7 +3312,8 @@
           "sha256": "494fec0de8913603a5b48f144bfe7fdff52ce7484c7ac7e1c8f44f7a19feab98",
           "meshes": 3,
           "materials": 3,
-          "triangles": 108
+          "triangles": 108,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-wide-food-tin-a21047cd.glb",
@@ -3101,7 +3327,8 @@
           "sha256": "79ae8398f087e76eedf1f7d7f84db7c7a467014da6069b03e017fb481132ac2d",
           "meshes": 2,
           "materials": 2,
-          "triangles": 96
+          "triangles": 96,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-jam-jar-1c53483d.glb",
@@ -3115,7 +3342,8 @@
           "sha256": "cd1b4232929c4641f171a5e676cfae7ab2ade14e7e6b4fb959fc750315ed451e",
           "meshes": 2,
           "materials": 2,
-          "triangles": 96
+          "triangles": 96,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-honey-squeeze-bottle-3742d1be.glb",
@@ -3129,7 +3357,8 @@
           "sha256": "7460f322f32877c2b87696ea376b53885499ac97ca343c230d5cad82ce040bd9",
           "meshes": 2,
           "materials": 2,
-          "triangles": 148
+          "triangles": 148,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-cereal-box-7a833365.glb",
@@ -3144,7 +3373,7 @@
           "meshes": 2,
           "materials": 2,
           "triangles": 24,
-          "unity_integrated_key": "cereal_box"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-rice-sack-c1e7b54e.glb",
@@ -3158,7 +3387,8 @@
           "sha256": "b6eace51266c3b32afd92e3ca44f1f22d2835952f2e15927f42ed4f18b8e722e",
           "meshes": 2,
           "materials": 2,
-          "triangles": 112
+          "triangles": 112,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-flour-bag-e29e46d4.glb",
@@ -3172,7 +3402,8 @@
           "sha256": "ed9e225c47ce30f914f5540abe6efb9e7a471c04af1a8f6a84422412218087f5",
           "meshes": 3,
           "materials": 3,
-          "triangles": 36
+          "triangles": 36,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-sliced-bread-bag-8fc5fbb3.glb",
@@ -3186,7 +3417,8 @@
           "sha256": "8ea2d2db95872d386fb0cb29e6123d344288dd7d1ab3fa7ac2c79744c05b4471",
           "meshes": 2,
           "materials": 2,
-          "triangles": 124
+          "triangles": 124,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-cake-box-fc944349.glb",
@@ -3200,7 +3432,8 @@
           "sha256": "67e4900215b61dcfa17dc922c7d04d06f6cfc8ce9076cda7508a703e298fe6ea",
           "meshes": 2,
           "materials": 2,
-          "triangles": 24
+          "triangles": 24,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-egg-carton-4e98c67b.glb",
@@ -3214,7 +3447,8 @@
           "sha256": "00fb8ef6a50af646fd87bdee85cec8d07de68dbc1e752e8c53262f0a0c44c15a",
           "meshes": 2,
           "materials": 2,
-          "triangles": 612
+          "triangles": 612,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-cheese-wedge-883a76db.glb",
@@ -3228,7 +3462,8 @@
           "sha256": "835526c0e8b5869cd258da48e5078b3172b8a35a42d0b897e7ac68f84d4d5460",
           "meshes": 1,
           "materials": 1,
-          "triangles": 8
+          "triangles": 8,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-apple-22605b06.glb",
@@ -3242,7 +3477,8 @@
           "sha256": "2a73a5d26692edb064b140c8b699b66a4ae841003fa14dd5a322654be3c860ff",
           "meshes": 2,
           "materials": 2,
-          "triangles": 112
+          "triangles": 112,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-banana-bunch-41551941.glb",
@@ -3256,7 +3492,8 @@
           "sha256": "834599957e1d880920694dc2dd51e9ae10fd66e9f91d09f8d8d4ddf8346e41e6",
           "meshes": 1,
           "materials": 1,
-          "triangles": 600
+          "triangles": 600,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-orange-3db099f8.glb",
@@ -3270,7 +3507,8 @@
           "sha256": "2933dc444d9cb90b23dfa8bb82f0ea0c8a0ab8f5a815f831730c93bf981b5c58",
           "meshes": 1,
           "materials": 1,
-          "triangles": 100
+          "triangles": 100,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-detergent-bottle-18328bff.glb",
@@ -3286,7 +3524,7 @@
           "materials": 2,
           "triangles": 108,
           "preview_path": "Previews/Expansion/Detergent Bottle.png",
-          "unity_integrated_key": "detergent"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-spray-bottle-a0ba9f40.glb",
@@ -3300,7 +3538,8 @@
           "sha256": "f29e7c7a2c33f03d8f7b10a4d3142f4765de78777d8dc955e13d9070a0a397f2",
           "meshes": 2,
           "materials": 2,
-          "triangles": 84
+          "triangles": 84,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-toilet-roll-158bbea5.glb",
@@ -3314,7 +3553,8 @@
           "sha256": "369d02b89a95e4bcd2a33c3e7fb006cde4eae81c99ecb448b87ac1c9482d6b85",
           "meshes": 2,
           "materials": 2,
-          "triangles": 96
+          "triangles": 96,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-tissue-box-60c96b21.glb",
@@ -3330,7 +3570,7 @@
           "materials": 2,
           "triangles": 24,
           "preview_path": "Previews/Expansion/Tissue Box.png",
-          "unity_integrated_key": "tissue_box"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-toothpaste-tube-9654d744.glb",
@@ -3347,7 +3587,7 @@
           "triangles": 108,
           "visual_review": "Bare tube; retail box/blister, print and additional variants missing.",
           "preview_path": "Previews/Expansion/Toothpaste Tube.png",
-          "unity_integrated_key": "toothpaste"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-soap-bar-3d27f42e.glb",
@@ -3362,7 +3602,7 @@
           "meshes": 2,
           "materials": 2,
           "triangles": 24,
-          "unity_integrated_key": "soap_bar"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-pet-food-sack-59723f4e.glb",
@@ -3376,7 +3616,8 @@
           "sha256": "ac87338bf70d5ff06b868b8f09ba94ec3e69322fa935d5495df064f71ee492bc",
           "meshes": 2,
           "materials": 2,
-          "triangles": 112
+          "triangles": 112,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_supermarket-operations/supermarket-operations-coffee-pouch-d4af200e.glb",
@@ -3390,7 +3631,8 @@
           "sha256": "eaa20501e6bd7a42a2b88587f842eb0dc5a13082c523cdf19e98139d89c7ca49",
           "meshes": 3,
           "materials": 3,
-          "triangles": 36
+          "triangles": 36,
+          "unity_integrated_key": null
         }
       ]
     },
@@ -3440,7 +3682,8 @@
           "sha256": "4c9ea7b353a201b63be6c80a5d6eb83383d3216f3a1d97c1ad26bcea80eab167",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1176
+          "triangles": 1176,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-banana-hand-149e37be.glb",
@@ -3454,7 +3697,8 @@
           "sha256": "4e4bf5adf425b6dc103a7bf59e0aa01cd26a32eb8e5264a82d39717a6c802ed4",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1722
+          "triangles": 1722,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-orange-4bb951a7.glb",
@@ -3468,7 +3712,8 @@
           "sha256": "451a44a42cc1e9054648758d7bfcf583896c88f5656e3a58f05589a1eabce2eb",
           "meshes": 2,
           "materials": 2,
-          "triangles": 1196
+          "triangles": 1196,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-yoghurt-pot-70af3ae5.glb",
@@ -3499,7 +3744,8 @@
           "sha256": "e36824c17385a4fab049a4df474b4a32fd6e5e70f5654b6dae513570f8497180",
           "meshes": 4,
           "materials": 4,
-          "triangles": 1648
+          "triangles": 1648,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-butter-block-0790df28.glb",
@@ -3528,7 +3774,8 @@
           "sha256": "17217cf1addc23c48d5025c13bb7063a50802b4e4917edc5b6a8dabac66793d8",
           "meshes": 3,
           "materials": 3,
-          "triangles": 272
+          "triangles": 272,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-egg-box-six-c8173976.glb",
@@ -3573,7 +3820,8 @@
           "sha256": "e927b002a3387c4afffb8b6d22f2c4f4d6d421152e4d17c5aee399ba1f1965ee",
           "meshes": 2,
           "materials": 2,
-          "triangles": 3600
+          "triangles": 3600,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-muffin-adcb5c59.glb",
@@ -3587,7 +3835,8 @@
           "sha256": "703705b7c10a91178e0c4d41f6e310357074f2f2477b6bcb20df004aaa41d40c",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1676
+          "triangles": 1676,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-cake-box-e169fc10.glb",
@@ -3601,7 +3850,8 @@
           "sha256": "67d055700add6b8d32d09a28fcfd9e69891b18a80b48e71f3ed1429eeb93e175",
           "meshes": 4,
           "materials": 4,
-          "triangles": 1728
+          "triangles": 1728,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-cereal-box-bb7044b3.glb",
@@ -3615,7 +3865,8 @@
           "sha256": "21e040982709dde9e93bbf23a978adcac45dbc7f335f8d92991919b8dad6af67",
           "meshes": 4,
           "materials": 4,
-          "triangles": 2164
+          "triangles": 2164,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-rice-bag-48d1e5ba.glb",
@@ -3630,7 +3881,7 @@
           "meshes": 4,
           "materials": 4,
           "triangles": 2416,
-          "unity_integrated_key": "rice_bag"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-flour-bag-a34f7213.glb",
@@ -3645,7 +3896,7 @@
           "meshes": 3,
           "materials": 3,
           "triangles": 1388,
-          "unity_integrated_key": "flour_bag"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-sugar-bag-449a0bce.glb",
@@ -3660,7 +3911,7 @@
           "meshes": 3,
           "materials": 3,
           "triangles": 1220,
-          "unity_integrated_key": "sugar_bag"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-crisps-bag-51f3211c.glb",
@@ -3677,7 +3928,7 @@
           "triangles": 3504,
           "visual_review": "Volume, crimp edges and bands present; actual retail print/Japanese labels and variants missing.",
           "preview_path": "Previews/Expansion/Bag of Crisps.png",
-          "unity_integrated_key": "snack_bag"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-biscuit-pack-a71cc484.glb",
@@ -3693,7 +3944,8 @@
           "materials": 5,
           "triangles": 4712,
           "visual_review": "Opened biscuit tube; sealed retail version/Japanese labels and variants missing.",
-          "preview_path": "Previews/Expansion/Pack of Biscuits.png"
+          "preview_path": "Previews/Expansion/Pack of Biscuits.png",
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-chocolate-bar-792cb80e.glb",
@@ -3709,7 +3961,8 @@
           "materials": 5,
           "triangles": 858,
           "visual_review": "Preview shows an opened wrapper and exposed bar; sealed retail version and label pending.",
-          "preview_path": "Previews/Expansion/Chocolate Bar.png"
+          "preview_path": "Previews/Expansion/Chocolate Bar.png",
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-baked-beans-tin-4dfdad3f.glb",
@@ -3724,7 +3977,7 @@
           "meshes": 4,
           "materials": 4,
           "triangles": 1736,
-          "unity_integrated_key": "beans_tin"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-soup-tin-59855b67.glb",
@@ -3738,7 +3991,8 @@
           "sha256": "577fb366574765854a997c216b7ceb47006d72a8d870e8e0213facea90708740",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1828
+          "triangles": 1828,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-chopped-tomatoes-tin-33d9c94e.glb",
@@ -3752,7 +4006,8 @@
           "sha256": "b0fccb16d8fe07844fecd92814867b525689967ffd85ce3985dc55144136941b",
           "meshes": 4,
           "materials": 4,
-          "triangles": 1512
+          "triangles": 1512,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-jam-jar-fe6b3c4c.glb",
@@ -3766,7 +4021,8 @@
           "sha256": "9bf6a9140f85f615b4405f3f38e353b215c2c09fc3d7c63dec0474feaf405bab",
           "meshes": 5,
           "materials": 5,
-          "triangles": 1760
+          "triangles": 1760,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-honey-jar-4ef859cb.glb",
@@ -3780,7 +4036,8 @@
           "sha256": "500e1d67ceb31a1e18841bab542e858965210120be85cc9d95bdb7a7fd4f06bf",
           "meshes": 4,
           "materials": 4,
-          "triangles": 708
+          "triangles": 708,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-spice-jar-a3ca22f5.glb",
@@ -3794,7 +4051,8 @@
           "sha256": "86ca6a9ea31c4c4280fa6bb219642a69cdf24eebea6c0620ab6c48856e421663",
           "meshes": 4,
           "materials": 4,
-          "triangles": 976
+          "triangles": 976,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-olive-oil-bottle-1dd3beae.glb",
@@ -3808,7 +4066,8 @@
           "sha256": "d8591cc5ee358cd54ec960f4d1bc2112c9a5fcb2534b6ff78b5a6ef00c0d814a",
           "meshes": 6,
           "materials": 6,
-          "triangles": 2336
+          "triangles": 2336,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-vinegar-bottle-5cefbeac.glb",
@@ -3822,7 +4081,8 @@
           "sha256": "725ba1e2174d74ea7782f83898246804b794c088a9ec588b569339e22f7eba37",
           "meshes": 4,
           "materials": 4,
-          "triangles": 2152
+          "triangles": 2152,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-ketchup-bottle-f4d88235.glb",
@@ -3836,7 +4096,8 @@
           "sha256": "f23f1959a319eeb33edac91e52486c5e7f331cd50a52b08da01e12ec449a4eb5",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1900
+          "triangles": 1900,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-coffee-jar-c906d3fe.glb",
@@ -3851,7 +4112,7 @@
           "meshes": 4,
           "materials": 4,
           "triangles": 1652,
-          "unity_integrated_key": "coffee_jar"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-tea-box-6a86b1e9.glb",
@@ -3866,7 +4127,7 @@
           "meshes": 4,
           "materials": 4,
           "triangles": 436,
-          "unity_integrated_key": "tea_box"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-juice-carton-898310d8.glb",
@@ -3880,7 +4141,8 @@
           "sha256": "227d19cfe47887cd04391c4068547603a79ec29303248eebc24645c421ecf250",
           "meshes": 4,
           "materials": 4,
-          "triangles": 908
+          "triangles": 908,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-soda-can-32b1042b.glb",
@@ -3894,7 +4156,8 @@
           "sha256": "91d8212581ac10d1958982ff6a9ec4d5a1494f70ba2e4396d1acffe2daa8ffd7",
           "meshes": 4,
           "materials": 4,
-          "triangles": 2300
+          "triangles": 2300,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-water-bottle-43375605.glb",
@@ -3910,7 +4173,7 @@
           "materials": 3,
           "triangles": 2880,
           "preview_path": "Previews/Expansion/Bottle of Water.png",
-          "unity_integrated_key": "water_bottle"
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-water-multipack-48e9b381.glb",
@@ -3924,7 +4187,8 @@
           "sha256": "1c2ce5f10a55a0a35499db0e5fec0c09b6991009351d4b10421515db82c42e41",
           "meshes": 4,
           "materials": 4,
-          "triangles": 6624
+          "triangles": 6624,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-plastic-produce-crate-d9b15c8a.glb",
@@ -3938,7 +4202,8 @@
           "sha256": "85ac0aac864061c98a7821c7c7dd3f45ca61b0c5b78815773059a3301a7b3bb1",
           "meshes": 2,
           "materials": 2,
-          "triangles": 4736
+          "triangles": 4736,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-cardboard-produce-tray-0d960c9e.glb",
@@ -3952,7 +4217,8 @@
           "sha256": "02c7ced581301dc83fbf32d946b9deae3921ab6ab9b69543b849fb7d0fdc8b30",
           "meshes": 2,
           "materials": 2,
-          "triangles": 1472
+          "triangles": 1472,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-wicker-display-basket-4172c4be.glb",
@@ -3966,7 +4232,8 @@
           "sha256": "f89e004b9f74105317e009c1721f118dff72133a770ddb02c56639b26b46fce6",
           "meshes": 2,
           "materials": 2,
-          "triangles": 5924
+          "triangles": 5924,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-paper-grocery-bag-784f600d.glb",
@@ -3980,7 +4247,8 @@
           "sha256": "fe66fe7b7ae9dd76240e094eeb2b45da84f02d324ee10f8eed54569d4f3948cd",
           "meshes": 2,
           "materials": 2,
-          "triangles": 892
+          "triangles": 892,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_groceries/fresh-produce-and-groceries-plastic-produce-bag-9c13f086.glb",
@@ -3994,7 +4262,8 @@
           "sha256": "46091be70806e8244bcf8c42322ec53e254c3e097798b9c8e221de63d47c6443",
           "meshes": 1,
           "materials": 1,
-          "triangles": 872
+          "triangles": 872,
+          "unity_integrated_key": null
         }
       ]
     },
@@ -4038,7 +4307,8 @@
           "sha256": "3040faa2679d1ba449644da4f7ae721e6427d58ef8e79f98e440b1342817f7b5",
           "meshes": 4,
           "materials": 4,
-          "triangles": 6230
+          "triangles": 6230,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-batch-brewer-71876f8b.glb",
@@ -4052,7 +4322,8 @@
           "sha256": "e40e51ca4cf50ff64ce65c37603e9b7a966c4845d15da491890b54de88843eea",
           "meshes": 4,
           "materials": 4,
-          "triangles": 1564
+          "triangles": 1564,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-water-boiler-e3688ca1.glb",
@@ -4066,7 +4337,8 @@
           "sha256": "5bb75821d6525ab1f264bc190f59faa4dc2db8026aa4435b0f474853d1f419c1",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1428
+          "triangles": 1428,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-counter-module-600-861cd165.glb",
@@ -4080,7 +4352,8 @@
           "sha256": "5d5277a07fdd115f9354bf5b12a5691d182f2570abc4075e87cc978ed309d363",
           "meshes": 4,
           "materials": 4,
-          "triangles": 664
+          "triangles": 664,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-counter-module-600-drawers-9b930b7d.glb",
@@ -4094,7 +4367,8 @@
           "sha256": "15187fa625de38edf3091b57c9d8447c58980a9a8ed83b1c9316f200c52918d4",
           "meshes": 7,
           "materials": 5,
-          "triangles": 984
+          "triangles": 984,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-condiment-bar-15605fbe.glb",
@@ -4108,7 +4382,8 @@
           "sha256": "c8ae231133951758bc99f068bf0d15032bbefe0cfe68e327f1523ecc72f4af5d",
           "meshes": 6,
           "materials": 6,
-          "triangles": 1448
+          "triangles": 1448,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-cutlery-napkin-station-2ebe6121.glb",
@@ -4123,7 +4398,8 @@
           "sha256": "c63a760376186645674d30a7159288240eca4891d4869873d9796070e58c8797",
           "meshes": 3,
           "materials": 3,
-          "triangles": 2256
+          "triangles": 2256,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-pastry-tongs-board-80d95d2a.glb",
@@ -4137,7 +4413,8 @@
           "sha256": "6d78b0a0a663b9ca0323e116b814e80058eeaf53711c65628f529671ee4d2076",
           "meshes": 2,
           "materials": 2,
-          "triangles": 488
+          "triangles": 488,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-grab-and-go-chiller-50fbce9a.glb",
@@ -4151,7 +4428,8 @@
           "sha256": "c3b61378b9974bfa6bfe200f4e24784d109c8554624b2f4a05c8a95a5bb4195d",
           "meshes": 8,
           "materials": 5,
-          "triangles": 2076
+          "triangles": 2076,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-grab-and-go-chiller-open-f88f4862.glb",
@@ -4165,7 +4443,8 @@
           "sha256": "309d1c85b098169191d942864d3a1333553d8353efea615afdf1ec572a93eb7f",
           "meshes": 8,
           "materials": 5,
-          "triangles": 2076
+          "triangles": 2076,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-sandwich-display-fridge-5b634c37.glb",
@@ -4179,7 +4458,8 @@
           "sha256": "fb156b1bf089e5fcc96b535ffa02d1d39e8828bf688667dfd46d24a13cf4e13f",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1156
+          "triangles": 1156,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-takeaway-cup-78c48502.glb",
@@ -4194,7 +4474,8 @@
           "meshes": 3,
           "materials": 3,
           "triangles": 560,
-          "preview_path": "Previews/Expansion/Takeaway cup with lid.png"
+          "preview_path": "Previews/Expansion/Takeaway cup with lid.png",
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-cup-carrier-4-116ab381.glb",
@@ -4208,7 +4489,8 @@
           "sha256": "9e9e715f0ac88c7395c6573583a0b373ec72888535f9a2c3423ee169e61e4b5b",
           "meshes": 3,
           "materials": 3,
-          "triangles": 1264
+          "triangles": 1264,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-paper-bag-pastry-d803dcf8.glb",
@@ -4222,7 +4504,8 @@
           "sha256": "ee539909580f3d606446c5eb2105471beb7da9384a86c64f3638969e14cba399",
           "meshes": 2,
           "materials": 2,
-          "triangles": 370
+          "triangles": 370,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-bakery-prep-sink-fb9b1e78.glb",
@@ -4236,7 +4519,8 @@
           "sha256": "873d7f448e6a346082abe85533339ac58a9bbebfdf70828eb290797626191c80",
           "meshes": 2,
           "materials": 2,
-          "triangles": 2776
+          "triangles": 2776,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-window-bar-counter-eea16a11.glb",
@@ -4250,7 +4534,8 @@
           "sha256": "1b1265f6c4654957e8344b6f78245aaa3b99cd0a1aaa85b8fd9f9f9ea4ed56e9",
           "meshes": 2,
           "materials": 2,
-          "triangles": 656
+          "triangles": 656,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-bar-stool-backless-fd5c5056.glb",
@@ -4265,7 +4550,8 @@
           "sha256": "53abe99722f1a5effab6564fc44fb23df03f857dd245dd69cc4ef22857b8b18e",
           "meshes": 3,
           "materials": 3,
-          "triangles": 608
+          "triangles": 608,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-awning-retractable-003d560f.glb",
@@ -4279,7 +4565,8 @@
           "sha256": "d74e0c5da9926d9e8646ce725a6405b7630e0565e231586cc8f94a25a5f98241",
           "meshes": 4,
           "materials": 4,
-          "triangles": 1154
+          "triangles": 1154,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_bakery-and-cafe/bakery-and-cafe-canopy-fixed-eae3345a.glb",
@@ -4293,7 +4580,8 @@
           "sha256": "a15b03633bfd06b0194b14ecae51b6423d4a091a754364480162e0bf1e90e505",
           "meshes": 2,
           "materials": 2,
-          "triangles": 700
+          "triangles": 700,
+          "unity_integrated_key": null
         }
       ]
     },
@@ -4336,7 +4624,8 @@
           "sha256": "932fb31d762a8f49719af386359c06985882398cb292a47ad42da8c1fd22a0d4",
           "meshes": 4,
           "materials": 4,
-          "triangles": 504
+          "triangles": 504,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-holding-cabinet-universal-59416c19.glb",
@@ -4350,7 +4639,8 @@
           "sha256": "a649ed3e50e7c3c3727c90e8697684981104fdbfaf6cfccba92dc8f7ce83f4c4",
           "meshes": 6,
           "materials": 4,
-          "triangles": 2514
+          "triangles": 2514,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-holding-cabinet-door-open-1b2f4d59.glb",
@@ -4364,7 +4654,8 @@
           "sha256": "a47451167e7615648ca183d680da94e90ad668e195b255b4107e3081e0061be9",
           "meshes": 6,
           "materials": 4,
-          "triangles": 2514
+          "triangles": 2514,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-coffee-brewer-42441200.glb",
@@ -4378,7 +4669,8 @@
           "sha256": "38e49b24b0af90cc123298aa282a8ffb75b774ef4027e66163ae576c1a9fc665",
           "meshes": 4,
           "materials": 4,
-          "triangles": 1008
+          "triangles": 1008,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-lid-and-straw-station-7f1e3f4f.glb",
@@ -4392,7 +4684,8 @@
           "sha256": "a58ed6cf6ea34c61bd7e2f278d9dd43677c66e49090a652bbaac61c358a802cc",
           "meshes": 4,
           "materials": 4,
-          "triangles": 888
+          "triangles": 888,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-fry-carton-small-cad74513.glb",
@@ -4406,7 +4699,8 @@
           "sha256": "3a3eea8cf93dfc9d9360d4f5a070b559743de3dd46d8a4d9c04598d0cd9a3aec",
           "meshes": 3,
           "materials": 3,
-          "triangles": 256
+          "triangles": 256,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-paper-bag-folded-5a61e62e.glb",
@@ -4420,7 +4714,8 @@
           "sha256": "80320b46edc25dd0ff7952540acecfd5009a6624998a0df935fa5666f311248c",
           "meshes": 2,
           "materials": 2,
-          "triangles": 448
+          "triangles": 448,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-paper-bag-open-827b20ac.glb",
@@ -4434,7 +4729,8 @@
           "sha256": "e601b8a74a133b61298ff10aee689f46f84d71d2745c0163f567083286a6f130",
           "meshes": 3,
           "materials": 3,
-          "triangles": 480
+          "triangles": 480,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-serving-tray-2072749f.glb",
@@ -4448,7 +4744,8 @@
           "sha256": "294a25371791adb9de2ddb4868f0c08374d91640380ca6455f169885a3220ad3",
           "meshes": 2,
           "materials": 2,
-          "triangles": 416
+          "triangles": 416,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-cutlery-and-napkin-pack-a0515789.glb",
@@ -4462,7 +4759,8 @@
           "sha256": "2d9a829b78cedb78c5752c7dd8b2518de6741bdbea7c3891e0d07077fe68c36f",
           "meshes": 2,
           "materials": 2,
-          "triangles": 584
+          "triangles": 584,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-salad-bowl-with-lid-e86a6962.glb",
@@ -4478,7 +4776,8 @@
           "materials": 3,
           "triangles": 400,
           "visual_review": "Bowl/lid candidate only; preview does not show salad ingredients or retail label.",
-          "preview_path": "Previews/Expansion/Salad bowl with clear lid.png"
+          "preview_path": "Previews/Expansion/Salad bowl with clear lid.png",
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-hot-cup-with-sleeve-3a9def85.glb",
@@ -4492,7 +4791,8 @@
           "sha256": "0391042e206357e1816b2cae986872785317827f5e161d44be21dfd56659cc07",
           "meshes": 3,
           "materials": 3,
-          "triangles": 522
+          "triangles": 522,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-waste-unit-with-flap-fff0537f.glb",
@@ -4506,7 +4806,8 @@
           "sha256": "e9d3e2d83bfa1c4bc66c9e19b6e7b5e25069d299080265369a267b93f45f1b55",
           "meshes": 8,
           "materials": 4,
-          "triangles": 778
+          "triangles": 778,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_fast-food-and-drive-thru/fast-food-and-drive-thru-crew-hand-wash-basin-deb6d4d7.glb",
@@ -4520,7 +4821,8 @@
           "sha256": "735dd9f410d27f30476a89841686f3b36d54deefe7ad03ba65679eb2ceed4bf7",
           "meshes": 3,
           "materials": 3,
-          "triangles": 656
+          "triangles": 656,
+          "unity_integrated_key": null
         }
       ]
     },
@@ -4572,7 +4874,8 @@
           "sha256": "f552ed011829917c71b4c307ab4c63e709bd368333ed64ec52766b6854225e38",
           "meshes": 2,
           "materials": 2,
-          "triangles": 1536
+          "triangles": 1536,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-fire-door-module-66d2dc46.glb",
@@ -4586,7 +4889,8 @@
           "sha256": "8fbf82b2f785f1f0732891f56312c8e55ed57a36c7bf8e9cdb11cae8c08685a7",
           "meshes": 7,
           "materials": 5,
-          "triangles": 1808
+          "triangles": 1808,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-corridor-ceiling-module-c7a96142.glb",
@@ -4601,7 +4905,8 @@
           "sha256": "80ce41d395a74185d90f9de8b5990dea0524bb27fe10ffca3779c52889c68172",
           "meshes": 3,
           "materials": 3,
-          "triangles": 648
+          "triangles": 648,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-corridor-ceiling-module-pl-c003c228.glb",
@@ -4616,7 +4921,8 @@
           "sha256": "4e8879410e4a3a3a73cfebbe0af8e0c248de9be2299ead861ec979b7de96fecf",
           "meshes": 2,
           "materials": 2,
-          "triangles": 864
+          "triangles": 864,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-paper-towel-dispenser-378a457c.glb",
@@ -4630,7 +4936,8 @@
           "sha256": "2ea659a78c47dbac35ed0d0dbe0b4a7cc84b8626a603de1f4ad83ad7535e32f4",
           "meshes": 3,
           "materials": 2,
-          "triangles": 488
+          "triangles": 488,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-soap-dispenser-d2ab4367.glb",
@@ -4644,7 +4951,8 @@
           "sha256": "3da35970aae0cb1123c0c805935b4e5d7e01371e02e2a0bc26b793c3c5cb1ec0",
           "meshes": 2,
           "materials": 2,
-          "triangles": 438
+          "triangles": 438,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-cable-ladder-run-f7e7c121.glb",
@@ -4658,7 +4966,8 @@
           "sha256": "a77dafde1a14b04c0994af39beee74d09028a6e855add15043cae1bd59db7bee",
           "meshes": 1,
           "materials": 1,
-          "triangles": 960
+          "triangles": 960,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-cable-ladder-bend-d74c88a8.glb",
@@ -4672,7 +4981,8 @@
           "sha256": "cfdb3801ca6c7d9f8bb85f17e0c9d877122c676ba5c18356a40652343bb0cbef",
           "meshes": 1,
           "materials": 1,
-          "triangles": 1896
+          "triangles": 1896,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-coffee-point-557fed7a.glb",
@@ -4689,7 +4999,8 @@
           "triangles": 1080,
           "visual_review": "Two angles show very simple housing; dispensing bay/controls not established. Not accepted for store replacement.",
           "preview_path": "Previews/Expansion/Bean-to-cup coffee point.png",
-          "rear_preview_path": "Previews/ExpansionRear/Bean-to-cup coffee point.png"
+          "rear_preview_path": "Previews/ExpansionRear/Bean-to-cup coffee point.png",
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-staff-locker-bank-aaf13317.glb",
@@ -4703,7 +5014,8 @@
           "sha256": "13f1ce27114090fd2d8ac44d2e71876e1491c47e896c99328ef738c95bc76952",
           "meshes": 8,
           "materials": 3,
-          "triangles": 2840
+          "triangles": 2840,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-staff-locker-bank-open-207d0929.glb",
@@ -4717,7 +5029,8 @@
           "sha256": "4a14728433136de84900522b1e6bc110b78739af1e5648b37246b00202bc1655",
           "meshes": 8,
           "materials": 3,
-          "triangles": 2904
+          "triangles": 2904,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-janitorial-trolley-c9198992.glb",
@@ -4731,7 +5044,8 @@
           "sha256": "851b80eb8f58e6d9d2ac13ff2d2d21bbc92b3bdccf63af73a92fb66aac34c4d0",
           "meshes": 3,
           "materials": 3,
-          "triangles": 3016
+          "triangles": 3016,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-mop-and-bucket-set-97a4d66e.glb",
@@ -4745,7 +5059,8 @@
           "sha256": "e0ceeecbe2f6d702d8babd225c572faa4c53c9e3c04a19df5eb0ea4da2852d7f",
           "meshes": 5,
           "materials": 5,
-          "triangles": 2072
+          "triangles": 2072,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-waste-recycling-bank-e69535a2.glb",
@@ -4759,7 +5074,8 @@
           "sha256": "0d18993d1d8a86c689592c8f46168167ec269016d04ff2f2cf3fea12141b0f67",
           "meshes": 5,
           "materials": 5,
-          "triangles": 928
+          "triangles": 928,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-office-waste-bin-4f708eb2.glb",
@@ -4773,7 +5089,8 @@
           "sha256": "c9d03d627722f8fa9207868582060188d90e01ec2734c32d27ba23e5d56a2cdb",
           "meshes": 3,
           "materials": 3,
-          "triangles": 556
+          "triangles": 556,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-parcel-locker-bank-fd0277a9.glb",
@@ -4787,7 +5104,8 @@
           "sha256": "dd8111dcce57a24c4ac62fc0a4459c878bd8b907d82a1c592d7f5baa28dcda11",
           "meshes": 15,
           "materials": 5,
-          "triangles": 2664
+          "triangles": 2664,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-large-format-printer-abcb3755.glb",
@@ -4801,7 +5119,8 @@
           "sha256": "b05339517a7878d0ba04e88d112a47f8570c3394f9871abbc1cb848a74b45cf0",
           "meshes": 5,
           "materials": 5,
-          "triangles": 1322
+          "triangles": 1322,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_office-lobby-and-facilities/office-lobby-and-facilities-fire-extinguisher-point-462a4c9a.glb",
@@ -4860,7 +5179,8 @@
           "sha256": "0c872b17177d38c340f846e5912ab586371d87683b81d93cef279c459cca93fa",
           "meshes": 3,
           "materials": 3,
-          "triangles": 380
+          "triangles": 380,
+          "unity_integrated_key": null
         }
       ]
     },
@@ -4896,7 +5216,8 @@
           "sha256": "823f22441df3b2cc21bb3bb51d667bc376c832c0e30a2aff078c15e939d2138e",
           "meshes": 5,
           "materials": 2,
-          "triangles": 108
+          "triangles": 108,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_pixel-modern-supermarket/pixel-modern-supermarket-floor-tile-c624db1e.glb",
@@ -4910,7 +5231,8 @@
           "sha256": "efdafa2915e3056885a0ea334c0bd468907aea71f278547a2f9f2cfc41e9dd98",
           "meshes": 2,
           "materials": 2,
-          "triangles": 60
+          "triangles": 60,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_pixel-modern-supermarket/pixel-modern-supermarket-impulse-shelf-dad63fb9.glb",
@@ -4924,7 +5246,8 @@
           "sha256": "e79ba5ed8ab11ffe9993164e8d753fddc8fbe50d1993284be2219acf7faeb6de",
           "meshes": 4,
           "materials": 4,
-          "triangles": 144
+          "triangles": 144,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_pixel-modern-supermarket/pixel-modern-supermarket-cash-machine-d8460f79.glb",
@@ -4938,7 +5261,8 @@
           "sha256": "0d9589dd918897cd31074f0e78a7851ca3fcc2134e76d4f7665b67de9fec6836",
           "meshes": 6,
           "materials": 6,
-          "triangles": 732
+          "triangles": 732,
+          "unity_integrated_key": null
         },
         {
           "path": "Expansion_pixel-modern-supermarket/pixel-modern-supermarket-mop-bucket-and-wet-floor-sign-ec8eab19.glb",
@@ -4952,7 +5276,8 @@
           "sha256": "c95be9d6bba6f6d2e6137c67022e0e0d2f1e5b38479b4bf7936124b8c0a4df66",
           "meshes": 8,
           "materials": 4,
-          "triangles": 964
+          "triangles": 964,
+          "unity_integrated_key": null
         }
       ]
     },
@@ -4981,7 +5306,8 @@
             "SM-D01"
           ],
           "visual_review": "Unwrapped rice/rong-seaweed mesh. Missing sealed film, printed labels and requested 3-6 variants.",
-          "preview_path": "Previews/Expansion/Onigiri.png"
+          "preview_path": "Previews/Expansion/Onigiri.png",
+          "unity_integrated_key": null
         }
       ]
     },
@@ -5008,7 +5334,8 @@
           "triangles": 4244,
           "candidate_ids": [
             "SM-D06"
-          ]
+          ],
+          "unity_integrated_key": null
         }
       ]
     },
@@ -5035,7 +5362,8 @@
           "triangles": 5582,
           "candidate_ids": [
             "SM-D06"
-          ]
+          ],
+          "unity_integrated_key": null
         }
       ]
     },
@@ -5095,7 +5423,7 @@
           ],
           "visual_review": "Bottle with lid and panel; finished retail text/art and conditioner variants missing.",
           "preview_path": "Previews/Expansion/Shampoo Bottle Variant A.png",
-          "unity_integrated_key": "shampoo"
+          "unity_integrated_key": null
         }
       ]
     },
@@ -5208,7 +5536,8 @@
           "triangles": 432,
           "candidate_ids": [
             "SM-G02"
-          ]
+          ],
+          "unity_integrated_key": null
         }
       ]
     },
@@ -5263,7 +5592,8 @@
           "triangles": 643,
           "candidate_ids": [
             "SM-H04"
-          ]
+          ],
+          "unity_integrated_key": null
         }
       ]
     },
@@ -5290,7 +5620,8 @@
           "triangles": 4300,
           "candidate_ids": [
             "SM-H06"
-          ]
+          ],
+          "unity_integrated_key": null
         }
       ]
     },
@@ -5317,7 +5648,8 @@
           "triangles": 102,
           "candidate_ids": [
             "SM-E01"
-          ]
+          ],
+          "unity_integrated_key": null
         }
       ]
     },
@@ -5344,7 +5676,8 @@
           "triangles": 460,
           "candidate_ids": [],
           "visual_review": "Visual preview contains loose fries in an open carton, NOT a sealed snack bag; excluded from SM-D20 coverage.",
-          "preview_path": "Previews/Expansion/Chips.png"
+          "preview_path": "Previews/Expansion/Chips.png",
+          "unity_integrated_key": null
         }
       ]
     },
@@ -5371,7 +5704,8 @@
           "triangles": 132,
           "candidate_ids": [
             "SM-E14"
-          ]
+          ],
+          "unity_integrated_key": null
         }
       ]
     },
@@ -5463,7 +5797,8 @@
           "candidate_ids": [
             "SM-D18"
           ],
-          "rear_preview_path": "Previews/ExpansionRear/Ramen and Noodle Cup Shelf.png"
+          "rear_preview_path": "Previews/ExpansionRear/Ramen and Noodle Cup Shelf.png",
+          "unity_integrated_key": null
         }
       ]
     },
@@ -5493,7 +5828,8 @@
             "SM-C04"
           ],
           "visual_review": "Rear preview does not establish transparent doors or interior quality.",
-          "rear_preview_path": "Previews/ExpansionRear/Glass door drinks chiller.png"
+          "rear_preview_path": "Previews/ExpansionRear/Glass door drinks chiller.png",
+          "unity_integrated_key": null
         }
       ]
     }
@@ -5502,10 +5838,10 @@
   "distinct_source_count": 38,
   "accepted_shopping_list_items": 0,
   "blender_preview_samples": 49,
-  "unity_integrated_models": 67,
+  "unity_integrated_models": 40,
   "intake_date_local": "2026-11-11",
   "verification_command": "python LocalReferenceAssets/SoraMartIncoming/verify_intake.py",
-  "download_candidate_items": 116,
+  "download_candidate_items": 119,
   "existing_sources": [
     {
       "path": "ArtSource/ThirdParty/CC0/IzakayaAlley/izakaya_starter_scene.glb",
@@ -5534,6 +5870,8 @@
     }
   ],
   "existing_candidate_items": 5,
-  "missing_candidate_items": 30,
-  "unity_evidence": "Docs/StreetExterior/Reports/2026-11-11-SORA-MART-KONBINI-UNITY.md"
+  "missing_candidate_items": 27,
+  "unity_evidence": "Docs/StreetExterior/Reports/2026-11-12-SORA-MART-RETAIL-FINISH.md",
+  "user_library_models": 107,
+  "runtime_model_sources": 147
 }

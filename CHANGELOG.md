@@ -4,7 +4,15 @@ This log records **implemented source, asset and documentation work** for [SORA:
 
 > **Release and evidence policy:** `VS01`, `V02`, `V03`, `V04` and `V05` are **internal environment-art iteration names**, not published playable releases or new SemVer tags. A 3D GLB, a Unity Editor staging helper and a passing static CI job do **not** by themselves prove Unity Play Mode, collision, performance or Windows build acceptance. Assembled private AFX-derived models remain local; earlier original-source publication is recorded in the source-intake entry. All newly authored diagrams below are explicitly **schematics, not in-game screenshots**.
 
-## [Unreleased] — development history through 2026-11-11
+## [Unreleased] — development history through 2026-11-12
+
+### 2026-11-12 — SORA MART packaged retail stock and store finish
+
+- Use **147 active model resources**, including **104 textured product objects** from Food Collection and PSX Food, plus register console, cash tray and stock carton from Store Props. Keep the six-gondola reference layout, gameplay anchors and aggregate inventory.
+- Add Japanese/English category signs, printed prices, clear food sleeves/lids with SORA labels, lower acoustic ceiling, ceiling collision and a six-light grid. Share source atlases and equivalent shader graphs; preserve original product labels/UVs.
+- Verify CC BY 4.0 source listings and retain evidence/credits, original download hashes and OFL font license. Keep VR Store outside the release sources because the author describes company-owned colleague work.
+- Track **119/151 rows with candidates**, five with existing CC0 sources and 27 still missing. The [107-resource CSV](Docs/StreetExterior/SORA_MART_USER_LIBRARY.csv) distinguishes current placement from full art acceptance.
+- Actual Unity validation, Windows build status and genuine screenshots: [retail finish report](Docs/StreetExterior/Reports/2026-11-12-SORA-MART-RETAIL-FINISH.md). Character work, per-SKU gameplay and final art/performance acceptance remain separate.
 
 ### 2026-11-11 — expanded konbini assortment actually integrated into Unity
 

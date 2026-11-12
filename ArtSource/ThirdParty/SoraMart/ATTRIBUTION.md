@@ -1,6 +1,6 @@
 # SORA MART third-party model credits
 
-Original source binaries unchanged. Assembled store changes uniform scale, placement and static combination. Identical constant materials share render resources; original UVs/textures retained.
+Earlier GLB sources retain their original bytes. New glTF resources select source objects and share geometry/textures; PSX OBJ converted in Blender with two repaired texture paths. Assembled store changes uniform scale, pivots, placement and static combination. Equivalent shader graphs share render resources; original UVs/textures retained.
 
 | Model | Creator | License | Original source |
 |---|---|---|---|
@@ -80,3 +80,12 @@ Kenney Food Kit: https://kenney.nl/assets/food-kit
 No endorsement implied. Original SORA art keeps the project owner license policy.
 
 These credits ship with the game in StreamingAssets.
+
+## Owner-supplied retail packs - 2026-11-12
+
+- FoodCollection: 40 selected resources by Melon Polygons; CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ ; https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43. Source listing snapshot and modifications recorded in the pack's SOURCE.json and SKETCHFAB_SOURCE.json.
+- PSXFood: 64 selected resources by grgssblend; CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ ; https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e. Source listing snapshot and modifications recorded in the pack's SOURCE.json and SKETCHFAB_SOURCE.json.
+- StoreProps: 3 selected resources by SimplePolygon; CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ ; https://sketchfab.com/3d-models/free-store-props-asset-pack-87a7f07bf1414543a073060388294f59. Source listing snapshot and modifications recorded in the pack's SOURCE.json and SKETCHFAB_SOURCE.json.
+- Font: Zen Kaku Gothic New, The Zen Kaku Gothic Project Authors, SIL Open Font License 1.1. https://github.com/google/fonts/tree/main/ofl/zenkakugothicnew . Original font and OFL.txt retained in Signage/. Japanese category and store labels are converted to mesh.
+- Source packaging and third-party brands remain visible. Their authors' copyright license does not grant an endorsement or separate trademark rights.
+- VR Store is not used: its listing describes company-owned work by a colleague. Toronto, storefront packs and Marlboro remain unselected.

@@ -776,13 +776,1697 @@
       "candidate_ids": [
         "SM-D04"
       ]
+    },
+    {
+      "key": "fc_beer_bottle_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0005_SM_Beer_Bottle_01.gltf",
+      "sha256": "9d459f848195f5f1ca1133996322728c96e2123f6ccc60fd488df6b4c4331ceb",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Beer_Bottle_01",
+      "library_id": "FoodCollection_0005_SM_Beer_Bottle_01",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D33"
+      ]
+    },
+    {
+      "key": "fc_beer_can_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0007_SM_Beer_Can_01.gltf",
+      "sha256": "a17aa1382a62bf4b81b2fef05662e4d2549b9e0bf0e5cacd524adb2a0431ab16",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Beer_Can_01",
+      "library_id": "FoodCollection_0007_SM_Beer_Can_01",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D33"
+      ]
+    },
+    {
+      "key": "fc_beer_can_02",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0009_SM_Beer_Can_02.gltf",
+      "sha256": "e15b4f72b7ea77440c06b45b5604ac1a263bb2083d584e8e6972fdb716f706bd",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Beer_Can_02",
+      "library_id": "FoodCollection_0009_SM_Beer_Can_02",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D33"
+      ]
+    },
+    {
+      "key": "fc_bleach_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0011_SM_Bleach_01.gltf",
+      "sha256": "52f2ba7bc43f02203377295dcfc2cb7f3e74efd9834d139f068848e4994c9eac",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Bleach_01",
+      "library_id": "FoodCollection_0011_SM_Bleach_01",
+      "category": "HouseholdAndCare",
+      "candidate_ids": [
+        "SM-E11"
+      ]
+    },
+    {
+      "key": "fc_bottle_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0013_SM_Bottle_01.gltf",
+      "sha256": "55e646ad1b74dfba90bb6553df0f8b10d6ab14cb0b109bd1a2fed1fd81cd4c70",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Bottle_01",
+      "library_id": "FoodCollection_0013_SM_Bottle_01",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D11"
+      ]
+    },
+    {
+      "key": "fc_bottles_pack_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0015_SM_Bottles_Pack_01.gltf",
+      "sha256": "db28c3b1ac231e6bb76b6ce28312d83bea7a37aee3942c9aa47baec0b3845d11",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Bottles_Pack_01",
+      "library_id": "FoodCollection_0015_SM_Bottles_Pack_01",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D11"
+      ]
+    },
+    {
+      "key": "fc_candies_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0017_SM_Candies_01.gltf",
+      "sha256": "5c13a34ef98a25cd3c2b191e586388e0876e1c29f81393f429d3cb21efee42a2",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Candies_01",
+      "library_id": "FoodCollection_0017_SM_Candies_01",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D23"
+      ]
+    },
+    {
+      "key": "fc_canned_food_05",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0019_SM_Canned_Food_05.gltf",
+      "sha256": "6ca65cb5f6e845f3f182e6ab7fb2afd55045e04f554800214413cb73c186d168",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Canned_Food_05",
+      "library_id": "FoodCollection_0019_SM_Canned_Food_05",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "fc_canned_food_06",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0021_SM_Canned_Food_06.gltf",
+      "sha256": "843f37258d6a5ceb1a1ad4302bdbeb8379b6dc4f4657bfa314f3bc40eec361c4",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Canned_Food_06",
+      "library_id": "FoodCollection_0021_SM_Canned_Food_06",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "fc_canned_food_07",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0023_SM_Canned_Food_07.gltf",
+      "sha256": "092c80bcfda7ef77398b32048efca99f68e39a7b221b7731377d3c3157f8647e",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Canned_Food_07",
+      "library_id": "FoodCollection_0023_SM_Canned_Food_07",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "fc_canned_food_08",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0025_SM_Canned_Food_08.gltf",
+      "sha256": "a4a33a65f998876429e26bdb9b551f36a2c439260e8c1bc1bc2f2f45b5fa01a4",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Canned_Food_08",
+      "library_id": "FoodCollection_0025_SM_Canned_Food_08",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "fc_canned_food_09",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0027_SM_Canned_Food_09.gltf",
+      "sha256": "446ffe18c7eaff3126cf799b964909f0c6e2d195e3e7111625e7f711c4b405dc",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Canned_Food_09",
+      "library_id": "FoodCollection_0027_SM_Canned_Food_09",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "fc_canned_food_10",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0029_SM_Canned_Food_10.gltf",
+      "sha256": "6ba87ec08e1914a42cd84e386c733b26732c6c502a77acaf4522105d4a0cf386",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Canned_Food_10",
+      "library_id": "FoodCollection_0029_SM_Canned_Food_10",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "fc_canned_food_11",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0031_SM_Canned_Food_11.gltf",
+      "sha256": "0ae5a203f83f181e11379cb9629d6dbd11ab1f71b8b37512d8d5d9ae2b70de1d",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Canned_Food_11",
+      "library_id": "FoodCollection_0031_SM_Canned_Food_11",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "fc_canned_food_12",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0033_SM_Canned_Food_12.gltf",
+      "sha256": "72f84ea0d2883ebbfd524b7594b884054e95e0c0eab1aa2e8a39206571e60e00",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Canned_Food_12",
+      "library_id": "FoodCollection_0033_SM_Canned_Food_12",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "fc_canned_food_13",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0035_SM_Canned_Food_13.gltf",
+      "sha256": "cb00279cca8c22c8ce3ce7d825360321b34351e28c53903fc0dab24cb8f7b9af",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Canned_Food_13",
+      "library_id": "FoodCollection_0035_SM_Canned_Food_13",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "fc_cereal_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0037_SM_Cereal_01.gltf",
+      "sha256": "bf76b071f42f83ba55883a925d350915b021f69ee4dfe0c433f5592ce4d62bdd",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Cereal_01",
+      "library_id": "FoodCollection_0037_SM_Cereal_01",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D25"
+      ]
+    },
+    {
+      "key": "fc_chewing_gum_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0039_SM_Chewing_Gum_01.gltf",
+      "sha256": "f4e32486decf8a0f8b800eaea269cd59309a6c56ed7efe4257365a84b042a3d4",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Chewing_Gum_01",
+      "library_id": "FoodCollection_0039_SM_Chewing_Gum_01",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D23"
+      ]
+    },
+    {
+      "key": "fc_chocolate_bar_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0041_SM_Chocolate_Bar_01.gltf",
+      "sha256": "4c3175e81f4f2c17637fd967f507b0125f6a768639b6f37ecd5be28e55dd0e01",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Chocolate_Bar_01",
+      "library_id": "FoodCollection_0041_SM_Chocolate_Bar_01",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D22"
+      ]
+    },
+    {
+      "key": "fc_chocolate_bar_02",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0043_SM_Chocolate_Bar_02.gltf",
+      "sha256": "a2ef2cffb5922f2b0846b26e07aed0a5e4803b7efe613d88460e5a3e01b34837",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Chocolate_Bar_02",
+      "library_id": "FoodCollection_0043_SM_Chocolate_Bar_02",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D22"
+      ]
+    },
+    {
+      "key": "fc_coffee_box_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0045_SM_Coffee_Box_01.gltf",
+      "sha256": "1fe3ebf5c26452b487907288236509c4c4a0d024f2863af1ad251348e933cd8c",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Coffee_Box_01",
+      "library_id": "FoodCollection_0045_SM_Coffee_Box_01",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "fc_detergent_liquid_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0047_SM_Detergent_Liquid_01.gltf",
+      "sha256": "16369f5f3e195e9cbdbc0b7c411abc4ea5ee2c4937f20b59a1c071e73a6faccc",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Detergent_Liquid_01",
+      "library_id": "FoodCollection_0047_SM_Detergent_Liquid_01",
+      "category": "HouseholdAndCare",
+      "candidate_ids": [
+        "SM-E11"
+      ]
+    },
+    {
+      "key": "fc_detergent_powder_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0049_SM_Detergent_Powder_01.gltf",
+      "sha256": "2a984ed6866616c2ebfe129c9eaeb8cbd25b706d97a8ae55793ac4c9287a5a3f",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Detergent_Powder_01",
+      "library_id": "FoodCollection_0049_SM_Detergent_Powder_01",
+      "category": "HouseholdAndCare",
+      "candidate_ids": [
+        "SM-E11"
+      ]
+    },
+    {
+      "key": "fc_detergent_powder_02",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0051_SM_Detergent_Powder_02.gltf",
+      "sha256": "6c22208ccf495d577925cc9d693096a223d962f85c4294e0c321ebfba1f2f7eb",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Detergent_Powder_02",
+      "library_id": "FoodCollection_0051_SM_Detergent_Powder_02",
+      "category": "HouseholdAndCare",
+      "candidate_ids": [
+        "SM-E11"
+      ]
+    },
+    {
+      "key": "fc_detergent_powder_03",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0053_SM_Detergent_Powder_03.gltf",
+      "sha256": "05c916947bb1f4c89c3f458d008f1c38dae53ffd3de736aa045d04cd2bf8bfc1",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Detergent_Powder_03",
+      "library_id": "FoodCollection_0053_SM_Detergent_Powder_03",
+      "category": "HouseholdAndCare",
+      "candidate_ids": [
+        "SM-E11"
+      ]
+    },
+    {
+      "key": "fc_dishwashing_liquid_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0055_SM_Dishwashing_Liquid_01.gltf",
+      "sha256": "dcc9fcaec837b16917eba92a40cbc5450b4a66f6cc908052c9d0a4febbfc6d18",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Dishwashing_Liquid_01",
+      "library_id": "FoodCollection_0055_SM_Dishwashing_Liquid_01",
+      "category": "HouseholdAndCare",
+      "candidate_ids": [
+        "SM-E12"
+      ]
+    },
+    {
+      "key": "fc_glue_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0057_SM_Glue_01.gltf",
+      "sha256": "a4e8a607efc42c8305d18f8b2925161a6d215fffae4c27dc0c1a2c7105f324c7",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Glue_01",
+      "library_id": "FoodCollection_0057_SM_Glue_01",
+      "category": "HouseholdAndCare",
+      "candidate_ids": [
+        "SM-E16"
+      ]
+    },
+    {
+      "key": "fc_juice_carton_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0059_SM_Juice_Carton_01.gltf",
+      "sha256": "7208f85df7523ed130b7f1d7359eae465c4b0734c638a7c140fdd14338259f29",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Juice_Carton_01",
+      "library_id": "FoodCollection_0059_SM_Juice_Carton_01",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D16"
+      ]
+    },
+    {
+      "key": "fc_matches_box_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0061_SM_Matches_Box_01.gltf",
+      "sha256": "cb1598266cc354f5e132d49c1718498c5ca6f3f58dc514d9db627218e874ef95",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Matches_Box_01",
+      "library_id": "FoodCollection_0061_SM_Matches_Box_01",
+      "category": "HouseholdAndCare",
+      "candidate_ids": []
+    },
+    {
+      "key": "fc_milk_bottle_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0063_SM_Milk_Bottle_01.gltf",
+      "sha256": "14eb4fb5fd2b962d071c2929e7a84932695e201dc3b3f76d35864fd598ce02b4",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Milk_Bottle_01",
+      "library_id": "FoodCollection_0063_SM_Milk_Bottle_01",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D17"
+      ]
+    },
+    {
+      "key": "fc_olive_oil_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0065_SM_Olive_Oil_01.gltf",
+      "sha256": "695a4faa5af2dd9b0e6ad6756b12bbdd2bd515b17fc59df0fca69450e8f817d1",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Olive_Oil_01",
+      "library_id": "FoodCollection_0065_SM_Olive_Oil_01",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D27"
+      ]
+    },
+    {
+      "key": "fc_pasta_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0067_SM_Pasta_01.gltf",
+      "sha256": "309f394af420e27321290b10ca2e0443829e253eea30ec1b01264718214118ee",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Pasta_01",
+      "library_id": "FoodCollection_0067_SM_Pasta_01",
+      "category": "PackagedFood",
+      "candidate_ids": []
+    },
+    {
+      "key": "fc_pills_box_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0069_SM_Pills_Box_01.gltf",
+      "sha256": "8fa48f3409d48833c1a58aa01d439d76a24921ffe1bbd14f0695c0dd478eccc9",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Pills_Box_01",
+      "library_id": "FoodCollection_0069_SM_Pills_Box_01",
+      "category": "HouseholdAndCare",
+      "candidate_ids": []
+    },
+    {
+      "key": "fc_porridge_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0071_SM_Porridge_01.gltf",
+      "sha256": "16c256e39e954744c2654ef9c45184b4f22e52adb618c78ddfb5e8d82f1401be",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Porridge_01",
+      "library_id": "FoodCollection_0071_SM_Porridge_01",
+      "category": "PackagedFood",
+      "candidate_ids": []
+    },
+    {
+      "key": "fc_protein_jar_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0073_SM_Protein_Jar_01.gltf",
+      "sha256": "47fd80b45fa7fd4ed60d1b03066cf8d8eadcf135ebfa4e51b7f9c46d168831d5",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Protein_Jar_01",
+      "library_id": "FoodCollection_0073_SM_Protein_Jar_01",
+      "category": "PackagedFood",
+      "candidate_ids": []
+    },
+    {
+      "key": "fc_salt_02",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0075_SM_Salt_02.gltf",
+      "sha256": "b5da06b64faf4c1f7e3b177c0ddeb76f4d0d35192fdaef83c5d74698f6b357f3",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Salt_02",
+      "library_id": "FoodCollection_0075_SM_Salt_02",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D27"
+      ]
+    },
+    {
+      "key": "fc_sausages_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0077_SM_Sausages_01.gltf",
+      "sha256": "4ae2d7797dac2f84d8c27e99366f901e539ea0965d991f046efbb0ecf66781d0",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Sausages_01",
+      "library_id": "FoodCollection_0077_SM_Sausages_01",
+      "category": "PackagedFood",
+      "candidate_ids": []
+    },
+    {
+      "key": "fc_sause_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0079_SM_Sause_01.gltf",
+      "sha256": "c636e499c6b0ba2895b41b6f4c3fdb896229c4057a740886c0b2dfc24745f231",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Sause_01",
+      "library_id": "FoodCollection_0079_SM_Sause_01",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D27"
+      ]
+    },
+    {
+      "key": "fc_snack_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0081_SM_Snack_01.gltf",
+      "sha256": "3addb819deffd3494e57f82c1b0592a67bd7e8539051a8a6aaf3207afca40cee",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Snack_01",
+      "library_id": "FoodCollection_0081_SM_Snack_01",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D20"
+      ]
+    },
+    {
+      "key": "fc_wine_bottle_01",
+      "path": "Merchandise/FoodCollection/Models/FoodCollection_0083_SM_Wine_Bottle_01.gltf",
+      "sha256": "91e8388edb5d7d8ae2a1bbca824bb46eddfbc4875be8afab32e6c2e5d6a06987",
+      "creator": "Melon Polygons",
+      "source_url": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+      "license": "CC-BY 4.0",
+      "source_pack": "FoodCollection",
+      "source_node": "SM_Wine_Bottle_01",
+      "library_id": "FoodCollection_0083_SM_Wine_Bottle_01",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D33"
+      ]
+    },
+    {
+      "key": "psx_burgerbox_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0000_burgerbox_1.gltf",
+      "sha256": "83b08b665858bdf7fc9783e117058e8b6dc401c62189981d54480fb744030eec",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "burgerbox_1",
+      "library_id": "PSXFood_0000_burgerbox_1",
+      "category": "PackagedFood",
+      "candidate_ids": []
+    },
+    {
+      "key": "psx_burgerbox_1_001",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0001_burgerbox_1_001.gltf",
+      "sha256": "e0e28524a5d63c21fa57a37f51f87ccc55c57307251d8a93c1f1fa3f40bfbffc",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "burgerbox_1.001",
+      "library_id": "PSXFood_0001_burgerbox_1_001",
+      "category": "PackagedFood",
+      "candidate_ids": []
+    },
+    {
+      "key": "psx_can_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0002_can_1.gltf",
+      "sha256": "c9acebae25671a9dfbc88e341b4954107853959ef689b8d3160bab9f3a6a7908",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "can_1",
+      "library_id": "PSXFood_0002_can_1",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "psx_can_2",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0003_can_2.gltf",
+      "sha256": "3afdb03b78d58cd4faf4fd81bc48b101fb888a9a48f3cff5fdfa706774cc3111",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "can_2",
+      "library_id": "PSXFood_0003_can_2",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "psx_can_3",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0004_can_3.gltf",
+      "sha256": "63c5475c85171bea847fa8bb498081296c85aaeb090a6283f3eced82ea18a797",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "can_3",
+      "library_id": "PSXFood_0004_can_3",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "psx_can_4",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0005_can_4.gltf",
+      "sha256": "a14242e3c40e7d8fcdd8ff855dcb2a1206222b1366ca8244f1e171192bfa400b",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "can_4",
+      "library_id": "PSXFood_0005_can_4",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "psx_can_5",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0006_can_5.gltf",
+      "sha256": "aae350d047446f2a3c08ea50ceed52920298fad42f9216e16422c88a55ccc23f",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "can_5",
+      "library_id": "PSXFood_0006_can_5",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "psx_can_6",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0007_can_6.gltf",
+      "sha256": "a5d0b07a1a2299d7811eabb09c7fdb181a9b76f234e08ae5b6b93c8abfb63cc4",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "can_6",
+      "library_id": "PSXFood_0007_can_6",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "psx_can_7",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0008_can_7.gltf",
+      "sha256": "bfcdca5c92d4248e4afc8228ed45148c359408880afb05513d58aa2ae2673b41",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "can_7",
+      "library_id": "PSXFood_0008_can_7",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "psx_can_8",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0009_can_8.gltf",
+      "sha256": "780119f91a2e74c35512ba8af7ae1584759977f6787c01217f5179e55782f7f4",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "can_8",
+      "library_id": "PSXFood_0009_can_8",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "psx_can_9",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0010_can_9.gltf",
+      "sha256": "9c80e6bdbee8df2305449880f0c5b8f7acf2bbed351d3dcc80dfc8cf016cc53f",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "can_9",
+      "library_id": "PSXFood_0010_can_9",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D26"
+      ]
+    },
+    {
+      "key": "psx_cereals_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0011_cereals_1.gltf",
+      "sha256": "b479d9589dfb402714880cf7513534cd1eae754f641fef3f1316883d12de0e5d",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "cereals_1",
+      "library_id": "PSXFood_0011_cereals_1",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D25"
+      ]
+    },
+    {
+      "key": "psx_cereals_2",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0012_cereals_2.gltf",
+      "sha256": "22957d23718c929d118d4903a97b8515dee316e7e6dfa27fb2945fe1672c06e3",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "cereals_2",
+      "library_id": "PSXFood_0012_cereals_2",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D25"
+      ]
+    },
+    {
+      "key": "psx_cereals_3",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0013_cereals_3.gltf",
+      "sha256": "cba9ed0f883456e9709bedaa88204e4b9dfd339787a63ba3d938321bbe721937",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "cereals_3",
+      "library_id": "PSXFood_0013_cereals_3",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D25"
+      ]
+    },
+    {
+      "key": "psx_cereals_4",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0014_cereals_4.gltf",
+      "sha256": "5b71c8a6b4fd1c55712076d82965fb5fb2ad0b66f5d7288885380382eaee3d82",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "cereals_4",
+      "library_id": "PSXFood_0014_cereals_4",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D25"
+      ]
+    },
+    {
+      "key": "psx_cereals_5",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0015_cereals_5.gltf",
+      "sha256": "a6224fa53c21b6e29f3ea9e2b201cfa180c8b505a67aad80b026dac93538550e",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "cereals_5",
+      "library_id": "PSXFood_0015_cereals_5",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D25"
+      ]
+    },
+    {
+      "key": "psx_chocolate_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0016_chocolate_1.gltf",
+      "sha256": "25d50d45165afbc1a76b7ed4736ee998d245669221dbd34bd2380ebe0e121e55",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "chocolate_1",
+      "library_id": "PSXFood_0016_chocolate_1",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D22"
+      ]
+    },
+    {
+      "key": "psx_chocolate_2",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0017_chocolate_2.gltf",
+      "sha256": "cd8ddc982069a861638d842bf205f3be4b106f4459e59d7eece191483d18c402",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "chocolate_2",
+      "library_id": "PSXFood_0017_chocolate_2",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D22"
+      ]
+    },
+    {
+      "key": "psx_chocolate_3",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0018_chocolate_3.gltf",
+      "sha256": "fe66cee1f3e84db279b8ea210f5440af8cf4ac173dc77228182c238c1ceeef7b",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "chocolate_3",
+      "library_id": "PSXFood_0018_chocolate_3",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D22"
+      ]
+    },
+    {
+      "key": "psx_chocolate_4",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0019_chocolate_4.gltf",
+      "sha256": "d5c7d3b0dc5dc1fb5ea3de468e8c5cac8e545cca24771b17098b48466e90f96e",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "chocolate_4",
+      "library_id": "PSXFood_0019_chocolate_4",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D22"
+      ]
+    },
+    {
+      "key": "psx_chocopie_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0020_chocopie_1.gltf",
+      "sha256": "7202938d4aa0522e168d957ca4bb40e2039bdba1d19cb3dac653dd4f30fbbdb7",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "chocopie_1",
+      "library_id": "PSXFood_0020_chocopie_1",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D21"
+      ]
+    },
+    {
+      "key": "psx_coffee_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0021_coffee_1.gltf",
+      "sha256": "38edbeeedac8a41669cc17c65aa781e9d98badf6b28f71d62de8bed5a7a97fba",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "coffee_1",
+      "library_id": "PSXFood_0021_coffee_1",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_coffee_2",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0022_coffee_2.gltf",
+      "sha256": "c8025b5481b37984b54c7c68385bf660f86ef20b490f9210a968cff8747fa906",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "coffee_2",
+      "library_id": "PSXFood_0022_coffee_2",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_coffee_3",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0023_coffee_3.gltf",
+      "sha256": "2f49f19ac141b31ed891d0fa6ae6aa651526357179184af47e431138992c407b",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "coffee_3",
+      "library_id": "PSXFood_0023_coffee_3",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_coffee_4",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0024_coffee_4.gltf",
+      "sha256": "77f0319e859abf910b5c5410ee82027bc415f67903ae5f7e25c4d70eb40b9737",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "coffee_4",
+      "library_id": "PSXFood_0024_coffee_4",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_coffee_5",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0025_coffee_5.gltf",
+      "sha256": "a4977c41eb7bfb0911c20430b58d3697f858256e2f4020665521dc59a577dd19",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "coffee_5",
+      "library_id": "PSXFood_0025_coffee_5",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_coffee_6",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0026_coffee_6.gltf",
+      "sha256": "c06cc754220024a966457f218a6869fce60d4138a0575becaa56aa32cf8ec23b",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "coffee_6",
+      "library_id": "PSXFood_0026_coffee_6",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_cookies_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0027_cookies_1.gltf",
+      "sha256": "f036eef16b3f7f2ed9ac10b35ca1c34e1d59926530b92a45fd8d9c8c8bc321bc",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "cookies_1",
+      "library_id": "PSXFood_0027_cookies_1",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D21"
+      ]
+    },
+    {
+      "key": "psx_cookies_2",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0028_cookies_2.gltf",
+      "sha256": "8bb7d43199d78593b92ad17ce6e9763c40c0f964bd1c7e84c57ed1cad19281a3",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "cookies_2",
+      "library_id": "PSXFood_0028_cookies_2",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D21"
+      ]
+    },
+    {
+      "key": "psx_cookies_3",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0029_cookies_3.gltf",
+      "sha256": "a109be03fe93ff29a37097fe36619325e5a23c66bbb6f0406dded9597a2896d9",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "cookies_3",
+      "library_id": "PSXFood_0029_cookies_3",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D21"
+      ]
+    },
+    {
+      "key": "psx_cookies_oreo_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0030_cookies_oreo_1.gltf",
+      "sha256": "d476e6fe4a64d461e86522d4436c60e97b4b21fbe55e9cebbd88b88630e4e973",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "cookies_oreo_1",
+      "library_id": "PSXFood_0030_cookies_oreo_1",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D21"
+      ]
+    },
+    {
+      "key": "psx_cookies_oreo_2",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0031_cookies_oreo_2.gltf",
+      "sha256": "cbf946420da6fb68c76a9712a74a2dee5ad19bc0dbf34c52dfb4f0cec3ecdaa8",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "cookies_oreo_2",
+      "library_id": "PSXFood_0031_cookies_oreo_2",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D21"
+      ]
+    },
+    {
+      "key": "psx_cookies_oreo_3",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0032_cookies_oreo_3.gltf",
+      "sha256": "99cf0211055450cb5f05ec88f79c29497fcbb1990b32e7c7a901f0a4502f563d",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "cookies_oreo_3",
+      "library_id": "PSXFood_0032_cookies_oreo_3",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D21"
+      ]
+    },
+    {
+      "key": "psx_cookies_oreo_4",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0033_cookies_oreo_4.gltf",
+      "sha256": "7eef9a99f9a6126dd864e41b3c169c6f9ac142735c14703fde41cf7798d6e535",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "cookies_oreo_4",
+      "library_id": "PSXFood_0033_cookies_oreo_4",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D21"
+      ]
+    },
+    {
+      "key": "psx_milk_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0034_milk_1.gltf",
+      "sha256": "63e5ff6c8855a8333b9b53883e564a61a73654c99d179f1c7f659c6d56ba79f9",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "milk_1",
+      "library_id": "PSXFood_0034_milk_1",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D17"
+      ]
+    },
+    {
+      "key": "psx_milk_2",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0035_milk_2.gltf",
+      "sha256": "d647846e6209963cbc21ef683a764877854e65a0d20972b905d9bffae68c0ab5",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "milk_2",
+      "library_id": "PSXFood_0035_milk_2",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D17"
+      ]
+    },
+    {
+      "key": "psx_milk_3",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0036_milk_3.gltf",
+      "sha256": "6ba3acf58ce193d4fe9671b66445516bd63ba1569ede4db2e7c949eca8353d79",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "milk_3",
+      "library_id": "PSXFood_0036_milk_3",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D17"
+      ]
+    },
+    {
+      "key": "psx_milk_4",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0037_milk_4.gltf",
+      "sha256": "e4da5e5f109af5fc61c5d095350b20150773d1db413b376f4c6d57f6564b5bda",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "milk_4",
+      "library_id": "PSXFood_0037_milk_4",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D17"
+      ]
+    },
+    {
+      "key": "psx_milk_5",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0038_milk_5.gltf",
+      "sha256": "e0c5cbf6da7394242583e1c0f268613326cb56068c3fecd3bf881c4d44173f67",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "milk_5",
+      "library_id": "PSXFood_0038_milk_5",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D17"
+      ]
+    },
+    {
+      "key": "psx_milk_6",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0039_milk_6.gltf",
+      "sha256": "a9bf79c74d7a3847c35295b13cc77c8d4d30d62ba10be0e1d984bf9b30271d5f",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "milk_6",
+      "library_id": "PSXFood_0039_milk_6",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D17"
+      ]
+    },
+    {
+      "key": "psx_noodles_box_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0040_noodles_box_1.gltf",
+      "sha256": "21711b8c763ffde07ac4df8a731d0953f7f4c0d806c4f62fcd43389866b5ea18",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "noodles_box_1",
+      "library_id": "PSXFood_0040_noodles_box_1",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D19"
+      ]
+    },
+    {
+      "key": "psx_noodles_box_2",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0041_noodles_box_2.gltf",
+      "sha256": "cf4b960a4f852de43530bfcd00b7a689931049715743e9a7e5d91737e2a0bf45",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "noodles_box_2",
+      "library_id": "PSXFood_0041_noodles_box_2",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D19"
+      ]
+    },
+    {
+      "key": "psx_noodles_box_3",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0042_noodles_box_3.gltf",
+      "sha256": "9d343c0721cdb016f37a576e91a54d4a2f4c744d13286583d85a41ff1224e9bd",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "noodles_box_3",
+      "library_id": "PSXFood_0042_noodles_box_3",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D19"
+      ]
+    },
+    {
+      "key": "psx_noodles_box_4",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0043_noodles_box_4.gltf",
+      "sha256": "280fbd710bf2edc13abb9688072263793516107302c2a0d073ee7e5d98a149fb",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "noodles_box_4",
+      "library_id": "PSXFood_0043_noodles_box_4",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D19"
+      ]
+    },
+    {
+      "key": "psx_noodles_cup_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0044_noodles_cup_1.gltf",
+      "sha256": "5e6652c5ee02e4d4799ee7bfa4bdf854854e77d8a23111ec45e9ce021fdd0a5d",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "noodles_cup_1",
+      "library_id": "PSXFood_0044_noodles_cup_1",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D18"
+      ]
+    },
+    {
+      "key": "psx_noodles_cup_2",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0045_noodles_cup_2.gltf",
+      "sha256": "43acf24356d52b1ef4682ad1e82fe7507e204caa2bd83e16e354369a5b43be1e",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "noodles_cup_2",
+      "library_id": "PSXFood_0045_noodles_cup_2",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D18"
+      ]
+    },
+    {
+      "key": "psx_noodles_cup_3",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0046_noodles_cup_3.gltf",
+      "sha256": "a2564ec876c945eb19f67c641f0b44559bfcf1d45fa12f68dd898d02b1f82450",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "noodles_cup_3",
+      "library_id": "PSXFood_0046_noodles_cup_3",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D18"
+      ]
+    },
+    {
+      "key": "psx_noodles_cup_4",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0047_noodles_cup_4.gltf",
+      "sha256": "1b955abcd70b61b07e167831983173d2edfe108c596a3f964dd90afc85cbe64c",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "noodles_cup_4",
+      "library_id": "PSXFood_0047_noodles_cup_4",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D18"
+      ]
+    },
+    {
+      "key": "psx_pasta_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0048_pasta_1.gltf",
+      "sha256": "f3ebe4797f14625ea0879556fa6c04163935fa4d189b9a60b72d2216b818458f",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "pasta_1",
+      "library_id": "PSXFood_0048_pasta_1",
+      "category": "PackagedFood",
+      "candidate_ids": []
+    },
+    {
+      "key": "psx_pasta_2",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0049_pasta_2.gltf",
+      "sha256": "6bc31806896c551e037537153b86bb63c54d76068b99682477ad8d77c8c89969",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "pasta_2",
+      "library_id": "PSXFood_0049_pasta_2",
+      "category": "PackagedFood",
+      "candidate_ids": []
+    },
+    {
+      "key": "psx_pasta_3",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0050_pasta_3.gltf",
+      "sha256": "c50ef26d75793a9a123d3d2c60888a3face878e6c73c28fa4e6484ec52878a11",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "pasta_3",
+      "library_id": "PSXFood_0050_pasta_3",
+      "category": "PackagedFood",
+      "candidate_ids": []
+    },
+    {
+      "key": "psx_pasta_4",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0051_pasta_4.gltf",
+      "sha256": "be63fdcea1674555ac5624822b07d1f8a4523c427dca77600b54c5ee4d0e14cb",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "pasta_4",
+      "library_id": "PSXFood_0051_pasta_4",
+      "category": "PackagedFood",
+      "candidate_ids": []
+    },
+    {
+      "key": "psx_pizza_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0052_pizza_1.gltf",
+      "sha256": "8437f191b2d3efdf92d251a43cc3c48f1cc3ecc3571b259bf78ca67e1b70ac9a",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "pizza_1",
+      "library_id": "PSXFood_0052_pizza_1",
+      "category": "PackagedFood",
+      "candidate_ids": []
+    },
+    {
+      "key": "psx_pizza_2",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0053_pizza_2.gltf",
+      "sha256": "558d8ed751864ab26808864472781cb86bbbcfc47d4f32249e7179db8db72bd1",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "pizza_2",
+      "library_id": "PSXFood_0053_pizza_2",
+      "category": "PackagedFood",
+      "candidate_ids": []
+    },
+    {
+      "key": "psx_sauce_ketchup",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0054_sauce_ketchup.gltf",
+      "sha256": "da6345be66baa5d8c161a47b21083e6f8c9fce75f210cd3f24f137a144b4a57a",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "sauce_ketchup",
+      "library_id": "PSXFood_0054_sauce_ketchup",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D27"
+      ]
+    },
+    {
+      "key": "psx_sauce_mustard",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0055_sauce_mustard.gltf",
+      "sha256": "5f9d82ed940304f8819caa78a1df44d4d14e020ed3f498bcd927641781ee31e3",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "sauce_mustard",
+      "library_id": "PSXFood_0055_sauce_mustard",
+      "category": "PackagedFood",
+      "candidate_ids": [
+        "SM-D27"
+      ]
+    },
+    {
+      "key": "psx_tea_1",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0056_tea_1.gltf",
+      "sha256": "d764bbb2041a84445769a04eb1505bf5e9770ecb51a44b179348ee52ef5d37fe",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "tea_1",
+      "library_id": "PSXFood_0056_tea_1",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_tea_2",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0057_tea_2.gltf",
+      "sha256": "8e1cd3c4fca92afb6e9c1800bdf7917a24aad7309517d13701e94eb2e7d378b3",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "tea_2",
+      "library_id": "PSXFood_0057_tea_2",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_tea_3",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0058_tea_3.gltf",
+      "sha256": "c8234467ed4b8e45762fe6572cc905a8df2c939de3f811ec255bf08ae61915ac",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "tea_3",
+      "library_id": "PSXFood_0058_tea_3",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_tea_4_big",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0059_tea_4_big.gltf",
+      "sha256": "159d6054f639c8b7899f85e53ed3a1db75faa75996ac5aec8ad0a6c6397d1c9f",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "tea_4_big",
+      "library_id": "PSXFood_0059_tea_4_big",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_tea_5",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0060_tea_5.gltf",
+      "sha256": "85622fd1506328a6c21a0a0d39362161bf7a0af57aa930880f594c5ab438a6dd",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "tea_5",
+      "library_id": "PSXFood_0060_tea_5",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_tea_6",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0061_tea_6.gltf",
+      "sha256": "0a52e682c708c75b784183121678cfab24f2cc35fbe54287a6657cd52cde4764",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "tea_6",
+      "library_id": "PSXFood_0061_tea_6",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_tea_7",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0062_tea_7.gltf",
+      "sha256": "90191fed6a7fa8a88cc522fb4c6a29d975322dd7cf11c9dfb5726bec670ee706",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "tea_7",
+      "library_id": "PSXFood_0062_tea_7",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "psx_tea_8",
+      "path": "Merchandise/PSXFood/Models/PSXFood_0063_tea_8.gltf",
+      "sha256": "7a1ebee897c561d5f4b09293f2ea03e07152b3240280b70279e5f9d692662677",
+      "creator": "grgssblend",
+      "source_url": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY 4.0",
+      "source_pack": "PSXFood",
+      "source_node": "tea_8",
+      "library_id": "PSXFood_0063_tea_8",
+      "category": "Drinks",
+      "candidate_ids": [
+        "SM-D28"
+      ]
+    },
+    {
+      "key": "register_console",
+      "path": "Fixtures/StoreProps/Models/StoreProps_0023_Cube_064.gltf",
+      "sha256": "0c3311d3657c877fb9571c2480ca46c0f9c3669d931ba396c7ae9287d6f9d01d",
+      "creator": "SimplePolygon",
+      "source_url": "https://sketchfab.com/3d-models/free-store-props-asset-pack-87a7f07bf1414543a073060388294f59",
+      "license": "CC-BY 4.0",
+      "source_pack": "StoreProps",
+      "source_node": "Cube.064",
+      "library_id": "StoreProps_0023_Cube_064",
+      "category": "RetailEquipment",
+      "candidate_ids": [
+        "SM-B02",
+        "SM-B03"
+      ]
+    },
+    {
+      "key": "cash_tray",
+      "path": "Fixtures/StoreProps/Models/StoreProps_0039_Cube_111.gltf",
+      "sha256": "bf48b6cfff708cb3ae601439eceb3baef75d1000fd38aabc0fab35ff96478e1a",
+      "creator": "SimplePolygon",
+      "source_url": "https://sketchfab.com/3d-models/free-store-props-asset-pack-87a7f07bf1414543a073060388294f59",
+      "license": "CC-BY 4.0",
+      "source_pack": "StoreProps",
+      "source_node": "Cube.111",
+      "library_id": "StoreProps_0039_Cube_111",
+      "category": "RetailEquipment",
+      "candidate_ids": [
+        "SM-B09"
+      ]
+    },
+    {
+      "key": "stock_carton",
+      "path": "Fixtures/StoreProps/Models/StoreProps_0043_Cube_121.gltf",
+      "sha256": "78941ae135e1d530828c41d75d59eb640a58178297ebc45064bea771f7e657eb",
+      "creator": "SimplePolygon",
+      "source_url": "https://sketchfab.com/3d-models/free-store-props-asset-pack-87a7f07bf1414543a073060388294f59",
+      "license": "CC-BY 4.0",
+      "source_pack": "StoreProps",
+      "source_node": "Cube.121",
+      "library_id": "StoreProps_0043_Cube_121",
+      "category": "RetailEquipment",
+      "candidate_ids": [
+        "SM-G03"
+      ]
     }
   ],
   "textures": [
     {
       "path": "Food/Textures/colormap.png",
       "sha256": "75baf74d9483a0fc56ac21ceba346fbe16fc24a2a1bf0524c53e6bbe802e1153"
+    },
+    {
+      "path": "Merchandise/FoodCollection/Textures/828c548ddd38df921ca89ee46708c4f1774fceea26d5b1f35c92499114858bb4.png",
+      "sha256": "828c548ddd38df921ca89ee46708c4f1774fceea26d5b1f35c92499114858bb4"
+    },
+    {
+      "path": "Merchandise/FoodCollection/Textures/98f64fc4260091d8fbe2b6d49076b62f56e22c8394cbea40eba5fe0866876255.png",
+      "sha256": "98f64fc4260091d8fbe2b6d49076b62f56e22c8394cbea40eba5fe0866876255"
+    },
+    {
+      "path": "Merchandise/FoodCollection/Textures/b6b2ded82cb8bdcaa57a7c87b6c64775b587bd99fc44dd076adb07ef49c1cd47.png",
+      "sha256": "b6b2ded82cb8bdcaa57a7c87b6c64775b587bd99fc44dd076adb07ef49c1cd47"
+    },
+    {
+      "path": "Merchandise/FoodCollection/Textures/b7ab30404b476326f62d30f0cd1f3db6800d3cd544d5aeeedcfaf27dd50660d1.png",
+      "sha256": "b7ab30404b476326f62d30f0cd1f3db6800d3cd544d5aeeedcfaf27dd50660d1"
+    },
+    {
+      "path": "Merchandise/FoodCollection/Textures/d0187acf3dd495b8e78e86c673f4bd5c4c081ee14c4bcfabe3745d0556571b02.png",
+      "sha256": "d0187acf3dd495b8e78e86c673f4bd5c4c081ee14c4bcfabe3745d0556571b02"
+    },
+    {
+      "path": "Merchandise/FoodCollection/Textures/e988e2e35014d3b7627adcffc0c7594a46dd1b26963fd9b0dcb38eca20b55d79.png",
+      "sha256": "e988e2e35014d3b7627adcffc0c7594a46dd1b26963fd9b0dcb38eca20b55d79"
+    },
+    {
+      "path": "Merchandise/FoodCollection/Textures/f6d39b159bc74bbbbf805441c2534a98e0474acf9cfc56f7112a1ffb91f95734.png",
+      "sha256": "f6d39b159bc74bbbbf805441c2534a98e0474acf9cfc56f7112a1ffb91f95734"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/10e563122aec8a2e8a27db15bb447a3476346a472c6fc308dea5701ea18688fc.png",
+      "sha256": "10e563122aec8a2e8a27db15bb447a3476346a472c6fc308dea5701ea18688fc"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/2b3475625ed385c6e909614b997cb34d66e80edcd721bfba4ab3d6ef18462802.png",
+      "sha256": "2b3475625ed385c6e909614b997cb34d66e80edcd721bfba4ab3d6ef18462802"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/2df28b0c2802851960fcbff2ca3aac33bbe2aaa3a0b852c61490977467794d6f.png",
+      "sha256": "2df28b0c2802851960fcbff2ca3aac33bbe2aaa3a0b852c61490977467794d6f"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/3066db18074c6485c3973ab05c26c149a4a02af8168d0aa774f383ed2ab9d8f7.png",
+      "sha256": "3066db18074c6485c3973ab05c26c149a4a02af8168d0aa774f383ed2ab9d8f7"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/32c34da982ff500e7074d42cbe6888b23c5793e449b6badc7f18b0291c80eb3d.png",
+      "sha256": "32c34da982ff500e7074d42cbe6888b23c5793e449b6badc7f18b0291c80eb3d"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/40dbc0d00ccbeee865f9bd5cd89187e470e8130f3947498030d2027ff9398cee.png",
+      "sha256": "40dbc0d00ccbeee865f9bd5cd89187e470e8130f3947498030d2027ff9398cee"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/735531eb24d1b47007ea0c3c8bad5f0d79485448600c13ab572c3cb093022987.png",
+      "sha256": "735531eb24d1b47007ea0c3c8bad5f0d79485448600c13ab572c3cb093022987"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/8a9c9dbf684358093c1c029a985319c72bdc2d8081de4f2139f03c367fc0f0c2.png",
+      "sha256": "8a9c9dbf684358093c1c029a985319c72bdc2d8081de4f2139f03c367fc0f0c2"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/b3e15bf551f312e0b7106d92e3feffe7f5e33d6d1e2a852c2188f24802df1c0b.png",
+      "sha256": "b3e15bf551f312e0b7106d92e3feffe7f5e33d6d1e2a852c2188f24802df1c0b"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/b885774240cbb27621ecf130a44fedd4ee46c81ca3c129226afa730ce6a09738.png",
+      "sha256": "b885774240cbb27621ecf130a44fedd4ee46c81ca3c129226afa730ce6a09738"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/d38519e82ad9b82d887eb1ddfda6d2a6b149dd2b565d46e5edb87d2bcc7d50a7.png",
+      "sha256": "d38519e82ad9b82d887eb1ddfda6d2a6b149dd2b565d46e5edb87d2bcc7d50a7"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/e41dc5d1eaaebc6966035cec772d0295f3667aeb286ce0b8ab0822ecabcdbd4d.png",
+      "sha256": "e41dc5d1eaaebc6966035cec772d0295f3667aeb286ce0b8ab0822ecabcdbd4d"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/f7539e66835a42e1f9de4488df9c5bbf4e90ea88d75d78699e15639bcbf60347.png",
+      "sha256": "f7539e66835a42e1f9de4488df9c5bbf4e90ea88d75d78699e15639bcbf60347"
+    },
+    {
+      "path": "Merchandise/PSXFood/Textures/fefe5eeb5beddeda5f08862d7460605c3b77382eacda6fe1e72e9980403f5c55.png",
+      "sha256": "fefe5eeb5beddeda5f08862d7460605c3b77382eacda6fe1e72e9980403f5c55"
+    },
+    {
+      "path": "Fixtures/StoreProps/Textures/617aeeb291baf779f544cbdca9a1be0019ad4d3a9bdd4b448d1d0612a51729cc.png",
+      "sha256": "617aeeb291baf779f544cbdca9a1be0019ad4d3a9bdd4b448d1d0612a51729cc"
     }
   ],
-  "limits": "Imported art candidates; merchandise remains decorative, with incomplete Japanese retail labels."
+  "limits": "Selected products and fixtures, with source packaging/brands retained. VR Store excluded: listing says company-owned colleague assets; Marlboro and Toronto not selected. Stock remains aggregate.",
+  "dependencies": [
+    {
+      "path": "Merchandise/FoodCollection/geometry.bin",
+      "sha256": "b44aa3787066ab3903b2176b2f5c85b79c2fd22ffce7946157ec4fa6cb3b8b61"
+    },
+    {
+      "path": "Merchandise/PSXFood/geometry.bin",
+      "sha256": "ef4b07e1c6d1acca0ad9d3d52c5d3386b7b08672613a1c3e68a640731fa8affa"
+    },
+    {
+      "path": "Fixtures/StoreProps/geometry.bin",
+      "sha256": "c909e5e72c18f5b2e3dd991d380a7e9f9e768933e15002a4f473aefdd415723c"
+    },
+    {
+      "path": "Signage/ZenKakuGothicNew-Regular.ttf",
+      "sha256": "b840cd07a67d89cacca44249ae49aa99ee7640eb5ce623be8d8983d6aabac801"
+    }
+  ]
 }

@@ -41,6 +41,7 @@ namespace Sora.AfterTheRain.Demo
                     filter.gameObject.AddComponent<MeshCollider>().sharedMesh = filter.sharedMesh;
 
             Solid(store.transform, "Store roof shelter", new Vector3(0, 4.4f, .1f), new Vector3(14.45f, .2f, 11.1f));
+            Solid(store.transform, "Interior ceiling shelter", new Vector3(0, 3.12f, .1f), new Vector3(13.8f, .06f, 10.7f));
             Solid(store.transform, "Store canopy shelter", new Vector3(0, 3.83f, -5.95f), new Vector3(14.5f, .2f, 1.95f));
             Solid(store.transform, "Chilled drinks cabinet", new Vector3(6.35f, 1.45f, -.85f), new Vector3(.85f, 2.9f, 5.95f));
             Solid(store.transform, "Coffee service counter", new Vector3(-6.25f, .55f, 1.6f), new Vector3(1.05f, 1.1f, 2.6f));
@@ -51,11 +52,14 @@ namespace Sora.AfterTheRain.Demo
             {
                 if (lamp.name.StartsWith("Warm store lamp "))
                 {
+                    if (!int.TryParse(lamp.name.Substring("Warm store lamp ".Length), out int index)) continue;
+                    lamp.transform.localPosition = new Vector3((index % 3 - 1) * 4.4f, 2.87f, index / 3 * 4.9f - 2.4f);
                     lamp.type = LightType.Spot;
                     lamp.transform.rotation = Quaternion.Euler(90, 0, 0);
-                    lamp.spotAngle = 120;
-                    lamp.innerSpotAngle = 100;
-                    lamp.intensity = 4;
+                    lamp.spotAngle = 140;
+                    lamp.innerSpotAngle = 110;
+                    lamp.color = new Color(1f, .97f, .91f);
+                    lamp.intensity = 4.5f;
                     lamp.range = 7;
                 }
                 else if (lamp.name == "Front neon")

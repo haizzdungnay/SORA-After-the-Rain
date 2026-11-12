@@ -84,6 +84,26 @@ for source in snapshot["items"]:
             coverage[item_id].append(record["path"])
             if integrated_key:
                 unity_coverage[item_id].add(integrated_key)
+library_sources = [source for source in selected["sources"] if source.get("source_pack")]
+for source in library_sources:
+    assert source["license"] == "CC-BY 4.0"
+    model_path = ROOT / "ArtSource/ThirdParty/SoraMart" / source["path"]
+    document = json.loads(model_path.read_text(encoding="utf-8"))
+    assert document.get("meshes") and document["asset"]["extras"]["source"] == source["source_url"]
+    for resource in document.get("buffers", []) + document.get("images", []):
+        dependency = (model_path.parent / unquote(resource["uri"])).resolve()
+        assert dependency.is_relative_to((ROOT / "ArtSource/ThirdParty/SoraMart").resolve()) and dependency.is_file()
+    assert placed.get(source["key"], 0) > 0
+    for item_id in source["candidate_ids"]:
+        assert item_id in coverage
+        coverage[item_id].append(source["path"])
+        unity_coverage[item_id].add(source["key"])
+with (ROOT / "Docs/StreetExterior/SORA_MART_USER_LIBRARY.csv").open(encoding="utf-8-sig", newline="") as handle:
+    library_table = list(csv.DictReader(handle))
+assert len(library_table) == len(library_sources)
+assert {row["key"] for row in library_table} == {source["key"] for source in library_sources}
+assert {row["sha256"] for row in library_table} == {source["sha256"] for source in library_sources}
+assert all(row["unity_integrated"] == "yes" and row["license"] == "CC-BY 4.0" for row in library_table)
 for item_id, files in coverage.items():
     marker = (f"[x] Tải {len(files)} ứng viên" if files else
               "[x] Có nguồn sẵn" if item_id in existing else "[ ] Chưa tải")
@@ -98,7 +118,7 @@ assert len(table) == len(paths)
 assert {row["sha256"] for row in table} == hashes
 assert {row["local_path"].removeprefix("LocalReferenceAssets/SoraMartIncoming/") for row in table} == paths
 assert all(row["unity_integrated"] == selected_by_hash.get(row["sha256"], "") for row in table)
-for record in selected["textures"] + selected["sources"]:
+for record in selected["textures"] + selected["sources"] + selected.get("dependencies", []):
     source_root = (ROOT / "ArtSource/ThirdParty/SoraMart").resolve()
     source_path = (source_root / record["path"]).resolve()
     assert source_path.is_relative_to(source_root)
@@ -107,10 +127,12 @@ integrated = sum(source["sha256"] in hashes and placed.get(source["key"], 0) > 0
 assert len(paths) == snapshot["model_count"]
 assert len(snapshot["items"]) == snapshot["distinct_source_count"]
 assert integrated == snapshot["unity_integrated_models"]
+assert len(library_sources) == snapshot.get("user_library_models", 0)
+assert len(placed) == snapshot.get("runtime_model_sources", len(placed))
 assert sum(bool(files) for files in coverage.values()) == snapshot["download_candidate_items"]
 assert len(existing) == snapshot["existing_candidate_items"]
 assert 151 - len(existing | {key for key, files in coverage.items() if files}) == snapshot["missing_candidate_items"]
 assert snapshot["accepted_shopping_list_items"] == 0, "Downloads do not establish full art acceptance"
 print(f"PASS: {len(paths)} distinct GLBs, {len(coverage)} checklist rows, source/texture/license/hash checks.")
-print(f"Candidates for {snapshot['download_candidate_items']}/151 requirements; {integrated} sources in the runtime manifest.")
+print(f"Candidates for {snapshot['download_candidate_items']}/151 requirements; {integrated} legacy intake and {len(library_sources)} library sources placed.")
 print("Actual Unity evidence: " + snapshot["unity_evidence"] + "; full retail art acceptance remains pending.")

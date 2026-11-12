@@ -1,0 +1,170 @@
+{
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v5.2.41",
+    "version": "2.0",
+    "extras": {
+      "SORA_resource_source": {
+        "source": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+        "author": "grgssblend",
+        "license": "CC-BY 4.0",
+        "license_url": "http://creativecommons.org/licenses/by/4.0/",
+        "requirements": "Author must be credited. Commercial use is allowed.",
+        "description": "I`ve created a few food items specifically for you. Here are the object categories:\n* Burger`s box\n* Canned food\n* Cereals\n* Chocolate\n* Coffee (various versions)\n* Cookies (Oreo and others)\n* Milk bottles\n* Instant noodles (cups and box/bag)\n* Pasta\n* Pizza box\n* Sauce bottles\n* Tea box\n\nEverything is designed in a **low poly** style to save resources and reflect aesthetic of old-fashioned PS1/PS2 games.",
+        "original_file": "psxps1-food-props-lowpoly.zip",
+        "original_sha256": "2dfd2aecd9ab348aa56ebcd19888b8d8adaac5baaee784a2d61ab62c2586a684",
+        "inspected": "2026-11-11",
+        "changes": "Selected source groups, bottom-center pivots; shared original geometry/UV/textures. PSX OBJ converted in Blender; missing image paths repaired."
+      },
+      "author": "grgssblend",
+      "source": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)"
+    }
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        1
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "cereals_1",
+      "rotation": [
+        0.7071068286895752,
+        0,
+        0,
+        0.7071068286895752
+      ]
+    },
+    {
+      "name": "PSXFood_0011_cereals_1",
+      "children": [
+        0
+      ],
+      "translation": [
+        -1.9590950012207031,
+        0.7330765724182129,
+        27.536675453186035
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "cereals_1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 24,
+      "max": [
+        6.84108304977417,
+        -26.167539596557617,
+        0.7330800294876099
+      ],
+      "min": [
+        -2.9228930473327637,
+        -28.905805587768555,
+        -12.308151245117188
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 36,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 30420,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 30708,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 192,
+      "byteOffset": 30996,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 72,
+      "byteOffset": 31188,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "../geometry.bin",
+      "byteLength": 159644
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Material.003",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.31700000166893005,
+        "roughnessFactor": 0.781000018119812
+      }
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ],
+  "images": [
+    {
+      "mimeType": "image/png",
+      "name": "cereal_boxes",
+      "uri": "../Textures/f7539e66835a42e1f9de4488df9c5bbf4e90ea88d75d78699e15639bcbf60347.png"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987
+    }
+  ]
+}

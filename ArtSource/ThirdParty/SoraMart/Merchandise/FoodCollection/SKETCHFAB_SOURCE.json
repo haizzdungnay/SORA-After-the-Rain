@@ -1,0 +1,302 @@
+{
+  "animationCount": 0,
+  "categories": [
+    {
+      "uid": "b3631aefd82b4eeba37aa5fc0b73b05a",
+      "name": "Food & Drink",
+      "slug": "food-drink",
+      "uri": "https://api.sketchfab.com/v3/categories/b3631aefd82b4eeba37aa5fc0b73b05a",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/dac08ea5b8779b2cef7a4c81327df721-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/b3631aefd82b4eeba37aa5fc0b73b05a/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/b3631aefd82b4eeba37aa5fc0b73b05a/800x450.png"
+        }
+      ]
+    }
+  ],
+  "commentCount": 10,
+  "createdAt": "2026-08-16T19:45:08.670572",
+  "embedUrl": "https://sketchfab.com/models/969b4e6ef7444650ba8a22a46d57ff43/embed",
+  "faceCount": 31796,
+  "isAgeRestricted": false,
+  "license": {
+    "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+    "label": "CC Attribution",
+    "fullName": "Creative Commons Attribution",
+    "requirements": "Author must be credited. Commercial use is allowed.",
+    "url": "http://creativecommons.org/licenses/by/4.0/",
+    "slug": "by"
+  },
+  "likeCount": 770,
+  "name": "Food Collection - Game Ready",
+  "publishedAt": "2026-08-16T20:52:21.560629",
+  "soundCount": 0,
+  "staffpickedAt": null,
+  "tags": [
+    {
+      "name": "food",
+      "slug": "food",
+      "uri": "https://api.sketchfab.com/v3/tags/food"
+    },
+    {
+      "name": "packaging",
+      "slug": "packaging",
+      "uri": "https://api.sketchfab.com/v3/tags/packaging"
+    },
+    {
+      "name": "carton",
+      "slug": "carton",
+      "uri": "https://api.sketchfab.com/v3/tags/carton"
+    },
+    {
+      "name": "post-apocalyptic",
+      "slug": "post-apocalyptic",
+      "uri": "https://api.sketchfab.com/v3/tags/post-apocalyptic"
+    },
+    {
+      "name": "chocolate",
+      "slug": "chocolate",
+      "uri": "https://api.sketchfab.com/v3/tags/chocolate"
+    },
+    {
+      "name": "Package",
+      "slug": "package",
+      "uri": "https://api.sketchfab.com/v3/tags/package"
+    },
+    {
+      "name": "Game-ready",
+      "slug": "game-ready",
+      "uri": "https://api.sketchfab.com/v3/tags/game-ready"
+    },
+    {
+      "name": "sweets",
+      "slug": "sweets",
+      "uri": "https://api.sketchfab.com/v3/tags/sweets"
+    },
+    {
+      "name": "groceries",
+      "slug": "groceries",
+      "uri": "https://api.sketchfab.com/v3/tags/groceries"
+    },
+    {
+      "name": "rations",
+      "slug": "rations",
+      "uri": "https://api.sketchfab.com/v3/tags/rations"
+    },
+    {
+      "name": "candies",
+      "slug": "candies",
+      "uri": "https://api.sketchfab.com/v3/tags/candies"
+    },
+    {
+      "name": "snacks",
+      "slug": "snacks",
+      "uri": "https://api.sketchfab.com/v3/tags/snacks"
+    },
+    {
+      "name": "pantry",
+      "slug": "pantry",
+      "uri": "https://api.sketchfab.com/v3/tags/pantry"
+    },
+    {
+      "name": "cardboard-box",
+      "slug": "cardboard-box",
+      "uri": "https://api.sketchfab.com/v3/tags/cardboard-box"
+    },
+    {
+      "name": "asset-pack",
+      "slug": "asset-pack",
+      "uri": "https://api.sketchfab.com/v3/tags/asset-pack"
+    },
+    {
+      "name": "provisions",
+      "slug": "provisions",
+      "uri": "https://api.sketchfab.com/v3/tags/provisions"
+    },
+    {
+      "name": "canned-goods",
+      "slug": "canned-goods",
+      "uri": "https://api.sketchfab.com/v3/tags/canned-goods"
+    },
+    {
+      "name": "low-poly",
+      "slug": "low-poly",
+      "uri": "https://api.sketchfab.com/v3/tags/low-poly"
+    },
+    {
+      "name": "pbr",
+      "slug": "pbr",
+      "uri": "https://api.sketchfab.com/v3/tags/pbr"
+    },
+    {
+      "name": "container",
+      "slug": "container",
+      "uri": "https://api.sketchfab.com/v3/tags/container"
+    },
+    {
+      "name": "tin-can",
+      "slug": "tin-can",
+      "uri": "https://api.sketchfab.com/v3/tags/tin-can"
+    },
+    {
+      "name": "environment-props",
+      "slug": "environment-props",
+      "uri": "https://api.sketchfab.com/v3/tags/environment-props"
+    },
+    {
+      "name": "kitchen-props",
+      "slug": "kitchen-props",
+      "uri": "https://api.sketchfab.com/v3/tags/kitchen-props"
+    },
+    {
+      "name": "canned-food",
+      "slug": "canned-food",
+      "uri": "https://api.sketchfab.com/v3/tags/canned-food"
+    },
+    {
+      "name": "survival-props",
+      "slug": "survival-props",
+      "uri": "https://api.sketchfab.com/v3/tags/survival-props"
+    },
+    {
+      "name": "store-shelf",
+      "slug": "store-shelf",
+      "uri": "https://api.sketchfab.com/v3/tags/store-shelf"
+    },
+    {
+      "name": "food-props",
+      "slug": "food-props",
+      "uri": "https://api.sketchfab.com/v3/tags/food-props"
+    },
+    {
+      "name": "survival-foodcandy",
+      "slug": "survival-foodcandy",
+      "uri": "https://api.sketchfab.com/v3/tags/survival-foodcandy"
+    },
+    {
+      "name": "candy-box",
+      "slug": "candy-box",
+      "uri": "https://api.sketchfab.com/v3/tags/candy-box"
+    },
+    {
+      "name": "sweet-foodbox",
+      "slug": "sweet-foodbox",
+      "uri": "https://api.sketchfab.com/v3/tags/sweet-foodbox"
+    },
+    {
+      "name": "paper-boxprops",
+      "slug": "paper-boxprops",
+      "uri": "https://api.sketchfab.com/v3/tags/paper-boxprops"
+    },
+    {
+      "name": "game-assetsgrocery-store",
+      "slug": "game-assetsgrocery-store",
+      "uri": "https://api.sketchfab.com/v3/tags/game-assetsgrocery-store"
+    }
+  ],
+  "thumbnails": {
+    "images": [
+      {
+        "uid": "d255be21aada4ffea72fdf9c9c89c426",
+        "width": 1920,
+        "height": 1080,
+        "size": 438016,
+        "url": "https://media.sketchfab.com/models/969b4e6ef7444650ba8a22a46d57ff43/thumbnails/f0b2a5e4b54243b1b984f21ba18021e5/1b576fbf79ff49aa98136c72a45319a6.jpeg"
+      },
+      {
+        "uid": "4d10227404f34137be4c356862591e36",
+        "width": 1024,
+        "height": 576,
+        "size": 100368,
+        "url": "https://media.sketchfab.com/models/969b4e6ef7444650ba8a22a46d57ff43/thumbnails/f0b2a5e4b54243b1b984f21ba18021e5/490ad15d9be44215b1e2de0ff2583270.jpeg"
+      },
+      {
+        "uid": "fb025dcdf703463bbe49d16b01764615",
+        "width": 720,
+        "height": 405,
+        "size": 55448,
+        "url": "https://media.sketchfab.com/models/969b4e6ef7444650ba8a22a46d57ff43/thumbnails/f0b2a5e4b54243b1b984f21ba18021e5/6b281d3ada14411781f9236ac7204e84.jpeg"
+      },
+      {
+        "uid": "314c789a7a484e20a86e994f8495f762",
+        "width": 256,
+        "height": 144,
+        "size": 9754,
+        "url": "https://media.sketchfab.com/models/969b4e6ef7444650ba8a22a46d57ff43/thumbnails/f0b2a5e4b54243b1b984f21ba18021e5/664be37cc00f4ac39e56895a767f8fde.jpeg"
+      },
+      {
+        "uid": "3dc5837c93c44fc38a9c23eb64d7ab62",
+        "width": 64,
+        "height": 36,
+        "size": 1463,
+        "url": "https://media.sketchfab.com/models/969b4e6ef7444650ba8a22a46d57ff43/thumbnails/f0b2a5e4b54243b1b984f21ba18021e5/f3549c55de784af397fad1aeff6630b8.jpeg"
+      }
+    ]
+  },
+  "uid": "969b4e6ef7444650ba8a22a46d57ff43",
+  "uri": "https://api.sketchfab.com/v3/models/969b4e6ef7444650ba8a22a46d57ff43",
+  "user": {
+    "uid": "7b2df664888246ffa837bb30b7eed1c0",
+    "username": "Melonpolygons",
+    "displayName": "Melon Polygons",
+    "account": "basic",
+    "profileUrl": "https://sketchfab.com/Melonpolygons",
+    "avatar": {
+      "uid": "8b233a01a46a42f08d87601d18758493",
+      "uri": "https://api.sketchfab.com/v3/avatars/8b233a01a46a42f08d87601d18758493",
+      "images": [
+        {
+          "width": 32,
+          "height": 32,
+          "size": 946,
+          "url": "https://media.sketchfab.com/avatars/8b233a01a46a42f08d87601d18758493/bbac9a230ff145498f26dbbd8ea5db5a.jpeg"
+        },
+        {
+          "width": 48,
+          "height": 48,
+          "size": 1216,
+          "url": "https://media.sketchfab.com/avatars/8b233a01a46a42f08d87601d18758493/2b61f44e2c0e46c4b49b9c72f0521360.jpeg"
+        },
+        {
+          "width": 90,
+          "height": 90,
+          "size": 2181,
+          "url": "https://media.sketchfab.com/avatars/8b233a01a46a42f08d87601d18758493/e9338d179e9341849b22ee7787a32883.jpeg"
+        },
+        {
+          "width": 100,
+          "height": 100,
+          "size": 2553,
+          "url": "https://media.sketchfab.com/avatars/8b233a01a46a42f08d87601d18758493/75b89b3b47bf402aa2016d655227a329.jpeg"
+        }
+      ]
+    },
+    "uri": "https://api.sketchfab.com/v3/users/7b2df664888246ffa837bb30b7eed1c0"
+  },
+  "vertexCount": 16435,
+  "viewCount": 17238,
+  "viewerUrl": "https://sketchfab.com/3d-models/food-collection-game-ready-969b4e6ef7444650ba8a22a46d57ff43",
+  "isDownloadable": true,
+  "isProtected": false,
+  "description": "Low-poly Food Collection - Game Ready Asset <br>\n\nTriangles: 31,796 <br>\nMeterials: 2 <br>\nTextures: 8 (2048x2048) <br>",
+  "price": null,
+  "downloadCount": 3682,
+  "editorUrl": "https://sketchfab.com/models/969b4e6ef7444650ba8a22a46d57ff43/edit",
+  "status": {
+    "warning": {},
+    "processing": "SUCCEEDED"
+  },
+  "source": "website",
+  "hasCommentsDisabled": false,
+  "updatedAt": "2026-08-16T20:52:25.026328",
+  "pbrType": null,
+  "textureCount": 0,
+  "materialCount": 3
+}

@@ -3,10 +3,9 @@
 Ngày đối chiếu: **11/11/2026**. Yêu cầu của chủ dự án: lấy ảnh cửa hàng tiện lợi
 Nhật làm mẫu, tìm model theo vật thể trong ảnh và ghi rõ món đã tải.
 
-**Đã ghép Unity:** 67 nguồn model được dùng trong cửa hàng, tăng từ 19;
-[báo cáo, kiểm thử và ảnh thật](Reports/2026-11-11-SORA-MART-KONBINI-UNITY.md).
-Bảng đối chiếu dưới đây giữ nhận xét lúc chọn mẫu; cột Unity trong danh sách và
-CSV ghi trạng thái mới nhất. Ghép model không xác nhận đã đủ bao bì/nhãn.
+**Cập nhật 12/11/2026:** 147 nguồn model đang đặt, gồm 104 object hàng hóa có bao bì/nhãn nguồn từ Food Collection và PSX Food; giữ 40 nguồn cũ và thêm 3 thiết bị Store Props. Bố cục vẫn dựa trên các ảnh R1-R6 dưới đây, có biển kệ Nhật–Anh, bảng giá và trần sáng thấp hơn. [Báo cáo và ảnh Unity](Reports/2026-11-12-SORA-MART-RETAIL-FINISH.md).
+
+Các nhận xét chọn mẫu dưới đây ghi lịch sử kiểm kê 11/11; hai CSV và từng dòng danh sách ghi trạng thái mới nhất. Ghép model không xác nhận đủ nhãn Nhật hoặc toàn bộ tiêu chí của danh mục.
 
 ## Ảnh gốc
 
@@ -72,24 +71,22 @@ Thứ tự ghép tiếp: chọn một bộ kệ/tủ đạt chất lượng; th�
 giữ lối chính khoảng 1.2 m và các mốc POS/restock/delivery hoạt động.
 
 Không nhập hàng loạt cả 403 ứng viên để tăng số loại trên giấy. Nhiều mẫu xem
-thử chưa đủ chi tiết nhìn gần. Đợt ghép mới dùng 67 nguồn, có 48 mẫu bổ sung và
-bố cục sáu kệ giữa, tủ thực phẩm lạnh cuối shop, khu cà phê/bánh và phụ kiện gần
-cửa. 336 ứng viên còn lại giữ local; tiêu chí mỹ thuật đầy đủ vẫn chờ duyệt.
+thử chưa đủ chi tiết nhìn gần. Bản 12/11 dùng 147 nguồn đang đặt, gồm 104 object hàng hóa mới; bố cục sáu kệ, thực phẩm lạnh, cà phê/bánh và phụ kiện giữ theo tham chiếu. Các ứng viên chưa chọn giữ local; tiêu chí mỹ thuật đầy đủ vẫn chờ duyệt.
 
 ## Mục còn thiếu cần tìm tiếp
 
-**30 mục chưa có ứng viên đã tải hoặc nguồn phù hợp đã kiểm kê**:
+**27 mục chưa có ứng viên đã tải hoặc nguồn phù hợp đã kiểm kê** (12/11):
 
-- A12; B06, B09: chi tiết mái/mặt bên, màn hình giá khách, khay tiền.
-- D12, D14, D15, D19, D24, D31: trà chai, cà phê lon, nước thể thao, mì gói,
+- A12; B06: chi tiết mái/mặt bên, màn hình giá khách.
+- D12, D14, D15, D24, D31: trà chai, cà phê lon, nước thể thao,
   hạt/khô và đồ đông lạnh đóng gói. D12/D14 là P0.
-- E02, E06, E08, E09, E10, E13, E15, E16, E17, E19, E20, E22: khăn ướt,
-  sữa tắm, mỹ phẩm, vệ sinh cá nhân, dao cạo, mút/găng, cáp/sạc, văn phòng phẩm,
+- E02, E06, E08, E09, E10, E13, E15, E17, E19, E20, E22: khăn ướt,
+  sữa tắm, mỹ phẩm, vệ sinh cá nhân, dao cạo, mút/găng, cáp/sạc,
   khẩu trang/sơ cứu, tất, khăn nhỏ, màng bọc/giấy bạc/túi rác bán lẻ.
 - F04, F05; G06: tủ hấp bánh bao, quầy oden, pallet nhỏ. Đều P2 tùy chọn.
 - H03, H08, H10, H11; I09; J05: đèn tường, ổ cắm/công tắc, báo khói,
   gương lồi, rãnh thoát nước và tủ hàng giới hạn sau quầy.
 
 5 mục I01/I06/I08/H07/J06 đã có nguồn CC0 IzakayaAlley từ trước, không tải lại
-hay cộng lại số GLB. 116 mục còn lại có ứng viên mới/cũ trong kho intake; cả hai
+hay cộng lại số GLB. 119 mục còn lại có ứng viên mới/cũ trong kho intake; cả hai
 nhóm vẫn phải kiểm tra chi tiết và số biến thể theo danh sách 151 mục.

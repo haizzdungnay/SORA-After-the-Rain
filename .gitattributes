@@ -32,7 +32,6 @@ ArtSource/Generated/V05_CC0/*.glb filter=lfs diff=lfs merge=lfs -text
 Assets/SORA/Characters/LocalImported/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
 Assets/SORA/Characters/LocalImported/**/*.bmp filter=lfs diff=lfs merge=lfs -text
 ArtSource/Generated/V06_CC0/*.glb filter=lfs diff=lfs merge=lfs -text
-
 # Runtime Unity-imported GLBs: these are ACTUAL Assets, not ArtSource-only stage files
 Assets/Resources/SoraCity/Models/*.glb filter=lfs diff=lfs merge=lfs -text
 Assets/Resources/SoraStore/*.glb filter=lfs diff=lfs merge=lfs -text
@@ -41,3 +40,7 @@ Assets/Resources/SoraCity/Props/Suburban/*.glb filter=lfs diff=lfs merge=lfs -te
 ArtSource/ThirdParty/SoraMart/**/*.glb filter=lfs diff=lfs merge=lfs -text
 ArtSource/ThirdParty/SoraMart/**/*.png filter=lfs diff=lfs merge=lfs -text
 ArtSource/ThirdParty/SoraMart/manifest.json text eol=lf
+ArtSource/ThirdParty/SoraMart/**/*.gltf text eol=lf
+ArtSource/ThirdParty/SoraMart/**/*.bin filter=lfs diff=lfs merge=lfs -text
+ArtSource/ThirdParty/SoraMart/**/*.ttf filter=lfs diff=lfs merge=lfs -text
+ArtSource/ThirdParty/SoraMart/**/*.jpg filter=lfs diff=lfs merge=lfs -text

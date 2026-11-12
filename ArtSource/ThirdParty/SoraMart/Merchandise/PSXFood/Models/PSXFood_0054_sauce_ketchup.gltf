@@ -1,0 +1,170 @@
+{
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v5.2.41",
+    "version": "2.0",
+    "extras": {
+      "SORA_resource_source": {
+        "source": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+        "author": "grgssblend",
+        "license": "CC-BY 4.0",
+        "license_url": "http://creativecommons.org/licenses/by/4.0/",
+        "requirements": "Author must be credited. Commercial use is allowed.",
+        "description": "I`ve created a few food items specifically for you. Here are the object categories:\n* Burger`s box\n* Canned food\n* Cereals\n* Chocolate\n* Coffee (various versions)\n* Cookies (Oreo and others)\n* Milk bottles\n* Instant noodles (cups and box/bag)\n* Pasta\n* Pizza box\n* Sauce bottles\n* Tea box\n\nEverything is designed in a **low poly** style to save resources and reflect aesthetic of old-fashioned PS1/PS2 games.",
+        "original_file": "psxps1-food-props-lowpoly.zip",
+        "original_sha256": "2dfd2aecd9ab348aa56ebcd19888b8d8adaac5baaee784a2d61ab62c2586a684",
+        "inspected": "2026-11-11",
+        "changes": "Selected source groups, bottom-center pivots; shared original geometry/UV/textures. PSX OBJ converted in Blender; missing image paths repaired."
+      },
+      "author": "grgssblend",
+      "source": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)"
+    }
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        1
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "sauce_ketchup",
+      "rotation": [
+        0.7071068286895752,
+        0,
+        0,
+        0.7071068286895752
+      ]
+    },
+    {
+      "name": "PSXFood_0054_sauce_ketchup",
+      "children": [
+        0
+      ],
+      "translation": [
+        -24.216617584228516,
+        0.6261897087097168,
+        -3.5875139236450195
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "sauce_ketchup",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 290,
+      "max": [
+        26.21589469909668,
+        5.052679061889648,
+        0.6261889934539795
+      ],
+      "min": [
+        22.21734046936035,
+        2.122347116470337,
+        -6.450507164001465
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 290,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 290,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 708,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 3480,
+      "byteOffset": 133452,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 3480,
+      "byteOffset": 136932,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2320,
+      "byteOffset": 140412,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1416,
+      "byteOffset": 142732,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "../geometry.bin",
+      "byteLength": 159644
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Material.011",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.4681819975376129,
+        "roughnessFactor": 0.6318181753158569
+      }
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ],
+  "images": [
+    {
+      "mimeType": "image/png",
+      "name": "sauces",
+      "uri": "../Textures/40dbc0d00ccbeee865f9bd5cd89187e470e8130f3947498030d2027ff9398cee.png"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987
+    }
+  ]
+}

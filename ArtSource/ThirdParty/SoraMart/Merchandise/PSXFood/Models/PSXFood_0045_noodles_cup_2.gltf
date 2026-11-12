@@ -1,0 +1,252 @@
+{
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v5.2.41",
+    "version": "2.0",
+    "extras": {
+      "SORA_resource_source": {
+        "source": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+        "author": "grgssblend",
+        "license": "CC-BY 4.0",
+        "license_url": "http://creativecommons.org/licenses/by/4.0/",
+        "requirements": "Author must be credited. Commercial use is allowed.",
+        "description": "I`ve created a few food items specifically for you. Here are the object categories:\n* Burger`s box\n* Canned food\n* Cereals\n* Chocolate\n* Coffee (various versions)\n* Cookies (Oreo and others)\n* Milk bottles\n* Instant noodles (cups and box/bag)\n* Pasta\n* Pizza box\n* Sauce bottles\n* Tea box\n\nEverything is designed in a **low poly** style to save resources and reflect aesthetic of old-fashioned PS1/PS2 games.",
+        "original_file": "psxps1-food-props-lowpoly.zip",
+        "original_sha256": "2dfd2aecd9ab348aa56ebcd19888b8d8adaac5baaee784a2d61ab62c2586a684",
+        "inspected": "2026-11-11",
+        "changes": "Selected source groups, bottom-center pivots; shared original geometry/UV/textures. PSX OBJ converted in Blender; missing image paths repaired."
+      },
+      "author": "grgssblend",
+      "source": "https://sketchfab.com/3d-models/psxps1-food-props-lowpoly-e2e3e0de18e1415aa30dcdd8b78efd5e",
+      "license": "CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)"
+    }
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        1
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "noodles_cup_2",
+      "rotation": [
+        0.7071068286895752,
+        0,
+        0,
+        0.7071068286895752
+      ]
+    },
+    {
+      "name": "PSXFood_0045_noodles_cup_2",
+      "children": [
+        0
+      ],
+      "translation": [
+        -7.656801223754883,
+        0.736248254776001,
+        0.777909517288208
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "noodles_cup_2",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        },
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 108,
+      "max": [
+        10.079079627990723,
+        1.644368052482605,
+        -3.711760997772217
+      ],
+      "min": [
+        5.234522819519043,
+        -3.200187921524048,
+        -4.121735095977783
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 108,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 108,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 318,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 141,
+      "max": [
+        9.834454536437988,
+        1.3997440338134766,
+        0.7362480163574219
+      ],
+      "min": [
+        5.4791460037231445,
+        -2.955565929412842,
+        -4.043409824371338
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 141,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 141,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5123,
+      "count": 414,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1296,
+      "byteOffset": 100468,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1296,
+      "byteOffset": 101764,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 864,
+      "byteOffset": 103060,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 636,
+      "byteOffset": 103924,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1692,
+      "byteOffset": 104560,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1692,
+      "byteOffset": 106252,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1128,
+      "byteOffset": 107944,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 828,
+      "byteOffset": 109072,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "../geometry.bin",
+      "byteLength": 159644
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Material.013",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.6885939836502075,
+          0.6885939836502075,
+          0.6885939836502075,
+          0.34615400433540344
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.5
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material.012",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.31700000166893005,
+        "roughnessFactor": 0.781000018119812
+      }
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ],
+  "images": [
+    {
+      "mimeType": "image/png",
+      "name": "noodles_cup",
+      "uri": "../Textures/10e563122aec8a2e8a27db15bb447a3476346a472c6fc308dea5701ea18688fc.png"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987
+    }
+  ]
+}
