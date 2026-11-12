@@ -258,7 +258,8 @@ namespace Sora.AfterTheRain.Demo
             foreach (var mesh in model.GetComponentsInChildren<MeshFilter>())
             {
                 string name = mesh.name;
-                if (name.StartsWith("ROAD/") || name.StartsWith("SIDEWALK/") ||
+                if (name.StartsWith("V03/ROAD_PBR/") || name.StartsWith("V03/SIDEWALK") ||
+                    name.StartsWith("ROAD/") || name.StartsWith("SIDEWALK/") ||
                     name.StartsWith("CURB/") || name.StartsWith("BLOCK_LAND/") ||
                     name.StartsWith("OUTER_PATH/") || name.StartsWith("V04/ENV/") ||
                     name.StartsWith("V04/GROUND/"))
