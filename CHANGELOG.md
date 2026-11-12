@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-12 - Saltline weather and puddles
+
+- Add shared clear/drizzle/rain/heavy-rain weather with smooth intensity, wetness, puddle fill/drying, sheltered rain audio and thunder.
+- Add outdoor-only irregular puddles, procedural ripples, bounded collision splashes, local environment probes and surface-dependent footsteps using owner-authored Saltline sources.
+- F8 weather controls; optional validated weather snapshot in schema-1 saves with explicit legacy-data presence flag. Existing store, characters, input and asset GUIDs retained.
+- Exact Unity/test/build results and genuine captures: `Docs/StreetExterior/Reports/2026-11-12-SALTLINE-WEATHER.md`.
+
+
 This log records **implemented source, asset and documentation work** for [SORA: After the Rain](https://github.com/haizzdungnay/SORA-After-the-Rain), with links to real GitHub PRs and visual evidence where available.
 
 > **Release and evidence policy:** `VS01`, `V02`, `V03`, `V04` and `V05` are **internal environment-art iteration names**, not published playable releases or new SemVer tags. A 3D GLB, a Unity Editor staging helper and a passing static CI job do **not** by themselves prove Unity Play Mode, collision, performance or Windows build acceptance. Assembled private AFX-derived models remain local; earlier original-source publication is recorded in the source-intake entry. All newly authored diagrams below are explicitly **schematics, not in-game screenshots**.

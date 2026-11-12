@@ -3,6 +3,7 @@
   "rootNamespace": "Sora.AfterTheRain.Demo.Editor",
   "references": [
     "Sora.Demo",
+    "Unity.RenderPipelines.Core.Runtime",
     "Unity.RenderPipelines.Universal.Runtime"
   ],
   "includePlatforms": [

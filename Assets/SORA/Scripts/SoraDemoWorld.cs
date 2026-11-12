@@ -31,11 +31,11 @@ namespace Sora.AfterTheRain.Demo
             SetupTwins();
             SetupCustomers();
             SetupCamera();
-            SetupRain();
 
             // Do NOT render the old fake street over the imported city; only
             // create the legacy district when genuine models are unavailable.
             if (!cityLoaded) SoraNeighborhoodDistrict.Build(world);
+            SoraWeather.Create(world, game, SetupRain());
         }
 
         private static Material Mat(Color c, float smoothness = 0.5f, bool emissive = false)
@@ -577,7 +577,7 @@ namespace Sora.AfterTheRain.Demo
             cameraGo.AddComponent<SoraThirdPersonCamera>();
         }
 
-        private static void SetupRain()
+        private static ParticleSystem SetupRain()
         {
             GameObject go = new GameObject("Low-cost Rain Particle System");
             go.transform.SetParent(world, false);
@@ -619,6 +619,7 @@ namespace Sora.AfterTheRain.Demo
                 if (rainMaterial.HasProperty("_BaseColor")) rainMaterial.SetColor("_BaseColor", rainMaterial.color);
                 renderer.sharedMaterial = rainMaterial;
             }
+            return ps;
         }
     }
 }

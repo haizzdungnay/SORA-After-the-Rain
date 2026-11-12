@@ -18,6 +18,8 @@ namespace Sora.AfterTheRain.Demo
     public sealed class SoraSaveData
     {
         public int schema = 1;
+        public SoraWeatherState weather;
+        public bool hasWeatherSnapshot;
         public int activeIndex;
         public string toshiharuModel;
         public string akikoModel;
@@ -255,6 +257,8 @@ namespace Sora.AfterTheRain.Demo
             try
             {
                 if (HasPendingSale) { HasPendingSale = false; }
+                var weather = FindFirstObjectByType<SoraWeather>();
+                if (weather != null) { State.weather = weather.State.Copy(); State.hasWeatherSnapshot = true; }
                 for (int i = 0; i < 2; i++)
                 {
                     Vector3 p = Characters[i].transform.position;
@@ -287,7 +291,10 @@ namespace Sora.AfterTheRain.Demo
                 (!string.IsNullOrEmpty(loaded.toshiharuModel) && !SoraCharacterModels.IsAllowed(0, loaded.toshiharuModel)) ||
                 (!string.IsNullOrEmpty(loaded.akikoModel) && !SoraCharacterModels.IsAllowed(1, loaded.akikoModel))) return false;
             foreach (float coordinate in loaded.characterPositions) if (float.IsNaN(coordinate) || float.IsInfinity(coordinate)) return false;
+            // JsonUtility creates inline objects for absent fields; presence needs an explicit flag.
+            if (loaded.hasWeatherSnapshot && (loaded.weather == null || !loaded.weather.IsValid())) return false;
             State = loaded;
+            if (loaded.hasWeatherSnapshot) FindFirstObjectByType<SoraWeather>()?.Restore(loaded.weather);
             State.activeIndex = Mathf.Clamp(State.activeIndex, 0, 1);
             bool missingModel = false;
             for (int i = 0; i < 2; i++)
