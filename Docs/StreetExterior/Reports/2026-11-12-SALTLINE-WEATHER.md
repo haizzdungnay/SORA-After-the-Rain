@@ -42,8 +42,8 @@ confirmed authorship and authorized extraction and integration in chat. The
 asset register records owner-authored source; this does not invent a separate
 project-wide public license. PNGs and WAVs use Git LFS.
 
-Feature branch `feature/saltline-weather` is stacked on the store resources in
-PR #33, rather than the older `develop`. No PR is automatically merged. Weather
+[PR #34](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/34), branch
+`feature/saltline-weather`, is stacked on the store resources in PR #33, rather than the older `develop`. No PR is automatically merged. Weather
 files are also integrated into the owner's current character-animation checkout;
 pre-existing store/character changes and generated scene bytes are protected.
 

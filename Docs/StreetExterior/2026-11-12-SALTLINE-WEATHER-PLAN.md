@@ -44,7 +44,7 @@
 
 - [x] Apply only weather files/patches to owner checkout; preserve pre-existing store/character changes and binary/scene hashes.
 - [x] Update CHANGELOG.md and Docs/StreetExterior/Reports/2026-11-12-SALTLINE-WEATHER.md with genuine screenshots, exact executed checks and limitations.
-- [ ] Run offline validator and diff/LFS checks, inspect changes, commit weather scope, push branch and open stacked PR with required objective/files/architecture/tests/pending/risks. Never merge automatically.
+- [x] Run offline validator and diff/LFS checks, inspect changes, commit weather scope, push branch and open stacked PR with required objective/files/architecture/tests/pending/risks. Never merge automatically.
 
 ## Acceptance
 
@@ -57,3 +57,5 @@ Rain changes smoothly; dry weather leaves puddles that recede. Reflections/rippl
 - First owner Play Mode check exposed a test-fixture overlap between the two parked twins. Corrected fixture placement before the final run.
 - Native Unity import/C# compile and material/Volume generation completed. Final public/private Play Mode passed; 8 routes, 100 switches, 9 rain probes and weather/POS/save checks each. Public/private Windows builds and actual startup passed. Owner EditMode: 24/30, only the six baseline avatar failures remain.
 - All 17 selected source hashes match. 690 protected original-checkout files checked; unrelated character work, scene, settings and GUIDs preserved. Genuine public-city screenshots accompany the implementation report.
+
+- Delivered: implementation commit `405ad9f`, branch pushed; [PR #34](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/34) targets the current store PR branch. No automatic merge. Original checkout and local Windows executable include weather.
