@@ -42,7 +42,10 @@ namespace Sora.AfterTheRain.Demo
 
     public sealed class SoraWeather : MonoBehaviour
     {
-        public SoraWeatherState State { get; private set; } = new SoraWeatherState();
+        public SoraWeatherState State { get; private set; } = new SoraWeatherState
+        {
+            kind = SoraWeatherKind.HeavyRain, rain = 1, wetness = 1, puddles = .9f, automaticCycle = false
+        };
         public float Shelter { get; private set; }
         public SoraWetSurfaces Surfaces { get; private set; }
         public ParticleSystem Rain { get; private set; }
@@ -69,8 +72,9 @@ namespace Sora.AfterTheRain.Demo
             main.startLifetime = 1.6f;
             main.startSpeed = 12;
             main.gravityModifier = .1f;
-            main.startSize = .025f;
-            main.startColor = new Color(.78f, .86f, 1, .5f);
+            main.startSize = new ParticleSystem.MinMaxCurve(.014f, .026f);
+            main.startColor = new Color(.78f, .86f, 1, .42f);
+            main.maxParticles = 6000;
             main.cullingMode = ParticleSystemCullingMode.AlwaysSimulate;
             var shape = rain.shape;
             shape.rotation = new Vector3(90, 0, 0);
@@ -79,8 +83,8 @@ namespace Sora.AfterTheRain.Demo
             collision.sendCollisionMessages = true;
             var renderer = rain.GetComponent<ParticleSystemRenderer>();
             renderer.renderMode = ParticleSystemRenderMode.Stretch;
-            renderer.lengthScale = 2;
-            renderer.velocityScale = .018f;
+            renderer.lengthScale = 2.4f;
+            renderer.velocityScale = .012f;
             renderer.cameraVelocityScale = 0;
             var source = Resources.Load<Material>("Weather/Rain");
             if (source != null)
@@ -104,7 +108,9 @@ namespace Sora.AfterTheRain.Demo
                 volume.isGlobal = true;
                 volume.priority = 1;
                 volume.sharedProfile = profile;
-                Camera.main.GetUniversalAdditionalCameraData().renderPostProcessing = true;
+                var cameraData = Camera.main.GetUniversalAdditionalCameraData();
+                cameraData.renderPostProcessing = true;
+                cameraData.antialiasing = AntialiasingMode.FastApproximateAntialiasing;
             }
             Debug.Log("SORA WEATHER: shared rain, wet ground, puddles and sheltered audio initialized.");
             return weather;
@@ -138,7 +144,7 @@ namespace Sora.AfterTheRain.Demo
             if (Input.GetKeyDown(KeyCode.F8)) showControls = !showControls;
             State.Advance(Mathf.Min(Time.deltaTime, .25f));
             var emission = Rain.emission;
-            emission.rateOverTime = State.rain * 1800;
+            emission.rateOverTime = State.rain * 3400;
             Shader.SetGlobalFloat("_SoraRain", State.rain);
             Shader.SetGlobalFloat("_SoraWetness", State.wetness);
             Shader.SetGlobalFloat("_SoraPuddles", State.puddles);

@@ -149,9 +149,9 @@ namespace Sora.AfterTheRain.Demo
         private static void SetupEnvironment()
         {
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
-            RenderSettings.ambientLight = new Color(.24f, .28f, .38f);
+            RenderSettings.ambientLight = new Color(.18f, .21f, .34f);
             RenderSettings.fog = true;
-            RenderSettings.fogColor = new Color(.045f, .075f, .13f);
+            RenderSettings.fogColor = new Color(.025f, .045f, .14f);
             RenderSettings.fogMode = FogMode.Exponential;
             RenderSettings.fogDensity = .012f;
             Camera.main?.gameObject.SetActive(false);

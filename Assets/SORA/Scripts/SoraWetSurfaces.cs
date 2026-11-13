@@ -68,7 +68,7 @@ namespace Sora.AfterTheRain.Demo
             probe.mode = ReflectionProbeMode.Realtime;
             probe.refreshMode = ReflectionProbeRefreshMode.ViaScripting;
             probe.timeSlicingMode = ReflectionProbeTimeSlicingMode.IndividualFaces;
-            probe.resolution = 128;
+            probe.resolution = 256;
             probe.size = new Vector3(45, 18, 45);
             probe.boxProjection = true;
             probe.cullingMask = ~(1 << 4);

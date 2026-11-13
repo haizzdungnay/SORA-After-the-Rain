@@ -25,7 +25,8 @@ namespace Sora.AfterTheRain.Demo.Tests
                 var lamp = new GameObject("Warm store lamp 0").AddComponent<Light>();
                 lamp.transform.SetParent(root.transform, false);
                 Assert.That(SoraMartVisuals.TryBuild(root.transform), Is.True);
-                Assert.That(lamp.type, Is.EqualTo(LightType.Spot));
+                Assert.That(lamp.isActiveAndEnabled && lamp.range > lamp.transform.localPosition.y, Is.True,
+                    "Ceiling fixture must reach the store floor.");
                 Assert.That(lamp.transform.localPosition.y, Is.LessThan(3.0f), "Store light must be below the acoustic ceiling.");
                 Assert.That(oldShelf.GetComponent<Collider>().enabled, Is.False, "Old wide shelf collider must be disabled.");
                 Assert.That(marker.GetComponent<Renderer>().enabled, Is.False);

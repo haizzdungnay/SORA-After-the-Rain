@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-13 - Storefront lighting and heavy-rain wet road
+
+- Light the store and its approach against a blue night environment; tune the existing URP Volume and probe settings without adding assets or packages.
+- Fix wet-film shading that ignored local store lights; reduce dark noise-pool opacity and soften its edges, add fine animated flow/ripples and denser rain.
+- Start new worlds in fixed heavy rain while preserving F8 and saved weather; retain store gameplay and character contact behavior.
+- Actual checks, genuine public Unity captures and remaining reflection/performance limits: [heavy-rain storefront report](Docs/StreetExterior/Reports/2026-11-13-HEAVY-RAIN-STOREFRONT.md).
+
 ## 2026-11-12 - Character motion and contact polish
 
 - Complete eleven shared Humanoid clips across six playable models and the Akiko fallback: relaxed idle, walk, jog, sprint, jump/fall/land, pivots and two interruptible idle variations.

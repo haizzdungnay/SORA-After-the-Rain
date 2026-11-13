@@ -52,15 +52,34 @@ namespace Sora.AfterTheRain.Demo.Editor
             {
                 profile = ScriptableObject.CreateInstance<VolumeProfile>();
                 AssetDatabase.CreateAsset(profile, Folder + "NightVolume.asset");
-                var bloom = profile.Add<Bloom>(true);
-                bloom.intensity.Override(.16f);
-                bloom.threshold.Override(1.1f);
-                var tone = profile.Add<Tonemapping>(true);
-                tone.mode.Override(TonemappingMode.Neutral);
-                var color = profile.Add<ColorAdjustments>(true);
-                color.contrast.Override(6);
-                color.saturation.Override(-3);
+                profile.Add<Bloom>(true);
+                profile.Add<Tonemapping>(true);
+                profile.Add<ColorAdjustments>(true);
                 foreach (var component in profile.components) AssetDatabase.AddObjectToAsset(component, profile);
+            }
+            if (profile.TryGet(out Bloom bloom))
+            {
+                bloom.intensity.Override(.25f);
+                bloom.threshold.Override(1.1f);
+                EditorUtility.SetDirty(bloom);
+            }
+            if (profile.TryGet(out Tonemapping tone)) tone.mode.Override(TonemappingMode.Neutral);
+            if (profile.TryGet(out ColorAdjustments color))
+            {
+                color.postExposure.Override(.35f);
+                color.contrast.Override(12);
+                color.saturation.Override(8);
+                EditorUtility.SetDirty(color);
+            }
+            var pipeline = AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>("Assets/SORA/Settings/SoraPipeline.asset");
+            if (pipeline != null)
+            {
+                pipeline.maxAdditionalLightsCount = 8;
+                var settings = new SerializedObject(pipeline);
+                settings.FindProperty("m_ReflectionProbeBlending").boolValue = true;
+                settings.FindProperty("m_ReflectionProbeBoxProjection").boolValue = true;
+                settings.ApplyModifiedPropertiesWithoutUndo();
+                EditorUtility.SetDirty(pipeline);
             }
             var renderer = AssetDatabase.LoadAssetAtPath<UniversalRendererData>("Assets/SORA/Settings/SoraRenderer.asset");
             if (renderer != null)
