@@ -57,3 +57,9 @@ Run the pinned Editor with `-batchmode -runTests -testPlatform EditMode -testRes
 After concurrent weather edits: **64/64 EditMode pass, zero skipped** (`owner-editmode-final.xml`), **285 native Play Mode checks pass** (`owner-playmode-supported.log`) and the final Windows x64 build passes (`owner-windows-final.log`). The native contact fixture explicitly records `contactGrounded=True` and `water=True`, with actual splash/audio output.
 
 Preservation audit: **1,177 unrelated baseline files remain byte-identical**, **403 recorded baseline metadata GUIDs preserved**, and the eleven separately detected weather/store changes remain intact (`preservation.json`). Original owner versions of transferred files are backed up under `Artifacts/UmbrellaMotion/pre-transfer/`.
+
+## Upstream integration
+
+Before push, GitHub received merged weather PR #37 on the same feature branch (`1989f8e`). The animation commit was rebased on it without force-pushing; both changelog entries and LFS patterns are retained. All twelve incoming runtime/editor/shader/pipeline/test files match the already-tested owner checkout after combining the roof probe change (`upstream-integration.json`). Final merged validation is recorded separately below.
+
+Final merged public feature at animation commit `77baa0a`: **64/64 EditMode pass, zero skipped**, **285 Play Mode checks pass with zero runtime errors**, **Windows x64 build pass**. Evidence: `merged-editmode.xml`, `merged-playmode.log`, `merged-windows.log`, `merged-validation.json`. This validates the combined animation and reviewed heavy-rain changes, not only the earlier animation snapshot. GitHub static checks also pass; no licensed workflow was dispatched.
