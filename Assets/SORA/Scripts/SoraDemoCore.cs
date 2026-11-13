@@ -310,6 +310,7 @@ namespace Sora.AfterTheRain.Demo
                 if (cc != null) cc.enabled = false;
                 Characters[i].transform.position = new Vector3(State.characterPositions[i * 3], State.characterPositions[i * 3 + 1], State.characterPositions[i * 3 + 2]);
                 if (cc != null) cc.enabled = wasEnabled;
+                Characters[i].ResetMotion();
             }
             IsDialogue = false; ShiftSummary = false; HasPendingSale = false; IsChoosingModels = false;
             ConfigureActive();
@@ -341,7 +342,7 @@ namespace Sora.AfterTheRain.Demo
             GUI.Label(new Rect(24, 54, 425, 24), "Dieu khien: " + ActiveCharacter.DisplayName + " | Tokyo / 20:" + Mathf.FloorToInt((Time.time - begunAt) / 12f).ToString("00"), hudStyle);
             GUI.Label(new Rect(24, 80, 415, 24), "Quy cua hang: " + State.storeCash + " yen  |  Don POS: " + State.sales, hudStyle);
             GUI.Label(new Rect(24, 106, 415, 24), "Ton ke: " + State.shelfStock + "  |  Ton kho: " + State.backStock + "  |  Hang nhan: " + (State.deliveryReceived ? "Co" : "Chua"), hudStyle);
-            GUI.Label(new Rect(24, 136, 415, 45), "WASD: di chuyen | Shift: chay | TAB: doi nguoi | E: tuong tac\nM: chon model | RMB: camera | F5/F9: save/load | ESC: dong", infoStyle);
+            GUI.Label(new Rect(24, 136, 415, 60), "WASD: chay nhe | Ctrl: di bo | Shift: chay nhanh | Space: nhay\nQ/R: quay | TAB: doi nguoi | E: tuong tac | M: chon model\nRMB: camera | F5/F9: save/load | ESC: dong", infoStyle);
             if (CurrentTarget != null && !IsDialogue && !ShiftSummary)
             {
                 GUI.Box(new Rect(Screen.width / 2f - 170f, Screen.height - 106, 340, 46), "[E] " + CurrentTarget.title, buttonStyle);

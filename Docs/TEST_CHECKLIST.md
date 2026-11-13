@@ -19,6 +19,15 @@
 | QA13 | Ket ca | Hien so don, tong doanh thu, ton kho | [ ] |
 | QA14 | F5 / F9 | Khoi phuc du lieu va vi tri 2 nhan vat | [ ] |
 | QA15 | Tat/mo Play | State reset neu khong Load (dung voi demo) | [ ] |
+| QA16 | Space tren mat dat | Vao Jump 1 lan, roi Fall, Land, ve Locomotion; khong nhay lien tuc | [ ] |
+| QA17 | Space giua khong khi | Khong co nhay thu hai | [ ] |
+| QA18 | Di khoi mep bac/bo via | Vao Fall roi Land; khong nhay nhap Fall khi buoc qua bac thap | [ ] |
+| QA19 | Dung yen giu Q/R; xoay RMB rieng | TurnLeft/TurnRight dung chieu; RMB chi quay camera; dang di khong pivot | [ ] |
+| QA20 | Doi 6 model (1-6) roi lap QA16-QA19 | Moi model chay du 11 clip, khong vo rig | [ ] |
+| QA21 | Ctrl doi di bo; Shift chay nhanh; tha WASD | Walk/Jog/Run tang giam toc; dung vao tuong khong chay tai cho | [ ] |
+| QA22 | Dung cho, roi di/nhay/mo M | Nhin quanh/duoi vai; input ngat idle kip thoi | [ ] |
+| QA23 | Nhay tu Land/Turn/idle; bam Space khi dang roi | Nhay duyet boi vat ly, Animator theo kip; khong nhay hai lan tren khong | [ ] |
+| QA24 | Di tren doc/bac va vung nuoc | Chan bam nen trong gioi han; am thanh/splash theo nhip chan | [ ] |
 
 ## Bug report template
 
@@ -31,3 +40,11 @@
 - **Actual:**
 - **Console error / stack trace:**
 - **Screenshots / Video:**
+
+## Umbrella and weight transfer - 2026-11-13
+
+- [ ] Manual keyboard walkthrough: walk/jog/sprint, stop then reverse, pivot, jump during start/stop, reopen model menu and save/load with an umbrella.
+- [ ] Check both twins independently across rain/clear and indoor/outdoor roof boundaries; folded prop stays in hand; brief threshold flicker does not flap the canopy.
+- [ ] Review all six model grips, canopy/head clearance, secondary bone motion and shoe contact in the actual Windows build.
+- [ ] Target-PC frame time and cloth/finger intersection art QA.
+- Scripted test/build evidence: `Docs/CHARACTER_WEATHER_MOTION_REPORT_2026-11-13.md`.

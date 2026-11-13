@@ -17,6 +17,8 @@ namespace Sora.AfterTheRain.Demo.Editor
         private const string Folder = "Artifacts/SaltlineWeather";
         private static double began;
         private static Report report;
+        private static int movieFrames;
+        private static readonly bool RecordMovie = Environment.GetCommandLineArgs().Contains("-soraRainMovie");
 
         static SoraWeatherReview()
         {
@@ -79,6 +81,18 @@ namespace Sora.AfterTheRain.Demo.Editor
                     }
                     else if (step == 4)
                     {
+                        if (RecordMovie && movieFrames < 90)
+                        {
+                            Time.captureFramerate = 15;
+                            Directory.CreateDirectory(Folder + "/Frames");
+                            Camera.main.transform.position = new Vector3(0, 1.6f, -17.5f);
+                            Camera.main.transform.LookAt(new Vector3(0, 1.65f, -5.5f));
+                            Camera.main.fieldOfView = 58;
+                            Capture("Frames/frame-" + movieFrames.ToString("D3"));
+                            movieFrames++;
+                            return;
+                        }
+                        Time.captureFramerate = 0;
                         Require(weather.Surfaces.GroundTiles > 0, "No outdoor wet-ground tiles");
                         int wetPoints = 0;
                         for (int x = -6; x <= 6; x++)
@@ -86,8 +100,21 @@ namespace Sora.AfterTheRain.Demo.Editor
                                 if (weather.Surfaces.IsPuddle(new Vector3(x, 0, z))) wetPoints++;
                         Require(wetPoints > 0, "Wet shader/footstep query has no puddles on the street");
                         report.puddleQueryPoints = wetPoints;
+                        report.rainParticles = weather.Rain.particleCount;
+                        report.movieFrames = movieFrames;
                         Require(!ShaderUtil.ShaderHasError(Resources.Load<Material>("Weather/Puddle").shader), "Puddle shader failed");
+                        Camera.main.transform.position = new Vector3(3.7f, 1.35f, -16.5f);
+                        Camera.main.transform.LookAt(new Vector3(-.5f, 1.25f, -4.3f));
+                        Camera.main.fieldOfView = 65;
                         Capture("rain-front");
+                        Camera.main.transform.position = new Vector3(0, 1.6f, -17.5f);
+                        Camera.main.transform.LookAt(new Vector3(0, 1.65f, -5.5f));
+                        Camera.main.fieldOfView = 58;
+                        Capture("rain-front-wide");
+                        Camera.main.transform.position = new Vector3(-8.5f, 1.5f, -13.5f);
+                        Camera.main.transform.LookAt(new Vector3(0, 1.65f, -5.5f));
+                        Camera.main.fieldOfView = 65;
+                        Capture("rain-street-angle");
                         Camera.main.transform.position = new Vector3(-.5f, .85f, -13.5f);
                         Camera.main.transform.LookAt(new Vector3(.8f, .5f, -6.3f));
                         Next(5);
@@ -116,7 +143,6 @@ namespace Sora.AfterTheRain.Demo.Editor
                         Require(weather.State.puddles > .85f && weather.State.rain == 0, "After-rain puddles vanished");
                         Capture("after-rain");
                         report.groundTiles = weather.Surfaces.GroundTiles;
-                        report.rainParticles = weather.Rain.particleCount;
                         report.splashBudget = weather.Surfaces.Splash.main.maxParticles;
                         report.drawCalls = UnityStats.drawCalls;
                         report.triangles = UnityStats.triangles;
@@ -133,6 +159,7 @@ namespace Sora.AfterTheRain.Demo.Editor
                 Directory.CreateDirectory(Folder);
                 File.WriteAllText(Folder + "/failure.txt", error.ToString());
                 Debug.LogException(error);
+                Time.captureFramerate = 0;
                 SessionState.EraseInt(Key);
                 EditorApplication.Exit(1);
             }
@@ -262,7 +289,7 @@ namespace Sora.AfterTheRain.Demo.Editor
         private class Report
         {
             public string unity;
-            public int switches, roofProbes, groundTiles, rainParticles, splashBudget, drawCalls, triangles, walkthroughs, puddleQueryPoints;
+            public int switches, roofProbes, groundTiles, rainParticles, splashBudget, drawCalls, triangles, walkthroughs, puddleQueryPoints, movieFrames;
             public long allocatedMemoryBytes;
             public bool weatherSaveLoad, oldSaveAccepted, malformedSaveRejected, privateCity;
         }

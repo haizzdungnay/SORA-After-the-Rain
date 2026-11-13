@@ -9,6 +9,76 @@ namespace Sora.AfterTheRain.Demo.Tests
     public sealed class WeatherTests
     {
         [Test]
+        public void WetRoadRespondsToLocalStoreLight()
+        {
+            if (SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Null)
+                Assert.Ignore("Run this rendering regression with a graphics device, without -nographics.");
+            var surface = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            var cameraObject = new GameObject("Wet-road light regression camera");
+            var lampObject = new GameObject("Wet-road light regression lamp");
+            var material = new Material(Resources.Load<Material>("Weather/Puddle"));
+            var target = RenderTexture.GetTemporary(96, 96, 24);
+            var image = new Texture2D(96, 96, TextureFormat.RGB24, false);
+            var previousTarget = RenderTexture.active;
+            var previousCenter = Shader.GetGlobalVector("_SoraWetCenter");
+            float previousRain = Shader.GetGlobalFloat("_SoraRain"), previousWet = Shader.GetGlobalFloat("_SoraWetness"),
+                previousPuddles = Shader.GetGlobalFloat("_SoraPuddles");
+            try
+            {
+                surface.layer = 31;
+                surface.transform.SetPositionAndRotation(new Vector3(1000, 0, 1000), Quaternion.Euler(90, 0, 0));
+                surface.transform.localScale = Vector3.one * 4;
+                surface.GetComponent<Renderer>().sharedMaterial = material;
+                var camera = cameraObject.AddComponent<Camera>();
+                camera.transform.position = new Vector3(1000, 2, 998);
+                camera.transform.LookAt(surface.transform);
+                camera.cullingMask = 1 << 31;
+                camera.clearFlags = CameraClearFlags.SolidColor;
+                camera.backgroundColor = Color.black;
+                camera.orthographic = true;
+                camera.orthographicSize = 1.4f;
+                camera.targetTexture = target;
+                var lamp = lampObject.AddComponent<Light>();
+                lamp.transform.position = new Vector3(1000, 2, 1000);
+                lamp.type = LightType.Point;
+                lamp.color = Color.white;
+                lamp.range = 6;
+                lamp.intensity = 20;
+                lamp.cullingMask = 1 << 31;
+                Shader.SetGlobalVector("_SoraWetCenter", new Vector4(1000, 1000, 16, 0));
+                Shader.SetGlobalFloat("_SoraRain", 0);
+                Shader.SetGlobalFloat("_SoraWetness", 1);
+                Shader.SetGlobalFloat("_SoraPuddles", 0);
+                float Brightness(bool enabled)
+                {
+                    lamp.enabled = enabled;
+                    camera.Render();
+                    RenderTexture.active = target;
+                    image.ReadPixels(new Rect(0, 0, 96, 96), 0, 0);
+                    image.Apply();
+                    return image.GetPixels().Average(c => c.grayscale);
+                }
+                float unlit = Brightness(false), lit = Brightness(true);
+                Assert.That(lit, Is.GreaterThan(unlit + .01f),
+                    "A local store light must illuminate the wet film, not only the road below it.");
+            }
+            finally
+            {
+                RenderTexture.active = previousTarget;
+                Shader.SetGlobalVector("_SoraWetCenter", previousCenter);
+                Shader.SetGlobalFloat("_SoraRain", previousRain);
+                Shader.SetGlobalFloat("_SoraWetness", previousWet);
+                Shader.SetGlobalFloat("_SoraPuddles", previousPuddles);
+                UnityEngine.Object.DestroyImmediate(cameraObject);
+                UnityEngine.Object.DestroyImmediate(lampObject);
+                UnityEngine.Object.DestroyImmediate(surface);
+                UnityEngine.Object.DestroyImmediate(material);
+                UnityEngine.Object.DestroyImmediate(image);
+                RenderTexture.ReleaseTemporary(target);
+            }
+        }
+
+        [Test]
         public void RainAccumulatesWaterAndClearWeatherDriesGradually()
         {
             var state = new SoraWeatherState { kind = SoraWeatherKind.HeavyRain, rain = 1, wetness = .1f, puddles = .1f };

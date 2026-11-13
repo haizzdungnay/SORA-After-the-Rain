@@ -10033,6 +10033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8332292429769823503}
   - component: {fileID: 4616562581770379780}
+  - component: {fileID: 7506184252703732631}
   m_Layer: 0
   m_Name: Citlali
   m_TagString: Untagged
@@ -10078,6 +10079,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7506184252703732631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657069791313756578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7669adc49cae9439f290778411d02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Sora.Demo::Sora.AfterTheRain.Demo.SoraCharacterMotion
 --- !u!1 &4675209213125995471
 GameObject:
   m_ObjectHideFlags: 0
