@@ -59,6 +59,7 @@ namespace Sora.AfterTheRain.Demo
         private bool showControls;
         private int splashFrame, splashes;
         private float oldFogDensity;
+        private readonly RaycastHit[] roofHits = new RaycastHit[32];
 
         public static SoraWeather Create(Transform world, SoraDemoCore core, ParticleSystem rain)
         {
@@ -135,8 +136,14 @@ namespace Sora.AfterTheRain.Demo
             State = snapshot.Copy();
         }
 
-        public bool IsSheltered(Vector3 position) => Physics.Raycast(position + Vector3.up * .25f,
-            Vector3.up, 40, 1, QueryTriggerInteraction.Ignore);
+        public bool IsSheltered(Vector3 position)
+        {
+            int count = Physics.RaycastNonAlloc(position + Vector3.up * .25f, Vector3.up, roofHits,
+                40, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore);
+            for (int i = 0; i < count; i++)
+                if (roofHits[i].collider.GetComponentInParent<SoraDemoCharacter>() == null) return true;
+            return count == roofHits.Length; // Dense overhead geometry: fold conservatively.
+        }
 
         private void Update()
         {

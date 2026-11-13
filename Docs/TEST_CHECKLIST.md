@@ -40,3 +40,11 @@
 - **Actual:**
 - **Console error / stack trace:**
 - **Screenshots / Video:**
+
+## Umbrella and weight transfer - 2026-11-13
+
+- [ ] Manual keyboard walkthrough: walk/jog/sprint, stop then reverse, pivot, jump during start/stop, reopen model menu and save/load with an umbrella.
+- [ ] Check both twins independently across rain/clear and indoor/outdoor roof boundaries; folded prop stays in hand; brief threshold flicker does not flap the canopy.
+- [ ] Review all six model grips, canopy/head clearance, secondary bone motion and shoe contact in the actual Windows build.
+- [ ] Target-PC frame time and cloth/finger intersection art QA.
+- Scripted test/build evidence: `Docs/CHARACTER_WEATHER_MOTION_REPORT_2026-11-13.md`.

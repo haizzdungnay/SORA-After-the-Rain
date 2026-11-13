@@ -45,7 +45,7 @@ Steps 1–3 have limited prototype code; the complete shift loop, quests and bra
 
 The inactive twin does not yet perform actual store tasks. Customer queues, a quest graph, production character art, bespoke acting and a complete narrative remain future work.
 
-Eleven Humanoid movement/idle clips, terrain foot IK and contact-driven footsteps are integrated across six model options. See the [motion validation report](Docs/CHARACTER_MOTION_REPORT_2026-11-12.md) for actual Unity checks, captures and remaining art/performance QA.
+Twenty Humanoid movement/idle/umbrella clips, context-aware umbrella handling, terrain foot IK and contact-driven footsteps are integrated across six model options. See the [umbrella motion report](Docs/CHARACTER_WEATHER_MOTION_REPORT_2026-11-13.md) and [motion baseline report](Docs/CHARACTER_MOTION_REPORT_2026-11-12.md) for actual Unity checks, captures and remaining art/performance QA.
 
 ## Engineering focus
 

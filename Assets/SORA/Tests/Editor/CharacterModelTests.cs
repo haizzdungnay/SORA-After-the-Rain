@@ -27,6 +27,15 @@ namespace Sora.AfterTheRain.Demo.Tests
             ("TurnLeft",  false, true,  .04f),
             ("TurnRight", false, true,  .04f),
             ("Walk",      true,  true,  .08f),
+            ("MoveStart", false, true, .04f),
+            ("StopLeft", false, true, .015f),
+            ("StopRight", false, true, .015f),
+            ("UmbrellaCarry", true, true, 0),
+            ("UmbrellaRaise", false, true, .04f),
+            ("UmbrellaHold", true, true, 0),
+            ("UmbrellaLower", false, true, .04f),
+            ("UmbrellaAdjust", false, true, .005f),
+            ("UmbrellaGrip", true, true, 0),
         };
 
         /// <summary>Only these two swing one foot clear of the other; the rest pose or pivot in place.</summary>
@@ -69,15 +78,18 @@ namespace Sora.AfterTheRain.Demo.Tests
                 Assert.That(controller.layers[0].stateMachine.defaultState.iKOnFeet, Is.True);
                 // SoraDemoCharacter writes all five every frame; a rebuild that drops one silently kills jump or turn.
                 Assert.That(controller.parameters.Select(p => p.name),
-                    Is.EquivalentTo(new[] { "Speed", "IsGrounded", "VerticalSpeed", "Jump", "Turn", "GaitRate", "IdleAction", "IdleVariant" }));
+                    Is.EquivalentTo(new[] { "Speed", "IsGrounded", "VerticalSpeed", "Jump", "Turn", "GaitRate", "IdleAction", "IdleVariant",
+                        "MoveStart", "MoveStop", "StopFoot", "Moving", "MotionBlocked", "UmbrellaOpen", "UmbrellaBusy", "UmbrellaAdjust" }));
                 Assert.That(controller.layers[0].stateMachine.states.Select(s => s.state.name),
-                    Is.EquivalentTo(new[] { "Locomotion", "Jump", "Fall", "Land", "TurnLeft", "TurnRight", "IdleLookAround", "IdleStretch" }));
+                    Is.EquivalentTo(new[] { "Locomotion", "Jump", "Fall", "Land", "TurnLeft", "TurnRight", "IdleLookAround", "IdleStretch", "MoveStart", "StopLeft", "StopRight" }));
                 if (id == "Denia") Assert.That(skins.Sum(s => s.sharedMesh.blendShapeCount), Is.EqualTo(187));
                 AnimationMode.StartAnimationMode();
                 try
                 {
                     foreach (var clip in clips)
                     {
+                        // Finger-only muscle clips have no standalone body/root pose; masked isolation is tested separately.
+                        if (clip.name == "UmbrellaGrip") continue;
                         var expected = Expected(clip.name);
                         Sample(clip, 0);
                         var first = skins.SelectMany(WorldVertices).ToArray();
@@ -86,7 +98,7 @@ namespace Sora.AfterTheRain.Demo.Tests
                         Sample(clip, .25f);
                         var posed = skins.SelectMany(WorldVertices).ToArray();
                         float displacement = first.Zip(posed, Vector3.Distance).Max();
-                        Assert.That(displacement, Is.GreaterThan(expected.MinMove), id + "/" + clip.name + " must deform actual geometry.");
+                        if (expected.MinMove > 0) Assert.That(displacement, Is.GreaterThan(expected.MinMove), id + "/" + clip.name + " must deform actual geometry.");
                         if (clip.name == "IdleLookAround")
                         {
                             var change = head.rotation * Quaternion.Inverse(initialHead);

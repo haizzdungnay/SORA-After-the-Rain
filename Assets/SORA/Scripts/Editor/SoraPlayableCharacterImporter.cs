@@ -60,6 +60,7 @@ namespace Sora.AfterTheRain.Demo.Editor
                         upperArmTwist = 0.5f, lowerArmTwist = 0.5f, upperLegTwist = 0.5f, lowerLegTwist = 0.5f,
                         armStretch = 0.05f, legStretch = 0.05f
                     };
+                    SoraAnimationControllerBuilder.AddRightFingers(instance, ref description, model.Id);
                     var avatar = AvatarBuilder.BuildHumanAvatar(instance, description);
                     if (!avatar.isValid || !avatar.isHuman) throw new InvalidOperationException("Invalid Humanoid avatar: " + model.Id);
                     avatar.name = model.Id + " Humanoid";

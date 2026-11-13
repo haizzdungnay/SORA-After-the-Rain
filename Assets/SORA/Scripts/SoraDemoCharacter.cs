@@ -92,10 +92,10 @@ namespace Sora.AfterTheRain.Demo
             selectedVisual = visual;
             animator = nextAnimator;
             animator.applyRootMotion = false;
-            BindMotion();
             controller.height = definition.Height;
             controller.center = Vector3.up * (definition.Height * 0.5f);
             ModelId = id;
+            BindMotion();
             return true;
         }
 
@@ -106,10 +106,10 @@ namespace Sora.AfterTheRain.Demo
             selectedVisual = null;
             foreach (var child in defaultVisuals) child.SetActive(true);
             animator = GetComponentInChildren<Animator>();
-            BindMotion();
             controller.height = defaultHeight;
             controller.center = Vector3.up * (defaultHeight * 0.5f);
             ModelId = null;
+            BindMotion();
         }
 
         private static void ReleaseVisual(GameObject visual)
@@ -193,7 +193,8 @@ namespace Sora.AfterTheRain.Demo
             }
             else if (groundedBefore && planarVelocity.sqrMagnitude < .04f)
                 transform.Rotate(0, Mathf.Clamp(pivot, -1, 1) * 150f * deltaTime, 0);
-            float turnRate = intended.sqrMagnitude < .001f ? Mathf.DeltaAngle(yaw, transform.eulerAngles.y) / deltaTime : 0;
+            float steeringRate = Mathf.DeltaAngle(yaw, transform.eulerAngles.y) / deltaTime;
+            float turnRate = intended.sqrMagnitude < .001f ? steeringRate : 0;
             var target = intended * Mathf.Clamp(speed, 0, 5);
             planarVelocity = Vector3.MoveTowards(planarVelocity, target, (target.sqrMagnitude < .001f ? 24f : 16f) * deltaTime);
             float verticalDistance = fallVelocity.y * deltaTime + .5f * Physics.gravity.y * deltaTime * deltaTime;
@@ -205,7 +206,8 @@ namespace Sora.AfterTheRain.Demo
             moved.y = 0;
             bool visualGrounded = !jumped && (controller.isGrounded || (!jumpConsumed && motionTime - lastGroundedAt < .1f));
             motion?.Tick(moved.magnitude, visualGrounded, fallVelocity.y, jumped, turnRate,
-                intended.sqrMagnitude > .001f || Mathf.Abs(pivot) > .01f || blocked, deltaTime);
+                intended.sqrMagnitude > .001f || Mathf.Abs(pivot) > .01f || blocked, deltaTime,
+                steeringRate, intended.sqrMagnitude > .001f, blocked);
         }
     }
 

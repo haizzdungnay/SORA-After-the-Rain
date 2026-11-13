@@ -1,11 +1,18 @@
 # Changelog
 
+## 2026-11-13 - Umbrella handling and weight transfer
+
+- Add per-character rain/shelter umbrella handling, an isolated right-arm Animator layer, native hand IK and an original opening umbrella prop.
+- Add interruptible movement starts, left/right stops, steering lean and bounded secondary hair/garment motion where supported by the rig. Preserve existing physics, contact effects, store state and asset GUIDs.
+- Actual checks, visual evidence and remaining limits: `Docs/CHARACTER_WEATHER_MOTION_REPORT_2026-11-13.md`.
+
 ## 2026-11-13 - Storefront lighting and heavy-rain wet road
 
 - Light the store and its approach against a blue night environment; tune the existing URP Volume and probe settings without adding assets or packages.
 - Fix wet-film shading that ignored local store lights; reduce dark noise-pool opacity and soften its edges, add fine animated flow/ripples and denser rain.
 - Start new worlds in fixed heavy rain while preserving F8 and saved weather; retain store gameplay and character contact behavior.
 - Actual checks, genuine public Unity captures and remaining reflection/performance limits: [heavy-rain storefront report](Docs/StreetExterior/Reports/2026-11-13-HEAVY-RAIN-STOREFRONT.md).
+
 
 ## 2026-11-12 - Character motion and contact polish
 

@@ -238,3 +238,7 @@ cùng nhau khi chuyển máy để Unity nhận đúng GUID.
 
 Chi tiết thay đổi lựa chọn/rig và kết quả kiểm thử:
 [CHARACTER_SELECTION_REPORT_2026-11-09.md](CHARACTER_SELECTION_REPORT_2026-11-09.md).
+
+## Weather motion follow-up - 2026-11-13
+
+The shared controller adds starts, lead-foot stops and context-aware umbrella handling, with a right-arm mask and a native finger-grip layer. Five existing avatars map their existing right-finger chains; Rover and the procedural Akiko fallback retain their simpler rigs. See [current motion report](CHARACTER_WEATHER_MOTION_REPORT_2026-11-13.md) for actual validation and limits.

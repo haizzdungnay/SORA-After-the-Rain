@@ -276,6 +276,30 @@ def turn(u, legs, sgn):
     return pose, dz
 
 
+def move_start(u, legs):
+    """Weight into the first left step; collision/root translation remains in Unity."""
+    return blend(idle(0, legs), gait(.25, WALK, legs), u)
+
+
+def move_stop(u, legs, left):
+    """Receive weight on the lead foot, then bring the trailing foot alongside it."""
+    contact = gait(.25 if left else .75, WALK, legs)
+    absorb = blend(contact, stance(legs, -8, 18, 3, -15, -3), .35)
+    return blend(contact, absorb, u / .25) if u < .25 else blend(absorb, idle(0, legs), (u - .25) / .75)
+
+
+def umbrella_pose(raised, adjust=0.0):
+    """Right arm only; the AvatarMask leaves the base gait, left arm and pelvis untouched."""
+    carry = ({'RightShoulder': mirrored([(Y, -1)], -1),
+              'RightUpperArm': mirrored([(Y, 22), (X, -3)], -1),
+              'RightLowerArm': [(X, -12)], 'RightHand': [(Z, -4)]}, 0.0)
+    hold = ({'RightShoulder': mirrored([(Y, -5)], -1),
+             'RightUpperArm': mirrored([(Y, 18), (X, -22)], -1),
+             'RightLowerArm': [(X, -98 + adjust * 5)],
+             'RightHand': [(X, -8), (Z, -5 + adjust * 6)]}, 0.0)
+    return blend(carry, hold, raised)
+
+
 def seated(legs, breath=0.0):
     """Perched on a chair: thighs level and forward, shins vertical, feet flat, hands on the thighs.
 
@@ -422,7 +446,6 @@ def gait(u, g, legs):
 
 
 # name, frames at FPS, looping, pose generator of (u, legs)
-# ponytail: walk/run starts and stops are Animator transition blends, not clips; author planted stops with a real gait pass.
 CLIPS = (('Idle', 96, True, idle), ('Walk', 32, True, lambda u, legs: gait(u, WALK, legs)),
          ('Jog', 26, True, lambda u, legs: gait(u, JOG, legs)),
          ('Run', 20, True, lambda u, legs: gait(u, RUN, legs)), ('Fall', 24, True, fall),
@@ -430,6 +453,14 @@ CLIPS = (('Idle', 96, True, idle), ('Walk', 32, True, lambda u, legs: gait(u, WA
          ('TurnLeft', 16, False, lambda u, legs: turn(u, legs, 1)),
          ('TurnRight', 16, False, lambda u, legs: turn(u, legs, -1)),
          ('IdleLookAround', 108, False, idle_look_around), ('IdleStretch', 114, False, idle_stretch),
+         ('MoveStart', 10, False, move_start),
+         ('StopLeft', 14, False, lambda u, legs: move_stop(u, legs, True)),
+         ('StopRight', 14, False, lambda u, legs: move_stop(u, legs, False)),
+         ('UmbrellaCarry', 60, True, lambda u, legs: umbrella_pose(0)),
+         ('UmbrellaRaise', 17, False, lambda u, legs: umbrella_pose(u)),
+         ('UmbrellaHold', 60, True, lambda u, legs: umbrella_pose(1)),
+         ('UmbrellaLower', 17, False, lambda u, legs: umbrella_pose(1 - u)),
+         ('UmbrellaAdjust', 44, False, lambda u, legs: umbrella_pose(1, math.sin(TAU * u) ** 2)),
          # Life-sim interactions. Each full-body one-shot opens on the neutral idle pose so the Animator can
          # blend in from the locomotion layer; it ends wherever the action leaves her (seated, holding the
          # item, leaning on the door), and the transition out of that is the Animator's to blend.

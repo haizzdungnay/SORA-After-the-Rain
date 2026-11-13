@@ -13,7 +13,7 @@ namespace Sora.AfterTheRain.Demo.Editor
 {
     public sealed class SoraCharacterMotionReview
     {
-        const string Folder = "Artifacts/CharacterMotion/PlayMode";
+        const string Folder = "Artifacts/UmbrellaMotion/PlayMode";
         static readonly Vector3 Stage = new Vector3(500, 20, 500);
         private static SoraCharacterMotionReview instance;
         private readonly Stack<IEnumerator> tasks = new Stack<IEnumerator>();
@@ -28,6 +28,7 @@ namespace Sora.AfterTheRain.Demo.Editor
         private int videoFrames;
         private readonly List<string> checks = new List<string>();
         private readonly List<ContactSample> contacts = new List<ContactSample>();
+        private readonly List<UmbrellaSample> umbrellas = new List<UmbrellaSample>();
         private readonly List<string> errors = new List<string>();
 
         [InitializeOnLoadMethod]
@@ -183,7 +184,7 @@ namespace Sora.AfterTheRain.Demo.Editor
             Capture(model.Id + "-idle-variation");
             direction = Vector3.forward; speed = 1.25f;
             yield return .15f;
-            Require(State(animator, "Locomotion"), model.Id + " movement cancels idle");
+            Require(State(animator, "Locomotion") || State(animator, "MoveStart"), model.Id + " movement cancels idle");
             direction = Vector3.zero; speed = 0;
             Place(focus, Stage + new Vector3(4, .6f, 0));
             yield return .6f;
@@ -198,6 +199,88 @@ namespace Sora.AfterTheRain.Demo.Editor
             direction = Vector3.zero; speed = 0;
             Place(focus, Stage);
             yield return .25f;
+            yield return UmbrellaMotion(model.Id, animator, motion);
+        }
+
+        private IEnumerator UmbrellaMotion(string model, Animator animator, SoraCharacterMotion motion)
+        {
+            var weather = Object.FindFirstObjectByType<SoraWeather>();
+            var umbrella = animator.GetComponent<SoraCharacterUmbrella>();
+            Require(umbrella != null && umbrella.IsReady, model + " umbrella bound");
+            var snapshot = weather.State.Copy();
+            weather.Restore(new SoraWeatherState { kind = SoraWeatherKind.Rain, automaticCycle = false, rain = .65f });
+            Place(focus, Stage);
+            direction = Vector3.zero; speed = 0;
+            yield return 1.1f;
+            Require(umbrella.WantsOpen && umbrella.OpenAmount > .99f, model + " opens in rain");
+            if (model == "Chisa") Require(motion.SecondaryBoneCount == 7, "Chisa weighted hair roots bound");
+            SampleUmbrella(model, "open", animator, umbrella, motion);
+            Capture(model + "-umbrella-open");
+            var roof = Box("Umbrella shelter review", focus.transform.position + Vector3.up * 2.7f, new Vector3(4, .1f, 4));
+            roof.layer = 8;
+            Physics.SyncTransforms();
+            yield return 1.1f;
+            Require(!umbrella.WantsOpen && umbrella.OpenAmount < .01f, model + " folds under roof on layer 8");
+            SampleUmbrella(model, "folded", animator, umbrella, motion);
+            Capture(model + "-umbrella-folded");
+            roof.SetActive(false); Object.Destroy(roof); Physics.SyncTransforms();
+            yield return 1.1f;
+            Require(umbrella.WantsOpen && umbrella.OpenAmount > .99f, model + " reopens outside");
+            direction = Vector3.forward; speed = 1.25f;
+            yield return .85f;
+            SampleUmbrella(model, "walk", animator, umbrella, motion);
+            Capture(model + "-umbrella-walk");
+            direction = Vector3.right;
+            yield return .3f;
+            Require(animator.GetFloat("Turn") == 0, model + " steering leaves stationary turn contract intact");
+            Capture(model + "-steer");
+            direction = Vector3.zero; speed = 0;
+            yield return .07f;
+            Require(State(animator, "StopLeft") || State(animator, "StopRight"), model + " phase-selected stop");
+            Capture(model + "-stop");
+            yield return .1f;
+            SampleUmbrella(model, "stop", animator, umbrella, motion);
+            jump = true;
+            yield return .13f;
+            Require(State(animator, "Jump"), model + " jump interrupts stop with umbrella");
+            SampleUmbrella(model, "jump", animator, umbrella, motion);
+            yield return .95f;
+            umbrella.enabled = false;
+            Require(!umbrella.WantsOpen && umbrella.Lift == 0 && !umbrella.Prop.gameObject.activeSelf, model + " disable clears transient umbrella");
+            yield return .1f;
+            Require(umbrella.Lift == 0, model + " disabled umbrella ignores owner ticks");
+            umbrella.enabled = true;
+            yield return 1.1f;
+            Require(umbrella.WantsOpen && umbrella.OpenAmount > .99f, model + " re-enable resamples rain");
+            direction = Vector3.forward; speed = 1.25f;
+            yield return .4f;
+            direction = Vector3.zero; speed = 0;
+            yield return .13f;
+            var closingFoot = animator.GetBoneTransform(State(animator, "StopLeft") ? HumanBodyBones.RightFoot : HumanBodyBones.LeftFoot);
+            Vector3 closingAt = closingFoot.position;
+            yield return .17f;
+            Require(Vector3.Distance(closingAt, closingFoot.position) > .005f, model + " closing foot moves after root braking");
+            yield return .4f;
+            Require(State(animator, "Locomotion"), model + " stop settles back to idle");
+            umbrella.AdjustGrip();
+            yield return .25f;
+            Require(animator.GetCurrentAnimatorStateInfo(1).IsName("UmbrellaAdjust") || animator.GetNextAnimatorStateInfo(1).IsName("UmbrellaAdjust"), model + " idle grip adjustment");
+            Capture(model + "-umbrella-adjust");
+            focus.ResetMotion();
+            Require(umbrella.OpenAmount == 0, model + " load reset folds transient prop");
+            yield return 1.1f;
+            Require(umbrella.WantsOpen, model + " environment restored after motion reset");
+            weather.Restore(snapshot);
+        }
+
+        private void SampleUmbrella(string model, string action, Animator animator, SoraCharacterUmbrella umbrella, SoraCharacterMotion motion)
+        {
+            float grip = Vector3.Distance(animator.GetBoneTransform(HumanBodyBones.RightHand).position, umbrella.GripPosition);
+            float top = umbrella.Prop.TransformPoint(new Vector3(0, .84f, 0)).y - focus.transform.position.y;
+            float head = animator.GetBoneTransform(HumanBodyBones.Head).position.y - focus.transform.position.y;
+            umbrellas.Add(new UmbrellaSample { model = model, action = action, gripError = grip, canopyTop = top, headHeight = head, secondaryBones = motion.SecondaryBoneCount });
+            Require(grip < .045f, model + " " + action + " hand grip error " + grip);
+            if (umbrella.OpenAmount > .9f) Require(top > head + .12f, model + " " + action + " umbrella clears head");
         }
 
         private IEnumerator WetContacts()
@@ -205,6 +288,8 @@ namespace Sora.AfterTheRain.Demo.Editor
             var weather = Object.FindFirstObjectByType<SoraWeather>();
             Require(weather != null, "Weather integration present");
             weather.Restore(new SoraWeatherState { kind = SoraWeatherKind.Clear, automaticCycle = false, rain = 0, wetness = 1, puddles = 1 });
+            var motion = focus.GetComponentInChildren<SoraCharacterMotion>();
+            var animator = focus.GetComponentInChildren<Animator>();
             Vector3 wetPoint = default;
             bool found = false;
             for (int x = -5; x <= 5 && !found; x++)
@@ -215,15 +300,26 @@ namespace Sora.AfterTheRain.Demo.Editor
                         weather.Surfaces.IsPuddle(p + Vector3.right * .2f)) { wetPoint = p; found = true; }
                 }
             Require(found, "After-rain puddle contact point found");
+            // Fit a real closing foot to a small irregular puddle. Actor center is not its contact point.
             Place(focus, wetPoint);
             direction = Vector3.zero; speed = 0;
-            yield return .3f;
+            yield return .6f;
+            animator.Play("StopLeft", 0, .79f); animator.Update(0);
+            Vector3 offset = animator.GetBoneTransform(HumanBodyBones.RightFoot).position - focus.transform.position;
+            offset.y = 0;
+            Place(focus, wetPoint - offset);
+            yield return .6f;
+            Require(focus.GetComponent<CharacterController>().isGrounded, "Puddle contact fixture has physical support");
             int splashes = weather.Surfaces.FootstepSplashes;
-            int before = focus.GetComponentInChildren<SoraCharacterMotion>().FootstepCount;
-            direction = Vector3.forward; speed = 1.25f;
-            yield return .7f;
+            int before = motion.FootstepCount;
+            animator.Play("StopLeft", 0, .79f);
+            yield return .18f;
             Require(focus.GetComponentInChildren<SoraCharacterMotion>().FootstepCount > before, "Street animation emits foot contacts");
-            Require(weather.Surfaces.FootstepSplashes > splashes, "Animation contact splashes after-rain puddle");
+            string evidence = " root=" + focus.transform.position + " grounded=" + focus.GetComponent<CharacterController>().isGrounded +
+                " last=" + motion.LastFootstepPosition + " water=" + weather.Surfaces.IsPuddle(motion.LastFootstepPosition) +
+                " contactGrounded=" + motion.LastFootstepPhysicalGrounded +
+                " left=" + animator.GetBoneTransform(HumanBodyBones.LeftFoot).position + " right=" + animator.GetBoneTransform(HumanBodyBones.RightFoot).position;
+            Require(weather.Surfaces.FootstepSplashes > splashes, "Animation contact splashes after-rain puddle" + evidence);
             Require(focus.GetComponents<AudioSource>().Any(a => a.spatialBlend == 1 && a.volume > 0), "Spatial footstep audio configured");
             direction = Vector3.zero; speed = 0;
         }
@@ -326,7 +422,7 @@ namespace Sora.AfterTheRain.Demo.Editor
         }
 
         private void WriteReport() => File.WriteAllText(Folder + "/report.json", JsonUtility.ToJson(new Report
-        { unity = Application.unityVersion, checks = checks, contacts = contacts, errors = errors, videoFrames = videoFrames, fixedDeltaTime = 1f / 30 }, true));
+        { unity = Application.unityVersion, checks = checks, contacts = contacts, umbrellas = umbrellas, errors = errors, videoFrames = videoFrames, fixedDeltaTime = 1f / 30 }, true));
         public static void BuildWindows()
         {
             var report = UnityEditor.BuildPipeline.BuildPlayer(new[] { SoraDevAutomation.DemoScene },
@@ -338,7 +434,8 @@ namespace Sora.AfterTheRain.Demo.Editor
         private void Log(string text, string stack, LogType type)
         { if (type == LogType.Exception || type == LogType.Error) errors.Add(text); }
         [Serializable] private class ContactSample { public string model, terrain, foot; public float clearance; }
-        [Serializable] private class Report { public string unity; public List<string> checks, errors; public List<ContactSample> contacts; public int videoFrames; public float fixedDeltaTime; }
+        [Serializable] private class UmbrellaSample { public string model, action; public float gripError, canopyTop, headHeight; public int secondaryBones; }
+        [Serializable] private class Report { public string unity; public List<string> checks, errors; public List<ContactSample> contacts; public List<UmbrellaSample> umbrellas; public int videoFrames; public float fixedDeltaTime; }
     }
 }
 #endif

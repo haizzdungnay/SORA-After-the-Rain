@@ -141,3 +141,20 @@ def test_look_around_changes_heading_while_the_head_stays_upright():
         forward, up = rotate(forward), rotate(up)
     assert abs(forward[0]) > .3, 'Looking sideways must change the facing direction.'
     assert up[2] > .98, 'Looking around must not roll the head onto a shoulder.'
+
+
+def test_weather_motion_endpoints_and_arm_isolation():
+    clips = {name: frame_at for name, _, _, frame_at in rig.CLIPS}
+    assert same_pose(clips['MoveStart'](0, LEGS), rig.idle(0, LEGS))
+    for name in ('StopLeft', 'StopRight'):
+        assert same_pose(clips[name](1, LEGS), rig.idle(0, LEGS))
+    for name in ('UmbrellaCarry', 'UmbrellaRaise', 'UmbrellaHold', 'UmbrellaLower', 'UmbrellaAdjust'):
+        for u in np.linspace(0, 1, 31):
+            pose, dz = clips[name](float(u), LEGS)
+            assert dz == 0
+            assert all(b.startswith('Right') and not any(s in b for s in ('Leg', 'Foot', 'Toes')) for b in pose)
+    assert same_pose(clips['UmbrellaRaise'](0, LEGS), clips['UmbrellaCarry'](0, LEGS))
+    assert same_pose(clips['UmbrellaRaise'](1, LEGS), clips['UmbrellaHold'](0, LEGS))
+    assert same_pose(clips['UmbrellaLower'](0, LEGS), clips['UmbrellaHold'](0, LEGS))
+    assert same_pose(clips['UmbrellaLower'](1, LEGS), clips['UmbrellaCarry'](0, LEGS))
+    assert same_pose(clips['UmbrellaAdjust'](0, LEGS), clips['UmbrellaAdjust'](1, LEGS))
