@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.Animations;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -26,18 +25,7 @@ namespace Sora.AfterTheRain.Demo.Editor
         public static void BuildFromLibrary()
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Stop Play Mode before rebuilding character assets.");
-            var source = AssetDatabase.LoadAssetAtPath<AnimatorController>("Assets/SORA/Characters/SweaterGirl/TeiAkiko.controller");
-            if (source == null) throw new InvalidOperationException("Import the authored Akiko locomotion first.");
-            var controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(Root + "/PlayableLocomotion.controller")
-                ?? AnimatorController.CreateAnimatorControllerAtPath(Root + "/PlayableLocomotion.controller");
-            controller.parameters = new[] { new AnimatorControllerParameter { name = "Speed", type = AnimatorControllerParameterType.Float } };
-            var machine = controller.layers[0].stateMachine;
-            var state = machine.defaultState ?? machine.AddState("Locomotion");
-            machine.defaultState = state;
-            state.motion = source.layers[0].stateMachine.defaultState.motion;
-            state.iKOnFeet = true;
-            EditorUtility.SetDirty(state);
-            EditorUtility.SetDirty(controller);
+            var controller = SoraAnimationControllerBuilder.Build();
             Directory.CreateDirectory(Output);
             foreach (var model in SoraCharacterModels.All)
             {
@@ -77,12 +65,13 @@ namespace Sora.AfterTheRain.Demo.Editor
                     avatar.name = model.Id + " Humanoid";
                     var animator = instance.AddComponent<Animator>();
                     animator.avatar = SaveAsset(avatar, Root + "/" + model.Id + "/PlayableAvatar.asset");
-                    // ponytail: reuse authored Idle/Walk/Run with Unity retarget foot IK; add ground raycasts for uneven terrain.
+                    // ponytail: authored clips retargeted with Unity's foot IK; add ground raycasts for uneven terrain.
                     animator.runtimeAnimatorController = controller;
                     animator.applyRootMotion = false;
                     animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+                    if (instance.GetComponent<SoraCharacterMotion>() == null) instance.AddComponent<SoraCharacterMotion>();
                     PrefabUtility.SaveAsPrefabAsset(instance, Output + model.Id + ".prefab");
-                    Debug.Log("SORA: playable Humanoid ready: " + model.Id + " / " + model.Height + "m / Idle, Walk, Run.");
+                    Debug.Log("SORA: playable Humanoid ready: " + model.Id + " / " + model.Height + "m / " + controller.animationClips.Select(c => c.name).Distinct().Count() + " clips.");
                 }
                 finally { Object.DestroyImmediate(instance); }
             }

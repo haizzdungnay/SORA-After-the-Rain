@@ -11666,6 +11666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6987844256077907784}
   - component: {fileID: 6977967704695095341}
+  - component: {fileID: 8225470808669499291}
   m_Layer: 0
   m_Name: Chisa
   m_TagString: Untagged
@@ -11711,6 +11712,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8225470808669499291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6875677216304535862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7669adc49cae9439f290778411d02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Sora.Demo::Sora.AfterTheRain.Demo.SoraCharacterMotion
 --- !u!1 &6913060375655988857
 GameObject:
   m_ObjectHideFlags: 0

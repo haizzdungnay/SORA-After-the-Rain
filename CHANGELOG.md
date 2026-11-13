@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-12 - Character motion and contact polish
+
+- Complete eleven shared Humanoid clips across six playable models and the Akiko fallback: relaxed idle, walk, jog, sprint, jump/fall/land, pivots and two interruptible idle variations.
+- Add acceleration/braking, buffered/coyote jump, grounded-action interruption, avatar cadence scaling, bounded terrain foot/pelvis IK and animation-event footsteps/puddle splashes.
+- Preserve geometry, controller/prefab GUIDs, store transactions and save compatibility. Controls: Ctrl walk toggle, Shift sprint, Space jump, Q/R stationary turns.
+- Actual Unity checks, contact samples, genuine captures and limits: `Docs/CHARACTER_MOTION_REPORT_2026-11-12.md`.
+
 ## 2026-11-12 - Saltline weather and puddles
 
 - Add shared clear/drizzle/rain/heavy-rain weather with smooth intensity, wetness, puddle fill/drying, sheltered rain audio and thunder.

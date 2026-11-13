@@ -34,6 +34,8 @@ Nguồn đã giải nén, cache, log và bản phục hồi Unity vẫn là dữ
    Akiko chọn **Chisa/Citlali/Denia/Lynae**. Tên, tuổi và vai trò hai nhân vật giữ nguyên.
 3. Bấm model hoặc dùng **1–2** cho nam, **3–6** cho nữ theo thứ tự trên menu.
    **Enter/Esc** tiếp tục chơi; **M** mở lại lựa chọn; **Tab** đổi người điều khiển.
+   Khi chơi: **WASD** chạy nhẹ, **Ctrl** đổi đi bộ, giữ **Shift** chạy nhanh,
+   **Space** nhảy, **Q/R** quay trái/phải khi đứng yên.
 4. **F5** lưu cả hai ngoại hình cùng tiến trình; **F9** khôi phục. Đổi ngoại hình
    không tự ghi đè save. Save schema 1 cũ không có model vẫn đọc được, dùng ngoại
    hình prototype. Máy thiếu model local dùng fallback và báo rõ khi load.
@@ -59,10 +61,32 @@ không kéo giãn riêng từng bộ phận. Root prefab giữ Scale = 1.
 
 Prefab sẵn cho gameplay nằm tại:
 `Assets/SORA/Characters/LocalImported/Resources/SoraCharacters/<ID>.prefab`.
-Mỗi prefab có Humanoid Avatar và controller **Idle/Walk/Run**, tham số **Speed**
-tính bằng m/s. Ví dụ: **0** đứng, **1.25** đi, **3.05** di chuyển nhanh,
-**5** chạy Shift. Controller dùng lại clip do dự án tạo trong
+Mỗi prefab có Humanoid Avatar và controller `PlayableLocomotion.controller` với 11
+clip: **Idle/Walk/Jog/Run** trong blend tree theo tốc độ, **Jump/Fall/Land**,
+**TurnLeft/TurnRight**, **IdleLookAround/IdleStretch**. Hai idle dài tự phát sau
+khoảng đứng chờ và ngắt khi di chuyển, nhảy hoặc mở menu. Controller dùng clip do dự án tạo trong
 `Tools/Blender/sweater_girl_rig.py`, không tải animation từ game nguồn.
+
+`SoraDemoCharacter` giữ vật lý; `SoraCharacterMotion` điều khiển Animator và chân:
+
+| Tham số | Kiểu | Ý nghĩa |
+|---|---|---|
+| `Speed` | Float | Tốc độ ngang thực tế (m/s): **0** đứng, **1.25** đi, **3.05** nhanh, **5** chạy Shift |
+| `IsGrounded` | Bool | Sau Move; có grace 0.1 s cho bước/bậc nhỏ, nhảy luôn báo airborne |
+| `VerticalSpeed` | Float | Vận tốc vật lý theo Y; chuyển Fall khi nhỏ hơn -0.8 và không grounded |
+| `Jump` | Trigger | Vật lý duyệt một lần; buffer/coyote 0.1 s, không nhảy lần hai trên không |
+| `Turn` | Float | Vận tốc yaw có dấu (độ/s), dương là quay sang phải nhân vật |
+| `GaitRate` | Float | Điều chỉnh cadence theo tỷ lệ Humanoid so với rig nguồn |
+| `IdleAction` | Trigger | Bắt đầu idle dài khi đủ thời gian rảnh |
+| `IdleVariant` | Int | 0 hủy; 1 nhìn quanh; 2 duỗi vai |
+
+Quay tại chỗ dùng Q/R; RMB vẫn chỉ quay camera. Khởi động/dừng dùng tăng/giảm tốc
+vật lý và blend tree, damping Animator 0.05 s. Chưa có clip stop riêng.
+
+Humanoid IK dò collider sát chân, chỉnh hướng theo mặt nền và giữ chân ở pha
+đứng trong giới hạn 30 cm theo tỷ lệ model. Không thay collider hoặc hệ điều khiển.
+Walk/Jog/Run mang hai Animation Events tại 1/4 và 3/4 chu kỳ để phát tiếng chân
+và splash theo mặt đất/vũng nước; blockout không Animator giữ fallback quãng đường.
 
 Kéo prefab này vào scene để dùng làm visual; nếu tự tạo NPC, điều khiển tham số
 `Animator.SetFloat("Speed", speed)`. **Apply Root Motion = false**; controller
@@ -73,6 +97,10 @@ Các prefab playable đã nằm trong Git. Khi cần tạo lại từ FBX đã c
 **SORA > Characters > 4. Build Playable Model Library**; menu cập nhật thư viện gốc
 đúng chiều cao, rồi tạo Avatar/prefab playable. Chỉ cần pipeline Blender cuối tài
 liệu khi muốn chuẩn bị lại FBX từ ZIP gốc.
+
+Để nâng clip/controller mà giữ rig và GUID: **SORA > Characters > 5. Upgrade Motion
+Library**. Nguồn hiện có 21 clip; 10 clip tương tác vẫn là tài nguyên chưa nối
+gameplay. Kế hoạch và giới hạn: `Docs/CHARACTER_MOTION_PLAN_2026-11-12.md`.
 
 ## Thư viện nguồn để nghiên cứu trong Unity
 
@@ -116,7 +144,7 @@ trên để có chuyển động. Không đổi canonical GDD hoặc thay logic 
 - Controller playable bật **Foot IK** có sẵn của Unity khi retarget. Chưa dò nền
   dốc/bậc bằng raycast hoặc khóa chân hoàn chỉnh; vẫn còn trượt/chìm chân nhẹ khi
   chạy. Skin Rover phục vụ locomotion cơ bản, chưa rig ngón tay. Chưa có cloth/tóc
-  vật lý, chuyển động tương tác POS, nhảy hoặc facial animation tự động.
+  vật lý, chuyển động tương tác POS hoặc facial animation tự động.
 
 Số liệu nguồn ở lần nhập ban đầu (cột Clip không tính clip dùng lại ở bản playable):
 

@@ -11,6 +11,7 @@ namespace Sora.AfterTheRain.Demo
         private const float Cell = 1.6f;
         private static readonly RaycastHit[] groundHits = new RaycastHit[32];
         public int GroundTiles { get; private set; }
+        public int FootstepSplashes { get; private set; }
         public ParticleSystem Splash { get; private set; }
         private SoraDemoCore core;
         private SoraWeather weather;
@@ -121,7 +122,7 @@ namespace Sora.AfterTheRain.Demo
 
         private void Footsteps()
         {
-            // ponytail: distance-based contacts; use Animator Events when every avatar exposes foot markers.
+            // ponytail: unanimated blockouts use distance; rigged models emit clip contact events.
             for (int i = 0; i < core.Characters.Count && i < feet.Length; i++)
             {
                 var twin = core.Characters[i];
@@ -129,19 +130,29 @@ namespace Sora.AfterTheRain.Demo
                 Vector3 delta = position - lastStep[i];
                 lastStep[i] = position;
                 delta.y = 0;
+                if (twin.HasAnimatedFootsteps) { stride[i] = 0; continue; }
                 if (delta.sqrMagnitude > 25) { stride[i] = 0; continue; }
                 if (!twin.GetComponent<CharacterController>().isGrounded) continue;
                 stride[i] += delta.magnitude;
                 if (stride[i] < 1.15f) continue;
                 stride[i] %= 1.15f;
-                bool water = IsPuddle(position);
-                bool metal = Physics.Raycast(position + Vector3.up * .3f, Vector3.down, out var hit, 1, 1,
-                    QueryTriggerInteraction.Ignore) && hit.collider.name.IndexOf("metal", StringComparison.OrdinalIgnoreCase) >= 0;
-                var clips = water ? waterSteps : metal ? metalSteps : groundSteps;
-                var clip = clips[UnityEngine.Random.Range(0, clips.Length)];
-                if (clip != null && feet[i] != null) feet[i].PlayOneShot(clip);
-                if (water) EmitSplash(position);
+                PlayFootstep(twin, position, 1);
             }
+        }
+
+        public void PlayFootstep(SoraDemoCharacter twin, Vector3 position, float volume)
+        {
+            if (core == null || twin == null || !twin.GetComponent<CharacterController>().isGrounded) return;
+            int index = core.Characters.IndexOf(twin);
+            if (index < 0 || index >= feet.Length || feet[index] == null) return;
+            bool water = IsPuddle(position);
+            bool metal = Physics.Raycast(position + Vector3.up * .3f, Vector3.down, out var hit, 1, 1,
+                QueryTriggerInteraction.Ignore) && hit.collider.name.IndexOf("metal", StringComparison.OrdinalIgnoreCase) >= 0;
+            var clips = water ? waterSteps : metal ? metalSteps : groundSteps;
+            if (clips == null || clips.Length == 0) return;
+            var clip = clips[UnityEngine.Random.Range(0, clips.Length)];
+            if (clip != null) feet[index].PlayOneShot(clip, Mathf.Clamp01(volume));
+            if (water && EmitSplash(position)) FootstepSplashes++;
         }
 
         public static bool TryGround(Vector3 near, out RaycastHit hit)

@@ -55,7 +55,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 00c22610dd04bb64fb89983bc6c71511, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 95a0d0ed9c1962443a99fc9b5cbaf336, type: 2}
+      objectReference: {fileID: 9100000, guid: b1a1b6a4e3ed7f4438000546190acfcd, type: 2}
     - target: {fileID: 5866666021909216657, guid: 00c22610dd04bb64fb89983bc6c71511, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -63,5 +63,25 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 00c22610dd04bb64fb89983bc6c71511, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4618686696340312494}
   m_SourcePrefab: {fileID: 100100000, guid: 00c22610dd04bb64fb89983bc6c71511, type: 3}
+--- !u!1 &9147614655720473286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 00c22610dd04bb64fb89983bc6c71511, type: 3}
+  m_PrefabInstance: {fileID: 8229117489698406295}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4618686696340312494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9147614655720473286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7669adc49cae9439f290778411d02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Sora.Demo::Sora.AfterTheRain.Demo.SoraCharacterMotion

@@ -6,19 +6,24 @@ namespace Sora.AfterTheRain.Demo
     public sealed class SoraDemoCharacter : MonoBehaviour
     {
         public string DisplayName;
-        private static readonly int SpeedHash = Animator.StringToHash("Speed");
+        private const float JumpSpeed = 4.2f;
         private CharacterController controller;
         private Animator animator;
+        private SoraCharacterMotion motion;
         private bool isPlayer;
         private Vector3 aiTarget;
         private float aiRetargetAt;
         private Vector3 fallVelocity;
+        private Vector3 planarVelocity;
+        private float motionTime, lastGroundedAt = -10, jumpBufferedUntil = -10;
+        private bool jumpConsumed, walking;
         private int twinIndex;
         private GameObject[] defaultVisuals;
         private GameObject selectedVisual;
         private float defaultHeight;
         public string ModelId { get; private set; }
         public float Height => controller != null ? controller.height : 1.72f;
+        public bool HasAnimatedFootsteps => motion != null && motion.enabled && motion.IsReady;
 
         private static readonly Vector3[] WorkPoints =
         {
@@ -30,8 +35,34 @@ namespace Sora.AfterTheRain.Demo
         {
             controller = GetComponent<CharacterController>();
             animator = GetComponentInChildren<Animator>(); // rigged models only; blockouts have none
+            BindMotion();
         }
-        public void SetPlayerControlled(bool enabled) { isPlayer = enabled; aiRetargetAt = 0; }
+        public void SetPlayerControlled(bool enabled)
+        {
+            if (isPlayer != enabled)
+            {
+                jumpBufferedUntil = -10;
+                motion?.CancelIdle();
+            }
+            isPlayer = enabled;
+            aiRetargetAt = 0;
+        }
+
+        private void BindMotion()
+        {
+            motion = animator != null ? animator.GetComponent<SoraCharacterMotion>() : null;
+            if (animator == null) return;
+            if (motion == null) motion = animator.gameObject.AddComponent<SoraCharacterMotion>();
+            motion.Initialize(this);
+        }
+
+        public void ResetMotion()
+        {
+            planarVelocity = fallVelocity = Vector3.zero;
+            lastGroundedAt = jumpBufferedUntil = -10;
+            jumpConsumed = false;
+            motion?.ResetMotion();
+        }
 
         public void InitializeAppearance(int index)
         {
@@ -61,6 +92,7 @@ namespace Sora.AfterTheRain.Demo
             selectedVisual = visual;
             animator = nextAnimator;
             animator.applyRootMotion = false;
+            BindMotion();
             controller.height = definition.Height;
             controller.center = Vector3.up * (definition.Height * 0.5f);
             ModelId = id;
@@ -74,6 +106,7 @@ namespace Sora.AfterTheRain.Demo
             selectedVisual = null;
             foreach (var child in defaultVisuals) child.SetActive(true);
             animator = GetComponentInChildren<Animator>();
+            BindMotion();
             controller.height = defaultHeight;
             controller.center = Vector3.up * (defaultHeight * 0.5f);
             ModelId = null;
@@ -91,7 +124,11 @@ namespace Sora.AfterTheRain.Demo
             if (controller == null || SoraDemoCore.Instance == null) return;
             Vector3 intended = Vector3.zero;
             float speed = 0f;
-            if (SoraDemoCore.Instance.IsChoosingModels) { aiRetargetAt = 0; }
+            bool wantsJump = false;
+            float pivot = 0;
+            bool blocked = SoraDemoCore.Instance.IsChoosingModels ||
+                (isPlayer && (SoraDemoCore.Instance.IsDialogue || SoraDemoCore.Instance.ShiftSummary));
+            if (blocked) { aiRetargetAt = 0; jumpBufferedUntil = -10; }
             else if (isPlayer)
             {
                 float x = Input.GetAxisRaw("Horizontal");
@@ -102,7 +139,10 @@ namespace Sora.AfterTheRain.Demo
                 forward.y = 0; right.y = 0;
                 forward.Normalize(); right.Normalize();
                 intended = (right * x + forward * z).normalized;
-                speed = Input.GetKey(KeyCode.LeftShift) ? 5.0f : 3.05f;
+                if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)) walking = !walking;
+                speed = Input.GetKey(KeyCode.LeftShift) ? 5f : walking ? 1.25f : 3.05f;
+                wantsJump = Input.GetKeyDown(KeyCode.Space);
+                pivot = (Input.GetKey(KeyCode.R) ? 1f : 0f) - (Input.GetKey(KeyCode.Q) ? 1f : 0f);
             }
             else
             {
@@ -116,20 +156,56 @@ namespace Sora.AfterTheRain.Demo
                 intended = delta.sqrMagnitude > 0.15f ? delta.normalized : Vector3.zero;
                 speed = 1.25f;
             }
-            if (intended.sqrMagnitude > 0.05f)
+            Move(intended, speed, wantsJump, pivot, Time.deltaTime, blocked);
+        }
+
+        // Shared by player input, worker AI and the scripted Play Mode acceptance routes.
+        public void Move(Vector3 intended, float speed, bool jumpPressed, float pivot, float deltaTime, bool blocked = false)
+        {
+            if (controller == null || !controller.enabled || deltaTime <= 0 || !float.IsFinite(deltaTime)) return;
+            if (!float.IsFinite(intended.x) || !float.IsFinite(intended.y) || !float.IsFinite(intended.z) ||
+                !float.IsFinite(speed) || !float.IsFinite(pivot)) return;
+            deltaTime = Mathf.Min(deltaTime, .333f);
+            motionTime += deltaTime;
+            intended.y = 0;
+            intended = Vector3.ClampMagnitude(intended, 1);
+            if (blocked) { intended = planarVelocity = Vector3.zero; pivot = 0; jumpPressed = false; jumpBufferedUntil = -10; }
+            bool groundedBefore = controller.isGrounded;
+            if (groundedBefore && fallVelocity.y <= 0)
+            {
+                fallVelocity.y = -2f;
+                lastGroundedAt = motionTime;
+                jumpConsumed = false;
+            }
+            if (jumpPressed) jumpBufferedUntil = motionTime + .1f;
+            bool jumped = !jumpConsumed && jumpBufferedUntil >= motionTime && motionTime - lastGroundedAt <= .1f;
+            if (jumped)
+            {
+                fallVelocity.y = JumpSpeed;
+                jumpConsumed = true;
+                jumpBufferedUntil = -10;
+            }
+            float yaw = transform.eulerAngles.y;
+            if (intended.sqrMagnitude > .001f)
             {
                 Quaternion desired = Quaternion.LookRotation(intended, Vector3.up);
-                transform.rotation = Quaternion.Slerp(transform.rotation, desired, Time.deltaTime * 10f);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, desired, 720f * deltaTime);
             }
-            if (controller.isGrounded && fallVelocity.y < 0) fallVelocity.y = -1.2f;
-            fallVelocity.y += Physics.gravity.y * Time.deltaTime;
-            controller.Move((intended * speed + fallVelocity) * Time.deltaTime);
-            if (animator != null)
-            {
-                Vector3 moved = controller.velocity; // actual motion: no running on the spot against a wall
-                moved.y = 0;
-                animator.SetFloat(SpeedHash, moved.magnitude, 0.1f, Time.deltaTime);
-            }
+            else if (groundedBefore && planarVelocity.sqrMagnitude < .04f)
+                transform.Rotate(0, Mathf.Clamp(pivot, -1, 1) * 150f * deltaTime, 0);
+            float turnRate = intended.sqrMagnitude < .001f ? Mathf.DeltaAngle(yaw, transform.eulerAngles.y) / deltaTime : 0;
+            var target = intended * Mathf.Clamp(speed, 0, 5);
+            planarVelocity = Vector3.MoveTowards(planarVelocity, target, (target.sqrMagnitude < .001f ? 24f : 16f) * deltaTime);
+            float verticalDistance = fallVelocity.y * deltaTime + .5f * Physics.gravity.y * deltaTime * deltaTime;
+            fallVelocity.y += Physics.gravity.y * deltaTime;
+            Vector3 before = transform.position;
+            var flags = controller.Move(planarVelocity * deltaTime + Vector3.up * verticalDistance);
+            if ((flags & CollisionFlags.Above) != 0 && fallVelocity.y > 0) fallVelocity.y = 0;
+            Vector3 moved = (transform.position - before) / deltaTime;
+            moved.y = 0;
+            bool visualGrounded = !jumped && (controller.isGrounded || (!jumpConsumed && motionTime - lastGroundedAt < .1f));
+            motion?.Tick(moved.magnitude, visualGrounded, fallVelocity.y, jumped, turnRate,
+                intended.sqrMagnitude > .001f || Mathf.Abs(pivot) > .01f || blocked, deltaTime);
         }
     }
 
