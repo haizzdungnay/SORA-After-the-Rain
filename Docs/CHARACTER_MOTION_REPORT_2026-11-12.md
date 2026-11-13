@@ -122,4 +122,6 @@ and run **SORA > Characters > 5. Upgrade Motion Library** in Unity.
   side effects were restored. Existing scene, packages and store art are preserved.
 - Raw draw-call/triangle counters in the weather review reflect Editor/UI context,
   not a valid measurement of world rendering performance.
-- PR URL is recorded after publishing the validated feature branch.
+- Delivered as [PR #36](https://github.com/haizzdungnay/SORA-After-the-Rain/pull/36),
+  open against the weather/store dependency branch. Implementation commit `e397f0d`;
+  no automatic merge. Owner Windows player updated in `Builds/Windows/`.
