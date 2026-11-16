@@ -16,6 +16,7 @@ namespace Sora.AfterTheRain.Demo
         private float candidateTime, probeAt, weatherRetryAt;
         private bool rain, candidate, sheltered, grounded;
         public bool IsReady => layer >= 0 && prop != null;
+        public bool IsCarried => owner != null && owner.HasUmbrella;
         public bool WantsOpen { get; private set; }
         public float Lift { get; private set; }
         public float OpenAmount => Mathf.SmoothStep(0, 1, Mathf.InverseLerp(.45f, .95f, Lift));
@@ -52,15 +53,16 @@ namespace Sora.AfterTheRain.Demo
             animator.ResetTrigger("UmbrellaAdjust");
             animator.SetBool("UmbrellaBusy", false);
             animator.Play("UmbrellaCarry", layer, 0);
-            animator.SetLayerWeight(layer, isActiveAndEnabled ? 1 : 0);
-            if (gripLayer >= 0) animator.SetLayerWeight(gripLayer, isActiveAndEnabled ? 1 : 0);
-            prop.SetActive(isActiveAndEnabled);
-            PoseProp();
+            bool visible = IsCarried && isActiveAndEnabled;
+            animator.SetLayerWeight(layer, visible ? 1 : 0);
+            if (gripLayer >= 0) animator.SetLayerWeight(gripLayer, visible ? 1 : 0);
+            prop.SetActive(visible);
+            if (visible) PoseProp();
         }
 
         public void Tick(bool isGrounded, bool blocked, float deltaTime)
         {
-            if (!IsReady || !isActiveAndEnabled) return;
+            if (!IsReady || !IsCarried || !isActiveAndEnabled) return;
             if (weather == null && Time.time >= weatherRetryAt)
             {
                 weather = FindFirstObjectByType<SoraWeather>();
@@ -79,7 +81,7 @@ namespace Sora.AfterTheRain.Demo
         // Per-character roof state: the inactive twin must not borrow the active twin's shelter value.
         public void AdvanceContext(float rainfall, bool underRoof, bool isGrounded, float deltaTime)
         {
-            if (!IsReady || !isActiveAndEnabled || !float.IsFinite(rainfall) || !float.IsFinite(deltaTime) || deltaTime <= 0) return;
+            if (!IsReady || !IsCarried || !isActiveAndEnabled || !float.IsFinite(rainfall) || !float.IsFinite(deltaTime) || deltaTime <= 0) return;
             grounded = isGrounded;
             rain = rainfall >= (rain ? .04f : .12f);
             bool next = rain && !underRoof;
@@ -93,19 +95,19 @@ namespace Sora.AfterTheRain.Demo
 
         public void AdjustGrip()
         {
-            if (IsReady && isActiveAndEnabled && WantsOpen && grounded && !animator.GetBool("UmbrellaBusy")) animator.SetTrigger("UmbrellaAdjust");
+            if (IsReady && IsCarried && isActiveAndEnabled && WantsOpen && grounded && !animator.GetBool("UmbrellaBusy")) animator.SetTrigger("UmbrellaAdjust");
         }
 
         public void ApplyHandIK()
         {
-            if (!IsReady || !isActiveAndEnabled) return;
+            if (!IsReady || !IsCarried || !isActiveAndEnabled) return;
             animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
             animator.SetIKPosition(AvatarIKGoal.RightHand, GripPosition);
             animator.SetIKHintPositionWeight(AvatarIKHint.RightElbow, .6f);
             animator.SetIKHintPosition(AvatarIKHint.RightElbow, owner.transform.TransformPoint(new Vector3(.25f, .66f, -.02f) * owner.Height));
         }
 
-        private void LateUpdate() { if (IsReady) PoseProp(); }
+        private void LateUpdate() { if (IsReady && IsCarried) PoseProp(); }
 
         private void PoseProp()
         {

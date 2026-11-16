@@ -168,6 +168,28 @@ namespace Sora.AfterTheRain.Demo.Tests
         }
 
         [Test]
+        public void UmbrellaStartsEmptyHandedEvenWhenItRains()
+        {
+            var root = new GameObject("optional umbrella test");
+            try
+            {
+                root.AddComponent<CharacterController>();
+                var character = root.AddComponent<SoraDemoCharacter>();
+                character.InitializeAppearance(0);
+                Assert.That(character.TrySetModel("Zhongli"), Is.True);
+                var umbrella = root.GetComponentInChildren<SoraCharacterUmbrella>();
+                var animator = root.GetComponentInChildren<Animator>();
+                Assert.That(umbrella.IsReady, Is.True);
+                Assert.That(umbrella.Prop.gameObject.activeSelf, Is.False, "No umbrella before choosing to take one at the rack.");
+                umbrella.AdvanceContext(.9f, false, true, 2);
+                Assert.That(umbrella.WantsOpen, Is.False, "Rain must never equip an umbrella.");
+                Assert.That(animator.GetLayerWeight(1), Is.Zero, "Free right arm before pickup.");
+                Assert.That(animator.GetLayerWeight(2), Is.Zero, "Free fingers before pickup.");
+            }
+            finally { Object.DestroyImmediate(root); }
+        }
+
+        [Test]
         public void UmbrellaDebouncesShelterAndResetsWithoutDuplicateProps()
         {
             var root = new GameObject("umbrella lifecycle test");
@@ -179,6 +201,7 @@ namespace Sora.AfterTheRain.Demo.Tests
                 Assert.That(character.TrySetModel("Zhongli"), Is.True);
                 var umbrella = root.GetComponentInChildren<SoraCharacterUmbrella>();
                 Assert.That(umbrella.IsReady, Is.True);
+                character.SetUmbrellaCarried(true);
                 umbrella.AdvanceContext(.65f, false, true, .3f);
                 umbrella.AdvanceContext(.65f, false, true, .6f);
                 Assert.That(umbrella.WantsOpen && umbrella.OpenAmount > .99f, Is.True);
@@ -207,6 +230,16 @@ namespace Sora.AfterTheRain.Demo.Tests
                 umbrella.enabled = true;
                 Assert.That(character.TrySetModel("MaleRover"), Is.True);
                 Assert.That(root.GetComponentsInChildren<SoraCharacterUmbrella>().Length, Is.EqualTo(1));
+                umbrella = root.GetComponentInChildren<SoraCharacterUmbrella>();
+                Assert.That(character.HasUmbrella && umbrella.Prop.gameObject.activeSelf, Is.True, "Model changes keep the chosen umbrella.");
+                umbrella.AdvanceContext(.65f, false, true, 1);
+                character.SetUmbrellaCarried(false);
+                Assert.That(umbrella.WantsOpen || umbrella.Prop.gameObject.activeSelf, Is.False, "Returning an open umbrella clears the prop immediately.");
+                Assert.That(root.GetComponentInChildren<Animator>().GetLayerWeight(1), Is.Zero);
+                Assert.That(root.GetComponentInChildren<Animator>().GetLayerWeight(2), Is.Zero);
+                character.ResetMotion();
+                umbrella.AdvanceContext(.65f, false, true, 1);
+                Assert.That(umbrella.WantsOpen || umbrella.Prop.gameObject.activeSelf, Is.False, "Rain/reset must not re-equip returned umbrellas.");
             }
             finally { Object.DestroyImmediate(root); }
         }

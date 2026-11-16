@@ -101,6 +101,8 @@ namespace Sora.AfterTheRain.Demo.Editor
             Time.captureDeltaTime = 1f / 30;
             foreach (var twin in core.Characters) twin.enabled = false;
             Camera.main.GetComponent<SoraThirdPersonCamera>().enabled = false;
+            running = true;
+            yield return RackInteractions();
             Box("Motion review floor", Stage + Vector3.down * .5f, new Vector3(30, 1, 30));
             var ramp = Box("Motion review ramp", Stage + new Vector3(4, .4f, 0), new Vector3(3, .2f, 4));
             ramp.transform.rotation = Quaternion.Euler(10, 0, 0);
@@ -133,6 +135,7 @@ namespace Sora.AfterTheRain.Demo.Editor
         {
             Require(core.SelectCharacterModel(model.TwinIndex, model.Id), model.Id + " model choice");
             focus = core.Characters[model.TwinIndex];
+            focus.SetUmbrellaCarried(false);
             foreach (var twin in core.Characters)
             {
                 Place(twin, Stage + new Vector3(twin == focus ? 0 : -10, 0, -6));
@@ -202,6 +205,94 @@ namespace Sora.AfterTheRain.Demo.Editor
             yield return UmbrellaMotion(model.Id, animator, motion);
         }
 
+        private IEnumerator RackInteractions()
+        {
+            var rack = core.Interactables.Single(t => t.kind == InteractKind.UmbrellaStand);
+            var call = typeof(SoraDemoCore).GetMethod("Interact", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            var swap = typeof(SoraDemoCore).GetMethod("SwitchCharacter", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            var nearest = typeof(SoraDemoCore).GetMethod("FindNearest", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            var restore = typeof(SoraDemoCore).GetMethod("RestoreSave", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            var weather = Object.FindFirstObjectByType<SoraWeather>();
+            var snapshot = weather.State.Copy();
+            string originalSave = File.Exists(core.SavePath) ? File.ReadAllText(core.SavePath) : null;
+            try
+            {
+                focus = core.ActiveCharacter;
+                Require(core.Characters.All(c => !c.HasUmbrella), "Both twins start empty-handed");
+                Require(rack.transform.position.z < -5.5f && Mathf.Abs(rack.transform.position.x) > 1.2f,
+                    "Umbrella rack is outside the shop and clear of the entrance");
+                var stand = Object.FindObjectsByType<MeshFilter>(FindObjectsSortMode.None)
+                    .Where(m => m.name.StartsWith("IMPORTED | umbrella_stand | ")).ToArray();
+                Require(stand.Length > 0 && stand.All(m => m.GetComponent<Renderer>().bounds.center.z < -5.5f),
+                    "Existing rack art and collision moved outside");
+                Place(focus, rack.transform.position + Vector3.back * 1.2f);
+                weather.Restore(new SoraWeatherState { kind = SoraWeatherKind.Rain, automaticCycle = false, rain = .65f });
+                yield return .5f;
+                Require(focus.GetComponent<CharacterController>().isGrounded, "Rack approach has physical ground support");
+                Require((SoraInteractable)nearest.Invoke(core, new object[] { focus.transform.position, 2.45f }) == rack, "Rack wins existing nearest E interaction from outside");
+                var umbrella = focus.GetComponentInChildren<SoraCharacterUmbrella>();
+                Require(!umbrella.Prop.gameObject.activeSelf && !umbrella.WantsOpen, "Rain leaves empty hands before pickup");
+                Require(rack.PromptFor(focus) == "Lay o tu gia", "Rack offers take prompt");
+                Capture("rack-empty-hands", true);
+                call.Invoke(core, new object[] { rack });
+                yield return .2f;
+                Require(focus.HasUmbrella && umbrella.Prop.gameObject.activeSelf, "E interaction takes umbrella");
+                Require(rack.PromptFor(focus) == "Cat o vao gia", "Rack offers return prompt");
+                Capture("rack-taken-folded", true);
+                // The rack sits beneath the storefront canopy; opening is exercised on the street.
+                Place(focus, new Vector3(-1.9f, 0, -8.2f));
+                yield return 1.1f;
+                Require(umbrella.WantsOpen && umbrella.OpenAmount > .99f, "Taken umbrella opens beyond storefront canopy");
+                Capture("rack-taken-open", true);
+                core.Save();
+                var saved = JsonUtility.FromJson<SoraSaveData>(File.ReadAllText(core.SavePath));
+                Require(saved.toshiharuHasUmbrella && !saved.akikoHasUmbrella, "F5 serializes per-twin umbrella choice");
+                swap.Invoke(core, null);
+                Require(!core.ActiveCharacter.HasUmbrella, "Switching does not grant umbrella to other twin");
+                swap.Invoke(core, null);
+                Require(core.ActiveCharacter.HasUmbrella, "Switching retains original twin umbrella");
+                core.SetModelSelectionOpen(true);
+                Require(focus.HasUmbrella, "Opening model menu preserves umbrella choice");
+                core.SetModelSelectionOpen(false);
+                Require(core.SelectCharacterModel(0, "MaleRover"), "Rack choice survives real model replacement");
+                yield return null;
+                Require(focus.HasUmbrella && focus.GetComponentInChildren<SoraCharacterUmbrella>().Prop.gameObject.activeSelf,
+                    "Replacement model retains umbrella prop");
+                restore.Invoke(core, new object[] { saved });
+                Require(focus.HasUmbrella && focus.ModelId == saved.toshiharuModel, "Load restores model and carried umbrella");
+                restore.Invoke(core, new object[] { saved });
+                Require(focus.HasUmbrella, "Same-model load retains carried umbrella");
+                Place(focus, rack.transform.position + Vector3.back * 1.2f);
+                yield return .3f;
+                call.Invoke(core, new object[] { rack });
+                umbrella = focus.GetComponentInChildren<SoraCharacterUmbrella>();
+                var animator = focus.GetComponentInChildren<Animator>();
+                Require(!focus.HasUmbrella && !umbrella.Prop.gameObject.activeSelf && !umbrella.WantsOpen,
+                    "E return immediately releases umbrella");
+                Require(animator.GetLayerWeight(1) == 0 && animator.GetLayerWeight(2) == 0, "Return releases arm and finger overrides");
+                yield return .5f;
+                Capture("rack-returned-empty-hands", true);
+                core.Save();
+                core.Load();
+                Require(!focus.HasUmbrella, "F5/F9 keeps returned umbrella off");
+                saved.toshiharuHasUmbrella = saved.akikoHasUmbrella = false;
+                restore.Invoke(core, new object[] { saved });
+                Require(core.Characters.All(c => !c.HasUmbrella), "Restore clears previous umbrella choices");
+                var register = core.Interactables.Single(t => t.kind == InteractKind.Register);
+                int cash = core.State.storeCash, stock = core.State.shelfStock;
+                call.Invoke(core, new object[] { register });
+                call.Invoke(core, new object[] { rack });
+                Require(!core.HasPendingSale && core.State.storeCash == cash && core.State.shelfStock == stock,
+                    "Rack interaction cancels POS draft without charging");
+                call.Invoke(core, new object[] { rack });
+            }
+            finally
+            {
+                weather.Restore(snapshot);
+                if (originalSave == null) File.Delete(core.SavePath); else File.WriteAllText(core.SavePath, originalSave);
+            }
+        }
+
         private IEnumerator UmbrellaMotion(string model, Animator animator, SoraCharacterMotion motion)
         {
             var weather = Object.FindFirstObjectByType<SoraWeather>();
@@ -211,6 +302,10 @@ namespace Sora.AfterTheRain.Demo.Editor
             weather.Restore(new SoraWeatherState { kind = SoraWeatherKind.Rain, automaticCycle = false, rain = .65f });
             Place(focus, Stage);
             direction = Vector3.zero; speed = 0;
+            focus.SetUmbrellaCarried(false);
+            yield return .3f;
+            Require(!umbrella.WantsOpen && !umbrella.Prop.gameObject.activeSelf, model + " rain never auto-equips umbrella");
+            focus.SetUmbrellaCarried(true);
             yield return 1.1f;
             Require(umbrella.WantsOpen && umbrella.OpenAmount > .99f, model + " opens in rain");
             if (model == "Chisa") Require(motion.SecondaryBoneCount == 7, "Chisa weighted hair roots bound");
@@ -270,6 +365,11 @@ namespace Sora.AfterTheRain.Demo.Editor
             Require(umbrella.OpenAmount == 0, model + " load reset folds transient prop");
             yield return 1.1f;
             Require(umbrella.WantsOpen, model + " environment restored after motion reset");
+            focus.SetUmbrellaCarried(false);
+            yield return .2f;
+            Require(!umbrella.Prop.gameObject.activeSelf && animator.GetLayerWeight(1) == 0 && animator.GetLayerWeight(2) == 0,
+                model + " returning open umbrella releases prop and both overrides");
+            Require(!umbrella.WantsOpen, model + " returned umbrella stays off in rain");
             weather.Restore(snapshot);
         }
 
@@ -396,13 +496,19 @@ namespace Sora.AfterTheRain.Demo.Editor
                 "100 switches preserve a single POS commit");
         }
 
-        private void Capture(string name)
+        private void Capture(string name, bool storefront = false)
         {
             var camera = Camera.main;
             var at = focus.transform.position;
             camera.transform.position = at + new Vector3(2.4f, 1.3f, 4.7f);
             camera.transform.LookAt(at + Vector3.up * .9f);
             camera.fieldOfView = 29;
+            if (storefront)
+            {
+                camera.transform.position = new Vector3(-5.4f, 2.15f, -11.2f);
+                camera.transform.LookAt(new Vector3(-1.1f, 1.2f, -5.95f));
+                camera.fieldOfView = 48;
+            }
             var target = new RenderTexture(1280, 960, 24);
             var image = new Texture2D(1280, 960, TextureFormat.RGB24, false);
             var previous = RenderTexture.active;

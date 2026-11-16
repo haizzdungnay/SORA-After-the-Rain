@@ -137,7 +137,7 @@ namespace Sora.AfterTheRain.Demo
             {
                 stillTime = 0;
                 nextIdle = Random.Range(9f, 15f);
-                animator.SetInteger(Variant, umbrella != null && umbrella.IsReady ? 1 : Random.Range(1, 3));
+                animator.SetInteger(Variant, umbrella != null && umbrella.IsReady && umbrella.IsCarried ? 1 : Random.Range(1, 3));
                 animator.SetTrigger(Idle);
                 umbrella?.AdjustGrip();
                 IdleCount++;

@@ -9,6 +9,43 @@ namespace Sora.AfterTheRain.Demo.Tests
 {
     public sealed class DemoSceneTests
     {
+        [TestCase(false)]
+        [TestCase(true)]
+        public void OutsideUmbrellaRackIsReachableAndKeepsTheDoorwayClear(bool authoredArt)
+        {
+            var root = new GameObject("Rack placement test");
+            var core = root.AddComponent<SoraDemoCore>();
+            var worldType = typeof(SoraDemoWorld);
+            var fields = new[] { "world", "game", "metal" }.Select(name => worldType.GetField(name,
+                System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic)).ToArray();
+            var previous = fields.Select(f => f.GetValue(null)).ToArray();
+            var material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
+            try
+            {
+                fields[0].SetValue(null, root.transform);
+                fields[1].SetValue(null, core);
+                fields[2].SetValue(null, material);
+                if (authoredArt) Assert.That(SoraMartVisuals.TryBuild(root.transform), Is.True);
+                worldType.GetMethod("SetupUmbrellaStand", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic).Invoke(null, null);
+                var rack = core.Interactables.Single(t => t.kind == InteractKind.UmbrellaStand);
+                Assert.That(rack.transform.position.z, Is.LessThan(-5.5f));
+                var renderers = root.GetComponentsInChildren<Renderer>().Where(r => r.name == "Umbrella stand" ||
+                    r.name.StartsWith("IMPORTED | umbrella_stand | ")).ToArray();
+                Assert.That(renderers, Is.Not.Empty);
+                Assert.That(renderers.All(r => r.enabled && r.bounds.center.z < -5.5f), Is.True);
+                Physics.SyncTransforms();
+                foreach (var point in new[] { new Vector3(-1.9f, 0, -7.35f), new Vector3(0, 0, -6.15f) })
+                    Assert.That(Physics.OverlapCapsule(point + Vector3.up * .32f, point + Vector3.up * 1.55f, .28f),
+                        Is.Empty, "Rack approach and central entrance must remain walkable.");
+            }
+            finally
+            {
+                for (int i = 0; i < fields.Length; i++) fields[i].SetValue(null, previous[i]);
+                Object.DestroyImmediate(root);
+                Object.DestroyImmediate(material);
+            }
+        }
+
         [Test]
         public void AuthoredStoreRetainsInteractionColliderAndHasTransparentGlassAndRoofShelter()
         {

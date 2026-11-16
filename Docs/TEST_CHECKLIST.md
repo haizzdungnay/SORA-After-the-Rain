@@ -48,3 +48,12 @@
 - [ ] Review all six model grips, canopy/head clearance, secondary bone motion and shoe contact in the actual Windows build.
 - [ ] Target-PC frame time and cloth/finger intersection art QA.
 - Scripted test/build evidence: `Docs/CHARACTER_WEATHER_MOTION_REPORT_2026-11-13.md`.
+
+## Optional umbrella rack - 2026-11-16
+
+- [ ] Start a new game in rain: both twins have empty hands, normal free-arm locomotion and unrestricted idle variations.
+- [ ] Approach the rack outside, beside the entrance: E offers take/return and acts only when pressed. Entrance remains clear.
+- [ ] After taking an umbrella, verify rain/roof opening/folding, then return it while open: prop disappears and arm/fingers resume base animation.
+- [ ] Take with one twin, Tab twice and change models: each twin retains its own choice. F5/F9 restores both choices, including returned umbrellas.
+- [ ] Load an old schema-1 save: no umbrella is equipped automatically. POS cash/stock and per-twin relations remain intact.
+- Scripted test/build evidence: `Docs/UMBRELLA_OPTIONAL_REPORT_2026-11-16.md`.

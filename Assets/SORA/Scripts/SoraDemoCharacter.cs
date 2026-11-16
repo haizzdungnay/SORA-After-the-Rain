@@ -22,6 +22,7 @@ namespace Sora.AfterTheRain.Demo
         private GameObject selectedVisual;
         private float defaultHeight;
         public string ModelId { get; private set; }
+        public bool HasUmbrella { get; private set; }
         public float Height => controller != null ? controller.height : 1.72f;
         public bool HasAnimatedFootsteps => motion != null && motion.enabled && motion.IsReady;
 
@@ -62,6 +63,13 @@ namespace Sora.AfterTheRain.Demo
             lastGroundedAt = jumpBufferedUntil = -10;
             jumpConsumed = false;
             motion?.ResetMotion();
+        }
+
+        public void SetUmbrellaCarried(bool carried)
+        {
+            if (HasUmbrella == carried) return;
+            HasUmbrella = carried;
+            if (animator != null) animator.GetComponent<SoraCharacterUmbrella>()?.ResetMotion();
         }
 
         public void InitializeAppearance(int index)

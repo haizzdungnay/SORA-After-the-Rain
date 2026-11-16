@@ -47,6 +47,8 @@ The inactive twin does not yet perform actual store tasks. Customer queues, a qu
 
 Twenty Humanoid movement/idle/umbrella clips, context-aware umbrella handling, terrain foot IK and contact-driven footsteps are integrated across six model options. See the [umbrella motion report](Docs/CHARACTER_WEATHER_MOTION_REPORT_2026-11-13.md) and [motion baseline report](Docs/CHARACTER_MOTION_REPORT_2026-11-12.md) for actual Unity checks, captures and remaining art/performance QA.
 
+Umbrellas are optional: approach the rack **outside the storefront** and press **E** to take or return one. Both twins start empty-handed. After pickup, rain/roof handling opens or folds the umbrella; the choice stays separate for each twin and survives model selection and F5/F9 save/load.
+
 ## Engineering focus
 
 - **State continuity:** switch the controlled character while keeping shared cash and inventory coherent.

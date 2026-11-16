@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-16 - Optional umbrellas from the outside rack
+
+- Start both twins empty-handed. Move the existing umbrella rack outside beside the entrance; E takes/returns one and releases arm/finger overrides when returned.
+- Preserve per-twin choices across switching, model selection, motion resets and F5/F9. Old schema-1 saves default to no umbrella; rain/roof opening remains active after pickup.
+- Plan and acceptance: `Docs/UMBRELLA_OPTIONAL_PLAN_2026-11-16.md` and `Docs/UMBRELLA_OPTIONAL_REPORT_2026-11-16.md`.
+
 ## 2026-11-13 - Umbrella handling and weight transfer
 
 - Add per-character rain/shelter umbrella handling, an isolated right-arm Animator layer, native hand IK and an original opening umbrella prop.

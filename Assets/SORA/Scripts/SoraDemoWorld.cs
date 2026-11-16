@@ -20,6 +20,7 @@ namespace Sora.AfterTheRain.Demo
             SetupEnvironment();
             SetupShop();
             SoraMartVisuals.TryBuild(world);
+            SetupUmbrellaStand();
 
             // REAL 3D CITY, NOT A STAGING-ONLY MODEL:
             // GLB files in Assets/Resources are imported by glTFast into Unity
@@ -222,6 +223,29 @@ namespace Sora.AfterTheRain.Demo
             GameObject clock = Cube("End shift clock", new Vector3(-6.7f, 1.6f, 3.8f), new Vector3(.15f, .7f, .7f), coral, null, false);
             TagInteract(clock, InteractKind.ShiftClock, "Xem bao cao cuoi ca");
             LightAt("Stockroom lamp", new Vector3(5f, 3.6f, 3.3f), new Color(1f, .8f, .64f), 2.2f, 5f);
+        }
+
+        private static void SetupUmbrellaStand()
+        {
+            bool found = false;
+            foreach (var mesh in world.GetComponentsInChildren<MeshFilter>())
+            {
+                if (!mesh.name.StartsWith("IMPORTED | umbrella_stand | ")) continue;
+                mesh.transform.position += Vector3.back * 1.55f;
+                found = true;
+            }
+            if (!found)
+                Cube("Umbrella stand", new Vector3(-1.9f, .28f, -6.15f), new Vector3(.5f, .56f, .45f), metal);
+            // ponytail: decorative rack stock; bind availability when finite lending is added.
+            // Interior umbrella stock is merged with other goods; reuse original folded props here.
+            var source = Resources.Load<GameObject>("Weather/SoraUmbrella");
+            if (source != null)
+                for (int i = 0; i < 2; i++)
+                    Object.Instantiate(source, new Vector3(-2f + i * .2f, 1.05f, -6.15f), Quaternion.Euler(180, 0, 0), world);
+            var anchor = new GameObject("Umbrella rack interaction");
+            anchor.transform.SetParent(world, false);
+            anchor.transform.position = new Vector3(-1.9f, 0, -6.15f);
+            TagInteract(anchor, InteractKind.UmbrellaStand, "Gia de o");
         }
 
         private static void SetupStreet()
