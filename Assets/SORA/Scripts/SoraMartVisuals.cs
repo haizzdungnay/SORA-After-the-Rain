@@ -55,14 +55,14 @@ namespace Sora.AfterTheRain.Demo
                     if (!int.TryParse(lamp.name.Substring("Warm store lamp ".Length), out int index)) continue;
                     lamp.transform.localPosition = new Vector3((index % 3 - 1) * 4.4f, 2.87f, index / 3 * 4.9f - 2.4f);
                     lamp.type = LightType.Point;
-                    lamp.color = new Color(1f, .96f, .87f);
-                    lamp.intensity = 7;
-                    lamp.range = 8;
+                    lamp.color = new Color(1f, .92f, .82f);
+                    lamp.intensity = 6;
+                    lamp.range = 7.5f;
                 }
                 else if (lamp.name == "Front neon")
                 {
                     lamp.transform.localPosition = new Vector3(0, 3.15f, -6.2f);
-                    lamp.color = new Color(.86f, 1f, .95f);
+                    lamp.color = new Color(1f, .93f, .84f);
                     lamp.intensity = 2.5f;
                     lamp.range = 10;
                 }
@@ -74,9 +74,9 @@ namespace Sora.AfterTheRain.Demo
             spill.type = LightType.Spot;
             spill.spotAngle = 125;
             spill.innerSpotAngle = 85;
-            spill.color = new Color(1, .96f, .88f);
-            spill.intensity = 10;
-            spill.range = 18;
+            spill.color = new Color(1, .92f, .82f);
+            spill.intensity = 8;
+            spill.range = 16;
             spill.shadows = LightShadows.None;
             // ponytail: decorative stock; bind individual displays when inventory gains per-SKU state.
             Debug.Log("SORA MART: authored exterior/interior loaded; existing POS, stock and save anchors retained.");

@@ -59,16 +59,16 @@ namespace Sora.AfterTheRain.Demo.Editor
             }
             if (profile.TryGet(out Bloom bloom))
             {
-                bloom.intensity.Override(.25f);
-                bloom.threshold.Override(1.1f);
+                bloom.intensity.Override(.18f);
+                bloom.threshold.Override(1.4f);
                 EditorUtility.SetDirty(bloom);
             }
             if (profile.TryGet(out Tonemapping tone)) tone.mode.Override(TonemappingMode.Neutral);
             if (profile.TryGet(out ColorAdjustments color))
             {
-                color.postExposure.Override(.35f);
-                color.contrast.Override(12);
-                color.saturation.Override(8);
+                color.postExposure.Override(.2f);
+                color.contrast.Override(8);
+                color.saturation.Override(4);
                 EditorUtility.SetDirty(color);
             }
             var pipeline = AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>("Assets/SORA/Settings/SoraPipeline.asset");

@@ -111,7 +111,7 @@ namespace Sora.AfterTheRain.Demo
                 volume.sharedProfile = profile;
                 var cameraData = Camera.main.GetUniversalAdditionalCameraData();
                 cameraData.renderPostProcessing = true;
-                cameraData.antialiasing = AntialiasingMode.FastApproximateAntialiasing;
+                cameraData.antialiasing = AntialiasingMode.SubpixelMorphologicalAntiAliasing;
             }
             Debug.Log("SORA WEATHER: shared rain, wet ground, puddles and sheltered audio initialized.");
             return weather;

@@ -265,18 +265,18 @@ namespace Sora.AfterTheRain.Demo.Editor
                 privateCity = GameObject.Find("V03 AFX + CC0 city buildings [OWNER PRIVATE REAL GLB]") != null };
         }
 
-        private static void Capture(string name)
+        internal static void Capture(string name, int width = 1600, int height = 900, string folder = Folder)
         {
             var camera = Camera.main;
-            var target = new RenderTexture(1600, 900, 24);
-            var image = new Texture2D(1600, 900, TextureFormat.RGB24, false);
+            var target = new RenderTexture(width, height, 24);
+            var image = new Texture2D(width, height, TextureFormat.RGB24, false);
             var previous = RenderTexture.active;
             var previousTarget = camera.targetTexture;
             try
             {
                 camera.targetTexture = target; camera.Render(); RenderTexture.active = target;
-                image.ReadPixels(new Rect(0, 0, 1600, 900), 0, 0); image.Apply();
-                File.WriteAllBytes(Folder + "/" + name + ".png", image.EncodeToPNG());
+                image.ReadPixels(new Rect(0, 0, width, height), 0, 0); image.Apply();
+                File.WriteAllBytes(folder + "/" + name + ".png", image.EncodeToPNG());
             }
             finally
             {
