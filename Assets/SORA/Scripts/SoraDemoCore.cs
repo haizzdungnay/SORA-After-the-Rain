@@ -5,13 +5,15 @@ using UnityEngine;
 
 namespace Sora.AfterTheRain.Demo
 {
-    public enum InteractKind { Register, Shelf, Delivery, StockCount, Customer, ShiftClock, ExitDoor }
+    public enum InteractKind { Register, Shelf, Delivery, StockCount, Customer, ShiftClock, ExitDoor, UmbrellaStand }
 
     public sealed class SoraInteractable : MonoBehaviour
     {
         public InteractKind kind;
         public string title;
         public int customerIndex;
+        public string PromptFor(SoraDemoCharacter character) => kind == InteractKind.UmbrellaStand
+            ? character != null && character.HasUmbrella ? "Cat o vao gia" : "Lay o tu gia" : title;
     }
 
     [Serializable]
@@ -23,6 +25,8 @@ namespace Sora.AfterTheRain.Demo
         public int activeIndex;
         public string toshiharuModel;
         public string akikoModel;
+        public bool toshiharuHasUmbrella;
+        public bool akikoHasUmbrella;
         public float[] characterPositions = new float[6];
         public int storeCash = 0;
         public int sales = 0;
@@ -226,6 +230,11 @@ namespace Sora.AfterTheRain.Demo
                 case InteractKind.ExitDoor:
                     ShowNotice("Tokyo dang mua. Hay hoan thanh ca truoc khi ve nha!");
                     break;
+                case InteractKind.UmbrellaStand:
+                    ActiveCharacter.SetUmbrellaCarried(!ActiveCharacter.HasUmbrella);
+                    HasPendingSale = false;
+                    ShowNotice(ActiveCharacter.HasUmbrella ? "Da lay o. Quay lai gia de cat o khi khong can." : "Da cat o vao gia.");
+                    break;
             }
         }
 
@@ -266,6 +275,8 @@ namespace Sora.AfterTheRain.Demo
                     State.characterPositions[i * 3 + 1] = p.y;
                     State.characterPositions[i * 3 + 2] = p.z;
                 }
+                State.toshiharuHasUmbrella = Characters[0].HasUmbrella;
+                State.akikoHasUmbrella = Characters[1].HasUmbrella;
                 File.WriteAllText(SavePath, JsonUtility.ToJson(State, true));
                 ShowNotice("Da luu progress: " + SavePath, 6f);
             }
@@ -310,6 +321,8 @@ namespace Sora.AfterTheRain.Demo
                 if (cc != null) cc.enabled = false;
                 Characters[i].transform.position = new Vector3(State.characterPositions[i * 3], State.characterPositions[i * 3 + 1], State.characterPositions[i * 3 + 2]);
                 if (cc != null) cc.enabled = wasEnabled;
+                Characters[i].ResetMotion();
+                Characters[i].SetUmbrellaCarried(i == 0 ? State.toshiharuHasUmbrella : State.akikoHasUmbrella);
             }
             IsDialogue = false; ShiftSummary = false; HasPendingSale = false; IsChoosingModels = false;
             ConfigureActive();
@@ -341,10 +354,10 @@ namespace Sora.AfterTheRain.Demo
             GUI.Label(new Rect(24, 54, 425, 24), "Dieu khien: " + ActiveCharacter.DisplayName + " | Tokyo / 20:" + Mathf.FloorToInt((Time.time - begunAt) / 12f).ToString("00"), hudStyle);
             GUI.Label(new Rect(24, 80, 415, 24), "Quy cua hang: " + State.storeCash + " yen  |  Don POS: " + State.sales, hudStyle);
             GUI.Label(new Rect(24, 106, 415, 24), "Ton ke: " + State.shelfStock + "  |  Ton kho: " + State.backStock + "  |  Hang nhan: " + (State.deliveryReceived ? "Co" : "Chua"), hudStyle);
-            GUI.Label(new Rect(24, 136, 415, 45), "WASD: di chuyen | Shift: chay | TAB: doi nguoi | E: tuong tac\nM: chon model | RMB: camera | F5/F9: save/load | ESC: dong", infoStyle);
+            GUI.Label(new Rect(24, 136, 415, 60), "WASD: chay nhe | Ctrl: di bo | Shift: chay nhanh | Space: nhay\nQ/R: quay | TAB: doi nguoi | E: tuong tac | M: chon model\nRMB: camera | F5/F9: save/load | ESC: dong", infoStyle);
             if (CurrentTarget != null && !IsDialogue && !ShiftSummary)
             {
-                GUI.Box(new Rect(Screen.width / 2f - 170f, Screen.height - 106, 340, 46), "[E] " + CurrentTarget.title, buttonStyle);
+                GUI.Box(new Rect(Screen.width / 2f - 170f, Screen.height - 106, 340, 46), "[E] " + CurrentTarget.PromptFor(ActiveCharacter), buttonStyle);
             }
             if (Time.time <= noticeUntil)
                 GUI.Box(new Rect(Mathf.Max(12, Screen.width / 2f - 310), Screen.height - 53, Mathf.Min(620, Screen.width - 24), 45), Notice, infoStyle);

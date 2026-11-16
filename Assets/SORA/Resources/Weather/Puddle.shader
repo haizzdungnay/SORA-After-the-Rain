@@ -21,6 +21,8 @@ Shader "SORA/Weather/Puddle"
             #pragma vertex Vert
             #pragma fragment Frag
             #pragma multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE
+            #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
+            #pragma multi_compile _ _CLUSTER_LIGHT_LOOP
             #pragma multi_compile _ _REFLECTION_PROBE_BLENDING
             #pragma multi_compile _ _REFLECTION_PROBE_BOX_PROJECTION
             #pragma multi_compile_fog
@@ -53,8 +55,10 @@ Shader "SORA/Weather/Puddle"
                 {
                     float2 cell = grid + float2(x,y);
                     float seed = Hash(cell);
-                    float life = frac(_Time.y * 1.15 + seed * 5);
-                    float2 delta = p - cell - float2(seed * .6 + .2, Hash(cell + 19) * .6 + .2);
+                    float cycle = _Time.y * lerp(.7, 1.2, seed) + seed * 5;
+                    float life = frac(cycle);
+                    float eventSeed = Hash(cell + floor(cycle) * .37);
+                    float2 delta = p - cell - float2(eventSeed * .8 + .1, Hash(cell + 19 + floor(cycle)) * .8 + .1);
                     float distance = length(delta);
                     float ring = distance - life * .85;
                     float wave = sin(ring * 70) * exp(-abs(ring) * 32) * (1-life) * smoothstep(0,.12,life);
@@ -67,14 +71,17 @@ Shader "SORA/Weather/Puddle"
                 float2 world = input.positionWS.xz;
                 float noise = SAMPLE_TEXTURE2D(_DetailMap, sampler_DetailMap, world * .065).r * .7;
                 noise += SAMPLE_TEXTURE2D(_DetailMap, sampler_DetailMap, world * .19 + .37).r * .3;
-                float pool = smoothstep(.64 - _SoraPuddles * .18, .7 - _SoraPuddles * .18, noise);
+                // Keep the .67 midpoint aligned with the footstep query; soften only the visual boundary.
+                float pool = smoothstep(.45 - _SoraPuddles * .18, .89 - _SoraPuddles * .18, noise);
                 pool *= smoothstep(.02,.16,_SoraPuddles);
                 float edge = 1-smoothstep(_SoraWetCenter.z - 3, _SoraWetCenter.z, length(world - _SoraWetCenter.xy));
-                float alpha = lerp(.075 * _SoraWetness, .9, pool) * edge;
+                float alpha = (.24 * _SoraWetness + .16 * pool) * edge;
                 clip(alpha-.002);
-                half3 normalTS = UnpackNormalScale(SAMPLE_TEXTURE2D(_DetailNormal, sampler_DetailNormal, world * .65), .18 * (1-pool));
+                half3 normalTS = UnpackNormalScale(SAMPLE_TEXTURE2D(_DetailNormal, sampler_DetailNormal, world * .65), .035 * (1-pool));
+                half3 flow = UnpackNormalScale(SAMPLE_TEXTURE2D(_DetailNormal, sampler_DetailNormal,
+                    world * float2(.45, 2.4) + float2(0, _Time.y * .08)), .012 * _SoraRain);
                 half3 normalWS = normalize(half3(normalTS.x, normalTS.z, normalTS.y));
-                normalWS.xz += Ripple(world * 5) * (.035 * pool * _SoraRain);
+                normalWS.xz += flow.xy + Ripple(world * 3) * (.022 * pool * _SoraRain);
                 normalWS = normalize(normalWS);
                 InputData lighting = (InputData)0;
                 lighting.positionWS = input.positionWS;
@@ -82,12 +89,13 @@ Shader "SORA/Weather/Puddle"
                 lighting.viewDirectionWS = GetWorldSpaceNormalizeViewDir(input.positionWS);
                 lighting.shadowCoord = TransformWorldToShadowCoord(input.positionWS);
                 lighting.bakedGI = SampleSH(normalWS);
+                lighting.vertexLighting = VertexLighting(input.positionWS, normalWS);
                 lighting.normalizedScreenSpaceUV = GetNormalizedScreenSpaceUV(input.positionCS);
                 lighting.shadowMask = half4(1,1,1,1);
                 SurfaceData surface = (SurfaceData)0;
                 surface.albedo = _WaterColor.rgb;
                 surface.metallic = 0;
-                surface.smoothness = lerp(.7,.97,pool);
+                surface.smoothness = lerp(.86,.97,pool);
                 surface.normalTS = half3(0,0,1);
                 surface.occlusion = 1;
                 surface.alpha = 1;

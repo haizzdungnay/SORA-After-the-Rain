@@ -49,3 +49,6 @@ ArtSource/ThirdParty/SoraMart/**/*.jpg filter=lfs diff=lfs merge=lfs -text
 Assets/SORA/Resources/Weather/*.png filter=lfs diff=lfs merge=lfs -text
 
 Docs/Media/Changelog/sora-weather-*.png filter=lfs diff=lfs merge=lfs -text
+Docs/Media/Changelog/sora-motion-*.png filter=lfs diff=lfs merge=lfs -text
+Docs/Media/Changelog/sora-heavy-rain-*.png filter=lfs diff=lfs merge=lfs -text
+Docs/Media/Changelog/sora-umbrella-*.png filter=lfs diff=lfs merge=lfs -text
