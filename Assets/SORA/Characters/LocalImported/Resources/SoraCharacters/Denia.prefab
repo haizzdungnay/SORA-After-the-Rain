@@ -14877,6 +14877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3504041126586171118}
   - component: {fileID: 8199185448976530116}
+  - component: {fileID: 7347978860146109318}
   m_Layer: 0
   m_Name: Denia
   m_TagString: Untagged
@@ -14922,6 +14923,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7347978860146109318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434128182675988042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7669adc49cae9439f290778411d02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Sora.Demo::Sora.AfterTheRain.Demo.SoraCharacterMotion
 --- !u!1 &8474714896711699098
 GameObject:
   m_ObjectHideFlags: 0

@@ -58,17 +58,7 @@ namespace Sora.AfterTheRain.Demo.Editor
             hd.human = HumanTrait.BoneName.Where(bones.Contains).Select(n => new HumanBone
                 { boneName = n, humanName = n, limit = new HumanLimit { useDefaultValues = true } }).ToArray();
             importer.humanDescription = hd;
-            // Blender takes are "Armature|Idle"; clips loop in place and keep the scripted hip bob.
-            importer.clipAnimations = importer.defaultClipAnimations.Select(c =>
-            {
-                c.name = c.takeName.Split('|').Last();
-                c.loopTime = c.loopPose = true;
-                c.lockRootRotation = c.lockRootHeightY = c.lockRootPositionXZ = true;
-                c.keepOriginalOrientation = c.keepOriginalPositionY = c.keepOriginalPositionXZ = true;
-                return c;
-            }).ToArray();
-            importer.SaveAndReimport();
-            if (importer.clipAnimations.Length != 3) throw new Exception("SORA: expected Idle/Walk/Run takes in " + Fbx);
+            SoraAnimationControllerBuilder.ConfigureClips();
 
             var shader = Shader.Find("Universal Render Pipeline/Lit")
                 ?? throw new Exception("SORA: URP Lit shader not found; is URP installed?");
@@ -103,42 +93,14 @@ namespace Sora.AfterTheRain.Demo.Editor
             instance.name = "TeiAkiko";
             var animator = instance.GetComponent<Animator>() ?? throw new Exception("SORA: Humanoid import added no Animator.");
             if (animator.avatar == null || !animator.avatar.isHuman) throw new Exception("SORA: Humanoid avatar invalid; check bone names.");
-            animator.runtimeAnimatorController = BuildController();
+            animator.runtimeAnimatorController = SoraAnimationControllerBuilder.Build();
             animator.applyRootMotion = false;
+            if (instance.GetComponent<SoraCharacterMotion>() == null) instance.AddComponent<SoraCharacterMotion>();
             Directory.CreateDirectory(Path.GetDirectoryName(Prefab));
             PrefabUtility.SaveAsPrefabAsset(instance, Prefab);
             UnityEngine.Object.DestroyImmediate(instance);
             AssetDatabase.Refresh();
             Debug.Log("SORA: Tei Akiko model imported: " + names.Count + " materials, prefab " + Prefab);
-        }
-
-        /// <summary>1D blend on Speed (m/s). Time scales match foot travel to SoraDemoCharacter speeds (AI 1.25, walk 3.05,
-        /// Shift 5.0); the Blender gait covers 1.16 m/s (Walk) and 2.42 m/s (Run) at 1x, so the sprint slides a little.</summary>
-        static AnimatorController BuildController()
-        {
-            var clips = AssetDatabase.LoadAllAssetsAtPath(Fbx).OfType<AnimationClip>()
-                .Where(c => !c.name.StartsWith("__preview__")).ToDictionary(c => c.name);
-            // Rebuild in place so the controller GUID the prefab references stays stable across re-imports.
-            var ctrl = AssetDatabase.LoadAssetAtPath<AnimatorController>(Controller)
-                ?? AnimatorController.CreateAnimatorControllerAtPath(Controller);
-            var sm = ctrl.layers[0].stateMachine;
-            foreach (var st in sm.states) sm.RemoveState(st.state);
-            foreach (var bt in AssetDatabase.LoadAllAssetsAtPath(Controller).OfType<BlendTree>()) UnityEngine.Object.DestroyImmediate(bt, true);
-            foreach (var p in ctrl.parameters) ctrl.RemoveParameter(p);
-            ctrl.AddParameter("Speed", AnimatorControllerParameterType.Float);
-            ctrl.CreateBlendTreeInController("Locomotion", out BlendTree tree);
-            tree.blendParameter = "Speed";
-            tree.useAutomaticThresholds = false;
-            tree.children = new[]
-            {
-                new ChildMotion { motion = clips["Idle"], threshold = 0f, timeScale = 1f },
-                new ChildMotion { motion = clips["Walk"], threshold = 1.25f, timeScale = 1.25f / 1.16f },
-                new ChildMotion { motion = clips["Run"], threshold = 3.05f, timeScale = 3.05f / 2.42f },
-                new ChildMotion { motion = clips["Run"], threshold = 5.0f, timeScale = 1.6f },
-            };
-            EditorUtility.SetDirty(ctrl);
-            AssetDatabase.SaveAssets();
-            return ctrl;
         }
 
         /// <summary>Renders front/back previews to Artifacts/Character/unity_preview_*.png (needs a GPU; no -nographics).</summary>

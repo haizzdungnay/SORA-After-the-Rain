@@ -164,6 +164,44 @@ namespace Sora.AfterTheRain.Demo.Tests
         }
 
         [Test]
+        public void UmbrellaRackChoiceIsPerTwinAndCancelsSaleDraftSafely()
+        {
+            var rack = Component<SoraInteractable>("Test umbrella rack");
+            rack.kind = InteractKind.UmbrellaStand;
+            Assert.That(core.Characters.All(c => !c.HasUmbrella), Is.True);
+            Assert.That(rack.PromptFor(core.ActiveCharacter), Is.EqualTo("Lay o tu gia"));
+            Interact(InteractKind.Register);
+            Call("Interact", rack);
+            Assert.That(core.ActiveCharacter.HasUmbrella, Is.True);
+            Assert.That(rack.PromptFor(core.ActiveCharacter), Is.EqualTo("Cat o vao gia"));
+            Assert.That(core.HasPendingSale, Is.False);
+            Call("SwitchCharacter");
+            Assert.That(core.ActiveCharacter.HasUmbrella, Is.False);
+            Call("Interact", rack);
+            Call("Interact", rack);
+            Assert.That(core.ActiveCharacter.HasUmbrella, Is.False);
+            Call("SwitchCharacter");
+            Assert.That(core.ActiveCharacter.HasUmbrella, Is.True);
+            Assert.That(core.State.storeCash, Is.Zero);
+            Assert.That(core.State.shelfStock, Is.EqualTo(8));
+            Assert.That(core.State.sales, Is.Zero);
+        }
+
+        [Test]
+        public void UmbrellaSaveFlagsRestoreEvenWithTheSameModelAndDefaultOffInLegacySaves()
+        {
+            var saved = JsonUtility.FromJson<SoraSaveData>(JsonUtility.ToJson(new SoraSaveData { toshiharuHasUmbrella = true }));
+            core.Characters[1].SetUmbrellaCarried(true);
+            Call("RestoreSave", saved);
+            Assert.That(core.Characters[0].HasUmbrella, Is.True);
+            Assert.That(core.Characters[1].HasUmbrella, Is.False);
+            var legacy = JsonUtility.FromJson<SoraSaveData>("{\"schema\":1,\"storeCash\":380,\"characterPositions\":[0,0,0,0,0,0],\"familiarity\":[0,0,0,0,0,0],\"trust\":[0,0,0,0,0,0]}");
+            Call("RestoreSave", legacy);
+            Assert.That(core.Characters.All(c => !c.HasUmbrella), Is.True);
+            Assert.That(core.State.storeCash, Is.EqualTo(380));
+        }
+
+        [Test]
         public void InvalidSavedModelCannotReplaceCurrentState()
         {
             var before = core.State;

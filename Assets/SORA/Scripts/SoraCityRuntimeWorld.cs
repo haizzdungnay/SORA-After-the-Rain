@@ -142,8 +142,8 @@ namespace Sora.AfterTheRain.Demo
                 moon.transform.localRotation = Quaternion.Euler(48f, -30f, 0f);
                 var light = moon.AddComponent<Light>();
                 light.type = LightType.Directional;
-                light.color = new Color(.58f, .70f, 1f);
-                light.intensity = .7f;
+                light.color = new Color(.42f, .56f, 1f);
+                light.intensity = .45f;
 
                 // Imported GLBs are render meshes, NOT collision geometry.
                 BuildCollisionProxies(city, proxyData);
@@ -258,7 +258,8 @@ namespace Sora.AfterTheRain.Demo
             foreach (var mesh in model.GetComponentsInChildren<MeshFilter>())
             {
                 string name = mesh.name;
-                if (name.StartsWith("ROAD/") || name.StartsWith("SIDEWALK/") ||
+                if (name.StartsWith("V03/ROAD_PBR/") || name.StartsWith("V03/SIDEWALK") ||
+                    name.StartsWith("ROAD/") || name.StartsWith("SIDEWALK/") ||
                     name.StartsWith("CURB/") || name.StartsWith("BLOCK_LAND/") ||
                     name.StartsWith("OUTER_PATH/") || name.StartsWith("V04/ENV/") ||
                     name.StartsWith("V04/GROUND/"))

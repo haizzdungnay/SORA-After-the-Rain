@@ -1,0 +1,112 @@
+{
+  "source": "saltline_1.html",
+  "source_sha256": "039890a0fa3fbe2c8d6b6b907e937d47c5a0b80b742f32fb3a4f19f0f15e0cac",
+  "creator": "Project owner",
+  "authorization": "Owner confirmed authorship and authorized extraction and SORA integration in chat on 2026-11-12. No project-wide public license has been selected.",
+  "files": [
+    {
+      "source": "textures/effects/04-apron-uDetail.png",
+      "destination": "Assets/SORA/Resources/Weather/detail.png",
+      "sha256": "64c2cc120c72694fe02c09e32a83979b357c83d1a6069ddc5c30e8a163acdf4a"
+    },
+    {
+      "source": "textures/effects/05-apron-uDetailN.png",
+      "destination": "Assets/SORA/Resources/Weather/detail-normal.png",
+      "sha256": "980df61512de6e54836ca481b45eb36e5b3da18c7ffd8e2a4a89443e70fd5bef"
+    },
+    {
+      "source": "audio/rain-v0.wav",
+      "destination": "Assets/SORA/Resources/Weather/rain-v0.wav",
+      "sha256": "8e4c556e12db789f627def3787028edec005f08e1df8f7f69c176cc7dfcca337"
+    },
+    {
+      "source": "audio/rain_interior-v0.wav",
+      "destination": "Assets/SORA/Resources/Weather/rain_interior-v0.wav",
+      "sha256": "b0943d0b978a12071dccc89b414a90cfbf2bfff0de95854ac0b8f0e6778a5d51"
+    },
+    {
+      "source": "audio/wind-v0.wav",
+      "destination": "Assets/SORA/Resources/Weather/wind-v0.wav",
+      "sha256": "08205b6920ebeb46ca2e29d2049223e8ee28f2a37a72bbe5d042ca3531fa094b"
+    },
+    {
+      "source": "audio/thunder-v0.wav",
+      "destination": "Assets/SORA/Resources/Weather/thunder-v0.wav",
+      "sha256": "9aaf651a3856636dc6f4e11d5bce59f45a1c53b730c44905f404bf01a7eefc13"
+    },
+    {
+      "source": "audio/thunder-v1.wav",
+      "destination": "Assets/SORA/Resources/Weather/thunder-v1.wav",
+      "sha256": "7ca6300e8253ba713bce536aa69af94deec42b10d94ad9d29a43f7ec6875fcdd"
+    },
+    {
+      "source": "audio/step_water-v0.wav",
+      "destination": "Assets/SORA/Resources/Weather/step_water-v0.wav",
+      "sha256": "3bc8ba721f7584e429aadc6d02afd13200e4f9ce7a9f07a59a306e53a3870276"
+    },
+    {
+      "source": "audio/step_water-v1.wav",
+      "destination": "Assets/SORA/Resources/Weather/step_water-v1.wav",
+      "sha256": "627e796c28a8e3a709276339d8e2ff3b60babc103a20ea75b1dc5920b5f840fd"
+    },
+    {
+      "source": "audio/step_water-v2.wav",
+      "destination": "Assets/SORA/Resources/Weather/step_water-v2.wav",
+      "sha256": "da02203c6157ee04598b75318762220efbf2b53c0ba9985d84cdba368b5bedb5"
+    },
+    {
+      "source": "audio/step_concrete-v0.wav",
+      "destination": "Assets/SORA/Resources/Weather/step_concrete-v0.wav",
+      "sha256": "afd102f752093c1bf6e7222006a361c41505932d7142ad15674e7923672a45bf"
+    },
+    {
+      "source": "audio/step_concrete-v1.wav",
+      "destination": "Assets/SORA/Resources/Weather/step_concrete-v1.wav",
+      "sha256": "0ef553012fcf3e8ee5de1ada953047f74005f1621b56faf829b183ce826262b3"
+    },
+    {
+      "source": "audio/step_concrete-v2.wav",
+      "destination": "Assets/SORA/Resources/Weather/step_concrete-v2.wav",
+      "sha256": "9aeba8e743e442a2f52b6a349a942e23e51b0a936f83e014bb936adcb6081f66"
+    },
+    {
+      "source": "audio/step_concrete-v3.wav",
+      "destination": "Assets/SORA/Resources/Weather/step_concrete-v3.wav",
+      "sha256": "7c4ffb6da3f7eb2ea6608234531543d4c2fa2d85b1969a4a325bc9f473658e18"
+    },
+    {
+      "source": "audio/step_metal-v0.wav",
+      "destination": "Assets/SORA/Resources/Weather/step_metal-v0.wav",
+      "sha256": "3d5086f1a2b7221d2ce6e5b07a031312d587f771c79b98548cf8d2f8288f9b22"
+    },
+    {
+      "source": "audio/step_metal-v1.wav",
+      "destination": "Assets/SORA/Resources/Weather/step_metal-v1.wav",
+      "sha256": "05d3b65155cdbd4cd42ca41c07dd4852dadd3b2f572ad387a3b36109d5e7c7b1"
+    },
+    {
+      "source": "audio/step_metal-v2.wav",
+      "destination": "Assets/SORA/Resources/Weather/step_metal-v2.wav",
+      "sha256": "593739cd3a7849305414f0f1f0bacd77a0c9c427d341178ac6efc65e6a846404"
+    }
+  ],
+  "adapted_references": [
+    {
+      "source": "source/shaders/effect-74-apron.frag.glsl",
+      "sha256": "8745e92584c77aedc995c21df19ac43517a89920eb14d14fab36526a1b64b8d0"
+    },
+    {
+      "source": "source/shaders/effect-76-rain.frag.glsl",
+      "sha256": "044d2e60db017849dfdd30ccc5bce2c152c6b24d7f95057ed8a1b63480d7275c"
+    },
+    {
+      "source": "source/shaders/effect-77-rainSplash.frag.glsl",
+      "sha256": "2d640dc97d4ab9c97e882a1d3b2f54735836470fd3338cc31b4020fa5b558728"
+    },
+    {
+      "source": "source/runtime-functions.json",
+      "sha256": "a35c6df6f013c0570c06e27cb274d574ebe96571b4bee0bfe3884a65cfc06b7d"
+    }
+  ],
+  "changes": "URP wet-surface shader and analytic rain/splash adapted for SORA; original world masks and world geometry not imported. Source PNG/WAV bytes preserved; Unity importer settings stored separately."
+}

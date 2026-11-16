@@ -1,5 +1,40 @@
 # Changelog
 
+## 2026-11-16 - Optional umbrellas from the outside rack
+
+- Start both twins empty-handed. Move the existing umbrella rack outside beside the entrance; E takes/returns one and releases arm/finger overrides when returned.
+- Preserve per-twin choices across switching, model selection, motion resets and F5/F9. Old schema-1 saves default to no umbrella; rain/roof opening remains active after pickup.
+- Plan and acceptance: `Docs/UMBRELLA_OPTIONAL_PLAN_2026-11-16.md` and `Docs/UMBRELLA_OPTIONAL_REPORT_2026-11-16.md`.
+
+## 2026-11-13 - Umbrella handling and weight transfer
+
+- Add per-character rain/shelter umbrella handling, an isolated right-arm Animator layer, native hand IK and an original opening umbrella prop.
+- Add interruptible movement starts, left/right stops, steering lean and bounded secondary hair/garment motion where supported by the rig. Preserve existing physics, contact effects, store state and asset GUIDs.
+- Actual checks, visual evidence and remaining limits: `Docs/CHARACTER_WEATHER_MOTION_REPORT_2026-11-13.md`.
+
+## 2026-11-13 - Storefront lighting and heavy-rain wet road
+
+- Light the store and its approach against a blue night environment; tune the existing URP Volume and probe settings without adding assets or packages.
+- Fix wet-film shading that ignored local store lights; reduce dark noise-pool opacity and soften its edges, add fine animated flow/ripples and denser rain.
+- Start new worlds in fixed heavy rain while preserving F8 and saved weather; retain store gameplay and character contact behavior.
+- Actual checks, genuine public Unity captures and remaining reflection/performance limits: [heavy-rain storefront report](Docs/StreetExterior/Reports/2026-11-13-HEAVY-RAIN-STOREFRONT.md).
+
+
+## 2026-11-12 - Character motion and contact polish
+
+- Complete eleven shared Humanoid clips across six playable models and the Akiko fallback: relaxed idle, walk, jog, sprint, jump/fall/land, pivots and two interruptible idle variations.
+- Add acceleration/braking, buffered/coyote jump, grounded-action interruption, avatar cadence scaling, bounded terrain foot/pelvis IK and animation-event footsteps/puddle splashes.
+- Preserve geometry, controller/prefab GUIDs, store transactions and save compatibility. Controls: Ctrl walk toggle, Shift sprint, Space jump, Q/R stationary turns.
+- Actual Unity checks, contact samples, genuine captures and limits: `Docs/CHARACTER_MOTION_REPORT_2026-11-12.md`.
+
+## 2026-11-12 - Saltline weather and puddles
+
+- Add shared clear/drizzle/rain/heavy-rain weather with smooth intensity, wetness, puddle fill/drying, sheltered rain audio and thunder.
+- Add outdoor-only irregular puddles, procedural ripples, bounded collision splashes, local environment probes and surface-dependent footsteps using owner-authored Saltline sources.
+- F8 weather controls; optional validated weather snapshot in schema-1 saves with explicit legacy-data presence flag. Existing store, characters, input and asset GUIDs retained.
+- Exact Unity/test/build results and genuine captures: `Docs/StreetExterior/Reports/2026-11-12-SALTLINE-WEATHER.md`.
+
+
 This log records **implemented source, asset and documentation work** for [SORA: After the Rain](https://github.com/haizzdungnay/SORA-After-the-Rain), with links to real GitHub PRs and visual evidence where available.
 
 > **Release and evidence policy:** `VS01`, `V02`, `V03`, `V04` and `V05` are **internal environment-art iteration names**, not published playable releases or new SemVer tags. A 3D GLB, a Unity Editor staging helper and a passing static CI job do **not** by themselves prove Unity Play Mode, collision, performance or Windows build acceptance. Assembled private AFX-derived models remain local; earlier original-source publication is recorded in the source-intake entry. All newly authored diagrams below are explicitly **schematics, not in-game screenshots**.

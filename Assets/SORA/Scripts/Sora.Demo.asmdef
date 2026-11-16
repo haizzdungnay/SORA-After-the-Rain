@@ -1,4 +1,8 @@
 {
   "name": "Sora.Demo",
-  "rootNamespace": "Sora.AfterTheRain.Demo"
+  "rootNamespace": "Sora.AfterTheRain.Demo",
+  "references": [
+    "Unity.RenderPipelines.Core.Runtime",
+    "Unity.RenderPipelines.Universal.Runtime"
+  ]
 }
