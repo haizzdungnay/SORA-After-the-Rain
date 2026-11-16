@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-16 - Store visual style, phase 1
+
+- Replace flat ambient light with native Trilight, reduce blue directional spill into the store and rebalance the existing shop/entrance lamps.
+- Separate satin floor and matte wall materials, neutralize storefront glass and remove ceiling emission; retain imported product meshes, textures, labels and UVs.
+- Tune Neutral exposure/bloom and use native SMAA after a 1080p A/B. Preserve gameplay, optional umbrellas, saves, asset GUIDs and package versions.
+- Fixed-camera evidence and actual validation/limits: [VIS-00/VIS-01 report](Docs/StreetExterior/Reports/2026-11-16-VISUAL-PHASE1.md). Contact shadows, reflections and final video-style acceptance remain later phases.
+
 ## 2026-11-16 - Optional umbrellas from the outside rack
 
 - Start both twins empty-handed. Move the existing umbrella rack outside beside the entrance; E takes/returns one and releases arm/finger overrides when returned.

@@ -38,8 +38,9 @@ def material(name, rgb, roughness=.45, emission=0, alpha=1):
     return mat
 
 
-ivory = material("SORA | warm porcelain", (.77, .78, .70))
-frame = material("SORA | graphite aluminium", (.075, .105, .11), .25)
+ivory = material("SORA | warm porcelain", (.82, .79, .71), .76)
+floor_tile = material("SORA | satin ceramic tile", (.76, .74, .68), .34)
+frame = material("SORA | graphite aluminium", (.075, .105, .11), .36)
 oak = material("SORA | honey oak", (.42, .235, .105), .5)
 teal = material("SORA | jade brand", (.035, .33, .29), .3)
 orange = material("SORA | tangerine accent", (.95, .28, .055), .4)
@@ -48,10 +49,10 @@ ink = material("SORA | printed ink", (.045, .075, .07))
 light = material("SORA | warm LED", (1, .88, .64), .3, 2)
 ceiling = material("SORA | acoustic ceiling", (.36, .37, .34), .85)
 sign = material("SORA | illuminated lettering", (.86, 1, .93), .3, 1.1)
-glass = material("SORA | clear storefront glass", (.64, .84, .85), .08, alpha=.13)
+glass = material("SORA | clear storefront glass", (.80, .87, .90), .08, alpha=.13)
 cooler_glass = material("SORA | refrigerator glass", (.62, .81, .82), .12, alpha=.18)
 rubber = material("SORA | entrance mat", (.065, .08, .08), .95)
-steel = material("SORA | brushed steel", (.32, .38, .38), .27)
+steel = material("SORA | brushed steel", (.32, .38, .38), .35)
 
 
 def box(name, at, size, mat, bevel=0):
@@ -233,7 +234,7 @@ def reuse(group, at, width, yaw=0):
 
 
 # Complete envelope, roof and visible side/rear treatment.
-box("MART | tiled floor", (0, -.035, 0), (13.98, .05, 10.9), ivory)
+box("MART | tiled floor", (0, -.035, 0), (13.98, .05, 10.9), floor_tile)
 grout = material("SORA | floor grout", (.47, .51, .48), .8)
 for x in range(-6, 7):
     box("Floor grout", (x, -.007, 0), (.012, .004, 10.8), grout)
@@ -268,7 +269,7 @@ for x in [-1.88, 1.88]:
 box("MART | entrance mat", (0, .005, -5.25), (2.4, .025, 1.4), rubber)
 text("WELCOME", (0, 3.58, -5.43), .18, white)
 # R1: a low, bright acoustic ceiling with a visible fluorescent grid.
-interior_ceiling = material("SORA | interior acoustic panels", (.88, .89, .84), .9, .08)
+interior_ceiling = material("SORA | interior acoustic panels", (.88, .87, .81), .9)
 box("MART | interior ceiling", (0, 3.12, .1), (13.8, .06, 10.7), interior_ceiling)
 for x in [-6, -4, -2, 0, 2, 4, 6]:
     box("MART | ceiling grid", (x, 3.082, .1), (.016, .014, 10.6), ivory)
